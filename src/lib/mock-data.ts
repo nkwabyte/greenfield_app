@@ -9,6 +9,8 @@ export const mockFarmers: Farmer[] = [
     joinDate: '2022-08-15T00:00:00.000Z',
     farmSize: 150,
     status: 'Active',
+    createdAt: '2022-08-15T00:00:00.000Z',
+    updatedAt: '2023-05-20T00:00:00.000Z',
   },
   {
     id: 'FARM002',
@@ -18,6 +20,8 @@ export const mockFarmers: Farmer[] = [
     joinDate: '2021-11-20T00:00:00.000Z',
     farmSize: 300,
     status: 'Active',
+    createdAt: '2021-11-20T00:00:00.000Z',
+    updatedAt: '2023-06-01T00:00:00.000Z',
   },
   {
     id: 'FARM003',
@@ -27,6 +31,8 @@ export const mockFarmers: Farmer[] = [
     joinDate: '2023-01-10T00:00:00.000Z',
     farmSize: 80,
     status: 'Active',
+    createdAt: '2023-01-10T00:00:00.000Z',
+    updatedAt: '2023-01-10T00:00:00.000Z',
   },
   {
     id: 'FARM004',
@@ -36,6 +42,8 @@ export const mockFarmers: Farmer[] = [
     joinDate: '2022-05-25T00:00:00.000Z',
     farmSize: 220,
     status: 'Inactive',
+    createdAt: '2022-05-25T00:00:00.000Z',
+    updatedAt: '2022-09-15T00:00:00.000Z',
   },
   {
     id: 'FARM005',
@@ -45,6 +53,8 @@ export const mockFarmers: Farmer[] = [
     joinDate: '2023-03-01T00:00:00.000Z',
     farmSize: 120,
     status: 'Active',
+    createdAt: '2023-03-01T00:00:00.000Z',
+    updatedAt: '2023-03-01T00:00:00.000Z',
   },
   {
     id: 'FARM006',
@@ -54,6 +64,8 @@ export const mockFarmers: Farmer[] = [
     joinDate: '2020-09-05T00:00:00.000Z',
     farmSize: 450,
     status: 'Active',
+    createdAt: '2020-09-05T00:00:00.000Z',
+    updatedAt: '2023-04-11T00:00:00.000Z',
   },
   {
     id: 'FARM007',
@@ -63,6 +75,8 @@ export const mockFarmers: Farmer[] = [
     joinDate: '2023-07-19T00:00:00.000Z',
     farmSize: 100,
     status: 'Active',
+    createdAt: '2023-07-19T00:00:00.000Z',
+    updatedAt: '2023-07-19T00:00:00.000Z',
   },
   {
     id: 'FARM008',
@@ -72,6 +86,8 @@ export const mockFarmers: Farmer[] = [
     joinDate: '2021-02-12T00:00:00.000Z',
     farmSize: 180,
     status: 'Inactive',
+    createdAt: '2021-02-12T00:00:00.000Z',
+    updatedAt: '2021-02-12T00:00:00.000Z',
   },
     {
     id: 'FARM009',
@@ -81,6 +97,8 @@ export const mockFarmers: Farmer[] = [
     joinDate: '2023-09-01T00:00:00.000Z',
     farmSize: 95,
     status: 'Active',
+    createdAt: '2023-09-01T00:00:00.000Z',
+    updatedAt: '2023-09-01T00:00:00.000Z',
   },
   {
     id: 'FARM010',
@@ -90,5 +108,7 @@ export const mockFarmers: Farmer[] = [
     joinDate: '2022-12-30T00:00:00.000Z',
     farmSize: 250,
     status: 'Active',
+    createdAt: '2022-12-30T00:00:00.000Z',
+    updatedAt: '2023-08-22T00:00:00.000Z',
   },
 ];

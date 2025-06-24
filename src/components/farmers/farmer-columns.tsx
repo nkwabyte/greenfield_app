@@ -12,10 +12,10 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { Badge } from '@/components/ui/badge';
 import type { Farmer } from '@/lib/types';
-import { format } from 'date-fns';
+import { format, formatDistanceToNow } from 'date-fns';
 import { Checkbox } from '@/components/ui/checkbox';
 
-export const columns: ColumnDef<Farmer>[] = [
+export const getColumns = ({ onEdit }: { onEdit: (farmer: Farmer) => void }): ColumnDef<Farmer>[] => [
   {
     id: 'select',
     header: ({ table }) => (
@@ -63,30 +63,47 @@ export const columns: ColumnDef<Farmer>[] = [
   {
     accessorKey: 'region',
     header: 'Region',
+    cell: ({ row }) => row.getValue('region') || 'N/A',
   },
   {
-    accessorKey: 'joinDate',
-    header: 'Join Date',
-    cell: ({ row }) => format(new Date(row.getValue('joinDate')), 'PPP'),
+    accessorKey: 'updatedAt',
+    header: ({ column }) => {
+       return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
+        >
+          Last Updated
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      );
+    },
+    cell: ({ row }) => {
+      const updatedAt = row.getValue('updatedAt') as string;
+      return <div>{formatDistanceToNow(new Date(updatedAt), { addSuffix: true })}</div>
+    },
   },
   {
     accessorKey: 'status',
     header: 'Status',
     cell: ({ row }) => {
-      const status: 'Active' | 'Inactive' = row.getValue('status');
+      const status = row.getValue('status') as 'Active' | 'Inactive' | undefined;
       return (
         <Badge variant={status === 'Active' ? 'default' : 'secondary'} className={status === 'Active' ? 'bg-primary/20 text-primary-foreground' : ''}>
-          {status}
+          {status || 'Unknown'}
         </Badge>
       );
+    },
+    filterFn: (row, id, value) => {
+      return value.includes(row.getValue(id))
     },
   },
   {
     accessorKey: 'farmSize',
     header: () => <div className="text-right">Farm Size (acres)</div>,
     cell: ({ row }) => {
-      const amount = parseFloat(row.getValue('farmSize'));
-      return <div className="text-right font-medium">{amount}</div>;
+      const amount = row.getValue('farmSize') as number | undefined;
+      return <div className="text-right font-medium">{amount ?? 'N/A'}</div>;
     },
   },
   {
@@ -108,7 +125,7 @@ export const columns: ColumnDef<Farmer>[] = [
             >
               Copy Farmer ID
             </DropdownMenuItem>
-            <DropdownMenuItem>Edit Farmer</DropdownMenuItem>
+            <DropdownMenuItem onClick={() => onEdit(farmer)}>Edit Farmer</DropdownMenuItem>
             <DropdownMenuItem className="text-destructive focus:bg-destructive/10 focus:text-destructive">Delete Farmer</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

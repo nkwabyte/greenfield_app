@@ -19,7 +19,9 @@ type FarmersByRegionChartProps = {
 export function FarmersByRegionChart({ farmers }: FarmersByRegionChartProps) {
   const data = React.useMemo(() => {
     const regionCounts = farmers.reduce((acc, farmer) => {
-      acc[farmer.region] = (acc[farmer.region] || 0) + 1;
+      if (farmer.region) {
+        acc[farmer.region] = (acc[farmer.region] || 0) + 1;
+      }
       return acc;
     }, {} as Record<string, number>);
 

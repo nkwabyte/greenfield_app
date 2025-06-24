@@ -17,7 +17,7 @@ type RecentFarmersTableProps = {
 
 export function RecentFarmersTable({ farmers }: RecentFarmersTableProps) {
   const recentFarmers = farmers
-    .sort((a, b) => new Date(b.joinDate).getTime() - new Date(a.joinDate).getTime())
+    .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
     .slice(0, 5);
 
   return (
@@ -32,7 +32,7 @@ export function RecentFarmersTable({ farmers }: RecentFarmersTableProps) {
             <TableRow>
               <TableHead>Name</TableHead>
               <TableHead className="hidden sm:table-cell">Region</TableHead>
-              <TableHead className="hidden md:table-cell">Join Date</TableHead>
+              <TableHead className="hidden md:table-cell">Date Added</TableHead>
               <TableHead className="text-right">Status</TableHead>
             </TableRow>
           </TableHeader>
@@ -43,13 +43,13 @@ export function RecentFarmersTable({ farmers }: RecentFarmersTableProps) {
                   <div className="font-medium">{farmer.name}</div>
                   <div className="text-sm text-muted-foreground">{farmer.id}</div>
                 </TableCell>
-                <TableCell className="hidden sm:table-cell">{farmer.region}</TableCell>
+                <TableCell className="hidden sm:table-cell">{farmer.region || 'N/A'}</TableCell>
                 <TableCell className="hidden md:table-cell">
-                  {format(new Date(farmer.joinDate), 'PPP')}
+                  {farmer.createdAt ? format(new Date(farmer.createdAt), 'PPP') : 'N/A'}
                 </TableCell>
                 <TableCell className="text-right">
                   <Badge variant={farmer.status === 'Active' ? 'default' : 'secondary'} className={farmer.status === 'Active' ? 'bg-primary/20 text-primary-foreground' : ''}>
-                    {farmer.status}
+                    {farmer.status || 'Unknown'}
                   </Badge>
                 </TableCell>
               </TableRow>

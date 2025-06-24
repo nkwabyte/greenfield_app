@@ -7,11 +7,13 @@ export type User = {
 export type Farmer = {
   id: string;
   name: string;
-  region: 'North' | 'South' | 'East' | 'West';
-  gender: 'Male' | 'Female' | 'Other';
-  joinDate: string; // ISO date string
-  farmSize: number; // in acres
-  status: 'Active' | 'Inactive';
+  region?: 'North' | 'South' | 'East' | 'West';
+  gender?: 'Male' | 'Female' | 'Other';
+  joinDate?: string; // ISO date string
+  farmSize?: number; // in acres
+  status?: 'Active' | 'Inactive';
+  createdAt: string; // ISO date string
+  updatedAt: string; // ISO date string
 };
 
 export type Kpi = {

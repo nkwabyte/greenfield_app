@@ -21,7 +21,9 @@ export function FarmersByGenderChart({ farmers }: FarmersByGenderChartProps) {
   
   const data = React.useMemo(() => {
     const genderCounts = farmers.reduce((acc, farmer) => {
-      acc[farmer.gender] = (acc[farmer.gender] || 0) + 1;
+      if (farmer.gender) {
+        acc[farmer.gender] = (acc[farmer.gender] || 0) + 1;
+      }
       return acc;
     }, {} as Record<string, number>);
 

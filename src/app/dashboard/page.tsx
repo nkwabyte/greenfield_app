@@ -19,7 +19,7 @@ export default function DashboardPage() {
 
   const kpis: Kpi[] = React.useMemo(() => {
     const activeFarmers = farmers.filter(f => f.status === 'Active').length;
-    const regions = new Set(farmers.map(f => f.region)).size;
+    const regions = new Set(farmers.map(f => f.region).filter(Boolean)).size;
     const maleFarmers = farmers.filter(f => f.gender === 'Male').length;
     const femaleFarmers = farmers.filter(f => f.gender === 'Female').length;
     const genderRatio = femaleFarmers > 0 ? `${(maleFarmers / femaleFarmers).toFixed(1)}:1 M/F` : 'N/A';

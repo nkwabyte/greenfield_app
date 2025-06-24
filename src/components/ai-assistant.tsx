@@ -38,22 +38,22 @@ export function AiAssistant({ open, onOpenChange, farmers }: AiAssistantProps) {
 
   const getFarmerDataSummary = React.useCallback(() => {
     const total = farmers.length;
-    const regions = farmers.reduce((acc, f) => { acc[f.region] = (acc[f.region] || 0) + 1; return acc; }, {} as Record<string, number>);
+    const regions = farmers.reduce((acc, f) => { if(f.region) { acc[f.region] = (acc[f.region] || 0) + 1; } return acc; }, {} as Record<string, number>);
     return `Total farmers: ${total}. Distribution by region: ${JSON.stringify(regions)}. A sample of farmers: ${JSON.stringify(farmers.slice(0, 3))}`;
   }, [farmers]);
 
   const handleSummarizeKpis = async () => {
     setKpiLoading('loading');
     try {
-      const regionalCounts = farmers.reduce((acc, f) => { acc[f.region] = (acc[f.region] || 0) + 1; return acc; }, {} as Record<string, number>);
+      const regionalCounts = farmers.reduce((acc, f) => { if(f.region) { acc[f.region] = (acc[f.region] || 0) + 1; } return acc; }, {} as Record<string, number>);
       const male = farmers.filter(f => f.gender === 'Male').length;
       const female = farmers.filter(f => f.gender === 'Female').length;
-      const total = male + female;
+      const totalWithGender = male + female;
 
       const result = await summarizeKPIInsights({
         totalFarmers: farmers.length,
         regionalCounts,
-        genderRatios: { male: total > 0 ? male/total * 100 : 0, female: total > 0 ? female/total * 100 : 0 }
+        genderRatios: { male: totalWithGender > 0 ? male/totalWithGender * 100 : 0, female: totalWithGender > 0 ? female/totalWithGender * 100 : 0 }
       });
       setKpiInsights(result);
       setKpiLoading('success');
