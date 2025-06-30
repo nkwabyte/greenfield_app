@@ -1,5 +1,5 @@
-
 export type User = {
+  uid: string;
   name: string;
   email: string;
   role: 'Admin' | 'Employee';
@@ -8,11 +8,17 @@ export type User = {
 export type Farmer = {
   id: string;
   name: string;
-  region?: 'North' | 'South' | 'East' | 'West';
   gender?: 'Male' | 'Female' | 'Other';
-  joinDate?: string; // ISO date string
+  region?: string; // e.g., 'Northern', 'Ashanti'
+  district?: string;
+  community?: string;
+  contact?: string;
+  age?: number;
+  educationLevel?: 'None' | 'Primary' | 'JHS' | 'SHS' | 'Tertiary' | 'Other';
   farmSize?: number; // in acres
+  cropsGrown?: string[]; // if applicable
   status?: 'Active' | 'Inactive';
+  joinDate?: string; // ISO date string
   createdAt: string; // ISO date string
   updatedAt: string; // ISO date string
 };

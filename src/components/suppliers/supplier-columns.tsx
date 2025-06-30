@@ -1,4 +1,3 @@
-
 'use client';
 
 import { ColumnDef } from '@tanstack/react-table';
@@ -10,12 +9,13 @@ import {
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuTrigger,
+  DropdownMenuSeparator,
 } from '@/components/ui/dropdown-menu';
 import type { Supplier } from '@/lib/types';
 import { formatDistanceToNow } from 'date-fns';
 import { Checkbox } from '@/components/ui/checkbox';
 
-export const getColumns = ({ onEdit }: { onEdit: (supplier: Supplier) => void }): ColumnDef<Supplier>[] => [
+export const getColumns = ({ onEdit, onDelete }: { onEdit: (supplier: Supplier) => void, onDelete: (id: string) => void }): ColumnDef<Supplier>[] => [
   {
     id: 'select',
     header: ({ table }) => (
@@ -93,7 +93,8 @@ export const getColumns = ({ onEdit }: { onEdit: (supplier: Supplier) => void })
           <DropdownMenuContent align="end">
             <DropdownMenuLabel>Actions</DropdownMenuLabel>
             <DropdownMenuItem onClick={() => onEdit(supplier)}>Edit Supplier</DropdownMenuItem>
-            <DropdownMenuItem className="text-destructive focus:bg-destructive/10 focus:text-destructive">Delete Supplier</DropdownMenuItem>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem className="text-destructive focus:bg-destructive/10 focus:text-destructive" onClick={() => onDelete(supplier.id)}>Delete Supplier</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       );

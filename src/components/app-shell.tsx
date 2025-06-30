@@ -3,6 +3,8 @@
 import * as React from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
+import { signOut } from 'firebase/auth';
+import { auth } from '@/lib/firebase/config';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -28,19 +30,18 @@ import { Button } from '@/components/ui/button';
 import { useAuth } from '@/hooks/use-auth';
 import { Logo } from '@/components/icons/logo';
 import { LayoutGrid, LogOut, Users, Settings, Briefcase, Landmark, Truck, Package } from 'lucide-react';
-import { Toaster } from './ui/toaster';
 
 const allNavItems = [
   { href: '/dashboard', icon: LayoutGrid, label: 'Dashboard', roles: ['Admin', 'Employee'] },
   { href: '/farmers', icon: Users, label: 'Farmers', roles: ['Admin', 'Employee'] },
-  { href: '/employees', icon: Briefcase, label: 'Employees', roles: ['Admin', 'Employee'] },
+  { href: '/employees', icon: Briefcase, label: 'Employees', roles: ['Admin'] },
   { href: '/suppliers', icon: Truck, label: 'Suppliers', roles: ['Admin', 'Employee'] },
   { href: '/products', icon: Package, label: 'Products', roles: ['Admin', 'Employee'] },
   { href: '/finances', icon: Landmark, label: 'Finances', roles: ['Admin'] },
 ];
 
 export function AppShell({ children }: { children: React.ReactNode }) {
-  const { user, isAuthenticated, logout, isLoading } = useAuth();
+  const { user, isAuthenticated, isLoading } = useAuth();
   const router = useRouter();
   const pathname = usePathname();
 
@@ -58,22 +59,23 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   if (isLoading || !isAuthenticated || !user) {
     return (
         <div className="flex h-screen items-center justify-center">
-          <p>Loading...</p>
+          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-primary"></div>
         </div>
     );
   }
 
-  const handleLogout = () => {
-    logout();
+  const handleLogout = async () => {
+    await signOut(auth);
     router.push('/');
   };
 
   const getInitials = (name: string) => {
+    if (!name) return 'U';
     const names = name.split(' ');
     if (names.length > 1) {
-      return `${names[0][0]}${names[names.length - 1][0]}`;
+      return `${names[0][0]}${names[names.length - 1][0]}`.toUpperCase();
     }
-    return name.substring(0, 2);
+    return name.substring(0, 2).toUpperCase();
   };
 
   return (

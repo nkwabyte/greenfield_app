@@ -5,19 +5,36 @@ import { AppShell } from '@/components/app-shell';
 import { PageHeader } from '@/components/page-header';
 import { Button } from '@/components/ui/button';
 import { KpiCard } from '@/components/dashboard/kpi-card';
-import { mockFarmers } from '@/lib/mock-data';
 import type { Kpi, Farmer } from '@/lib/types';
 import { Users, MapPin, BarChart2, Bot } from 'lucide-react';
 import { FarmersByRegionChart } from '@/components/dashboard/farmers-by-region-chart';
 import { FarmersByGenderChart } from '@/components/dashboard/farmers-by-gender-chart';
 import { RecentFarmersTable } from '@/components/dashboard/recent-farmers-table';
 import { AiAssistant } from '@/components/ai-assistant';
+import { getFarmers } from '@/lib/firebase/services/farmers';
+import { Skeleton } from '@/components/ui/skeleton';
 
 export default function DashboardPage() {
-  const [farmers, setFarmers] = React.useState<Farmer[]>(mockFarmers);
+  const [farmers, setFarmers] = React.useState<Farmer[]>([]);
+  const [isLoading, setIsLoading] = React.useState(true);
   const [isAiAssistantOpen, setIsAiAssistantOpen] = React.useState(false);
 
+  React.useEffect(() => {
+    const fetchFarmers = async () => {
+      try {
+        const farmerData = await getFarmers();
+        setFarmers(farmerData);
+      } catch (error) {
+        console.error("Failed to fetch farmers:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    fetchFarmers();
+  }, []);
+
   const kpis: Kpi[] = React.useMemo(() => {
+    if (isLoading) return [];
     const activeFarmers = farmers.filter(f => f.status === 'Active').length;
     const regions = new Set(farmers.map(f => f.region).filter(Boolean)).size;
     const maleFarmers = farmers.filter(f => f.gender === 'Male').length;
@@ -29,7 +46,32 @@ export default function DashboardPage() {
       { label: 'Regions Covered', value: regions.toString(), icon: MapPin },
       { label: 'Gender Ratio', value: genderRatio, icon: BarChart2 },
     ];
-  }, [farmers]);
+  }, [farmers, isLoading]);
+
+  if (isLoading) {
+    return (
+      <AppShell>
+        <PageHeader 
+          title="Dashboard" 
+          description="An overview of your agricultural network."
+        />
+        <div className="grid gap-6">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <Skeleton className="h-24" />
+            <Skeleton className="h-24" />
+            <Skeleton className="h-24" />
+          </div>
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-5">
+            <Skeleton className="h-80 lg:col-span-3" />
+            <Skeleton className="h-80 lg:col-span-2" />
+          </div>
+          <div>
+            <Skeleton className="h-96" />
+          </div>
+        </div>
+      </AppShell>
+    );
+  }
 
   return (
     <AppShell>

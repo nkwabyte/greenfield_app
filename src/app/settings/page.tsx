@@ -4,6 +4,9 @@ import * as React from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
+import { doc, updateDoc } from 'firebase/firestore';
+import { db } from '@/lib/firebase/config';
+
 import { AppShell } from '@/components/app-shell';
 import { PageHeader } from '@/components/page-header';
 import { Button } from '@/components/ui/button';
@@ -27,8 +30,8 @@ export default function SettingsPage() {
   const form = useForm<ProfileFormValues>({
     resolver: zodResolver(profileSchema),
     defaultValues: {
-      name: user?.name || '',
-      email: user?.email || '',
+      name: '',
+      email: '',
     },
   });
 
@@ -41,14 +44,32 @@ export default function SettingsPage() {
     }
   }, [user, form]);
 
-  const onSubmit = (data: ProfileFormValues) => {
+  const onSubmit = async (data: ProfileFormValues) => {
     if (user) {
-      const updatedUser = { ...user, ...data };
-      login(updatedUser); // This will also update localStorage
-      toast({
-        title: 'Profile Updated',
-        description: 'Your profile information has been successfully updated.',
-      });
+      try {
+        const userDocRef = doc(db, 'users', user.uid);
+        await updateDoc(userDocRef, { name: data.name });
+
+        // Note: Firebase Auth email updates are sensitive and require re-authentication.
+        // We are only updating the name in Firestore for simplicity.
+        // For a real app, you would handle email updates with `updateEmail` from firebase/auth
+        // which might require the user to re-enter their password.
+
+        // Manually update the user in our local auth context
+        const updatedUser = { ...user, ...data };
+        login(updatedUser); 
+
+        toast({
+          title: 'Profile Updated',
+          description: 'Your profile information has been successfully updated.',
+        });
+      } catch (error: any) {
+        toast({
+          title: 'Update Failed',
+          description: error.message,
+          variant: 'destructive',
+        });
+      }
     }
   };
 
@@ -84,7 +105,7 @@ export default function SettingsPage() {
                     <FormItem>
                       <FormLabel>Email</FormLabel>
                       <FormControl>
-                        <Input type="email" {...field} />
+                        <Input type="email" {...field} disabled />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -94,7 +115,9 @@ export default function SettingsPage() {
                    <FormLabel>Role</FormLabel>
                    <Input value={user?.role} disabled />
                 </FormItem>
-                <Button type="submit">Save Changes</Button>
+                <Button type="submit" disabled={form.formState.isSubmitting}>
+                    {form.formState.isSubmitting ? 'Saving...' : 'Save Changes'}
+                </Button>
               </form>
             </Form>
           </CardContent>

@@ -1,4 +1,3 @@
-
 'use client';
 
 import * as React from 'react';
@@ -7,13 +6,9 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import {
   ChartContainer,
   ChartTooltip,
-  ChartTooltipContent,
 } from '@/components/ui/chart';
 import type { Transaction } from '@/lib/types';
-
-type ExpensesByCategoryChartProps = {
-  transactions: Transaction[];
-};
+import type { ChartConfig } from '@/components/ui/chart';
 
 const currencyFormatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
@@ -21,7 +16,25 @@ const currencyFormatter = new Intl.NumberFormat('en-US', {
   minimumFractionDigits: 0,
 });
 
-export function ExpensesByCategoryChart({ transactions }: ExpensesByCategoryChartProps) {
+const CustomTooltip = ({ active, payload }: any) => {
+    if (active && payload && payload.length) {
+        const item = payload[0];
+        return (
+            <div className="p-2 text-sm bg-background border rounded-lg shadow-lg">
+                <div className="flex items-center justify-between gap-4 w-full">
+                    <div className="flex items-center gap-2">
+                        <div className="w-2.5 h-2.5 rounded-full" style={{backgroundColor: item.payload.fill}} />
+                        <div>{item.name}</div>
+                    </div>
+                    <div className="font-medium">{currencyFormatter.format(item.value as number)}</div>
+                </div>
+            </div>
+        );
+    }
+    return null;
+};
+
+export function ExpensesByCategoryChart({ transactions }: { transactions: Transaction[] }) {
   const expenses = transactions.filter(t => t.type === 'Expense');
   const totalExpenses = expenses.reduce((sum, e) => sum + e.amount, 0);
   
@@ -41,7 +54,7 @@ export function ExpensesByCategoryChart({ transactions }: ExpensesByCategoryChar
   const chartConfig = data.reduce((acc, item) => {
     acc[item.name] = { label: item.name, color: item.fill };
     return acc;
-  }, {} as any);
+  }, {} as ChartConfig);
 
   return (
     <Card className="shadow-md">
@@ -54,18 +67,7 @@ export function ExpensesByCategoryChart({ transactions }: ExpensesByCategoryChar
           <PieChart>
             <ChartTooltip
               cursor={false}
-              content={<ChartTooltipContent 
-                formatter={(value, name, item) => (
-                    <div className="flex items-center justify-between gap-4 w-full">
-                        <div className="flex items-center gap-2">
-                            <div className="w-2.5 h-2.5 rounded-full" style={{backgroundColor: item.payload.fill}} />
-                            <div>{name}</div>
-                        </div>
-                        <div className="font-medium">{currencyFormatter.format(value as number)}</div>
-                    </div>
-                )}
-                hideLabel 
-              />}
+              content={<CustomTooltip />}
             />
             <Pie data={data} dataKey="value" nameKey="name" innerRadius={50} outerRadius={80} strokeWidth={2}>
                <Label

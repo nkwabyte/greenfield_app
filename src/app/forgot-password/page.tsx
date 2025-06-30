@@ -1,7 +1,10 @@
 'use client';
 
 import Link from 'next/link';
+import * as React from 'react';
 import { useRouter } from 'next/navigation';
+import { sendPasswordResetEmail } from 'firebase/auth';
+import { auth } from '@/lib/firebase/config';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -12,15 +15,28 @@ import { Logo } from '@/components/icons/logo';
 export default function ForgotPasswordPage() {
   const router = useRouter();
   const { toast } = useToast();
+  const [email, setEmail] = React.useState('');
+  const [isLoading, setIsLoading] = React.useState(false);
 
-  const handleResetPassword = (e: React.FormEvent) => {
+  const handleResetPassword = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real app, you'd send a reset email
-    toast({
-      title: 'Password Reset Link Sent',
-      description: 'If an account exists with that email, a reset link has been sent.',
-    });
-    router.push('/');
+    setIsLoading(true);
+    try {
+      await sendPasswordResetEmail(auth, email);
+      toast({
+        title: 'Password Reset Link Sent',
+        description: 'If an account exists with that email, a reset link has been sent.',
+      });
+      router.push('/');
+    } catch (error: any) {
+      toast({
+        title: 'Error',
+        description: error.message,
+        variant: 'destructive',
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -44,10 +60,10 @@ export default function ForgotPasswordPage() {
             <form onSubmit={handleResetPassword} className="space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
-                <Input id="email" type="email" placeholder="john.doe@example.com" required />
+                <Input id="email" type="email" placeholder="john.doe@example.com" value={email} onChange={(e) => setEmail(e.target.value)} required />
               </div>
-              <Button type="submit" className="w-full !mt-6 font-bold">
-                Send Reset Instructions
+              <Button type="submit" className="w-full !mt-6 font-bold" disabled={isLoading}>
+                {isLoading ? 'Sending...' : 'Send Reset Instructions'}
               </Button>
             </form>
             <div className="mt-4 text-center text-sm">

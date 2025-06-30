@@ -41,7 +41,13 @@ export function AiAssistant({ open, onOpenChange, farmers }: AiAssistantProps) {
       }
       return acc;
     }, {} as Record<string, number>);
-    return `Total farmers: ${total}. Distribution by region: ${JSON.stringify(regions)}. A sample of farmers: ${JSON.stringify(farmers.slice(0, 3))}`;
+    
+    const sampleFarmer = farmers[0];
+    const sampleString = sampleFarmer
+      ? `Example farmer: ${sampleFarmer.name}, Age: ${sampleFarmer.age}, Farm Size: ${sampleFarmer.farmSize} acres, Location: ${sampleFarmer.community}, ${sampleFarmer.district}, ${sampleFarmer.region}, Crops: ${sampleFarmer.cropsGrown?.join(', ')}.`
+      : 'No farmer data available for a sample.';
+
+    return `Total farmers: ${total}. Distribution by region: ${JSON.stringify(regions)}. ${sampleString}`;
   }, [farmers]);
 
   const handleSummarizeKpis = async () => {

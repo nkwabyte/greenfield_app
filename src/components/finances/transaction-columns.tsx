@@ -1,8 +1,7 @@
-
 'use client';
 
 import { ColumnDef } from '@tanstack/react-table';
-import { MoreHorizontal, ArrowUpDown, TrendingUp, TrendingDown } from 'lucide-react';
+import { MoreHorizontal, ArrowUpDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -10,6 +9,7 @@ import {
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuTrigger,
+  DropdownMenuSeparator,
 } from '@/components/ui/dropdown-menu';
 import { Badge } from '@/components/ui/badge';
 import type { Transaction } from '@/lib/types';
@@ -22,7 +22,7 @@ const currencyFormatter = new Intl.NumberFormat('en-US', {
   currency: 'USD',
 });
 
-export const getColumns = ({ onEdit }: { onEdit: (transaction: Transaction) => void }): ColumnDef<Transaction>[] => [
+export const getColumns = ({ onEdit, onDelete }: { onEdit: (transaction: Transaction) => void, onDelete: (id: string) => void }): ColumnDef<Transaction>[] => [
   {
     id: 'select',
     header: ({ table }) => (
@@ -120,7 +120,8 @@ export const getColumns = ({ onEdit }: { onEdit: (transaction: Transaction) => v
           <DropdownMenuContent align="end">
             <DropdownMenuLabel>Actions</DropdownMenuLabel>
             <DropdownMenuItem onClick={() => onEdit(transaction)}>Edit Transaction</DropdownMenuItem>
-            <DropdownMenuItem className="text-destructive focus:bg-destructive/10 focus:text-destructive">Delete Transaction</DropdownMenuItem>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem className="text-destructive focus:bg-destructive/10 focus:text-destructive" onClick={() => onDelete(transaction.id)}>Delete Transaction</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       );
