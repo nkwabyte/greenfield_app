@@ -41,6 +41,28 @@ export type Transaction = {
   updatedAt: string; // ISO date string
 };
 
+export type Supplier = {
+  id: string;
+  name: string;
+  contactPerson: string;
+  email: string;
+  phone: string;
+  createdAt: string; // ISO date string
+  updatedAt: string; // ISO date string
+};
+
+export type ProductCategory = 'Seeds' | 'Fertilizers' | 'Pesticides' | 'Equipment' | 'Other';
+
+export type Product = {
+  id: string;
+  name: string;
+  category: ProductCategory;
+  supplierId: string;
+  quantity: number;
+  price: number; // per unit
+  createdAt: string; // ISO date string
+  updatedAt: string; // ISO date string
+};
 
 export type Kpi = {
   label: string;

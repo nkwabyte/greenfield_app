@@ -1,5 +1,5 @@
 
-import type { Farmer, Employee, Transaction } from '@/lib/types';
+import type { Farmer, Employee, Transaction, Supplier, Product } from '@/lib/types';
 
 export const mockFarmers: Farmer[] = [
   {
@@ -136,4 +136,19 @@ export const mockTransactions: Transaction[] = [
     { id: 'TRN013', type: 'Income', category: 'Sales', description: 'Livestock sale', amount: 22000, date: '2023-07-15T00:00:00.000Z', employeeName: 'Alice Johnson', createdAt: '2023-07-15T00:00:00.000Z', updatedAt: '2023-07-15T00:00:00.000Z' },
     { id: 'TRN009', type: 'Expense', category: 'Equipment', description: 'Drone repair', amount: 600, date: '2023-07-11T00:00:00.000Z', employeeName: 'Bob Williams', createdAt: '2023-07-11T00:00:00.000Z', updatedAt: '2023-07-11T00:00:00.000Z' },
     { id: 'TRN010', type: 'Expense', category: 'Salary', description: 'Monthly payroll - June', amount: 24500, date: '2023-06-30T00:00:00.000Z', employeeName: 'Charlie Brown', createdAt: '2023-06-30T00:00:00.000Z', updatedAt: '2023-06-30T00:00:00.000Z' },
+];
+
+export const mockSuppliers: Supplier[] = [
+  { id: 'SUP001', name: 'AgroCorp Supplies', contactPerson: 'David Chen', email: 'sales@agrocorp.com', phone: '123-456-7890', createdAt: '2022-01-10T00:00:00.000Z', updatedAt: '2023-05-15T00:00:00.000Z' },
+  { id: 'SUP002', name: 'FarmEssentials Inc.', contactPerson: 'Maria Garcia', email: 'maria.g@farmessentials.com', phone: '987-654-3210', createdAt: '2021-11-20T00:00:00.000Z', updatedAt: '2023-06-01T00:00:00.000Z' },
+  { id: 'SUP003', name: 'CropTech Solutions', contactPerson: 'Brian O\'Neil', email: 'brian@croptech.io', phone: '555-123-4567', createdAt: '2023-02-05T00:00:00.000Z', updatedAt: '2023-02-05T00:00:00.000Z' },
+];
+
+export const mockProducts: Product[] = [
+  { id: 'PROD001', name: 'Organic Corn Seeds', category: 'Seeds', supplierId: 'SUP001', quantity: 500, price: 25.50, createdAt: '2023-01-15T00:00:00.000Z', updatedAt: '2023-09-10T00:00:00.000Z' },
+  { id: 'PROD002', name: 'Nitrogen-Rich Fertilizer', category: 'Fertilizers', supplierId: 'SUP002', quantity: 200, price: 45.00, createdAt: '2023-02-20T00:00:00.000Z', updatedAt: '2023-09-12T00:00:00.000Z' },
+  { id: 'PROD003', name: 'Eco-Friendly Pesticide', category: 'Pesticides', supplierId: 'SUP003', quantity: 150, price: 75.00, createdAt: '2023-03-10T00:00:00.000Z', updatedAt: '2023-09-05T00:00:00.000Z' },
+  { id: 'PROD004', name: 'Hand Trowel', category: 'Equipment', supplierId: 'SUP002', quantity: 0, price: 12.99, createdAt: '2023-04-01T00:00:00.000Z', updatedAt: '2023-08-20T00:00:00.000Z' },
+  { id: 'PROD005', name: 'High-Yield Wheat Seeds', category: 'Seeds', supplierId: 'SUP001', quantity: 800, price: 30.00, createdAt: '2023-05-18T00:00:00.000Z', updatedAt: '2023-09-11T00:00:00.000Z' },
+  { id: 'PROD006', name: 'Phosphate Fertilizer', category: 'Fertilizers', supplierId: 'SUP002', quantity: 8, price: 50.00, createdAt: '2023-06-22T00:00:00.000Z', updatedAt: '2023-09-14T00:00:00.000Z' },
 ];

@@ -79,10 +79,10 @@ export function FinancialsOverTimeChart({ transactions }: FinancialsOverTimeChar
               content={<ChartTooltipContent formatter={(value, name) => (
                 <div className="flex items-center">
                     <div
-                      className={cn(
-                        "w-2.5 h-2.5 rounded-full mr-2",
-                        name === 'income' ? 'bg-[var(--color-income)]' : 'bg-[var(--color-expenses)]'
-                      )}
+                      className="w-2.5 h-2.5 rounded-full mr-2"
+                      style={{
+                        backgroundColor: name === 'income' ? chartConfig.income.color : chartConfig.expenses.color,
+                      }}
                     />
                     <span className="capitalize">{name}: {currencyFormatter.format(value as number)}</span>
                 </div>
