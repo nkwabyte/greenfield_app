@@ -8,6 +8,7 @@ import {
   ChartTooltip,
 } from '@/components/ui/chart';
 import type { Transaction } from '@/lib/types';
+import type { ChartConfig } from '@/components/ui/chart';
 
 const currencyFormatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
@@ -33,7 +34,7 @@ const CustomTooltip = ({ active, payload }: any) => {
     return null;
 };
 
-export function ExpensesByCategoryChart({ transactions }: ExpensesByCategoryChartProps) {
+export function ExpensesByCategoryChart({ transactions }: { transactions: Transaction[] }) {
   const expenses = transactions.filter(t => t.type === 'Expense');
   const totalExpenses = expenses.reduce((sum, e) => sum + e.amount, 0);
   
@@ -53,7 +54,7 @@ export function ExpensesByCategoryChart({ transactions }: ExpensesByCategoryChar
   const chartConfig = data.reduce((acc, item) => {
     acc[item.name] = { label: item.name, color: item.fill };
     return acc;
-  }, {} as any);
+  }, {} as ChartConfig);
 
   return (
     <Card className="shadow-md">

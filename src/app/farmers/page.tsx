@@ -37,6 +37,7 @@ export default function FarmersPage() {
       const farmerData = await getFarmers();
       setFarmers(farmerData);
     } catch (error) {
+      console.error(error);
       toast({ title: "Error fetching farmers", description: "Could not retrieve farmer data.", variant: "destructive" });
     } finally {
       setIsLoading(false);
@@ -68,6 +69,7 @@ export default function FarmersPage() {
       }
       fetchAndSetFarmers();
     } catch (error) {
+      console.error(error);
       toast({ title: "Save Failed", description: "An error occurred while saving the farmer.", variant: "destructive" });
     }
   };
@@ -90,13 +92,29 @@ export default function FarmersPage() {
   }), []);
 
   const handleExport = () => {
-    const csvHeader = "ID,Name,Region,Gender,JoinDate,FarmSize,Status,CreatedAt,UpdatedAt\n";
+    const csvHeader = "ID,Name,Gender,Region,District,Community,Contact,Age,EducationLevel,FarmSize,CropsGrown,Status,JoinDate,CreatedAt,UpdatedAt\n";
     const csvRows = farmers.map(f =>
-      `"${f.id}","${f.name}","${f.region || ''}","${f.gender || ''}","${f.joinDate || ''}","${f.farmSize ?? ''}","${f.status || ''}","${f.createdAt}","${f.updatedAt}"`
+      [
+        `"${f.id}"`,
+        `"${f.name}"`,
+        `"${f.gender || ''}"`,
+        `"${f.region || ''}"`,
+        `"${f.district || ''}"`,
+        `"${f.community || ''}"`,
+        `"${f.contact || ''}"`,
+        `"${f.age || ''}"`,
+        `"${f.educationLevel || ''}"`,
+        `"${f.farmSize ?? ''}"`,
+        `"${f.cropsGrown?.join('; ') || ''}"`,
+        `"${f.status || ''}"`,
+        `"${f.joinDate || ''}"`,
+        `"${f.createdAt}"`,
+        `"${f.updatedAt}"`,
+      ].join(',')
     ).join("\n");
 
     const csvContent = csvHeader + csvRows;
-    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-t;' });
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
     const link = document.createElement("a");
     if (link.download !== undefined) {
       const url = URL.createObjectURL(blob);
@@ -141,47 +159,64 @@ export default function FarmersPage() {
     }
 
     const header = rows[0].split(',').map(h => h.trim().replace(/"/g, ''));
-    const expectedHeaders = ['Name', 'Region', 'Gender', 'JoinDate', 'FarmSize', 'Status'];
-    const hasAllHeaders = expectedHeaders.every(h => header.includes(h));
-
-    if (!hasAllHeaders) {
-      toast({ title: 'Invalid CSV Header', description: 'CSV header is missing or does not match expected format: ' + expectedHeaders.join(', '), variant: 'destructive' });
+    const expectedHeaders = ['Name', 'Region', 'Gender', 'JoinDate', 'FarmSize', 'Status', 'District', 'Community', 'Contact', 'Age', 'EducationLevel', 'CropsGrown'];
+    
+    // Basic check for at least the 'Name' header
+    if (!header.includes('Name')) {
+      toast({ title: 'Invalid CSV Header', description: 'CSV header must include at least a "Name" column.', variant: 'destructive' });
       return;
     }
 
-    const nameIndex = header.indexOf('Name');
     const newFarmers: Omit<Farmer, 'id' | 'createdAt' | 'updatedAt'>[] = [];
     const localFailedRecords: FailedRecord[] = [];
+    
+    const getHeaderIndex = (name: string) => header.indexOf(name);
     
     rows.slice(1).forEach((rowStr, index) => {
       if (!rowStr) return;
       const rowData = rowStr.split(',');
 
-      if (!rowData[nameIndex] || rowData[nameIndex].trim() === '') {
+      const name = rowData[getHeaderIndex('Name')]?.trim();
+      if (!name) {
         localFailedRecords.push({ rowIndex: index + 2, rowData: rowStr, error: 'Farmer name is missing.' });
         return;
       }
 
-      const farmSizeStr = rowData[header.indexOf('FarmSize')]?.trim();
+      const farmSizeStr = rowData[getHeaderIndex('FarmSize')]?.trim();
       const farmSize = farmSizeStr ? parseFloat(farmSizeStr) : undefined;
       if (farmSizeStr && isNaN(farmSize)) {
         localFailedRecords.push({ rowIndex: index + 2, rowData: rowStr, error: 'Invalid format for FarmSize.' });
         return;
       }
+      
+      const ageStr = rowData[getHeaderIndex('Age')]?.trim();
+      const age = ageStr ? parseInt(ageStr, 10) : undefined;
+      if (ageStr && isNaN(age)) {
+        localFailedRecords.push({ rowIndex: index + 2, rowData: rowStr, error: 'Invalid format for Age.' });
+        return;
+      }
 
-      const joinDateStr = rowData[header.indexOf('JoinDate')]?.trim();
+      const joinDateStr = rowData[getHeaderIndex('JoinDate')]?.trim();
       if (joinDateStr && isNaN(new Date(joinDateStr).getTime())) {
         localFailedRecords.push({ rowIndex: index + 2, rowData: rowStr, error: 'Invalid format for JoinDate.' });
         return;
       }
 
-      const farmer = {
-        name: rowData[nameIndex].trim(),
-        region: (rowData[header.indexOf('Region')]?.trim() as Farmer['region']) || undefined,
-        gender: (rowData[header.indexOf('Gender')]?.trim() as Farmer['gender']) || undefined,
+      const cropsGrown = rowData[getHeaderIndex('CropsGrown')]?.split(';').map(c => c.trim()).filter(Boolean);
+
+      const farmer: Omit<Farmer, 'id' | 'createdAt' | 'updatedAt'> = {
+        name,
+        region: rowData[getHeaderIndex('Region')]?.trim(),
+        gender: rowData[getHeaderIndex('Gender')]?.trim() as Farmer['gender'],
         joinDate: joinDateStr || undefined,
-        farmSize: farmSize,
-        status: (rowData[header.indexOf('Status')]?.trim() as Farmer['status']) || 'Active',
+        farmSize,
+        status: (rowData[getHeaderIndex('Status')]?.trim() as Farmer['status']) || 'Active',
+        district: rowData[getHeaderIndex('District')]?.trim(),
+        community: rowData[getHeaderIndex('Community')]?.trim(),
+        contact: rowData[getHeaderIndex('Contact')]?.trim(),
+        age,
+        educationLevel: rowData[getHeaderIndex('EducationLevel')]?.trim() as Farmer['educationLevel'],
+        cropsGrown: cropsGrown?.length ? cropsGrown : undefined,
       };
       
       newFarmers.push(farmer);

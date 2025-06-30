@@ -8,6 +8,7 @@ import {
   ChartTooltip,
 } from '@/components/ui/chart';
 import type { Farmer } from '@/lib/types';
+import type { ChartConfig } from '@/components/ui/chart';
 
 type FarmersByGenderChartProps = {
   farmers: Farmer[];
@@ -52,7 +53,7 @@ export function FarmersByGenderChart({ farmers }: FarmersByGenderChartProps) {
   const chartConfig = data.reduce((acc, item) => {
     acc[item.name] = { label: item.name, color: item.fill };
     return acc;
-  }, {} as any);
+  }, {} as ChartConfig);
 
   return (
     <Card className="shadow-md">

@@ -41,13 +41,6 @@ export function FarmersByRegionChart({ farmers }: FarmersByRegionChartProps) {
     }));
   }, [farmers]);
 
-  const chartConfig = {
-    count: {
-      label: "Farmers",
-      color: "hsl(var(--chart-1))",
-    },
-  };
-
   return (
     <Card className="shadow-md">
       <CardHeader>
@@ -55,7 +48,7 @@ export function FarmersByRegionChart({ farmers }: FarmersByRegionChartProps) {
         <CardDescription>Distribution of farmers across operational regions.</CardDescription>
       </CardHeader>
       <CardContent>
-        <ChartContainer config={chartConfig} className="h-64 w-full">
+        <ChartContainer config={{}} className="h-64 w-full">
           <BarChart data={data} accessibilityLayer>
             <CartesianGrid vertical={false} />
             <XAxis
@@ -69,7 +62,7 @@ export function FarmersByRegionChart({ farmers }: FarmersByRegionChartProps) {
               cursor={false}
               content={<CustomTooltip />}
             />
-            <Bar dataKey="count" name="Farmers" fill="var(--color-count)" radius={4} />
+            <Bar dataKey="count" name="Farmers" fill="hsl(var(--chart-1))" radius={4} />
           </BarChart>
         </ChartContainer>
       </CardContent>
