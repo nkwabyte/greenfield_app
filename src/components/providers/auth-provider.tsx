@@ -6,6 +6,7 @@ import React, { createContext, useState, useMemo, useEffect } from 'react';
 interface AuthContextType {
   user: User | null;
   isAuthenticated: boolean;
+  isLoading: boolean;
   login: (user: User) => void;
   logout: () => void;
 }
@@ -14,9 +15,9 @@ export const AuthContext = createContext<AuthContextType | undefined>(undefined)
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Try to load user from localStorage on initial load
     try {
       const storedUser = localStorage.getItem('user');
       if (storedUser) {
@@ -25,6 +26,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     } catch (error) {
       console.error("Failed to parse user from localStorage", error);
       localStorage.removeItem('user');
+    } finally {
+        setIsLoading(false);
     }
   }, []);
 
@@ -41,11 +44,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const authContextValue = useMemo(
     () => ({
       user,
-      isAuthenticated: !!user,
+      isAuthenticated: !isLoading && !!user,
+      isLoading,
       login,
       logout,
     }),
-    [user]
+    [user, isLoading]
   );
 
   return (
