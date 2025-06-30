@@ -29,15 +29,40 @@ export type Employee = {
   updatedAt: string; // ISO date string
 };
 
-export type Expense = {
+export type Transaction = {
   id: string;
-  category: 'Salary' | 'Travel' | 'Equipment' | 'Utilities' | 'Marketing' | 'Other';
+  type: 'Income' | 'Expense';
+  category: 'Salary' | 'Travel' | 'Equipment' | 'Utilities' | 'Marketing' | 'Purchase' | 'Investment' | 'Loan' | 'Sales' | 'Other';
   description: string;
   amount: number;
   date: string; // ISO date string
   employeeName: string;
+  createdAt: string; // ISO date string
+  updatedAt: string; // ISO date string
 };
 
+export type Supplier = {
+  id: string;
+  name: string;
+  contactPerson: string;
+  email: string;
+  phone: string;
+  createdAt: string; // ISO date string
+  updatedAt: string; // ISO date string
+};
+
+export type ProductCategory = 'Seeds' | 'Fertilizers' | 'Pesticides' | 'Equipment' | 'Other';
+
+export type Product = {
+  id: string;
+  name: string;
+  category: ProductCategory;
+  supplierId: string;
+  quantity: number;
+  price: number; // per unit
+  createdAt: string; // ISO date string
+  updatedAt: string; // ISO date string
+};
 
 export type Kpi = {
   label: string;

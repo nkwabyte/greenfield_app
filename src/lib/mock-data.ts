@@ -1,5 +1,5 @@
 
-import type { Farmer, Employee, Expense } from '@/lib/types';
+import type { Farmer, Employee, Transaction, Supplier, Product } from '@/lib/types';
 
 export const mockFarmers: Farmer[] = [
   {
@@ -122,15 +122,33 @@ export const mockEmployees: Employee[] = [
   { id: 'EMP005', name: 'Ethan Davis', email: 'ethan.d@greenfield.com', role: 'Field Agent', salary: 63000, startDate: '2022-08-10T00:00:00.000Z', status: 'Terminated', createdAt: '2022-08-10T00:00:00.000Z', updatedAt: '2023-09-01T00:00:00.000Z' }
 ];
 
-export const mockExpenses: Expense[] = [
-    { id: 'EXP001', category: 'Salary', description: 'Monthly payroll - August', amount: 25000, date: '2023-08-31T00:00:00.000Z', employeeName: 'Charlie Brown' },
-    { id: 'EXP002', category: 'Travel', description: 'Fuel for field visit - North Region', amount: 150, date: '2023-08-28T00:00:00.000Z', employeeName: 'Bob Williams' },
-    { id: 'EXP003', category: 'Equipment', description: 'New soil testing kit', amount: 850, date: '2023-08-25T00:00:00.000Z', employeeName: 'Alice Johnson' },
-    { id: 'EXP004', category: 'Utilities', description: 'Office electricity bill', amount: 320, date: '2023-08-20T00:00:00.000Z', employeeName: 'Charlie Brown' },
-    { id: 'EXP005', category: 'Marketing', description: 'Local newspaper ad', amount: 500, date: '2023-08-15T00:00:00.000Z', employeeName: 'Alice Johnson' },
-    { id: 'EXP006', category: 'Salary', description: 'Monthly payroll - July', amount: 24500, date: '2023-07-31T00:00:00.000Z', employeeName: 'Charlie Brown' },
-    { id: 'EXP007', category: 'Travel', description: 'Hotel stay for South Region conference', amount: 450, date: '2023-07-22T00:00:00.000Z', employeeName: 'Alice Johnson' },
-    { id: 'EXP008', category: 'Other', description: 'Office supplies', amount: 120, date: '2023-07-18T00:00:00.000Z', employeeName: 'Diana Miller' },
-    { id: 'EXP009', category: 'Equipment', description: 'Drone repair', amount: 600, date: '2023-07-11T00:00:00.000Z', employeeName: 'Bob Williams' },
-    { id: 'EXP010', category: 'Salary', description: 'Monthly payroll - June', amount: 24500, date: '2023-06-30T00:00:00.000Z', employeeName: 'Charlie Brown' }
+export const mockTransactions: Transaction[] = [
+    { id: 'TRN001', type: 'Expense', category: 'Salary', description: 'Monthly payroll - August', amount: 25000, date: '2023-08-31T00:00:00.000Z', employeeName: 'Charlie Brown', createdAt: '2023-08-31T00:00:00.000Z', updatedAt: '2023-08-31T00:00:00.000Z' },
+    { id: 'TRN002', type: 'Expense', category: 'Travel', description: 'Fuel for field visit - North Region', amount: 150, date: '2023-08-28T00:00:00.000Z', employeeName: 'Bob Williams', createdAt: '2023-08-28T00:00:00.000Z', updatedAt: '2023-08-28T00:00:00.000Z' },
+    { id: 'TRN011', type: 'Income', category: 'Sales', description: 'Crop sale to Northwind Traders', amount: 15000, date: '2023-08-27T00:00:00.000Z', employeeName: 'Alice Johnson', createdAt: '2023-08-27T00:00:00.000Z', updatedAt: '2023-08-27T00:00:00.000Z' },
+    { id: 'TRN003', type: 'Expense', category: 'Equipment', description: 'New soil testing kit', amount: 850, date: '2023-08-25T00:00:00.000Z', employeeName: 'Alice Johnson', createdAt: '2023-08-25T00:00:00.000Z', updatedAt: '2023-08-25T00:00:00.000Z' },
+    { id: 'TRN004', type: 'Expense', category: 'Utilities', description: 'Office electricity bill', amount: 320, date: '2023-08-20T00:00:00.000Z', employeeName: 'Charlie Brown', createdAt: '2023-08-20T00:00:00.000Z', updatedAt: '2023-08-20T00:00:00.000Z' },
+    { id: 'TRN005', type: 'Expense', category: 'Marketing', description: 'Local newspaper ad', amount: 500, date: '2023-08-15T00:00:00.000Z', employeeName: 'Alice Johnson', createdAt: '2023-08-15T00:00:00.000Z', updatedAt: '2023-08-15T00:00:00.000Z' },
+    { id: 'TRN012', type: 'Income', category: 'Sales', description: 'Produce sale to local market', amount: 7500, date: '2023-08-12T00:00:00.000Z', employeeName: 'Bob Williams', createdAt: '2023-08-12T00:00:00.000Z', updatedAt: '2023-08-12T00:00:00.000Z' },
+    { id: 'TRN006', type: 'Expense', category: 'Salary', description: 'Monthly payroll - July', amount: 24500, date: '2023-07-31T00:00:00.000Z', employeeName: 'Charlie Brown', createdAt: '2023-07-31T00:00:00.000Z', updatedAt: '2023-07-31T00:00:00.000Z' },
+    { id: 'TRN007', type: 'Expense', category: 'Travel', description: 'Hotel stay for South Region conference', amount: 450, date: '2023-07-22T00:00:00.000Z', employeeName: 'Alice Johnson', createdAt: '2023-07-22T00:00:00.000Z', updatedAt: '2023-07-22T00:00:00.000Z' },
+    { id: 'TRN008', type: 'Expense', category: 'Other', description: 'Office supplies', amount: 120, date: '2023-07-18T00:00:00.000Z', employeeName: 'Diana Miller', createdAt: '2023-07-18T00:00:00.000Z', updatedAt: '2023-07-18T00:00:00.000Z' },
+    { id: 'TRN013', type: 'Income', category: 'Sales', description: 'Livestock sale', amount: 22000, date: '2023-07-15T00:00:00.000Z', employeeName: 'Alice Johnson', createdAt: '2023-07-15T00:00:00.000Z', updatedAt: '2023-07-15T00:00:00.000Z' },
+    { id: 'TRN009', type: 'Expense', category: 'Equipment', description: 'Drone repair', amount: 600, date: '2023-07-11T00:00:00.000Z', employeeName: 'Bob Williams', createdAt: '2023-07-11T00:00:00.000Z', updatedAt: '2023-07-11T00:00:00.000Z' },
+    { id: 'TRN010', type: 'Expense', category: 'Salary', description: 'Monthly payroll - June', amount: 24500, date: '2023-06-30T00:00:00.000Z', employeeName: 'Charlie Brown', createdAt: '2023-06-30T00:00:00.000Z', updatedAt: '2023-06-30T00:00:00.000Z' },
+];
+
+export const mockSuppliers: Supplier[] = [
+  { id: 'SUP001', name: 'AgroCorp Supplies', contactPerson: 'David Chen', email: 'sales@agrocorp.com', phone: '123-456-7890', createdAt: '2022-01-10T00:00:00.000Z', updatedAt: '2023-05-15T00:00:00.000Z' },
+  { id: 'SUP002', name: 'FarmEssentials Inc.', contactPerson: 'Maria Garcia', email: 'maria.g@farmessentials.com', phone: '987-654-3210', createdAt: '2021-11-20T00:00:00.000Z', updatedAt: '2023-06-01T00:00:00.000Z' },
+  { id: 'SUP003', name: 'CropTech Solutions', contactPerson: 'Brian O\'Neil', email: 'brian@croptech.io', phone: '555-123-4567', createdAt: '2023-02-05T00:00:00.000Z', updatedAt: '2023-02-05T00:00:00.000Z' },
+];
+
+export const mockProducts: Product[] = [
+  { id: 'PROD001', name: 'Organic Corn Seeds', category: 'Seeds', supplierId: 'SUP001', quantity: 500, price: 25.50, createdAt: '2023-01-15T00:00:00.000Z', updatedAt: '2023-09-10T00:00:00.000Z' },
+  { id: 'PROD002', name: 'Nitrogen-Rich Fertilizer', category: 'Fertilizers', supplierId: 'SUP002', quantity: 200, price: 45.00, createdAt: '2023-02-20T00:00:00.000Z', updatedAt: '2023-09-12T00:00:00.000Z' },
+  { id: 'PROD003', name: 'Eco-Friendly Pesticide', category: 'Pesticides', supplierId: 'SUP003', quantity: 150, price: 75.00, createdAt: '2023-03-10T00:00:00.000Z', updatedAt: '2023-09-05T00:00:00.000Z' },
+  { id: 'PROD004', name: 'Hand Trowel', category: 'Equipment', supplierId: 'SUP002', quantity: 0, price: 12.99, createdAt: '2023-04-01T00:00:00.000Z', updatedAt: '2023-08-20T00:00:00.000Z' },
+  { id: 'PROD005', name: 'High-Yield Wheat Seeds', category: 'Seeds', supplierId: 'SUP001', quantity: 800, price: 30.00, createdAt: '2023-05-18T00:00:00.000Z', updatedAt: '2023-09-11T00:00:00.000Z' },
+  { id: 'PROD006', name: 'Phosphate Fertilizer', category: 'Fertilizers', supplierId: 'SUP002', quantity: 8, price: 50.00, createdAt: '2023-06-22T00:00:00.000Z', updatedAt: '2023-09-14T00:00:00.000Z' },
 ];

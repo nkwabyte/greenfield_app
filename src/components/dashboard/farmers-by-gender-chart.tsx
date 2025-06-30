@@ -7,8 +7,6 @@ import {
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
-  ChartLegend,
-  ChartLegendContent,
 } from '@/components/ui/chart';
 import type { Farmer } from '@/lib/types';
 
@@ -21,9 +19,8 @@ export function FarmersByGenderChart({ farmers }: FarmersByGenderChartProps) {
   
   const data = React.useMemo(() => {
     const genderCounts = farmers.reduce((acc, farmer) => {
-      if (farmer.gender) {
-        acc[farmer.gender] = (acc[farmer.gender] || 0) + 1;
-      }
+      const gender = farmer.gender || 'Unknown';
+      acc[gender] = (acc[gender] || 0) + 1;
       return acc;
     }, {} as Record<string, number>);
 
@@ -50,7 +47,20 @@ export function FarmersByGenderChart({ farmers }: FarmersByGenderChartProps) {
           <PieChart>
             <ChartTooltip
               cursor={false}
-              content={<ChartTooltipContent hideLabel />}
+              content={<ChartTooltipContent
+                formatter={(value, name, item) => {
+                    const percentage = totalFarmers > 0 ? (Number(value) / totalFarmers * 100).toFixed(0) : 0;
+                    return (
+                        <div className="flex items-center justify-between gap-4 w-full">
+                            <div className="flex items-center gap-2">
+                                <div className="w-2.5 h-2.5 rounded-full" style={{backgroundColor: item.payload.fill}} />
+                                <div>{name}</div>
+                            </div>
+                            <div className="font-medium">{value} ({percentage}%)</div>
+                        </div>
+                    )
+                }}
+              />}
             />
             <Pie data={data} dataKey="value" nameKey="name" innerRadius={50} outerRadius={80} strokeWidth={2}>
                <Label
@@ -83,7 +93,6 @@ export function FarmersByGenderChart({ farmers }: FarmersByGenderChartProps) {
                 }}
               />
             </Pie>
-            <ChartLegend content={<ChartLegendContent nameKey="name" />} />
           </PieChart>
         </ChartContainer>
       </CardContent>
