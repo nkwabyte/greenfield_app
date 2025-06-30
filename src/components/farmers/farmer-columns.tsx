@@ -68,7 +68,7 @@ export const getColumns = ({ onEdit }: { onEdit: (farmer: Farmer) => void }): Co
   {
     accessorKey: 'updatedAt',
     header: ({ column }) => {
-       return (
+      return (
         <Button
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}

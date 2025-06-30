@@ -45,7 +45,7 @@ export function FarmerDataTable<TData, TValue>({
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
   )
-   const [columnVisibility, setColumnVisibility] =
+  const [columnVisibility, setColumnVisibility] =
     React.useState<VisibilityState>({})
 
   const table = useReactTable({
@@ -57,7 +57,7 @@ export function FarmerDataTable<TData, TValue>({
     getSortedRowModel: getSortedRowModel(),
     onColumnFiltersChange: setColumnFilters,
     getFilteredRowModel: getFilteredRowModel(),
-     onColumnVisibilityChange: setColumnVisibility,
+    onColumnVisibilityChange: setColumnVisibility,
     state: {
       sorting,
       columnFilters,
