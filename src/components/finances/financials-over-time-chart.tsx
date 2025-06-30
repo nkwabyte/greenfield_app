@@ -7,10 +7,10 @@ import {
   ChartContainer,
   ChartTooltip,
   ChartLegend,
-  ChartLegendContent,
 } from '@/components/ui/chart';
 import type { Transaction } from '@/lib/types';
 import { format } from 'date-fns';
+import type { ChartConfig } from '@/components/ui/chart';
 
 const currencyFormatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
@@ -39,7 +39,7 @@ const CustomTooltip = ({ active, payload, label, chartConfig }: any) => {
 };
 
 
-export function FinancialsOverTimeChart({ transactions }: FinancialsOverTimeChartProps) {
+export function FinancialsOverTimeChart({ transactions }: { transactions: Transaction[] }) {
   const data = React.useMemo(() => {
     const monthlyTotals = transactions.reduce((acc, transaction) => {
       const month = format(new Date(transaction.date), 'MMM yyyy');
@@ -59,7 +59,7 @@ export function FinancialsOverTimeChart({ transactions }: FinancialsOverTimeChar
 
   }, [transactions]);
 
-  const chartConfig = {
+  const chartConfig: ChartConfig = {
     income: {
       label: "Income",
       color: "hsl(var(--chart-1))",
@@ -92,8 +92,8 @@ export function FinancialsOverTimeChart({ transactions }: FinancialsOverTimeChar
               content={<CustomTooltip chartConfig={chartConfig} />}
             />
             <ChartLegend />
-            <Bar dataKey="income" fill="var(--color-income)" radius={4} />
-            <Bar dataKey="expenses" fill="var(--color-expenses)" radius={4} />
+            <Bar dataKey="income" name="Income" fill="hsl(var(--chart-1))" radius={4} />
+            <Bar dataKey="expenses" name="Expenses" fill="hsl(var(--chart-2))" radius={4} />
           </ComposedChart>
         </ChartContainer>
       </CardContent>

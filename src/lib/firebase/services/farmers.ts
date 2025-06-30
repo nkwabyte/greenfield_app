@@ -32,11 +32,26 @@ export async function getFarmers(): Promise<Farmer[]> {
   }) as Farmer[];
 }
 
+const prepareFarmerData = (farmerData: FarmerFormValues) => {
+    const { joinDate, cropsGrown, ...rest } = farmerData;
+    const cropsArray = cropsGrown ? cropsGrown.split(',').map(c => c.trim()).filter(Boolean) : [];
+    
+    const dataToSave: any = {
+        ...rest,
+        cropsGrown: cropsArray,
+        joinDate: joinDate ? new Date(joinDate) : null,
+    };
+
+    // Remove undefined fields so they don't overwrite existing data in Firestore
+    Object.keys(dataToSave).forEach(key => dataToSave[key] === undefined && delete dataToSave[key]);
+
+    return dataToSave;
+}
+
 export async function addFarmer(farmerData: FarmerFormValues) {
-  const { joinDate, ...rest } = farmerData;
+  const dataToSave = prepareFarmerData(farmerData);
   await addDoc(farmerCollection, {
-    ...rest,
-    joinDate: joinDate ? new Date(joinDate) : null,
+    ...dataToSave,
     createdAt: serverTimestamp(),
     updatedAt: serverTimestamp(),
   });
@@ -58,11 +73,10 @@ export async function addFarmersBatch(farmers: Omit<Farmer, 'id' | 'createdAt' |
 }
 
 export async function updateFarmer(id: string, farmerData: FarmerFormValues) {
-  const { joinDate, ...rest } = farmerData;
   const farmerDoc = doc(db, 'farmers', id);
+  const dataToSave = prepareFarmerData(farmerData);
   await updateDoc(farmerDoc, {
-    ...rest,
-    joinDate: joinDate ? new Date(joinDate) : null,
+    ...dataToSave,
     updatedAt: serverTimestamp(),
   });
 }

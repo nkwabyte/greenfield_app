@@ -16,6 +16,7 @@ import {
 import {
   Form,
   FormControl,
+  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -36,14 +37,21 @@ import { Calendar as CalendarIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { format } from 'date-fns';
 import type { Farmer } from '@/lib/types';
+import { Textarea } from '../ui/textarea';
 
 const farmerSchema = z.object({
   name: z.string().min(1, { message: 'Farmer name is required.' }),
-  region: z.enum(['North', 'South', 'East', 'West']).optional(),
   gender: z.enum(['Male', 'Female', 'Other']).optional(),
-  joinDate: z.date().optional(),
+  region: z.string().optional(),
+  district: z.string().optional(),
+  community: z.string().optional(),
+  contact: z.string().optional(),
+  age: z.coerce.number().positive().optional(),
+  educationLevel: z.enum(['None', 'Primary', 'JHS', 'SHS', 'Tertiary', 'Other']).optional(),
   farmSize: z.coerce.number().positive().optional(),
+  cropsGrown: z.string().optional(),
   status: z.enum(['Active', 'Inactive']).optional(),
+  joinDate: z.date().optional(),
 });
 
 export type FarmerFormValues = z.infer<typeof farmerSchema>;
@@ -60,28 +68,36 @@ export function AddEditFarmerDialog({ open, onOpenChange, farmer, onSave }: AddE
     resolver: zodResolver(farmerSchema),
     defaultValues: {
       name: '',
-      region: undefined,
-      gender: undefined,
-      joinDate: undefined,
-      farmSize: undefined,
+      region: '',
+      district: '',
+      community: '',
+      contact: '',
+      cropsGrown: '',
       status: 'Active',
     },
   });
 
   React.useEffect(() => {
-    if (farmer) {
+    if (open && farmer) {
       form.reset({
         ...farmer,
+        cropsGrown: farmer.cropsGrown?.join(', '),
         joinDate: farmer.joinDate ? new Date(farmer.joinDate) : undefined,
       });
-    } else {
+    } else if (open) {
       form.reset({
         name: '',
-        region: undefined,
         gender: undefined,
-        joinDate: new Date(),
+        region: '',
+        district: '',
+        community: '',
+        contact: '',
+        age: undefined,
+        educationLevel: undefined,
         farmSize: undefined,
+        cropsGrown: '',
         status: 'Active',
+        joinDate: new Date(),
       });
     }
   }, [farmer, form, open]);
@@ -93,7 +109,7 @@ export function AddEditFarmerDialog({ open, onOpenChange, farmer, onSave }: AddE
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[480px]">
+      <DialogContent className="sm:max-w-2xl">
         <DialogHeader>
           <DialogTitle>{farmer ? 'Edit Farmer' : 'Add New Farmer'}</DialogTitle>
           <DialogDescription>
@@ -101,12 +117,12 @@ export function AddEditFarmerDialog({ open, onOpenChange, farmer, onSave }: AddE
           </DialogDescription>
         </DialogHeader>
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-4 py-4">
+          <form onSubmit={form.handleSubmit(handleSubmit)} className="grid grid-cols-2 gap-x-4 gap-y-3 py-4">
             <FormField
               control={form.control}
               name="name"
               render={({ field }) => (
-                <FormItem>
+                <FormItem className="col-span-2">
                   <FormLabel>Farmer Name</FormLabel>
                   <FormControl>
                     <Input placeholder="e.g. John Appleseed" {...field} />
@@ -115,89 +131,169 @@ export function AddEditFarmerDialog({ open, onOpenChange, farmer, onSave }: AddE
                 </FormItem>
               )}
             />
-            <div className="grid grid-cols-2 gap-4">
-              <FormField
-                control={form.control}
-                name="region"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Region</FormLabel>
-                    <Select onValueChange={field.onChange} defaultValue={field.value}>
-                      <FormControl>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select a region" />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent>
-                        <SelectItem value="North">North</SelectItem>
-                        <SelectItem value="South">South</SelectItem>
-                        <SelectItem value="East">East</SelectItem>
-                        <SelectItem value="West">West</SelectItem>
-                      </SelectContent>
-                    </Select>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="gender"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Gender</FormLabel>
-                    <Select onValueChange={field.onChange} defaultValue={field.value}>
-                      <FormControl>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select a gender" />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent>
-                        <SelectItem value="Male">Male</SelectItem>
-                        <SelectItem value="Female">Female</SelectItem>
-                        <SelectItem value="Other">Other</SelectItem>
-                      </SelectContent>
-                    </Select>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              <FormField
-                control={form.control}
-                name="status"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Status</FormLabel>
-                    <Select onValueChange={field.onChange} defaultValue={field.value}>
-                      <FormControl>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select a status" />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent>
-                        <SelectItem value="Active">Active</SelectItem>
-                        <SelectItem value="Inactive">Inactive</SelectItem>
-                      </SelectContent>
-                    </Select>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="farmSize"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Farm Size (acres)</FormLabel>
+            
+            <FormField
+              control={form.control}
+              name="region"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Region</FormLabel>
+                  <FormControl>
+                    <Input placeholder="e.g. Ashanti" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="district"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>District</FormLabel>
+                  <FormControl>
+                    <Input placeholder="e.g. Atwima Kwanwoma" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+             <FormField
+              control={form.control}
+              name="community"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Community</FormLabel>
+                  <FormControl>
+                    <Input placeholder="e.g. Foase" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+             <FormField
+              control={form.control}
+              name="contact"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Contact</FormLabel>
+                  <FormControl>
+                    <Input placeholder="e.g. 024 123 4567" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="gender"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Gender</FormLabel>
+                  <Select onValueChange={field.onChange} value={field.value}>
                     <FormControl>
-                      <Input type="number" placeholder="e.g. 150" {...field} onChange={e => field.onChange(e.target.value === '' ? undefined : +e.target.value)} />
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select a gender" />
+                      </SelectTrigger>
                     </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </div>
+                    <SelectContent>
+                      <SelectItem value="Male">Male</SelectItem>
+                      <SelectItem value="Female">Female</SelectItem>
+                      <SelectItem value="Other">Other</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+             <FormField
+              control={form.control}
+              name="age"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Age</FormLabel>
+                  <FormControl>
+                    <Input type="number" placeholder="e.g. 45" {...field} onChange={e => field.onChange(e.target.value === '' ? undefined : +e.target.value)} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+             <FormField
+              control={form.control}
+              name="educationLevel"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Education Level</FormLabel>
+                  <Select onValueChange={field.onChange} value={field.value}>
+                    <FormControl>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select education level" />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                      <SelectItem value="None">None</SelectItem>
+                      <SelectItem value="Primary">Primary</SelectItem>
+                      <SelectItem value="JHS">JHS</SelectItem>
+                      <SelectItem value="SHS">SHS</SelectItem>
+                      <SelectItem value="Tertiary">Tertiary</SelectItem>
+                      <SelectItem value="Other">Other</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="farmSize"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Farm Size (acres)</FormLabel>
+                  <FormControl>
+                    <Input type="number" placeholder="e.g. 150" {...field} onChange={e => field.onChange(e.target.value === '' ? undefined : +e.target.value)} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="cropsGrown"
+              render={({ field }) => (
+                <FormItem className="col-span-2">
+                  <FormLabel>Crops Grown</FormLabel>
+                  <FormControl>
+                    <Textarea placeholder="e.g. Maize, Cassava, Plantain" {...field} />
+                  </FormControl>
+                   <FormDescription>
+                    Enter a comma-separated list of crops.
+                  </FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="status"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Status</FormLabel>
+                  <Select onValueChange={field.onChange} value={field.value}>
+                    <FormControl>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select a status" />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                      <SelectItem value="Active">Active</SelectItem>
+                      <SelectItem value="Inactive">Inactive</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
             <FormField
               control={form.control}
               name="joinDate"
@@ -239,7 +335,7 @@ export function AddEditFarmerDialog({ open, onOpenChange, farmer, onSave }: AddE
                 </FormItem>
               )}
             />
-            <DialogFooter className="pt-4">
+            <DialogFooter className="col-span-2 pt-4">
               <DialogClose asChild>
                 <Button type="button" variant="outline">Cancel</Button>
               </DialogClose>
