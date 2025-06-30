@@ -9,13 +9,14 @@ import {
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuTrigger,
+  DropdownMenuSeparator,
 } from '@/components/ui/dropdown-menu';
 import { Badge } from '@/components/ui/badge';
 import type { Farmer } from '@/lib/types';
 import { format, formatDistanceToNow } from 'date-fns';
 import { Checkbox } from '@/components/ui/checkbox';
 
-export const getColumns = ({ onEdit }: { onEdit: (farmer: Farmer) => void }): ColumnDef<Farmer>[] => [
+export const getColumns = ({ onEdit, onDelete }: { onEdit: (farmer: Farmer) => void, onDelete: (id: string) => void }): ColumnDef<Farmer>[] => [
   {
     id: 'select',
     header: ({ table }) => (
@@ -120,13 +121,14 @@ export const getColumns = ({ onEdit }: { onEdit: (farmer: Farmer) => void }): Co
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
             <DropdownMenuLabel>Actions</DropdownMenuLabel>
+            <DropdownMenuItem onClick={() => onEdit(farmer)}>Edit Farmer</DropdownMenuItem>
             <DropdownMenuItem
               onClick={() => navigator.clipboard.writeText(farmer.id)}
             >
               Copy Farmer ID
             </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => onEdit(farmer)}>Edit Farmer</DropdownMenuItem>
-            <DropdownMenuItem className="text-destructive focus:bg-destructive/10 focus:text-destructive">Delete Farmer</DropdownMenuItem>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem className="text-destructive focus:bg-destructive/10 focus:text-destructive" onClick={() => onDelete(farmer.id)}>Delete Farmer</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       );

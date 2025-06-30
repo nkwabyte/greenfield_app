@@ -5,13 +5,16 @@ import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { doc, setDoc } from 'firebase/firestore';
+import { auth, db } from '@/lib/firebase/config';
+import { useToast } from '@/hooks/use-toast';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { useAuth } from '@/hooks/use-auth';
 import { Logo } from '@/components/icons/logo';
 
 const signupSchema = z.object({
@@ -25,7 +28,7 @@ type SignupFormValues = z.infer<typeof signupSchema>;
 
 export default function SignupPage() {
   const router = useRouter();
-  const { login } = useAuth();
+  const { toast } = useToast();
   
   const form = useForm<SignupFormValues>({
     resolver: zodResolver(signupSchema),
@@ -36,13 +39,33 @@ export default function SignupPage() {
       role: 'Employee',
     },
   });
+  
+  const { formState: { isSubmitting } } = form;
 
-  const onSubmit = (data: SignupFormValues) => {
-    // In a real app, this would be an API call to your backend to create a user
-    console.log('Creating user:', data);
-    // For this prototype, we'll just log them in directly
-    login({ name: data.name, email: data.email, role: data.role });
-    router.push('/dashboard');
+  const onSubmit = async (data: SignupFormValues) => {
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, data.email, data.password);
+      const user = userCredential.user;
+
+      // Create user profile in Firestore
+      await setDoc(doc(db, 'users', user.uid), {
+        name: data.name,
+        email: data.email,
+        role: data.role,
+      });
+
+      toast({
+        title: 'Account Created',
+        description: 'You have been successfully signed up.',
+      });
+      router.push('/dashboard');
+    } catch (error: any) {
+      toast({
+        title: 'Sign Up Failed',
+        description: error.message,
+        variant: 'destructive',
+      });
+    }
   };
 
   return (
@@ -125,8 +148,8 @@ export default function SignupPage() {
                     </FormItem>
                   )}
                 />
-                <Button type="submit" className="w-full !mt-6 font-bold">
-                  Create Account
+                <Button type="submit" className="w-full !mt-6 font-bold" disabled={isSubmitting}>
+                  {isSubmitting ? 'Creating Account...' : 'Create Account'}
                 </Button>
               </form>
             </Form>

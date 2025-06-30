@@ -1,5 +1,5 @@
-
 export type User = {
+  uid: string;
   name: string;
   email: string;
   role: 'Admin' | 'Employee';
@@ -43,7 +43,7 @@ export type Transaction = {
 
 export type Supplier = {
   id: string;
-  name: string;
+  name:string;
   contactPerson: string;
   email: string;
   phone: string;

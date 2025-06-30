@@ -1,4 +1,3 @@
-
 'use client';
 
 import { ColumnDef } from '@tanstack/react-table';
@@ -10,6 +9,7 @@ import {
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuTrigger,
+  DropdownMenuSeparator,
 } from '@/components/ui/dropdown-menu';
 import { Badge } from '@/components/ui/badge';
 import type { Product, Supplier } from '@/lib/types';
@@ -27,7 +27,7 @@ const getStockStatus = (quantity: number): { label: string, variant: 'default' |
   return { label: 'In Stock', variant: 'default' };
 };
 
-export const getColumns = ({ onEdit, suppliers }: { onEdit: (product: Product) => void, suppliers: Supplier[] }): ColumnDef<Product>[] => [
+export const getColumns = ({ onEdit, onDelete, suppliers }: { onEdit: (product: Product) => void, onDelete: (id: string) => void, suppliers: Supplier[] }): ColumnDef<Product>[] => [
   {
     id: 'select',
     header: ({ table }) => (
@@ -131,7 +131,8 @@ export const getColumns = ({ onEdit, suppliers }: { onEdit: (product: Product) =
           <DropdownMenuContent align="end">
             <DropdownMenuLabel>Actions</DropdownMenuLabel>
             <DropdownMenuItem onClick={() => onEdit(product)}>Edit Product</DropdownMenuItem>
-            <DropdownMenuItem className="text-destructive focus:bg-destructive/10 focus:text-destructive">Delete Product</DropdownMenuItem>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem className="text-destructive focus:bg-destructive/10 focus:text-destructive" onClick={() => onDelete(product.id)}>Delete Product</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       );

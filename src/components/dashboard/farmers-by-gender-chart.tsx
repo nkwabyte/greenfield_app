@@ -6,12 +6,30 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import {
   ChartContainer,
   ChartTooltip,
-  ChartTooltipContent,
 } from '@/components/ui/chart';
 import type { Farmer } from '@/lib/types';
 
 type FarmersByGenderChartProps = {
   farmers: Farmer[];
+};
+
+const CustomTooltip = ({ active, payload, totalFarmers }: any) => {
+    if (active && payload && payload.length) {
+        const item = payload[0];
+        const percentage = totalFarmers > 0 ? (Number(item.value) / totalFarmers * 100).toFixed(0) : 0;
+        return (
+            <div className="p-2 text-sm bg-background border rounded-lg shadow-lg">
+                <div className="flex items-center justify-between gap-4 w-full">
+                    <div className="flex items-center gap-2">
+                        <div className="w-2.5 h-2.5 rounded-full" style={{backgroundColor: item.payload.fill}} />
+                        <div>{item.name}</div>
+                    </div>
+                    <div className="font-medium">{item.value} ({percentage}%)</div>
+                </div>
+            </div>
+        );
+    }
+    return null;
 };
 
 export function FarmersByGenderChart({ farmers }: FarmersByGenderChartProps) {
@@ -47,20 +65,7 @@ export function FarmersByGenderChart({ farmers }: FarmersByGenderChartProps) {
           <PieChart>
             <ChartTooltip
               cursor={false}
-              content={<ChartTooltipContent
-                formatter={(value, name, item) => {
-                    const percentage = totalFarmers > 0 ? (Number(value) / totalFarmers * 100).toFixed(0) : 0;
-                    return (
-                        <div className="flex items-center justify-between gap-4 w-full">
-                            <div className="flex items-center gap-2">
-                                <div className="w-2.5 h-2.5 rounded-full" style={{backgroundColor: item.payload.fill}} />
-                                <div>{name}</div>
-                            </div>
-                            <div className="font-medium">{value} ({percentage}%)</div>
-                        </div>
-                    )
-                }}
-              />}
+              content={<CustomTooltip totalFarmers={totalFarmers} />}
             />
             <Pie data={data} dataKey="value" nameKey="name" innerRadius={50} outerRadius={80} strokeWidth={2}>
                <Label

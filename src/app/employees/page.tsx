@@ -1,4 +1,3 @@
-
 'use client';
 
 import * as React from 'react';
@@ -8,19 +7,34 @@ import { Button } from '@/components/ui/button';
 import { PlusCircle } from 'lucide-react';
 import { DataTable } from '@/components/data-table';
 import { getColumns } from '@/components/employees/employee-columns';
-import { mockEmployees } from '@/lib/mock-data';
 import type { Employee } from '@/lib/types';
 import { useToast } from '@/hooks/use-toast';
 import { AddEditEmployeeDialog, type EmployeeFormValues } from '@/components/employees/add-edit-employee-dialog';
+import { getEmployees, addEmployee, updateEmployee, deleteEmployee } from '@/lib/firebase/services/employees';
 
 export default function EmployeesPage() {
   const { toast } = useToast();
-  const [employees, setEmployees] = React.useState<Employee[]>(() => 
-    mockEmployees.sort((a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime())
-  );
+  const [employees, setEmployees] = React.useState<Employee[]>([]);
+  const [isLoading, setIsLoading] = React.useState(true);
 
   const [isAddEditDialogOpen, setIsAddEditDialogOpen] = React.useState(false);
   const [editingEmployee, setEditingEmployee] = React.useState<Employee | null>(null);
+
+  const fetchAndSetEmployees = React.useCallback(async () => {
+    setIsLoading(true);
+    try {
+      const employeeData = await getEmployees();
+      setEmployees(employeeData);
+    } catch (error) {
+      toast({ title: "Error fetching employees", description: "Could not retrieve employee data.", variant: "destructive" });
+    } finally {
+      setIsLoading(false);
+    }
+  }, [toast]);
+
+  React.useEffect(() => {
+    fetchAndSetEmployees();
+  }, [fetchAndSetEmployees]);
 
   const handleOpenAddDialog = () => {
     setEditingEmployee(null);
@@ -32,36 +46,37 @@ export default function EmployeesPage() {
     setIsAddEditDialogOpen(true);
   };
   
-  const handleSaveEmployee = (data: EmployeeFormValues) => {
-    const now = new Date().toISOString();
-    
-    if (editingEmployee) {
-      // Edit mode
-      const updatedEmployees = employees.map(e => 
-        e.id === editingEmployee.id 
-          ? { ...e, ...data, startDate: data.startDate.toISOString(), updatedAt: now } 
-          : e
-      );
-      setEmployees(updatedEmployees.sort((a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime()));
-      toast({ title: "Employee Updated", description: `${data.name}'s record has been updated.` });
-    } else {
-      // Add mode
-      const newEmployee: Employee = {
-        id: `EMP${Date.now()}`,
-        ...data,
-        startDate: data.startDate.toISOString(),
-        createdAt: now,
-        updatedAt: now,
-      };
-      setEmployees(prev => [...prev, newEmployee].sort((a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime()));
-      toast({ title: "Employee Added", description: `${data.name} has been added to the system.` });
+  const handleSaveEmployee = async (data: EmployeeFormValues) => {
+    try {
+      if (editingEmployee) {
+        await updateEmployee(editingEmployee.id, data);
+        toast({ title: "Employee Updated", description: `${data.name}'s record has been updated.` });
+      } else {
+        await addEmployee(data);
+        toast({ title: "Employee Added", description: `${data.name} has been added to the system.` });
+      }
+      fetchAndSetEmployees();
+    } catch (error) {
+      toast({ title: "Save Failed", description: "An error occurred while saving the employee.", variant: "destructive" });
+    }
+  };
+
+  const handleDeleteEmployee = async (employeeId: string) => {
+    if (window.confirm("Are you sure you want to delete this employee? This action cannot be undone.")) {
+      try {
+        await deleteEmployee(employeeId);
+        toast({ title: "Employee Deleted", description: "The employee record has been removed." });
+        fetchAndSetEmployees();
+      } catch (error) {
+        toast({ title: "Delete Failed", description: "An error occurred while deleting the employee.", variant: "destructive" });
+      }
     }
   };
 
   const columns = React.useMemo(() => getColumns({
     onEdit: handleOpenEditDialog,
+    onDelete: handleDeleteEmployee,
   }), []);
-
 
   return (
     <AppShell>
@@ -81,6 +96,7 @@ export default function EmployeesPage() {
           data={employees}
           filterColumnId="name"
           filterPlaceholder="Filter by name..."
+          isLoading={isLoading}
         />
       </div>
       

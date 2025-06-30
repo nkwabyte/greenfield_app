@@ -1,4 +1,3 @@
-
 'use client';
 
 import { ColumnDef } from '@tanstack/react-table';
@@ -10,6 +9,7 @@ import {
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuTrigger,
+  DropdownMenuSeparator,
 } from '@/components/ui/dropdown-menu';
 import { Badge } from '@/components/ui/badge';
 import type { Employee } from '@/lib/types';
@@ -23,7 +23,7 @@ const currencyFormatter = new Intl.NumberFormat('en-US', {
   maximumFractionDigits: 0,
 });
 
-export const getColumns = ({ onEdit }: { onEdit: (employee: Employee) => void }): ColumnDef<Employee>[] => [
+export const getColumns = ({ onEdit, onDelete }: { onEdit: (employee: Employee) => void, onDelete: (id: string) => void }): ColumnDef<Employee>[] => [
   {
     id: 'select',
     header: ({ table }) => (
@@ -131,7 +131,8 @@ export const getColumns = ({ onEdit }: { onEdit: (employee: Employee) => void })
           <DropdownMenuContent align="end">
             <DropdownMenuLabel>Actions</DropdownMenuLabel>
             <DropdownMenuItem onClick={() => onEdit(employee)}>Edit Employee</DropdownMenuItem>
-            <DropdownMenuItem className="text-destructive focus:bg-destructive/10 focus:text-destructive">Delete Employee</DropdownMenuItem>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem className="text-destructive focus:bg-destructive/10 focus:text-destructive" onClick={() => onDelete(employee.id)}>Delete Employee</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       );
