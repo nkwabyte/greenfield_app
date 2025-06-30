@@ -1,4 +1,4 @@
-import type {NextConfig} from 'next';
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   /* config options here */
@@ -20,7 +20,6 @@ const nextConfig: NextConfig = {
   },
   webpack: (config, { isServer }) => {
     if (!isServer) {
-      // Exclude 'async_hooks' from client-side bundle
       config.resolve.fallback = {
         ...config.resolve.fallback,
         async_hooks: false,

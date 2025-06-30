@@ -48,9 +48,9 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
   if (!isAuthenticated) {
     return (
-       <div className="flex h-screen items-center justify-center">
-         <p>Loading...</p>
-       </div>
+        <div className="flex h-screen items-center justify-center">
+          <p>Loading...</p>
+        </div>
     );
   }
 
