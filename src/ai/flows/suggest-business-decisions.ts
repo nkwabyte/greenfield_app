@@ -1,4 +1,4 @@
-// use server'
+'use server';
 
 /**
  * @fileOverview This file defines a Genkit flow for suggesting business decisions based on data analysis.
