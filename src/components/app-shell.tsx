@@ -107,13 +107,14 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       </Sidebar>
       <SidebarInset>
         <header className="sticky top-0 z-10 flex h-16 items-center justify-between border-b bg-background/80 px-4 backdrop-blur-sm sm:px-6">
-           <SidebarTrigger className="md:hidden" />
-           <div className="flex-1" />
-           <DropdownMenu>
+            <SidebarTrigger className="md:hidden" />
+            <div className="flex-1" />
+            <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" className="relative h-10 w-10 rounded-full">
                 <Avatar className="h-9 w-9">
-                  <AvatarImage src={`https://placehold.co/100x100.png`} alt={user?.name} />
+                  <AvatarImage src='/account.svg' alt={user?.name} />
+                  {/* src={`https://placehold.co/100x100.png`} */}
                   <AvatarFallback>{user ? getInitials(user.name) : 'U'}</AvatarFallback>
                 </Avatar>
               </Button>
