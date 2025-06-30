@@ -1,3 +1,4 @@
+
 'use client';
 
 import * as React from 'react';
@@ -27,12 +28,14 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/hooks/use-auth';
 import { Logo } from '@/components/icons/logo';
-import { LayoutGrid, LogOut, Users, Settings } from 'lucide-react';
+import { LayoutGrid, LogOut, Users, Settings, Briefcase, Landmark } from 'lucide-react';
 import { Toaster } from './ui/toaster';
 
 const navItems = [
   { href: '/dashboard', icon: LayoutGrid, label: 'Dashboard' },
   { href: '/farmers', icon: Users, label: 'Farmers' },
+  { href: '/employees', icon: Briefcase, label: 'Employees' },
+  { href: '/finances', icon: Landmark, label: 'Finances' },
 ];
 
 export function AppShell({ children }: { children: React.ReactNode }) {

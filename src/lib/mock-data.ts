@@ -1,4 +1,5 @@
-import type { Farmer } from '@/lib/types';
+
+import type { Farmer, Employee, Expense } from '@/lib/types';
 
 export const mockFarmers: Farmer[] = [
   {
@@ -111,4 +112,25 @@ export const mockFarmers: Farmer[] = [
     createdAt: '2022-12-30T00:00:00.000Z',
     updatedAt: '2023-08-22T00:00:00.000Z',
   },
+];
+
+export const mockEmployees: Employee[] = [
+  { id: 'EMP001', name: 'Alice Johnson', email: 'alice.j@greenfield.com', role: 'Manager', salary: 85000, startDate: '2021-03-12T00:00:00.000Z', status: 'Active', createdAt: '2021-03-12T00:00:00.000Z', updatedAt: '2023-04-01T00:00:00.000Z' },
+  { id: 'EMP002', name: 'Bob Williams', email: 'bob.w@greenfield.com', role: 'Field Agent', salary: 62000, startDate: '2022-07-21T00:00:00.000Z', status: 'Active', createdAt: '2022-07-21T00:00:00.000Z', updatedAt: '2023-05-15T00:00:00.000Z' },
+  { id: 'EMP003', name: 'Charlie Brown', email: 'charlie.b@greenfield.com', role: 'Accountant', salary: 70000, startDate: '2020-01-15T00:00:00.000Z', status: 'Active', createdAt: '2020-01-15T00:00:00.000Z', updatedAt: '2023-06-20T00:00:00.000Z' },
+  { id: 'EMP004', name: 'Diana Miller', email: 'diana.m@greenfield.com', role: 'Support', salary: 55000, startDate: '2023-02-01T00:00:00.000Z', status: 'On Leave', createdAt: '2023-02-01T00:00:00.000Z', updatedAt: '2023-08-10T00:00:00.000Z' },
+  { id: 'EMP005', name: 'Ethan Davis', email: 'ethan.d@greenfield.com', role: 'Field Agent', salary: 63000, startDate: '2022-08-10T00:00:00.000Z', status: 'Terminated', createdAt: '2022-08-10T00:00:00.000Z', updatedAt: '2023-09-01T00:00:00.000Z' }
+];
+
+export const mockExpenses: Expense[] = [
+    { id: 'EXP001', category: 'Salary', description: 'Monthly payroll - August', amount: 25000, date: '2023-08-31T00:00:00.000Z', employeeName: 'Charlie Brown' },
+    { id: 'EXP002', category: 'Travel', description: 'Fuel for field visit - North Region', amount: 150, date: '2023-08-28T00:00:00.000Z', employeeName: 'Bob Williams' },
+    { id: 'EXP003', category: 'Equipment', description: 'New soil testing kit', amount: 850, date: '2023-08-25T00:00:00.000Z', employeeName: 'Alice Johnson' },
+    { id: 'EXP004', category: 'Utilities', description: 'Office electricity bill', amount: 320, date: '2023-08-20T00:00:00.000Z', employeeName: 'Charlie Brown' },
+    { id: 'EXP005', category: 'Marketing', description: 'Local newspaper ad', amount: 500, date: '2023-08-15T00:00:00.000Z', employeeName: 'Alice Johnson' },
+    { id: 'EXP006', category: 'Salary', description: 'Monthly payroll - July', amount: 24500, date: '2023-07-31T00:00:00.000Z', employeeName: 'Charlie Brown' },
+    { id: 'EXP007', category: 'Travel', description: 'Hotel stay for South Region conference', amount: 450, date: '2023-07-22T00:00:00.000Z', employeeName: 'Alice Johnson' },
+    { id: 'EXP008', category: 'Other', description: 'Office supplies', amount: 120, date: '2023-07-18T00:00:00.000Z', employeeName: 'Diana Miller' },
+    { id: 'EXP009', category: 'Equipment', description: 'Drone repair', amount: 600, date: '2023-07-11T00:00:00.000Z', employeeName: 'Bob Williams' },
+    { id: 'EXP010', category: 'Salary', description: 'Monthly payroll - June', amount: 24500, date: '2023-06-30T00:00:00.000Z', employeeName: 'Charlie Brown' }
 ];
