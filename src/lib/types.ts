@@ -36,7 +36,7 @@ export type Employee = {
 };
 
 export type Transaction = {
-  id:string;
+  id: string;
   type: 'Income' | 'Expense';
   category: 'Salary' | 'Travel' | 'Equipment' | 'Utilities' | 'Marketing' | 'Purchase' | 'Investment' | 'Loan' | 'Sales' | 'Other';
   description: string;
