@@ -27,6 +27,7 @@ export default function DashboardPage() {
       } catch (error) {
         console.error("Failed to fetch farmers:", error);
       } finally {
+        // console.log('Farmers fetched:', farmers.length);
         setIsLoading(false);
       }
     };

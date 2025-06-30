@@ -1,6 +1,7 @@
 'use client';
 
 import * as React from 'react';
+import * as XLSX from 'xlsx';
 import { AppShell } from '@/components/app-shell';
 import { PageHeader } from '@/components/page-header';
 import { Button } from '@/components/ui/button';
@@ -30,6 +31,9 @@ export default function FarmersPage() {
 
   const [isAddEditDialogOpen, setIsAddEditDialogOpen] = React.useState(false);
   const [editingFarmer, setEditingFarmer] = React.useState<Farmer | null>(null);
+
+  const [isUploading, setIsUploading] = React.useState(false);
+  const [uploadProgress, setUploadProgress] = React.useState({ processed: 0, total: 0 });
 
   const fetchAndSetFarmers = React.useCallback(async () => {
     setIsLoading(true);
@@ -92,7 +96,7 @@ export default function FarmersPage() {
   }), []);
 
   const handleExport = () => {
-    const csvHeader = "ID,Name,Gender,Region,District,Community,Contact,Age,EducationLevel,FarmSize,CropsGrown,Status,JoinDate,CreatedAt,UpdatedAt\n";
+    const csvHeader = "ID,Farmer Name,Gender,Region,District,Community,Contact,Age,EducationLevel,FarmSize,CropsGrown,Status,JoinDate,CreatedAt,UpdatedAt\n";
     const csvRows = farmers.map(f =>
       [
         `"${f.id}"`,
@@ -139,109 +143,357 @@ export default function FarmersPage() {
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (!file) return;
-
+  
     const reader = new FileReader();
-    reader.onload = (e) => {
-      const text = e.target?.result as string;
-      processCsv(text);
-    };
-    reader.readAsText(file);
+    const fileExtension = file.name.split('.').pop()?.toLowerCase();
+  
+    if (fileExtension === 'csv') {
+      reader.onload = (e) => {
+        const text = e.target?.result as string;
+        // Convert CSV text into ArrayBuffer for uniformity
+        const csvBuffer = new TextEncoder().encode(text);
+        processFarmerData(csvBuffer.buffer); // Pass as ArrayBuffer
+      };
+      reader.readAsText(file);
+    } else if (fileExtension === 'xlsx') {
+      reader.onload = (e) => {
+        const data = e.target?.result;
+        if (data) {
+          processFarmerData(data as ArrayBuffer);
+        }
+      };
+      reader.readAsArrayBuffer(file);
+    } else {
+      toast({
+        title: 'Unsupported File Type',
+        description: 'Please upload a .csv or .xlsx file.',
+        variant: 'destructive',
+      });
+    }
+  
+    // Clear file input value so same file can be uploaded again if needed
     if (event.target) {
       event.target.value = '';
     }
   };
+  
 
-  const processCsv = async (csvText: string) => {
-    const rows = csvText.split('\n').map(row => row.trim()).filter(row => row);
-    if (rows.length < 2) {
-      toast({ title: 'Error uploading file', description: 'CSV file is empty or has only a header.', variant: 'destructive' });
-      return;
+  // const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   const file = event.target.files?.[0];
+  //   if (!file) return;
+
+  //   const reader = new FileReader();
+  //   const fileExtension = file.name.split('.').pop()?.toLowerCase();
+
+  //   if (fileExtension === 'csv') {
+  //     reader.onload = (e) => {
+  //       const text = e.target?.result as string;
+  //       const rows = text.split('\n').map(row => row.trim().split(','));
+  //       processFarmerData(rows);
+  //     };
+  //     reader.readAsText(file);
+  //   } else if (fileExtension === 'xlsx') {
+  //     reader.onload = (e) => {
+  //       const data = e.target?.result;
+  //       try {
+  //           const workbook = XLSX.read(data, { type: 'array' });
+  //           const sheetName = workbook.SheetNames[0];
+  //           const worksheet = workbook.Sheets[sheetName];
+  //           const rows = XLSX.utils.sheet_to_json<string[]>(worksheet, { header: 1 });
+  //           processFarmerData(rows);
+  //       } catch (error) {
+  //           console.error(error);
+  //           toast({ title: 'Error processing XLSX file', description: 'The file might be corrupted or in an unsupported format.', variant: 'destructive'})
+  //       }
+  //     };
+  //     reader.readAsArrayBuffer(file);
+  //   } else {
+  //     toast({ title: 'Unsupported File Type', description: 'Please upload a .csv or .xlsx file.', variant: 'destructive' });
+  //   }
+
+  //   if (event.target) {
+  //     event.target.value = '';
+  //   }
+  // };
+
+  const processFarmerData = async (dataBuffer: ArrayBuffer) => {
+    const workbook = XLSX.read(dataBuffer, { type: 'array' });
+  
+    const farmers: Omit<Farmer, 'id' | 'createdAt' | 'updatedAt'>[] = [];
+    const failedRecords: FailedRecord[] = [];
+  
+    const sheetNames = workbook.SheetNames.filter(
+      sheet => sheet.toLowerCase() !== 'summary'
+    );
+  
+    for (const sheetName of sheetNames) {
+      const sheet = workbook.Sheets[sheetName];
+      const sheetData = XLSX.utils.sheet_to_json<any>(sheet, { defval: '' });
+  
+      if (sheetData.length === 0) continue;
+  
+      const columnNames = Object.keys(sheetData[0]);
+      const lowerCaseMap = Object.fromEntries(
+        columnNames.map((col) => [col.toLowerCase(), col])
+      );
+  
+      const getColumn = (key: string) =>
+        columnNames.find((col) => col.toLowerCase().includes(key)) || '';
+  
+      const numberColumn = getColumn('no');
+      const nameColumn = getColumn('name');
+      const societyColumn = getColumn('society');
+      const genderColumn = getColumn('gender');
+      const ageColumn = getColumn('age');
+      const sizeColumn = getColumn('size');
+      const regionColumn = getColumn('region');
+  
+      const otherColumns = columnNames.filter((col) =>
+        ![numberColumn, nameColumn, societyColumn, genderColumn, ageColumn, sizeColumn, regionColumn]
+          .includes(col)
+      );
+  
+      for (let i = 0; i < sheetData.length; i++) {
+        const row = sheetData[i];
+  
+        try {
+          if (!row[numberColumn]) continue;
+  
+          const name = (row[nameColumn] || '').toString().trim();
+          const genderRaw = (row[genderColumn] || 'U').toString().trim().toLowerCase();
+          const gender = genderRaw === 'f' ? 'Female' : genderRaw === 'm' ? 'Male' : 'Other';
+  
+          const age = parseInt(row[ageColumn]) || 0;
+          const farmSize = parseFloat(row[sizeColumn]) || 0.0;
+          const region = (row[regionColumn] || 'Unknown').toString().trim();
+  
+          if (!name || !gender || !region) {
+            throw new Error('Missing required fields.');
+          }
+  
+          const farmer: Omit<Farmer, 'id' | 'createdAt' | 'updatedAt'> = {
+            name: name.toLowerCase(),
+            gender: gender as Farmer['gender'],
+            region,
+            district: sheetName,
+            community: '',
+            contact: '',
+            age,
+            farmSize,
+            educationLevel: undefined,
+            joinDate: undefined,
+            status: 'Active',
+            cropsGrown: undefined,
+          };
+  
+          const details = otherColumns.reduce((acc, col) => {
+            acc[col] = row[col];
+            return acc;
+          }, {} as Record<string, string>);
+  
+          // optionally attach details (or you can skip this)
+          Object.assign(farmer, details);
+  
+          farmers.push(farmer);
+        } catch (err: any) {
+          failedRecords.push({
+            rowIndex: i + 2,
+            rowData: JSON.stringify(sheetData[i]),
+            error: err.message || 'Unknown error',
+          });
+        }
+      }
     }
-
-    const header = rows[0].split(',').map(h => h.trim().replace(/"/g, ''));
-    const expectedHeaders = ['Name', 'Region', 'Gender', 'JoinDate', 'FarmSize', 'Status', 'District', 'Community', 'Contact', 'Age', 'EducationLevel', 'CropsGrown'];
-    
-    // Basic check for at least the 'Name' header
-    if (!header.includes('Name')) {
-      toast({ title: 'Invalid CSV Header', description: 'CSV header must include at least a "Name" column.', variant: 'destructive' });
-      return;
-    }
-
-    const newFarmers: Omit<Farmer, 'id' | 'createdAt' | 'updatedAt'>[] = [];
-    const localFailedRecords: FailedRecord[] = [];
-    
-    const getHeaderIndex = (name: string) => header.indexOf(name);
-    
-    rows.slice(1).forEach((rowStr, index) => {
-      if (!rowStr) return;
-      const rowData = rowStr.split(',');
-
-      const name = rowData[getHeaderIndex('Name')]?.trim();
-      if (!name) {
-        localFailedRecords.push({ rowIndex: index + 2, rowData: rowStr, error: 'Farmer name is missing.' });
-        return;
-      }
-
-      const farmSizeStr = rowData[getHeaderIndex('FarmSize')]?.trim();
-      const farmSize = farmSizeStr ? parseFloat(farmSizeStr) : undefined;
-      if (farmSizeStr && isNaN(farmSize)) {
-        localFailedRecords.push({ rowIndex: index + 2, rowData: rowStr, error: 'Invalid format for FarmSize.' });
-        return;
-      }
-      
-      const ageStr = rowData[getHeaderIndex('Age')]?.trim();
-      const age = ageStr ? parseInt(ageStr, 10) : undefined;
-      if (ageStr && isNaN(age)) {
-        localFailedRecords.push({ rowIndex: index + 2, rowData: rowStr, error: 'Invalid format for Age.' });
-        return;
-      }
-
-      const joinDateStr = rowData[getHeaderIndex('JoinDate')]?.trim();
-      if (joinDateStr && isNaN(new Date(joinDateStr).getTime())) {
-        localFailedRecords.push({ rowIndex: index + 2, rowData: rowStr, error: 'Invalid format for JoinDate.' });
-        return;
-      }
-
-      const cropsGrown = rowData[getHeaderIndex('CropsGrown')]?.split(';').map(c => c.trim()).filter(Boolean);
-
-      const farmer: Omit<Farmer, 'id' | 'createdAt' | 'updatedAt'> = {
-        name,
-        region: rowData[getHeaderIndex('Region')]?.trim(),
-        gender: rowData[getHeaderIndex('Gender')]?.trim() as Farmer['gender'],
-        joinDate: joinDateStr || undefined,
-        farmSize,
-        status: (rowData[getHeaderIndex('Status')]?.trim() as Farmer['status']) || 'Active',
-        district: rowData[getHeaderIndex('District')]?.trim(),
-        community: rowData[getHeaderIndex('Community')]?.trim(),
-        contact: rowData[getHeaderIndex('Contact')]?.trim(),
-        age,
-        educationLevel: rowData[getHeaderIndex('EducationLevel')]?.trim() as Farmer['educationLevel'],
-        cropsGrown: cropsGrown?.length ? cropsGrown : undefined,
-      };
-      
-      newFarmers.push(farmer);
-    });
-
-    if (newFarmers.length > 0) {
+  
+    // Proceed to upload valid farmers
+    if (farmers.length > 0) {
+      setIsUploading(true);
+      setUploadProgress({ processed: 0, total: farmers.length });
+      const chunkSize = 100;
+  
       try {
-        await addFarmersBatch(newFarmers);
+        for (let i = 0; i < farmers.length; i += chunkSize) {
+          const chunk = farmers.slice(i, i + chunkSize);
+          await addFarmersBatch(chunk);
+          setUploadProgress({ processed: i + chunk.length, total: farmers.length });
+        }
+  
+        toast({
+          title: 'Upload Successful',
+          description: `${farmers.length} farmers added from ${sheetNames.length} sheet(s).`,
+        });
+  
         fetchAndSetFarmers();
       } catch (error) {
-        toast({ title: 'Batch Upload Failed', description: 'An error occurred during the batch upload.', variant: 'destructive' });
+        toast({ title: 'Upload Failed', description: 'Error during batch upload', variant: 'destructive' });
+      } finally {
+        setIsUploading(false);
+  
+        if (failedRecords.length > 0) {
+          setFailedRecords(failedRecords);
+          setIsReportOpen(true);
+        }
+      }
+    } else {
+      toast({ title: 'No valid farmers found', variant: 'destructive' });
+      if (failedRecords.length > 0) {
+        setFailedRecords(failedRecords);
+        setIsReportOpen(true);
       }
     }
+  };  
+
+  // const processFarmerData = async (dataRows: (string | number)[][]) => {
+  //   if (dataRows.length < 2) {
+  //     toast({ title: 'Error uploading file', description: 'File is empty or has only a header.', variant: 'destructive' });
+  //     return;
+  //   }
+  //   const rawHeader = dataRows[0];
+  //   const header = rawHeader.map(h => String(h).trim().replace(/"/g, '').toLowerCase());
+
+  //   // const header = dataRows[0].map(h => String(h).trim().replace(/"/g, ''));
+  //   if (!header.includes('farmer name') && !header.includes('name')) {
+  //     toast({
+  //       title: 'Invalid File Header',
+  //       description: 'File header must include at least a "Farmer Name" column.',
+  //       variant: 'destructive',
+  //     });
+  //     return;
+  //   }
+
+  //   const newFarmers: Omit<Farmer, 'id' | 'createdAt' | 'updatedAt'>[] = [];
+  //   const localFailedRecords: FailedRecord[] = [];
     
-    if (localFailedRecords.length > 0) {
-      setFailedRecords(localFailedRecords);
-      setIsReportOpen(true);
-    }
+  //   // const getHeaderIndex = (name: string) => header.indexOf(name);
+  //   const getHeaderIndex = (name: string) => header.indexOf(name.toLowerCase());
+
     
-    toast({
-      title: 'Upload Processed',
-      description: `${newFarmers.length} farmers queued for addition. ${localFailedRecords.length} records failed validation.`,
-      variant: localFailedRecords.length > 0 ? 'default' : 'default',
-    });
-  };
+  //   dataRows.slice(1).forEach((row, index) => {
+  //     if (!row || row.length === 0) return;
+
+  //     const rowData = row.map(cell => String(cell ?? '').trim());
+  //     const rowStrForReport = row.join(',');
+
+  //     const name = rowData[getHeaderIndex('farmer name')] || rowData[getHeaderIndex('name')];
+  //     if (!name) {
+  //       localFailedRecords.push({ rowIndex: index + 2, rowData: rowStrForReport, error: 'Farmer name is missing.' });
+  //       return;
+  //     }    
+
+  //     const farmSizeStr = rowData[getHeaderIndex('FARM SIZE (ACRES)')] || rowData[getHeaderIndex('FARM SIZE')];
+  //     const farmSize = farmSizeStr ? parseFloat(farmSizeStr) : 0;
+  //     if (farmSizeStr && isNaN(farmSize)) {
+  //       localFailedRecords.push({ rowIndex: index + 2, rowData: rowStrForReport, error: 'Invalid format for farm size.' });
+  //       return;
+  //     }
+
+  //     const ageStr = rowData[getHeaderIndex('age')];
+  //     const age = ageStr ? parseInt(ageStr, 10) : 0;
+  //     if (ageStr && isNaN(age)) {
+  //       localFailedRecords.push({ rowIndex: index + 2, rowData: rowStrForReport, error: 'Invalid format for age.' });
+  //       return;
+  //     }
+
+  //     const region = rowData[getHeaderIndex('region')] || '';
+  //     if (region && !/^[a-zA-Z\s]+$/.test(region)) {
+  //       localFailedRecords.push({ rowIndex: index + 2, rowData: rowStrForReport, error: 'Invalid format for region.' });
+  //       return;
+  //     }
+
+  //     let gender = rowData[getHeaderIndex('gender')]?.trim() || 'Other';
+  //     let newGender = 'Other';
+  //     if (gender?.toLowerCase() === 'f' || gender?.toLowerCase() === 'F') {
+  //       newGender = 'Female';
+  //     } else if (gender?.toLowerCase() === 'm' || gender?.toLowerCase() === 'M') {
+  //       newGender = 'Male';
+  //     } else {
+  //       newGender = 'Other';
+  //     }
+  //     if (newGender && !['Male', 'Female', 'Other', 'M', 'F'].includes(newGender)) {
+  //       localFailedRecords.push({
+  //         rowIndex: index + 2,
+  //         rowData: rowStrForReport,
+  //         error: 'Invalid format for gender. Must be "Male", "Female", "Other", "M", or "F".',
+  //       });
+  //       return;
+  //     }
+
+  //     const joinDateStr = rowData[getHeaderIndex('join date')];
+  //     if (joinDateStr && isNaN(new Date(joinDateStr).getTime())) {
+  //       localFailedRecords.push({ rowIndex: index + 2, rowData: rowStrForReport, error: 'Invalid format for join date.' });
+  //       return;
+  //     }
+
+  //     const cropsGrown = rowData[getHeaderIndex('CropsGrown')]?.split(';').map(c => c.trim()).filter(Boolean);
+  //     // create ISO date string for joinDate
+  //     let defaultJoinDate = new Date();
+  //     if (joinDateStr && !isNaN(new Date(joinDateStr).getTime())) {
+  //       defaultJoinDate = new Date(joinDateStr);
+  //     }
+
+  //     const farmer: Omit<Farmer, 'id' | 'createdAt' | 'updatedAt'> = {
+  //       name,
+  //       region,
+  //       gender: newGender as Farmer['gender'],
+  //       joinDate: joinDateStr && !isNaN(new Date(joinDateStr).getTime()) ? joinDateStr : defaultJoinDate.toISOString(),
+  //       farmSize: !isNaN(farmSize) ? farmSize : 0.0,
+  //       status: rowData[getHeaderIndex('status')] as Farmer['status'] || 'Active',
+  //       district: rowData[getHeaderIndex('district')] || '',
+  //       community: rowData[getHeaderIndex('community')] || '',
+  //       contact: rowData[getHeaderIndex('contact')] || '',
+  //       age: !isNaN(age) ? age : 0,
+  //       educationLevel: rowData[getHeaderIndex('educationlevel')] as Farmer['educationLevel'] || "None",
+  //       cropsGrown: cropsGrown?.length ? cropsGrown : [],
+  //     };      
+      
+  //     newFarmers.push(farmer);
+  //   });
+
+  //   if (newFarmers.length > 0) {
+  //     setIsUploading(true);
+  //     setUploadProgress({ processed: 0, total: newFarmers.length });
+  //     const chunkSize = 100;
+      
+  //     try {
+  //       for (let i = 0; i < newFarmers.length; i += chunkSize) {
+  //         const chunk = newFarmers.slice(i, i + chunkSize);
+  //         await addFarmersBatch(chunk);
+  //         const newProcessedCount = i + chunk.length;
+  //         setUploadProgress({ processed: newProcessedCount, total: newFarmers.length });
+  //         toast({
+  //           title: 'Upload in Progress...',
+  //           description: `Uploaded ${newProcessedCount} of ${newFarmers.length} farmers.`,
+  //         });
+  //       }
+  //       toast({
+  //         title: 'Upload Successful',
+  //         description: `${newFarmers.length} farmers have been added.`,
+  //       });
+  //       fetchAndSetFarmers();
+  //     } catch (error) {
+  //       console.error(error);
+  //       const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
+  //       toast({
+  //         title: 'Batch Upload Failed',
+  //         description: errorMessage,
+  //         variant: 'destructive'
+  //       });
+  //     } finally {
+  //       setIsUploading(false);
+
+  //       if (localFailedRecords.length > 0) {
+  //         setFailedRecords(localFailedRecords);
+  //         setIsReportOpen(true);
+  //       } else if (newFarmers.length === 0) {
+  //         toast({
+  //           title: 'Upload Finished',
+  //           description: 'No new valid farmer records were found to upload.',
+  //           variant: 'default',
+  //         });
+  //       }
+  //     }
+  //   }
+  // };
 
   return (
     <AppShell>
@@ -249,10 +501,9 @@ export default function FarmersPage() {
         title="Farmer Management"
         description="View, add, edit, and manage all farmer records."
       >
-        <input type="file" ref={fileInputRef} onChange={handleFileChange} accept=".csv" style={{ display: 'none' }} />
-        <Button variant="outline" onClick={handleUploadClick}>
-          <Upload className="mr-2" />
-          Upload
+        <input type="file" ref={fileInputRef} onChange={handleFileChange} accept=".csv,.xlsx" style={{ display: 'none' }} />
+        <Button variant="outline" onClick={handleUploadClick} disabled={isUploading}>
+          {isUploading ? `Uploading ${uploadProgress.processed}/${uploadProgress.total}...` : <><Upload className="mr-2" /> Upload</>}
         </Button>
         <Button variant="outline" onClick={handleExport} disabled={farmers.length === 0}>
           <Download className="mr-2" />
