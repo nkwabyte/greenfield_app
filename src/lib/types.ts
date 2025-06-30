@@ -29,13 +29,16 @@ export type Employee = {
   updatedAt: string; // ISO date string
 };
 
-export type Expense = {
+export type Transaction = {
   id: string;
-  category: 'Salary' | 'Travel' | 'Equipment' | 'Utilities' | 'Marketing' | 'Other';
+  type: 'Income' | 'Expense';
+  category: 'Salary' | 'Travel' | 'Equipment' | 'Utilities' | 'Marketing' | 'Purchase' | 'Investment' | 'Loan' | 'Sales' | 'Other';
   description: string;
   amount: number;
   date: string; // ISO date string
   employeeName: string;
+  createdAt: string; // ISO date string
+  updatedAt: string; // ISO date string
 };
 
 

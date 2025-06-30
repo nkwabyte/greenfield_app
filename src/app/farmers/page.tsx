@@ -1,3 +1,4 @@
+
 'use client';
 
 import * as React from 'react';
@@ -5,7 +6,7 @@ import { AppShell } from '@/components/app-shell';
 import { PageHeader } from '@/components/page-header';
 import { Button } from '@/components/ui/button';
 import { Download, PlusCircle, Upload } from 'lucide-react';
-import { FarmerDataTable } from '@/components/farmers/farmer-data-table';
+import { DataTable } from '@/components/data-table';
 import { getColumns } from '@/components/farmers/farmer-columns';
 import { mockFarmers } from '@/lib/mock-data';
 import type { Farmer } from '@/lib/types';
@@ -213,7 +214,12 @@ export default function FarmersPage() {
       </PageHeader>
       
       <div className="grid gap-6">
-        <FarmerDataTable columns={columns} data={farmers} />
+        <DataTable
+          columns={columns}
+          data={farmers}
+          filterColumnId="name"
+          filterPlaceholder="Filter by name..."
+        />
       </div>
 
       <UploadReportDialog open={isReportOpen} onOpenChange={setIsReportOpen} failedRecords={failedRecords} />

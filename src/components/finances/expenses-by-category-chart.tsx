@@ -11,10 +11,10 @@ import {
   ChartLegend,
   ChartLegendContent,
 } from '@/components/ui/chart';
-import type { Expense } from '@/lib/types';
+import type { Transaction } from '@/lib/types';
 
 type ExpensesByCategoryChartProps = {
-  expenses: Expense[];
+  transactions: Transaction[];
 };
 
 const currencyFormatter = new Intl.NumberFormat('en-US', {
@@ -23,7 +23,8 @@ const currencyFormatter = new Intl.NumberFormat('en-US', {
   minimumFractionDigits: 0,
 });
 
-export function ExpensesByCategoryChart({ expenses }: ExpensesByCategoryChartProps) {
+export function ExpensesByCategoryChart({ transactions }: ExpensesByCategoryChartProps) {
+  const expenses = transactions.filter(t => t.type === 'Expense');
   const totalExpenses = expenses.reduce((sum, e) => sum + e.amount, 0);
   
   const data = React.useMemo(() => {

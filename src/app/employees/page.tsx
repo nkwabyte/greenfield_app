@@ -6,7 +6,7 @@ import { AppShell } from '@/components/app-shell';
 import { PageHeader } from '@/components/page-header';
 import { Button } from '@/components/ui/button';
 import { PlusCircle } from 'lucide-react';
-import { FarmerDataTable } from '@/components/farmers/farmer-data-table';
+import { DataTable } from '@/components/data-table';
 import { getColumns } from '@/components/employees/employee-columns';
 import { mockEmployees } from '@/lib/mock-data';
 import type { Employee } from '@/lib/types';
@@ -76,7 +76,12 @@ export default function EmployeesPage() {
       </PageHeader>
       
       <div className="grid gap-6">
-        <FarmerDataTable columns={columns} data={employees} />
+        <DataTable
+          columns={columns} 
+          data={employees}
+          filterColumnId="name"
+          filterPlaceholder="Filter by name..."
+        />
       </div>
       
       <AddEditEmployeeDialog 
