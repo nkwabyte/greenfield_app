@@ -33,19 +33,19 @@ export async function getFarmers(): Promise<Farmer[]> {
 }
 
 const prepareFarmerData = (farmerData: FarmerFormValues) => {
-    const { joinDate, cropsGrown, ...rest } = farmerData;
-    const cropsArray = cropsGrown ? cropsGrown.split(',').map(c => c.trim()).filter(Boolean) : [];
-    
-    const dataToSave: any = {
-        ...rest,
-        cropsGrown: cropsArray,
-        joinDate: joinDate ? new Date(joinDate) : null,
-    };
+  const { joinDate, cropsGrown, ...rest } = farmerData;
+  const cropsArray = cropsGrown ? cropsGrown.split(',').map((c: string) => c.trim()).filter(Boolean) : [];
 
-    // Remove undefined fields so they don't overwrite existing data in Firestore
-    Object.keys(dataToSave).forEach(key => dataToSave[key] === undefined && delete dataToSave[key]);
+  const dataToSave: any = {
+    ...rest,
+    cropsGrown: cropsArray,
+    joinDate: joinDate ? new Date(joinDate) : null,
+  };
 
-    return dataToSave;
+  // Remove undefined fields so they don't overwrite existing data in Firestore
+  Object.keys(dataToSave).forEach(key => dataToSave[key] === undefined && delete dataToSave[key]);
+
+  return dataToSave;
 }
 
 export async function addFarmer(farmerData: FarmerFormValues) {
@@ -58,18 +58,18 @@ export async function addFarmer(farmerData: FarmerFormValues) {
 }
 
 export async function addFarmersBatch(farmers: Omit<Farmer, 'id' | 'createdAt' | 'updatedAt'>[]) {
-    const batch = writeBatch(db);
-    farmers.forEach(farmerData => {
-        const docRef = doc(farmerCollection);
-        const { joinDate, ...rest } = farmerData;
-        batch.set(docRef, {
-            ...rest,
-            joinDate: farmerData.joinDate ? new Date(farmerData.joinDate) : null,
-            createdAt: serverTimestamp(),
-            updatedAt: serverTimestamp(),
-        });
+  const batch = writeBatch(db);
+  farmers.forEach(farmerData => {
+    const docRef = doc(farmerCollection);
+    const { joinDate, ...rest } = farmerData;
+    batch.set(docRef, {
+      ...rest,
+      joinDate: farmerData.joinDate ? new Date(farmerData.joinDate) : null,
+      createdAt: serverTimestamp(),
+      updatedAt: serverTimestamp(),
     });
-    await batch.commit();
+  });
+  await batch.commit();
 }
 
 export async function updateFarmer(id: string, farmerData: FarmerFormValues) {

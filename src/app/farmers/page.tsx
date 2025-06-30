@@ -96,7 +96,7 @@ export default function FarmersPage() {
   }), []);
 
   const handleExport = () => {
-    const csvHeader = "ID,Name,Gender,Region,District,Community,Contact,Age,EducationLevel,FarmSize,CropsGrown,Status,JoinDate,CreatedAt,UpdatedAt\n";
+    const csvHeader = "ID,Farmer Name,Gender,Region,District,Community,Contact,Age,EducationLevel,FarmSize,CropsGrown,Status,JoinDate,CreatedAt,UpdatedAt\n";
     const csvRows = farmers.map(f =>
       [
         `"${f.id}"`,
@@ -183,17 +183,25 @@ export default function FarmersPage() {
       toast({ title: 'Error uploading file', description: 'File is empty or has only a header.', variant: 'destructive' });
       return;
     }
+    const rawHeader = dataRows[0];
+    const header = rawHeader.map(h => String(h).trim().replace(/"/g, '').toLowerCase());
 
-    const header = dataRows[0].map(h => String(h).trim().replace(/"/g, ''));
-    if (!header.includes('Name')) {
-      toast({ title: 'Invalid File Header', description: 'File header must include at least a "Name" column.', variant: 'destructive' });
+    // const header = dataRows[0].map(h => String(h).trim().replace(/"/g, ''));
+    if (!header.includes('farmer name') && !header.includes('name')) {
+      toast({
+        title: 'Invalid File Header',
+        description: 'File header must include at least a "Farmer Name" column.',
+        variant: 'destructive',
+      });
       return;
     }
 
     const newFarmers: Omit<Farmer, 'id' | 'createdAt' | 'updatedAt'>[] = [];
     const localFailedRecords: FailedRecord[] = [];
     
-    const getHeaderIndex = (name: string) => header.indexOf(name);
+    // const getHeaderIndex = (name: string) => header.indexOf(name);
+    const getHeaderIndex = (name: string) => header.indexOf(name.toLowerCase());
+
     
     dataRows.slice(1).forEach((row, index) => {
       if (!row || row.length === 0) return;
@@ -201,48 +209,77 @@ export default function FarmersPage() {
       const rowData = row.map(cell => String(cell ?? '').trim());
       const rowStrForReport = row.join(',');
 
-      const name = rowData[getHeaderIndex('Name')];
+      const name = rowData[getHeaderIndex('farmer name')] || rowData[getHeaderIndex('name')];
       if (!name) {
         localFailedRecords.push({ rowIndex: index + 2, rowData: rowStrForReport, error: 'Farmer name is missing.' });
         return;
-      }
+      }    
 
-      const farmSizeStr = rowData[getHeaderIndex('FarmSize')];
-      const farmSize = farmSizeStr ? parseFloat(farmSizeStr) : undefined;
+      const farmSizeStr = rowData[getHeaderIndex('FARM SIZE (ACRES)')] || rowData[getHeaderIndex('FARM SIZE')];
+      const farmSize = farmSizeStr ? parseFloat(farmSizeStr) : 0;
       if (farmSizeStr && isNaN(farmSize)) {
-        localFailedRecords.push({ rowIndex: index + 2, rowData: rowStrForReport, error: 'Invalid format for FarmSize.' });
-        return;
-      }
-      
-      const ageStr = rowData[getHeaderIndex('Age')];
-      const age = ageStr ? parseInt(ageStr, 10) : undefined;
-      if (ageStr && isNaN(age)) {
-        localFailedRecords.push({ rowIndex: index + 2, rowData: rowStrForReport, error: 'Invalid format for Age.' });
+        localFailedRecords.push({ rowIndex: index + 2, rowData: rowStrForReport, error: 'Invalid format for farm size.' });
         return;
       }
 
-      const joinDateStr = rowData[getHeaderIndex('JoinDate')];
+      const ageStr = rowData[getHeaderIndex('age')];
+      const age = ageStr ? parseInt(ageStr, 10) : 0;
+      if (ageStr && isNaN(age)) {
+        localFailedRecords.push({ rowIndex: index + 2, rowData: rowStrForReport, error: 'Invalid format for age.' });
+        return;
+      }
+
+      const region = rowData[getHeaderIndex('region')] || '';
+      if (region && !/^[a-zA-Z\s]+$/.test(region)) {
+        localFailedRecords.push({ rowIndex: index + 2, rowData: rowStrForReport, error: 'Invalid format for region.' });
+        return;
+      }
+
+      let gender = rowData[getHeaderIndex('gender')]?.trim() || 'Other';
+      let newGender = 'Other';
+      if (gender?.toLowerCase() === 'f' || gender?.toLowerCase() === 'F') {
+        newGender = 'Female';
+      } else if (gender?.toLowerCase() === 'm' || gender?.toLowerCase() === 'M') {
+        newGender = 'Male';
+      } else {
+        newGender = 'Other';
+      }
+      if (newGender && !['Male', 'Female', 'Other', 'M', 'F'].includes(newGender)) {
+        localFailedRecords.push({
+          rowIndex: index + 2,
+          rowData: rowStrForReport,
+          error: 'Invalid format for gender. Must be "Male", "Female", "Other", "M", or "F".',
+        });
+        return;
+      }
+
+      const joinDateStr = rowData[getHeaderIndex('join date')];
       if (joinDateStr && isNaN(new Date(joinDateStr).getTime())) {
-        localFailedRecords.push({ rowIndex: index + 2, rowData: rowStrForReport, error: 'Invalid format for JoinDate.' });
+        localFailedRecords.push({ rowIndex: index + 2, rowData: rowStrForReport, error: 'Invalid format for join date.' });
         return;
       }
 
       const cropsGrown = rowData[getHeaderIndex('CropsGrown')]?.split(';').map(c => c.trim()).filter(Boolean);
+      // create ISO date string for joinDate
+      let defaultJoinDate = new Date();
+      if (joinDateStr && !isNaN(new Date(joinDateStr).getTime())) {
+        defaultJoinDate = new Date(joinDateStr);
+      }
 
       const farmer: Omit<Farmer, 'id' | 'createdAt' | 'updatedAt'> = {
         name,
-        region: rowData[getHeaderIndex('Region')],
-        gender: rowData[getHeaderIndex('Gender')] as Farmer['gender'],
-        joinDate: joinDateStr || undefined,
-        farmSize,
-        status: (rowData[getHeaderIndex('Status')] as Farmer['status']) || 'Active',
-        district: rowData[getHeaderIndex('District')],
-        community: rowData[getHeaderIndex('Community')],
-        contact: rowData[getHeaderIndex('Contact')],
-        age,
-        educationLevel: rowData[getHeaderIndex('EducationLevel')] as Farmer['educationLevel'],
-        cropsGrown: cropsGrown?.length ? cropsGrown : undefined,
-      };
+        region,
+        gender: newGender as Farmer['gender'],
+        joinDate: joinDateStr && !isNaN(new Date(joinDateStr).getTime()) ? joinDateStr : defaultJoinDate.toISOString(),
+        farmSize: !isNaN(farmSize) ? farmSize : 0.0,
+        status: rowData[getHeaderIndex('status')] as Farmer['status'] || 'Active',
+        district: rowData[getHeaderIndex('district')] || '',
+        community: rowData[getHeaderIndex('community')] || '',
+        contact: rowData[getHeaderIndex('contact')] || '',
+        age: !isNaN(age) ? age : 0,
+        educationLevel: rowData[getHeaderIndex('educationlevel')] as Farmer['educationLevel'] || "None",
+        cropsGrown: cropsGrown?.length ? cropsGrown : [],
+      };      
       
       newFarmers.push(farmer);
     });
@@ -269,21 +306,27 @@ export default function FarmersPage() {
         });
         fetchAndSetFarmers();
       } catch (error) {
-        toast({ title: 'Batch Upload Failed', description: 'An error occurred during the batch upload.', variant: 'destructive' });
+        console.error(error);
+        const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
+        toast({
+          title: 'Batch Upload Failed',
+          description: errorMessage,
+          variant: 'destructive'
+        });
       } finally {
         setIsUploading(false);
+
+        if (localFailedRecords.length > 0) {
+          setFailedRecords(localFailedRecords);
+          setIsReportOpen(true);
+        } else if (newFarmers.length === 0) {
+          toast({
+            title: 'Upload Finished',
+            description: 'No new valid farmer records were found to upload.',
+            variant: 'default',
+          });
+        }
       }
-    }
-    
-    if (localFailedRecords.length > 0) {
-      setFailedRecords(localFailedRecords);
-      setIsReportOpen(true);
-    } else if (newFarmers.length === 0) {
-      toast({
-        title: 'Upload Finished',
-        description: 'No new valid farmer records were found to upload.',
-        variant: 'default',
-      });
     }
   };
 
