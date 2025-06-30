@@ -13,6 +13,7 @@ import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useAuth } from '@/hooks/use-auth';
 import { Logo } from '@/components/icons/logo';
+import Image from 'next/image';
 
 const signupSchema = z.object({
   name: z.string().min(1, 'Name is required'),
@@ -49,7 +50,13 @@ export default function SignupPage() {
     <div className="flex min-h-screen flex-col items-center justify-center bg-background p-4">
       <div className="w-full max-w-md">
         <div className="mb-8 flex flex-col items-center text-center">
-           <Logo className="mb-4 h-16 w-16 text-primary" />
+           {/* <Logo className="mb-4 h-16 w-16 text-primary" /> */}
+           <Image
+              src="/logo.svg"
+              width={120}
+              height={120}
+              alt='Greenfield CRM logo'
+            />
             <h1 className="font-headline text-4xl font-bold tracking-tight text-primary">
                 Create an Account
             </h1>
