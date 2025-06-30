@@ -6,15 +6,25 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import {
   ChartContainer,
   ChartTooltip,
-  ChartTooltipContent,
-  ChartLegend,
-  ChartLegendContent,
 } from '@/components/ui/chart';
 import type { Farmer } from '@/lib/types';
 
 type FarmersByRegionChartProps = {
   farmers: Farmer[];
 };
+
+const CustomTooltip = ({ active, payload, label }: any) => {
+    if (active && payload && payload.length) {
+        return (
+            <div className="p-2 text-sm bg-background border rounded-lg shadow-lg">
+                <p className="font-bold">{label}</p>
+                <p>{`${payload[0].name}: ${payload[0].value}`}</p>
+            </div>
+        );
+    }
+    return null;
+};
+
 
 export function FarmersByRegionChart({ farmers }: FarmersByRegionChartProps) {
   const data = React.useMemo(() => {
@@ -57,9 +67,9 @@ export function FarmersByRegionChart({ farmers }: FarmersByRegionChartProps) {
             <YAxis />
             <ChartTooltip
               cursor={false}
-              content={<ChartTooltipContent />}
+              content={<CustomTooltip />}
             />
-            <Bar dataKey="count" fill="var(--color-count)" radius={4} />
+            <Bar dataKey="count" name="Farmers" fill="var(--color-count)" radius={4} />
           </BarChart>
         </ChartContainer>
       </CardContent>

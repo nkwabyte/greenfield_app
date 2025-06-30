@@ -8,8 +8,6 @@ import {
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
-  ChartLegend,
-  ChartLegendContent,
 } from '@/components/ui/chart';
 import type { Transaction } from '@/lib/types';
 
@@ -57,7 +55,15 @@ export function ExpensesByCategoryChart({ transactions }: ExpensesByCategoryChar
             <ChartTooltip
               cursor={false}
               content={<ChartTooltipContent 
-                formatter={(value) => currencyFormatter.format(value as number)}
+                formatter={(value, name, item) => (
+                    <div className="flex items-center justify-between gap-4 w-full">
+                        <div className="flex items-center gap-2">
+                            <div className="w-2.5 h-2.5 rounded-full" style={{backgroundColor: item.payload.fill}} />
+                            <div>{name}</div>
+                        </div>
+                        <div className="font-medium">{currencyFormatter.format(value as number)}</div>
+                    </div>
+                )}
                 hideLabel 
               />}
             />
@@ -92,7 +98,6 @@ export function ExpensesByCategoryChart({ transactions }: ExpensesByCategoryChar
                 }}
               />
             </Pie>
-            <ChartLegend content={<ChartLegendContent nameKey="name" />} />
           </PieChart>
         </ChartContainer>
       </CardContent>
