@@ -34,7 +34,7 @@ import { LayoutGrid, LogOut, Users, Settings, Briefcase, Landmark, Truck, Packag
 const allNavItems = [
   { href: '/dashboard', icon: LayoutGrid, label: 'Dashboard', roles: ['Admin', 'Employee'] },
   { href: '/farmers', icon: Users, label: 'Farmers', roles: ['Admin', 'Employee'] },
-  { href: '/employees', icon: Briefcase, label: 'Employees', roles: ['Admin', 'Employee'] },
+  { href: '/employees', icon: Briefcase, label: 'Employees', roles: ['Admin'] },
   { href: '/suppliers', icon: Truck, label: 'Suppliers', roles: ['Admin', 'Employee'] },
   { href: '/products', icon: Package, label: 'Products', roles: ['Admin', 'Employee'] },
   { href: '/finances', icon: Landmark, label: 'Finances', roles: ['Admin'] },
