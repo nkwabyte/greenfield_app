@@ -18,3 +18,12 @@ export async function deleteFarmerEverywhere(localId: string, firebaseId?: strin
 
     return { local: true, cloud: null }; // cloud unknown
 }
+
+
+const handleResetLocalDb = async () => {
+    if (confirm("Are you sure you want to reset the local database? This cannot be undone.")) {
+        await localDb.delete();
+        await localDb.open();
+        // toast({ title: 'Local DB Reset', description: 'Local database has been cleared.' });
+    }
+};
