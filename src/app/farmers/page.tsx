@@ -66,17 +66,17 @@ export default function FarmersPage() {
   React.useEffect(() => {
     fetchAndSetFarmers();
 
-    // sync farmers if connected
-    const syncOnReconnect = async () => {
-      if (navigator.onLine) {
-        await syncFarmersToFirebase();
-      }
-    };
+    // // sync farmers if connected
+    // const syncOnReconnect = async () => {
+    //   if (navigator.onLine) {
+    //     await syncFarmersToFirebase();
+    //   }
+    // };
   
-    window.addEventListener('online', syncOnReconnect);
-    syncOnReconnect(); // run immediately if online
+    // window.addEventListener('online', syncOnReconnect);
+    // syncOnReconnect(); // run immediately if online
   
-    return () => window.removeEventListener('online', syncOnReconnect);
+    // return () => window.removeEventListener('online', syncOnReconnect);
 
   }, []);
 
