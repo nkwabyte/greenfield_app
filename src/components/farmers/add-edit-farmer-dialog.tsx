@@ -49,7 +49,7 @@ const farmerSchema = z.object({
   age: z.coerce.number().positive().optional(),
   educationLevel: z.enum(['None', 'Primary', 'JHS', 'SHS', 'Tertiary', 'Other']).optional(),
   farmSize: z.coerce.number().positive().optional(),
-  cropsGrown: z.string().optional(),
+  cropsGrown: z.array(z.string().min(2).max(100)).optional(),
   status: z.enum(['Active', 'Inactive']).optional(),
   joinDate: z.date().optional(),
 });
@@ -72,7 +72,7 @@ export function AddEditFarmerDialog({ open, onOpenChange, farmer, onSave }: AddE
       district: '',
       community: '',
       contact: '',
-      cropsGrown: '',
+      cropsGrown: [],
       status: 'Active',
     },
   });
@@ -81,7 +81,7 @@ export function AddEditFarmerDialog({ open, onOpenChange, farmer, onSave }: AddE
     if (open && farmer) {
       form.reset({
         ...farmer,
-        cropsGrown: farmer.cropsGrown?.join(', '),
+        cropsGrown: farmer.cropsGrown,
         joinDate: farmer.joinDate ? new Date(farmer.joinDate) : undefined,
       });
     } else if (open) {
@@ -95,7 +95,7 @@ export function AddEditFarmerDialog({ open, onOpenChange, farmer, onSave }: AddE
         age: undefined,
         educationLevel: undefined,
         farmSize: undefined,
-        cropsGrown: '',
+        cropsGrown: [],
         status: 'Active',
         joinDate: new Date(),
       });
@@ -158,7 +158,7 @@ export function AddEditFarmerDialog({ open, onOpenChange, farmer, onSave }: AddE
                 </FormItem>
               )}
             />
-             <FormField
+            <FormField
               control={form.control}
               name="community"
               render={({ field }) => (
@@ -171,7 +171,7 @@ export function AddEditFarmerDialog({ open, onOpenChange, farmer, onSave }: AddE
                 </FormItem>
               )}
             />
-             <FormField
+            <FormField
               control={form.control}
               name="contact"
               render={({ field }) => (
@@ -206,7 +206,7 @@ export function AddEditFarmerDialog({ open, onOpenChange, farmer, onSave }: AddE
                 </FormItem>
               )}
             />
-             <FormField
+            <FormField
               control={form.control}
               name="age"
               render={({ field }) => (
@@ -219,7 +219,7 @@ export function AddEditFarmerDialog({ open, onOpenChange, farmer, onSave }: AddE
                 </FormItem>
               )}
             />
-             <FormField
+            <FormField
               control={form.control}
               name="educationLevel"
               render={({ field }) => (

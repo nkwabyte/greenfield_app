@@ -11,28 +11,49 @@ import { FarmersByRegionChart } from '@/components/dashboard/farmers-by-region-c
 import { FarmersByGenderChart } from '@/components/dashboard/farmers-by-gender-chart';
 import { RecentFarmersTable } from '@/components/dashboard/recent-farmers-table';
 import { AiAssistant } from '@/components/ai-assistant';
-import { getFarmers } from '@/lib/firebase/services/farmers';
+import { getFirebaseFarmers } from '@/lib/firebase/services/farmers';
 import { Skeleton } from '@/components/ui/skeleton';
+import { localDb } from '@/lib/db/local-db';
 
 export default function DashboardPage() {
   const [farmers, setFarmers] = React.useState<Farmer[]>([]);
-  const [isLoading, setIsLoading] = React.useState(true);
-  const [isAiAssistantOpen, setIsAiAssistantOpen] = React.useState(false);
+const [isLoading, setIsLoading] = React.useState(true);
+const [isAiAssistantOpen, setIsAiAssistantOpen] = React.useState(false);
 
-  React.useEffect(() => {
-    const fetchFarmers = async () => {
-      try {
-        const farmerData = await getFarmers();
-        setFarmers(farmerData);
-      } catch (error) {
-        console.error("Failed to fetch farmers:", error);
-      } finally {
-        // console.log('Farmers fetched:', farmers.length);
-        setIsLoading(false);
+React.useEffect(() => {
+  const fetchLocalFarmers = async () => {
+    try {
+      const localFarmers = await localDb.farmers.toArray();
+      setFarmers(localFarmers);
+    } catch (error) {
+      console.error("Failed to fetch farmers from local DB:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+  const syncWithFirebase = async () => {
+    if (!navigator.onLine) return;
+
+    try {
+      const cloudFarmers = await getFirebaseFarmers();
+
+      // Optionally update your local DB with fresh cloud data
+      for (const farmer of cloudFarmers) {
+        await localDb.farmers.put({ ...farmer, synced: 1 });
       }
-    };
-    fetchFarmers();
-  }, []);
+
+      const updatedFarmers = await localDb.farmers.toArray();
+      setFarmers(updatedFarmers);
+    } catch (error) {
+      console.warn("Firebase sync failed:", error);
+    }
+  };
+
+  syncWithFirebase();
+
+  fetchLocalFarmers();
+}, []);
+
 
   const kpis: Kpi[] = React.useMemo(() => {
     if (isLoading) return [];

@@ -70,8 +70,8 @@ export function UploadReportDialog({ open, onOpenChange, failedRecords }: Upload
               </TableRow>
             </TableHeader>
             <TableBody>
-              {failedRecords.map((record) => (
-                <TableRow key={record.rowIndex}>
+              {failedRecords.map((record, index) => (
+                <TableRow key={index}>
                   <TableCell>{record.rowIndex}</TableCell>
                   <TableCell className="font-mono text-xs">{record.rowData}</TableCell>
                   <TableCell className="text-destructive">{record.error}</TableCell>

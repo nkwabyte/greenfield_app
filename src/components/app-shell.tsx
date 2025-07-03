@@ -29,7 +29,17 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/hooks/use-auth';
 import { Logo } from '@/components/icons/logo';
-import { LayoutGrid, LogOut, Users, Settings, Briefcase, Landmark, Truck, Package } from 'lucide-react';
+import Image from 'next/image';
+import { 
+  LayoutGrid, 
+  LogOut, 
+  Users, 
+  Settings, 
+  Briefcase, 
+  Landmark, 
+  Truck, 
+  Package 
+} from 'lucide-react';
 
 const allNavItems = [
   { href: '/dashboard', icon: LayoutGrid, label: 'Dashboard', roles: ['Admin', 'Employee'] },
@@ -82,11 +92,19 @@ export function AppShell({ children }: { children: React.ReactNode }) {
     <SidebarProvider>
       <Sidebar>
         <SidebarHeader>
-          <Link href="/dashboard" className="flex items-center gap-2">
-            <Logo className="h-8 w-8 text-primary" />
-            <span className="font-headline text-xl font-semibold text-primary">
+          <Link href="/dashboard" className="flex flex-row items-center justify-center w-full gap-2">
+            {/* <Logo className="h-8 w-8 text-primary" /> */}
+            <div className="h-32 w-32 text-primary flex flex-row items-center justify-center">
+              <Image
+                src="/logo.svg"
+                width={120}
+                height={120}
+                alt='Greenfield CRM logo'
+              />
+            </div>
+            {/* <span className="font-headline text-xl font-semibold text-primary">
               GREENFIELD
-            </span>
+            </span> */}
           </Link>
         </SidebarHeader>
         <SidebarContent>
