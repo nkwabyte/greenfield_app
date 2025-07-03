@@ -3,7 +3,7 @@ import { db } from '@/lib/firebase/config';
 import {
   collection,
   getDocs,
-  addDoc,
+  setDoc,
   updateDoc,
   deleteDoc,
   doc,
@@ -15,9 +15,10 @@ import {
 import type { Farmer } from '@/lib/types';
 import type { FarmerFormValues } from '@/components/farmers/add-edit-farmer-dialog';
 
+
 const farmerCollection = collection(db, 'farmers');
 
-export async function getFarmers(): Promise<Farmer[]> {
+export async function getFirebaseFarmers(): Promise<Farmer[]> {
   const q = query(farmerCollection, orderBy('updatedAt', 'desc'));
   const snapshot = await getDocs(q);
   return snapshot.docs.map((doc) => {
@@ -34,7 +35,7 @@ export async function getFarmers(): Promise<Farmer[]> {
 
 const prepareFarmerData = (farmerData: FarmerFormValues) => {
   const { joinDate, cropsGrown, ...rest } = farmerData;
-  const cropsArray = cropsGrown ? cropsGrown.split(',').map((c: string) => c.trim()).filter(Boolean) : [];
+  const cropsArray = cropsGrown || [];
 
   const dataToSave: any = {
     ...rest,
@@ -48,23 +49,27 @@ const prepareFarmerData = (farmerData: FarmerFormValues) => {
   return dataToSave;
 }
 
-export async function addFarmer(farmerData: FarmerFormValues) {
+export async function addFirebaseFarmer(farmerData: FarmerFormValues, id: string) {
   const dataToSave = prepareFarmerData(farmerData);
-  await addDoc(farmerCollection, {
+  const farmerDoc = doc(farmerCollection, id); // use passed id
+  await setDoc(farmerDoc, {
     ...dataToSave,
     createdAt: serverTimestamp(),
     updatedAt: serverTimestamp(),
   });
 }
 
-export async function addFarmersBatch(farmers: Omit<Farmer, 'id' | 'createdAt' | 'updatedAt'>[]) {
+
+export async function addFirebaseFarmersBatch(farmers: Farmer[]) {
   const batch = writeBatch(db);
-  farmers.forEach(farmerData => {
-    const docRef = doc(farmerCollection);
-    const { joinDate, ...rest } = farmerData;
+
+  farmers.forEach(farmer => {
+    const docRef = doc(farmerCollection, farmer.id); // use given id
+
+    const { id, joinDate, createdAt, updatedAt, ...rest } = farmer;
     batch.set(docRef, {
       ...rest,
-      joinDate: farmerData.joinDate ? new Date(farmerData.joinDate) : null,
+      joinDate: joinDate ? new Date(joinDate) : null,
       createdAt: serverTimestamp(),
       updatedAt: serverTimestamp(),
     });
@@ -72,7 +77,8 @@ export async function addFarmersBatch(farmers: Omit<Farmer, 'id' | 'createdAt' |
   await batch.commit();
 }
 
-export async function updateFarmer(id: string, farmerData: FarmerFormValues) {
+
+export async function updateFirebaseFarmer(id: string, farmerData: FarmerFormValues) {
   const farmerDoc = doc(db, 'farmers', id);
   const dataToSave = prepareFarmerData(farmerData);
   await updateDoc(farmerDoc, {
@@ -81,7 +87,8 @@ export async function updateFarmer(id: string, farmerData: FarmerFormValues) {
   });
 }
 
-export async function deleteFarmer(id: string) {
+export async function deleteFirebaseFarmer(id: string) {
   const farmerDoc = doc(db, 'farmers', id);
   await deleteDoc(farmerDoc);
 }
+

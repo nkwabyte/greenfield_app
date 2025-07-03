@@ -12,12 +12,23 @@ import type { Farmer } from '@/lib/types';
 import { useToast } from '@/hooks/use-toast';
 import { UploadReportDialog } from '@/components/farmers/upload-report-dialog';
 import { AddEditFarmerDialog, type FarmerFormValues } from '@/components/farmers/add-edit-farmer-dialog';
-import { getFarmers, addFarmer, updateFarmer, deleteFarmer, addFarmersBatch } from '@/lib/firebase/services/farmers';
+import { localDb, LocalFarmer } from '@/lib/db/local-db';
+import { deleteFarmerEverywhere } from '@/lib/utility/farmer-utils';
+import { addFirebaseFarmer, updateFirebaseFarmer } from '@/lib/firebase/services/farmers';
+import { syncFarmersToFirebase } from '@/lib/sync/sync-farmers';
 
 type FailedRecord = {
   rowIndex: number;
   rowData: string;
   error: string;
+};
+
+type FarmerParseResult = {
+  status: 'valid';
+  data: Omit<Farmer, 'id' | 'createdAt' | 'updatedAt'>;
+} | {
+  status: 'invalid';
+  error: FailedRecord;
 };
 
 export default function FarmersPage() {
@@ -38,11 +49,15 @@ export default function FarmersPage() {
   const fetchAndSetFarmers = React.useCallback(async () => {
     setIsLoading(true);
     try {
-      const farmerData = await getFarmers();
+      const farmerData = await localDb.farmers.toArray(); // Local-first
       setFarmers(farmerData);
     } catch (error) {
       console.error(error);
-      toast({ title: "Error fetching farmers", description: "Could not retrieve farmer data.", variant: "destructive" });
+      toast({
+        title: "Error fetching farmers",
+        description: "Could not retrieve farmer data from local storage.",
+        variant: "destructive",
+      });
     } finally {
       setIsLoading(false);
     }
@@ -50,7 +65,20 @@ export default function FarmersPage() {
 
   React.useEffect(() => {
     fetchAndSetFarmers();
-  }, [fetchAndSetFarmers]);
+
+    // sync farmers if connected
+    const syncOnReconnect = async () => {
+      if (navigator.onLine) {
+        await syncFarmersToFirebase();
+      }
+    };
+  
+    window.addEventListener('online', syncOnReconnect);
+    syncOnReconnect(); // run immediately if online
+  
+    return () => window.removeEventListener('online', syncOnReconnect);
+
+  }, []);
 
   const handleOpenAddDialog = () => {
     setEditingFarmer(null);
@@ -64,31 +92,91 @@ export default function FarmersPage() {
 
   const handleSaveFarmer = async (data: FarmerFormValues) => {
     try {
+      const now = new Date().toISOString();
+      const joinDate =
+      data.joinDate instanceof Date
+        ? data.joinDate.toISOString().split('T')[0] // convert to "YYYY-MM-DD"
+        : data.joinDate || undefined;
+  
       if (editingFarmer) {
-        await updateFarmer(editingFarmer.id, data);
-        toast({ title: "Farmer Updated", description: `${data.name}'s record has been updated.` });
+        // Update local farmer
+        await localDb.farmers.update(editingFarmer.id, {
+          ...data,
+          joinDate,
+          updatedAt: now,
+          synced: 0, // mark as needing sync
+        });
+        const localFarmer = await localDb.farmers.get(editingFarmer.id); // where id is guaranteed to exist
+        if (localFarmer) {
+          const farmerForFirebase = {
+            ...localFarmer,
+            joinDate: localFarmer.joinDate ? new Date(localFarmer.joinDate) : undefined
+          };
+          updateFirebaseFarmer(localFarmer.id, farmerForFirebase);
+          await localDb.farmers.update(localFarmer.id, { synced: 1 });
+        }
+        toast({ title: "Farmer Updated", description: `${data.name}'s record has been updated locally.` });
       } else {
-        await addFarmer(data);
-        toast({ title: "Farmer Added", description: `${data.name} has been added to the system.` });
+        const id = crypto.randomUUID(); // generate ID now for both local + cloud
+  
+        await localDb.farmers.add({
+          id,
+          ...data,
+          joinDate,
+          createdAt: now,
+          updatedAt: now,
+          synced: 0,
+        });
+        const localFarmer = await localDb.farmers.get(id); // where id is guaranteed to exist
+        if (localFarmer) {
+          const farmerForFirebase = {
+            ...localFarmer,
+            joinDate: localFarmer.joinDate ? new Date(localFarmer.joinDate) : undefined
+          };
+          addFirebaseFarmer(farmerForFirebase, localFarmer.id);
+          await localDb.farmers.update(localFarmer.id, { synced: 1 });
+        }
+        toast({ title: "Farmer Added", description: `${data.name} has been added locally.` });
       }
+  
       fetchAndSetFarmers();
     } catch (error) {
       console.error(error);
-      toast({ title: "Save Failed", description: "An error occurred while saving the farmer.", variant: "destructive" });
+      toast({
+        title: "Save Failed",
+        description: "An error occurred while saving the farmer.",
+        variant: "destructive",
+      });
     }
   };
 
   const handleDeleteFarmer = async (farmerId: string) => {
     if (window.confirm("Are you sure you want to delete this farmer? This action cannot be undone.")) {
       try {
-        await deleteFarmer(farmerId);
-        toast({ title: "Farmer Deleted", description: "The farmer record has been removed." });
+        const farmer = await localDb.farmers.get(farmerId);
+  
+        if (!farmer) {
+          toast({ title: "Farmer Not Found", description: "Could not locate the farmer in the local database.", variant: "destructive" });
+          return;
+        }
+  
+        const firebaseId = farmer.synced === 1 ? farmerId : undefined;
+  
+        const result = await deleteFarmerEverywhere(farmerId, firebaseId);
+  
+        if (result.local && result.cloud !== false) {
+          toast({ title: "Farmer Deleted", description: "Farmer was removed from local and cloud (if synced)." });
+        } else if (result.local && result.cloud === false) {
+          toast({ title: "Partially Deleted", description: "Farmer removed locally, but cloud deletion failed.", variant: "destructive" });
+        }
+  
         fetchAndSetFarmers();
       } catch (error) {
         toast({ title: "Delete Failed", description: "An error occurred while deleting the farmer.", variant: "destructive" });
       }
     }
   };
+  
 
   const columns = React.useMemo(() => getColumns({
     onEdit: handleOpenEditDialog,
@@ -177,49 +265,75 @@ export default function FarmersPage() {
     }
   };
   
+  const parseFarmerRow = (
+    row: any,
+    i: number,
+    sheetName: string,
+    columnMap: Record<string, string>,
+    otherColumns: string[]
+  ): FarmerParseResult | null => {
+    const rowIndex = i + 2;
+  
+    if (!row[columnMap.no]) return null; // skip completely empty rows
+  
+    const name = (row[columnMap.name] || '').toString().trim();
+    const genderRaw = (row[columnMap.gender] || 'U').toString().trim().toLowerCase();
+    const gender = genderRaw === 'f' ? 'Female' : genderRaw === 'm' ? 'Male' : 'Other';
+  
+    const age = parseInt(row[columnMap.age]) || 0;
+    const farmSize = parseFloat(row[columnMap.size]) || 0.0;
+    const region = (row[columnMap.region] || '').toString().trim();
+  
+    const errors: string[] = [];
+    if (!name || name.length === 0) errors.push('Missing or invalid farmer name.');
+    if (!region || region.length === 0) errors.push('Missing or invalid region.');
+  
+    if (errors.length > 0) {
+      return {
+        status: 'invalid',
+        error: {
+          rowIndex,
+          rowData: JSON.stringify(row),
+          error: errors.join(' ')
+        }
+      };
+    }
 
-  // const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //   const file = event.target.files?.[0];
-  //   if (!file) return;
-
-  //   const reader = new FileReader();
-  //   const fileExtension = file.name.split('.').pop()?.toLowerCase();
-
-  //   if (fileExtension === 'csv') {
-  //     reader.onload = (e) => {
-  //       const text = e.target?.result as string;
-  //       const rows = text.split('\n').map(row => row.trim().split(','));
-  //       processFarmerData(rows);
-  //     };
-  //     reader.readAsText(file);
-  //   } else if (fileExtension === 'xlsx') {
-  //     reader.onload = (e) => {
-  //       const data = e.target?.result;
-  //       try {
-  //           const workbook = XLSX.read(data, { type: 'array' });
-  //           const sheetName = workbook.SheetNames[0];
-  //           const worksheet = workbook.Sheets[sheetName];
-  //           const rows = XLSX.utils.sheet_to_json<string[]>(worksheet, { header: 1 });
-  //           processFarmerData(rows);
-  //       } catch (error) {
-  //           console.error(error);
-  //           toast({ title: 'Error processing XLSX file', description: 'The file might be corrupted or in an unsupported format.', variant: 'destructive'})
-  //       }
-  //     };
-  //     reader.readAsArrayBuffer(file);
-  //   } else {
-  //     toast({ title: 'Unsupported File Type', description: 'Please upload a .csv or .xlsx file.', variant: 'destructive' });
-  //   }
-
-  //   if (event.target) {
-  //     event.target.value = '';
-  //   }
-  // };
+    // default join date for firebase
+    const joinDate = new Date().toISOString().split('T')[0]; // YYYY-MM-DD format
+  
+    const farmer: Omit<Farmer, 'id' | 'createdAt' | 'updatedAt'> = {
+      name: name.toLowerCase(),
+      gender: gender as Farmer['gender'],
+      region,
+      district: sheetName,
+      community: '',
+      contact: '',
+      age,
+      farmSize,
+      educationLevel: 'None',
+      joinDate: joinDate,
+      status: 'Active',
+      cropsGrown: [],
+    };
+  
+    const details = otherColumns.reduce((acc, col) => {
+      acc[col] = row[col];
+      return acc;
+    }, {} as Record<string, string>);
+  
+    Object.assign(farmer, details);
+  
+    return {
+      status: 'valid',
+      data: farmer
+    };
+  };  
 
   const processFarmerData = async (dataBuffer: ArrayBuffer) => {
     const workbook = XLSX.read(dataBuffer, { type: 'array' });
   
-    const farmers: Omit<Farmer, 'id' | 'createdAt' | 'updatedAt'>[] = [];
+    const validFarmers: Omit<Farmer, 'id' | 'createdAt' | 'updatedAt'>[] = [];
     const failedRecords: FailedRecord[] = [];
   
     const sheetNames = workbook.SheetNames.filter(
@@ -233,267 +347,130 @@ export default function FarmersPage() {
       if (sheetData.length === 0) continue;
   
       const columnNames = Object.keys(sheetData[0]);
-      const lowerCaseMap = Object.fromEntries(
-        columnNames.map((col) => [col.toLowerCase(), col])
-      );
-  
       const getColumn = (key: string) =>
-        columnNames.find((col) => col.toLowerCase().includes(key)) || '';
+        columnNames.find(col => col.toLowerCase().includes(key)) || '';
   
-      const numberColumn = getColumn('no');
-      const nameColumn = getColumn('name');
-      const societyColumn = getColumn('society');
-      const genderColumn = getColumn('gender');
-      const ageColumn = getColumn('age');
-      const sizeColumn = getColumn('size');
-      const regionColumn = getColumn('region');
+      const columnMap = {
+        no: getColumn('no'),
+        name: getColumn('name'),
+        gender: getColumn('gender'),
+        age: getColumn('age'),
+        size: getColumn('size'),
+        region: getColumn('region'),
+      };
   
-      const otherColumns = columnNames.filter((col) =>
-        ![numberColumn, nameColumn, societyColumn, genderColumn, ageColumn, sizeColumn, regionColumn]
-          .includes(col)
+      const otherColumns = columnNames.filter(
+        col => !Object.values(columnMap).includes(col)
       );
   
       for (let i = 0; i < sheetData.length; i++) {
         const row = sheetData[i];
+        const result = parseFarmerRow(row, i, sheetName, columnMap, otherColumns);
   
-        try {
-          if (!row[numberColumn]) continue;
+        if (result?.status === 'valid') {
+          validFarmers.push(result.data);
+        } else if (result?.status === 'invalid') {
+          failedRecords.push(result.error);
+        }
+      }
+
+      // console.log(`Processed sheet: ${sheetName}, Valid: ${validFarmers.length}, Invalid: ${failedRecords.length}`);
+    }
+
+    console.log(`Total valid farmers: ${validFarmers.length}`);
+    console.log(`Total failed records: ${failedRecords.length}`);
   
-          const name = (row[nameColumn] || '').toString().trim();
-          const genderRaw = (row[genderColumn] || 'U').toString().trim().toLowerCase();
-          const gender = genderRaw === 'f' ? 'Female' : genderRaw === 'm' ? 'Male' : 'Other';
-  
-          const age = parseInt(row[ageColumn]) || 0;
-          const farmSize = parseFloat(row[sizeColumn]) || 0.0;
-          const region = (row[regionColumn] || 'Unknown').toString().trim();
-  
-          if (!name || !gender || !region) {
-            throw new Error('Missing required fields.');
-          }
-  
-          const farmer: Omit<Farmer, 'id' | 'createdAt' | 'updatedAt'> = {
-            name: name.toLowerCase(),
-            gender: gender as Farmer['gender'],
-            region,
-            district: sheetName,
-            community: '',
-            contact: '',
-            age,
-            farmSize,
-            educationLevel: undefined,
-            joinDate: undefined,
-            status: 'Active',
-            cropsGrown: undefined,
-          };
-  
-          const details = otherColumns.reduce((acc, col) => {
-            acc[col] = row[col];
-            return acc;
-          }, {} as Record<string, string>);
-  
-          // optionally attach details (or you can skip this)
-          Object.assign(farmer, details);
-  
-          farmers.push(farmer);
-        } catch (err: any) {
-          failedRecords.push({
-            rowIndex: i + 2,
-            rowData: JSON.stringify(sheetData[i]),
-            error: err.message || 'Unknown error',
+    // Upload all valid farmers
+    if (validFarmers.length > 0) {
+      setIsUploading(true);
+      setUploadProgress({ processed: 0, total: validFarmers.length });
+      const chunkSize = 100;
+    
+      try {
+        for (let i = 0; i < validFarmers.length; i += chunkSize) {
+          const chunk = validFarmers.slice(i, i + chunkSize);
+    
+          await localDb.farmers.bulkAdd(
+            validFarmers.map(farmer => ({
+              id: crypto.randomUUID(), // ensure ID exists before Firebase sync
+              ...farmer,
+              synced: 0,
+              createdAt: new Date().toISOString(),
+              updatedAt: new Date().toISOString(),
+            }))
+          );
+          setUploadProgress({ processed: i + chunk.length, total: validFarmers.length });
+    
+          toast({
+            title: `Stored ${i + chunk.length} of ${validFarmers.length}`,
+            description: `Locally saved chunk ${i / chunkSize + 1}`,
           });
         }
-      }
-    }
-  
-    // Proceed to upload valid farmers
-    if (farmers.length > 0) {
-      setIsUploading(true);
-      setUploadProgress({ processed: 0, total: farmers.length });
-      const chunkSize = 100;
-  
-      try {
-        for (let i = 0; i < farmers.length; i += chunkSize) {
-          const chunk = farmers.slice(i, i + chunkSize);
-          await addFarmersBatch(chunk);
-          setUploadProgress({ processed: i + chunk.length, total: farmers.length });
-        }
-  
+    
         toast({
-          title: 'Upload Successful',
-          description: `${farmers.length} farmers added from ${sheetNames.length} sheet(s).`,
+          title: 'Local Import Complete',
+          description: `${validFarmers.length} farmers stored locally for syncing.`,
         });
-  
-        fetchAndSetFarmers();
+    
+        fetchAndSetFarmers(); // Refresh UI from local DB
       } catch (error) {
-        toast({ title: 'Upload Failed', description: 'Error during batch upload', variant: 'destructive' });
+        console.error('Local DB insert failed:', error);
+        toast({
+          title: 'Local Storage Failed',
+          description: 'Could not store farmers locally.',
+          variant: 'destructive',
+        });
       } finally {
         setIsUploading(false);
+      }
+    }    
   
-        if (failedRecords.length > 0) {
-          setFailedRecords(failedRecords);
-          setIsReportOpen(true);
-        }
-      }
-    } else {
-      toast({ title: 'No valid farmers found', variant: 'destructive' });
-      if (failedRecords.length > 0) {
-        setFailedRecords(failedRecords);
-        setIsReportOpen(true);
-      }
+    // Show failed records
+    if (failedRecords.length > 0 && isUploading == false) {
+      setFailedRecords(failedRecords);
+      setIsReportOpen(true);
     }
-  };  
+  };
 
-  // const processFarmerData = async (dataRows: (string | number)[][]) => {
-  //   if (dataRows.length < 2) {
-  //     toast({ title: 'Error uploading file', description: 'File is empty or has only a header.', variant: 'destructive' });
-  //     return;
-  //   }
-  //   const rawHeader = dataRows[0];
-  //   const header = rawHeader.map(h => String(h).trim().replace(/"/g, '').toLowerCase());
-
-  //   // const header = dataRows[0].map(h => String(h).trim().replace(/"/g, ''));
-  //   if (!header.includes('farmer name') && !header.includes('name')) {
-  //     toast({
-  //       title: 'Invalid File Header',
-  //       description: 'File header must include at least a "Farmer Name" column.',
-  //       variant: 'destructive',
-  //     });
-  //     return;
-  //   }
-
-  //   const newFarmers: Omit<Farmer, 'id' | 'createdAt' | 'updatedAt'>[] = [];
-  //   const localFailedRecords: FailedRecord[] = [];
-    
-  //   // const getHeaderIndex = (name: string) => header.indexOf(name);
-  //   const getHeaderIndex = (name: string) => header.indexOf(name.toLowerCase());
-
-    
-  //   dataRows.slice(1).forEach((row, index) => {
-  //     if (!row || row.length === 0) return;
-
-  //     const rowData = row.map(cell => String(cell ?? '').trim());
-  //     const rowStrForReport = row.join(',');
-
-  //     const name = rowData[getHeaderIndex('farmer name')] || rowData[getHeaderIndex('name')];
-  //     if (!name) {
-  //       localFailedRecords.push({ rowIndex: index + 2, rowData: rowStrForReport, error: 'Farmer name is missing.' });
-  //       return;
-  //     }    
-
-  //     const farmSizeStr = rowData[getHeaderIndex('FARM SIZE (ACRES)')] || rowData[getHeaderIndex('FARM SIZE')];
-  //     const farmSize = farmSizeStr ? parseFloat(farmSizeStr) : 0;
-  //     if (farmSizeStr && isNaN(farmSize)) {
-  //       localFailedRecords.push({ rowIndex: index + 2, rowData: rowStrForReport, error: 'Invalid format for farm size.' });
-  //       return;
-  //     }
-
-  //     const ageStr = rowData[getHeaderIndex('age')];
-  //     const age = ageStr ? parseInt(ageStr, 10) : 0;
-  //     if (ageStr && isNaN(age)) {
-  //       localFailedRecords.push({ rowIndex: index + 2, rowData: rowStrForReport, error: 'Invalid format for age.' });
-  //       return;
-  //     }
-
-  //     const region = rowData[getHeaderIndex('region')] || '';
-  //     if (region && !/^[a-zA-Z\s]+$/.test(region)) {
-  //       localFailedRecords.push({ rowIndex: index + 2, rowData: rowStrForReport, error: 'Invalid format for region.' });
-  //       return;
-  //     }
-
-  //     let gender = rowData[getHeaderIndex('gender')]?.trim() || 'Other';
-  //     let newGender = 'Other';
-  //     if (gender?.toLowerCase() === 'f' || gender?.toLowerCase() === 'F') {
-  //       newGender = 'Female';
-  //     } else if (gender?.toLowerCase() === 'm' || gender?.toLowerCase() === 'M') {
-  //       newGender = 'Male';
-  //     } else {
-  //       newGender = 'Other';
-  //     }
-  //     if (newGender && !['Male', 'Female', 'Other', 'M', 'F'].includes(newGender)) {
-  //       localFailedRecords.push({
-  //         rowIndex: index + 2,
-  //         rowData: rowStrForReport,
-  //         error: 'Invalid format for gender. Must be "Male", "Female", "Other", "M", or "F".',
-  //       });
-  //       return;
-  //     }
-
-  //     const joinDateStr = rowData[getHeaderIndex('join date')];
-  //     if (joinDateStr && isNaN(new Date(joinDateStr).getTime())) {
-  //       localFailedRecords.push({ rowIndex: index + 2, rowData: rowStrForReport, error: 'Invalid format for join date.' });
-  //       return;
-  //     }
-
-  //     const cropsGrown = rowData[getHeaderIndex('CropsGrown')]?.split(';').map(c => c.trim()).filter(Boolean);
-  //     // create ISO date string for joinDate
-  //     let defaultJoinDate = new Date();
-  //     if (joinDateStr && !isNaN(new Date(joinDateStr).getTime())) {
-  //       defaultJoinDate = new Date(joinDateStr);
-  //     }
-
-  //     const farmer: Omit<Farmer, 'id' | 'createdAt' | 'updatedAt'> = {
-  //       name,
-  //       region,
-  //       gender: newGender as Farmer['gender'],
-  //       joinDate: joinDateStr && !isNaN(new Date(joinDateStr).getTime()) ? joinDateStr : defaultJoinDate.toISOString(),
-  //       farmSize: !isNaN(farmSize) ? farmSize : 0.0,
-  //       status: rowData[getHeaderIndex('status')] as Farmer['status'] || 'Active',
-  //       district: rowData[getHeaderIndex('district')] || '',
-  //       community: rowData[getHeaderIndex('community')] || '',
-  //       contact: rowData[getHeaderIndex('contact')] || '',
-  //       age: !isNaN(age) ? age : 0,
-  //       educationLevel: rowData[getHeaderIndex('educationlevel')] as Farmer['educationLevel'] || "None",
-  //       cropsGrown: cropsGrown?.length ? cropsGrown : [],
-  //     };      
-      
-  //     newFarmers.push(farmer);
-  //   });
-
-  //   if (newFarmers.length > 0) {
-  //     setIsUploading(true);
-  //     setUploadProgress({ processed: 0, total: newFarmers.length });
-  //     const chunkSize = 100;
-      
-  //     try {
-  //       for (let i = 0; i < newFarmers.length; i += chunkSize) {
-  //         const chunk = newFarmers.slice(i, i + chunkSize);
-  //         await addFarmersBatch(chunk);
-  //         const newProcessedCount = i + chunk.length;
-  //         setUploadProgress({ processed: newProcessedCount, total: newFarmers.length });
-  //         toast({
-  //           title: 'Upload in Progress...',
-  //           description: `Uploaded ${newProcessedCount} of ${newFarmers.length} farmers.`,
-  //         });
-  //       }
-  //       toast({
-  //         title: 'Upload Successful',
-  //         description: `${newFarmers.length} farmers have been added.`,
-  //       });
-  //       fetchAndSetFarmers();
-  //     } catch (error) {
-  //       console.error(error);
-  //       const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
-  //       toast({
-  //         title: 'Batch Upload Failed',
-  //         description: errorMessage,
-  //         variant: 'destructive'
-  //       });
-  //     } finally {
-  //       setIsUploading(false);
-
-  //       if (localFailedRecords.length > 0) {
-  //         setFailedRecords(localFailedRecords);
-  //         setIsReportOpen(true);
-  //       } else if (newFarmers.length === 0) {
-  //         toast({
-  //           title: 'Upload Finished',
-  //           description: 'No new valid farmer records were found to upload.',
-  //           variant: 'default',
-  //         });
-  //       }
-  //     }
-  //   }
-  // };
+  // if (validFarmers.length > 0) {
+    //   setIsUploading(true);
+    //   setUploadProgress({ processed: 0, total: validFarmers.length });
+    //   const chunkSize = 100;
+  
+    //   try {
+    //     for (let i = 0; i < validFarmers.length; i += chunkSize) {
+    //       const chunk = validFarmers.slice(i, i + chunkSize);
+    //       await addFarmersBatch(chunk);
+    //       setUploadProgress({ processed: i + chunk.length, total: validFarmers.length });
+    //       toast({
+    //         title: `Uploaded ${i + chunk.length} of ${validFarmers.length} farmers`,
+    //         description: `Processed ${i + chunk.length} farmers so far.`,
+    //       });
+    //     }
+  
+    //     toast({
+    //       title: 'Upload Successful',
+    //       description: `${validFarmers.length} farmers added.`,
+    //     });
+  
+    //     fetchAndSetFarmers();
+    //   } catch (uploadError) {
+    //     console.error('Upload error:', uploadError);
+    //     toast({
+    //       title: 'Upload Failed',
+    //       description: 'An error occurred while uploading farmers.',
+    //       variant: 'destructive',
+    //     });
+    //   } finally {
+    //     setIsUploading(false);
+    //   }
+    // } else {
+    //   toast({
+    //     title: 'No valid farmers to upload',
+    //     description: 'All rows were invalid.',
+    //     variant: 'destructive',
+    //   });
+    // }
 
   return (
     <AppShell>
@@ -536,3 +513,4 @@ export default function FarmersPage() {
     </AppShell>
   );
 }
+
