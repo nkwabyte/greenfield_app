@@ -142,7 +142,7 @@ export function DataTable<TData, TValue>({
             {isLoading ? (
               Array.from({ length: table.getState().pagination.pageSize }).map((_, i) => (
                 <TableRow key={i}>
-                  {columns.map((column, j) => (
+                  {columns.map((_, j) => (
                     <TableCell key={j}>
                       <Skeleton className="h-6 w-full" />
                     </TableCell>

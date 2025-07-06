@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
-import { AuthProvider } from '@/components/providers/auth-provider';
 import { Toaster } from '@/components/ui/toaster';
 import './globals.css';
+import { AppProviders } from '@/lib/store/provider';
+import { AppInitializer } from '@/components/app-initializer';
+
 
 export const metadata: Metadata = {
   title: 'GREENFIELD CRM',
@@ -22,10 +24,11 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body antialiased" suppressHydrationWarning={true}>
-        <AuthProvider>
+        <AppProviders>
+          <AppInitializer /> {/* Loads employees, suppliers, transactions */}
           {children}
           <Toaster />
-        </AuthProvider>
+        </AppProviders>
       </body>
     </html>
   );

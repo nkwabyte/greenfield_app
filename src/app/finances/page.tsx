@@ -4,69 +4,64 @@ import * as React from 'react';
 import { AppShell } from '@/components/app-shell';
 import { PageHeader } from '@/components/page-header';
 import { KpiCard } from '@/components/dashboard/kpi-card';
-import type { Kpi, Transaction, Employee } from '@/lib/types';
-import { Wallet, TrendingUp, TrendingDown, PlusCircle } from 'lucide-react';
+import type { Kpi, Transaction } from '@/lib/types';
+import {
+  Wallet,
+  TrendingUp,
+  TrendingDown,
+  PlusCircle,
+} from 'lucide-react';
 import { ExpensesByCategoryChart } from '@/components/finances/expenses-by-category-chart';
 import { FinancialsOverTimeChart } from '@/components/finances/financials-over-time-chart';
 import { Button } from '@/components/ui/button';
 import { DataTable } from '@/components/data-table';
 import { getColumns } from '@/components/finances/transaction-columns';
-import { AddEditTransactionDialog, type TransactionFormValues } from '@/components/finances/add-edit-transaction-dialog';
+import {
+  AddEditTransactionDialog,
+  type TransactionFormValues,
+} from '@/components/finances/add-edit-transaction-dialog';
 import { useToast } from '@/hooks/use-toast';
-import { getTransactions, addTransaction, updateTransaction, deleteTransaction } from '@/lib/firebase/services/transactions';
-import { getEmployees } from '@/lib/firebase/services/employees';
 import { Skeleton } from '@/components/ui/skeleton';
+import { useSelector } from 'react-redux';
+import { useTransactions } from '@/hooks/use-transaction';
+import { RootState } from '@/lib/store/store';
 
-const currencyFormatter = new Intl.NumberFormat('en-US', {
+const currencyFormatter = new Intl.NumberFormat('en-GH', {
   style: 'currency',
-  currency: 'USD',
+  currency: 'GHS',
 });
 
 export default function FinancesPage() {
   const { toast } = useToast();
-  const [transactions, setTransactions] = React.useState<Transaction[]>([]);
-  const [employees, setEmployees] = React.useState<Employee[]>([]);
-  const [isLoading, setIsLoading] = React.useState(true);
+  const {
+    data: transactions = [],
+    isLoading,
+    addTransaction,
+    updateTransaction,
+    deleteTransaction,
+  } = useTransactions();
+
+  const employees = useSelector((state: RootState) => state.employees.data);
 
   const [isAddEditDialogOpen, setIsAddEditDialogOpen] = React.useState(false);
   const [editingTransaction, setEditingTransaction] = React.useState<Transaction | null>(null);
 
-  const fetchAndSetData = React.useCallback(async () => {
-    setIsLoading(true);
-    try {
-      const [transactionData, employeeData] = await Promise.all([
-        getTransactions(),
-        getEmployees(),
-      ]);
-      setTransactions(transactionData);
-      setEmployees(employeeData);
-    } catch (error) {
-      toast({ title: "Error fetching data", description: "Could not retrieve financial data.", variant: "destructive" });
-    } finally {
-      setIsLoading(false);
-    }
-  }, [toast]);
-
-  React.useEffect(() => {
-    fetchAndSetData();
-  }, [fetchAndSetData]);
-
   const kpis: Kpi[] = React.useMemo(() => {
     const totalRevenue = transactions
-      .filter(t => t.type === 'Income')
+      .filter((t) => t.type === 'Income')
       .reduce((sum, t) => sum + t.amount, 0);
     const totalExpenses = transactions
-      .filter(t => t.type === 'Expense')
+      .filter((t) => t.type === 'Expense')
       .reduce((sum, t) => sum + t.amount, 0);
     const netIncome = totalRevenue - totalExpenses;
-    
+
     return [
       { label: 'Total Revenue', value: currencyFormatter.format(totalRevenue), icon: TrendingUp },
       { label: 'Total Expenses', value: currencyFormatter.format(totalExpenses), icon: TrendingDown },
       { label: 'Net Income', value: currencyFormatter.format(netIncome), icon: Wallet },
     ];
   }, [transactions]);
-  
+
   const handleOpenAddDialog = () => {
     setEditingTransaction(null);
     setIsAddEditDialogOpen(true);
@@ -76,57 +71,69 @@ export default function FinancesPage() {
     setEditingTransaction(transaction);
     setIsAddEditDialogOpen(true);
   };
-  
+
   const handleSaveTransaction = async (data: TransactionFormValues) => {
     try {
       if (editingTransaction) {
-        await updateTransaction(editingTransaction.id, data);
-        toast({ title: "Transaction Updated", description: `The transaction has been updated.` });
+        await updateTransaction({ id: editingTransaction.id, data });
+        toast({ title: 'Transaction Updated', description: 'The transaction has been updated.' });
       } else {
         await addTransaction(data);
-        toast({ title: "Transaction Added", description: `The transaction has been added.` });
+        toast({ title: 'Transaction Added', description: 'The transaction has been added.' });
       }
-      fetchAndSetData();
     } catch (error) {
-       toast({ title: "Save Failed", description: "An error occurred while saving the transaction.", variant: "destructive" });
+      toast({
+        title: 'Save Failed',
+        description: 'An error occurred while saving the transaction.',
+        variant: 'destructive',
+      });
     }
   };
 
-  const handleDeleteTransaction = async (transactionId: string) => {
-     if (window.confirm("Are you sure you want to delete this transaction? This action cannot be undone.")) {
+  const handleDeleteTransaction = async (id: string) => {
+    if (window.confirm('Are you sure you want to delete this transaction?')) {
       try {
-        await deleteTransaction(transactionId);
-        toast({ title: "Transaction Deleted", description: "The transaction record has been removed." });
-        fetchAndSetData();
+        await deleteTransaction(id);
+        toast({ title: 'Transaction Deleted', description: 'Transaction has been removed.' });
       } catch (error) {
-        toast({ title: "Delete Failed", description: "An error occurred while deleting the transaction.", variant: "destructive" });
+        toast({
+          title: 'Delete Failed',
+          description: 'An error occurred while deleting the transaction.',
+          variant: 'destructive',
+        });
       }
     }
   };
-  
-  const columns = React.useMemo(() => getColumns({ onEdit: handleOpenEditDialog, onDelete: handleDeleteTransaction }), []);
+
+  const columns = React.useMemo(
+    () =>
+      getColumns({
+        onEdit: handleOpenEditDialog,
+        onDelete: handleDeleteTransaction,
+      }),
+    []
+  );
 
   return (
     <AppShell>
-      <PageHeader 
-        title="Financial Overview" 
-        description="A summary of company income and expenses."
-      >
+      <PageHeader title="Financial Overview" description="Track company income and expenses.">
         <Button onClick={handleOpenAddDialog}>
           <PlusCircle className="mr-2" />
           Add Transaction
         </Button>
       </PageHeader>
-      
+
       <div className="grid gap-6">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {isLoading ? <>
-            <Skeleton className="h-24" />
-            <Skeleton className="h-24" />
-            <Skeleton className="h-24" />
-          </> : kpis.map(kpi => (
-            <KpiCard key={kpi.label} {...kpi} />
-          ))}
+          {isLoading ? (
+            <>
+              <Skeleton className="h-24" />
+              <Skeleton className="h-24" />
+              <Skeleton className="h-24" />
+            </>
+          ) : (
+            kpis.map((kpi) => <KpiCard key={kpi.label} {...kpi} />)
+          )}
         </div>
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-5">
@@ -138,17 +145,15 @@ export default function FinancesPage() {
           </div>
         </div>
 
-        <div>
-          <DataTable
-            columns={columns}
-            data={transactions}
-            filterColumnId="description"
-            filterPlaceholder="Filter by description..."
-            isLoading={isLoading}
-          />
-        </div>
+        <DataTable
+          columns={columns}
+          data={transactions}
+          filterColumnId="description"
+          filterPlaceholder="Filter by description..."
+          isLoading={isLoading}
+        />
       </div>
-      
+
       <AddEditTransactionDialog
         open={isAddEditDialogOpen}
         onOpenChange={setIsAddEditDialogOpen}
