@@ -48,14 +48,14 @@ export default function LoginPage() {
 
   if (isLoading || isAuthenticated) {
     return (
-      <div className="flex min-h-screen items-center justify-center">
+      <div className="flex flex-col min-h-screen items-center justify-center">
         <Image
             src="/logo.svg"
             width={250}
             height={250}
             alt='Greenfield CRM logo'
           />
-        <p className="text-muted-foreground">Loading...</p>
+        <svg width="60" height="60" viewBox="0 0 44 44"><circle cx="22" cy="22" r="6" fill="none" stroke="#60A5FA" stroke-width="2"><animate attributeName="r" from="6" to="20" dur="1.5s" begin="0s" repeatCount="indefinite"></animate><animate attributeName="opacity" from="1" to="0" dur="1.5s" begin="0s" repeatCount="indefinite"></animate></circle><circle cx="22" cy="22" r="6" fill="none" stroke="#60A5FA" stroke-width="2"><animate attributeName="r" from="6" to="20" dur="1.5s" begin="0.5s" repeatCount="indefinite"></animate><animate attributeName="opacity" from="1" to="0" dur="1.5s" begin="0.5s" repeatCount="indefinite"></animate></circle></svg>
       </div>
     );
   }
