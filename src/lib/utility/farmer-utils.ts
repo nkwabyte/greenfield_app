@@ -10,7 +10,6 @@ export const handleResetLocalDb = async () => {
     }
 };
 
-
 export async function deleteFarmerEverywhere(localId: string, firebaseId?: string) {
     // 1. Delete from local DB
     await localDb.farmers.delete(localId);
@@ -26,5 +25,5 @@ export async function deleteFarmerEverywhere(localId: string, firebaseId?: strin
         }
     }
 
-    return { local: true, cloud: null }; // cloud unknown
+    return { local: true, cloud: null };
 }
