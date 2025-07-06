@@ -16,9 +16,9 @@ import type { Employee } from '@/lib/types';
 import { formatDistanceToNow } from 'date-fns';
 import { Checkbox } from '@/components/ui/checkbox';
 
-const currencyFormatter = new Intl.NumberFormat('en-US', {
+const currencyFormatter = new Intl.NumberFormat('en-GH', {
   style: 'currency',
-  currency: 'USD',
+  currency: 'GHS',
   minimumFractionDigits: 0,
   maximumFractionDigits: 0,
 });

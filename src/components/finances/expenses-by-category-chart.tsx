@@ -10,9 +10,9 @@ import {
 import type { Transaction } from '@/lib/types';
 import type { ChartConfig } from '@/components/ui/chart';
 
-const currencyFormatter = new Intl.NumberFormat('en-US', {
+const currencyFormatter = new Intl.NumberFormat('en-GH', {
   style: 'currency',
-  currency: 'USD',
+  currency: 'GHS',
   minimumFractionDigits: 0,
 });
 

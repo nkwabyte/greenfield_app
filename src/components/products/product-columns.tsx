@@ -16,9 +16,9 @@ import type { Product, Supplier } from '@/lib/types';
 import { Checkbox } from '@/components/ui/checkbox';
 import { cn } from '@/lib/utils';
 
-const currencyFormatter = new Intl.NumberFormat('en-US', {
+const currencyFormatter = new Intl.NumberFormat('en-GH', {
   style: 'currency',
-  currency: 'USD',
+  currency: 'GHS',
 });
 
 const getStockStatus = (quantity: number): { label: string, variant: 'default' | 'secondary' | 'destructive' } => {

@@ -12,9 +12,9 @@ import type { Transaction } from '@/lib/types';
 import { format } from 'date-fns';
 import type { ChartConfig } from '@/components/ui/chart';
 
-const currencyFormatter = new Intl.NumberFormat('en-US', {
+const currencyFormatter = new Intl.NumberFormat('en-GH', {
   style: 'currency',
-  currency: 'USD',
+  currency: 'GHS',
   minimumFractionDigits: 0,
 });
 
@@ -86,7 +86,7 @@ export function FinancialsOverTimeChart({ transactions }: { transactions: Transa
               axisLine={false}
               tickMargin={8}
             />
-            <YAxis tickFormatter={(value) => '$' + (value as number / 1000) + 'K'} />
+            <YAxis tickFormatter={(value) => '₵' + (value as number / 1000) + 'K'} />
             <ChartTooltip
               cursor={false}
               content={<CustomTooltip chartConfig={chartConfig} />}
