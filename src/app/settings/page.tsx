@@ -6,7 +6,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { doc, updateDoc } from 'firebase/firestore';
 import { db } from '@/lib/firebase/config';
-
+import { handleResetLocalDb } from '@/lib/utility/farmer-utils';
 import { AppShell } from '@/components/app-shell';
 import { PageHeader } from '@/components/page-header';
 import { Button } from '@/components/ui/button';
@@ -112,8 +112,8 @@ export default function SettingsPage() {
                   )}
                 />
                 <FormItem>
-                   <FormLabel>Role</FormLabel>
-                   <Input value={user?.role} disabled />
+                  <FormLabel>Role</FormLabel>
+                  <Input value={user?.role} disabled />
                 </FormItem>
                 <Button type="submit" disabled={form.formState.isSubmitting}>
                     {form.formState.isSubmitting ? 'Saving...' : 'Save Changes'}
@@ -122,6 +122,35 @@ export default function SettingsPage() {
             </Form>
           </CardContent>
         </Card>
+        <Card>
+    <CardHeader>
+      <CardTitle>Advanced</CardTitle>
+      <CardDescription>Danger zone: Local database operations.</CardDescription>
+    </CardHeader>
+    <CardContent>
+      <Button
+        variant="destructive"
+        onClick={async () => {
+          try {
+            await handleResetLocalDb();
+            toast({
+              title: 'Local Database Reset',
+              description: 'Your local farmer data has been cleared.',
+            });
+          } catch (error) {
+            toast({
+              title: 'Reset Failed',
+              description: 'There was a problem resetting the local database.',
+              variant: 'destructive',
+            });
+          }
+        }}
+      >
+        Delete Local Database
+      </Button>
+    </CardContent>
+  </Card>
+
       </div>
     </AppShell>
   );

@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import React from 'react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '@/lib/firebase/config';
-
+import { useAuth } from '@/hooks/use-auth';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -15,14 +15,15 @@ import Image from 'next/image';
 
 export default function LoginPage() {
   const router = useRouter();
+  const { isAuthenticated, isLoading } = useAuth();
   const { toast } = useToast();
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
-  const [isLoading, setIsLoading] = React.useState(false);
+  // const [isLoading, setIsLoading] = React.useState(false);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsLoading(true);
+    // setIsLoading(true);
     try {
       await signInWithEmailAndPassword(auth, email, password);
       toast({
@@ -36,10 +37,29 @@ export default function LoginPage() {
         description: error.message,
         variant: 'destructive',
       });
-    } finally {
-      setIsLoading(false);
     }
   };
+
+  React.useEffect(() => {
+    if (!isLoading && isAuthenticated) {
+      router.replace('/dashboard');
+    }
+  }, [isAuthenticated, isLoading, router]);
+
+  if (isLoading || isAuthenticated) {
+    return (
+      <div className="flex min-h-screen items-center justify-center">
+        <Image
+            src="/logo.svg"
+            width={250}
+            height={250}
+            alt='Greenfield CRM logo'
+          />
+        <p className="text-muted-foreground">Loading...</p>
+      </div>
+    );
+  }
+  
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-background p-4">
