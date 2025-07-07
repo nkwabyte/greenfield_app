@@ -12,13 +12,10 @@ import type { FailedRecord, Farmer, FarmerParseResult } from '@/lib/types';
 import { useToast } from '@/hooks/use-toast';
 import { UploadReportDialog } from '@/components/farmers/upload-report-dialog';
 import { AddEditFarmerDialog, type FarmerFormValues } from '@/components/farmers/add-edit-farmer-dialog';
-import { useFarmers } from '@/hooks/use-farmers';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { RootState } from '@/lib/store/store';
-import { useQueryClient } from '@tanstack/react-query';
+import { useFarmerMutations } from '@/hooks/use-farmer-mutation';
 
-
-const queryClient = useQueryClient();
 
 export default function FarmersPage() {
   const { toast } = useToast();
@@ -39,7 +36,7 @@ export default function FarmersPage() {
     addFarmer,
     updateFarmer,
     deleteFarmer
-  } = useFarmers();
+  } = useFarmerMutations();
 
   const handleOpenAddDialog = () => {
     setEditingFarmer(null);
@@ -295,7 +292,7 @@ export default function FarmersPage() {
           }));
           setUploadProgress({ processed: i + chunk.length, total: validFarmers.length });
         }        
-        await queryClient.invalidateQueries({ queryKey: ['farmers'] });
+        // await queryClient.invalidateQueries({ queryKey: ['farmers'] });
         setUploadProgress({ processed: 0, total: 0 });
         toast({
           title: 'Import Complete',

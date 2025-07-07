@@ -68,9 +68,9 @@ export default function DashboardPage() {
       </div>
 
       <AiAssistant 
-        open={isAiAssistantOpen} 
+        open={isAiAssistantOpen}
         onOpenChange={setIsAiAssistantOpen} 
-        farmers={farmers} 
+        farmers={farmers}
       />
     </AppShell>
   );

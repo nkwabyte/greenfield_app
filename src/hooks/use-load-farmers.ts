@@ -1,6 +1,6 @@
 'use client';
 
-import { usePaginatedFarmers } from '@/hooks/use-farmers';
+import { usePaginatedFarmers } from '@/hooks/use-paginated-farmers';
 import { useDispatch } from 'react-redux';
 import { addFarmer } from '@/lib/store/slices/famersSlice';
 import { useEffect, useRef } from 'react';
@@ -8,6 +8,7 @@ import type { Farmer } from '@/lib/types';
 
 export const useLoadFarmersToRedux = () => {
     const dispatch = useDispatch();
+
     const {
         data,
         isLoading,
@@ -16,24 +17,24 @@ export const useLoadFarmersToRedux = () => {
         isFetchingNextPage,
     } = usePaginatedFarmers();
 
-    const pagesLoadedRef = useRef<number>(0);
+    const farmers = data?.farmers ?? [];
+
+    const farmersLoadedRef = useRef<Set<string>>(new Set());
 
     useEffect(() => {
-        if (!data) return;
+        if (farmers.length === 0) return;
 
-        // Load only the new pages
-        const newPages = data.pages.slice(pagesLoadedRef.current);
-        newPages.forEach(farmerPage => {
-            farmerPage.forEach((farmer: Farmer) => dispatch(addFarmer(farmer)));
+        farmers.forEach((farmer: Farmer) => {
+            if (!farmersLoadedRef.current.has(farmer.id)) {
+                dispatch(addFarmer(farmer));
+                farmersLoadedRef.current.add(farmer.id);
+            }
         });
 
-        pagesLoadedRef.current = data.pages.length;
-
-        // Fetch next page if available
         if (hasNextPage && !isFetchingNextPage) {
             fetchNextPage();
         }
-    }, [data, dispatch, fetchNextPage, hasNextPage, isFetchingNextPage]);
+    }, [farmers, dispatch, fetchNextPage, hasNextPage, isFetchingNextPage]);
 
     return { isLoading };
-}
+};

@@ -18,9 +18,11 @@ import {
 } from 'firebase/firestore';
 import type { Farmer } from '@/lib/types';
 import type { FarmerFormValues } from '@/components/farmers/add-edit-farmer-dialog';
+import { Timestamp } from 'firebase/firestore';
 
 
 const farmerCollection = collection(db, 'farmers');
+
 
 export async function getPaginatedFarmers(
   lastDoc?: QueryDocumentSnapshot<DocumentData>,
@@ -38,7 +40,7 @@ export async function getPaginatedFarmers(
 
     return {
       id: doc.id,
-      name: data.name ?? 'Unnamed Farmer', // Required field fallback
+      name: data.name ?? 'Unnamed Farmer',
       gender: data.gender,
       region: data.region,
       district: data.district,
@@ -50,9 +52,15 @@ export async function getPaginatedFarmers(
       farmSize: data.farmSize,
       cropsGrown: data.cropsGrown ?? [],
       status: data.status,
-      joinDate: data.joinDate?.toDate().toISOString(),
-      createdAt: data.createdAt.toDate().toISOString(),
-      updatedAt: data.updatedAt.toDate().toISOString(),
+      joinDate: data.joinDate instanceof Timestamp
+        ? data.joinDate.toDate().toISOString()
+        : data.joinDate ?? null,
+      createdAt: data.createdAt instanceof Timestamp
+        ? data.createdAt.toDate().toISOString()
+        : data.createdAt ?? null,
+      updatedAt: data.updatedAt instanceof Timestamp
+        ? data.updatedAt.toDate().toISOString()
+        : data.updatedAt ?? null,
     };
   });
 
@@ -73,7 +81,7 @@ export async function getFirebaseFarmers(): Promise<Farmer[]> {
       joinDate: data.joinDate?.toDate().toISOString(),
       createdAt: data.createdAt.toDate().toISOString(),
       updatedAt: data.updatedAt.toDate().toISOString(),
-    }
+    };
   }) as Farmer[];
 }
 

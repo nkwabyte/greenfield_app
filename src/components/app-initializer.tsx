@@ -8,25 +8,15 @@ import { useLoadFarmersToRedux } from '@/hooks/use-load-farmers';
 import { useAuth } from '@/hooks/use-auth';
 
 export function AppInitializer() {
-
+  /// Initialize authentication state
+  // This hook will check if the user is authenticated and set the auth state accordingly
   useAuth();
-
-  const employees = useEmployees();
-  const suppliers = useSuppliers();
-  const transactions = useTransactions();
-  const farmers = useLoadFarmersToRedux();
-
-  const isLoading =
-    employees.isLoading ||
-    suppliers.isLoading ||
-    transactions.isLoading ||
-    farmers.isLoading;
-
-  React.useEffect(() => {
-    if (!isLoading) {
-      console.log('Global data fully loaded');
-    }
-  }, [isLoading]);
+  /// Trigger hooks to load data into Redux store
+  // These hooks will automatically fetch data and populate the Redux store
+  useEmployees();
+  useSuppliers();
+  useTransactions();
+  useLoadFarmersToRedux();
 
   return null;
 }

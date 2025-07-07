@@ -69,7 +69,7 @@ export function FarmersByGenderChart({ farmers }: FarmersByGenderChartProps) {
               content={<CustomTooltip totalFarmers={totalFarmers} />}
             />
             <Pie data={data} dataKey="value" nameKey="name" innerRadius={50} outerRadius={80} strokeWidth={2}>
-               <Label
+              <Label
                 content={({ viewBox }) => {
                   if (viewBox && "cx" in viewBox && "cy" in viewBox) {
                     return (
@@ -89,7 +89,7 @@ export function FarmersByGenderChart({ farmers }: FarmersByGenderChartProps) {
                         <tspan
                           x={viewBox.cx}
                           y={(viewBox.cy || 0) + 15}
-                          className="fill-muted-foreground"
+                          className="fill-muted-foreground py-2"
                         >
                           Farmers
                         </tspan>
