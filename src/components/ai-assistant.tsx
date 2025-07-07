@@ -14,6 +14,11 @@ import { Bot, Lightbulb, UserCheck, BarChart } from 'lucide-react';
 import { Skeleton } from './ui/skeleton';
 import { Card, CardContent } from './ui/card';
 import type { Farmer } from '@/lib/types';
+import {
+  runSummarizeKpis,
+  runSuggestBusinessDecisions,
+  runGenerateFarmerPersona,
+} from '@/lib/ai-actions';
 
 type AiAssistantProps = {
   open: boolean;
@@ -36,27 +41,40 @@ export function AiAssistant({ open, onOpenChange, farmers }: AiAssistantProps) {
   const getFarmerDataSummary = React.useCallback(() => {
     const total = farmers.length;
     const regions = farmers.reduce((acc, f) => {
-      if (f.region) {
-        acc[f.region] = (acc[f.region] || 0) + 1;
-      }
+      if (f.region) acc[f.region] = (acc[f.region] || 0) + 1;
       return acc;
     }, {} as Record<string, number>);
-    
-    const sampleFarmer = farmers[0];
-    const sampleString = sampleFarmer
-      ? `Example farmer: ${sampleFarmer.name}, Age: ${sampleFarmer.age}, Farm Size: ${sampleFarmer.farmSize} acres, Location: ${sampleFarmer.community}, ${sampleFarmer.district}, ${sampleFarmer.region}, Crops: ${sampleFarmer.cropsGrown?.join(', ')}.`
-      : 'No farmer data available for a sample.';
 
-    return `Total farmers: ${total}. Distribution by region: ${JSON.stringify(regions)}. ${sampleString}`;
+    const genderCounts = {
+      male: farmers.filter(f => f.gender === 'Male').length,
+      female: farmers.filter(f => f.gender === 'Female').length,
+    };
+
+    const crops = new Set(farmers.flatMap(f => f.cropsGrown || []));
+    const avgFarmSize =
+      farmers.reduce((sum, f) => sum + (Number(f.farmSize) || 0), 0) / (total || 1);
+
+    const sample = farmers.find(f => f.name && f.community);
+
+    const summary = [
+      `Total farmers: ${total}`,
+      `Regions: ${Object.keys(regions).join(', ')}`,
+      `Gender ratio - Male: ${genderCounts.male}, Female: ${genderCounts.female}`,
+      `Avg farm size: ${avgFarmSize.toFixed(2)} acres`,
+      `Common crops: ${Array.from(crops).slice(0, 5).join(', ')}`,
+      sample
+        ? `Sample: ${sample.name} from ${sample.community}, ${sample.region} with ${sample.farmSize} acres.`
+        : 'No sample available.',
+    ];
+
+    return summary.join('\n');
   }, [farmers]);
 
   const handleSummarizeKpis = async () => {
     setKpiLoading('loading');
     try {
       const regionalCounts = farmers.reduce((acc, f) => {
-        if (f.region) {
-          acc[f.region] = (acc[f.region] || 0) + 1;
-        }
+        if (f.region) acc[f.region] = (acc[f.region] || 0) + 1;
         return acc;
       }, {} as Record<string, number>);
 
@@ -64,23 +82,19 @@ export function AiAssistant({ open, onOpenChange, farmers }: AiAssistantProps) {
       const female = farmers.filter(f => f.gender === 'Female').length;
       const totalWithGender = male + female;
 
-      const response = await fetch('/api/ai/summarize-kpis', {
-        method: 'POST',
-        body: JSON.stringify({
-          totalFarmers: farmers.length,
-          regionalCounts,
-          genderRatios: {
-            male: totalWithGender > 0 ? (male / totalWithGender) * 100 : 0,
-            female: totalWithGender > 0 ? (female / totalWithGender) * 100 : 0,
-          },
-        }),
+      const result = await runSummarizeKpis({
+        totalFarmers: farmers.length,
+        regionalCounts,
+        genderRatios: {
+          male: totalWithGender > 0 ? (male / totalWithGender) * 100 : 0,
+          female: totalWithGender > 0 ? (female / totalWithGender) * 100 : 0,
+        },
       });
 
-      if (!response.ok) throw new Error('Failed to fetch summary');
-      const result = await response.json();
       setKpiInsights(result);
       setKpiLoading('success');
     } catch (e) {
+      console.error(e);
       setKpiLoading('error');
     }
   };
@@ -88,19 +102,15 @@ export function AiAssistant({ open, onOpenChange, farmers }: AiAssistantProps) {
   const handleSuggestDecisions = async () => {
     setDecisionsLoading('loading');
     try {
-      const response = await fetch('/api/ai/suggest-business-decisions', {
-        method: 'POST',
-        body: JSON.stringify({
-          farmerDataSummary: getFarmerDataSummary(),
-          inventoryDataSummary: 'Inventory data is not available at the moment. Focus on farmer data.',
-        }),
+      const result = await runSuggestBusinessDecisions({
+        farmerDataSummary: getFarmerDataSummary(),
+        inventoryDataSummary:
+          'Inventory data is currently unavailable. Focus decisions on farmer distribution, gender balance, and farm size.',
       });
-
-      if (!response.ok) throw new Error('Failed to fetch decisions');
-      const result = await response.json();
       setDecisions(result);
       setDecisionsLoading('success');
     } catch (e) {
+      console.error(e);
       setDecisionsLoading('error');
     }
   };
@@ -108,18 +118,13 @@ export function AiAssistant({ open, onOpenChange, farmers }: AiAssistantProps) {
   const handleGeneratePersona = async () => {
     setPersonaLoading('loading');
     try {
-      const response = await fetch('/api/ai/generate-farmer-persona', {
-        method: 'POST',
-        body: JSON.stringify({
-          farmerDataSummary: getFarmerDataSummary(),
-        }),
+      const result = await runGenerateFarmerPersona({
+        farmerDataSummary: getFarmerDataSummary(),
       });
-
-      if (!response.ok) throw new Error('Failed to fetch persona');
-      const result = await response.json();
       setPersona(result);
       setPersonaLoading('success');
     } catch (e) {
+      console.error(e);
       setPersonaLoading('error');
     }
   };
@@ -177,6 +182,7 @@ export function AiAssistant({ open, onOpenChange, farmers }: AiAssistantProps) {
               <UserCheck className="mr-2 h-4 w-4" />Persona
             </TabsTrigger>
           </TabsList>
+
           <TabsContent value="kpi" className="min-h-[200px]">
             {renderContent(
               kpiLoading,
@@ -199,6 +205,7 @@ export function AiAssistant({ open, onOpenChange, farmers }: AiAssistantProps) {
               )
             )}
           </TabsContent>
+
           <TabsContent value="decisions" className="min-h-[200px]">
             {renderContent(
               decisionsLoading,
@@ -214,6 +221,7 @@ export function AiAssistant({ open, onOpenChange, farmers }: AiAssistantProps) {
               )
             )}
           </TabsContent>
+
           <TabsContent value="persona" className="min-h-[200px]">
             {renderContent(
               personaLoading,

@@ -1,7 +1,6 @@
 'use client';
 
 import * as React from 'react';
-import { useDispatch } from 'react-redux';
 import { AppShell } from '@/components/app-shell';
 import { PageHeader } from '@/components/page-header';
 import { Button } from '@/components/ui/button';
