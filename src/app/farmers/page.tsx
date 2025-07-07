@@ -177,13 +177,17 @@ export default function FarmersPage() {
     const gender = genderRaw === 'f' ? 'Female' : genderRaw === 'm' ? 'Male' : 'Other';
   
     const age = parseInt(row[columnMap.age]) || 0;
-    const farmSize = parseFloat(row[columnMap.size]) || 0.0;
+    const farmSize = parseFloat(row[columnMap.farmSize]) || 0.0;
     const region = (row[columnMap.region] || '').toString().trim();
+    // society
+    const society = (row[columnMap.society] || '').toString().trim();
+    // community
+    const community = (row[columnMap.community] || '').toString().trim();
   
     const errors: string[] = [];
     if (!name || name.length === 0) errors.push('Missing or invalid farmer name.');
     if (!region || region.length === 0) errors.push('Missing or invalid region.');
-  
+
     if (errors.length > 0) {
       return {
         status: 'invalid',
@@ -203,8 +207,8 @@ export default function FarmersPage() {
       gender: gender as Farmer['gender'],
       region,
       district: sheetName,
-      community: '',
-      contact: '',
+      community,
+      society,
       age,
       farmSize,
       educationLevel: 'None',
@@ -247,11 +251,10 @@ export default function FarmersPage() {
         columnNames.find(col => col.toLowerCase().includes(key)) || '';
   
       const columnMap = {
-        no: getColumn('no'),
         name: getColumn('name'),
         gender: getColumn('gender'),
         age: getColumn('age'),
-        size: getColumn('size'),
+        farmSize: getColumn('farm size'),
         region: getColumn('region'),
       };
   
