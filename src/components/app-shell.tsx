@@ -27,18 +27,19 @@ import {
 } from '@/components/ui/sidebar';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
-import { useAuth } from '@/hooks/use-auth';
 import Image from 'next/image';
-import { 
-  LayoutGrid, 
-  LogOut, 
-  Users, 
-  Settings, 
-  Briefcase, 
-  Landmark, 
-  Truck, 
-  Package 
+import {
+  LayoutGrid,
+  LogOut,
+  Users,
+  Settings,
+  Briefcase,
+  Landmark,
+  Truck,
+  Package
 } from 'lucide-react';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/lib/store/store';
 
 const allNavItems = [
   { href: '/dashboard', icon: LayoutGrid, label: 'Dashboard', roles: ['Admin', 'Employee'] },
@@ -50,9 +51,12 @@ const allNavItems = [
 ];
 
 export function AppShell({ children }: { children: React.ReactNode }) {
-  const { user, isAuthenticated, isLoading } = useAuth();
   const router = useRouter();
   const pathname = usePathname();
+
+  const user = useSelector((state: RootState) => state.auth.user);
+  const isAuthenticated = useSelector((state: RootState) => state.auth.isAuthenticated);
+  const isLoading = useSelector((state: RootState) => state.auth.isLoading);
 
   React.useEffect(() => {
     if (!isLoading && !isAuthenticated) {
@@ -67,9 +71,9 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
   if (isLoading || !isAuthenticated || !user) {
     return (
-        <div className="flex h-screen items-center justify-center">
-          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-primary"></div>
-        </div>
+      <div className="flex h-screen items-center justify-center">
+        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-primary"></div>
+      </div>
     );
   }
 
@@ -81,10 +85,9 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   const getInitials = (name: string) => {
     if (!name) return 'U';
     const names = name.split(' ');
-    if (names.length > 1) {
-      return `${names[0][0]}${names[names.length - 1][0]}`.toUpperCase();
-    }
-    return name.substring(0, 2).toUpperCase();
+    return names.length > 1
+      ? `${names[0][0]}${names[names.length - 1][0]}`.toUpperCase()
+      : name.substring(0, 2).toUpperCase();
   };
 
   return (
@@ -92,18 +95,9 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       <Sidebar>
         <SidebarHeader>
           <Link href="/dashboard" className="flex flex-row items-center justify-center w-full gap-2">
-            {/* <Logo className="h-8 w-8 text-primary" /> */}
             <div className="h-32 w-32 text-primary flex flex-row items-center justify-center">
-              <Image
-                src="/logo.svg"
-                width={120}
-                height={120}
-                alt='Greenfield CRM logo'
-              />
+              <Image src="/logo.svg" width={120} height={120} alt="Greenfield CRM logo" />
             </div>
-            {/* <span className="font-headline text-xl font-semibold text-primary">
-              GREENFIELD
-            </span> */}
           </Link>
         </SidebarHeader>
         <SidebarContent>
@@ -124,19 +118,17 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             ))}
           </SidebarMenu>
         </SidebarContent>
-        <SidebarFooter>
-          {/* Add settings or other footer items here if needed */}
-        </SidebarFooter>
+        <SidebarFooter />
       </Sidebar>
       <SidebarInset>
         <header className="sticky top-0 z-10 flex h-16 items-center justify-between border-b bg-background/80 px-4 backdrop-blur-sm sm:px-6">
-            <SidebarTrigger className="md:hidden" />
-            <div className="flex-1" />
-            <DropdownMenu>
+          <SidebarTrigger className="md:hidden" />
+          <div className="flex-1" />
+          <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" className="relative h-10 w-10 rounded-full">
                 <Avatar className="h-9 w-9">
-                  <AvatarImage src='/account.svg' alt={user.name} />
+                  <AvatarImage src="/account.svg" alt={user.name} />
                   <AvatarFallback>{getInitials(user.name)}</AvatarFallback>
                 </Avatar>
               </Button>
@@ -145,16 +137,14 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               <DropdownMenuLabel className="font-normal">
                 <div className="flex flex-col space-y-1">
                   <p className="text-sm font-medium leading-none">{user.name}</p>
-                  <p className="text-xs leading-none text-muted-foreground">
-                    {user.email}
-                  </p>
+                  <p className="text-xs leading-none text-muted-foreground">{user.email}</p>
                 </div>
               </DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuItem asChild>
                 <Link href="/settings">
-                    <Settings className="mr-2 h-4 w-4" />
-                    <span>Settings</span>
+                  <Settings className="mr-2 h-4 w-4" />
+                  <span>Settings</span>
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuSeparator />
