@@ -5,12 +5,27 @@ export type User = {
   role: 'Admin' | 'Employee';
 };
 
+export type FailedRecord = {
+  rowIndex: number;
+  rowData: string;
+  error: string;
+};
+
+export type FarmerParseResult = {
+  status: 'valid';
+  data: Omit<Farmer, 'id' | 'createdAt' | 'updatedAt'>;
+} | {
+  status: 'invalid';
+  error: FailedRecord;
+};
+
 export type Farmer = {
   id: string;
   name: string;
   gender?: 'Male' | 'Female' | 'Other';
-  region?: string; // e.g., 'Northern', 'Ashanti'
+  region?: string;
   district?: string;
+  society?: string;
   community?: string;
   contact?: string;
   age?: number;

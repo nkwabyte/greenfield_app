@@ -44,6 +44,7 @@ const farmerSchema = z.object({
   gender: z.enum(['Male', 'Female', 'Other']).optional(),
   region: z.string().optional(),
   district: z.string().optional(),
+  society: z.string().optional(),
   community: z.string().optional(),
   contact: z.string().optional(),
   age: z.coerce.number().positive().optional(),
@@ -52,6 +53,8 @@ const farmerSchema = z.object({
   cropsGrown: z.array(z.string().min(2).max(100)).optional(),
   status: z.enum(['Active', 'Inactive']).optional(),
   joinDate: z.date().optional(),
+  createdAt: z.date().optional(),
+  updatedAt: z.date().optional(),
 });
 
 export type FarmerFormValues = z.infer<typeof farmerSchema>;
@@ -70,6 +73,7 @@ export function AddEditFarmerDialog({ open, onOpenChange, farmer, onSave }: AddE
       name: '',
       region: '',
       district: '',
+      society: '',
       community: '',
       contact: '',
       cropsGrown: [],
@@ -83,6 +87,8 @@ export function AddEditFarmerDialog({ open, onOpenChange, farmer, onSave }: AddE
         ...farmer,
         cropsGrown: farmer.cropsGrown,
         joinDate: farmer.joinDate ? new Date(farmer.joinDate) : undefined,
+        createdAt: farmer.createdAt ? new Date(farmer.createdAt) : undefined,
+        updatedAt: farmer.updatedAt ? new Date(farmer.updatedAt) : undefined,
       });
     } else if (open) {
       form.reset({
@@ -266,7 +272,7 @@ export function AddEditFarmerDialog({ open, onOpenChange, farmer, onSave }: AddE
                   <FormControl>
                     <Textarea placeholder="e.g. Maize, Cassava, Plantain" {...field} />
                   </FormControl>
-                   <FormDescription>
+                  <FormDescription>
                     Enter a comma-separated list of crops.
                   </FormDescription>
                   <FormMessage />

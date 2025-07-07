@@ -3,46 +3,37 @@
 import { usePaginatedFarmers } from '@/hooks/use-farmers';
 import { useDispatch } from 'react-redux';
 import { addFarmer } from '@/lib/store/slices/famersSlice';
-import { syncFarmersToFirebase } from '@/lib/sync/sync-farmers';
-import React from 'react';
+import { useEffect, useRef } from 'react';
+import type { Farmer } from '@/lib/types';
 
-export function useLoadFarmersToRedux() {
+export const useLoadFarmersToRedux = () => {
     const dispatch = useDispatch();
-    const dispatchedPagesRef = React.useRef(0);
-    const syncTriggeredRef = React.useRef(false);
-
     const {
         data,
         isLoading,
-        isFetchingNextPage,
-        hasNextPage,
         fetchNextPage,
+        hasNextPage,
+        isFetchingNextPage,
     } = usePaginatedFarmers();
 
-    React.useEffect(() => {
+    const pagesLoadedRef = useRef<number>(0);
+
+    useEffect(() => {
         if (!data) return;
 
-        const newPages = data.pages.slice(dispatchedPagesRef.current);
-        for (const page of newPages) {
-            for (const farmer of page) {
-                dispatch(addFarmer(farmer));
-            }
-        }
+        // Load only the new pages
+        const newPages = data.pages.slice(pagesLoadedRef.current);
+        newPages.forEach(farmerPage => {
+            farmerPage.forEach((farmer: Farmer) => dispatch(addFarmer(farmer)));
+        });
 
-        dispatchedPagesRef.current = data.pages.length;
+        pagesLoadedRef.current = data.pages.length;
 
+        // Fetch next page if available
         if (hasNextPage && !isFetchingNextPage) {
             fetchNextPage();
         }
-
-        const allPagesFetched = !hasNextPage && !isFetchingNextPage;
-        const allDispatched = dispatchedPagesRef.current === data.pages.length;
-
-        if (allPagesFetched && allDispatched && !syncTriggeredRef.current && navigator.onLine) {
-            syncTriggeredRef.current = true;
-            syncFarmersToFirebase();
-        }
-    }, [data, dispatch, hasNextPage, isFetchingNextPage, fetchNextPage]);
+    }, [data, dispatch, fetchNextPage, hasNextPage, isFetchingNextPage]);
 
     return { isLoading };
 }

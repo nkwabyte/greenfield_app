@@ -11,12 +11,56 @@ import {
   query,
   orderBy,
   writeBatch,
+  QueryDocumentSnapshot,
+  DocumentData,
+  limit,
+  startAfter,
 } from 'firebase/firestore';
 import type { Farmer } from '@/lib/types';
 import type { FarmerFormValues } from '@/components/farmers/add-edit-farmer-dialog';
 
 
 const farmerCollection = collection(db, 'farmers');
+
+export async function getPaginatedFarmers(
+  lastDoc?: QueryDocumentSnapshot<DocumentData>,
+  chunkSize = 100
+): Promise<{ farmers: Farmer[]; lastDoc?: QueryDocumentSnapshot<DocumentData> }> {
+  let q = query(farmerCollection, orderBy('createdAt', 'desc'), limit(chunkSize));
+  if (lastDoc) {
+    q = query(farmerCollection, orderBy('createdAt', 'desc'), startAfter(lastDoc), limit(chunkSize));
+  }
+
+  const snapshot = await getDocs(q);
+
+  const farmers: Farmer[] = snapshot.docs.map((doc) => {
+    const data = doc.data();
+
+    return {
+      id: doc.id,
+      name: data.name ?? 'Unnamed Farmer', // Required field fallback
+      gender: data.gender,
+      region: data.region,
+      district: data.district,
+      society: data.society,
+      community: data.community,
+      contact: data.contact,
+      age: data.age,
+      educationLevel: data.educationLevel,
+      farmSize: data.farmSize,
+      cropsGrown: data.cropsGrown ?? [],
+      status: data.status,
+      joinDate: data.joinDate?.toDate().toISOString(),
+      createdAt: data.createdAt.toDate().toISOString(),
+      updatedAt: data.updatedAt.toDate().toISOString(),
+    };
+  });
+
+  return {
+    farmers,
+    lastDoc: snapshot.docs[snapshot.docs.length - 1],
+  };
+}
 
 export async function getFirebaseFarmers(): Promise<Farmer[]> {
   const q = query(farmerCollection, orderBy('updatedAt', 'desc'));

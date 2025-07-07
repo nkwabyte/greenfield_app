@@ -28,7 +28,6 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/hooks/use-auth';
-import { Logo } from '@/components/icons/logo';
 import Image from 'next/image';
 import { 
   LayoutGrid, 

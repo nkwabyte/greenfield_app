@@ -6,46 +6,23 @@ import {
     addFirebaseFarmer,
     updateFirebaseFarmer,
     deleteFirebaseFarmer,
+    getPaginatedFarmers,
 } from '@/lib/firebase/services/farmers';
 import type { FarmerFormValues } from '@/components/farmers/add-edit-farmer-dialog';
-import { localDb } from '@/lib/db/local-db';
-import type { Farmer } from '@/lib/types';
 import { useInfiniteQuery } from '@tanstack/react-query';
 
-const CHUNK_SIZE = 200;
-
 export const usePaginatedFarmers = () => {
-    return useInfiniteQuery<Farmer[], Error>({
-        queryKey: ['farmers'],
-        queryFn: async ({ pageParam = 0 }: { pageParam: any }) => {
-            const totalFarmers = await localDb.farmers.count();
-
-            // If local DB is empty, or all are synced, pull from Firebase
-            if (totalFarmers === 0 || (await localDb.farmers.where('synced').equals(0).count()) === 0) {
-                const firebaseFarmers = await getFirebaseFarmers();
-
-                // Cache them in local DB
-                await localDb.farmers.clear(); // clear first to prevent duplicates
-                await localDb.farmers.bulkAdd(
-                    firebaseFarmers.map(farmer => ({
-                        ...farmer,
-                        synced: 1, // Mark as synced
-                    }))
-                );
-            }
-
-            // Return paginated local data
-            return await localDb.farmers
-                .orderBy('createdAt')
-                .offset(pageParam)
-                .limit(CHUNK_SIZE)
-                .toArray();
+    return useInfiniteQuery({
+        queryKey: ['farmers-paginated'],
+        queryFn: async ({ pageParam }: { pageParam: any }) => {
+            return await getPaginatedFarmers(pageParam);
         },
-        getNextPageParam: (lastPage, allPages) => {
-            if (lastPage.length < CHUNK_SIZE) return undefined;
-            return allPages.flat().length;
-        },
-        initialPageParam: 0,
+        getNextPageParam: (lastPage) => lastPage.lastDoc ?? undefined,
+        select: (data) => ({
+            pages: data.pages.map(p => p.farmers),
+            pageParams: data.pageParams,
+        }),
+        initialPageParam: undefined,
         staleTime: 1000 * 60 * 5,
     });
 };

@@ -8,35 +8,20 @@ import { Button } from '@/components/ui/button';
 import { Download, PlusCircle, Upload } from 'lucide-react';
 import { DataTable } from '@/components/data-table';
 import { getColumns } from '@/components/farmers/farmer-columns';
-import type { Farmer } from '@/lib/types';
+import type { FailedRecord, Farmer, FarmerParseResult } from '@/lib/types';
 import { useToast } from '@/hooks/use-toast';
 import { UploadReportDialog } from '@/components/farmers/upload-report-dialog';
 import { AddEditFarmerDialog, type FarmerFormValues } from '@/components/farmers/add-edit-farmer-dialog';
-import { localDb, LocalFarmer } from '@/lib/db/local-db';
-import { deleteFarmerEverywhere } from '@/lib/utility/farmer-utils';
-import { addFirebaseFarmer, updateFirebaseFarmer } from '@/lib/firebase/services/farmers';
+import { useFarmers } from '@/hooks/use-farmers';
 import { useDispatch, useSelector } from 'react-redux';
-import { addFarmer, deleteFarmer, setFarmers, updateFarmer } from '@/lib/store/slices/famersSlice'; // adjust path
 import { RootState } from '@/lib/store/store';
+import { useQueryClient } from '@tanstack/react-query';
 
 
-type FailedRecord = {
-  rowIndex: number;
-  rowData: string;
-  error: string;
-};
-
-type FarmerParseResult = {
-  status: 'valid';
-  data: Omit<Farmer, 'id' | 'createdAt' | 'updatedAt'>;
-} | {
-  status: 'invalid';
-  error: FailedRecord;
-};
+const queryClient = useQueryClient();
 
 export default function FarmersPage() {
   const { toast } = useToast();
-  const dispatch = useDispatch();
   const farmers = useSelector((state: RootState) => state.farmers.data);
   const isLoading = farmers.length === 0;
   const fileInputRef = React.useRef<HTMLInputElement>(null);
@@ -50,32 +35,11 @@ export default function FarmersPage() {
   const [isUploading, setIsUploading] = React.useState(false);
   const [uploadProgress, setUploadProgress] = React.useState({ processed: 0, total: 0 });
 
-  const fetchAndSetFarmers = React.useCallback(async () => {
-    try {
-      const farmerData = await localDb.farmers.toArray(); // Local-first
-      dispatch(setFarmers(farmerData));
-    } catch (error) {
-      console.error(error);
-      toast({
-        title: "Error fetching farmers",
-        description: "Could not retrieve farmer data from local storage.",
-        variant: "destructive",
-      });
-    }
-  }, [toast]);
-
-  React.useEffect(() => {
-    const loadFarmersIfNeeded = async () => {
-      if (farmers.length === 0) {
-        const localFarmers = await localDb.farmers.orderBy('createdAt').toArray();
-        dispatch(setFarmers(localFarmers)); // Replace local state
-      }
-    };
-  
-    loadFarmersIfNeeded();
-  }, [dispatch, farmers.length]);
-  
-  
+  const {
+    addFarmer,
+    updateFarmer,
+    deleteFarmer
+  } = useFarmers();
 
   const handleOpenAddDialog = () => {
     setEditingFarmer(null);
@@ -89,98 +53,29 @@ export default function FarmersPage() {
 
   const handleSaveFarmer = async (data: FarmerFormValues) => {
     try {
-      const now = new Date().toISOString();
-      const joinDate =
-      data.joinDate instanceof Date
-        ? data.joinDate.toISOString().split('T')[0] // convert to "YYYY-MM-DD"
-        : data.joinDate || undefined;
-  
-        if (editingFarmer) {
-          await localDb.farmers.update(editingFarmer.id, {
-            ...data,
-            joinDate,
-            updatedAt: now,
-            synced: 0,
-          });
-        
-          const localFarmer = await localDb.farmers.get(editingFarmer.id);
-          if (localFarmer) {
-            const farmerForFirebase = {
-              ...localFarmer,
-              joinDate: localFarmer.joinDate ? new Date(localFarmer.joinDate) : undefined
-            };
-            updateFirebaseFarmer(localFarmer.id, farmerForFirebase);
-            await localDb.farmers.update(localFarmer.id, { synced: 1 });
-        
-            dispatch(updateFarmer(localFarmer)); // ✅ Redux update
-          }
-          toast({ title: "Farmer Updated", description: `${data.name}'s record has been updated locally.` });
-        } else {
-          const id = crypto.randomUUID();
-          const newFarmer = {
-            id,
-            ...data,
-            joinDate,
-            createdAt: now,
-            updatedAt: now,
-            synced: 0 as LocalFarmer['synced'],
-          };
-        
-          await localDb.farmers.add(newFarmer);
-          const localFarmer = await localDb.farmers.get(id);
-          if (localFarmer) {
-            const farmerForFirebase = {
-              ...localFarmer,
-              joinDate: localFarmer.joinDate ? new Date(localFarmer.joinDate) : undefined
-            };
-            await addFirebaseFarmer(farmerForFirebase, localFarmer.id);
-            await localDb.farmers.update(localFarmer.id, { synced: 1 });
-        
-            dispatch(addFarmer(localFarmer));
-          }
-        
-          toast({ title: "Farmer Added", description: `${data.name} has been added locally.` });
-        }        
-  
-      fetchAndSetFarmers();
+      if (editingFarmer) {
+        await updateFarmer({ id: editingFarmer.id, data });
+        toast({ title: "Farmer Updated", description: `${data.name}'s record has been updated.` });
+      } else {
+        const id = crypto.randomUUID();
+        await addFarmer({ id, data });
+        toast({ title: "Farmer Added", description: `${data.name} has been added.` });
+      }
     } catch (error) {
-      console.error(error);
-      toast({
-        title: "Save Failed",
-        description: "An error occurred while saving the farmer.",
-        variant: "destructive",
-      });
+      toast({ title: "Save Failed", description: "An error occurred while saving the farmer.", variant: "destructive" });
     }
   };
-
+  
   const handleDeleteFarmer = async (farmerId: string) => {
-    if (window.confirm("Are you sure you want to delete this farmer? This action cannot be undone.")) {
+    if (window.confirm("Are you sure you want to delete this farmer?")) {
       try {
-        const farmer = await localDb.farmers.get(farmerId);
-  
-        if (!farmer) {
-          toast({ title: "Farmer Not Found", description: "Could not locate the farmer in the local database.", variant: "destructive" });
-          return;
-        }
-  
-        const firebaseId = farmer.synced === 1 ? farmerId : undefined;
-  
-        const result = await deleteFarmerEverywhere(farmerId, firebaseId);
-  
-        if (result.local && result.cloud !== false) {
-          toast({ title: "Farmer Deleted", description: "Farmer was removed from local and cloud (if synced)." });
-          dispatch(deleteFarmer(farmerId));
-        } else if (result.local && result.cloud === false) {
-          toast({ title: "Partially Deleted", description: "Farmer removed locally, but cloud deletion failed.", variant: "destructive" });
-        }
-  
-        fetchAndSetFarmers();
+        await deleteFarmer(farmerId);
+        toast({ title: "Farmer Deleted", description: "Farmer record has been removed." });
       } catch (error) {
-        toast({ title: "Delete Failed", description: "An error occurred while deleting the farmer.", variant: "destructive" });
+        toast({ title: "Delete Failed", description: "Failed to delete farmer.", variant: "destructive" });
       }
     }
   };
-  
 
   const columns = React.useMemo(() => getColumns({
     onEdit: handleOpenEditDialog,
@@ -388,30 +283,24 @@ export default function FarmersPage() {
       try {
         for (let i = 0; i < validFarmers.length; i += chunkSize) {
           const chunk = validFarmers.slice(i, i + chunkSize);
-    
-          await localDb.farmers.bulkAdd(
-            validFarmers.map(farmer => ({
-              id: crypto.randomUUID(), // ensure ID exists before Firebase sync
-              ...farmer,
-              synced: 0,
-              createdAt: new Date().toISOString(),
-              updatedAt: new Date().toISOString(),
-            }))
-          );
+          await Promise.all(chunk.map(async (farmer) => {
+            const id = crypto.randomUUID();
+            await addFarmer({
+              id,
+              data: {
+                ...farmer,
+                joinDate: farmer.joinDate ? new Date(farmer.joinDate) : new Date(),
+              },
+            });
+          }));
           setUploadProgress({ processed: i + chunk.length, total: validFarmers.length });
-    
-          toast({
-            title: `Stored ${i + chunk.length} of ${validFarmers.length}`,
-            description: `Locally saved chunk ${i / chunkSize + 1}`,
-          });
-        }
-    
+        }        
+        await queryClient.invalidateQueries({ queryKey: ['farmers'] });
+        setUploadProgress({ processed: 0, total: 0 });
         toast({
-          title: 'Local Import Complete',
-          description: `${validFarmers.length} farmers stored locally for syncing.`,
+          title: 'Import Complete',
+          description: `${validFarmers.length} farmers uploaded to Firebase.`,
         });
-    
-        fetchAndSetFarmers(); // Refresh UI from local DB
       } catch (error) {
         console.error('Local DB insert failed:', error);
         toast({

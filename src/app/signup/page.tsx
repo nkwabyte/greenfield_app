@@ -73,7 +73,7 @@ export default function SignupPage() {
       <div className="w-full max-w-md">
         <div className="mb-8 flex flex-col items-center text-center">
            {/* <Logo className="mb-4 h-16 w-16 text-primary" /> */}
-           <Image
+          <Image
               src="/logo.svg"
               width={120}
               height={120}
@@ -159,7 +159,7 @@ export default function SignupPage() {
                 </Button>
               </form>
             </Form>
-             <div className="mt-4 text-center text-sm">
+            <div className="mt-4 text-center text-sm">
               Already have an account?{' '}
               <Link href="/" className="underline text-primary">
                 Sign in

@@ -5,9 +5,12 @@ import employeesReducer from './slices/employeesSlice';
 import productsReducer from './slices/productsSlice';
 import suppliersReducer from './slices/suppliersSlice';
 import transactionsReducer from './slices/transactionsSlice';
+import authReducer from './slices/authSlice';
+
 
 export const store = configureStore({
     reducer: {
+        auth: authReducer,
         farmers: farmersReducer,
         users: usersReducer,
         employees: employeesReducer,

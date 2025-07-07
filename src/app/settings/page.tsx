@@ -6,15 +6,16 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { doc, updateDoc } from 'firebase/firestore';
 import { db } from '@/lib/firebase/config';
-import { handleResetLocalDb } from '@/lib/utility/farmer-utils';
 import { AppShell } from '@/components/app-shell';
 import { PageHeader } from '@/components/page-header';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
-import { useAuth } from '@/hooks/use-auth';
 import { useToast } from '@/hooks/use-toast';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '@/lib/store/store';
+import { setUser } from '@/lib/store/slices/authSlice'; // You should have this action in your authSlice
 
 const profileSchema = z.object({
   name: z.string().min(1, 'Name is required'),
@@ -24,8 +25,10 @@ const profileSchema = z.object({
 type ProfileFormValues = z.infer<typeof profileSchema>;
 
 export default function SettingsPage() {
-  const { user, login } = useAuth();
+  const dispatch = useDispatch();
   const { toast } = useToast();
+
+  const user = useSelector((state: RootState) => state.auth.user);
 
   const form = useForm<ProfileFormValues>({
     resolver: zodResolver(profileSchema),
@@ -50,14 +53,8 @@ export default function SettingsPage() {
         const userDocRef = doc(db, 'users', user.uid);
         await updateDoc(userDocRef, { name: data.name });
 
-        // Note: Firebase Auth email updates are sensitive and require re-authentication.
-        // We are only updating the name in Firestore for simplicity.
-        // For a real app, you would handle email updates with `updateEmail` from firebase/auth
-        // which might require the user to re-enter their password.
-
-        // Manually update the user in our local auth context
-        const updatedUser = { ...user, ...data };
-        login(updatedUser); 
+        // Update Redux state manually
+        dispatch(setUser({ ...user, name: data.name }));
 
         toast({
           title: 'Profile Updated',
@@ -113,44 +110,15 @@ export default function SettingsPage() {
                 />
                 <FormItem>
                   <FormLabel>Role</FormLabel>
-                  <Input value={user?.role} disabled />
+                  <Input value={user?.role || ''} disabled />
                 </FormItem>
                 <Button type="submit" disabled={form.formState.isSubmitting}>
-                    {form.formState.isSubmitting ? 'Saving...' : 'Save Changes'}
+                  {form.formState.isSubmitting ? 'Saving...' : 'Save Changes'}
                 </Button>
               </form>
             </Form>
           </CardContent>
         </Card>
-        <Card>
-    <CardHeader>
-      <CardTitle>Advanced</CardTitle>
-      <CardDescription>Danger zone: Local database operations.</CardDescription>
-    </CardHeader>
-    <CardContent>
-      <Button
-        variant="destructive"
-        onClick={async () => {
-          try {
-            await handleResetLocalDb();
-            toast({
-              title: 'Local Database Reset',
-              description: 'Your local farmer data has been cleared.',
-            });
-          } catch (error) {
-            toast({
-              title: 'Reset Failed',
-              description: 'There was a problem resetting the local database.',
-              variant: 'destructive',
-            });
-          }
-        }}
-      >
-        Delete Local Database
-      </Button>
-    </CardContent>
-  </Card>
-
       </div>
     </AppShell>
   );

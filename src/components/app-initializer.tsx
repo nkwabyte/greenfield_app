@@ -5,8 +5,12 @@ import { useEmployees } from '@/hooks/use-employees';
 import { useSuppliers } from '@/hooks/use-suppliers';
 import { useTransactions } from '@/hooks/use-transaction';
 import { useLoadFarmersToRedux } from '@/hooks/use-load-farmers';
+import { useAuth } from '@/hooks/use-auth';
 
 export function AppInitializer() {
+
+  useAuth();
+
   const employees = useEmployees();
   const suppliers = useSuppliers();
   const transactions = useTransactions();
