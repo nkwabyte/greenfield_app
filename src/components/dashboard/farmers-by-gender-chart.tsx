@@ -1,106 +1,103 @@
 'use client';
 
 import * as React from 'react';
-import { Label, Pie, PieChart } from 'recharts';
+import { Bar, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import {
-  ChartContainer,
-  ChartTooltip,
-} from '@/components/ui/chart';
 import type { Farmer } from '@/lib/types';
-import type { ChartConfig } from '@/components/ui/chart';
 
 type FarmersByGenderChartProps = {
   farmers: Farmer[];
 };
 
-const CustomTooltip = ({ active, payload, totalFarmers }: any) => {
-    if (active && payload && payload.length) {
-        const item = payload[0];
-        const percentage = totalFarmers > 0 ? (Number(item.value) / totalFarmers * 100).toFixed(0) : 0;
-        return (
-            <div className="p-2 text-sm bg-background border rounded-lg shadow-lg">
-                <div className="flex items-center justify-between gap-4 w-full">
-                    <div className="flex items-center gap-2">
-                        <div className="w-2.5 h-2.5 rounded-full" style={{backgroundColor: item.payload.fill}} />
-                        <div>{item.name}</div>
-                    </div>
-                    <div className="font-medium">{item.value} ({percentage}%)</div>
-                </div>
-            </div>
-        );
-    }
-    return null;
+const CustomTooltip = ({ active, payload, label }: any) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className="p-2 text-sm bg-background border rounded-lg shadow-lg">
+        <p className="font-bold">{label}</p>
+        {payload.map((entry: any, index: number) => (
+          <div key={index} className="flex items-center gap-2">
+            <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: entry.fill }} />
+            <span>{entry.name}: {entry.value}</span>
+          </div>
+        ))}
+      </div>
+    );
+  }
+  return null;
 };
 
 export function FarmersByGenderChart({ farmers }: FarmersByGenderChartProps) {
-  const totalFarmers = farmers.length;
-  
   const data = React.useMemo(() => {
-    const genderCounts = farmers.reduce((acc, farmer) => {
-      const gender = farmer.gender || 'Unknown';
-      acc[gender] = (acc[gender] || 0) + 1;
-      return acc;
-    }, {} as Record<string, number>);
+    // Group by region and gender
+    const regionGenderMap: Record<string, Record<string, number>> = {};
 
-    return Object.entries(genderCounts).map(([gender, count], index) => ({
-      name: gender,
-      value: count,
-      fill: `hsl(var(--chart-${index + 1}))`,
-    }));
+    farmers.forEach(farmer => {
+      const region = farmer.region || 'N/A';
+      const gender = farmer.gender || 'Unknown';
+
+      if (!regionGenderMap[region]) {
+        regionGenderMap[region] = {};
+      }
+      regionGenderMap[region][gender] = (regionGenderMap[region][gender] || 0) + 1;
+    });
+
+    // Convert to array format for recharts
+    return Object.entries(regionGenderMap)
+      .map(([region, genders]) => ({
+        region,
+        Male: genders['Male'] || 0,
+        Female: genders['Female'] || 0,
+        Other: genders['Other'] || 0,
+        Unknown: genders['Unknown'] || 0,
+      }))
+      .sort((a, b) => {
+        if (a.region === 'N/A') return 1;
+        if (b.region === 'N/A') return -1;
+        return (b.Male + b.Female + b.Other + b.Unknown) - (a.Male + a.Female + a.Other + a.Unknown);
+      });
   }, [farmers]);
 
-  const chartConfig = data.reduce((acc, item) => {
-    acc[item.name] = { label: item.name, color: item.fill };
-    return acc;
-  }, {} as ChartConfig);
-
   return (
-    <Card className="shadow-md">
+    <Card className="shadow-md h-full">
       <CardHeader>
-        <CardTitle className="font-headline">Gender Distribution</CardTitle>
-        <CardDescription>A breakdown of farmers by gender.</CardDescription>
+        <CardTitle className="font-headline">Gender by Region</CardTitle>
+        <CardDescription>Gender distribution across regions.</CardDescription>
       </CardHeader>
-      <CardContent className="flex justify-center">
-        <ChartContainer config={chartConfig} className="h-64 w-full max-w-xs">
-          <PieChart>
-            <ChartTooltip
-              cursor={false}
-              content={<CustomTooltip totalFarmers={totalFarmers} />}
-            />
-            <Pie data={data} dataKey="value" nameKey="name" innerRadius={50} outerRadius={80} strokeWidth={2}>
-              <Label
-                content={({ viewBox }) => {
-                  if (viewBox && "cx" in viewBox && "cy" in viewBox) {
-                    return (
-                      <text
-                        x={viewBox.cx}
-                        y={viewBox.cy}
-                        textAnchor="middle"
-                        dominantBaseline="middle"
-                      >
-                        <tspan
-                          x={viewBox.cx}
-                          y={viewBox.cy}
-                          className="fill-foreground text-3xl font-bold"
-                        >
-                          {totalFarmers.toLocaleString()}
-                        </tspan>
-                        <tspan
-                          x={viewBox.cx}
-                          y={(viewBox.cy || 0) + 15}
-                          className="fill-muted-foreground py-2"
-                        >
-                          Farmers
-                        </tspan>
-                      </text>
-                    );
-                  }
-                }}
+      <CardContent>
+        <div className="h-[300px] w-full">
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart data={data} margin={{ top: 5, right: 30, left: 0, bottom: 5 }}>
+              <CartesianGrid strokeDasharray="3 3" vertical={false} />
+              <XAxis
+                dataKey="region"
+                tickLine={false}
+                axisLine={false}
+                tickMargin={8}
+                fontSize={11}
+                angle={-45}
+                textAnchor="end"
+                height={80}
+                stroke="hsl(var(--foreground))"
+                tick={{ fill: 'hsl(var(--foreground))' }}
               />
-            </Pie>
-          </PieChart>
-        </ChartContainer>
+              <YAxis
+                tickLine={false}
+                axisLine={false}
+                fontSize={12}
+              />
+              <Tooltip content={<CustomTooltip />} />
+              <Legend
+                verticalAlign="top"
+                height={36}
+                iconType="circle"
+              />
+              <Bar dataKey="Male" stackId="a" fill="#3b82f6" radius={[0, 0, 0, 0]} />
+              <Bar dataKey="Female" stackId="a" fill="#ec4899" radius={[0, 0, 0, 0]} />
+              <Bar dataKey="Other" stackId="a" fill="#8b5cf6" radius={[0, 0, 0, 0]} />
+              <Bar dataKey="Unknown" stackId="a" fill="#6b7280" radius={[4, 4, 0, 0]} />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
       </CardContent>
     </Card>
   );

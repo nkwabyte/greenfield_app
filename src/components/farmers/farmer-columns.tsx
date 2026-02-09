@@ -53,8 +53,8 @@ export const getColumns = ({ onEdit, onDelete }: { onEdit: (farmer: Farmer) => v
       const farmer = row.original;
       return (
         <div className="flex flex-col">
-            <span className="font-medium">{farmer.name}</span>
-            <span className="text-sm text-muted-foreground">{farmer.contact || 'No contact'}</span>
+          <span className="font-medium">{farmer.name}</span>
+          <span className="text-sm text-muted-foreground">{farmer.contact || 'No contact'}</span>
         </div>
       );
     },
@@ -67,8 +67,8 @@ export const getColumns = ({ onEdit, onDelete }: { onEdit: (farmer: Farmer) => v
       const locationParts = [farmer.community, farmer.district, farmer.region].filter(Boolean);
       return (
         <div className="flex flex-col">
-            <span className="font-medium">{locationParts.slice(0, 2).join(', ')}</span>
-            <span className="text-sm text-muted-foreground">{farmer.region}</span>
+          <span className="font-medium">{locationParts.slice(0, 2).join(', ')}</span>
+          <span className="text-sm text-muted-foreground">{farmer.region}</span>
         </div>
       );
     }
@@ -77,16 +77,22 @@ export const getColumns = ({ onEdit, onDelete }: { onEdit: (farmer: Farmer) => v
     accessorKey: 'cropsGrown',
     header: 'Crops',
     cell: ({ row }) => {
-        const crops = row.getValue('cropsGrown') as string[] | undefined;
-        if (!crops || crops.length === 0) return <span className="text-muted-foreground">N/A</span>;
-        return (
-            <div className="flex flex-wrap gap-1 max-w-xs">
-                {crops.slice(0, 2).map(crop => (
-                    <Badge key={crop} variant="outline">{crop}</Badge>
-                ))}
-                {crops.length > 2 && <Badge variant="secondary">+{crops.length - 2}</Badge>}
-            </div>
-        )
+      const crops = row.getValue('cropsGrown') as string[] | string | undefined;
+
+      // Handle different data formats
+      let count = 0;
+      if (Array.isArray(crops)) {
+        count = crops.length;
+      } else if (typeof crops === 'string' && crops.trim()) {
+        // Handle comma-separated string
+        count = crops.split(',').filter(c => c.trim()).length;
+      }
+
+      return (
+        <Badge variant={count === 0 ? "secondary" : "outline"} className="font-medium">
+          {count} {count === 1 ? 'crop' : 'crops'}
+        </Badge>
+      );
     }
   },
   {
