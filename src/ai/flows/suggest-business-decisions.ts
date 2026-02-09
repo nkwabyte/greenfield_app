@@ -14,7 +14,7 @@
  * @fileOverview This file defines a function for suggesting business decisions based on data analysis using Google Generative AI.
  */
 
-import { aiModel } from '@/lib/gemini';
+import { createModel, aiModel } from '@/lib/gemini';
 import { z } from 'zod';
 
 const SuggestBusinessDecisionsInputSchema = z.object({
@@ -28,6 +28,8 @@ const SuggestBusinessDecisionsInputSchema = z.object({
     .describe(
       'A summary of the inventory data, including types of resources, quantities, and distribution across regions.'
     ),
+  apiKey: z.string().optional().describe('The Gemini API Key to use.'),
+  modelName: z.string().optional().describe('The model to use.'),
 });
 export type SuggestBusinessDecisionsInput = z.infer<
   typeof SuggestBusinessDecisionsInputSchema
@@ -90,7 +92,9 @@ export async function suggestBusinessDecisions(
   `;
 
   try {
-    const result = await aiModel.generateContent(prompt);
+    if (!parsedInput.apiKey) throw new Error("API Key required");
+    const model = createModel(parsedInput.apiKey, parsedInput.modelName);
+    const result = await model.generateContent(prompt);
     const response = await result.response;
     const text = response.text();
     const data = JSON.parse(text);

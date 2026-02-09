@@ -398,16 +398,11 @@ export async function deleteAllFarmers(): Promise<void> {
     // 1. Clear local database
     await db.farmers.clear();
 
-    // 2. We should ideally sync this deletion. 
-    // Since 'clear' is not a standard sync action in our queue (which is item-based),
-    // we might need a way to tell the backend to wipe.
-    // However, given the offline-first nature, maybe we just clear local.
-    // If the user wants to wipe remote, that usually requires a separate admin command or we'd have to iterate and delete all (slow).
-    // For now, let's assume local purge is the goal (e.g. to clear bad upload).
-    // If we want to safeguard against re-syncing bad data, we might need to clear sync queue for farmers too.
-
-    // Clear sync queue of any pending farmer actions to prevent re-addition
+    // 2. Clear sync queue of any pending farmer actions
     await db.syncQueue.where('entityType').equals('farmer').delete();
 
-    console.log('⚠️ All farmer data purged locally.');
+    // 3. Queue a purge operation for Firebase
+    await syncService.addToQueue('farmer', 'purge', 'ALL', null);
+
+    console.log('⚠️ All farmer data purged locally and queued for remote purge.');
 }

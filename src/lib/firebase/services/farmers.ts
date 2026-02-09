@@ -144,3 +144,23 @@ export async function deleteFirebaseFarmer(id: string) {
   await deleteDoc(farmerDoc);
 }
 
+export async function purgeFirebaseFarmers() {
+  const snapshot = await getDocs(farmerCollection);
+  if (snapshot.empty) return;
+
+  const batchSize = 500;
+  const chunks = [];
+
+  for (let i = 0; i < snapshot.docs.length; i += batchSize) {
+    chunks.push(snapshot.docs.slice(i, i + batchSize));
+  }
+
+  for (const chunk of chunks) {
+    const batch = writeBatch(db);
+    chunk.forEach(doc => {
+      batch.delete(doc.ref);
+    });
+    await batch.commit();
+  }
+}
+

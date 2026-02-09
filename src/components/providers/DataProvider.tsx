@@ -11,6 +11,8 @@ import { setCounts, setSyncStatus } from '@/lib/store/slices/dataSlice';
 import { syncService } from '@/lib/db';
 import { useDashboardCounts } from '@/hooks/useData';
 import { useConnectivity } from '@/hooks/useConnectivity';
+import { useLiveQuery } from 'dexie-react-hooks';
+import { db } from '@/lib/db/schema';
 
 export function DataProvider({ children }: { children: React.ReactNode }) {
     const dispatch = useDispatch();
@@ -36,29 +38,23 @@ export function DataProvider({ children }: { children: React.ReactNode }) {
     }, [counts, dispatch]);
 
     // Update sync status periodically
+    // Real-time synchronization of queue status to Redux
+    const pendingCount = useLiveQuery(async () => {
+        return await db.syncQueue
+            .where('synced')
+            .equals(0)
+            .count();
+    }, []) ?? 0;
+
+    // Update sync status when pendingCount changes
     useEffect(() => {
-        const updateSyncStatus = async () => {
-            try {
-                const pendingCount = await syncService.getPendingCount();
-                dispatch(setSyncStatus({
-                    isOnline,
-                    pendingCount,
-                    lastSyncAt: Date.now(),
-                    isSyncing: pendingCount > 0,
-                }));
-            } catch (error) {
-                console.error('Failed to update sync status:', error);
-            }
-        };
-
-        // Update immediately
-        updateSyncStatus();
-
-        // Then update every 10 seconds
-        const interval = setInterval(updateSyncStatus, 10000);
-
-        return () => clearInterval(interval);
-    }, [isOnline, dispatch]);
+        dispatch(setSyncStatus({
+            isOnline,
+            pendingCount,
+            lastSyncAt: Date.now(),
+            // isSyncing managed by SyncService
+        }));
+    }, [pendingCount, isOnline, dispatch]);
 
     return <>{children}</>;
 }
