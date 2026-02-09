@@ -8,8 +8,14 @@
  * - SummarizeKPIInsightsOutput - The return type for the summarizeKPIInsights function.
  */
 
-import { ai } from '@/ai/genkit';
-import { z } from 'genkit';
+'use server';
+
+/**
+ * @fileOverview A function that summarizes key performance indicators (KPIs) and provides insights using Google Generative AI.
+ */
+
+import { aiModel } from '@/lib/gemini';
+import { z } from 'zod';
 
 const SummarizeKPIInsightsInputSchema = z.object({
   totalFarmers: z.number().describe('The total number of farmers.'),
@@ -29,14 +35,19 @@ const SummarizeKPIInsightsOutputSchema = z.object({
 export type SummarizeKPIInsightsOutput = z.infer<typeof SummarizeKPIInsightsOutputSchema>;
 
 export async function summarizeKPIInsights(input: SummarizeKPIInsightsInput): Promise<SummarizeKPIInsightsOutput> {
-  return summarizeKPIInsightsFlow(input);
-}
+  const parsedInput = SummarizeKPIInsightsInputSchema.parse(input);
 
-const prompt = ai.definePrompt({
-  name: 'summarizeKPIInsightsPrompt',
-  input: { schema: SummarizeKPIInsightsInputSchema },
-  output: { schema: SummarizeKPIInsightsOutputSchema },
-  prompt: `
+  const regionalCountsStr = Object.entries(parsedInput.regionalCounts)
+    .map(([region, count]) => `- ${region}: ${count}`)
+    .join('\n');
+
+  const otherKPIsStr = parsedInput.otherKPIs
+    ? Object.entries(parsedInput.otherKPIs)
+      .map(([key, value]) => `- ${key}: ${value}`)
+      .join('\n')
+    : '';
+
+  const prompt = `
   You are an AI-powered business intelligence assistant for a modern agricultural CRM platform.
 
   Your role is to analyze the KPIs provided and deliver:
@@ -59,37 +70,35 @@ const prompt = ai.definePrompt({
   Here are the KPIs:
 
   Total Farmers:  
-  {{{totalFarmers}}}
+  ${parsedInput.totalFarmers}
 
   Farmers by Region:  
-  {{#each regionalCounts}}
-  - {{@key}}: {{{this}}}
-  {{/each}}
+  ${regionalCountsStr}
 
   Gender Distribution:  
-  - Male: {{{genderRatios.male}}}%
-  - Female: {{{genderRatios.female}}}%
+  - Male: ${parsedInput.genderRatios.male}%
+  - Female: ${parsedInput.genderRatios.female}%
 
-  {{#if otherKPIs}}
-  Additional KPIs:  
-  {{#each otherKPIs}}
-  - {{@key}}: {{{this}}}
-  {{/each}}
-  {{/if}}
+  ${otherKPIsStr ? `Additional KPIs:\n${otherKPIsStr}` : ''}
 
   Please begin with a short summary of the dataset, then follow with insights and final recommendations.
-  `,
-});
 
-
-const summarizeKPIInsightsFlow = ai.defineFlow(
+  Return the response as a JSON object:
   {
-    name: 'summarizeKPIInsightsFlow',
-    inputSchema: SummarizeKPIInsightsInputSchema,
-    outputSchema: SummarizeKPIInsightsOutputSchema,
-  },
-  async input => {
-    const { output } = await prompt(input);
-    return output!;
+    "summary": "Summary text...",
+    "recommendations": "Recommendations text..."
   }
-);
+  `;
+
+  try {
+    const result = await aiModel.generateContent(prompt);
+    const response = await result.response;
+    const text = response.text();
+    const data = JSON.parse(text);
+    return SummarizeKPIInsightsOutputSchema.parse(data);
+  } catch (error) {
+    console.error('Error summarizing KPIs:', error);
+    throw new Error('Failed to summarize KPIs');
+  }
+}
+

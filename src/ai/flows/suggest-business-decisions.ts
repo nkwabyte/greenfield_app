@@ -8,8 +8,14 @@
  * - SuggestBusinessDecisionsOutput - The return type for the suggestBusinessDecisions function.
  */
 
-import { ai } from '@/ai/genkit';
-import { z } from 'genkit';
+'use server';
+
+/**
+ * @fileOverview This file defines a function for suggesting business decisions based on data analysis using Google Generative AI.
+ */
+
+import { aiModel } from '@/lib/gemini';
+import { z } from 'zod';
 
 const SuggestBusinessDecisionsInputSchema = z.object({
   farmerDataSummary: z
@@ -41,14 +47,9 @@ export type SuggestBusinessDecisionsOutput = z.infer<
 export async function suggestBusinessDecisions(
   input: SuggestBusinessDecisionsInput
 ): Promise<SuggestBusinessDecisionsOutput> {
-  return suggestBusinessDecisionsFlow(input);
-}
+  const parsedInput = SuggestBusinessDecisionsInputSchema.parse(input);
 
-const prompt = ai.definePrompt({
-  name: 'suggestBusinessDecisionsPrompt',
-  input: { schema: SuggestBusinessDecisionsInputSchema },
-  output: { schema: SuggestBusinessDecisionsOutputSchema },
-  prompt: `
+  const prompt = `
   You are an intelligent strategy advisor for a data-driven agribusiness organization operating across multiple rural regions.
 
   Your task is to analyze the farmer data and inventory summaries below and suggest practical business decisions to improve operations, impact, and scalability.
@@ -75,24 +76,28 @@ const prompt = ai.definePrompt({
   Here is the data:
 
   Farmer Data Summary:  
-  {{{farmerDataSummary}}}
+  ${parsedInput.farmerDataSummary}
 
   Inventory Data Summary:  
-  {{{inventoryDataSummary}}}
+  ${parsedInput.inventoryDataSummary}
 
   Based on the insights from this data, list strategic business decisions that can enhance operational effectiveness and community impact.
-  `,
-});
 
-
-const suggestBusinessDecisionsFlow = ai.defineFlow(
+  Return response as JSON:
   {
-    name: 'suggestBusinessDecisionsFlow',
-    inputSchema: SuggestBusinessDecisionsInputSchema,
-    outputSchema: SuggestBusinessDecisionsOutputSchema,
-  },
-  async input => {
-    const { output } = await prompt(input);
-    return output!;
+    "suggestedDecisions": "text content..."
   }
-);
+  `;
+
+  try {
+    const result = await aiModel.generateContent(prompt);
+    const response = await result.response;
+    const text = response.text();
+    const data = JSON.parse(text);
+    return SuggestBusinessDecisionsOutputSchema.parse(data);
+  } catch (error) {
+    console.error('Error suggesting business decisions:', error);
+    throw new Error('Failed to generate suggestions');
+  }
+}
+

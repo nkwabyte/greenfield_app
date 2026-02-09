@@ -11,8 +11,16 @@ import {
   TrendingDown,
   PlusCircle,
 } from 'lucide-react';
-import { ExpensesByCategoryChart } from '@/components/finances/expenses-by-category-chart';
-import { FinancialsOverTimeChart } from '@/components/finances/financials-over-time-chart';
+import dynamic from 'next/dynamic';
+
+const ExpensesByCategoryChart = dynamic(() => import('@/components/finances/expenses-by-category-chart').then(mod => mod.ExpensesByCategoryChart), {
+  ssr: false,
+  loading: () => <Skeleton className="h-80 w-full" />
+});
+const FinancialsOverTimeChart = dynamic(() => import('@/components/finances/financials-over-time-chart').then(mod => mod.FinancialsOverTimeChart), {
+  ssr: false,
+  loading: () => <Skeleton className="h-80 w-full" />
+});
 import { Button } from '@/components/ui/button';
 import { DataTable } from '@/components/data-table';
 import { getColumns } from '@/components/finances/transaction-columns';
@@ -22,9 +30,7 @@ import {
 } from '@/components/finances/add-edit-transaction-dialog';
 import { useToast } from '@/hooks/use-toast';
 import { Skeleton } from '@/components/ui/skeleton';
-import { useSelector } from 'react-redux';
-import { useTransactions } from '@/hooks/use-transaction';
-import { RootState } from '@/lib/store/store';
+import { useEmployees, useTransactionsPaginated } from '@/hooks/useData';
 
 const currencyFormatter = new Intl.NumberFormat('en-GH', {
   style: 'currency',
@@ -33,20 +39,29 @@ const currencyFormatter = new Intl.NumberFormat('en-GH', {
 
 export default function FinancesPage() {
   const { toast } = useToast();
-  const {
-    data: transactions = [],
-    isLoading,
-    addTransaction,
-    updateTransaction,
-    deleteTransaction,
-  } = useTransactions();
 
-  const employees = useSelector((state: RootState) => state.employees.data);
+  // Pagination State
+  const [pagination, setPagination] = React.useState({
+    pageIndex: 0,
+    pageSize: 10,
+  });
+
+  // Dexie Hook
+  const result = useTransactionsPaginated(pagination.pageIndex + 1, pagination.pageSize);
+  const transactions = result?.data ?? [];
+  const totalCount = result?.total ?? 0;
+  const totalPages = Math.ceil(totalCount / pagination.pageSize);
+  const isLoading = !result;
+
+  // NEW: Use Dexie hook instead of Redux
+  const employees = useEmployees();
 
   const [isAddEditDialogOpen, setIsAddEditDialogOpen] = React.useState(false);
   const [editingTransaction, setEditingTransaction] = React.useState<Transaction | null>(null);
 
   const kpis: Kpi[] = React.useMemo(() => {
+    // Note: This calculation is now only for the CURRENT PAGE of transactions.
+    // Ideally, we should use aggregation hooks (useTotalIncome, useTotalExpenses) for accurate KPIs across all data.
     const totalRevenue = transactions
       .filter((t) => t.type === 'Income')
       .reduce((sum, t) => sum + t.amount, 0);
@@ -56,9 +71,9 @@ export default function FinancesPage() {
     const netIncome = totalRevenue - totalExpenses;
 
     return [
-      { label: 'Total Revenue', value: currencyFormatter.format(totalRevenue), icon: TrendingUp },
-      { label: 'Total Expenses', value: currencyFormatter.format(totalExpenses), icon: TrendingDown },
-      { label: 'Net Income', value: currencyFormatter.format(netIncome), icon: Wallet },
+      { label: 'Total Revenue (Page)', value: currencyFormatter.format(totalRevenue), icon: TrendingUp },
+      { label: 'Total Expenses (Page)', value: currencyFormatter.format(totalExpenses), icon: TrendingDown },
+      { label: 'Net Income (Page)', value: currencyFormatter.format(netIncome), icon: Wallet },
     ];
   }, [transactions]);
 
@@ -75,10 +90,12 @@ export default function FinancesPage() {
   const handleSaveTransaction = async (data: TransactionFormValues) => {
     try {
       if (editingTransaction) {
-        await updateTransaction({ id: editingTransaction.id, data });
+        const { updateTransaction } = await import('@/lib/db/services/transactions');
+        await updateTransaction(editingTransaction.id, data);
         toast({ title: 'Transaction Updated', description: 'The transaction has been updated.' });
       } else {
-        await addTransaction(data);
+        const { addTransaction } = await import('@/lib/db/services/transactions');
+        await addTransaction(data, crypto.randomUUID());
         toast({ title: 'Transaction Added', description: 'The transaction has been added.' });
       }
     } catch (error) {
@@ -93,6 +110,7 @@ export default function FinancesPage() {
   const handleDeleteTransaction = async (id: string) => {
     if (window.confirm('Are you sure you want to delete this transaction?')) {
       try {
+        const { deleteTransaction } = await import('@/lib/db/services/transactions');
         await deleteTransaction(id);
         toast({ title: 'Transaction Deleted', description: 'Transaction has been removed.' });
       } catch (error) {
@@ -151,6 +169,10 @@ export default function FinancesPage() {
           filterColumnId="description"
           filterPlaceholder="Filter by description..."
           isLoading={isLoading}
+          // Pagination Props
+          pageCount={totalPages}
+          pagination={pagination}
+          onPaginationChange={setPagination}
         />
       </div>
 
@@ -159,7 +181,7 @@ export default function FinancesPage() {
         onOpenChange={setIsAddEditDialogOpen}
         transaction={editingTransaction}
         onSave={handleSaveTransaction}
-        employees={employees}
+        employees={employees || []}
       />
     </AppShell>
   );

@@ -9,17 +9,24 @@ import { DataTable } from '@/components/data-table';
 import { getColumns } from '@/components/employees/employee-columns';
 import { useToast } from '@/hooks/use-toast';
 import { AddEditEmployeeDialog, type EmployeeFormValues } from '@/components/employees/add-edit-employee-dialog';
-import { useEmployees } from '@/hooks/use-employees';
+import { useEmployeesPaginated } from '@/hooks/useData';
 
 export default function EmployeesPage() {
   const { toast } = useToast();
-  const {
-    data: employees = [],
-    isLoading,
-    addEmployee,
-    updateEmployee,
-    deleteEmployee,
-  } = useEmployees();
+
+  // Pagination State
+  const [pagination, setPagination] = React.useState({
+    pageIndex: 0,
+    pageSize: 10,
+  });
+
+  // Dexie Hook (1-indexed page for Dexie, 0-indexed for Table)
+  const result = useEmployeesPaginated(pagination.pageIndex + 1, pagination.pageSize);
+
+  const employees = result?.data ?? [];
+  const totalCount = result?.total ?? 0;
+  const totalPages = Math.ceil(totalCount / pagination.pageSize);
+  const isLoading = !result;
 
   const [isAddEditDialogOpen, setIsAddEditDialogOpen] = React.useState(false);
   const [editingEmployee, setEditingEmployee] = React.useState<typeof employees[0] | null>(null);
@@ -37,10 +44,14 @@ export default function EmployeesPage() {
   const handleSaveEmployee = async (data: EmployeeFormValues) => {
     try {
       if (editingEmployee) {
-        await updateEmployee({ id: editingEmployee.id, data });
+        // Direct Service Call
+        const { updateEmployee } = await import('@/lib/db/services/employees');
+        await updateEmployee(editingEmployee.id, data);
         toast({ title: "Employee Updated", description: `${data.name}'s record has been updated.` });
       } else {
-        await addEmployee(data);
+        // Direct Service Call
+        const { addEmployee } = await import('@/lib/db/services/employees');
+        await addEmployee(data, crypto.randomUUID());
         toast({ title: "Employee Added", description: `${data.name} has been added to the system.` });
       }
     } catch (error) {
@@ -51,6 +62,7 @@ export default function EmployeesPage() {
   const handleDeleteEmployee = async (employeeId: string) => {
     if (window.confirm("Are you sure you want to delete this employee? This action cannot be undone.")) {
       try {
+        const { deleteEmployee } = await import('@/lib/db/services/employees');
         await deleteEmployee(employeeId);
         toast({ title: "Employee Deleted", description: "The employee record has been removed." });
       } catch (error) {
@@ -83,6 +95,10 @@ export default function EmployeesPage() {
           filterColumnId="name"
           filterPlaceholder="Filter by name..."
           isLoading={isLoading}
+          // Pagination Props
+          pageCount={totalPages}
+          pagination={pagination}
+          onPaginationChange={setPagination}
         />
       </div>
 

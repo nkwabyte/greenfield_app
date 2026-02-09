@@ -16,7 +16,7 @@ import type { TransactionFormValues } from '@/components/finances/add-edit-trans
 
 const transactionCollection = collection(db, 'transactions');
 
-export async function getTransactions(): Promise<Transaction[]> {
+export async function getFirebaseTransactions(): Promise<Transaction[]> {
   const q = query(transactionCollection, orderBy('date', 'desc'));
   const snapshot = await getDocs(q);
   return snapshot.docs.map((doc) => ({
@@ -28,8 +28,9 @@ export async function getTransactions(): Promise<Transaction[]> {
   })) as Transaction[];
 }
 
-export async function addTransaction(transactionData: TransactionFormValues) {
+export async function addFirebaseTransaction(transactionData: TransactionFormValues, id: string) {
   const { date, ...rest } = transactionData;
+  const transactionDoc = doc(transactionCollection, id);
   await addDoc(transactionCollection, {
     ...rest,
     date: new Date(date),
@@ -37,6 +38,25 @@ export async function addTransaction(transactionData: TransactionFormValues) {
     updatedAt: serverTimestamp(),
   });
 }
+
+export async function updateFirebaseTransaction(
+  id: string,
+  transactionData: TransactionFormValues
+) {
+  const { date, ...rest } = transactionData;
+  const transactionDoc = doc(db, 'transactions', id);
+  await updateDoc(transactionDoc, {
+    ...rest,
+    date: new Date(date),
+    updatedAt: serverTimestamp(),
+  });
+}
+
+export async function deleteFirebaseTransaction(id: string) {
+  const transactionDoc = doc(db, 'transactions', id);
+  await deleteDoc(transactionDoc);
+}
+
 
 export async function updateTransaction(
   id: string,

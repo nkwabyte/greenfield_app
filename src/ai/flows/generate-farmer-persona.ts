@@ -8,8 +8,14 @@
  * - GenerateFarmerPersonaOutput - The return type for the generateFarmerPersona function.
  */
 
-import { ai } from '@/ai/genkit';
-import { z } from 'genkit';
+'use server';
+
+/**
+ * @fileOverview This file defines a function to generate a representative farmer persona based on existing CRM data using Google Generative AI.
+ */
+
+import { aiModel } from '@/lib/gemini';
+import { z } from 'zod';
 
 const GenerateFarmerPersonaInputSchema = z.object({
   farmerDataSummary: z
@@ -31,14 +37,10 @@ export type GenerateFarmerPersonaOutput = z.infer<typeof GenerateFarmerPersonaOu
 export async function generateFarmerPersona(
   input: GenerateFarmerPersonaInput
 ): Promise<GenerateFarmerPersonaOutput> {
-  return generateFarmerPersonaFlow(input);
-}
+  // Validate input
+  const parsedInput = GenerateFarmerPersonaInputSchema.parse(input);
 
-const prompt = ai.definePrompt({
-  name: 'generateFarmerPersonaPrompt',
-  input: { schema: GenerateFarmerPersonaInputSchema },
-  output: { schema: GenerateFarmerPersonaOutputSchema },
-  prompt: `
+  const prompt = `
   You are an expert agricultural anthropologist and behavioral strategist.
 
   Your task is to craft a realistic and insightful farmer persona based on the summary provided. The goal is to help product teams, field officers, and AI systems better understand the typical user of our agriculture CRM system.
@@ -63,18 +65,29 @@ const prompt = ai.definePrompt({
   Use this data to guide your persona creation:
 
   Farmer Data Summary:
-  {{{farmerDataSummary}}}
-  `,
-});
+  ${parsedInput.farmerDataSummary}
 
-const generateFarmerPersonaFlow = ai.defineFlow(
+  Return the response as a JSON object with the following structure:
   {
-    name: 'generateFarmerPersonaFlow',
-    inputSchema: GenerateFarmerPersonaInputSchema,
-    outputSchema: GenerateFarmerPersonaOutputSchema,
-  },
-  async input => {
-    const { output } = await prompt(input);
-    return output!;
+    "personaName": "Name",
+    "personaDescription": "Description..."
   }
-);
+  `;
+
+  try {
+    const result = await aiModel.generateContent(prompt);
+    const response = await result.response;
+    const text = response.text();
+
+    // Parse JSON output
+    // The model is configured to return JSON, but we should parse safely
+    const data = JSON.parse(text);
+
+    // Validate output against schema
+    return GenerateFarmerPersonaOutputSchema.parse(data);
+  } catch (error) {
+    console.error('Error generating farmer persona:', error);
+    throw new Error('Failed to generate farmer persona');
+  }
+}
+
