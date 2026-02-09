@@ -4,8 +4,10 @@ import * as React from 'react';
 import { AppShell } from '@/components/app-shell';
 import { PageHeader } from '@/components/page-header';
 import { Button } from '@/components/ui/button';
-import { Download, PlusCircle, Upload } from 'lucide-react';
+import { Download, PlusCircle, Upload, Trash2 } from 'lucide-react';
 import { DataTable } from '@/components/data-table';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/lib/store/store';
 import { getColumns } from '@/components/farmers/farmer-columns';
 import type { FailedRecord, Farmer, FarmerParseResult } from '@/lib/types';
 import { useToast } from '@/hooks/use-toast';
@@ -14,19 +16,26 @@ import dynamic from 'next/dynamic';
 
 const UploadReportDialog = dynamic(() => import('@/components/farmers/upload-report-dialog').then(mod => mod.UploadReportDialog), { ssr: false });
 const AddEditFarmerDialog = dynamic(() => import('@/components/farmers/add-edit-farmer-dialog').then(mod => mod.AddEditFarmerDialog), { ssr: false });
+const BulkEditFarmerDialog = dynamic(() => import('@/components/farmers/bulk-edit-dialog').then(mod => mod.BulkEditFarmerDialog), { ssr: false });
+const PurgeConfirmDialog = dynamic(() => import('@/components/farmers/purge-confirm-dialog').then(mod => mod.PurgeConfirmDialog), { ssr: false });
+import { type BulkEditField } from '@/components/farmers/bulk-edit-dialog';
 
 // NEW: Import Dexie hooks and services instead of Redux
 import { useFarmersPaginatedAndFiltered } from '@/hooks/useData';
 import {
   addFarmer as addFarmerService,
   updateFarmer as updateFarmerService,
-  deleteFarmer as deleteFarmerService
+  deleteFarmer as deleteFarmerService,
+  updateFarmersBatch,
+  deleteAllFarmers
 } from '@/lib/db/services/farmers';
 import { v4 as uuidv4 } from 'uuid';
+import { normalizeRegion } from '@/lib/utils/region-normalizer';
 
 
 export default function FarmersPage() {
   const { toast } = useToast();
+  const { user } = useSelector((state: RootState) => state.auth);
 
   // Pagination & Filter State
   const [pagination, setPagination] = React.useState({
@@ -57,6 +66,24 @@ export default function FarmersPage() {
   const [isUploading, setIsUploading] = React.useState(false);
   const [uploadProgress, setUploadProgress] = React.useState({ processed: 0, total: 0 });
 
+  // Bulk Edit State
+  const [rowSelection, setRowSelection] = React.useState({});
+  const [isBulkEditOpen, setIsBulkEditOpen] = React.useState(false);
+  const [isPurgeDialogOpen, setIsPurgeDialogOpen] = React.useState(false);
+
+  const handleBulkSave = async (field: BulkEditField, value: string) => {
+    const selectedIds = Object.keys(rowSelection);
+    if (selectedIds.length === 0) return;
+
+    try {
+      await updateFarmersBatch(selectedIds, { [field]: value });
+      toast({ title: "Bulk Update Successful", description: `Updated ${field} for ${selectedIds.length} farmers.` });
+      setRowSelection({}); // Clear selection
+    } catch (error) {
+      toast({ title: "Update Failed", description: "Failed to update farmers.", variant: "destructive" });
+    }
+  };
+
   const handleOpenAddDialog = () => {
     setEditingFarmer(null);
     setIsAddEditDialogOpen(true);
@@ -79,6 +106,19 @@ export default function FarmersPage() {
       }
     } catch (error) {
       toast({ title: "Save Failed", description: "An error occurred while saving the farmer.", variant: "destructive" });
+    }
+  };
+
+  const handlePurgeData = async () => {
+    try {
+      setIsUploading(true); // Re-use uploading state to show busy
+      await deleteAllFarmers();
+      toast({ title: "Data Purged", description: "All farmer data has been deleted." });
+      setPagination({ ...pagination, pageIndex: 0 });
+    } catch (error) {
+      toast({ title: "Purge Failed", description: "Failed to delete data.", variant: "destructive" });
+    } finally {
+      setIsUploading(false);
     }
   };
 
@@ -234,19 +274,21 @@ export default function FarmersPage() {
 
       for (let i = 0; i < sheetData.length; i++) {
         const row = sheetData[i];
-        // ... (parseFarmerRow logic inlined or called)
-        // Since parseFarmerRow was inside, I need to define it or ensure it's available.
-        // Let's simplified specific parsing for this optimization step.
-
         const name = (row[columnMap.name] || '').toString().trim();
-        const region = (row[columnMap.region] || '').toString().trim();
+        const rawRegion = (row[columnMap.region] || '').toString().trim();
+        const region = normalizeRegion(rawRegion);
 
-        if (name && region) {
+        if (name) {
           validFarmers.push({
             name: name.toLowerCase(),
-            gender: (row[columnMap.gender] || 'U').toLowerCase().startsWith('f') ? 'Female' : 'Male',
-            region,
-            district: sheetName,
+            gender: ((g) => {
+              const lower = g.toLowerCase();
+              if (lower === 'f' || lower === 'female') return 'Female';
+              if (lower === 'm' || lower === 'male') return 'Male';
+              return g; // Fallback to original if not matched
+            })((row[columnMap.gender] || '').toString().trim()),
+            region: region,
+            district: sheetName, // Use sheet name as district/zone
             society: (row[columnMap.society] || '').toString().trim(),
             community: (row[columnMap.community] || '').toString().trim(),
             contact: '',
@@ -261,7 +303,7 @@ export default function FarmersPage() {
           failedRecords.push({
             rowIndex: i + 2,
             rowData: JSON.stringify(row),
-            error: 'Missing name or region'
+            error: 'Missing name'
           });
         }
       }
@@ -304,12 +346,24 @@ export default function FarmersPage() {
     <AppShell>
       <PageHeader title="Farmer Management" description="View, add, edit, and manage all farmer records.">
         <input type="file" ref={fileInputRef} onChange={handleFileChange} accept=".csv,.xlsx" style={{ display: 'none' }} />
+
+        {user?.role === 'Admin' && (
+          <Button variant="destructive" onClick={() => setIsPurgeDialogOpen(true)} disabled={isUploading}>
+            <Trash2 className="mr-2 h-4 w-4" /> Purge All
+          </Button>
+        )}
+
         <Button variant="outline" onClick={handleUploadClick} disabled={isUploading}>
           {isUploading ? `Uploading ${uploadProgress.processed}/${uploadProgress.total}...` : <><Upload className="mr-2" /> Upload</>}
         </Button>
         <Button variant="outline" onClick={handleExport}>
           <Download className="mr-2" /> Export
         </Button>
+        {Object.keys(rowSelection).length > 0 && (
+          <Button variant="secondary" onClick={() => setIsBulkEditOpen(true)}>
+            Edit {Object.keys(rowSelection).length} Selected
+          </Button>
+        )}
         <Button onClick={handleOpenAddDialog}>
           <PlusCircle className="mr-2" /> Add Farmer
         </Button>
@@ -326,6 +380,10 @@ export default function FarmersPage() {
           pageCount={Math.ceil(total / pagination.pageSize)}
           pagination={pagination}
           onPaginationChange={setPagination}
+          // Selection
+          rowSelection={rowSelection}
+          onRowSelectionChange={setRowSelection as any}
+          getRowId={(row) => row.id}
         />
         {/* Pass pagination change handler to update search if needed, but DataTable handles search input separately? 
             DataTable internally filters 'data', but we want DB search.
@@ -361,6 +419,17 @@ export default function FarmersPage() {
       </div>
 
       <UploadReportDialog open={isReportOpen} onOpenChange={setIsReportOpen} failedRecords={failedRecords} />
+      <BulkEditFarmerDialog
+        open={isBulkEditOpen}
+        onOpenChange={setIsBulkEditOpen}
+        selectedCount={Object.keys(rowSelection).length}
+        onSave={handleBulkSave}
+      />
+      <PurgeConfirmDialog
+        open={isPurgeDialogOpen}
+        onOpenChange={setIsPurgeDialogOpen}
+        onConfirm={handlePurgeData}
+      />
       <AddEditFarmerDialog open={isAddEditDialogOpen} onOpenChange={setIsAddEditDialogOpen} farmer={editingFarmer} onSave={handleSaveFarmer} />
     </AppShell>
   );

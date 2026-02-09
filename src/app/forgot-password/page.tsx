@@ -10,7 +10,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
-import { Logo } from '@/components/icons/logo';
+import { getFriendlyErrorMessage } from '@/lib/firebase/error-messages';
+import Image from 'next/image';
 
 export default function ForgotPasswordPage() {
   const router = useRouter();
@@ -27,11 +28,12 @@ export default function ForgotPasswordPage() {
         title: 'Password Reset Link Sent',
         description: 'If an account exists with that email, a reset link has been sent.',
       });
-      router.push('/');
+      // Optional: Wait a bit before redirecting so user sees the toast
+      setTimeout(() => router.push('/'), 2000);
     } catch (error: any) {
       toast({
-        title: 'Error',
-        description: error.message,
+        title: 'Request Failed',
+        description: getFriendlyErrorMessage(error),
         variant: 'destructive',
       });
     } finally {
@@ -43,13 +45,11 @@ export default function ForgotPasswordPage() {
     <div className="flex min-h-screen flex-col items-center justify-center bg-background p-4">
       <div className="w-full max-w-md">
         <div className="mb-8 flex flex-col items-center text-center">
-            <Logo className="mb-4 h-16 w-16 text-primary" />
-            <h1 className="font-headline text-4xl font-bold tracking-tight text-primary">
-                Forgot Your Password?
-            </h1>
-            <p className="mt-2 text-muted-foreground">
-                No worries, we&apos;ll send you reset instructions.
-            </p>
+          <Image src="/logo.svg" width={120} height={120} alt="Greenfield CRM logo" />
+          <h1 className="font-headline text-4xl font-bold tracking-tight text-primary">GREENFIELD CRM</h1>
+          <p className="mt-2 text-muted-foreground">
+            Forgot your password? No worries, we&prime;ll send you reset instructions.
+          </p>
         </div>
         <Card className="shadow-lg">
           <CardHeader>
@@ -60,9 +60,16 @@ export default function ForgotPasswordPage() {
             <form onSubmit={handleResetPassword} className="space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
-                <Input id="email" type="email" placeholder="john.doe@example.com" value={email} onChange={(e) => setEmail(e.target.value)} required />
+                <Input
+                  id="email"
+                  type="email"
+                  placeholder="john.doe@example.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
               </div>
-              <Button type="submit" className="w-full !mt-6 font-bold" disabled={isLoading}>
+              <Button type="submit" className="w-full mt-6! font-bold" disabled={isLoading}>
                 {isLoading ? 'Sending...' : 'Send Reset Instructions'}
               </Button>
             </form>

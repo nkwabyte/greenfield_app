@@ -372,3 +372,7 @@ Future Enhancements (Post-Phase 1)
  Create admin dashboard for sync monitoring
  Add export/import for local database
  Implement service worker for true PWA support
+
+
+ GREENFIELD_CEO_2026 == Secret code for the ceo to register as an admin.
+ 

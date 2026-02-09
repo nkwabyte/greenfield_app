@@ -2,172 +2,219 @@
 
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { doc, setDoc } from 'firebase/firestore';
+import { useState, useEffect } from 'react';
+import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import { doc, setDoc, serverTimestamp, collection, getDocs, limit, query } from 'firebase/firestore';
 import { auth, db } from '@/lib/firebase/config';
-import { useToast } from '@/hooks/use-toast';
-
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { PasswordInput } from '@/components/ui/password-input';
+import { Label } from '@/components/ui/label';
+import { useToast } from '@/hooks/use-toast';
 import Image from 'next/image';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/lib/store/store';
+import { getFriendlyErrorMessage } from '@/lib/firebase/error-messages';
+import { AppLoadingSkeleton } from '@/components/app-loading-skeleton';
 
-const signupSchema = z.object({
-  name: z.string().min(1, 'Name is required'),
-  email: z.string().email('Invalid email address'),
-  password: z.string().min(8, 'Password must be at least 8 characters'),
-  role: z.enum(['Admin', 'Employee']),
-});
+export default function SignUpPage() {
+    const router = useRouter();
+    const { toast } = useToast();
 
-type SignupFormValues = z.infer<typeof signupSchema>;
+    const isAuthenticated = useSelector((state: RootState) => state.auth.isAuthenticated);
+    const isLoading = useSelector((state: RootState) => state.auth.isLoading);
 
-export default function SignupPage() {
-  const router = useRouter();
-  const { toast } = useToast();
-  
-  const form = useForm<SignupFormValues>({
-    resolver: zodResolver(signupSchema),
-    defaultValues: {
-      name: '',
-      email: '',
-      password: '',
-      role: 'Employee',
-    },
-  });
-  
-  const { formState: { isSubmitting } } = form;
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [adminCode, setAdminCode] = useState('');
+    const [submitting, setSubmitting] = useState(false);
 
-  const onSubmit = async (data: SignupFormValues) => {
-    try {
-      const userCredential = await createUserWithEmailAndPassword(auth, data.email, data.password);
-      const user = userCredential.user;
+    const ADMIN_SECRET_CODE = 'GREENFIELD_CEO_2026';
 
-      // Create user profile in Firestore
-      await setDoc(doc(db, 'users', user.uid), {
-        name: data.name,
-        email: data.email,
-        role: data.role,
-      });
+    const handleSignUp = async (e: any) => {
+        e.preventDefault();
 
-      toast({
-        title: 'Account Created',
-        description: 'You have been successfully signed up.',
-      });
-      router.push('/dashboard');
-    } catch (error: any) {
-      toast({
-        title: 'Sign Up Failed',
-        description: error.message,
-        variant: 'destructive',
-      });
+        if (password !== confirmPassword) {
+            toast({
+                title: 'Passwords do not match',
+                description: 'Please ensure both passwords match.',
+                variant: 'destructive',
+            });
+            return;
+        }
+
+        // Admin Code Logic
+        let role = 'Employee';
+        let status = 'Pending';
+
+        if (adminCode.trim() !== '') {
+            if (adminCode !== ADMIN_SECRET_CODE) {
+                toast({
+                    title: 'Invalid Admin Code',
+                    description: 'The admin access code is incorrect. Leave empty if you are an employee.',
+                    variant: 'destructive',
+                });
+                return;
+            } else {
+                role = 'Admin';
+                status = 'Active';
+            }
+        }
+
+        setSubmitting(true);
+
+        try {
+            // 1. Create Authentication User
+            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+            const user = userCredential.user;
+
+            // 2. Update Profile Name
+            if (user) {
+                await updateProfile(user, { displayName: name });
+            }
+
+            // 3. Create Firestore User Document
+            await setDoc(doc(db, 'users', user.uid), {
+                name,
+                email,
+                role,
+                status,
+                createdAt: serverTimestamp(),
+                updatedAt: serverTimestamp(),
+            });
+
+            toast({
+                title: 'Account Created',
+                description: status === 'Active'
+                    ? 'Your admin account has been created successfully.'
+                    : 'Your account has been created. You can now access the dashboard.',
+            });
+
+            // Redirect to dashboard immediately
+            router.push('/dashboard');
+
+        } catch (error: any) {
+            toast({
+                title: 'Sign Up Failed',
+                description: getFriendlyErrorMessage(error),
+                variant: 'destructive',
+            });
+        } finally {
+            setSubmitting(false);
+        }
+    };
+
+    // Redirect authenticated users to dashboard if they are already active
+    useEffect(() => {
+        if (!isLoading && isAuthenticated) {
+            // We rely on the dashboard protection to handle pending users
+            router.replace('/dashboard');
+        }
+    }, [isLoading, isAuthenticated, router]);
+
+    if (isLoading) {
+        return <AppLoadingSkeleton />;
     }
-  };
 
-  return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-background p-4">
-      <div className="w-full max-w-md">
-        <div className="mb-8 flex flex-col items-center text-center">
-           {/* <Logo className="mb-4 h-16 w-16 text-primary" /> */}
-          <Image
-              src="/logo.svg"
-              width={120}
-              height={120}
-              alt='Greenfield CRM logo'
-            />
-            <h1 className="font-headline text-4xl font-bold tracking-tight text-primary">
-                Create an Account
-            </h1>
-            <p className="mt-2 text-muted-foreground">
-                Join GREENFIELD CRM to get started.
-            </p>
-        </div>
-        <Card className="shadow-lg">
-          <CardHeader>
-            <CardTitle className="font-headline text-2xl">Sign Up</CardTitle>
-            <CardDescription>Fill in your details to create an account.</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-                <FormField
-                  control={form.control}
-                  name="name"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Full Name</FormLabel>
-                      <FormControl>
-                        <Input placeholder="John Doe" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Email</FormLabel>
-                      <FormControl>
-                        <Input type="email" placeholder="john.doe@example.com" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="password"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Password</FormLabel>
-                      <FormControl>
-                        <Input type="password" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="role"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Role</FormLabel>
-                      <Select onValueChange={field.onChange} defaultValue={field.value}>
-                        <FormControl>
-                          <SelectTrigger>
-                            <SelectValue placeholder="Select your role" />
-                          </SelectTrigger>
-                        </FormControl>
-                        <SelectContent>
-                          <SelectItem value="Admin">Admin</SelectItem>
-                          <SelectItem value="Employee">Employee</SelectItem>
-                        </SelectContent>
-                      </Select>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <Button type="submit" className="w-full !mt-6 font-bold" disabled={isSubmitting}>
-                  {isSubmitting ? 'Creating Account...' : 'Create Account'}
-                </Button>
-              </form>
-            </Form>
-            <div className="mt-4 text-center text-sm">
-              Already have an account?{' '}
-              <Link href="/" className="underline text-primary">
-                Sign in
-              </Link>
+    return (
+        <div className="flex min-h-screen flex-col items-center justify-center bg-background p-4">
+            <div className="w-full max-w-md">
+                <div className="mb-8 flex flex-col items-center text-center">
+                    <Image src="/logo.svg" width={120} height={120} alt="Greenfield CRM logo" />
+                    <h1 className="font-headline text-4xl font-bold tracking-tight text-primary">GREENFIELD CRM</h1>
+                    <p className="mt-2 text-muted-foreground">
+                        Join the team and help manage agricultural operations.
+                    </p>
+                </div>
+
+                <Card className="shadow-lg">
+                    <CardHeader>
+                        <CardTitle className="font-headline text-2xl">Create Account</CardTitle>
+                        <CardDescription>Enter your details to request an employee account.</CardDescription>
+                    </CardHeader>
+
+                    <CardContent>
+                        <form onSubmit={handleSignUp} className="space-y-4">
+                            <div className="space-y-2">
+                                <Label htmlFor="name">Full Name</Label>
+                                <Input
+                                    id="name"
+                                    type="text"
+                                    placeholder="John Doe"
+                                    value={name}
+                                    onChange={(e) => setName(e.target.value)}
+                                    required
+                                />
+                            </div>
+
+                            <div className="space-y-2">
+                                <Label htmlFor="email">Email</Label>
+                                <Input
+                                    id="email"
+                                    type="email"
+                                    placeholder="john.doe@example.com"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    required
+                                />
+                            </div>
+
+                            <div className="space-y-2">
+                                <Label htmlFor="password">Password</Label>
+                                <PasswordInput
+                                    id="password"
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                    required
+                                    minLength={6}
+                                />
+                            </div>
+
+                            <div className="space-y-2">
+                                <Label htmlFor="confirmPassword">Confirm Password</Label>
+                                <PasswordInput
+                                    id="confirmPassword"
+                                    value={confirmPassword}
+                                    onChange={(e) => setConfirmPassword(e.target.value)}
+                                    required
+                                    minLength={6}
+                                />
+                            </div>
+
+                            <div className="space-y-2">
+                                <div className="pt-2 border-t mt-4!">
+                                    <div className="space-y-2">
+                                        <Label htmlFor="adminCode" className="text-muted-foreground text-sm">Admin Access Code <span className="text-xs font-normal">(Optional)</span></Label>
+                                        <PasswordInput
+                                            id="adminCode"
+                                            placeholder="Enter secret code (CEO only)"
+                                            value={adminCode}
+                                            onChange={(e) => setAdminCode(e.target.value)}
+                                        />
+                                        <p className="text-[10px] text-muted-foreground">
+                                            Leave empty if you are an employee.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <Button type="submit" className="w-full mt-6! font-bold" disabled={submitting}>
+                                    {submitting ? 'Creating Account...' : 'Sign Up'}
+                                </Button>
+                            </div>
+                        </form>
+
+                        <div className="mt-4 text-center text-sm">
+                            Already have an account?{' '}
+                            <Link href="/" className="underline text-primary">
+                                Sign in
+                            </Link>
+                        </div>
+                    </CardContent>
+                </Card>
             </div>
-          </CardContent>
-        </Card>
-      </div>
-    </div>
-  );
+        </div>
+    );
 }
