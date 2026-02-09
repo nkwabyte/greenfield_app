@@ -16,7 +16,8 @@
 # next.js
 /.next/
 /out/
-
+.pnpm-store/
+.DS_Store
 
 .idea/
 .vscode/
