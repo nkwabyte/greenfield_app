@@ -14,7 +14,7 @@
  * @fileOverview A function that summarizes key performance indicators (KPIs) and provides insights using Google Generative AI.
  */
 
-import { aiModel } from '@/lib/gemini';
+import { createModel, aiModel } from '@/lib/gemini';
 import { z } from 'zod';
 
 const SummarizeKPIInsightsInputSchema = z.object({
@@ -25,6 +25,8 @@ const SummarizeKPIInsightsInputSchema = z.object({
     female: z.number().describe('The percentage of female farmers.'),
   }).describe('The gender ratio of farmers.'),
   otherKPIs: z.record(z.string(), z.any()).optional().describe('Other key performance indicators.'),
+  apiKey: z.string().optional().describe('The Gemini API Key to use.'),
+  modelName: z.string().optional().describe('The model to use.'),
 });
 export type SummarizeKPIInsightsInput = z.infer<typeof SummarizeKPIInsightsInputSchema>;
 
@@ -91,7 +93,9 @@ export async function summarizeKPIInsights(input: SummarizeKPIInsightsInput): Pr
   `;
 
   try {
-    const result = await aiModel.generateContent(prompt);
+    if (!parsedInput.apiKey) throw new Error("API Key required");
+    const model = createModel(parsedInput.apiKey, parsedInput.modelName);
+    const result = await model.generateContent(prompt);
     const response = await result.response;
     const text = response.text();
     const data = JSON.parse(text);

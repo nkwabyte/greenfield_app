@@ -4,6 +4,8 @@ export type User = {
   email: string;
   role: 'Admin' | 'Employee';
   status: 'Active' | 'Pending' | 'Disabled';
+  geminiApiKey?: string;
+  preferredModel?: string;
 };
 
 export type FailedRecord = {

@@ -7,13 +7,13 @@
 import { useSelector } from 'react-redux';
 import type { RootState } from '@/lib/store/store';
 import { Button } from '@/components/ui/button';
-import { RefreshCw } from 'lucide-react';
+import { RefreshCw, Pause, Play, XCircle } from 'lucide-react';
 import { syncService } from '@/lib/db/sync';
 import { useState, useEffect } from 'react';
 import { db } from '@/lib/db/schema';
 
 export function SyncStatusBadge() {
-    const { isOnline, pendingCount, isSyncing } = useSelector(
+    const { isOnline, pendingCount, isSyncing, isPaused } = useSelector(
         (state: RootState) => state.data.sync
     );
     const [isManualSyncing, setIsManualSyncing] = useState(false);
@@ -59,6 +59,20 @@ export function SyncStatusBadge() {
         }
     };
 
+    const handlePauseResume = () => {
+        if (isPaused) {
+            syncService.resume();
+        } else {
+            syncService.pause();
+        }
+    };
+
+    const handleCancel = () => {
+        syncService.pause(); // For now, cancel just pauses. 
+        // If "Cancel" means clear queue, it should be distinct.
+        // Assuming "Cancel" means "Stop current sync immediately".
+    };
+
 
     return (
         <div className="flex items-center gap-3 text-sm">
@@ -87,8 +101,13 @@ export function SyncStatusBadge() {
 
             {/* Pending sync count */}
             {pendingCount > 0 && (
-                <span className="inline-flex items-center rounded-full bg-yellow-100 dark:bg-yellow-900/30 px-2.5 py-0.5 text-xs font-medium text-yellow-800 dark:text-yellow-300">
-                    {isSyncing && (
+                <span className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${isPaused
+                    ? 'bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-300'
+                    : 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300'
+                    }`}>
+                    {isPaused ? (
+                        <Pause className="mr-1 h-3 w-3" />
+                    ) : isSyncing && (
                         <svg
                             className="mr-1 h-3 w-3 animate-spin text-yellow-600 dark:text-yellow-400"
                             xmlns="http://www.w3.org/2000/svg"
@@ -110,22 +129,47 @@ export function SyncStatusBadge() {
                             ></path>
                         </svg>
                     )}
-                    {pendingCount.toLocaleString()} pending
+                    {isPaused ? 'Paused' : `${pendingCount.toLocaleString()} pending`}
                 </span>
             )}
 
             {/* Manual sync button */}
             {isOnline && pendingCount > 0 && (
-                <Button
-                    variant="ghost"
-                    size="sm"
-                    onClick={handleManualSync}
-                    disabled={isSyncing || isManualSyncing}
-                    className="h-7 px-2"
-                    title="Sync now"
-                >
-                    <RefreshCw className={`h-3.5 w-3.5 ${(isSyncing || isManualSyncing) ? 'animate-spin' : ''}`} />
-                </Button>
+                <div className="flex items-center gap-1">
+                    <Button
+                        variant="ghost"
+                        size="sm"
+                        onClick={handlePauseResume}
+                        className="h-7 px-2"
+                        title={isPaused ? "Resume Sync" : "Pause Sync"}
+                    >
+                        {isPaused ? <Play className="h-3.5 w-3.5" /> : <Pause className="h-3.5 w-3.5" />}
+                    </Button>
+
+                    {!isPaused && pendingCount > 0 && (
+                        <Button
+                            variant="ghost"
+                            size="sm"
+                            onClick={handleManualSync}
+                            disabled={isSyncing || isManualSyncing}
+                            className="h-7 px-2"
+                            title="Sync now"
+                        >
+                            <RefreshCw className={`h-3.5 w-3.5 ${(isSyncing || isManualSyncing) ? 'animate-spin' : ''}`} />
+                        </Button>
+                    )}
+
+                    <Button
+                        variant="ghost"
+                        size="sm"
+                        onClick={handleCancel}
+                        disabled={pendingCount === 0} // Can only cancel if something is pending/syncing
+                        className="h-7 px-2 text-red-500 hover:text-red-600"
+                        title="Cancel Sync"
+                    >
+                        <XCircle className="h-3.5 w-3.5" />
+                    </Button>
+                </div>
             )}
         </div>
     );

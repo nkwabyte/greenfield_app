@@ -4,7 +4,7 @@
 
 export type EntityType = 'farmer' | 'employee' | 'product' | 'supplier' | 'transaction';
 
-export type SyncOperation = 'create' | 'update' | 'delete';
+export type SyncOperation = 'create' | 'update' | 'delete' | 'purge';
 
 export type SyncStatus = 'pending' | 'syncing' | 'synced' | 'failed';
 

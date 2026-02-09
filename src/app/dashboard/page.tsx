@@ -28,7 +28,7 @@ const FarmSizeChart = dynamic(() => import('@/components/dashboard/farm-size-cha
   loading: () => <Skeleton className="h-[300px] w-full" />
 });
 import { RecentFarmersTable } from '@/components/dashboard/recent-farmers-table';
-const AiAssistant = dynamic(() => import('@/components/ai-assistant').then(mod => mod.AiAssistant), { ssr: false });
+// Removed AiAssistant import
 import { CalendarDateRangePicker } from '@/components/dashboard/date-range-picker';
 import { DateRange } from 'react-day-picker';
 import { subDays } from 'date-fns';
@@ -42,9 +42,10 @@ import {
 
 // NEW: Import filtered hooks
 import { useFarmersByDateRange } from '@/hooks/useData';
+import Link from 'next/link';
 
 export default function DashboardPage() {
-  const [isAiAssistantOpen, setIsAiAssistantOpen] = React.useState(false);
+  // Removed isAiAssistantOpen state
 
   // Default range: Last 30 days
   const [dateRange, setDateRange] = React.useState<DateRange | undefined>({
@@ -173,10 +174,12 @@ export default function DashboardPage() {
             <Download className="mr-2 h-4 w-4" />
             Export
           </Button>
-          <Button onClick={() => setIsAiAssistantOpen(true)} className="bg-[#2e7d32] hover:bg-[#1b5e20] text-white">
-            <Bot className="mr-2 text-white" />
-            AI Insights
-          </Button>
+          <Link href="/ai-insights">
+            <Button className="bg-[#2e7d32] hover:bg-[#1b5e20] text-white">
+              <Bot className="mr-2 text-white" />
+              AI Insights
+            </Button>
+          </Link>
         </div>
       </PageHeader>
 
@@ -206,11 +209,7 @@ export default function DashboardPage() {
         </div>
       </div>
 
-      <AiAssistant
-        open={isAiAssistantOpen}
-        onOpenChange={setIsAiAssistantOpen}
-        farmers={filteredFarmers}
-      />
+      {/* AiAssistant usage removed */}
     </AppShell>
   );
 }
