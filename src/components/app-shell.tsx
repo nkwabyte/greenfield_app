@@ -122,10 +122,9 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           </Link>
         </div>
 
-        <div className="flex-1 flex items-center justify-center">
+        <div className="flex-1" />
+        <div className="flex items-center gap-3">
           <SyncStatusBadge />
-        </div>
-        <div className="flex items-center gap-2">
           <ThemeToggle />
           <DropdownMenu>
             <DropdownMenuTrigger asChild>

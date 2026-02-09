@@ -139,6 +139,8 @@ class SyncService {
             throw new Error('Queue item missing ID');
         }
 
+        console.log(`⏳ Syncing: ${item.operation} ${item.entityType} ${item.entityId}`);
+
         // Update status to syncing
         await db.syncQueue.update(item.id, { status: 'syncing' });
 
@@ -173,6 +175,8 @@ class SyncService {
      */
     private async executeSync(item: SyncQueueItem): Promise<void> {
         const { entityType, operation, entityId, data } = item;
+
+        console.log(`📤 Executing Firebase ${operation} for ${entityType}:`, entityId);
 
         switch (entityType) {
             case 'farmer':

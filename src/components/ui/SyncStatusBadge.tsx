@@ -9,13 +9,42 @@ import type { RootState } from '@/lib/store/store';
 import { Button } from '@/components/ui/button';
 import { RefreshCw } from 'lucide-react';
 import { syncService } from '@/lib/db/sync';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { db } from '@/lib/db/schema';
 
 export function SyncStatusBadge() {
     const { isOnline, pendingCount, isSyncing } = useSelector(
         (state: RootState) => state.data.sync
     );
     const [isManualSyncing, setIsManualSyncing] = useState(false);
+    const [syncedCount, setSyncedCount] = useState(0);
+    const [totalInQueue, setTotalInQueue] = useState(0);
+
+    useEffect(() => {
+        const fetchQueueStats = async () => {
+            try {
+                // Get actual synced count from queue
+                const synced = await db.syncQueue
+                    .where('synced')
+                    .equals(1) // true = 1 in IndexedDB
+                    .count();
+
+                // Get total items in queue
+                const total = await db.syncQueue.count();
+
+                setSyncedCount(synced);
+                setTotalInQueue(total);
+            } catch (error) {
+                console.error('Failed to fetch queue stats:', error);
+            }
+        };
+
+        fetchQueueStats();
+
+        // Refresh every 5 seconds
+        const interval = setInterval(fetchQueueStats, 5000);
+        return () => clearInterval(interval);
+    }, []);
 
     const handleManualSync = async () => {
         if (!isOnline || isSyncing || isManualSyncing) return;
@@ -29,6 +58,7 @@ export function SyncStatusBadge() {
             setIsManualSyncing(false);
         }
     };
+
 
     return (
         <div className="flex items-center gap-3 text-sm">
@@ -48,12 +78,19 @@ export function SyncStatusBadge() {
                 </span>
             )}
 
+            {/* Sync progress count */}
+            {totalInQueue > 0 && (
+                <span className="inline-flex items-center rounded-full bg-blue-100 dark:bg-blue-900/30 px-2.5 py-0.5 text-xs font-medium text-blue-800 dark:text-blue-300">
+                    {syncedCount.toLocaleString()} / {totalInQueue.toLocaleString()} synced
+                </span>
+            )}
+
             {/* Pending sync count */}
             {pendingCount > 0 && (
-                <span className="inline-flex items-center rounded-full bg-yellow-100 px-2.5 py-0.5 text-xs font-medium text-yellow-800">
+                <span className="inline-flex items-center rounded-full bg-yellow-100 dark:bg-yellow-900/30 px-2.5 py-0.5 text-xs font-medium text-yellow-800 dark:text-yellow-300">
                     {isSyncing && (
                         <svg
-                            className="mr-1 h-3 w-3 animate-spin text-yellow-600"
+                            className="mr-1 h-3 w-3 animate-spin text-yellow-600 dark:text-yellow-400"
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
@@ -73,7 +110,7 @@ export function SyncStatusBadge() {
                             ></path>
                         </svg>
                     )}
-                    {pendingCount} pending
+                    {pendingCount.toLocaleString()} pending
                 </span>
             )}
 
