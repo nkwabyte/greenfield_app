@@ -14,7 +14,7 @@
  * @fileOverview This file defines a function to generate a representative farmer persona based on existing CRM data using Google Generative AI.
  */
 
-import { aiModel } from '@/lib/gemini';
+import { createModel, aiModel } from '@/lib/gemini';
 import { z } from 'zod';
 
 const GenerateFarmerPersonaInputSchema = z.object({
@@ -23,6 +23,8 @@ const GenerateFarmerPersonaInputSchema = z.object({
     .describe(
       'A summary of the farmer data, including demographics, farm size, crop types, and challenges.'
     ),
+  apiKey: z.string().optional().describe('The Gemini API Key to use.'),
+  modelName: z.string().optional().describe('The model to use.'),
 });
 export type GenerateFarmerPersonaInput = z.infer<typeof GenerateFarmerPersonaInputSchema>;
 
@@ -75,7 +77,9 @@ export async function generateFarmerPersona(
   `;
 
   try {
-    const result = await aiModel.generateContent(prompt);
+    if (!parsedInput.apiKey) throw new Error("API Key required");
+    const model = createModel(parsedInput.apiKey, parsedInput.modelName);
+    const result = await model.generateContent(prompt);
     const response = await result.response;
     const text = response.text();
 

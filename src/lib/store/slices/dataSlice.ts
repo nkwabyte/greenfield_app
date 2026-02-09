@@ -1,9 +1,9 @@
 /**
  * Optimized Redux State Management Strategy for Large Datasets
- * 
+ *
  * PROBLEM: Storing thousands of records in Redux causes performance issues
  * SOLUTION: Store only metadata and pagination state in Redux, read data from Dexie on-demand
- * 
+ *
  * This approach:
  * - Keeps Redux state minimal (counts, filters, pagination)
  * - Reads data from IndexedDB when needed (fast local queries)
@@ -33,6 +33,7 @@ export interface DataState {
         pendingCount: number;
         lastSyncAt?: number;
         isSyncing: boolean;
+        isPaused: boolean;
     };
 
     // Pagination state (for UI)
@@ -90,6 +91,7 @@ const initialState: DataState = {
         isOnline: true,
         pendingCount: 0,
         isSyncing: false,
+        isPaused: false,
     },
     pagination: {
         farmers: { page: 1, pageSize: 50 },

@@ -6,12 +6,15 @@
 import { db } from './schema';
 import type { SyncQueueItem, SyncResult, EntityType, SyncOperation } from './types';
 import { connectivityService } from './connectivity';
+import { store } from '@/lib/store/store';
+import { setSyncStatus } from '@/lib/store/slices/dataSlice';
 
 // Import Firebase services for syncing
 import {
     addFirebaseFarmer,
     updateFirebaseFarmer,
-    deleteFirebaseFarmer
+    deleteFirebaseFarmer,
+    purgeFirebaseFarmers
 } from '@/lib/firebase/services/farmers';
 import {
     addFirebaseEmployee,
@@ -40,6 +43,7 @@ const SYNC_INTERVAL = 30000; // 30 seconds
 class SyncService {
     private syncInterval: NodeJS.Timeout | null = null;
     private isSyncing = false;
+    private isPaused = false;
 
     /**
      * Add an item to the sync queue
@@ -63,8 +67,8 @@ class SyncService {
 
         console.log(`📝 Added to sync queue: ${operation} ${entityType} ${entityId}`);
 
-        // Try to sync immediately if online
-        if (connectivityService.isOnline()) {
+        // Try to sync immediately if online and not paused
+        if (connectivityService.isOnline() && !this.isPaused) {
             this.syncAll().catch(console.error);
         }
     }
@@ -83,7 +87,13 @@ class SyncService {
             return { success: false, itemsProcessed: 0, itemsFailed: 0, errors: [] };
         }
 
+        if (this.isPaused) {
+            console.log('⏸️ Sync is paused');
+            return { success: true, itemsProcessed: 0, itemsFailed: 0, errors: [] };
+        }
+
         this.isSyncing = true;
+        store.dispatch(setSyncStatus({ isSyncing: true }));
         const result: SyncResult = {
             success: true,
             itemsProcessed: 0,
@@ -108,6 +118,10 @@ class SyncService {
 
             // Process each item
             for (const item of pendingItems) {
+                if (this.isPaused) {
+                    console.log('⏸️ Sync paused during processing');
+                    break;
+                }
                 try {
                     await this.syncItem(item);
                     result.itemsProcessed++;
@@ -126,6 +140,7 @@ class SyncService {
             result.success = false;
         } finally {
             this.isSyncing = false;
+            store.dispatch(setSyncStatus({ isSyncing: false }));
         }
 
         return result;
@@ -183,6 +198,7 @@ class SyncService {
                 if (operation === 'create') await addFirebaseFarmer(data, entityId);
                 else if (operation === 'update') await updateFirebaseFarmer(entityId, data);
                 else if (operation === 'delete') await deleteFirebaseFarmer(entityId);
+                else if (operation === 'purge') await purgeFirebaseFarmers();
                 break;
 
             case 'employee':
@@ -284,6 +300,27 @@ class SyncService {
     async clearAllItems(): Promise<void> {
         await db.syncQueue.clear();
         console.log('🧹 Cleared all items from sync queue');
+    }
+
+    /**
+     * Pause synchronization
+     */
+    pause(): void {
+        this.isPaused = true;
+        store.dispatch(setSyncStatus({ isPaused: true }));
+        console.log('⏸️ Sync paused');
+    }
+
+    /**
+     * Resume synchronization
+     */
+    resume(): void {
+        this.isPaused = false;
+        store.dispatch(setSyncStatus({ isPaused: false }));
+        console.log('▶️ Sync resumed');
+        if (connectivityService.isOnline()) {
+            this.syncAll().catch(console.error);
+        }
     }
 }
 
