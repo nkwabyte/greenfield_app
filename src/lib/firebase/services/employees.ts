@@ -16,7 +16,7 @@ import type { EmployeeFormValues } from '@/components/employees/add-edit-employe
 
 const employeeCollection = collection(db, 'employees');
 
-export async function getEmployees(): Promise<Employee[]> {
+export async function getFirebaseEmployees(): Promise<Employee[]> {
   const q = query(employeeCollection, orderBy('updatedAt', 'desc'));
   const snapshot = await getDocs(q);
   return snapshot.docs.map((doc) => ({
@@ -28,8 +28,9 @@ export async function getEmployees(): Promise<Employee[]> {
   })) as Employee[];
 }
 
-export async function addEmployee(employeeData: EmployeeFormValues) {
+export async function addFirebaseEmployee(employeeData: EmployeeFormValues, id: string) {
   const { startDate, ...rest } = employeeData;
+  const employeeDoc = doc(employeeCollection, id);
   await addDoc(employeeCollection, {
     ...rest,
     startDate: new Date(startDate),
@@ -37,6 +38,25 @@ export async function addEmployee(employeeData: EmployeeFormValues) {
     updatedAt: serverTimestamp(),
   });
 }
+
+export async function updateFirebaseEmployee(
+  id: string,
+  employeeData: EmployeeFormValues
+) {
+  const { startDate, ...rest } = employeeData;
+  const employeeDoc = doc(db, 'employees', id);
+  await updateDoc(employeeDoc, {
+    ...rest,
+    startDate: new Date(startDate),
+    updatedAt: serverTimestamp(),
+  });
+}
+
+export async function deleteFirebaseEmployee(id: string) {
+  const employeeDoc = doc(db, 'employees', id);
+  await deleteDoc(employeeDoc);
+}
+
 
 export async function updateEmployee(
   id: string,

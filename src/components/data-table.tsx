@@ -40,6 +40,13 @@ interface DataTableProps<TData, TValue> {
   filterColumnId: string
   filterPlaceholder: string
   isLoading?: boolean
+  // Server-side pagination props
+  pageCount?: number
+  pagination?: {
+    pageIndex: number
+    pageSize: number
+  }
+  onPaginationChange?: (pagination: { pageIndex: number; pageSize: number }) => void
 }
 
 export function DataTable<TData, TValue>({
@@ -48,6 +55,9 @@ export function DataTable<TData, TValue>({
   filterColumnId,
   filterPlaceholder,
   isLoading = false,
+  pageCount,
+  pagination,
+  onPaginationChange,
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = React.useState<SortingState>([])
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
@@ -55,6 +65,21 @@ export function DataTable<TData, TValue>({
   )
   const [columnVisibility, setColumnVisibility] =
     React.useState<VisibilityState>({})
+
+  // Internal state for client-side pagination if server-side is not used
+  const [internalPagination, setInternalPagination] = React.useState({
+    pageIndex: 0,
+    pageSize: 7,
+  })
+
+  // Use external pagination state if provided, otherwise internal
+  const tablePagination = pagination ?? internalPagination
+  const setTablePagination = onPaginationChange
+    ? (updater: any) => {
+      const nextState = typeof updater === 'function' ? updater(tablePagination) : updater
+      onPaginationChange(nextState)
+    }
+    : setInternalPagination
 
   const table = useReactTable({
     data,
@@ -66,16 +91,15 @@ export function DataTable<TData, TValue>({
     onColumnFiltersChange: setColumnFilters,
     getFilteredRowModel: getFilteredRowModel(),
     onColumnVisibilityChange: setColumnVisibility,
+    onPaginationChange: setTablePagination,
+    manualPagination: !!pageCount, // Enable manual pagination if pageCount is provided
+    pageCount: pageCount ?? -1,
     state: {
       sorting,
       columnFilters,
       columnVisibility,
+      pagination: tablePagination,
     },
-    initialState: {
-      pagination: {
-        pageSize: 7,
-      }
-    }
   })
 
   return (
@@ -129,9 +153,9 @@ export function DataTable<TData, TValue>({
                       {header.isPlaceholder
                         ? null
                         : flexRender(
-                            header.column.columnDef.header,
-                            header.getContext()
-                          )}
+                          header.column.columnDef.header,
+                          header.getContext()
+                        )}
                     </TableHead>
                   )
                 })}

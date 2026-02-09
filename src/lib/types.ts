@@ -88,5 +88,6 @@ export type Product = {
 export type Kpi = {
   label: string;
   value: string;
-  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  icon: any;
+  change?: string;
 };

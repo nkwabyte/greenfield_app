@@ -16,7 +16,7 @@ import type { ProductFormValues } from '@/components/products/add-edit-product-d
 
 const productCollection = collection(db, 'products');
 
-export async function getProducts(): Promise<Product[]> {
+export async function getFirebaseProducts(): Promise<Product[]> {
   const q = query(productCollection, orderBy('updatedAt', 'desc'));
   const snapshot = await getDocs(q);
   return snapshot.docs.map((doc) => ({
@@ -27,7 +27,8 @@ export async function getProducts(): Promise<Product[]> {
   })) as Product[];
 }
 
-export async function addProduct(productData: ProductFormValues) {
+export async function addFirebaseProduct(productData: ProductFormValues, id: string) {
+  const productDoc = doc(productCollection, id);
   await addDoc(productCollection, {
     ...productData,
     createdAt: serverTimestamp(),
@@ -35,7 +36,7 @@ export async function addProduct(productData: ProductFormValues) {
   });
 }
 
-export async function updateProduct(id: string, productData: ProductFormValues) {
+export async function updateFirebaseProduct(id: string, productData: ProductFormValues) {
   const productDoc = doc(db, 'products', id);
   await updateDoc(productDoc, {
     ...productData,
@@ -43,7 +44,7 @@ export async function updateProduct(id: string, productData: ProductFormValues) 
   });
 }
 
-export async function deleteProduct(id: string) {
+export async function deleteFirebaseProduct(id: string) {
   const productDoc = doc(db, 'products', id);
   await deleteDoc(productDoc);
 }

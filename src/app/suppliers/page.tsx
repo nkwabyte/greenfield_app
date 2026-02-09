@@ -9,17 +9,24 @@ import { DataTable } from '@/components/data-table';
 import { getColumns } from '@/components/suppliers/supplier-columns';
 import { useToast } from '@/hooks/use-toast';
 import { AddEditSupplierDialog, type SupplierFormValues } from '@/components/suppliers/add-edit-supplier-dialog';
-import { useSuppliers } from '@/hooks/use-suppliers';
+import { useSuppliersPaginated } from '@/hooks/useData';
 
 export default function SuppliersPage() {
   const { toast } = useToast();
-  const {
-    data: suppliers = [],
-    isLoading,
-    addSupplier,
-    updateSupplier,
-    deleteSupplier,
-  } = useSuppliers();
+
+  // Pagination State
+  const [pagination, setPagination] = React.useState({
+    pageIndex: 0,
+    pageSize: 10,
+  });
+
+  // Dexie Hook
+  const result = useSuppliersPaginated(pagination.pageIndex + 1, pagination.pageSize);
+
+  const suppliers = result?.data ?? [];
+  const totalCount = result?.total ?? 0;
+  const totalPages = Math.ceil(totalCount / pagination.pageSize);
+  const isLoading = !result;
 
   const [isAddEditDialogOpen, setIsAddEditDialogOpen] = React.useState(false);
   const [editingSupplier, setEditingSupplier] = React.useState<typeof suppliers[0] | null>(null);
@@ -37,10 +44,12 @@ export default function SuppliersPage() {
   const handleSaveSupplier = async (data: SupplierFormValues) => {
     try {
       if (editingSupplier) {
-        await updateSupplier({ id: editingSupplier.id, data });
+        const { updateSupplier } = await import('@/lib/db/services/suppliers');
+        await updateSupplier(editingSupplier.id, data);
         toast({ title: "Supplier Updated", description: `${data.name}'s record has been updated.` });
       } else {
-        await addSupplier(data);
+        const { addSupplier } = await import('@/lib/db/services/suppliers');
+        await addSupplier(data, crypto.randomUUID());
         toast({ title: "Supplier Added", description: `${data.name} has been added to the system.` });
       }
     } catch (error) {
@@ -51,6 +60,7 @@ export default function SuppliersPage() {
   const handleDeleteSupplier = async (supplierId: string) => {
     if (window.confirm("Are you sure you want to delete this supplier? This action cannot be undone.")) {
       try {
+        const { deleteSupplier } = await import('@/lib/db/services/suppliers');
         await deleteSupplier(supplierId);
         toast({ title: "Supplier Deleted", description: "The supplier record has been removed." });
       } catch (error) {
@@ -66,7 +76,7 @@ export default function SuppliersPage() {
 
   return (
     <AppShell>
-      <PageHeader 
+      <PageHeader
         title="Supplier Management"
         description="View, add, edit, and manage all supplier records."
       >
@@ -75,7 +85,7 @@ export default function SuppliersPage() {
           Add Supplier
         </Button>
       </PageHeader>
-      
+
       <div className="grid gap-6">
         <DataTable
           columns={columns}
@@ -83,10 +93,14 @@ export default function SuppliersPage() {
           filterColumnId="name"
           filterPlaceholder="Filter by name..."
           isLoading={isLoading}
+          // Pagination Props
+          pageCount={totalPages}
+          pagination={pagination}
+          onPaginationChange={setPagination}
         />
       </div>
 
-      <AddEditSupplierDialog 
+      <AddEditSupplierDialog
         open={isAddEditDialogOpen}
         onOpenChange={setIsAddEditDialogOpen}
         supplier={editingSupplier}

@@ -16,7 +16,7 @@ import type { SupplierFormValues } from '@/components/suppliers/add-edit-supplie
 
 const supplierCollection = collection(db, 'suppliers');
 
-export async function getSuppliers(): Promise<Supplier[]> {
+export async function getFirebaseSuppliers(): Promise<Supplier[]> {
   const q = query(supplierCollection, orderBy('updatedAt', 'desc'));
   const snapshot = await getDocs(q);
   return snapshot.docs.map((doc) => ({
@@ -27,7 +27,8 @@ export async function getSuppliers(): Promise<Supplier[]> {
   })) as Supplier[];
 }
 
-export async function addSupplier(supplierData: SupplierFormValues) {
+export async function addFirebaseSupplier(supplierData: SupplierFormValues, id: string) {
+  const supplierDoc = doc(supplierCollection, id);
   await addDoc(supplierCollection, {
     ...supplierData,
     createdAt: serverTimestamp(),
@@ -35,7 +36,7 @@ export async function addSupplier(supplierData: SupplierFormValues) {
   });
 }
 
-export async function updateSupplier(id: string, supplierData: SupplierFormValues) {
+export async function updateFirebaseSupplier(id: string, supplierData: SupplierFormValues) {
   const supplierDoc = doc(db, 'suppliers', id);
   await updateDoc(supplierDoc, {
     ...supplierData,
@@ -43,7 +44,7 @@ export async function updateSupplier(id: string, supplierData: SupplierFormValue
   });
 }
 
-export async function deleteSupplier(id: string) {
+export async function deleteFirebaseSupplier(id: string) {
   const supplierDoc = doc(db, 'suppliers', id);
   await deleteDoc(supplierDoc);
 }

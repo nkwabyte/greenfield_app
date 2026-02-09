@@ -3,6 +3,9 @@ import { Toaster } from '@/components/ui/toaster';
 import './globals.css';
 import { AppProviders } from '@/lib/store/provider';
 import { AppInitializer } from '@/components/app-initializer';
+import { InitialSyncProvider } from '@/components/providers/InitialSyncProvider';
+import { DataProvider } from '@/components/providers/DataProvider';
+import { OfflineBanner } from '@/components/ui/OfflineBanner';
 
 
 export const metadata: Metadata = {
@@ -25,9 +28,14 @@ export default function RootLayout({
       </head>
       <body className="font-body antialiased" suppressHydrationWarning={true}>
         <AppProviders>
-          <AppInitializer /> {/* Loads employees, suppliers, transactions */}
-          {children}
-          <Toaster />
+          <InitialSyncProvider>
+            <DataProvider>
+              <OfflineBanner />
+              <AppInitializer /> {/* Loads employees, suppliers, transactions */}
+              {children}
+              <Toaster />
+            </DataProvider>
+          </InitialSyncProvider>
         </AppProviders>
       </body>
     </html>

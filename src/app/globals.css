@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 @layer base {
   :root {
@@ -38,6 +36,7 @@
     --sidebar-border: 120 20% 85%;
     --sidebar-ring: 120 45% 45%;
   }
+
   .dark {
     --background: 120 15% 5%;
     --foreground: 120 15% 95%;
@@ -76,9 +75,11 @@
 
 @layer base {
   * {
-    @apply border-border;
+    border-color: hsl(var(--border));
   }
+
   body {
-    @apply bg-background text-foreground;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
   }
 }

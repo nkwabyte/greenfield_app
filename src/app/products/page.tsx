@@ -12,9 +12,7 @@ import { AddEditProductDialog, type ProductFormValues } from '@/components/produ
 import { KpiCard } from '@/components/dashboard/kpi-card';
 import { Skeleton } from '@/components/ui/skeleton';
 import type { Kpi } from '@/lib/types';
-import { useProducts } from '@/hooks/use-products';
-import { RootState } from '@/lib/store/store';
-import { useSelector } from 'react-redux';
+import { useProductsPaginated, useSuppliers } from '@/hooks/useData';
 
 const currencyFormatter = new Intl.NumberFormat('en-GH', {
   style: 'currency',
@@ -23,40 +21,49 @@ const currencyFormatter = new Intl.NumberFormat('en-GH', {
 
 export default function ProductsPage() {
   const { toast } = useToast();
-  const {
-    data: products = [],
-    isLoading,
-    addProduct,
-    updateProduct,
-    deleteProduct,
-  } = useProducts();
 
-  const suppliers = useSelector((state: RootState) => state.suppliers.data);
+  // Pagination State
+  const [pagination, setPagination] = React.useState({
+    pageIndex: 0,
+    pageSize: 10,
+  });
+
+  const result = useProductsPaginated(pagination.pageIndex + 1, pagination.pageSize);
+  const products = result?.data ?? [];
+  const totalCount = result?.total ?? 0;
+  const totalPages = Math.ceil(totalCount / pagination.pageSize);
+  const isLoading = !result;
+
+  // NEW: Use Dexie hook instead of Redux
+  const suppliers = useSuppliers();
   const [isAddEditDialogOpen, setIsAddEditDialogOpen] = React.useState(false);
   const [editingProduct, setEditingProduct] = React.useState<typeof products[0] | null>(null);
 
   React.useEffect(() => {
     // if suppliers are empty, show a warning toast
-    if (suppliers.length === 0) {
+    if (suppliers && suppliers.length === 0) {
       toast({
         title: 'No Suppliers Found',
         description: 'Please add suppliers before managing products.',
         variant: 'destructive',
       });
     }
-  }, [toast]);
+  }, [toast, suppliers]);
 
   const kpis: Kpi[] = React.useMemo(() => {
-    const totalProducts = products.length;
-    const totalStockValue = products.reduce((sum, p) => sum + p.price * p.quantity, 0);
-    const outOfStock = products.filter(p => p.quantity === 0).length;
+    // Note: These KPIs should be fetched via separate queries for global stats
+    // Currently they reflect only the current page (which is incorrect but placeholder behavior)
+    // For now, we will display page-level stats or 0 to suggest this needs specific hooks
+    const totalProducts = totalCount; // This is accurate (global)
+    const totalStockValue = products.reduce((sum, p) => sum + p.price * p.quantity, 0); // Page Only
+    const outOfStock = products.filter(p => p.quantity === 0).length; // Page Only
 
     return [
-      { label: 'Total Products', value: totalProducts.toString(), icon: Package },
-      { label: 'Total Stock Value', value: currencyFormatter.format(totalStockValue), icon: Sigma },
-      { label: 'Out of Stock', value: outOfStock.toString(), icon: AlertCircle },
+      { label: 'Total Products (All)', value: totalProducts.toString(), icon: Package },
+      { label: 'Stock Value (Page)', value: currencyFormatter.format(totalStockValue), icon: Sigma },
+      { label: 'Out of Stock (Page)', value: outOfStock.toString(), icon: AlertCircle },
     ];
-  }, [products]);
+  }, [products, totalCount]);
 
   const handleOpenAddDialog = () => {
     setEditingProduct(null);
@@ -71,10 +78,12 @@ export default function ProductsPage() {
   const handleSaveProduct = async (data: ProductFormValues) => {
     try {
       if (editingProduct) {
-        await updateProduct({ id: editingProduct.id, data });
+        const { updateProduct } = await import('@/lib/db/services/products');
+        await updateProduct(editingProduct.id, data);
         toast({ title: 'Product Updated', description: `${data.name}'s record has been updated.` });
       } else {
-        await addProduct(data);
+        const { addProduct } = await import('@/lib/db/services/products');
+        await addProduct(data, crypto.randomUUID());
         toast({ title: 'Product Added', description: `${data.name} has been added to the system.` });
       }
     } catch (error) {
@@ -85,6 +94,7 @@ export default function ProductsPage() {
   const handleDeleteProduct = async (id: string) => {
     if (window.confirm('Are you sure you want to delete this product? This action cannot be undone.')) {
       try {
+        const { deleteProduct } = await import('@/lib/db/services/products');
         await deleteProduct(id);
         toast({ title: 'Product Deleted', description: 'The product record has been removed.' });
       } catch (error) {
@@ -96,7 +106,7 @@ export default function ProductsPage() {
   const columns = React.useMemo(() => getColumns({
     onEdit: handleOpenEditDialog,
     onDelete: handleDeleteProduct,
-    suppliers,
+    suppliers: suppliers || [],
   }), [suppliers]);
 
   return (
@@ -130,6 +140,10 @@ export default function ProductsPage() {
           filterColumnId="name"
           filterPlaceholder="Filter by product name..."
           isLoading={isLoading}
+          // Pagination Props
+          pageCount={totalPages}
+          pagination={pagination}
+          onPaginationChange={setPagination}
         />
       </div>
 
@@ -138,7 +152,7 @@ export default function ProductsPage() {
         onOpenChange={setIsAddEditDialogOpen}
         product={editingProduct}
         onSave={handleSaveProduct}
-        suppliers={suppliers}
+        suppliers={suppliers || []}
       />
     </AppShell>
   );
