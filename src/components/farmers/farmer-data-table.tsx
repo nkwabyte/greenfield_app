@@ -32,6 +32,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { ChevronDown } from "lucide-react"
+import { normalizeRegion } from "@/lib/utils/region-normalizer"
+import { getAllFarmers, updateFarmer } from "@/lib/db/services/farmers"
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
@@ -70,6 +72,30 @@ export function DataTable<TData, TValue>({
     },
   })
 
+  // ... inside DataTable component ...
+
+  const handleFixRegions = async () => {
+    if (!confirm("This will scan all farmers and standardize their regions. Continue?")) return;
+
+    try {
+      const allFarmers = await getAllFarmers();
+      let updatedCount = 0;
+
+      for (const farmer of allFarmers) {
+        const normalized = normalizeRegion(farmer.region);
+        if (normalized !== farmer.region) {
+          await updateFarmer(farmer.id, { region: normalized });
+          updatedCount++;
+        }
+      }
+      alert(`Migration complete. Updated ${updatedCount} records.`);
+      window.location.reload(); // Simple refresh to show changes
+    } catch (error) {
+      console.error("Migration failed:", error);
+      alert("Migration failed. Check console.");
+    }
+  };
+
   return (
     <div>
       <div className="flex items-center py-4">
@@ -81,6 +107,9 @@ export function DataTable<TData, TValue>({
           }
           className="max-w-sm"
         />
+        <Button variant="outline" className="ml-2" onClick={handleFixRegions}>
+          Fix Regions
+        </Button>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" className="ml-auto">
@@ -121,9 +150,9 @@ export function DataTable<TData, TValue>({
                       {header.isPlaceholder
                         ? null
                         : flexRender(
-                            header.column.columnDef.header,
-                            header.getContext()
-                          )}
+                          header.column.columnDef.header,
+                          header.getContext()
+                        )}
                     </TableHead>
                   )
                 })}
@@ -154,7 +183,7 @@ export function DataTable<TData, TValue>({
           </TableBody>
         </Table>
       </div>
-       <div className="flex items-center justify-end space-x-2 py-4">
+      <div className="flex items-center justify-end space-x-2 py-4">
         <Button
           variant="outline"
           size="sm"

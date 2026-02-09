@@ -47,6 +47,10 @@ interface DataTableProps<TData, TValue> {
     pageSize: number
   }
   onPaginationChange?: (pagination: { pageIndex: number; pageSize: number }) => void
+  // Selection
+  rowSelection?: Record<string, boolean>
+  onRowSelectionChange?: (rowSelection: Record<string, boolean>) => void
+  getRowId?: (originalRow: TData, index: number, parent?: any) => string
 }
 
 export function DataTable<TData, TValue>({
@@ -58,6 +62,9 @@ export function DataTable<TData, TValue>({
   pageCount,
   pagination,
   onPaginationChange,
+  rowSelection,
+  onRowSelectionChange,
+  getRowId,
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = React.useState<SortingState>([])
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
@@ -94,12 +101,17 @@ export function DataTable<TData, TValue>({
     onPaginationChange: setTablePagination,
     manualPagination: !!pageCount, // Enable manual pagination if pageCount is provided
     pageCount: pageCount ?? -1,
+    // Selection
+    enableRowSelection: true,
+    onRowSelectionChange: onRowSelectionChange as any, // Type assertion due to state setter mismatch occasionally
     state: {
       sorting,
       columnFilters,
       columnVisibility,
       pagination: tablePagination,
+      rowSelection,
     },
+    getRowId,
   })
 
   return (

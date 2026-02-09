@@ -36,42 +36,39 @@ service cloud.firestore {
     // Farmers
     match /farmers/{farmerId} {
       allow read: if isAuthenticated();
-      // Allow create/update if authenticated. 
-      // Delete restricted to Admins or Managers.
-      allow create, update: if isAuthenticated();
-      allow delete: if hasRole('Admin') || hasRole('Manager');
+      // Employees (field agents) need full CRUD access to manage farmers.
+      // Admins can also manage farmers for oversight.
+      allow create, update, delete: if isAuthenticated() && (hasRole('Employee') || hasRole('Admin'));
     }
 
     // Employees
     match /employees/{employeeId} {
       allow read: if isAuthenticated();
-      // Only Admins and Managers can manage employee records.
-      allow write: if hasRole('Admin') || hasRole('Manager');
+      // Only Admins (CEO) can create, update, or delete employee records.
+      // Employees can update their own profile.
+      allow update: if isAuthenticated() && (request.auth.uid == employeeId || hasRole('Admin'));
+      allow create, delete: if hasRole('Admin');
     }
 
     // Products
     match /products/{productId} {
       allow read: if isAuthenticated();
-      allow create, update: if isAuthenticated();
-      allow delete: if hasRole('Admin') || hasRole('Manager');
+      // Employees and Admins have full CRUD access to products.
+      allow create, update, delete: if isAuthenticated() && (hasRole('Employee') || hasRole('Admin'));
     }
 
     // Suppliers
     match /suppliers/{supplierId} {
       allow read: if isAuthenticated();
-      allow create, update: if isAuthenticated();
-      allow delete: if hasRole('Admin') || hasRole('Manager');
+      // Employees and Admins have full CRUD access to suppliers.
+      allow create, update, delete: if isAuthenticated() && (hasRole('Employee') || hasRole('Admin'));
     }
 
     // Transactions
     match /transactions/{transactionId} {
       allow read: if isAuthenticated();
-      // Financial records should be strictly controlled.
-      // Assuming all authenticated users can record transactions (e.g. sales), 
-      // but maybe only Accountants/Managers can delete or edit past dates?
-      // For now, allow create/update for all, restrict delete.
-      allow create, update: if isAuthenticated();
-      allow delete: if hasRole('Admin') || hasRole('Manager') || hasRole('Accountant');
+      // Employees and Admins have full CRUD access to transactions.
+      allow create, update, delete: if isAuthenticated() && (hasRole('Employee') || hasRole('Admin'));
     }
   }
 }

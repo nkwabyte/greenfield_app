@@ -6,6 +6,7 @@ import { AppInitializer } from '@/components/app-initializer';
 import { InitialSyncProvider } from '@/components/providers/InitialSyncProvider';
 import { DataProvider } from '@/components/providers/DataProvider';
 import { OfflineBanner } from '@/components/ui/OfflineBanner';
+import { ThemeProvider } from '@/components/theme-provider';
 
 
 export const metadata: Metadata = {
@@ -30,10 +31,17 @@ export default function RootLayout({
         <AppProviders>
           <InitialSyncProvider>
             <DataProvider>
-              <OfflineBanner />
-              <AppInitializer /> {/* Loads employees, suppliers, transactions */}
-              {children}
-              <Toaster />
+              <ThemeProvider
+                attribute="class"
+                defaultTheme="system"
+                enableSystem
+                disableTransitionOnChange
+              >
+                <OfflineBanner />
+                <AppInitializer /> {/* Loads employees, suppliers, transactions */}
+                {children}
+                <Toaster />
+              </ThemeProvider>
             </DataProvider>
           </InitialSyncProvider>
         </AppProviders>

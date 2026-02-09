@@ -76,24 +76,103 @@ export async function getFarmersPaginatedAndFiltered(
         search?: string; // Added search support
     }
 ): Promise<{ data: Farmer[], total: number }> {
-    let collection = db.farmers.toCollection();
+    let collection: any = db.farmers.toCollection(); // Default to full collection scan
 
-    // specific exact match filters
+    // 1. Select the best index based on filters (Compound Index Optimization)
+    // Dexie will use the compound index to efficiently filter without scanning all records.
     if (filters.region && filters.region !== 'all') {
-        collection = db.farmers.where('region').equals(filters.region);
+        if (filters.district && filters.society) {
+            // Use [region+district+society] index
+            collection = db.farmers.where('[region+district+society]').equals([filters.region, filters.district, filters.society]);
+        } else if (filters.district) {
+            // Use [region+district] index
+            collection = db.farmers.where('[region+district]').equals([filters.region, filters.district]);
+        } else if (filters.status) {
+            // Use [region+status] index
+            collection = db.farmers.where('[region+status]').equals([filters.region, filters.status]);
+        } else {
+            // Use basic [region] index
+            collection = db.farmers.where('region').equals(filters.region);
+        }
+    } else if (filters.status) {
+        // Fallback for status-only filter (might need index for this if common, but less critical than region drill-down)
+        collection = db.farmers.where('status').equals(filters.status);
     }
+    // Note: If only 'district' is selected without region (rare drill-down), it falls back to full scan or we could add [district] index.
+    // Given the hierarchy Region -> District -> Society, starting with Region is standard.
 
-    // Applying other filters using 'and' (Dexie optimization needed for large datasets, but this is okay for <10k)
-    // For much larger datasets, we'd need compound indices.
-    collection = collection.filter(f => {
-        if (filters.district && f.district !== filters.district) return false;
-        if (filters.society && f.society !== filters.society) return false;
-        if (filters.status && f.status !== filters.status) return false;
+    // 2. Apply remaining filters in-memory (JS filter)
+    // These run on the significantly reduced result set from step 1.
+    collection = collection.filter((f: Farmer) => {
+        // If we used an index for these, we technically don't need to check again, 
+        // but Dexie's filter() is additive to the where() clause.
+        // However, if we simply used where(), we don't need to filter those specific fields again in JS 
+        // UNLESS the index lookup was partial (e.g. using between() on compound).
+        // Since we used exact equals(), the index handles it.
+        // We only need to handle fields NOT covered by the chosen index.
+
+        // But for simplicity/safety against edge cases (like 'all' value leakage), we can keep checks 
+        // OR better: rely on the fact that if we selected an index, we don't need to check those fields.
+        // Let's iterate what MIGHT not be covered:
+
+        // If we didn't use the [region+district] index (e.g. only region selected), we still need to check district if provided?
+        // Wait, the logic above handles the combinations. 
+        // If region+district are provided, we use that index.
+        // If region provided but district NOT provided, we use region index.
+        // Determine what is NOT handled by the index:
+
+        let match = true;
+
+        // If we didn't use a compound index featuring these, we must check them manually.
+        // Actually, the 'if/else' chain above is mutually exclusive for the primary index selection.
+        // But what if we have Region + District + Status? 
+        // We used [region+district]. We still need to filter by Status.
+        if (filters.region && filters.region !== 'all') {
+            if (filters.district && filters.society) {
+                // Covered: region, district, society. 
+                // Remaining: status?
+                if (filters.status && f.status !== filters.status) match = false;
+            } else if (filters.district) {
+                // Covered: region, district.
+                // Remaining: society, status
+                if (filters.society && f.society !== filters.society) match = false;
+                if (filters.status && f.status !== filters.status) match = false;
+            } else if (filters.status) {
+                // Covered: region, status.
+                // Remaining: district, society
+                if (filters.district && f.district !== filters.district) match = false;
+                if (filters.society && f.society !== filters.society) match = false;
+            } else {
+                // Covered: region.
+                // Remaining: district, society, status
+                if (filters.district && f.district !== filters.district) match = false;
+                if (filters.society && f.society !== filters.society) match = false;
+                if (filters.status && f.status !== filters.status) match = false;
+            }
+        } else {
+            // No region selected. 
+            if (filters.status) {
+                // Covered: status (if we used status index).
+                // Remaining: district, society
+                if (filters.district && f.district !== filters.district) match = false;
+                if (filters.society && f.society !== filters.society) match = false;
+            } else {
+                // No index used. Check everything.
+                if (filters.region && filters.region !== 'all' && f.region !== filters.region) match = false;
+                if (filters.district && f.district !== filters.district) match = false;
+                if (filters.society && f.society !== filters.society) match = false;
+                if (filters.status && f.status !== filters.status) match = false;
+            }
+        }
+
+        if (!match) return false;
+
+        // Search is always manual filter unless we use a full-text search engine or extensive indexing
         if (filters.search) {
             const searchLower = filters.search.toLowerCase();
             return f.name.toLowerCase().includes(searchLower) ||
-                f.contact?.includes(searchLower) ||
-                f.community?.toLowerCase().includes(searchLower);
+                (f.contact?.includes(searchLower) ?? false) ||
+                (f.community?.toLowerCase().includes(searchLower) ?? false);
         }
         return true;
     });
@@ -221,6 +300,37 @@ export async function addFarmersBatch(farmers: Farmer[]): Promise<void> {
 }
 
 /**
+ * Update multiple farmers in batch (for bulk edit)
+ */
+export async function updateFarmersBatch(ids: string[], updates: Partial<Farmer>): Promise<void> {
+    const now = new Date().toISOString();
+    const farmersToUpdate = await db.farmers.bulkGet(ids);
+    const validFarmers = farmersToUpdate.filter((f): f is Farmer => !!f);
+
+    if (validFarmers.length === 0) return;
+
+    const updatedFarmers = validFarmers.map(farmer => ({
+        ...farmer,
+        ...updates,
+        updatedAt: now,
+    }));
+
+    // 1. Update local database
+    await db.farmers.bulkPut(updatedFarmers);
+
+    // 2. Add each to sync queue
+    // Note: Ideally we'd have a bulk update sync action, but for now we queue individual updates
+    for (const farmer of updatedFarmers) {
+        // Create a change object that only includes the fields that changed + id
+        // But syncService expects the full object or partial? 
+        // Looking at updateFarmer, it passes `farmerData` (the partial updates).
+        await syncService.addToQueue('farmer', 'update', farmer.id, updates);
+    }
+
+    console.log(`✅ ${updatedFarmers.length} farmers updated locally (batch)`);
+}
+
+/**
  * Sync farmers from Firebase to local database
  * This is used for initial load or manual refresh
  */
@@ -277,4 +387,27 @@ export async function getFarmersByGender(): Promise<Record<string, number>> {
     });
 
     return genderCounts;
+}
+
+/**
+ * PURGE all farmers (Admin only)
+ * Deletes all farmer data from local database.
+ * CAUTION: This action is destructive and irreversible.
+ */
+export async function deleteAllFarmers(): Promise<void> {
+    // 1. Clear local database
+    await db.farmers.clear();
+
+    // 2. We should ideally sync this deletion. 
+    // Since 'clear' is not a standard sync action in our queue (which is item-based),
+    // we might need a way to tell the backend to wipe.
+    // However, given the offline-first nature, maybe we just clear local.
+    // If the user wants to wipe remote, that usually requires a separate admin command or we'd have to iterate and delete all (slow).
+    // For now, let's assume local purge is the goal (e.g. to clear bad upload).
+    // If we want to safeguard against re-syncing bad data, we might need to clear sync queue for farmers too.
+
+    // Clear sync queue of any pending farmer actions to prevent re-addition
+    await db.syncQueue.where('entityType').equals('farmer').delete();
+
+    console.log('⚠️ All farmer data purged locally.');
 }

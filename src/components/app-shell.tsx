@@ -38,9 +38,9 @@ import {
   Landmark,
   Truck,
   Package
-} from 'lucide-react';
-import { useSelector } from 'react-redux';
+} from 'lucide-react'; import { useSelector } from 'react-redux';
 import { RootState } from '@/lib/store/store';
+import { ThemeToggle } from '@/components/theme-toggle';
 
 const allNavItems = [
   { href: '/dashboard', icon: LayoutGrid, label: 'Dashboard', roles: ['Admin', 'Employee'] },
@@ -58,6 +58,11 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   const user = useSelector((state: RootState) => state.auth.user);
   const isAuthenticated = useSelector((state: RootState) => state.auth.isAuthenticated);
   const isLoading = useSelector((state: RootState) => state.auth.isLoading);
+
+  const handleLogout = async () => {
+    await signOut(auth);
+    router.push('/');
+  };
 
   React.useEffect(() => {
     if (!isLoading && !isAuthenticated) {
@@ -78,10 +83,26 @@ export function AppShell({ children }: { children: React.ReactNode }) {
     );
   }
 
-  const handleLogout = async () => {
-    await signOut(auth);
-    router.push('/');
-  };
+
+
+  if (user.status === 'Disabled') {
+    return (
+      <div className="flex h-screen flex-col items-center justify-center p-4 text-center">
+        <div className="mb-4 rounded-full bg-red-100 p-6">
+          <LogOut className="h-12 w-12 text-red-600" />
+        </div>
+        <h1 className="mb-2 text-2xl font-bold">Account Disabled</h1>
+        <p className="mb-6 max-w-md text-muted-foreground">
+          Your account has been disabled by an administrator. Please contact support.
+        </p>
+        <Button onClick={handleLogout} variant="destructive">
+          Log Out
+        </Button>
+      </div>
+    );
+  }
+
+
 
   const getInitials = (name: string) => {
     if (!name) return 'U';
@@ -93,40 +114,19 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
   return (
     <SidebarProvider>
-      <Sidebar>
-        <SidebarHeader>
-          <Link href="/dashboard" className="flex flex-row items-center justify-center w-full gap-2">
-            <div className="h-32 w-32 text-primary flex flex-row items-center justify-center">
-              <Image src="/logo.svg" width={120} height={120} alt="Greenfield CRM logo" />
-            </div>
+      <header className="fixed top-0 left-0 right-0 z-50 flex h-16 items-center justify-between border-b bg-background/80 px-4 backdrop-blur-sm sm:px-6">
+        <div className="flex items-center gap-4">
+          <SidebarTrigger className="-ml-2" />
+          <Link href="/dashboard" className="flex items-center gap-2 md:hidden">
+            <Image src="/logo.svg" width={32} height={32} alt="Greenfield CRM" />
           </Link>
-        </SidebarHeader>
-        <SidebarContent>
-          <SidebarMenu>
-            {navItems.map((item) => (
-              <SidebarMenuItem key={item.href}>
-                <SidebarMenuButton
-                  asChild
-                  isActive={pathname.startsWith(item.href)}
-                  tooltip={item.label}
-                >
-                  <Link href={item.href}>
-                    <item.icon />
-                    <span>{item.label}</span>
-                  </Link>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-            ))}
-          </SidebarMenu>
-        </SidebarContent>
-        <SidebarFooter />
-      </Sidebar>
-      <SidebarInset>
-        <header className="sticky top-0 z-10 flex h-16 items-center justify-between border-b bg-background/80 px-4 backdrop-blur-sm sm:px-6">
-          <SidebarTrigger className="md:hidden" />
-          <div className="flex-1 flex items-center justify-center">
-            <SyncStatusBadge />
-          </div>
+        </div>
+
+        <div className="flex-1 flex items-center justify-center">
+          <SyncStatusBadge />
+        </div>
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" className="relative h-10 w-10 rounded-full">
@@ -157,7 +157,39 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
-        </header>
+        </div>
+      </header>
+
+      <Sidebar className="top-16! h-[calc(100svh-4rem)]!">
+        <SidebarHeader>
+          <Link href="/dashboard" className="flex flex-row items-center justify-center w-full gap-2 py-4">
+            <div className="h-24 w-24 text-primary flex flex-row items-center justify-center">
+              <Image src="/logo.svg" width={100} height={100} alt="Greenfield CRM logo" />
+            </div>
+          </Link>
+        </SidebarHeader>
+        <SidebarContent>
+          <SidebarMenu>
+            {navItems.map((item) => (
+              <SidebarMenuItem key={item.href}>
+                <SidebarMenuButton
+                  asChild
+                  isActive={pathname.startsWith(item.href)}
+                  tooltip={item.label}
+                >
+                  <Link href={item.href}>
+                    <item.icon />
+                    <span>{item.label}</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            ))}
+          </SidebarMenu>
+        </SidebarContent>
+        <SidebarFooter />
+      </Sidebar>
+
+      <SidebarInset className="pt-16 peer-data-[variant=inset]:min-h-[calc(100svh-4rem)]">
         <main className="flex-1 p-4 sm:p-6">{children}</main>
       </SidebarInset>
     </SidebarProvider>

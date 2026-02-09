@@ -1,124 +1,53 @@
 'use client';
 
 import * as React from 'react';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
-import { doc, updateDoc } from 'firebase/firestore';
-import { db } from '@/lib/firebase/config';
 import { AppShell } from '@/components/app-shell';
 import { PageHeader } from '@/components/page-header';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
-import { useToast } from '@/hooks/use-toast';
-import { useDispatch, useSelector } from 'react-redux';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { ProfileForm } from '@/components/settings/profile-form';
+import { SecurityForm } from '@/components/settings/security-form';
+import { AppearanceForm } from '@/components/settings/appearance-form';
+import { NotificationsForm } from '@/components/settings/notifications-form';
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import { Info } from 'lucide-react';
+import { useSelector } from 'react-redux';
 import { RootState } from '@/lib/store/store';
-import { setUser } from '@/lib/store/slices/authSlice'; // You should have this action in your authSlice
-
-const profileSchema = z.object({
-  name: z.string().min(1, 'Name is required'),
-  email: z.string().email('Invalid email address'),
-});
-
-type ProfileFormValues = z.infer<typeof profileSchema>;
-
 export default function SettingsPage() {
-  const dispatch = useDispatch();
-  const { toast } = useToast();
-
   const user = useSelector((state: RootState) => state.auth.user);
-
-  const form = useForm<ProfileFormValues>({
-    resolver: zodResolver(profileSchema),
-    defaultValues: {
-      name: '',
-      email: '',
-    },
-  });
-
-  React.useEffect(() => {
-    if (user) {
-      form.reset({
-        name: user.name,
-        email: user.email,
-      });
-    }
-  }, [user, form]);
-
-  const onSubmit = async (data: ProfileFormValues) => {
-    if (user) {
-      try {
-        const userDocRef = doc(db, 'users', user.uid);
-        await updateDoc(userDocRef, { name: data.name });
-
-        // Update Redux state manually
-        dispatch(setUser({ ...user, name: data.name }));
-
-        toast({
-          title: 'Profile Updated',
-          description: 'Your profile information has been successfully updated.',
-        });
-      } catch (error: any) {
-        toast({
-          title: 'Update Failed',
-          description: error.message,
-          variant: 'destructive',
-        });
-      }
-    }
-  };
 
   return (
     <AppShell>
-      <PageHeader title="Settings" description="Manage your account settings and profile information." />
-      <div className="grid gap-6">
-        <Card>
-          <CardHeader>
-            <CardTitle>Profile</CardTitle>
-            <CardDescription>This is your public display name and email address.</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 max-w-lg">
-                <FormField
-                  control={form.control}
-                  name="name"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Full Name</FormLabel>
-                      <FormControl>
-                        <Input {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Email</FormLabel>
-                      <FormControl>
-                        <Input type="email" {...field} disabled />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormItem>
-                  <FormLabel>Role</FormLabel>
-                  <Input value={user?.role || ''} disabled />
-                </FormItem>
-                <Button type="submit" disabled={form.formState.isSubmitting}>
-                  {form.formState.isSubmitting ? 'Saving...' : 'Save Changes'}
-                </Button>
-              </form>
-            </Form>
-          </CardContent>
-        </Card>
+      <PageHeader title="Settings" description="Manage your account settings and preferences." />
+      <div className="flex-1 space-y-4">
+        {user?.status === 'Pending' && (
+          <Alert variant="destructive" className="bg-orange-50 text-orange-900 border-orange-200">
+            <Info className="h-4 w-4 text-orange-600" />
+            <AlertTitle className="text-orange-800">Account Verification Pending</AlertTitle>
+            <AlertDescription className="text-orange-700">
+              Your account has not yet been verified by the CEO. Some features may be limited until approval.
+            </AlertDescription>
+          </Alert>
+        )}
+        <Tabs defaultValue="profile" className="space-y-4">
+          <TabsList>
+            <TabsTrigger value="profile">Profile</TabsTrigger>
+            <TabsTrigger value="security">Security</TabsTrigger>
+            <TabsTrigger value="appearance">Appearance</TabsTrigger>
+            <TabsTrigger value="notifications">Notifications</TabsTrigger>
+          </TabsList>
+          <TabsContent value="profile" className="space-y-4">
+            <ProfileForm />
+          </TabsContent>
+          <TabsContent value="security" className="space-y-4">
+            <SecurityForm />
+          </TabsContent>
+          <TabsContent value="appearance" className="space-y-4">
+            <AppearanceForm />
+          </TabsContent>
+          <TabsContent value="notifications" className="space-y-4">
+            <NotificationsForm />
+          </TabsContent>
+        </Tabs>
       </div>
     </AppShell>
   );

@@ -3,6 +3,7 @@ export type User = {
   name: string;
   email: string;
   role: 'Admin' | 'Employee';
+  status: 'Active' | 'Pending' | 'Disabled';
 };
 
 export type FailedRecord = {

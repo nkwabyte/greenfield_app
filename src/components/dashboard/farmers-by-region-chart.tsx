@@ -14,31 +14,36 @@ type FarmersByRegionChartProps = {
 };
 
 const CustomTooltip = ({ active, payload, label }: any) => {
-    if (active && payload && payload.length) {
-        return (
-            <div className="p-2 text-sm bg-background border rounded-lg shadow-lg">
-                <p className="font-bold">{label}</p>
-                <p>{`${payload[0].name}: ${payload[0].value}`}</p>
-            </div>
-        );
-    }
-    return null;
+  if (active && payload && payload.length) {
+    return (
+      <div className="p-2 text-sm bg-background border rounded-lg shadow-lg">
+        <p className="font-bold">{label}</p>
+        <p>{`${payload[0].name}: ${payload[0].value}`}</p>
+      </div>
+    );
+  }
+  return null;
 };
 
 
 export function FarmersByRegionChart({ farmers }: FarmersByRegionChartProps) {
   const data = React.useMemo(() => {
     const regionCounts = farmers.reduce((acc, farmer) => {
-      if (farmer.region) {
-        acc[farmer.region] = (acc[farmer.region] || 0) + 1;
-      }
+      const region = farmer.region || 'N/A';
+      acc[region] = (acc[region] || 0) + 1;
       return acc;
     }, {} as Record<string, number>);
 
-    return Object.entries(regionCounts).map(([region, count]) => ({
-      region,
-      count,
-    }));
+    return Object.entries(regionCounts)
+      .map(([region, count]) => ({
+        region,
+        count,
+      }))
+      .sort((a, b) => {
+        if (a.region === 'N/A') return 1;
+        if (b.region === 'N/A') return -1;
+        return b.count - a.count; // Sort by count descending for others
+      });
   }, [farmers]);
 
   return (

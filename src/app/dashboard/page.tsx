@@ -15,11 +15,15 @@ const FarmersByRegionChart = dynamic(() => import('@/components/dashboard/farmer
   ssr: false,
   loading: () => <Skeleton className="h-[300px] w-full" />
 });
-const FarmersGrowthChart = dynamic(() => import('@/components/dashboard/farmers-growth-chart').then(mod => mod.FarmersGrowthChart), {
+const FarmersAgeChart = dynamic(() => import('@/components/dashboard/farmers-age-chart').then(mod => mod.FarmersAgeChart), {
   ssr: false,
   loading: () => <Skeleton className="h-[300px] w-full" />
 });
 const FarmersByGenderChart = dynamic(() => import('@/components/dashboard/farmers-by-gender-chart').then(mod => mod.FarmersByGenderChart), {
+  ssr: false,
+  loading: () => <Skeleton className="h-[300px] w-full" />
+});
+const FarmSizeChart = dynamic(() => import('@/components/dashboard/farm-size-chart').then(mod => mod.FarmSizeChart), {
   ssr: false,
   loading: () => <Skeleton className="h-[300px] w-full" />
 });
@@ -169,8 +173,8 @@ export default function DashboardPage() {
             <Download className="mr-2 h-4 w-4" />
             Export
           </Button>
-          <Button onClick={() => setIsAiAssistantOpen(true)}>
-            <Bot className="mr-2" />
+          <Button onClick={() => setIsAiAssistantOpen(true)} className="bg-[#2e7d32] hover:bg-[#1b5e20] text-white">
+            <Bot className="mr-2 text-white" />
             AI Insights
           </Button>
         </div>
@@ -185,17 +189,16 @@ export default function DashboardPage() {
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-5">
           <div className="lg:col-span-3">
-            <FarmersGrowthChart farmers={filteredFarmers} />
+            <FarmersByRegionChart farmers={filteredFarmers} />
           </div>
           <div className="lg:col-span-2">
-            <FarmersByRegionChart farmers={filteredFarmers} />
+            <FarmersAgeChart farmers={filteredFarmers} />
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-5">
-          <div className="lg:col-span-3">
-            <FarmersByGenderChart farmers={filteredFarmers} />
-          </div>
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+          <FarmersByGenderChart farmers={filteredFarmers} />
+          <FarmSizeChart farmers={filteredFarmers} />
         </div>
 
         <div>

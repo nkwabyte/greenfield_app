@@ -8,11 +8,14 @@ import { auth } from '@/lib/firebase/config';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
+import { PasswordInput } from '@/components/ui/password-input';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
 import Image from 'next/image';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/lib/store/store';
+import { getFriendlyErrorMessage } from '@/lib/firebase/error-messages';
+import { AppLoadingSkeleton } from '@/components/app-loading-skeleton';
 
 export default function LoginPage() {
   const router = useRouter();
@@ -35,7 +38,7 @@ export default function LoginPage() {
     } catch (error: any) {
       toast({
         title: 'Login Failed',
-        description: error.message,
+        description: getFriendlyErrorMessage(error),
         variant: 'destructive',
       });
     } finally {
@@ -43,28 +46,20 @@ export default function LoginPage() {
     }
   };
 
+  const user = useSelector((state: RootState) => state.auth.user);
+
   // Redirect authenticated users to dashboard
   React.useEffect(() => {
-    if (!isLoading && isAuthenticated) {
+    console.log("Login Page Effect:", { isLoading, isAuthenticated, status: user?.status });
+    if (!isLoading && isAuthenticated && (user?.status === 'Active' || user?.status === 'Pending')) {
+      console.log("Redirecting to dashboard...");
       router.replace('/dashboard');
     }
-  }, [isLoading, isAuthenticated, router]);
+  }, [isLoading, isAuthenticated, user, router]);
 
   if (isLoading || isAuthenticated) {
     return (
-      <div className="flex flex-col min-h-screen items-center justify-center">
-        <Image src="/logo.svg" width={250} height={250} alt="Greenfield CRM logo" />
-        <svg width="60" height="60" viewBox="0 0 44 44">
-          <circle cx="22" cy="22" r="6" fill="none" stroke="#60A5FA" strokeWidth="2">
-            <animate attributeName="r" from="6" to="20" dur="1.5s" repeatCount="indefinite" />
-            <animate attributeName="opacity" from="1" to="0" dur="1.5s" repeatCount="indefinite" />
-          </circle>
-          <circle cx="22" cy="22" r="6" fill="none" stroke="#60A5FA" strokeWidth="2">
-            <animate attributeName="r" from="6" to="20" dur="1.5s" begin="0.5s" repeatCount="indefinite" />
-            <animate attributeName="opacity" from="1" to="0" dur="1.5s" begin="0.5s" repeatCount="indefinite" />
-          </circle>
-        </svg>
-      </div>
+      <AppLoadingSkeleton />
     );
   }
 
@@ -103,21 +98,20 @@ export default function LoginPage() {
                 <div className="flex items-center justify-between">
                   <Label htmlFor="password">Password</Label>
                   <Link href="/forgot-password" passHref>
-                    <Button variant="link" className="px-0 text-xs h-auto !text-primary">
+                    <Button type="button" variant="link" className="px-0 text-xs h-auto text-primary!">
                       Forgot password?
                     </Button>
                   </Link>
                 </div>
-                <Input
+                <PasswordInput
                   id="password"
-                  type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
                 />
               </div>
 
-              <Button type="submit" className="w-full !mt-6 font-bold" disabled={submitting}>
+              <Button type="submit" className="w-full mt-6! font-bold" disabled={submitting}>
                 {submitting ? 'Signing In...' : 'Sign In'}
               </Button>
             </form>
@@ -131,6 +125,6 @@ export default function LoginPage() {
           </CardContent>
         </Card>
       </div>
-    </div>
+    </div >
   );
 }

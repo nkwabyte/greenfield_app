@@ -42,6 +42,11 @@ export class GreenfieldDB extends Dexie {
             // Sync queue - auto-increment ID, indexed by entity type and sync status
             syncQueue: '++id, entityType, entityId, synced, status, timestamp',
         });
+
+        // Upgrade schema version 2: Add compound indices for fast filtering
+        this.version(2).stores({
+            farmers: 'id, name, region, district, society, status, updatedAt, createdAt, [region+district], [region+district+society], [region+status]',
+        });
     }
 }
 
