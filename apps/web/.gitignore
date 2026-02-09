@@ -16,17 +16,13 @@
 # next.js
 /.next/
 /out/
-.pnpm-store/
-.DS_Store
 
-.idea/
-.vscode/
-.vs/
-.vs
+# Vercel
+.vercel
 
-
-# production
-/build
+# Firebase
+firebase-debug.log
+firestore-debug.log
 
 # misc
 .DS_Store
@@ -38,16 +34,13 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# vercel
-.vercel
-
 # typescript
 *.tsbuildinfo
 next-env.d.ts
 
-.genkit/*
+# env
 .env*
+.env.local
 
-# firebase
-firebase-debug.log
-firestore-debug.log
+# genkit
+.genkit/*
