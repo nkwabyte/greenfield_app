@@ -10,7 +10,8 @@ node_modules/
 .pnpm-store/
 
 
-# Electron build artifacts
+# Electron desktop builds
 apps/desktop/release/
 *.asar
 *.app
+Electron Framework.framework/

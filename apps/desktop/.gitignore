@@ -5,6 +5,7 @@ node_modules/
 dist/
 release/
 out/
+Electron Framework.framework/
 
 # Electron builder noise
 *.blockmap
