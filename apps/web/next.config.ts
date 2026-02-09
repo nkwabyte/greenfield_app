@@ -1,6 +1,9 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
+  turbopack: {
+    root: require('path').resolve(__dirname, '../..'),
+  },
   /* config options here */
   typescript: {
     ignoreBuildErrors: true,
@@ -14,9 +17,6 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
     ],
-  },
-  turbopack: {
-    // ...
   },
   webpack: (config, { isServer }) => {
     if (!isServer) {

@@ -1,0 +1,59 @@
+{
+    "name": "@greenfield/desktop",
+    "version": "0.1.0",
+    "description": "Greenfield CRM Desktop Application",
+    "author": "Greenfield Team",
+    "private": true,
+    "main": "dist/main.js",
+    "scripts": {
+        "dev": "concurrently \"yarn:dev:*\"",
+        "dev:electron": "tsc && electron .",
+        "dev:watch": "tsc --watch",
+        "build": "tsc && electron-builder",
+        "start": "electron ."
+    },
+    "dependencies": {
+        "electron-is-dev": "^3.0.1"
+    },
+    "devDependencies": {
+        "@types/node": "^25.2.2",
+        "concurrently": "^9.2.1",
+        "electron": "40.2.1",
+        "electron-builder": "^26.7.0",
+        "typescript": "^5.9.3"
+    },
+    "build": {
+        "appId": "com.greenfield.crm",
+        "productName": "Greenfield CRM",
+        "directories": {
+            "output": "release"
+        },
+        "files": [
+            "dist/**/*",
+            "package.json"
+        ],
+        "mac": {
+            "category": "public.app-category.business",
+            "icon": "../web/public/app_icon.ico",
+            "target": [
+                "dmg",
+                "zip"
+            ]
+        },
+        "win": {
+            "icon": "../web/public/app_icon.ico",
+            "target": [
+                "nsis",
+                "portable"
+            ]
+        },
+        "linux": {
+            "icon": "../web/public/app_icon.ico",
+            "category": "Office",
+            "target": [
+                "AppImage",
+                "deb"
+            ]
+        }
+    }
+}
