@@ -5,10 +5,12 @@ const nextConfig: NextConfig = {
     root: require('path').resolve(__dirname, '../..'),
   },
   /* config options here */
+  output: 'export',
   typescript: {
     ignoreBuildErrors: true,
   },
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
