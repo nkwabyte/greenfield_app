@@ -26,7 +26,7 @@ export function SyncStatusBadge() {
                 // Get actual synced count from queue
                 const synced = await db.syncQueue
                     .where('synced')
-                    .equals(1) // true = 1 in IndexedDB
+                    .equals(1) // 1 = true
                     .count();
 
                 // Get total items in queue
