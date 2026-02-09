@@ -15,7 +15,7 @@ export interface SyncQueueItem {
     entityId: string;
     data: any; // The actual entity data
     timestamp: number;
-    synced: boolean;
+    synced: number; // 0 = false, 1 = true (Boolean not supported as IDB key)
     retryCount?: number;
     lastError?: string;
     status: SyncStatus;

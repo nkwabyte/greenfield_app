@@ -56,7 +56,7 @@ class SyncService {
             entityId,
             data,
             timestamp: Date.now(),
-            synced: false,
+            synced: 0, // 0 = false
             retryCount: 0,
             status: 'pending',
         });
@@ -95,7 +95,7 @@ class SyncService {
             // Get all pending items
             const pendingItems = await db.syncQueue
                 .where('synced')
-                .equals(0) // Use 0 for false in IndexedDB
+                .equals(0) // 0 = false (number)
                 .and(item => (item.retryCount || 0) < MAX_RETRY_COUNT)
                 .toArray();
 
@@ -150,7 +150,7 @@ class SyncService {
 
             // Mark as synced
             await db.syncQueue.update(item.id, {
-                synced: true,
+                synced: 1, // 1 = true (number)
                 status: 'synced',
             });
 
@@ -263,7 +263,7 @@ class SyncService {
     async getPendingCount(): Promise<number> {
         return await db.syncQueue
             .where('synced')
-            .equals(0) // Use 0 for false
+            .equals(0) // 0 = false
             .count();
     }
 
@@ -273,7 +273,7 @@ class SyncService {
     async clearSyncedItems(): Promise<void> {
         await db.syncQueue
             .where('synced')
-            .equals(1) // Use 1 for true
+            .equals(1) // 1 = true
             .delete();
         console.log('🧹 Cleared synced items from queue');
     }
