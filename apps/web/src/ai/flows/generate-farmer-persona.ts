@@ -83,9 +83,18 @@ export async function generateFarmerPersona(
     const response = await result.response;
     const text = response.text();
 
+    // Clean the response text to handle markdown code blocks and potential extra text
+    let cleanText = text.replace(/```json\s*/g, '').replace(/```\s*/g, '');
+    const firstOpen = cleanText.indexOf('{');
+    const lastClose = cleanText.lastIndexOf('}');
+
+    if (firstOpen !== -1 && lastClose !== -1) {
+      cleanText = cleanText.substring(firstOpen, lastClose + 1);
+    }
+
     // Parse JSON output
     // The model is configured to return JSON, but we should parse safely
-    const data = JSON.parse(text);
+    const data = JSON.parse(cleanText);
 
     // Validate output against schema
     return GenerateFarmerPersonaOutputSchema.parse(data);

@@ -97,7 +97,17 @@ export async function suggestBusinessDecisions(
     const result = await model.generateContent(prompt);
     const response = await result.response;
     const text = response.text();
-    const data = JSON.parse(text);
+
+    // Clean the response text to handle markdown code blocks and potential extra text
+    let cleanText = text.replace(/```json\s*/g, '').replace(/```\s*/g, '');
+    const firstOpen = cleanText.indexOf('{');
+    const lastClose = cleanText.lastIndexOf('}');
+
+    if (firstOpen !== -1 && lastClose !== -1) {
+      cleanText = cleanText.substring(firstOpen, lastClose + 1);
+    }
+
+    const data = JSON.parse(cleanText);
     return SuggestBusinessDecisionsOutputSchema.parse(data);
   } catch (error) {
     console.error('Error suggesting business decisions:', error);

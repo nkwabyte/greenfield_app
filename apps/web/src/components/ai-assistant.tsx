@@ -36,6 +36,8 @@ import {
 import { useSelector } from 'react-redux';
 import { RootState } from '@/lib/store/store';
 import Link from 'next/link';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 type AiAssistantProps = {
   farmers: Farmer[];
@@ -327,10 +329,14 @@ export function AiAssistant({ farmers }: AiAssistantProps) {
               {chatMessages.map((msg, i) => (
                 <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                   <div className={`max-w-[80%] rounded-lg px-4 py-2 text-sm ${msg.role === 'user'
-                    ? 'bg-primary text-primary-foreground'
+                    ? 'bg-green-700 text-white'
                     : 'bg-muted'
                     }`}>
-                    {msg.text}
+                    <div className={`prose prose-sm max-w-none wrap-break-word ${msg.role === 'user' ? 'prose-invert' : 'dark:prose-invert'} [&>p]:mb-2 [&>p:last-child]:mb-0 [&>ul]:list-disc [&>ul]:pl-4 [&>ol]:list-decimal [&>ol]:pl-4`}>
+                      <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                        {msg.text}
+                      </ReactMarkdown>
+                    </div>
                   </div>
                 </div>
               ))}

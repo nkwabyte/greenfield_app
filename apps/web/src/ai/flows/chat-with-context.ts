@@ -23,7 +23,7 @@ export async function chatWithContext(input: ChatWithContextInput) {
         throw new Error("Gemini API Key is required");
     }
 
-    const model = createModel(parsedInput.apiKey, parsedInput.modelName);
+    const model = createModel(parsedInput.apiKey, parsedInput.modelName, { responseMimeType: 'text/plain' });
 
     const systemInstruction = `
   You are a helpful AI assistant for the Greenfield Capital CRM.
@@ -32,7 +32,12 @@ export async function chatWithContext(input: ChatWithContextInput) {
   ${parsedInput.context}
   
   Use this context to answer user questions. If the answer is not in the context, say so politely.
-  Keep answers concise and helpful.
+  
+  Format your response using Markdown:
+  - Use **bold** for key terms or numbers.
+  - Use bullet points for lists.
+  - Use \`code\` for any technical terms if applicable.
+  - Keep answers concise, helpful, and visually structured.
   `;
 
     const chat = model.startChat({
@@ -54,7 +59,7 @@ export async function chatWithContext(input: ChatWithContextInput) {
         const response = await result.response;
         return response.text();
     } catch (error) {
-        console.error('Error in chat:', error);
+        // console.error('Error in chat:', error);
         throw new Error('Failed to generate chat response');
     }
 }

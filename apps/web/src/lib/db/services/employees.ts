@@ -83,7 +83,7 @@ export async function addEmployee(
     // 2. Add to sync queue
     await syncService.addToQueue('employee', 'create', id, employeeData);
 
-    console.log(`✅ Employee added locally: ${employee.name}`);
+    // console.log(`✅ Employee added locally: ${employee.name}`);
 }
 
 /**
@@ -119,7 +119,7 @@ export async function updateEmployee(
     // 2. Add to sync queue
     await syncService.addToQueue('employee', 'update', id, employeeData);
 
-    console.log(`✅ Employee updated locally: ${updatedEmployee.name}`);
+    // console.log(`✅ Employee updated locally: ${updatedEmployee.name}`);
 }
 
 /**
@@ -132,7 +132,7 @@ export async function deleteEmployee(id: string): Promise<void> {
     // 2. Add to sync queue
     await syncService.addToQueue('employee', 'delete', id, null);
 
-    console.log(`✅ Employee deleted locally: ${id}`);
+    // console.log(`✅ Employee deleted locally: ${id}`);
 }
 
 /**
@@ -146,7 +146,7 @@ export async function syncEmployeesFromFirebase(): Promise<number> {
         await db.employees.clear();
         await db.employees.bulkAdd(firebaseEmployees);
 
-        console.log(`✅ Synced ${firebaseEmployees.length} employees from Firebase`);
+        // console.log(`✅ Synced ${firebaseEmployees.length} employees from Firebase`);
         return firebaseEmployees.length;
     } catch (error) {
         console.error('❌ Failed to sync employees from Firebase:', error);

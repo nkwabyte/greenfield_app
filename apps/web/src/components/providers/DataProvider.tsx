@@ -21,11 +21,11 @@ export function DataProvider({ children }: { children: React.ReactNode }) {
 
     // Initialize background sync on mount
     useEffect(() => {
-        console.log('🚀 Starting background sync service...');
+        // console.log('🚀 Starting background sync service...');
         syncService.startBackgroundSync();
 
         return () => {
-            console.log('🛑 Stopping background sync service...');
+            // console.log('🛑 Stopping background sync service...');
             syncService.stopBackgroundSync();
         };
     }, []);

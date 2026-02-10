@@ -16,12 +16,12 @@ export const aiModel = genAI.getGenerativeModel({
 /**
  * Create a generative model instance with a specific API key
  */
-export const createModel = (apiKey: string, modelNameOverride?: string) => {
+export const createModel = (apiKey: string, modelNameOverride?: string, config?: { responseMimeType?: string }) => {
     const localGenAI = new GoogleGenerativeAI(apiKey);
     return localGenAI.getGenerativeModel({
         model: modelNameOverride || modelName,
         generationConfig: {
-            responseMimeType: "application/json"
+            responseMimeType: config?.responseMimeType ?? "application/json"
         }
     });
 };

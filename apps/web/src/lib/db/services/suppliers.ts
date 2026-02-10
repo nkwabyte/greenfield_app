@@ -73,7 +73,7 @@ export async function addSupplier(
     // 2. Add to sync queue
     await syncService.addToQueue('supplier', 'create', id, supplierData);
 
-    console.log(`✅ Supplier added locally: ${supplier.name}`);
+    // console.log(`✅ Supplier added locally: ${supplier.name}`);
 }
 
 /**
@@ -106,7 +106,7 @@ export async function updateSupplier(
     // 2. Add to sync queue
     await syncService.addToQueue('supplier', 'update', id, supplierData);
 
-    console.log(`✅ Supplier updated locally: ${updatedSupplier.name}`);
+    // console.log(`✅ Supplier updated locally: ${updatedSupplier.name}`);
 }
 
 /**
@@ -119,7 +119,7 @@ export async function deleteSupplier(id: string): Promise<void> {
     // 2. Add to sync queue
     await syncService.addToQueue('supplier', 'delete', id, null);
 
-    console.log(`✅ Supplier deleted locally: ${id}`);
+    // console.log(`✅ Supplier deleted locally: ${id}`);
 }
 
 /**
@@ -133,7 +133,7 @@ export async function syncSuppliersFromFirebase(): Promise<number> {
         await db.suppliers.clear();
         await db.suppliers.bulkAdd(firebaseSuppliers);
 
-        console.log(`✅ Synced ${firebaseSuppliers.length} suppliers from Firebase`);
+        // console.log(`✅ Synced ${firebaseSuppliers.length} suppliers from Firebase`);
         return firebaseSuppliers.length;
     } catch (error) {
         console.error('❌ Failed to sync suppliers from Firebase:', error);

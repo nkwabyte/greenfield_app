@@ -230,7 +230,7 @@ export async function addFarmer(
     // 2. Add to sync queue
     await syncService.addToQueue('farmer', 'create', id, farmerData);
 
-    console.log(`✅ Farmer added locally: ${farmer.name}`);
+    // console.log(`✅ Farmer added locally: ${farmer.name}`);
 }
 
 /**
@@ -268,7 +268,7 @@ export async function updateFarmer(
     // 2. Add to sync queue
     await syncService.addToQueue('farmer', 'update', id, farmerData);
 
-    console.log(`✅ Farmer updated locally: ${updatedFarmer.name}`);
+    // console.log(`✅ Farmer updated locally: ${updatedFarmer.name}`);
 }
 
 /**
@@ -281,7 +281,7 @@ export async function deleteFarmer(id: string): Promise<void> {
     // 2. Add to sync queue
     await syncService.addToQueue('farmer', 'delete', id, null);
 
-    console.log(`✅ Farmer deleted locally: ${id}`);
+    // console.log(`✅ Farmer deleted locally: ${id}`);
 }
 
 /**
@@ -296,7 +296,7 @@ export async function addFarmersBatch(farmers: Farmer[]): Promise<void> {
         await syncService.addToQueue('farmer', 'create', farmer.id, farmer);
     }
 
-    console.log(`✅ ${farmers.length} farmers added locally (batch)`);
+    // console.log(`✅ ${farmers.length} farmers added locally (batch)`);
 }
 
 /**
@@ -327,7 +327,7 @@ export async function updateFarmersBatch(ids: string[], updates: Partial<Farmer>
         await syncService.addToQueue('farmer', 'update', farmer.id, updates);
     }
 
-    console.log(`✅ ${updatedFarmers.length} farmers updated locally (batch)`);
+    // console.log(`✅ ${updatedFarmers.length} farmers updated locally (batch)`);
 }
 
 /**
@@ -342,7 +342,7 @@ export async function syncFarmersFromFirebase(): Promise<number> {
         await db.farmers.clear();
         await db.farmers.bulkAdd(firebaseFarmers);
 
-        console.log(`✅ Synced ${firebaseFarmers.length} farmers from Firebase`);
+        // console.log(`✅ Synced ${firebaseFarmers.length} farmers from Firebase`);
         return firebaseFarmers.length;
     } catch (error) {
         console.error('❌ Failed to sync farmers from Firebase:', error);
@@ -404,5 +404,5 @@ export async function deleteAllFarmers(): Promise<void> {
     // 3. Queue a purge operation for Firebase
     await syncService.addToQueue('farmer', 'purge', 'ALL', null);
 
-    console.log('⚠️ All farmer data purged locally and queued for remote purge.');
+    // console.log('⚠️ All farmer data purged locally and queued for remote purge.');
 }
