@@ -4,6 +4,7 @@
     "description": "Greenfield CRM Desktop Application",
     "author": "Greenfield Team",
     "private": true,
+    "repository": "github:nkwabyte/greenfield_app",
     "main": "dist/main.js",
     "scripts": {
         "dev": "concurrently \"yarn:dev:*\"",
