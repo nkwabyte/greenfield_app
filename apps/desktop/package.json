@@ -36,7 +36,7 @@
         ],
         "mac": {
             "category": "public.app-category.business",
-            "icon": "../web/public/app_icon.ico",
+            "icon": "../web/public/app_icon_512.png",
             "target": [
                 "dmg",
                 "zip"
