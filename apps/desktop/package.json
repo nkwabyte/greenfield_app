@@ -4,12 +4,14 @@
     "description": "Greenfield CRM Desktop Application",
     "author": "Greenfield Team",
     "private": true,
+    "repository": "github:nkwabyte/greenfield_app",
     "main": "dist/main.js",
     "scripts": {
         "dev": "concurrently \"yarn:dev:*\"",
         "dev:electron": "tsc && electron .",
         "dev:watch": "tsc --watch",
         "build": "tsc && electron-builder",
+        "build:all": "tsc && electron-builder -mwl",
         "start": "electron ."
     },
     "dependencies": {
