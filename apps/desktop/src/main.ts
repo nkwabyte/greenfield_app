@@ -16,10 +16,10 @@ function createWindow() {
     });
 
     // In development, load from Next.js dev server
-    // In production, load from built Next.js app
+    // In production, load from Vercel to support Server Actions (AI features)
     const url = isDev
         ? 'http://localhost:9002'
-        : `file://${path.join(__dirname, '../../web/.next/standalone/index.html')}`;
+        : 'https://greenfield-app-web.vercel.app';
 
     mainWindow.loadURL(url);
 

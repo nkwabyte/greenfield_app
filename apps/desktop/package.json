@@ -10,6 +10,7 @@
         "dev:electron": "tsc && electron .",
         "dev:watch": "tsc --watch",
         "build": "tsc && electron-builder",
+        "build:all": "tsc && electron-builder -mwl",
         "start": "electron ."
     },
     "dependencies": {
