@@ -101,3 +101,9 @@ yarn workspace @greenfield/desktop build
 - **Monorepo Tool**: Native Yarn workspaces
 - **Web Framework**: Next.js 16
 - **Desktop Framework**: Electron 34
+
+# Release
+
+```bash
+./scripts/release-desktop.sh v0.0.2
+```

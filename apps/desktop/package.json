@@ -11,7 +11,7 @@
         "dev:electron": "tsc && electron .",
         "dev:watch": "tsc --watch",
         "build": "tsc && electron-builder",
-        "build:all": "tsc && electron-builder -mwl",
+        "build:all": "tsc && electron-builder -mw",
         "start": "electron ."
     },
     "dependencies": {
@@ -47,14 +47,6 @@
             "target": [
                 "nsis",
                 "portable"
-            ]
-        },
-        "linux": {
-            "icon": "../web/public/app_icon.ico",
-            "category": "Office",
-            "target": [
-                "AppImage",
-                "deb"
             ]
         }
     }
