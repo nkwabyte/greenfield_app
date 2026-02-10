@@ -60,7 +60,7 @@ export const db = new GreenfieldDB();
 export async function requestPersistentStorage(): Promise<boolean> {
     if (navigator.storage && navigator.storage.persist) {
         const isPersisted = await navigator.storage.persist();
-        console.log(`Persistent storage granted: ${isPersisted}`);
+        // console.log(`Persistent storage granted: ${isPersisted}`);
         return isPersisted;
     }
     return false;
@@ -104,7 +104,7 @@ export async function clearAllData(): Promise<void> {
     await db.suppliers.clear();
     await db.transactions.clear();
     await db.syncQueue.clear();
-    console.log('All local data cleared');
+    // console.log('All local data cleared');
 }
 
 /**

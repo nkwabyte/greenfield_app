@@ -30,14 +30,14 @@ class ConnectivityService {
     private handleOnline = () => {
         this.state.isOnline = true;
         this.state.lastOnlineAt = Date.now();
-        console.log('🟢 Connection restored');
+        // console.log('🟢 Connection restored');
         this.notifyListeners(true);
     };
 
     private handleOffline = () => {
         this.state.isOnline = false;
         this.state.lastOfflineAt = Date.now();
-        console.log('🔴 Connection lost - working offline');
+        // console.log('🔴 Connection lost - working offline');
         this.notifyListeners(false);
     };
 

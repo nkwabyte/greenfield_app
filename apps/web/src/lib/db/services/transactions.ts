@@ -111,7 +111,7 @@ export async function addTransaction(
     // 2. Add to sync queue
     await syncService.addToQueue('transaction', 'create', id, transactionData);
 
-    console.log(`✅ Transaction added locally: ${transaction.description}`);
+    // console.log(`✅ Transaction added locally: ${transaction.description}`);
 }
 
 /**
@@ -147,7 +147,7 @@ export async function updateTransaction(
     // 2. Add to sync queue
     await syncService.addToQueue('transaction', 'update', id, transactionData);
 
-    console.log(`✅ Transaction updated locally: ${updatedTransaction.description}`);
+    // console.log(`✅ Transaction updated locally: ${updatedTransaction.description}`);
 }
 
 /**
@@ -160,7 +160,7 @@ export async function deleteTransaction(id: string): Promise<void> {
     // 2. Add to sync queue
     await syncService.addToQueue('transaction', 'delete', id, null);
 
-    console.log(`✅ Transaction deleted locally: ${id}`);
+    // console.log(`✅ Transaction deleted locally: ${id}`);
 }
 
 /**
@@ -174,7 +174,7 @@ export async function syncTransactionsFromFirebase(): Promise<number> {
         await db.transactions.clear();
         await db.transactions.bulkAdd(firebaseTransactions);
 
-        console.log(`✅ Synced ${firebaseTransactions.length} transactions from Firebase`);
+        // console.log(`✅ Synced ${firebaseTransactions.length} transactions from Firebase`);
         return firebaseTransactions.length;
     } catch (error) {
         console.error('❌ Failed to sync transactions from Firebase:', error);

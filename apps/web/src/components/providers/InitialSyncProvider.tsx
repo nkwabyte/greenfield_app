@@ -32,7 +32,7 @@ export function InitialSyncProvider({ children }: { children: React.ReactNode })
                 // Only sync if first time or data is older than 6 hours
                 if (!lastSync || now - parseInt(lastSync) > SIX_HOURS) {
                     setSyncing(true);
-                    console.log('🔄 Starting initial background sync from Firebase...');
+                    // console.log('🔄 Starting initial background sync from Firebase...');
 
                     // Sync all entities in parallel (non-blocking)
                     Promise.all([
@@ -44,13 +44,13 @@ export function InitialSyncProvider({ children }: { children: React.ReactNode })
                     ])
                         .then(([farmersCount, employeesCount, productsCount, suppliersCount, transactionsCount]) => {
                             localStorage.setItem('lastInitialSync', now.toString());
-                            console.log('✅ Initial sync complete:', {
-                                farmers: farmersCount,
-                                employees: employeesCount,
-                                products: productsCount,
-                                suppliers: suppliersCount,
-                                transactions: transactionsCount,
-                            });
+                            // console.log('✅ Initial sync complete:', {
+                            //     farmers: farmersCount,
+                            //     employees: employeesCount,
+                            //     products: productsCount,
+                            //     suppliers: suppliersCount,
+                            //     transactions: transactionsCount,
+                            // });
                             setSyncing(false);
                         })
                         .catch(error => {
@@ -58,7 +58,7 @@ export function InitialSyncProvider({ children }: { children: React.ReactNode })
                             setSyncing(false);
                         });
                 } else {
-                    console.log('✓ Data is fresh, skipping initial sync');
+                    // console.log('✓ Data is fresh, skipping initial sync');
                 }
             } catch (error) {
                 console.error('❌ Failed to initialize sync:', error);

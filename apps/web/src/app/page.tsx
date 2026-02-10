@@ -50,9 +50,9 @@ export default function LoginPage() {
 
   // Redirect authenticated users to dashboard
   React.useEffect(() => {
-    console.log("Login Page Effect:", { isLoading, isAuthenticated, status: user?.status });
+    // console.log("Login Page Effect:", { isLoading, isAuthenticated, status: user?.status });
     if (!isLoading && isAuthenticated && (user?.status === 'Active' || user?.status === 'Pending')) {
-      console.log("Redirecting to dashboard...");
+      // console.log("Redirecting to dashboard...");
       router.replace('/dashboard');
     }
   }, [isLoading, isAuthenticated, user, router]);

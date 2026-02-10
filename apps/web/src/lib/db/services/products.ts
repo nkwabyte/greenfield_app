@@ -80,7 +80,7 @@ export async function addProduct(
     // 2. Add to sync queue
     await syncService.addToQueue('product', 'create', id, productData);
 
-    console.log(`✅ Product added locally: ${product.name}`);
+    // console.log(`✅ Product added locally: ${product.name}`);
 }
 
 /**
@@ -113,7 +113,7 @@ export async function updateProduct(
     // 2. Add to sync queue
     await syncService.addToQueue('product', 'update', id, productData);
 
-    console.log(`✅ Product updated locally: ${updatedProduct.name}`);
+    // console.log(`✅ Product updated locally: ${updatedProduct.name}`);
 }
 
 /**
@@ -126,7 +126,7 @@ export async function deleteProduct(id: string): Promise<void> {
     // 2. Add to sync queue
     await syncService.addToQueue('product', 'delete', id, null);
 
-    console.log(`✅ Product deleted locally: ${id}`);
+    // console.log(`✅ Product deleted locally: ${id}`);
 }
 
 /**
@@ -140,7 +140,7 @@ export async function syncProductsFromFirebase(): Promise<number> {
         await db.products.clear();
         await db.products.bulkAdd(firebaseProducts);
 
-        console.log(`✅ Synced ${firebaseProducts.length} products from Firebase`);
+        // console.log(`✅ Synced ${firebaseProducts.length} products from Firebase`);
         return firebaseProducts.length;
     } catch (error) {
         console.error('❌ Failed to sync products from Firebase:', error);

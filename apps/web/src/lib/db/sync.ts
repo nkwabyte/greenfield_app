@@ -65,7 +65,7 @@ class SyncService {
             status: 'pending',
         });
 
-        console.log(`📝 Added to sync queue: ${operation} ${entityType} ${entityId}`);
+
 
         // Try to sync immediately if online and not paused
         if (connectivityService.isOnline() && !this.isPaused) {
@@ -78,17 +78,17 @@ class SyncService {
      */
     async syncAll(): Promise<SyncResult> {
         if (this.isSyncing) {
-            console.log('⏳ Sync already in progress, skipping...');
+            // console.log('⏳ Sync already in progress, skipping...');
             return { success: true, itemsProcessed: 0, itemsFailed: 0, errors: [] };
         }
 
         if (!connectivityService.isOnline()) {
-            console.log('📡 Offline - sync deferred');
+            // console.log('📡 Offline - sync deferred');
             return { success: false, itemsProcessed: 0, itemsFailed: 0, errors: [] };
         }
 
         if (this.isPaused) {
-            console.log('⏸️ Sync is paused');
+            // console.log('⏸️ Sync is paused');
             return { success: true, itemsProcessed: 0, itemsFailed: 0, errors: [] };
         }
 
@@ -110,16 +110,16 @@ class SyncService {
                 .toArray();
 
             if (pendingItems.length === 0) {
-                console.log('✅ Sync queue is empty');
+                // console.log('✅ Sync queue is empty');
                 return result;
             }
 
-            console.log(`🔄 Syncing ${pendingItems.length} items...`);
+            // console.log(`🔄 Syncing ${pendingItems.length} items...`);
 
             // Process each item
             for (const item of pendingItems) {
                 if (this.isPaused) {
-                    console.log('⏸️ Sync paused during processing');
+                    // console.log('⏸️ Sync paused during processing');
                     break;
                 }
                 try {
@@ -134,9 +134,9 @@ class SyncService {
                 }
             }
 
-            console.log(`✅ Sync complete: ${result.itemsProcessed} synced, ${result.itemsFailed} failed`);
+            // console.log(`✅ Sync complete: ${result.itemsProcessed} synced, ${result.itemsFailed} failed`);
         } catch (error) {
-            console.error('❌ Sync failed:', error);
+            // console.error('❌ Sync failed:', error);
             result.success = false;
         } finally {
             this.isSyncing = false;
@@ -154,7 +154,7 @@ class SyncService {
             throw new Error('Queue item missing ID');
         }
 
-        console.log(`⏳ Syncing: ${item.operation} ${item.entityType} ${item.entityId}`);
+        // console.log(`⏳ Syncing: ${item.operation} ${item.entityType} ${item.entityId}`);
 
         // Update status to syncing
         await db.syncQueue.update(item.id, { status: 'syncing' });
@@ -169,7 +169,7 @@ class SyncService {
                 status: 'synced',
             });
 
-            console.log(`✅ Synced: ${item.operation} ${item.entityType} ${item.entityId}`);
+            // console.log(`✅ Synced: ${item.operation} ${item.entityType} ${item.entityId}`);
         } catch (error) {
             const retryCount = (item.retryCount || 0) + 1;
             const lastError = error instanceof Error ? error.message : 'Unknown error';
@@ -191,7 +191,7 @@ class SyncService {
     private async executeSync(item: SyncQueueItem): Promise<void> {
         const { entityType, operation, entityId, data } = item;
 
-        console.log(`📤 Executing Firebase ${operation} for ${entityType}:`, entityId);
+        // console.log(`📤 Executing Firebase ${operation} for ${entityType}:`, entityId);
 
         switch (entityType) {
             case 'farmer':
@@ -235,16 +235,16 @@ class SyncService {
      */
     startBackgroundSync(): void {
         if (this.syncInterval) {
-            console.log('⚠️ Background sync already running');
+            // console.log('⚠️ Background sync already running');
             return;
         }
 
-        console.log('🔄 Starting background sync...');
+        // console.log('🔄 Starting background sync...');
 
         // Sync on connection restore
         connectivityService.subscribe((isOnline) => {
             if (isOnline) {
-                console.log('🟢 Connection restored - triggering sync');
+                // console.log('🟢 Connection restored - triggering sync');
                 this.syncAll().catch(console.error);
             }
         });
@@ -269,7 +269,7 @@ class SyncService {
         if (this.syncInterval) {
             clearInterval(this.syncInterval);
             this.syncInterval = null;
-            console.log('⏹️ Background sync stopped');
+            // console.log('⏹️ Background sync stopped');
         }
     }
 
@@ -291,7 +291,7 @@ class SyncService {
             .where('synced')
             .equals(1) // 1 = true
             .delete();
-        console.log('🧹 Cleared synced items from queue');
+        // console.log('🧹 Cleared synced items from queue');
     }
 
     /**
@@ -299,7 +299,7 @@ class SyncService {
      */
     async clearAllItems(): Promise<void> {
         await db.syncQueue.clear();
-        console.log('🧹 Cleared all items from sync queue');
+        // console.log('🧹 Cleared all items from sync queue');
     }
 
     /**
@@ -308,7 +308,7 @@ class SyncService {
     pause(): void {
         this.isPaused = true;
         store.dispatch(setSyncStatus({ isPaused: true }));
-        console.log('⏸️ Sync paused');
+        // console.log('⏸️ Sync paused');
     }
 
     /**
@@ -317,7 +317,7 @@ class SyncService {
     resume(): void {
         this.isPaused = false;
         store.dispatch(setSyncStatus({ isPaused: false }));
-        console.log('▶️ Sync resumed');
+        // console.log('▶️ Sync resumed');
         if (connectivityService.isOnline()) {
             this.syncAll().catch(console.error);
         }
