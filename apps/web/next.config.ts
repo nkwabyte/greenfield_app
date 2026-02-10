@@ -5,12 +5,12 @@ const nextConfig: NextConfig = {
     root: require('path').resolve(__dirname, '../..'),
   },
   /* config options here */
-  output: 'export',
+  output: process.env.GITHUB_ACTIONS ? 'export' : undefined,
   typescript: {
     ignoreBuildErrors: true,
   },
   images: {
-    unoptimized: true,
+    unoptimized: process.env.GITHUB_ACTIONS ? true : false,
     remotePatterns: [
       {
         protocol: 'https',
