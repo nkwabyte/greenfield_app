@@ -1,6 +1,6 @@
 {
     "name": "@greenfield/desktop",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Greenfield CRM Desktop Application",
     "author": "Greenfield Team",
     "private": true,
@@ -29,6 +29,10 @@
         "productName": "Greenfield CRM",
         "directories": {
             "output": "release"
+        },
+        "publish": {
+            "provider": "github",
+            "releaseType": "release"
         },
         "files": [
             "dist/**/*",

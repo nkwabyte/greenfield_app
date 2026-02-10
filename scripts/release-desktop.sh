@@ -20,6 +20,13 @@ fi
 
 echo "🚀 Preparing release for version: $VERSION"
 
+# Extract version number without 'v' prefix
+CLEAN_VERSION="${VERSION#v}"
+
+# 0. Sync package.json version
+echo "🔄 Updating apps/desktop/package.json to $CLEAN_VERSION..."
+(cd apps/desktop && npm version "$CLEAN_VERSION" --no-git-tag-version)
+
 # 1. Stage changes (assuming user modified package.json version)
 echo "📦 Staging changes..."
 git add .
