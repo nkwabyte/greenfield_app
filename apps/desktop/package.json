@@ -11,7 +11,7 @@
         "dev:electron": "tsc && electron .",
         "dev:watch": "tsc --watch",
         "build": "tsc && electron-builder",
-        "build:all": "tsc && electron-builder -mwl",
+        "build:all": "tsc && electron-builder -mw",
         "start": "electron ."
     },
     "dependencies": {
@@ -36,7 +36,7 @@
         ],
         "mac": {
             "category": "public.app-category.business",
-            "icon": "../web/public/app_icon.ico",
+            "icon": "../web/public/app_icon_512.png",
             "target": [
                 "dmg",
                 "zip"
@@ -47,14 +47,6 @@
             "target": [
                 "nsis",
                 "portable"
-            ]
-        },
-        "linux": {
-            "icon": "../web/public/app_icon.ico",
-            "category": "Office",
-            "target": [
-                "AppImage",
-                "deb"
             ]
         }
     }
