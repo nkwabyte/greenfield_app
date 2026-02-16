@@ -9,10 +9,12 @@
 'use client';
 
 import { useLiveQuery } from 'dexie-react-hooks';
+import { db } from '@/lib/db/schema';
 
 // ... (imports)
 import {
     getAllFarmers,
+    getFarmer, // NEW
     getPaginatedFarmers, // NEW
     getFarmersFiltered,
     getFarmersCount,
@@ -20,6 +22,11 @@ import {
     getFarmersByGender,
     getFarmersByDateRange,
     getFarmersPaginatedAndFiltered, // NEW
+    getUniqueRegions,
+    getUniqueDistricts,
+    getUniqueSocieties,
+    getUniqueCommunities,
+    getSyncStats,
 } from '@/lib/db/services/farmers';
 import {
     getAllEmployees,
@@ -136,14 +143,61 @@ export function useFarmersPaginatedAndFiltered(
         region?: string;
         district?: string;
         society?: string;
+        community?: string;
         status?: 'Active' | 'Inactive';
+        minFarmSize?: number;
+        maxFarmSize?: number;
         search?: string;
     }
 ) {
     return useLiveQuery(
         () => getFarmersPaginatedAndFiltered(page, pageSize, filters),
-        [page, pageSize, filters.region, filters.district, filters.society, filters.status, filters.search]
+        [
+            page,
+            pageSize,
+            filters.region,
+            filters.district,
+            filters.society,
+            filters.community,
+            filters.status,
+            filters.minFarmSize,
+            filters.maxFarmSize,
+            filters.search
+        ]
     );
+}
+
+export function useUniqueRegions() {
+    return useLiveQuery(() => getUniqueRegions(), []);
+}
+
+export function useUniqueDistricts(region?: string) {
+    return useLiveQuery(() => getUniqueDistricts(region), [region]);
+}
+
+export function useUniqueSocieties(district?: string) {
+    return useLiveQuery(() => getUniqueSocieties(district), [district]);
+}
+
+export function useUniqueCommunities(society?: string) {
+    return useLiveQuery(() => getUniqueCommunities(society), [society]);
+}
+
+export function useFarmerSyncStats() {
+    return useLiveQuery(() => getSyncStats(), []);
+}
+
+export function useFarmer(id: string) {
+    return useLiveQuery(() => getFarmer(id), [id]);
+}
+
+export function useRelatedFarmers(farmer: Farmer | undefined | null) {
+    return useLiveQuery(async () => {
+        if (!farmer || !farmer.community) return [];
+        // Match by community
+        const allInCommunity = await db.farmers.where('community').equals(farmer.community).toArray();
+        return allInCommunity.filter((f: Farmer) => f.id !== farmer.id);
+    }, [farmer?.id, farmer?.community]);
 }
 
 // ============================================================================

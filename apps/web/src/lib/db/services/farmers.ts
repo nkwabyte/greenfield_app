@@ -72,102 +72,48 @@ export async function getFarmersPaginatedAndFiltered(
         region?: string;
         district?: string;
         society?: string;
+        community?: string;
         status?: 'Active' | 'Inactive';
-        search?: string; // Added search support
+        minFarmSize?: number;
+        maxFarmSize?: number; // Optional range support
+        search?: string;
     }
 ): Promise<{ data: Farmer[], total: number }> {
-    let collection: any = db.farmers.toCollection(); // Default to full collection scan
+    let collection: any = db.farmers.toCollection();
 
-    // 1. Select the best index based on filters (Compound Index Optimization)
-    // Dexie will use the compound index to efficiently filter without scanning all records.
+    // 1. Index Selection
     if (filters.region && filters.region !== 'all') {
         if (filters.district && filters.society) {
-            // Use [region+district+society] index
             collection = db.farmers.where('[region+district+society]').equals([filters.region, filters.district, filters.society]);
         } else if (filters.district) {
-            // Use [region+district] index
             collection = db.farmers.where('[region+district]').equals([filters.region, filters.district]);
         } else if (filters.status) {
-            // Use [region+status] index
             collection = db.farmers.where('[region+status]').equals([filters.region, filters.status]);
         } else {
-            // Use basic [region] index
             collection = db.farmers.where('region').equals(filters.region);
         }
     } else if (filters.status) {
-        // Fallback for status-only filter (might need index for this if common, but less critical than region drill-down)
+        // If no region but status is present, use status index if available, or just filter
+        // We don't have a simple [status] index in version 2, but 'status' is indexed in version 1
         collection = db.farmers.where('status').equals(filters.status);
     }
-    // Note: If only 'district' is selected without region (rare drill-down), it falls back to full scan or we could add [district] index.
-    // Given the hierarchy Region -> District -> Society, starting with Region is standard.
 
-    // 2. Apply remaining filters in-memory (JS filter)
-    // These run on the significantly reduced result set from step 1.
+    // 2. In-Memory Filtering for remaining fields
     collection = collection.filter((f: Farmer) => {
-        // If we used an index for these, we technically don't need to check again, 
-        // but Dexie's filter() is additive to the where() clause.
-        // However, if we simply used where(), we don't need to filter those specific fields again in JS 
-        // UNLESS the index lookup was partial (e.g. using between() on compound).
-        // Since we used exact equals(), the index handles it.
-        // We only need to handle fields NOT covered by the chosen index.
-
-        // But for simplicity/safety against edge cases (like 'all' value leakage), we can keep checks 
-        // OR better: rely on the fact that if we selected an index, we don't need to check those fields.
-        // Let's iterate what MIGHT not be covered:
-
-        // If we didn't use the [region+district] index (e.g. only region selected), we still need to check district if provided?
-        // Wait, the logic above handles the combinations. 
-        // If region+district are provided, we use that index.
-        // If region provided but district NOT provided, we use region index.
-        // Determine what is NOT handled by the index:
-
         let match = true;
 
-        // If we didn't use a compound index featuring these, we must check them manually.
-        // Actually, the 'if/else' chain above is mutually exclusive for the primary index selection.
-        // But what if we have Region + District + Status? 
-        // We used [region+district]. We still need to filter by Status.
-        if (filters.region && filters.region !== 'all') {
-            if (filters.district && filters.society) {
-                // Covered: region, district, society. 
-                // Remaining: status?
-                if (filters.status && f.status !== filters.status) match = false;
-            } else if (filters.district) {
-                // Covered: region, district.
-                // Remaining: society, status
-                if (filters.society && f.society !== filters.society) match = false;
-                if (filters.status && f.status !== filters.status) match = false;
-            } else if (filters.status) {
-                // Covered: region, status.
-                // Remaining: district, society
-                if (filters.district && f.district !== filters.district) match = false;
-                if (filters.society && f.society !== filters.society) match = false;
-            } else {
-                // Covered: region.
-                // Remaining: district, society, status
-                if (filters.district && f.district !== filters.district) match = false;
-                if (filters.society && f.society !== filters.society) match = false;
-                if (filters.status && f.status !== filters.status) match = false;
-            }
-        } else {
-            // No region selected. 
-            if (filters.status) {
-                // Covered: status (if we used status index).
-                // Remaining: district, society
-                if (filters.district && f.district !== filters.district) match = false;
-                if (filters.society && f.society !== filters.society) match = false;
-            } else {
-                // No index used. Check everything.
-                if (filters.region && filters.region !== 'all' && f.region !== filters.region) match = false;
-                if (filters.district && f.district !== filters.district) match = false;
-                if (filters.society && f.society !== filters.society) match = false;
-                if (filters.status && f.status !== filters.status) match = false;
-            }
-        }
+        if (filters.region && filters.region !== 'all' && f.region !== filters.region) match = false;
+        if (filters.district && f.district !== filters.district) match = false;
+        if (filters.society && f.society !== filters.society) match = false;
+        if (filters.community && f.community !== filters.community) match = false;
+        if (filters.status && f.status !== filters.status) match = false;
+
+        // Farm Size Filter
+        if (filters.minFarmSize !== undefined && (f.farmSize ?? 0) < filters.minFarmSize) match = false;
+        if (filters.maxFarmSize !== undefined && (f.farmSize ?? 0) > filters.maxFarmSize) match = false;
 
         if (!match) return false;
 
-        // Search is always manual filter unless we use a full-text search engine or extensive indexing
         if (filters.search) {
             const searchLower = filters.search.toLowerCase();
             return f.name.toLowerCase().includes(searchLower) ||
@@ -184,6 +130,75 @@ export async function getFarmersPaginatedAndFiltered(
         .toArray();
 
     return { data, total };
+}
+
+/**
+ * Get unique regions for filter dropdown
+ */
+export async function getUniqueRegions(): Promise<string[]> {
+    const regions = await db.farmers.orderBy('region').uniqueKeys() as string[];
+    // Filter out empty strings but keep N/A if it exists, and ensure N/A is last
+    const validRegions = regions.filter(r => r && r.trim().length > 0);
+
+    return validRegions.sort((a, b) => {
+        if (a === 'N/A') return 1;
+        if (b === 'N/A') return -1;
+        return a.localeCompare(b);
+    });
+}
+
+/**
+ * Get unique districts for filter dropdown (optionally filtered by region)
+ */
+export async function getUniqueDistricts(region?: string): Promise<string[]> {
+    if (region && region !== 'all') {
+        const farmers = await db.farmers.where('region').equals(region).toArray();
+        const districts = new Set(farmers.map(f => f.district).filter(d => d && d.trim().length > 0));
+        return Array.from(districts) as string[];
+    }
+    const districts = await db.farmers.orderBy('district').uniqueKeys() as string[];
+    return districts.filter(d => d && d.trim().length > 0);
+}
+
+/**
+ * Get unique societies
+ */
+export async function getUniqueSocieties(district?: string): Promise<string[]> {
+    if (district) {
+        const farmers = await db.farmers.filter(f => f.district === district).toArray();
+        const societies = new Set(farmers.map(f => f.society).filter(s => s && s.trim().length > 0));
+        return Array.from(societies) as string[];
+    }
+    const societies = await db.farmers.orderBy('society').uniqueKeys() as string[];
+    return societies.filter(s => s && s.trim().length > 0);
+}
+
+/**
+ * Get unique communities
+ */
+export async function getUniqueCommunities(society?: string): Promise<string[]> {
+    if (society) {
+        const farmers = await db.farmers.filter(f => f.society === society).toArray();
+        const communities = new Set(farmers.map(f => f.community).filter(c => c && c.trim().length > 0));
+        return Array.from(communities) as string[];
+    }
+    const farmers = await db.farmers.toArray();
+    const communities = new Set(farmers.map(f => f.community).filter(c => c && c.trim().length > 0));
+    return Array.from(communities).sort() as string[];
+}
+
+/**
+ * Get Sync Stats
+ */
+export async function getSyncStats(): Promise<{ totalSynced: number, pending: number, total: number }> {
+    const total = await db.farmers.count();
+    const pending = await db.syncQueue.where('entityType').equals('farmer').count();
+    // synced is approximated as total - pending
+    return {
+        total,
+        pending,
+        totalSynced: Math.max(0, total - pending)
+    };
 }
 
 /**
