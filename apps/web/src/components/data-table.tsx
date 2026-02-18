@@ -43,8 +43,8 @@ import { Skeleton } from "./ui/skeleton"
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
   data: TData[]
-  filterColumnId: string
-  filterPlaceholder: string
+  filterColumnId?: string
+  filterPlaceholder?: string
   isLoading?: boolean
   // Server-side pagination props
   pageCount?: number
@@ -109,6 +109,7 @@ export function DataTable<TData, TValue>({
     onPaginationChange: setTablePagination,
     manualPagination: !!pageCount,
     pageCount: pageCount ?? -1,
+    autoResetPageIndex: false,
     enableRowSelection: true,
     onRowSelectionChange: onRowSelectionChange as any,
     state: {
@@ -145,18 +146,21 @@ export function DataTable<TData, TValue>({
 
   return (
     <div>
-      <div className="flex items-center py-4">
-        <Input
-          placeholder={filterPlaceholder}
-          value={(table.getColumn(filterColumnId)?.getFilterValue() as string) ?? ""}
-          onChange={(event) =>
-            table.getColumn(filterColumnId)?.setFilterValue(event.target.value)
-          }
-          className="max-w-sm"
-        />
+      {/* Toolbar */}
+      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 py-4">
+        {filterColumnId && (
+          <Input
+            placeholder={filterPlaceholder}
+            value={(table.getColumn(filterColumnId)?.getFilterValue() as string) ?? ""}
+            onChange={(event) =>
+              table.getColumn(filterColumnId)?.setFilterValue(event.target.value)
+            }
+            className="w-full sm:max-w-sm"
+          />
+        )}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="ml-auto">
+            <Button variant="outline" className="sm:ml-auto shrink-0">
               Columns <ChevronDown className="ml-2 h-4 w-4" />
             </Button>
           </DropdownMenuTrigger>
@@ -183,7 +187,9 @@ export function DataTable<TData, TValue>({
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
-      <div className="rounded-md border">
+
+      {/* Table */}
+      <div className="rounded-md border overflow-x-auto">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
@@ -240,15 +246,19 @@ export function DataTable<TData, TValue>({
         </Table>
       </div>
 
-      {/* Enhanced Pagination Controls */}
-      <div className="flex items-center justify-between px-2 py-4">
-        <div className="flex-1 text-sm text-muted-foreground">
+      {/* Pagination Controls — mobile-first two-row layout */}
+      <div className="flex flex-col gap-3 px-2 py-4 sm:flex-row sm:items-center sm:justify-between">
+        {/* Row 1 on mobile: selection count */}
+        <div className="text-sm text-muted-foreground">
           {table.getFilteredRowModel().rows.filter((row) => row.getIsSelected()).length} of{" "}
           {table.getFilteredRowModel().rows.length} row(s) selected.
         </div>
-        <div className="flex items-center space-x-6 lg:space-x-8">
-          <div className="flex items-center space-x-2">
-            <p className="text-sm font-medium">Rows per page</p>
+
+        {/* Row 2 on mobile: rows-per-page + nav */}
+        <div className="flex flex-wrap items-center gap-3 sm:gap-6">
+          {/* Rows per page */}
+          <div className="flex items-center gap-2">
+            <p className="hidden sm:block text-sm font-medium whitespace-nowrap">Rows per page</p>
             <Select
               value={`${table.getState().pagination.pageSize}`}
               onValueChange={(value) => {
@@ -267,11 +277,15 @@ export function DataTable<TData, TValue>({
               </SelectContent>
             </Select>
           </div>
-          <div className="flex w-[100px] items-center justify-center text-sm font-medium">
+
+          {/* Page counter */}
+          <div className="flex items-center justify-center text-sm font-medium whitespace-nowrap">
             Page {table.getState().pagination.pageIndex + 1} of{" "}
             {table.getPageCount()}
           </div>
-          <div className="flex items-center space-x-2">
+
+          {/* Nav buttons */}
+          <div className="flex items-center gap-1">
             <Button
               variant="outline"
               className="hidden h-8 w-8 p-0 lg:flex"
@@ -291,8 +305,8 @@ export function DataTable<TData, TValue>({
               <ChevronLeft className="h-4 w-4" />
             </Button>
 
-            {/* Clickable Page Numbers (Desktop primarily, hidden on small screens if too wide) */}
-            <div className="hidden md:flex items-center space-x-1">
+            {/* Clickable page numbers — desktop only */}
+            <div className="hidden md:flex items-center gap-1">
               {getPageNumbers().map((pageNumber, idx) => (
                 typeof pageNumber === 'number' ? (
                   <Button

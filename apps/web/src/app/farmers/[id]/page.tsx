@@ -62,7 +62,7 @@ export default function FarmerDetailsPage({ params }: { params: Promise<{ id: st
 
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                     <div>
-                        <h1 className="text-3xl font-bold tracking-tight">{farmer.name}</h1>
+                        <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">{farmer.name}</h1>
                         <div className="flex items-center text-muted-foreground mt-1">
                             <MapPin className="mr-1 h-4 w-4" />
                             {farmer.community}, {farmer.district}, {farmer.region}

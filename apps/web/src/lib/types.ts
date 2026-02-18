@@ -46,9 +46,10 @@ export type Employee = {
   name: string;
   email: string;
   role: 'Manager' | 'Field Agent' | 'Accountant' | 'Support';
-  salary: number;
+  salary?: number;
   startDate: string; // ISO date string
   status: 'Active' | 'On Leave' | 'Terminated';
+  isVerified: boolean; // true when added by admin; false for self-registered pending approval
   createdAt: string; // ISO date string
   updatedAt: string; // ISO date string
 };

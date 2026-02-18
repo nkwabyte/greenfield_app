@@ -1,6 +1,7 @@
 'use client';
 
 import * as React from 'react';
+import { useRouter } from 'next/navigation';
 import { AppShell } from '@/components/app-shell';
 import { PageHeader } from '@/components/page-header';
 import { Button } from '@/components/ui/button';
@@ -12,7 +13,8 @@ import { AddEditProductDialog, type ProductFormValues } from '@/components/produ
 import { KpiCard } from '@/components/dashboard/kpi-card';
 import { Skeleton } from '@/components/ui/skeleton';
 import type { Kpi } from '@/lib/types';
-import { useProductsPaginated, useSuppliers } from '@/hooks/useData';
+import { useProductsPaginatedAndFiltered, useSuppliers } from '@/hooks/useData';
+import { ProductFilters, type ProductFiltersState } from '@/components/products/product-filters';
 
 const currencyFormatter = new Intl.NumberFormat('en-GH', {
   style: 'currency',
@@ -20,6 +22,7 @@ const currencyFormatter = new Intl.NumberFormat('en-GH', {
 });
 
 export default function ProductsPage() {
+  const router = useRouter();
   const { toast } = useToast();
 
   // Pagination State
@@ -28,35 +31,48 @@ export default function ProductsPage() {
     pageSize: 10,
   });
 
-  const result = useProductsPaginated(pagination.pageIndex + 1, pagination.pageSize);
+  // Filter State
+  const [filters, setFilters] = React.useState<ProductFiltersState>({
+    search: '',
+    category: 'all',
+    stockStatus: 'all',
+  });
+
+  // Debounce search
+  const [debouncedSearch, setDebouncedSearch] = React.useState('');
+  React.useEffect(() => {
+    const timer = setTimeout(() => setDebouncedSearch(filters.search), 300);
+    return () => clearTimeout(timer);
+  }, [filters.search]);
+
+  // Reset page when filters change
+  React.useEffect(() => {
+    setPagination(prev => ({ ...prev, pageIndex: 0 }));
+  }, [filters.category, filters.stockStatus, debouncedSearch]);
+
+  const result = useProductsPaginatedAndFiltered(
+    pagination.pageIndex + 1,
+    pagination.pageSize,
+    {
+      search: debouncedSearch || undefined,
+      category: filters.category === 'all' ? undefined : filters.category,
+      stockStatus: filters.stockStatus === 'all' ? undefined : filters.stockStatus as any,
+    }
+  );
+
   const products = result?.data ?? [];
   const totalCount = result?.total ?? 0;
   const totalPages = Math.ceil(totalCount / pagination.pageSize);
   const isLoading = !result;
 
-  // NEW: Use Dexie hook instead of Redux
   const suppliers = useSuppliers();
   const [isAddEditDialogOpen, setIsAddEditDialogOpen] = React.useState(false);
   const [editingProduct, setEditingProduct] = React.useState<typeof products[0] | null>(null);
 
-  React.useEffect(() => {
-    // if suppliers are empty, show a warning toast
-    if (suppliers && suppliers.length === 0) {
-      toast({
-        title: 'No Suppliers Found',
-        description: 'Please add suppliers before managing products.',
-        variant: 'destructive',
-      });
-    }
-  }, [toast, suppliers]);
-
   const kpis: Kpi[] = React.useMemo(() => {
-    // Note: These KPIs should be fetched via separate queries for global stats
-    // Currently they reflect only the current page (which is incorrect but placeholder behavior)
-    // For now, we will display page-level stats or 0 to suggest this needs specific hooks
-    const totalProducts = totalCount; // This is accurate (global)
-    const totalStockValue = products.reduce((sum, p) => sum + p.price * p.quantity, 0); // Page Only
-    const outOfStock = products.filter(p => p.quantity === 0).length; // Page Only
+    const totalProducts = totalCount;
+    const totalStockValue = products.reduce((sum, p) => sum + p.price * p.quantity, 0);
+    const outOfStock = products.filter(p => p.quantity === 0).length;
 
     return [
       { label: 'Total Products (All)', value: totalProducts.toString(), icon: Package },
@@ -134,16 +150,17 @@ export default function ProductsPage() {
           )}
         </div>
 
+        <ProductFilters filters={filters} onFilterChange={setFilters} />
+
         <DataTable
           columns={columns}
           data={products}
-          filterColumnId="name"
-          filterPlaceholder="Filter by product name..."
           isLoading={isLoading}
           // Pagination Props
           pageCount={totalPages}
           pagination={pagination}
           onPaginationChange={setPagination}
+          onRowClick={(row) => router.push(`/products/${row.id}`)}
         />
       </div>
 

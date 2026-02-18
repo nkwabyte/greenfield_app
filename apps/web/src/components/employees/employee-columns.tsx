@@ -23,7 +23,7 @@ const currencyFormatter = new Intl.NumberFormat('en-GH', {
   maximumFractionDigits: 0,
 });
 
-export const getColumns = ({ onEdit, onDelete }: { onEdit: (employee: Employee) => void, onDelete: (id: string) => void }): ColumnDef<Employee>[] => [
+export const getColumns = ({ onEdit, onDelete, onViewDetails }: { onEdit: (employee: Employee) => void, onDelete: (id: string) => void, onViewDetails: (employee: Employee) => void }): ColumnDef<Employee>[] => [
   {
     id: 'select',
     header: ({ table }) => (
@@ -61,8 +61,8 @@ export const getColumns = ({ onEdit, onDelete }: { onEdit: (employee: Employee) 
       const employee = row.original;
       return (
         <div className="flex flex-col">
-            <span className="font-medium">{employee.name}</span>
-            <span className="text-sm text-muted-foreground">{employee.email}</span>
+          <span className="font-medium">{employee.name}</span>
+          <span className="text-sm text-muted-foreground">{employee.email}</span>
         </div>
       );
     },
@@ -71,7 +71,7 @@ export const getColumns = ({ onEdit, onDelete }: { onEdit: (employee: Employee) 
     accessorKey: 'role',
     header: 'Role',
   },
-    {
+  {
     accessorKey: 'salary',
     header: () => <div className="text-right">Salary</div>,
     cell: ({ row }) => {
@@ -100,12 +100,12 @@ export const getColumns = ({ onEdit, onDelete }: { onEdit: (employee: Employee) 
     header: 'Status',
     cell: ({ row }) => {
       const status = row.getValue('status') as Employee['status'];
-      const variant: 'default' | 'secondary' | 'destructive' = 
-        status === 'Active' ? 'default' : 
-        status === 'On Leave' ? 'secondary' : 'destructive';
-      
+      const variant: 'default' | 'secondary' | 'destructive' =
+        status === 'Active' ? 'default' :
+          status === 'On Leave' ? 'secondary' : 'destructive';
+
       const className = status === 'Active' ? 'bg-primary/20 text-primary-foreground' : '';
-      
+
       return (
         <Badge variant={variant} className={className}>
           {status}
@@ -130,6 +130,7 @@ export const getColumns = ({ onEdit, onDelete }: { onEdit: (employee: Employee) 
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
             <DropdownMenuLabel>Actions</DropdownMenuLabel>
+            <DropdownMenuItem onClick={() => onViewDetails(employee)}>View Details</DropdownMenuItem>
             <DropdownMenuItem onClick={() => onEdit(employee)}>Edit Employee</DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem className="text-destructive focus:bg-destructive/10 focus:text-destructive" onClick={() => onDelete(employee.id)}>Delete Employee</DropdownMenuItem>

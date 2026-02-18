@@ -1,11 +1,15 @@
 /**
  * Initial Sync Provider - Performs one-time background sync from Firebase to IndexedDB
  * This runs in the background without blocking the UI
+ * Only syncs when a user is authenticated to avoid Firebase permission errors
  */
 
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import type { RootState } from '@/lib/store/store';
+import { setEntitySyncStatus } from '@/lib/store/slices/dataSlice';
 import { requestPersistentStorage } from '@/lib/db';
 import {
     syncFarmersFromFirebase,
@@ -16,9 +20,15 @@ import {
 } from '@/lib/db';
 
 export function InitialSyncProvider({ children }: { children: React.ReactNode }) {
-    const [syncing, setSyncing] = useState(false);
+    const dispatch = useDispatch();
+    const isAuthenticated = useSelector((state: RootState) => state.auth.isAuthenticated);
 
     useEffect(() => {
+        // Don't sync if user is not authenticated — Firebase will reject with permission errors
+        if (!isAuthenticated) {
+            return;
+        }
+
         const performInitialSync = async () => {
             try {
                 // Request persistent storage to prevent browser from clearing data
@@ -31,34 +41,39 @@ export function InitialSyncProvider({ children }: { children: React.ReactNode })
 
                 // Only sync if first time or data is older than 6 hours
                 if (!lastSync || now - parseInt(lastSync) > SIX_HOURS) {
-                    setSyncing(true);
-                    // console.log('🔄 Starting initial background sync from Firebase...');
+                    // Helper: wraps a sync function with per-entity status dispatching
+                    // All Firebase sync fns return Promise<number> (the count synced)
+                    const syncEntity = async (
+                        entity: 'farmers' | 'employees' | 'suppliers' | 'products',
+                        syncFn: () => Promise<number>
+                    ): Promise<void> => {
+                        dispatch(setEntitySyncStatus({ entity, status: 'syncing' }));
+                        try {
+                            const count = await syncFn();
+                            dispatch(setEntitySyncStatus({ entity, status: 'done', count }));
+                        } catch (err) {
+                            dispatch(setEntitySyncStatus({ entity, status: 'error' }));
+                            throw err;
+                        }
+                    };
 
-                    // Sync all entities in parallel (non-blocking)
-                    Promise.all([
-                        syncFarmersFromFirebase(),
-                        syncEmployeesFromFirebase(),
-                        syncProductsFromFirebase(),
-                        syncSuppliersFromFirebase(),
-                        syncTransactionsFromFirebase(),
-                    ])
-                        .then(([farmersCount, employeesCount, productsCount, suppliersCount, transactionsCount]) => {
-                            localStorage.setItem('lastInitialSync', now.toString());
-                            // console.log('✅ Initial sync complete:', {
-                            //     farmers: farmersCount,
-                            //     employees: employeesCount,
-                            //     products: productsCount,
-                            //     suppliers: suppliersCount,
-                            //     transactions: transactionsCount,
-                            // });
-                            setSyncing(false);
-                        })
-                        .catch(error => {
-                            console.error('❌ Initial sync failed:', error);
-                            setSyncing(false);
-                        });
+                    // Sync all entities in parallel — each updates its own status independently
+                    await Promise.allSettled([
+                        syncEntity('farmers', syncFarmersFromFirebase),
+                        syncEntity('employees', syncEmployeesFromFirebase),
+                        syncEntity('suppliers', syncSuppliersFromFirebase),
+                        syncEntity('products', syncProductsFromFirebase),
+                        // Transactions don't need a header indicator but still sync
+                        syncTransactionsFromFirebase().catch(console.error),
+                    ]);
+
+                    localStorage.setItem('lastInitialSync', now.toString());
                 } else {
-                    // console.log('✓ Data is fresh, skipping initial sync');
+                    // Data is fresh — mark all as done without re-syncing
+                    const entities = ['farmers', 'employees', 'suppliers', 'products'] as const;
+                    entities.forEach(entity =>
+                        dispatch(setEntitySyncStatus({ entity, status: 'done' }))
+                    );
                 }
             } catch (error) {
                 console.error('❌ Failed to initialize sync:', error);
@@ -67,7 +82,7 @@ export function InitialSyncProvider({ children }: { children: React.ReactNode })
 
         // Run in background - don't block rendering
         performInitialSync();
-    }, []);
+    }, [isAuthenticated, dispatch]);
 
     // Always render children immediately - don't block UI
     return <>{children}</>;

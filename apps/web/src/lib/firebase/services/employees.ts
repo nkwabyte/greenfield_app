@@ -22,6 +22,7 @@ export async function getFirebaseEmployees(): Promise<Employee[]> {
   return snapshot.docs.map((doc) => ({
     id: doc.id,
     ...doc.data(),
+    isVerified: doc.data().isVerified ?? true, // Default true for existing records added by admin
     startDate: doc.data().startDate.toDate().toISOString(),
     createdAt: doc.data().createdAt.toDate().toISOString(),
     updatedAt: doc.data().updatedAt.toDate().toISOString(),
@@ -34,6 +35,7 @@ export async function addFirebaseEmployee(employeeData: EmployeeFormValues, id: 
   await addDoc(employeeCollection, {
     ...rest,
     startDate: new Date(startDate),
+    isVerified: true, // Admin-created employees are automatically verified
     createdAt: serverTimestamp(),
     updatedAt: serverTimestamp(),
   });

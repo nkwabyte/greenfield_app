@@ -34,6 +34,13 @@ export interface DataState {
         lastSyncAt?: number;
         isSyncing: boolean;
         isPaused: boolean;
+        // Per-entity Firebase → Dexie initial sync progress
+        entitySync: {
+            farmers: { status: 'idle' | 'syncing' | 'done' | 'error'; count: number };
+            employees: { status: 'idle' | 'syncing' | 'done' | 'error'; count: number };
+            suppliers: { status: 'idle' | 'syncing' | 'done' | 'error'; count: number };
+            products: { status: 'idle' | 'syncing' | 'done' | 'error'; count: number };
+        };
     };
 
     // Pagination state (for UI)
@@ -92,6 +99,12 @@ const initialState: DataState = {
         pendingCount: 0,
         isSyncing: false,
         isPaused: false,
+        entitySync: {
+            farmers: { status: 'idle', count: 0 },
+            employees: { status: 'idle', count: 0 },
+            suppliers: { status: 'idle', count: 0 },
+            products: { status: 'idle', count: 0 },
+        },
     },
     pagination: {
         farmers: { page: 1, pageSize: 50 },
@@ -124,8 +137,24 @@ const dataSlice = createSlice({
         },
 
         // Update sync status
-        setSyncStatus(state, action: PayloadAction<Partial<DataState['sync']>>) {
+        setSyncStatus(state, action: PayloadAction<Partial<Omit<DataState['sync'], 'entitySync'>>>) {
             state.sync = { ...state.sync, ...action.payload };
+        },
+
+        // Update per-entity Firebase→Dexie sync status
+        setEntitySyncStatus(
+            state,
+            action: PayloadAction<{
+                entity: keyof DataState['sync']['entitySync'];
+                status: 'idle' | 'syncing' | 'done' | 'error';
+                count?: number;
+            }>
+        ) {
+            const { entity, status, count } = action.payload;
+            state.sync.entitySync[entity] = {
+                status,
+                count: count ?? state.sync.entitySync[entity].count,
+            };
         },
 
         // Update pagination
@@ -179,6 +208,7 @@ const dataSlice = createSlice({
 export const {
     setCounts,
     setSyncStatus,
+    setEntitySyncStatus,
     setPagination,
     setFilters,
     clearFilters,

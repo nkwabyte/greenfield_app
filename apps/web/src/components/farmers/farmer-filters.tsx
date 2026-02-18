@@ -72,19 +72,9 @@ export function FarmerFilters({ filters, onFilterChange }: FarmerFiltersProps) {
     const hasActiveFilters = region !== 'all' || district !== 'all' || society !== 'all' || community !== 'all' || status !== 'all' || minFarmSize || maxFarmSize;
 
     return (
-        <div className="space-y-4 mb-6 p-4 border rounded-md bg-card">
-            <div className="flex justify-between items-center mb-2">
-                <h3 className="text-lg font-medium">Filters</h3>
-                {hasActiveFilters && (
-                    <Button variant="ghost" size="sm" onClick={clearFilters} className="h-8 px-2 lg:px-3">
-                        <X className="mr-2 h-4 w-4" />
-                        Clear Filters
-                    </Button>
-                )}
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
-                <div className="space-y-2">
-                    <Label>Region</Label>
+        <div className="mb-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
+                <div>
                     <Select value={region} onValueChange={(val) => handleFilterChange('region', val)}>
                         <SelectTrigger>
                             <SelectValue placeholder="All Regions" />
@@ -98,8 +88,7 @@ export function FarmerFilters({ filters, onFilterChange }: FarmerFiltersProps) {
                     </Select>
                 </div>
 
-                <div className="space-y-2">
-                    <Label>District</Label>
+                <div>
                     <Select value={district} onValueChange={(val) => handleFilterChange('district', val)} disabled={region === 'all'}>
                         <SelectTrigger>
                             <SelectValue placeholder="All Districts" />
@@ -113,8 +102,7 @@ export function FarmerFilters({ filters, onFilterChange }: FarmerFiltersProps) {
                     </Select>
                 </div>
 
-                <div className="space-y-2">
-                    <Label>Society</Label>
+                <div>
                     <Select value={society} onValueChange={(val) => handleFilterChange('society', val)} disabled={district === 'all'}>
                         <SelectTrigger>
                             <SelectValue placeholder="All Societies" />
@@ -128,8 +116,7 @@ export function FarmerFilters({ filters, onFilterChange }: FarmerFiltersProps) {
                     </Select>
                 </div>
 
-                <div className="space-y-2">
-                    <Label>Community</Label>
+                <div>
                     <Select value={community} onValueChange={(val) => handleFilterChange('community', val)} disabled={society === 'all'}>
                         <SelectTrigger>
                             <SelectValue placeholder="All Communities" />
@@ -143,8 +130,7 @@ export function FarmerFilters({ filters, onFilterChange }: FarmerFiltersProps) {
                     </Select>
                 </div>
 
-                <div className="space-y-2">
-                    <Label>Status</Label>
+                <div>
                     <Select value={status} onValueChange={(val) => handleFilterChange('status', val)}>
                         <SelectTrigger>
                             <SelectValue placeholder="All Status" />
@@ -157,14 +143,19 @@ export function FarmerFilters({ filters, onFilterChange }: FarmerFiltersProps) {
                     </Select>
                 </div>
 
-                <div className="space-y-2">
-                    <Label>Min Farm Size</Label>
+                <div className="flex gap-2">
                     <Input
                         type="number"
-                        placeholder="Acres"
+                        placeholder="Min acres"
                         value={minFarmSize}
                         onChange={(e) => handleFilterChange('minFarmSize', e.target.value)}
+                        className="min-w-0"
                     />
+                    {hasActiveFilters && (
+                        <Button variant="ghost" size="icon" onClick={clearFilters} className="shrink-0 h-10 w-10">
+                            <X className="h-4 w-4" />
+                        </Button>
+                    )}
                 </div>
             </div>
         </div>

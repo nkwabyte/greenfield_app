@@ -17,418 +17,672 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from '@/components/ui/select';
 import { models } from '@/lib/model_options';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Bot, Lightbulb, UserCheck, BarChart, MessageSquare, Send } from 'lucide-react';
-import { Skeleton } from '@/components/ui/skeleton';
-import { Card, CardContent } from '@/components/ui/card';
-import type { Farmer } from '@/lib/types';
 import {
-  runSummarizeKpis,
-  runSuggestBusinessDecisions,
-  runGenerateFarmerPersona,
-  runChatWithContext,
-} from '@/lib/ai-actions';
+  Bot, Send, BarChart2, Lightbulb, UserCheck, Package, DollarSign,
+  PanelLeftClose, PanelLeftOpen, Plus, Trash2, MessageSquare,
+} from 'lucide-react';
+import type { Farmer, Employee, Product, Supplier, Transaction } from '@/lib/types';
+import { runChatWithContext } from '@/lib/ai-actions';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/lib/store/store';
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
+// ─── Types ────────────────────────────────────────────────────────────────────
+
 type AiAssistantProps = {
   farmers: Farmer[];
+  employees?: Employee[];
+  products?: Product[];
+  suppliers?: Supplier[];
+  transactions?: Transaction[];
 };
-
-type LoadingState = 'idle' | 'loading' | 'success' | 'error';
 
 type ChatMessage = {
   role: 'user' | 'model';
   text: string;
 };
 
-export function AiAssistant({ farmers }: AiAssistantProps) {
+type ChatSession = {
+  id: string;
+  title: string;
+  createdAt: string;
+  messages: ChatMessage[];
+};
+
+type PromptCard = {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  prompt: string;
+};
+
+// ─── localStorage helpers ─────────────────────────────────────────────────────
+
+const STORAGE_KEY = 'ai_chat_sessions';
+
+function loadSessionsFromStorage(): ChatSession[] {
+  if (typeof window === 'undefined') return [];
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    return raw ? (JSON.parse(raw) as ChatSession[]) : [];
+  } catch {
+    return [];
+  }
+}
+
+function saveSessionsToStorage(sessions: ChatSession[]) {
+  if (typeof window === 'undefined') return;
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(sessions));
+  } catch {
+    // quota exceeded — silently ignore
+  }
+}
+
+function generateId(): string {
+  return typeof crypto !== 'undefined' && crypto.randomUUID
+    ? crypto.randomUUID()
+    : Math.random().toString(36).slice(2) + Date.now().toString(36);
+}
+
+function formatRelativeTime(iso: string): string {
+  const diff = Date.now() - new Date(iso).getTime();
+  const mins = Math.floor(diff / 60_000);
+  if (mins < 1) return 'Just now';
+  if (mins < 60) return `${mins}m ago`;
+  const hrs = Math.floor(mins / 60);
+  if (hrs < 24) return `${hrs}h ago`;
+  const days = Math.floor(hrs / 24);
+  return `${days}d ago`;
+}
+
+// ─── Prompt Cards ─────────────────────────────────────────────────────────────
+
+function buildPromptCards(): PromptCard[] {
+  return [
+    {
+      icon: <BarChart2 className="h-5 w-5 text-blue-500" />,
+      title: 'KPI Dashboard',
+      description: 'Key performance metrics, regional breakdowns, and business health summary',
+      prompt: `Generate a comprehensive KPI dashboard report for our agricultural CRM using the data context provided. Format the response in Markdown with the following sections:
+
+1. Executive Summary — 3 to 4 sentences summarising overall business health
+2. Key Metrics Table — columns: Metric | Value | Status (use [Good] / [Warning] / [Critical] for status)
+3. Regional Distribution — a bar chart using block characters showing farmer count per region with percentages
+4. Gender Distribution — a bar showing Male vs Female split with percentages
+5. Farm Size Analysis — average, minimum, maximum, and a brief distribution note
+6. Workforce Overview — total employees, breakdown by role and status
+7. Inventory Snapshot — product count by category, total stock units, low-stock items
+8. Financial Summary — total income, total expenses, net balance
+9. Top 3 Recommendations — numbered, each tied to a specific data point
+
+Do not use emojis or decorative characters. Use plain Markdown tables and block-character bar charts only.`,
+    },
+    {
+      icon: <Lightbulb className="h-5 w-5 text-yellow-500" />,
+      title: 'Business Recommendations',
+      description: 'Data-driven strategic recommendations ranked by priority and impact',
+      prompt: `Based on the CRM data provided, produce a structured business recommendations report in Markdown:
+
+1. Situation Analysis — 2 to 3 sentences on the current state of the business
+2. Priority Recommendations — a table with columns: Priority | Recommendation | Expected Impact | Effort | Timeline
+   - Priority levels: High / Medium / Low
+   - Include at least 5 recommendations grounded in the data
+3. Regional Growth Opportunities — identify regions with the most potential and explain why using the data
+4. Gender Inclusion — specific, measurable actions to increase female farmer participation
+5. Operational Efficiency — employee-to-farmer ratio analysis and staffing suggestions
+6. Supply Chain — product and supplier diversification recommendations
+7. Immediate Actions — 3 actions that can be taken this week
+8. 90-Day Roadmap — a table: Week 1-2 | Week 3-4 | Month 2 | Month 3
+
+Do not use emojis. Every recommendation must reference a specific number from the data.`,
+    },
+    {
+      icon: <UserCheck className="h-5 w-5 text-green-500" />,
+      title: 'Farmer Profile Analysis',
+      description: 'Composite profile of the typical farmer based on CRM data',
+      prompt: `Using the CRM data provided, produce a detailed composite farmer profile report in Markdown:
+
+1. Profile Summary Table — columns: Attribute | Detail, covering: typical age range, dominant gender, most common region, average farm size, top crops grown, most common community type
+2. Behavioural Profile — subsections for: Goals, Challenges, Motivations, Preferred Communication
+3. Demographic Breakdown — a Markdown table showing distribution by region, gender, and farm size band
+4. Typical Farmer Description — a 3 to 4 sentence narrative describing a representative farmer based on the data
+5. Engagement Recommendations — how to best reach and support this farmer profile
+6. Underserved Segments — identify 2 to 3 groups that are underrepresented and could be targeted for growth
+
+Do not use emojis or decorative symbols. Use plain Markdown only.`,
+    },
+    {
+      icon: <Package className="h-5 w-5 text-purple-500" />,
+      title: 'Inventory and Supply Chain',
+      description: 'Stock levels, supplier analysis, and procurement priorities',
+      prompt: `Analyse the inventory and supply chain data from the CRM context and produce a report in Markdown:
+
+1. Inventory Overview — total products, total suppliers, average products per supplier
+2. Stock Status by Category — a table with columns: Category | Product Count | Total Units | Status ([OK] / [Low] / [Critical])
+3. Supplier Concentration — identify over-reliance on any single supplier; show a bar chart of products per supplier
+4. Category Distribution — a block-character bar chart of product count per category
+5. Low Stock Items — list all products with fewer than 10 units in stock
+6. Supplier Performance — rank suppliers by product variety provided
+7. Supply Chain Recommendations — 3 to 5 specific actions to improve inventory health
+8. Procurement Priorities — what to source in the next 30 days based on current stock
+
+Do not use emojis. Use plain Markdown tables and block-character charts only.`,
+    },
+    {
+      icon: <DollarSign className="h-5 w-5 text-emerald-500" />,
+      title: 'Financial Overview',
+      description: 'Income, expenses, net balance, and financial health analysis',
+      prompt: `Produce a comprehensive financial overview from the transaction data in the CRM context. Format in Markdown:
+
+1. Financial Summary — a table with columns: Metric | Amount | Note, covering: Total Income, Total Expenses, Net Balance, Transaction Count
+2. Income vs Expenses — a block-character bar chart comparing the two totals
+3. Breakdown by Category — a table showing each transaction category, total amount, and percentage of its type (Income or Expense)
+4. Cash Flow Trend — describe the trend based on transaction dates (improving, declining, stable)
+5. Top Expense Categories — ranked list with GHS amount and percentage of total expenses
+6. Top Income Sources — ranked list with GHS amount and percentage of total income
+7. Financial Health Assessment — a brief paragraph rating overall financial health with specific justification from the numbers
+8. Recommendations — 3 to 5 specific actions to improve financial performance
+
+Do not use emojis. Use GHS as the currency. All figures must come from the data context.`,
+    },
+  ];
+}
+
+// ─── Component ────────────────────────────────────────────────────────────────
+
+export function AiAssistant({
+  farmers,
+  employees = [],
+  products = [],
+  suppliers = [],
+  transactions = [],
+}: AiAssistantProps) {
   const user = useSelector((state: RootState) => state.auth.user);
   const apiKey = user?.geminiApiKey;
   const [showKeyAlert, setShowKeyAlert] = React.useState(false);
+  const [selectedModel, setSelectedModel] = React.useState<string>(
+    user?.preferredModel || 'models/gemini-2.5-flash'
+  );
 
-  // Tabs
-  const [activeTab, setActiveTab] = React.useState('chat');
-  const [selectedModel, setSelectedModel] = React.useState<string>(user?.preferredModel || 'models/gemini-2.5-flash');
-
-  // Update selected model when user preference changes
   React.useEffect(() => {
-    if (user?.preferredModel) {
-      setSelectedModel(user.preferredModel);
-    }
+    if (user?.preferredModel) setSelectedModel(user.preferredModel);
   }, [user?.preferredModel]);
 
-  // Chat State
+  React.useEffect(() => {
+    if (!apiKey) setShowKeyAlert(true);
+  }, [apiKey]);
+
+  // ── Session state ──────────────────────────────────────────────────────────
+  const [sessions, setSessions] = React.useState<ChatSession[]>([]);
+  const [activeSessionId, setActiveSessionId] = React.useState<string | null>(null);
+  const [sidebarOpen, setSidebarOpen] = React.useState(true);
+
+  // Load sessions from localStorage on mount
+  React.useEffect(() => {
+    const saved = loadSessionsFromStorage();
+    setSessions(saved);
+  }, []);
+
+  // ── Chat state ─────────────────────────────────────────────────────────────
   const [chatMessages, setChatMessages] = React.useState<ChatMessage[]>([]);
   const [chatInput, setChatInput] = React.useState('');
   const [chatLoading, setChatLoading] = React.useState(false);
   const scrollAreaRef = React.useRef<HTMLDivElement>(null);
 
-  // Insight States
-  const [kpiInsights, setKpiInsights] = React.useState<any>(null);
-  const [kpiLoading, setKpiLoading] = React.useState<LoadingState>('idle');
-
-  const [decisions, setDecisions] = React.useState<any>(null);
-  const [decisionsLoading, setDecisionsLoading] = React.useState<LoadingState>('idle');
-
-  const [persona, setPersona] = React.useState<any>(null);
-  const [personaLoading, setPersonaLoading] = React.useState<LoadingState>('idle');
-
-  // Check for API Key on mount
-  React.useEffect(() => {
-    if (!apiKey) {
-      // Don't show alert immediately on mount for page view, 
-      // maybe only if they try to interact? 
-      // Or show it if they are on this page?
-      // Let's stick to showing it if they try to interact for now, 
-      // but the original logic was "onOpen". 
-      // Since it's a page now, let's just show it if it's missing.
-      setShowKeyAlert(true);
-    }
-  }, [apiKey]);
-
-  // Scroll to bottom of chat
+  // Auto-scroll on new messages
   React.useEffect(() => {
     if (scrollAreaRef.current) {
       scrollAreaRef.current.scrollTop = scrollAreaRef.current.scrollHeight;
     }
-  }, [chatMessages, activeTab]);
+  }, [chatMessages]);
 
-  const getFarmerDataSummary = React.useCallback(() => {
+  // ── Session helpers ────────────────────────────────────────────────────────
+
+  const persistSessions = React.useCallback((updated: ChatSession[]) => {
+    setSessions(updated);
+    saveSessionsToStorage(updated);
+  }, []);
+
+  const startNewChat = React.useCallback(() => {
+    setChatMessages([]);
+    setChatInput('');
+    setActiveSessionId(null);
+  }, []);
+
+  const loadSession = React.useCallback((session: ChatSession) => {
+    setChatMessages(session.messages);
+    setActiveSessionId(session.id);
+    setChatInput('');
+  }, []);
+
+  const deleteSession = React.useCallback((id: string, e: React.MouseEvent) => {
+    e.stopPropagation();
+    const updated = sessions.filter(s => s.id !== id);
+    persistSessions(updated);
+    if (activeSessionId === id) {
+      setChatMessages([]);
+      setActiveSessionId(null);
+    }
+  }, [sessions, activeSessionId, persistSessions]);
+
+  // ── Context summary ────────────────────────────────────────────────────────
+
+  const getContextSummary = React.useCallback(() => {
     const total = farmers.length;
-    const regions = farmers.reduce((acc, f) => {
+
+    const byRegion = farmers.reduce((acc, f) => {
       if (f.region) acc[f.region] = (acc[f.region] || 0) + 1;
       return acc;
     }, {} as Record<string, number>);
 
-    const genderCounts = {
-      male: farmers.filter(f => f.gender === 'Male').length,
-      female: farmers.filter(f => f.gender === 'Female').length,
-    };
+    const byDistrict = farmers.reduce((acc, f) => {
+      if (f.district) acc[f.district] = (acc[f.district] || 0) + 1;
+      return acc;
+    }, {} as Record<string, number>);
 
-    const crops = new Set(farmers.flatMap(f => f.cropsGrown || []));
-    const avgFarmSize =
-      farmers.reduce((sum, f) => sum + (Number(f.farmSize) || 0), 0) / (total || 1);
+    const bySociety = farmers.reduce((acc, f) => {
+      if (f.society) acc[f.society] = (acc[f.society] || 0) + 1;
+      return acc;
+    }, {} as Record<string, number>);
 
-    const sample = farmers.find(f => f.name && f.community);
+    const male = farmers.filter(f => f.gender === 'Male').length;
+    const female = farmers.filter(f => f.gender === 'Female').length;
+    const other = farmers.filter(f => f.gender === 'Other').length;
 
-    const summary = [
-      `Total farmers: ${total}`,
-      `Regions: ${Object.keys(regions).join(', ')}`,
-      `Gender ratio - Male: ${genderCounts.male}, Female: ${genderCounts.female}`,
-      `Avg farm size: ${avgFarmSize.toFixed(2)} acres`,
-      `Common crops: ${Array.from(crops).slice(0, 5).join(', ')}`,
-      sample
-        ? `Sample: ${sample.name} from ${sample.community}, ${sample.region} with ${sample.farmSize} acres.`
-        : 'No sample available.',
-    ];
+    const byEducation = farmers.reduce((acc, f) => {
+      const lvl = f.educationLevel || 'Unknown';
+      acc[lvl] = (acc[lvl] || 0) + 1;
+      return acc;
+    }, {} as Record<string, number>);
 
-    return summary.join('\n');
-  }, [farmers]);
+    const byStatus = farmers.reduce((acc, f) => {
+      const s = f.status || 'Unknown';
+      acc[s] = (acc[s] || 0) + 1;
+      return acc;
+    }, {} as Record<string, number>);
 
-  const handleSendMessage = async () => {
-    if (!chatInput.trim()) return;
-    if (!apiKey) {
-      setShowKeyAlert(true);
-      return;
-    }
+    const farmSizes = farmers.map(f => Number(f.farmSize) || 0).filter(s => s > 0);
+    const avgFarmSize = farmSizes.length ? farmSizes.reduce((a, b) => a + b, 0) / farmSizes.length : 0;
+    const minFarmSize = farmSizes.length ? Math.min(...farmSizes) : 0;
+    const maxFarmSize = farmSizes.length ? Math.max(...farmSizes) : 0;
 
-    const newUserMsg: ChatMessage = { role: 'user', text: chatInput };
-    setChatMessages(prev => [...prev, newUserMsg]);
+    const cropFreq = farmers.flatMap(f => f.cropsGrown || []).reduce((acc, c) => {
+      acc[c] = (acc[c] || 0) + 1;
+      return acc;
+    }, {} as Record<string, number>);
+    const topCrops = Object.entries(cropFreq).sort((a, b) => b[1] - a[1]).slice(0, 10);
+
+    const ages = farmers.map(f => Number(f.age) || 0).filter(a => a > 0);
+    const avgAge = ages.length ? ages.reduce((a, b) => a + b, 0) / ages.length : 0;
+
+    const empByRole = employees.reduce((acc, e) => {
+      acc[e.role] = (acc[e.role] || 0) + 1;
+      return acc;
+    }, {} as Record<string, number>);
+    const empByStatus = employees.reduce((acc, e) => {
+      acc[e.status] = (acc[e.status] || 0) + 1;
+      return acc;
+    }, {} as Record<string, number>);
+    const salaries = employees.map(e => Number(e.salary) || 0).filter(s => s > 0);
+    const totalSalary = salaries.reduce((a, b) => a + b, 0);
+    const avgSalary = salaries.length ? totalSalary / salaries.length : 0;
+
+    const prodByCategory = products.reduce((acc, p) => {
+      acc[p.category] = (acc[p.category] || 0) + 1;
+      return acc;
+    }, {} as Record<string, number>);
+    const totalStock = products.reduce((s, p) => s + (Number(p.quantity) || 0), 0);
+    const totalInventoryValue = products.reduce((s, p) => s + (Number(p.quantity) || 0) * (Number(p.price) || 0), 0);
+    const lowStockProducts = products.filter(p => (Number(p.quantity) || 0) < 10);
+    const productDetails = products.slice(0, 50).map(p => {
+      const supplier = suppliers.find(s => s.id === p.supplierId);
+      return `  - ${p.name} (${p.category}): qty=${p.quantity}, price=GHS ${p.price}${supplier ? `, supplier=${supplier.name}` : ''}`;
+    });
+
+    const supplierProductCount = suppliers.map(s => ({
+      name: s.name,
+      count: products.filter(p => p.supplierId === s.id).length,
+    })).sort((a, b) => b.count - a.count);
+
+    const income = transactions.filter(t => t.type === 'Income').reduce((s, t) => s + (Number(t.amount) || 0), 0);
+    const expenses = transactions.filter(t => t.type === 'Expense').reduce((s, t) => s + (Number(t.amount) || 0), 0);
+    const byCategory = transactions.reduce((acc, t) => {
+      const key = `${t.type}:${t.category}`;
+      acc[key] = (acc[key] || 0) + (Number(t.amount) || 0);
+      return acc;
+    }, {} as Record<string, number>);
+    const recentTx = [...transactions]
+      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+      .slice(0, 10)
+      .map(t => `  - [${t.date}] ${t.type} | ${t.category} | GHS ${t.amount} | ${t.description}`);
+
+    return [
+      `=== GREENFIELD CAPITAL CRM — FULL DATA CONTEXT ===`,
+      `Generated: ${new Date().toISOString()}`,
+      ``,
+      `── FARMERS (${total} total) ──`,
+      `  Gender: Male=${male}, Female=${female}, Other=${other}`,
+      `  Status: ${Object.entries(byStatus).map(([k, v]) => `${k}=${v}`).join(', ')}`,
+      `  Avg Age: ${avgAge.toFixed(1)} yrs`,
+      `  Farm Size: avg=${avgFarmSize.toFixed(2)} acres, min=${minFarmSize}, max=${maxFarmSize}`,
+      `  By Region: ${Object.entries(byRegion).sort((a, b) => b[1] - a[1]).map(([r, c]) => `${r}=${c}`).join(', ')}`,
+      `  By District (top 10): ${Object.entries(byDistrict).sort((a, b) => b[1] - a[1]).slice(0, 10).map(([d, c]) => `${d}=${c}`).join(', ')}`,
+      `  By Society (top 10): ${Object.entries(bySociety).sort((a, b) => b[1] - a[1]).slice(0, 10).map(([s, c]) => `${s}=${c}`).join(', ')}`,
+      `  Education: ${Object.entries(byEducation).map(([k, v]) => `${k}=${v}`).join(', ')}`,
+      `  Top Crops: ${topCrops.map(([c, n]) => `${c}(${n})`).join(', ')}`,
+      ``,
+      `── EMPLOYEES (${employees.length} total) ──`,
+      `  By Role: ${Object.entries(empByRole).map(([r, c]) => `${r}=${c}`).join(', ')}`,
+      `  By Status: ${Object.entries(empByStatus).map(([s, c]) => `${s}=${c}`).join(', ')}`,
+      `  Salary: total=GHS ${totalSalary.toLocaleString()}, avg=GHS ${avgSalary.toFixed(0)}/mo`,
+      ``,
+      `── PRODUCTS (${products.length} total) ──`,
+      `  By Category: ${Object.entries(prodByCategory).map(([c, n]) => `${c}=${n}`).join(', ')}`,
+      `  Total Stock Units: ${totalStock.toLocaleString()}`,
+      `  Total Inventory Value: GHS ${totalInventoryValue.toLocaleString()}`,
+      `  Low Stock (<10 units): ${lowStockProducts.length} products${lowStockProducts.length ? ` — ${lowStockProducts.map(p => p.name).join(', ')}` : ''}`,
+      `  Product Details (up to 50):`,
+      ...productDetails,
+      ``,
+      `── SUPPLIERS (${suppliers.length} total) ──`,
+      ...supplierProductCount.map(s => `  - ${s.name}: ${s.count} products`),
+      ``,
+      `── TRANSACTIONS (${transactions.length} total) ──`,
+      `  Total Income:   GHS ${income.toLocaleString()}`,
+      `  Total Expenses: GHS ${expenses.toLocaleString()}`,
+      `  Net Balance:    GHS ${(income - expenses).toLocaleString()}`,
+      `  By Category:`,
+      ...Object.entries(byCategory).sort((a, b) => b[1] - a[1]).map(([k, v]) => `    ${k}: GHS ${v.toLocaleString()}`),
+      `  Recent 10 Transactions:`,
+      ...recentTx,
+    ].join('\n');
+  }, [farmers, employees, products, suppliers, transactions]);
+
+  // ── Send message ───────────────────────────────────────────────────────────
+
+  const sendMessage = async (text: string) => {
+    if (!text.trim()) return;
+    if (!apiKey) { setShowKeyAlert(true); return; }
+
+    const userMsg: ChatMessage = { role: 'user', text };
+    const updatedMessages = [...chatMessages, userMsg];
+    setChatMessages(updatedMessages);
     setChatInput('');
     setChatLoading(true);
 
+    // Create session on first message
+    let sessionId = activeSessionId;
+    let currentSessions = sessions;
+    if (!sessionId) {
+      sessionId = generateId();
+      const newSession: ChatSession = {
+        id: sessionId,
+        title: text.slice(0, 50),
+        createdAt: new Date().toISOString(),
+        messages: updatedMessages,
+      };
+      currentSessions = [newSession, ...sessions];
+      persistSessions(currentSessions);
+      setActiveSessionId(sessionId);
+    }
+
     try {
-      const history = chatMessages.map(msg => ({
-        role: msg.role,
-        parts: [{ text: msg.text }]
-      }));
-
-      const context = getFarmerDataSummary();
-
+      const history = chatMessages.map(m => ({ role: m.role, parts: [{ text: m.text }] }));
       const responseText = await runChatWithContext({
-        message: newUserMsg.text,
-        context,
+        message: text,
+        context: getContextSummary(),
         history,
         apiKey,
-        modelName: selectedModel
+        modelName: selectedModel,
       });
+      const finalMessages: ChatMessage[] = [...updatedMessages, { role: 'model', text: responseText }];
+      setChatMessages(finalMessages);
 
-      setChatMessages(prev => [...prev, { role: 'model', text: responseText }]);
-    } catch (error) {
-      console.error('Chat error:', error);
-      setChatMessages(prev => [...prev, { role: 'model', text: "Sorry, I encountered an error. Please check your API key and try again." }]);
+      // Persist updated messages to the session
+      const updatedSessions = currentSessions.map(s =>
+        s.id === sessionId ? { ...s, messages: finalMessages } : s
+      );
+      persistSessions(updatedSessions);
+    } catch (err) {
+      console.error('Chat error:', err);
+      const errorMessages: ChatMessage[] = [
+        ...updatedMessages,
+        { role: 'model', text: 'An error occurred. Please check your API key and try again.' },
+      ];
+      setChatMessages(errorMessages);
+      const updatedSessions = currentSessions.map(s =>
+        s.id === sessionId ? { ...s, messages: errorMessages } : s
+      );
+      persistSessions(updatedSessions);
     } finally {
       setChatLoading(false);
     }
   };
 
-  const handleSummarizeKpis = async () => {
-    if (!apiKey) { setShowKeyAlert(true); return; }
-    setKpiLoading('loading');
-    try {
-      const regionalCounts = farmers.reduce((acc, f) => {
-        if (f.region) acc[f.region] = (acc[f.region] || 0) + 1;
-        return acc;
-      }, {} as Record<string, number>);
-
-      const male = farmers.filter(f => f.gender === 'Male').length;
-      const female = farmers.filter(f => f.gender === 'Female').length;
-      const totalWithGender = male + female;
-
-      const result = await runSummarizeKpis({
-        totalFarmers: farmers.length,
-        regionalCounts,
-        genderRatios: {
-          male: totalWithGender > 0 ? (male / totalWithGender) * 100 : 0,
-          female: totalWithGender > 0 ? (female / totalWithGender) * 100 : 0,
-        },
-        apiKey,
-        modelName: selectedModel
-      });
-
-      setKpiInsights(result);
-      setKpiLoading('success');
-    } catch (e) {
-      console.error(e);
-      setKpiLoading('error');
-    }
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    sendMessage(chatInput);
   };
 
-  const handleSuggestDecisions = async () => {
-    if (!apiKey) { setShowKeyAlert(true); return; }
-    setDecisionsLoading('loading');
-    try {
-      const result = await runSuggestBusinessDecisions({
-        farmerDataSummary: getFarmerDataSummary(),
-        inventoryDataSummary:
-          'Inventory data is currently unavailable. Focus decisions on farmer distribution, gender balance, and farm size.',
-        apiKey,
-        modelName: selectedModel
-      });
-      setDecisions(result);
-      setDecisionsLoading('success');
-    } catch (e) {
-      console.error(e);
-      setDecisionsLoading('error');
-    }
+  const handlePromptCard = (prompt: string) => {
+    sendMessage(prompt);
   };
 
-  const handleGeneratePersona = async () => {
-    if (!apiKey) { setShowKeyAlert(true); return; }
-    setPersonaLoading('loading');
-    try {
-      const result = await runGenerateFarmerPersona({
-        farmerDataSummary: getFarmerDataSummary(),
-        apiKey,
-        modelName: selectedModel
-      });
-      setPersona(result);
-      setPersonaLoading('success');
-    } catch (e) {
-      console.error(e);
-      setPersonaLoading('error');
-    }
-  };
-
-  const renderContent = (
-    loading: LoadingState,
-    data: any,
-    generator: () => void,
-    idleText: string,
-    resultRenderer: () => React.ReactNode
-  ) => {
-    if (loading === 'loading') {
-      return (
-        <div className="space-y-2 pt-4">
-          <Skeleton className="h-4 w-3/4" />
-          <Skeleton className="h-4 w-1/2" />
-          <Skeleton className="h-4 w-5/6" />
-        </div>
-      );
-    }
-    if (loading === 'success' && data) {
-      return <div className="pt-4">{resultRenderer()}</div>;
-    }
-    if (loading === 'error') {
-      return <p className="pt-4 text-destructive">Could not generate insights. Please check your API key.</p>;
-    }
-    return (
-      <div className="flex flex-col items-center justify-center space-y-4 pt-8 text-center min-h-[200px]">
-        <p className="text-muted-foreground">{idleText}</p>
-        <Button onClick={generator}>Generate Now</Button>
-      </div>
-    );
-  };
+  const promptCards = React.useMemo(() => buildPromptCards(), []);
+  const isEmpty = chatMessages.length === 0;
 
   return (
-    <div className="flex flex-col h-full bg-background rounded-lg border shadow-sm">
-      <div className="p-4 border-b flex justify-between items-center">
-        <div>
-          <h2 className="text-lg font-semibold flex items-center gap-2">
-            <Bot className="h-5 w-5 text-primary" /> AI Assistant
-          </h2>
-          <p className="text-sm text-muted-foreground">Using {
-            models.find(m => m.name === selectedModel)?.displayName || selectedModel
-          }</p>
-        </div>
-      </div>
+    <div className="flex h-full bg-background rounded-lg border shadow-sm overflow-hidden">
 
-      <Tabs value={activeTab} onValueChange={setActiveTab} className="flex-1 flex flex-col overflow-hidden">
-        <div className="px-4 pt-2">
-          <TabsList className="grid w-full grid-cols-4">
-            <TabsTrigger value="chat">
-              <MessageSquare className="mr-2 h-4 w-4" />Chat
-            </TabsTrigger>
-            <TabsTrigger value="kpi">
-              <BarChart className="mr-2 h-4 w-4" />KPIs
-            </TabsTrigger>
-            <TabsTrigger value="decisions">
-              <Lightbulb className="mr-2 h-4 w-4" />Suggestions
-            </TabsTrigger>
-            <TabsTrigger value="persona">
-              <UserCheck className="mr-2 h-4 w-4" />Persona
-            </TabsTrigger>
-          </TabsList>
-        </div>
-
-        <TabsContent value="chat" className="flex-1 flex flex-col overflow-hidden p-4 pt-2 data-[state=inactive]:hidden">
-          <div className="flex justify-end pb-2">
-            <Select value={selectedModel} onValueChange={setSelectedModel}>
-              <SelectTrigger className="w-[200px] h-8 text-xs">
-                <SelectValue placeholder="Select Model" />
-              </SelectTrigger>
-              <SelectContent>
-                {models
-                  .filter(m => !m.name.includes('imagen') && !m.name.includes('veo') && !m.name.includes('audio') && !m.name.includes('embedding') && !m.name.includes('aqa') && !m.name.includes('face') && !m.name.includes('preview-image'))
-                  .map((model) => (
-                    <SelectItem key={model.name} value={model.name} className="text-xs">
-                      {model.displayName}
-                    </SelectItem>
-                  ))}
-              </SelectContent>
-            </Select>
+      {/* ── Sidebar ── */}
+      {sidebarOpen && (
+        <div className="w-64 shrink-0 flex flex-col border-r bg-muted/20">
+          {/* Sidebar header */}
+          <div className="px-3 py-3 border-b flex items-center justify-between shrink-0">
+            <span className="text-sm font-semibold text-foreground">Chat History</span>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="h-7 w-7"
+              onClick={() => setSidebarOpen(false)}
+              title="Collapse sidebar"
+            >
+              <PanelLeftClose className="h-4 w-4" />
+            </Button>
           </div>
-          <ScrollArea className="flex-1 pr-4" ref={scrollAreaRef}>
+
+          {/* New Chat button */}
+          <div className="px-3 py-2 shrink-0">
+            <Button
+              variant="outline"
+              size="sm"
+              className="w-full justify-start gap-2 text-xs"
+              onClick={startNewChat}
+            >
+              <Plus className="h-3.5 w-3.5" />
+              New Chat
+            </Button>
+          </div>
+
+          {/* Session list */}
+          <ScrollArea className="flex-1 px-2 pb-2">
+            {sessions.length === 0 ? (
+              <div className="flex flex-col items-center justify-center gap-2 py-8 text-center">
+                <MessageSquare className="h-8 w-8 text-muted-foreground/40" />
+                <p className="text-xs text-muted-foreground">No chat history yet.</p>
+                <p className="text-xs text-muted-foreground">Start a conversation to see it here.</p>
+              </div>
+            ) : (
+              <div className="space-y-1 pt-1">
+                {sessions.map(session => (
+                  <button
+                    key={session.id}
+                    onClick={() => loadSession(session)}
+                    className={`group w-full text-left rounded-lg px-3 py-2.5 transition-colors relative ${activeSessionId === session.id
+                        ? 'bg-primary/10 text-primary'
+                        : 'hover:bg-muted text-foreground'
+                      }`}
+                  >
+                    <p className="text-xs font-medium leading-snug line-clamp-2 pr-5">
+                      {session.title}
+                    </p>
+                    <p className="text-[10px] text-muted-foreground mt-0.5">
+                      {formatRelativeTime(session.createdAt)}
+                      {' · '}
+                      {Math.ceil(session.messages.length / 2)} msg{session.messages.length !== 2 ? 's' : ''}
+                    </p>
+                    {/* Delete button */}
+                    <span
+                      onClick={(e) => deleteSession(session.id, e)}
+                      className="absolute right-2 top-2.5 opacity-0 group-hover:opacity-100 transition-opacity p-0.5 rounded hover:bg-destructive/10 hover:text-destructive cursor-pointer"
+                      title="Delete session"
+                    >
+                      <Trash2 className="h-3 w-3" />
+                    </span>
+                  </button>
+                ))}
+              </div>
+            )}
+          </ScrollArea>
+        </div>
+      )}
+
+      {/* ── Chat pane ── */}
+      <div className="flex flex-col flex-1 min-w-0">
+
+        {/* Header */}
+        <div className="px-4 py-3 border-b flex items-center justify-between gap-3 shrink-0">
+          <div className="flex items-center gap-2">
+            {!sidebarOpen && (
+              <Button
+                variant="ghost"
+                size="icon"
+                className="h-7 w-7"
+                onClick={() => setSidebarOpen(true)}
+                title="Open sidebar"
+              >
+                <PanelLeftOpen className="h-4 w-4" />
+              </Button>
+            )}
+            <Bot className="h-5 w-5 text-primary" />
+            <h2 className="text-base font-semibold">AI Assistant</h2>
+          </div>
+          <Select value={selectedModel} onValueChange={setSelectedModel}>
+            <SelectTrigger className="w-[200px] h-8 text-xs">
+              <SelectValue placeholder="Select Model" />
+            </SelectTrigger>
+            <SelectContent>
+              {models
+                .filter(
+                  m =>
+                    !m.name.includes('imagen') &&
+                    !m.name.includes('veo') &&
+                    !m.name.includes('audio') &&
+                    !m.name.includes('embedding') &&
+                    !m.name.includes('aqa') &&
+                    !m.name.includes('face') &&
+                    !m.name.includes('preview-image')
+                )
+                .map(model => (
+                  <SelectItem key={model.name} value={model.name} className="text-xs">
+                    {model.displayName}
+                  </SelectItem>
+                ))}
+            </SelectContent>
+          </Select>
+        </div>
+
+        {/* Chat history */}
+        <ScrollArea className="flex-1 px-4 py-4" ref={scrollAreaRef}>
+          {isEmpty ? (
+            /* Empty state — welcome + prompt cards */
+            <div className="flex flex-col items-center justify-center h-full min-h-[300px] gap-6 py-8">
+              <div className="text-center space-y-1">
+                <Bot className="h-12 w-12 mx-auto text-primary/30" />
+                <p className="text-lg font-semibold text-foreground">What would you like to explore?</p>
+                <p className="text-sm text-muted-foreground">
+                  Click a card below or type your own question.
+                </p>
+              </div>
+
+              {/* Prompt cards grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 w-full max-w-3xl">
+                {promptCards.map(card => (
+                  <button
+                    key={card.title}
+                    onClick={() => handlePromptCard(card.prompt)}
+                    disabled={chatLoading}
+                    className="group text-left rounded-xl border bg-card hover:bg-accent hover:border-primary/40 transition-all duration-200 p-4 shadow-sm hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="p-1.5 rounded-lg bg-muted group-hover:bg-background transition-colors">
+                        {card.icon}
+                      </span>
+                      <span className="font-semibold text-sm">{card.title}</span>
+                    </div>
+                    <p className="text-xs text-muted-foreground leading-relaxed">{card.description}</p>
+                  </button>
+                ))}
+              </div>
+            </div>
+          ) : (
+            /* Messages */
             <div className="space-y-4">
-              {chatMessages.length === 0 && (
-                <div className="text-center text-muted-foreground py-10">
-                  <Bot className="h-12 w-12 mx-auto mb-2 opacity-20" />
-                  <p>Ask me anything about your farmers, crops, or regions.</p>
-                  <p className="text-xs mt-2">Example: &quot;How many female farmers do we have in Keyabi?&quot;</p>
-                </div>
-              )}
               {chatMessages.map((msg, i) => (
                 <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                  <div className={`max-w-[80%] rounded-lg px-4 py-2 text-sm ${msg.role === 'user'
-                    ? 'bg-green-700 text-white'
-                    : 'bg-muted'
-                    }`}>
-                    <div className={`prose prose-sm max-w-none wrap-break-word ${msg.role === 'user' ? 'prose-invert' : 'dark:prose-invert'} [&>p]:mb-2 [&>p:last-child]:mb-0 [&>ul]:list-disc [&>ul]:pl-4 [&>ol]:list-decimal [&>ol]:pl-4`}>
-                      <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                        {msg.text}
-                      </ReactMarkdown>
+                  <div
+                    className={`max-w-[85%] rounded-2xl px-4 py-3 text-sm ${msg.role === 'user'
+                        ? 'bg-green-800 text-white rounded-br-sm'
+                        : 'bg-blue-900 text-white rounded-bl-sm'
+                      }`}
+                  >
+                    <div className="prose prose-sm prose-invert max-w-none wrap-break-word [&>p]:mb-2 [&>p:last-child]:mb-0 [&>ul]:list-disc [&>ul]:pl-4 [&>ol]:list-decimal [&>ol]:pl-4 [&>table]:text-xs [&>pre]:text-xs [&>pre]:overflow-x-auto">
+                      <ReactMarkdown remarkPlugins={[remarkGfm]}>{msg.text}</ReactMarkdown>
                     </div>
                   </div>
                 </div>
               ))}
+
+              {/* Typing indicator */}
               {chatLoading && (
                 <div className="flex justify-start">
-                  <div className="bg-muted max-w-[80%] rounded-lg px-4 py-2 text-sm flex items-center gap-2">
-                    <div className="h-2 w-2 bg-foreground/50 rounded-full animate-bounce" />
-                    <div className="h-2 w-2 bg-foreground/50 rounded-full animate-bounce [animation-delay:0.2s]" />
-                    <div className="h-2 w-2 bg-foreground/50 rounded-full animate-bounce [animation-delay:0.4s]" />
+                  <div className="bg-blue-900 rounded-2xl rounded-bl-sm px-4 py-3 flex items-center gap-1.5">
+                    <span className="h-2 w-2 bg-white/60 rounded-full animate-bounce" />
+                    <span className="h-2 w-2 bg-white/60 rounded-full animate-bounce [animation-delay:0.15s]" />
+                    <span className="h-2 w-2 bg-white/60 rounded-full animate-bounce [animation-delay:0.3s]" />
                   </div>
                 </div>
               )}
             </div>
-          </ScrollArea>
-          <div className="pt-4 mt-auto">
-            <form
-              onSubmit={(e) => { e.preventDefault(); handleSendMessage(); }}
-              className="flex items-center gap-2"
-            >
-              <Input
-                value={chatInput}
-                onChange={e => setChatInput(e.target.value)}
-                placeholder="Type your message..."
-                disabled={chatLoading}
-                className="flex-1"
-              />
-              <Button type="submit" size="icon" disabled={chatLoading || !chatInput.trim()}>
-                <Send className="h-4 w-4" />
-              </Button>
-            </form>
-          </div>
-        </TabsContent>
-
-        <TabsContent value="kpi" className="flex-1 overflow-auto p-4 data-[state=inactive]:hidden">
-          {renderContent(
-            kpiLoading,
-            kpiInsights,
-            handleSummarizeKpis,
-            'Summarize key performance indicators to quickly understand trends.',
-            () => (
-              <Card>
-                <CardContent className="pt-6 space-y-4">
-                  <div>
-                    <h4 className="font-semibold">Summary</h4>
-                    <p className="text-sm text-muted-foreground whitespace-pre-line">{kpiInsights?.summary}</p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold">Recommendations</h4>
-                    <p className="text-sm text-muted-foreground whitespace-pre-line">{kpiInsights?.recommendations}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            )
           )}
-        </TabsContent>
+        </ScrollArea>
 
-        <TabsContent value="decisions" className="flex-1 overflow-auto p-4 data-[state=inactive]:hidden">
-          {renderContent(
-            decisionsLoading,
-            decisions,
-            handleSuggestDecisions,
-            'Get data-driven business decisions for optimization.',
-            () => (
-              <Card>
-                <CardContent className="pt-6">
-                  <p className="text-sm text-muted-foreground whitespace-pre-line">{decisions?.suggestedDecisions}</p>
-                </CardContent>
-              </Card>
-            )
-          )}
-        </TabsContent>
+        {/* Input bar */}
+        <div className="px-4 py-3 border-t shrink-0">
+          <form onSubmit={handleSubmit} className="flex items-center gap-2">
+            <Input
+              value={chatInput}
+              onChange={e => setChatInput(e.target.value)}
+              placeholder="Ask anything about your farmers, inventory, finances…"
+              disabled={chatLoading}
+              className="flex-1"
+            />
+            <Button type="submit" size="icon" disabled={chatLoading || !chatInput.trim()}>
+              <Send className="h-4 w-4" />
+            </Button>
+          </form>
+        </div>
+      </div>
 
-        <TabsContent value="persona" className="flex-1 overflow-auto p-4 data-[state=inactive]:hidden">
-          {renderContent(
-            personaLoading,
-            persona,
-            handleGeneratePersona,
-            'Generate a representative farmer persona from your CRM data.',
-            () => (
-              <Card>
-                <CardContent className="pt-6 space-y-4">
-                  <div>
-                    <h4 className="font-semibold">{persona?.personaName}</h4>
-                    <p className="text-sm text-muted-foreground whitespace-pre-line">{persona?.personaDescription}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            )
-          )}
-        </TabsContent>
-      </Tabs>
-
+      {/* ── API Key Alert ── */}
       <AlertDialog open={showKeyAlert} onOpenChange={setShowKeyAlert}>
         <AlertDialogContent>
           <AlertDialogHeader>
@@ -436,9 +690,12 @@ export function AiAssistant({ farmers }: AiAssistantProps) {
             <AlertDialogDescription>
               To use AI features, you need to provide your own Google Gemini API Key.
               <br /><br />
-              1. Get a key from <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noreferrer" className="underline text-primary">Google AI Studio</a>.
+              1. Get a key from{' '}
+              <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noreferrer" className="underline text-primary">
+                Google AI Studio
+              </a>.
               <br />
-              2. Go to Settings {'>'} Profile to save it.
+              2. Go to Settings &gt; Profile to save it.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
