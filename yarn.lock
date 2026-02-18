@@ -545,7 +545,7 @@
   integrity sha512-MqO+MLfM6kjxcKoy0p1wRzG3b4ZZXtPI+z2IE26UogS2Cm/XHO+7gGRBh6gcJsOiIVoH93UwKvW4HdgiOZCy9Q==
 
 "@greenfield/desktop@file:/Users/musahibrahimali/Dev/typescript/greenfield_app/apps/desktop":
-  version "0.2.0"
+  version "0.2.1"
   resolved "file:apps/desktop"
   dependencies:
     electron-is-dev "^3.0.1"
@@ -578,8 +578,7 @@
     "@radix-ui/react-toast" "^1.2.15"
     "@radix-ui/react-tooltip" "^1.2.8"
     "@reduxjs/toolkit" "^2.11.2"
-    "@tanstack/react-query" "^5.90.20"
-    "@tanstack/react-query-devtools" "^5.91.3"
+    "@tailwindcss/typography" "^0.5.19"
     "@tanstack/react-table" "^8.21.3"
     class-variance-authority "^0.7.1"
     clsx "^2.1.1"
@@ -597,8 +596,10 @@
     react-dom "^19.2.4"
     react-hook-form "^7.71.1"
     react-is "^19.2.4"
+    react-markdown "^10.1.0"
     react-redux "^9.2.0"
     recharts "^3.7.0"
+    remark-gfm "^4.0.1"
     tailwind-merge "^3.4.0"
     tailwindcss-animate "^1.0.7"
     uuid "^13.0.0"

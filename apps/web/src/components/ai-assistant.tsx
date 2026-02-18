@@ -33,6 +33,7 @@ import { RootState } from '@/lib/store/store';
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import { cn } from '@/lib/utils';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -57,7 +58,8 @@ type ChatSession = {
 };
 
 type PromptCard = {
-  icon: React.ReactNode;
+  icon: React.ComponentType<{ className?: string }>;
+  iconColor: string;
   title: string;
   description: string;
   prompt: string;
@@ -108,7 +110,8 @@ function formatRelativeTime(iso: string): string {
 function buildPromptCards(): PromptCard[] {
   return [
     {
-      icon: <BarChart2 className="h-5 w-5 text-blue-500" />,
+      icon: BarChart2,
+      iconColor: 'group-hover:text-white text-blue-500',
       title: 'KPI Dashboard',
       description: 'Key performance metrics, regional breakdowns, and business health summary',
       prompt: `Generate a comprehensive KPI dashboard report for our agricultural CRM using the data context provided. Format the response in Markdown with the following sections:
@@ -126,7 +129,8 @@ function buildPromptCards(): PromptCard[] {
 Do not use emojis or decorative characters. Use plain Markdown tables and block-character bar charts only.`,
     },
     {
-      icon: <Lightbulb className="h-5 w-5 text-yellow-500" />,
+      icon: Lightbulb,
+      iconColor: 'group-hover:text-white text-yellow-500',
       title: 'Business Recommendations',
       description: 'Data-driven strategic recommendations ranked by priority and impact',
       prompt: `Based on the CRM data provided, produce a structured business recommendations report in Markdown:
@@ -145,7 +149,8 @@ Do not use emojis or decorative characters. Use plain Markdown tables and block-
 Do not use emojis. Every recommendation must reference a specific number from the data.`,
     },
     {
-      icon: <UserCheck className="h-5 w-5 text-green-500" />,
+      icon: UserCheck,
+      iconColor: 'group-hover:text-white text-green-500',
       title: 'Farmer Profile Analysis',
       description: 'Composite profile of the typical farmer based on CRM data',
       prompt: `Using the CRM data provided, produce a detailed composite farmer profile report in Markdown:
@@ -160,7 +165,8 @@ Do not use emojis. Every recommendation must reference a specific number from th
 Do not use emojis or decorative symbols. Use plain Markdown only.`,
     },
     {
-      icon: <Package className="h-5 w-5 text-purple-500" />,
+      icon: Package,
+      iconColor: 'group-hover:text-white text-purple-500',
       title: 'Inventory and Supply Chain',
       description: 'Stock levels, supplier analysis, and procurement priorities',
       prompt: `Analyse the inventory and supply chain data from the CRM context and produce a report in Markdown:
@@ -177,7 +183,8 @@ Do not use emojis or decorative symbols. Use plain Markdown only.`,
 Do not use emojis. Use plain Markdown tables and block-character charts only.`,
     },
     {
-      icon: <DollarSign className="h-5 w-5 text-emerald-500" />,
+      icon: DollarSign,
+      iconColor: 'group-hover:text-white text-emerald-500',
       title: 'Financial Overview',
       description: 'Income, expenses, net balance, and financial health analysis',
       prompt: `Produce a comprehensive financial overview from the transaction data in the CRM context. Format in Markdown:
@@ -527,8 +534,8 @@ export function AiAssistant({
                     key={session.id}
                     onClick={() => loadSession(session)}
                     className={`group w-full text-left rounded-lg px-3 py-2.5 transition-colors relative ${activeSessionId === session.id
-                        ? 'bg-primary/10 text-primary'
-                        : 'hover:bg-muted text-foreground'
+                      ? 'bg-primary/10 text-primary'
+                      : 'hover:bg-muted text-foreground'
                       }`}
                   >
                     <p className="text-xs font-medium leading-snug line-clamp-2 pr-5">
@@ -620,15 +627,15 @@ export function AiAssistant({
                     key={card.title}
                     onClick={() => handlePromptCard(card.prompt)}
                     disabled={chatLoading}
-                    className="group text-left rounded-xl border bg-card hover:bg-accent hover:border-primary/40 transition-all duration-200 p-4 shadow-sm hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="group text-left rounded-xl border bg-card hover:bg-emerald-600 dark:hover:bg-emerald-500 hover:border-emerald-500 transition-all duration-200 p-4 shadow-sm hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     <div className="flex items-center gap-2 mb-2">
-                      <span className="p-1.5 rounded-lg bg-muted group-hover:bg-background transition-colors">
-                        {card.icon}
+                      <span className="p-1.5 rounded-lg bg-muted group-hover:bg-white/20 transition-colors">
+                        <card.icon className={cn("h-5 w-5 transition-colors", card.iconColor)} />
                       </span>
-                      <span className="font-semibold text-sm">{card.title}</span>
+                      <span className="font-semibold text-sm group-hover:text-white transition-colors">{card.title}</span>
                     </div>
-                    <p className="text-xs text-muted-foreground leading-relaxed">{card.description}</p>
+                    <p className="text-xs text-muted-foreground group-hover:text-emerald-50 leading-relaxed transition-colors">{card.description}</p>
                   </button>
                 ))}
               </div>
@@ -640,8 +647,8 @@ export function AiAssistant({
                 <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                   <div
                     className={`max-w-[85%] rounded-2xl px-4 py-3 text-sm ${msg.role === 'user'
-                        ? 'bg-green-800 text-white rounded-br-sm'
-                        : 'bg-blue-900 text-white rounded-bl-sm'
+                      ? 'bg-green-800 text-white rounded-br-sm'
+                      : 'bg-blue-900 text-white rounded-bl-sm'
                       }`}
                   >
                     <div className="prose prose-sm prose-invert max-w-none wrap-break-word [&>p]:mb-2 [&>p:last-child]:mb-0 [&>ul]:list-disc [&>ul]:pl-4 [&>ol]:list-decimal [&>ol]:pl-4 [&>table]:text-xs [&>pre]:text-xs [&>pre]:overflow-x-auto">

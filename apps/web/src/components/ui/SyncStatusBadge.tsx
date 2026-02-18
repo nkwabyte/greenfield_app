@@ -109,14 +109,14 @@ export function SyncStatusBadge() {
                         <TooltipTrigger asChild>
                             <span className="cursor-default">
                                 {anyEntitySyncing && (
-                                    <span className="flex items-center gap-1.5 rounded-full bg-blue-100 dark:bg-blue-900/30 px-2.5 py-0.5 text-xs font-medium text-blue-800 dark:text-blue-300">
+                                    <span className="flex items-center gap-1.5 rounded-full bg-blue-100 dark:bg-blue-500/15 px-2.5 py-0.5 text-xs font-medium text-blue-800 dark:text-blue-400">
                                         <Loader2 className="h-3 w-3 animate-spin" />
                                         <span className="hidden sm:inline">Syncing {syncingEntities.map(([e]) => ENTITY_LABELS[e]).join(', ')}…</span>
                                         <span className="sm:hidden">Syncing…</span>
                                     </span>
                                 )}
                                 {!anyEntitySyncing && anyError && (
-                                    <span className="flex items-center gap-1.5 rounded-full bg-amber-100 dark:bg-amber-900/30 px-2.5 py-0.5 text-xs font-medium text-amber-800 dark:text-amber-300">
+                                    <span className="flex items-center gap-1.5 rounded-full bg-amber-100 dark:bg-amber-500/15 px-2.5 py-0.5 text-xs font-medium text-amber-800 dark:text-amber-400">
                                         <AlertTriangle className="h-3 w-3" />
                                         <span className="hidden sm:inline">Sync issue</span>
                                     </span>
@@ -140,7 +140,7 @@ export function SyncStatusBadge() {
                 {pendingCount > 0 && (
                     <span className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${isPaused
                         ? 'bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-300'
-                        : 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300'
+                        : 'bg-yellow-100 text-yellow-800 dark:bg-amber-500/15 dark:text-amber-400'
                         }`}>
                         {isPaused ? (
                             <Pause className="mr-1 h-3 w-3" />

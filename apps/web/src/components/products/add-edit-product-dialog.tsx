@@ -49,17 +49,18 @@ type AddEditProductDialogProps = {
   product: Product | null;
   onSave: (data: ProductFormValues) => void;
   suppliers: Supplier[];
+  defaultSupplierId?: string;
 };
 
-export function AddEditProductDialog({ open, onOpenChange, product, onSave, suppliers }: AddEditProductDialogProps) {
+export function AddEditProductDialog({ open, onOpenChange, product, onSave, suppliers, defaultSupplierId }: AddEditProductDialogProps) {
   const form = useForm<ProductFormValues>({
-    resolver: zodResolver(productSchema),
+    resolver: zodResolver(productSchema) as any,
     defaultValues: {
       name: '',
       category: 'Other',
-      supplierId: '',
+      supplierId: defaultSupplierId || '',
       quantity: 0,
-      price: undefined,
+      price: 0,
     },
   });
 
@@ -70,12 +71,12 @@ export function AddEditProductDialog({ open, onOpenChange, product, onSave, supp
       form.reset({
         name: '',
         category: 'Other',
-        supplierId: '',
+        supplierId: defaultSupplierId || '',
         quantity: 0,
-        price: undefined,
+        price: 0,
       });
     }
-  }, [product, form, open]);
+  }, [product, form, open, defaultSupplierId]);
 
   const handleSubmit = (data: ProductFormValues) => {
     onSave(data);
