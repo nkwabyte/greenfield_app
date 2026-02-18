@@ -156,9 +156,9 @@ export default function DashboardPage() {
         title="Dashboard"
         description="An overview of your agricultural network."
       >
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2">
           <Select value={selectedRegion} onValueChange={setSelectedRegion}>
-            <SelectTrigger className="w-[180px]">
+            <SelectTrigger className="w-full sm:w-[160px]">
               <SelectValue placeholder="All Regions" />
             </SelectTrigger>
             <SelectContent>
@@ -170,16 +170,20 @@ export default function DashboardPage() {
           </Select>
 
           <CalendarDateRangePicker date={dateRange} onDateChange={setDateRange} />
-          <Button variant="outline" onClick={handleExport}>
-            <Download className="mr-2 h-4 w-4" />
-            Export
-          </Button>
-          <Link href="/ai-insights">
-            <Button className="bg-[#2e7d32] hover:bg-[#1b5e20] text-white">
-              <Bot className="mr-2 text-white" />
-              AI Insights
+
+          <div className="flex items-center gap-2 w-full sm:w-auto">
+            <Button variant="outline" onClick={handleExport} className="flex-1 sm:flex-none">
+              <Download className="mr-2 h-4 w-4" />
+              <span className="hidden xs:inline">Export</span>
             </Button>
-          </Link>
+            <Link href="/ai-insights" className="flex-1 sm:flex-none">
+              <Button className="w-full bg-[#2e7d32] hover:bg-[#1b5e20] text-white">
+                <Bot className="mr-2 h-4 w-4 text-white" />
+                <span className="hidden xs:inline">AI Insights</span>
+                <span className="xs:hidden">Insights</span>
+              </Button>
+            </Link>
+          </div>
         </div>
       </PageHeader>
 

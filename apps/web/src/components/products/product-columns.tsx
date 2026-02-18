@@ -1,7 +1,7 @@
 'use client';
 
 import { ColumnDef } from '@tanstack/react-table';
-import { MoreHorizontal, ArrowUpDown } from 'lucide-react';
+import { MoreHorizontal, ArrowUpDown, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -15,6 +15,7 @@ import { Badge } from '@/components/ui/badge';
 import type { Product, Supplier } from '@/lib/types';
 import { Checkbox } from '@/components/ui/checkbox';
 import { cn } from '@/lib/utils';
+import { useRouter } from 'next/navigation';
 
 const currencyFormatter = new Intl.NumberFormat('en-GH', {
   style: 'currency',
@@ -62,13 +63,13 @@ export const getColumns = ({ onEdit, onDelete, suppliers }: { onEdit: (product: 
       </Button>
     ),
     cell: ({ row }) => {
-        const product = row.original;
-        return (
-            <div className="flex flex-col">
-                <span className="font-medium">{product.name}</span>
-                <span className="text-sm text-muted-foreground">{product.id}</span>
-            </div>
-        )
+      const product = row.original;
+      return (
+        <div className="flex flex-col">
+          <span className="font-medium">{product.name}</span>
+          <span className="text-sm text-muted-foreground">{product.id}</span>
+        </div>
+      )
     }
   },
   {
@@ -80,9 +81,9 @@ export const getColumns = ({ onEdit, onDelete, suppliers }: { onEdit: (product: 
     accessorKey: 'supplierId',
     header: 'Supplier',
     cell: ({ row }) => {
-        const supplierId = row.getValue('supplierId') as string;
-        const supplier = suppliers.find(s => s.id === supplierId);
-        return supplier ? supplier.name : 'Unknown';
+      const supplierId = row.getValue('supplierId') as string;
+      const supplier = suppliers.find(s => s.id === supplierId);
+      return supplier ? supplier.name : 'Unknown';
     }
   },
   {
@@ -94,8 +95,8 @@ export const getColumns = ({ onEdit, onDelete, suppliers }: { onEdit: (product: 
       return (
         <div className="text-right flex flex-col items-end">
           <span>{quantity}</span>
-          <Badge 
-            variant={status.variant} 
+          <Badge
+            variant={status.variant}
             className={cn('text-xs', {
               'bg-primary/20 text-primary-foreground': status.label === 'In Stock',
               'bg-yellow-500/20 text-yellow-700': status.label === 'Low Stock',
@@ -120,6 +121,8 @@ export const getColumns = ({ onEdit, onDelete, suppliers }: { onEdit: (product: 
     id: 'actions',
     cell: ({ row }) => {
       const product = row.original;
+      // eslint-disable-next-line react-hooks/rules-of-hooks
+      const router = useRouter();
       return (
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
@@ -130,6 +133,11 @@ export const getColumns = ({ onEdit, onDelete, suppliers }: { onEdit: (product: 
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
             <DropdownMenuLabel>Actions</DropdownMenuLabel>
+            <DropdownMenuItem onClick={() => router.push(`/products/${product.id}`)}>
+              <ExternalLink className="mr-2 h-4 w-4" />
+              View Details
+            </DropdownMenuItem>
+            <DropdownMenuSeparator />
             <DropdownMenuItem onClick={() => onEdit(product)}>Edit Product</DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem className="text-destructive focus:bg-destructive/10 focus:text-destructive" onClick={() => onDelete(product.id)}>Delete Product</DropdownMenuItem>

@@ -1,6 +1,7 @@
 'use client';
 
 import * as React from 'react';
+import { useRouter } from 'next/navigation';
 import { AppShell } from '@/components/app-shell';
 import { PageHeader } from '@/components/page-header';
 import { Button } from '@/components/ui/button';
@@ -12,6 +13,7 @@ import { AddEditSupplierDialog, type SupplierFormValues } from '@/components/sup
 import { useSuppliersPaginated } from '@/hooks/useData';
 
 export default function SuppliersPage() {
+  const router = useRouter();
   const { toast } = useToast();
 
   // Pagination State
@@ -97,6 +99,7 @@ export default function SuppliersPage() {
           pageCount={totalPages}
           pagination={pagination}
           onPaginationChange={setPagination}
+          onRowClick={(row) => router.push(`/suppliers/${row.id}`)}
         />
       </div>
 

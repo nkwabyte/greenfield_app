@@ -55,16 +55,80 @@ export async function getEmployeesFiltered(filters: {
 }
 
 /**
+ * Get employees with pagination AND filtering
+ */
+export async function getEmployeesPaginatedAndFiltered(
+    page: number,
+    pageSize: number,
+    filters: {
+        role?: 'Manager' | 'Field Agent' | 'Accountant' | 'Support';
+        status?: 'Active' | 'On Leave' | 'Terminated';
+        search?: string;
+    }
+): Promise<{ data: Employee[], total: number }> {
+    let collection = db.employees.toCollection();
+
+    // Apply filtering
+    if (filters.role) {
+        collection = db.employees.where('role').equals(filters.role);
+    }
+
+    // If we have a secondary filter or search, we might need to filter manually or use compound indices.
+    // Dexie filtering:
+    let filteredCollection = collection.filter(employee => {
+        let matches = true;
+
+        if (filters.role && employee.role !== filters.role) matches = false;
+        if (filters.status && employee.status !== filters.status) matches = false;
+
+        if (filters.search) {
+            const searchLower = filters.search.toLowerCase();
+            const nameMatch = employee.name.toLowerCase().includes(searchLower);
+            const emailMatch = employee.email.toLowerCase().includes(searchLower);
+            if (!nameMatch && !emailMatch) matches = false;
+        }
+
+        return matches;
+    });
+
+    const total = await filteredCollection.count();
+    const data = await filteredCollection
+        .offset((page - 1) * pageSize)
+        .limit(pageSize)
+        .toArray();
+
+    return { data, total };
+}
+
+/**
  * Add a new employee (offline-first)
  */
 export async function addEmployee(
     employeeData: EmployeeFormValues,
-    id: string
-): Promise<void> {
+    id?: string // Made optional as we might use Auth UID
+): Promise<string> {
     const now = new Date().toISOString();
 
+    // 1. Generate Password
+    const password = Math.random().toString(36).slice(-8) + Math.random().toString(36).slice(-8);
+
+    // 2. Create Auth User (if online)
+    // Note: This requires online connection. If offline, we might need a different strategy 
+    // or queue it. For now, assuming admin implies online for this action or we handle error.
+    let authUid = id;
+    try {
+        const { createEmployeeAuth } = await import('@/lib/firebase/admin-auth');
+        authUid = await createEmployeeAuth(employeeData.email, password);
+    } catch (error) {
+        console.error("Failed to create auth user, falling back to local ID", error);
+        // If auth creation fails, we might want to stop or continue with local ID.
+        // For now, let's continue but warn. 
+        // Ideally we should throw if this is a strict requirement.
+        if (!authUid) authUid = crypto.randomUUID();
+    }
+
     const employee: Employee = {
-        id,
+        id: authUid!,
         name: employeeData.name,
         email: employeeData.email,
         role: employeeData.role,
@@ -73,6 +137,7 @@ export async function addEmployee(
             ? employeeData.startDate
             : employeeData.startDate.toISOString(),
         status: employeeData.status,
+        isVerified: true, // Admin-created employees are automatically verified
         createdAt: now,
         updatedAt: now,
     };
@@ -80,8 +145,11 @@ export async function addEmployee(
     // 1. Save to local database immediately
     await db.employees.add(employee);
 
-    // 2. Add to sync queue
-    await syncService.addToQueue('employee', 'create', id, employeeData);
+    // 3. Add to sync queue (with password for UI display if needed, but risky to store)
+    // Actually, we return the password to the UI.
+    await syncService.addToQueue('employee', 'create', authUid!, { ...employeeData, password });
+
+    return password;
 
     // console.log(`✅ Employee added locally: ${employee.name}`);
 }

@@ -1,18 +1,31 @@
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, nativeImage } from 'electron';
 import * as path from 'path';
 import * as isDev from 'electron-is-dev';
+
+// Set the application name
+app.name = 'GreenField CRM';
 
 let mainWindow: BrowserWindow | null = null;
 
 function createWindow() {
+    const iconPath = path.join(__dirname, '../build/icon.png');
+    const appIcon = nativeImage.createFromPath(iconPath);
+
+    // Set the dock icon on macOS
+    if (process.platform === 'darwin' && app.dock) {
+        app.dock.setIcon(appIcon);
+    }
+
     mainWindow = new BrowserWindow({
         width: 1400,
         height: 900,
+        title: 'GreenField CRM',
         webPreferences: {
             preload: path.join(__dirname, 'preload.js'),
             nodeIntegration: false,
             contextIsolation: true,
         },
+        icon: iconPath,
     });
 
     // In development, load from Next.js dev server

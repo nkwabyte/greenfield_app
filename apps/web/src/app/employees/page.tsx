@@ -1,6 +1,7 @@
 'use client';
 
 import * as React from 'react';
+import { useRouter } from 'next/navigation';
 import { AppShell } from '@/components/app-shell';
 import { PageHeader } from '@/components/page-header';
 import { Button } from '@/components/ui/button';
@@ -9,9 +10,11 @@ import { DataTable } from '@/components/data-table';
 import { getColumns } from '@/components/employees/employee-columns';
 import { useToast } from '@/hooks/use-toast';
 import { AddEditEmployeeDialog, type EmployeeFormValues } from '@/components/employees/add-edit-employee-dialog';
-import { useEmployeesPaginated } from '@/hooks/useData';
+import { EmployeeFilters, type EmployeeFiltersState } from '@/components/employees/employee-filters';
+import { useEmployeesPaginatedAndFiltered } from '@/hooks/useData';
 
 export default function EmployeesPage() {
+  const router = useRouter();
   const { toast } = useToast();
 
   // Pagination State
@@ -20,8 +23,37 @@ export default function EmployeesPage() {
     pageSize: 10,
   });
 
-  // Dexie Hook (1-indexed page for Dexie, 0-indexed for Table)
-  const result = useEmployeesPaginated(pagination.pageIndex + 1, pagination.pageSize);
+  // Filter State
+  const [filters, setFilters] = React.useState<EmployeeFiltersState>({
+    role: 'all',
+    status: 'all',
+    search: '',
+  });
+
+  // Debounce search query
+  const [debouncedSearch, setDebouncedSearch] = React.useState("");
+  React.useEffect(() => {
+    const timer = setTimeout(() => {
+      setDebouncedSearch(filters.search);
+    }, 300);
+    return () => clearTimeout(timer);
+  }, [filters.search]);
+
+  // Reset pagination when filters change
+  React.useEffect(() => {
+    setPagination(prev => ({ ...prev, pageIndex: 0 }));
+  }, [filters.role, filters.status, debouncedSearch]);
+
+  // Dexie Hook
+  const result = useEmployeesPaginatedAndFiltered(
+    pagination.pageIndex + 1,
+    pagination.pageSize,
+    {
+      role: filters.role === 'all' ? undefined : filters.role as any,
+      status: filters.status === 'all' ? undefined : filters.status as any,
+      search: debouncedSearch
+    }
+  );
 
   const employees = result?.data ?? [];
   const totalCount = result?.total ?? 0;
@@ -51,10 +83,17 @@ export default function EmployeesPage() {
       } else {
         // Direct Service Call
         const { addEmployee } = await import('@/lib/db/services/employees');
-        await addEmployee(data, crypto.randomUUID());
+        const password = await addEmployee(data); // Removed crypto.randomUUID()
+
+        // Show password to admin
+        // We can use a custom dialog or just a persistent toast/alert for now. 
+        // A simple alert is safest to ensure they see it.
+        alert(`Employee Account Created!\n\nEmail: ${data.email}\nPassword: ${password}\n\nPlease share these credentials with the employee securely.`);
+
         toast({ title: "Employee Added", description: `${data.name} has been added to the system.` });
       }
     } catch (error) {
+      console.error(error);
       toast({ title: "Save Failed", description: "An error occurred while saving the employee.", variant: "destructive" });
     }
   };
@@ -74,6 +113,7 @@ export default function EmployeesPage() {
   const columns = React.useMemo(() => getColumns({
     onEdit: handleOpenEditDialog,
     onDelete: handleDeleteEmployee,
+    onViewDetails: (employee) => router.push(`/employees/${employee.id}`),
   }), []);
 
   return (
@@ -88,17 +128,17 @@ export default function EmployeesPage() {
         </Button>
       </PageHeader>
 
+      <EmployeeFilters filters={filters} onFilterChange={setFilters} />
+
       <div className="grid gap-6">
         <DataTable
           columns={columns}
           data={employees}
-          filterColumnId="name"
-          filterPlaceholder="Filter by name..."
           isLoading={isLoading}
-          // Pagination Props
           pageCount={totalPages}
           pagination={pagination}
           onPaginationChange={setPagination}
+          onRowClick={(row) => router.push(`/employees/${row.id}`)}
         />
       </div>
 

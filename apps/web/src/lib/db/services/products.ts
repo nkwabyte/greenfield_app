@@ -149,6 +149,52 @@ export async function syncProductsFromFirebase(): Promise<number> {
 }
 
 /**
+ * Get products with pagination AND filtering
+ */
+export async function getProductsPaginatedAndFiltered(
+    page: number,
+    pageSize: number,
+    filters: {
+        search?: string;
+        category?: string;
+        supplierId?: string;
+        stockStatus?: 'in_stock' | 'low_stock' | 'out_of_stock';
+    }
+): Promise<{ data: Product[]; total: number }> {
+    let all = await db.products.toArray();
+
+    if (filters.search) {
+        const q = filters.search.toLowerCase();
+        all = all.filter(p => p.name.toLowerCase().includes(q));
+    }
+    if (filters.category) {
+        all = all.filter(p => p.category === filters.category);
+    }
+    if (filters.supplierId) {
+        all = all.filter(p => p.supplierId === filters.supplierId);
+    }
+    if (filters.stockStatus === 'out_of_stock') {
+        all = all.filter(p => p.quantity === 0);
+    } else if (filters.stockStatus === 'low_stock') {
+        all = all.filter(p => p.quantity > 0 && p.quantity < 10);
+    } else if (filters.stockStatus === 'in_stock') {
+        all = all.filter(p => p.quantity >= 10);
+    }
+
+    const total = all.length;
+    const data = all.slice((page - 1) * pageSize, page * pageSize);
+    return { data, total };
+}
+
+/**
+ * Get all unique product categories
+ */
+export async function getUniqueProductCategories(): Promise<string[]> {
+    const products = await db.products.toArray();
+    return [...new Set(products.map(p => p.category).filter(Boolean))].sort();
+}
+
+/**
  * Get products count
  */
 export async function getProductsCount(): Promise<number> {

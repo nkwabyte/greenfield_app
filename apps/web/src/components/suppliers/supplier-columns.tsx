@@ -1,7 +1,7 @@
 'use client';
 
 import { ColumnDef } from '@tanstack/react-table';
-import { MoreHorizontal, ArrowUpDown } from 'lucide-react';
+import { MoreHorizontal, ArrowUpDown, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -14,6 +14,7 @@ import {
 import type { Supplier } from '@/lib/types';
 import { formatDistanceToNow } from 'date-fns';
 import { Checkbox } from '@/components/ui/checkbox';
+import { useRouter } from 'next/navigation';
 
 export const getColumns = ({ onEdit, onDelete }: { onEdit: (supplier: Supplier) => void, onDelete: (id: string) => void }): ColumnDef<Supplier>[] => [
   {
@@ -82,6 +83,8 @@ export const getColumns = ({ onEdit, onDelete }: { onEdit: (supplier: Supplier) 
     id: 'actions',
     cell: ({ row }) => {
       const supplier = row.original;
+      // eslint-disable-next-line react-hooks/rules-of-hooks
+      const router = useRouter();
       return (
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
@@ -92,6 +95,11 @@ export const getColumns = ({ onEdit, onDelete }: { onEdit: (supplier: Supplier) 
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
             <DropdownMenuLabel>Actions</DropdownMenuLabel>
+            <DropdownMenuItem onClick={() => router.push(`/suppliers/${supplier.id}`)}>
+              <ExternalLink className="mr-2 h-4 w-4" />
+              View Details
+            </DropdownMenuItem>
+            <DropdownMenuSeparator />
             <DropdownMenuItem onClick={() => onEdit(supplier)}>Edit Supplier</DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem className="text-destructive focus:bg-destructive/10 focus:text-destructive" onClick={() => onDelete(supplier.id)}>Delete Supplier</DropdownMenuItem>

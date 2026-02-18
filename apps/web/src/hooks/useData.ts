@@ -9,25 +9,34 @@
 'use client';
 
 import { useLiveQuery } from 'dexie-react-hooks';
+import { db } from '@/lib/db/schema';
 
 // ... (imports)
 import {
     getAllFarmers,
-    getPaginatedFarmers, // NEW
+    getFarmer,
+    getPaginatedFarmers,
     getFarmersFiltered,
     getFarmersCount,
     getFarmersByRegion,
     getFarmersByGender,
     getFarmersByDateRange,
     getFarmersPaginatedAndFiltered, // NEW
+    getUniqueRegions,
+    getUniqueDistricts,
+    getUniqueSocieties,
+    getUniqueCommunities,
+    getSyncStats,
 } from '@/lib/db/services/farmers';
 import {
     getAllEmployees,
-    getPaginatedEmployees, // NEW
+    getEmployee,
+    getPaginatedEmployees,
     getEmployeesFiltered,
     getEmployeesCount,
     getEmployeesByRole,
     getEmployeesByStatus,
+    getEmployeesPaginatedAndFiltered, // NEW
 } from '@/lib/db/services/employees';
 import {
     getAllProducts,
@@ -36,6 +45,9 @@ import {
     getProductsCount,
     getProductsByCategory,
     getLowStockProducts,
+    getProductsPaginatedAndFiltered,
+    getUniqueProductCategories,
+    getProduct,
 } from '@/lib/db/services/products';
 import {
     getAllSuppliers,
@@ -136,14 +148,61 @@ export function useFarmersPaginatedAndFiltered(
         region?: string;
         district?: string;
         society?: string;
+        community?: string;
         status?: 'Active' | 'Inactive';
+        minFarmSize?: number;
+        maxFarmSize?: number;
         search?: string;
     }
 ) {
     return useLiveQuery(
         () => getFarmersPaginatedAndFiltered(page, pageSize, filters),
-        [page, pageSize, filters.region, filters.district, filters.society, filters.status, filters.search]
+        [
+            page,
+            pageSize,
+            filters.region,
+            filters.district,
+            filters.society,
+            filters.community,
+            filters.status,
+            filters.minFarmSize,
+            filters.maxFarmSize,
+            filters.search
+        ]
     );
+}
+
+export function useUniqueRegions() {
+    return useLiveQuery(() => getUniqueRegions(), []);
+}
+
+export function useUniqueDistricts(region?: string) {
+    return useLiveQuery(() => getUniqueDistricts(region), [region]);
+}
+
+export function useUniqueSocieties(district?: string) {
+    return useLiveQuery(() => getUniqueSocieties(district), [district]);
+}
+
+export function useUniqueCommunities(society?: string) {
+    return useLiveQuery(() => getUniqueCommunities(society), [society]);
+}
+
+export function useFarmerSyncStats() {
+    return useLiveQuery(() => getSyncStats(), []);
+}
+
+export function useFarmer(id: string) {
+    return useLiveQuery(() => getFarmer(id), [id]);
+}
+
+export function useRelatedFarmers(farmer: Farmer | undefined | null) {
+    return useLiveQuery(async () => {
+        if (!farmer || !farmer.community) return [];
+        // Match by community
+        const allInCommunity = await db.farmers.where('community').equals(farmer.community).toArray();
+        return allInCommunity.filter((f: Farmer) => f.id !== farmer.id);
+    }, [farmer?.id, farmer?.community]);
 }
 
 // ============================================================================
@@ -171,6 +230,27 @@ export function useEmployeesFiltered(filters: {
     );
 }
 
+export function useEmployeesPaginatedAndFiltered(
+    page: number,
+    pageSize: number,
+    filters: {
+        role?: 'Manager' | 'Field Agent' | 'Accountant' | 'Support';
+        status?: 'Active' | 'On Leave' | 'Terminated';
+        search?: string;
+    }
+) {
+    return useLiveQuery(
+        () => getEmployeesPaginatedAndFiltered(page, pageSize, filters),
+        [
+            page,
+            pageSize,
+            filters.role,
+            filters.status,
+            filters.search
+        ]
+    );
+}
+
 export function useEmployeesCount() {
     return useLiveQuery(() => getEmployeesCount(), []);
 }
@@ -181,6 +261,10 @@ export function useEmployeesByRole() {
 
 export function useEmployeesByStatus() {
     return useLiveQuery(() => getEmployeesByStatus(), []);
+}
+
+export function useEmployee(id: string) {
+    return useLiveQuery(() => getEmployee(id), [id]);
 }
 
 // ============================================================================
@@ -220,6 +304,30 @@ export function useLowStockProducts() {
     return useLiveQuery(() => getLowStockProducts(), []);
 }
 
+export function useProductsPaginatedAndFiltered(
+    page: number,
+    pageSize: number,
+    filters: {
+        search?: string;
+        category?: string;
+        supplierId?: string;
+        stockStatus?: 'in_stock' | 'low_stock' | 'out_of_stock';
+    }
+) {
+    return useLiveQuery(
+        () => getProductsPaginatedAndFiltered(page, pageSize, filters),
+        [page, pageSize, filters.search, filters.category, filters.supplierId, filters.stockStatus]
+    );
+}
+
+export function useUniqueProductCategories() {
+    return useLiveQuery(() => getUniqueProductCategories(), []);
+}
+
+export function useProduct(id: string) {
+    return useLiveQuery(() => getProduct(id), [id]);
+}
+
 // ============================================================================
 // SUPPLIERS HOOKS
 // ============================================================================
@@ -237,6 +345,20 @@ export function useSuppliersPaginated(page: number = 1, pageSize: number = 50) {
 
 export function useSuppliersCount() {
     return useLiveQuery(() => getSuppliersCount(), []);
+}
+
+export function useSupplier(id: string) {
+    return useLiveQuery(async () => {
+        const suppliers = await getAllSuppliers();
+        return suppliers.find(s => s.id === id) ?? null;
+    }, [id]);
+}
+
+export function useProductsBySupplier(supplierId: string) {
+    return useLiveQuery(
+        () => getProductsFiltered({ supplierId }),
+        [supplierId]
+    );
 }
 
 // ============================================================================

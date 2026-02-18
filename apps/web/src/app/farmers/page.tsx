@@ -22,6 +22,8 @@ import { type BulkEditField } from '@/components/farmers/bulk-edit-dialog';
 
 // NEW: Import Dexie hooks and services instead of Redux
 import { useFarmersPaginatedAndFiltered } from '@/hooks/useData';
+import { FarmerFilters, type FarmerFiltersState } from '@/components/farmers/farmer-filters';
+
 import {
   addFarmer as addFarmerService,
   updateFarmer as updateFarmerService,
@@ -31,9 +33,11 @@ import {
 } from '@/lib/db/services/farmers';
 import { v4 as uuidv4 } from 'uuid';
 import { normalizeRegion } from '@/lib/utils/region-normalizer';
+import { useRouter } from 'next/navigation';
 
 
 export default function FarmersPage() {
+  const router = useRouter();
   const { toast } = useToast();
   const { user } = useSelector((state: RootState) => state.auth);
 
@@ -51,11 +55,31 @@ export default function FarmersPage() {
     return () => clearTimeout(timer);
   }, [searchQuery]);
 
+  // Filter State
+  const [filters, setFilters] = React.useState<FarmerFiltersState>({
+    region: 'all',
+    district: 'all',
+    society: 'all',
+    community: 'all',
+    status: 'all',
+    minFarmSize: '',
+    maxFarmSize: '',
+  });
+
   // Fetch paginated data
   const { data, total } = useFarmersPaginatedAndFiltered(
     pagination.pageIndex + 1, // DB service is 1-indexed
     pagination.pageSize,
-    { search: debouncedSearch }
+    {
+      search: debouncedSearch,
+      region: filters.region === 'all' ? undefined : filters.region,
+      district: filters.district === 'all' ? undefined : filters.district,
+      society: filters.society === 'all' ? undefined : filters.society,
+      community: filters.community === 'all' ? undefined : filters.community,
+      status: filters.status === 'all' ? undefined : filters.status as 'Active' | 'Inactive',
+      minFarmSize: filters.minFarmSize ? Number(filters.minFarmSize) : undefined,
+      maxFarmSize: filters.maxFarmSize ? Number(filters.maxFarmSize) : undefined,
+    }
   ) || { data: [], total: 0 };
 
   const fileInputRef = React.useRef<HTMLInputElement>(null);
@@ -367,55 +391,30 @@ export default function FarmersPage() {
         <Button onClick={handleOpenAddDialog}>
           <PlusCircle className="mr-2" /> Add Farmer
         </Button>
+
       </PageHeader>
+
+
+
+      <FarmerFilters filters={filters} onFilterChange={setFilters} />
 
       <div className="grid gap-6">
         <DataTable
           columns={columns}
           data={data}
           filterColumnId="name"
-          filterPlaceholder="Search farmers..." // Update placeholder
-          isLoading={!data && total > 0} // Better loading state
-          // Server-side Pagination Props
+          filterPlaceholder="Search farmers..."
+          isLoading={!data && total > 0}
           pageCount={Math.ceil(total / pagination.pageSize)}
           pagination={pagination}
           onPaginationChange={setPagination}
-          // Selection
           rowSelection={rowSelection}
           onRowSelectionChange={setRowSelection as any}
           getRowId={(row) => row.id}
+          onRowClick={(farmer) => router.push(`/farmers/${farmer.id}`)}
         />
-        {/* Pass pagination change handler to update search if needed, but DataTable handles search input separately? 
-            DataTable internally filters 'data', but we want DB search.
-            My DataTable component uses internal state for filters. 
-            I need to update DataTable to call an onSearchChange prop if I want DB search.
-            For now, I'll assume users use the "Search" input in DataTable which sets 'columnFilters'.
-            Wait, DataTable accepts `filterColumnId`. The input there updates `table.getColumn(filterColumnId).setFilterValue`.
-            This is CLIENT SIDE only if `getFilteredRowModel` is used.
-            To support server-side search, I need to expose `onSearch` from DataTable.
-            
-            Let's hack it for now: The DB search is debounced `searchQuery`. 
-            I need to wire the DataTable input to `setSearchQuery`.
-            
-            Actually, let's keep it simple:
-            The DataTable "Search" input updates local state `columnFilters`.
-            If I want server-side search, I should probably render my own Search Input outside DataTable 
-            OR modify DataTable to accept `searchValue` and `onSearchChange`.
-            
-            I will render a specialized Search Input above the table if DataTable doesn't support it easily?
-            Actually, looking at DataTable code (Step 1050), it renders its own Input.
-            
-            I'll just add `searchQuery` state here and pass it to a custom input above DataTable if I can't modify DataTable easily.
-            BUT, user wants "Pagination". I've done that.
-            The "search" part of `useFarmersPaginatedAndFiltered` requires value.
-            
-            I'll rely on the existing DataTable input being replaced or ignored?
-            No, let's render a "Server Search" input.
-        */}
       </div>
-
       <div className="flex items-center gap-2 mb-4 px-1">
-        {/* Optional: Server-side search input if needed, or rely on DataTable */}
       </div>
 
       <UploadReportDialog open={isReportOpen} onOpenChange={setIsReportOpen} failedRecords={failedRecords} />
@@ -431,7 +430,7 @@ export default function FarmersPage() {
         onConfirm={handlePurgeData}
       />
       <AddEditFarmerDialog open={isAddEditDialogOpen} onOpenChange={setIsAddEditDialogOpen} farmer={editingFarmer} onSave={handleSaveFarmer} />
-    </AppShell>
+    </AppShell >
   );
 }
 

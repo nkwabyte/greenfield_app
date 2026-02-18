@@ -8,6 +8,7 @@ import type { SyncQueueItem, SyncResult, EntityType, SyncOperation } from './typ
 import { connectivityService } from './connectivity';
 import { store } from '@/lib/store/store';
 import { setSyncStatus } from '@/lib/store/slices/dataSlice';
+import { isAuthenticated } from '@/lib/auth-utils';
 
 // Import Firebase services for syncing
 import {
@@ -84,6 +85,11 @@ class SyncService {
 
         if (!connectivityService.isOnline()) {
             // console.log('📡 Offline - sync deferred');
+            return { success: false, itemsProcessed: 0, itemsFailed: 0, errors: [] };
+        }
+
+        if (!isAuthenticated()) {
+            // Skip sync when user is not authenticated to avoid Firebase permission errors
             return { success: false, itemsProcessed: 0, itemsFailed: 0, errors: [] };
         }
 
@@ -251,7 +257,7 @@ class SyncService {
 
         // Periodic sync
         this.syncInterval = setInterval(() => {
-            if (connectivityService.isOnline()) {
+            if (connectivityService.isOnline() && isAuthenticated()) {
                 this.syncAll().catch(console.error);
             }
         }, SYNC_INTERVAL);

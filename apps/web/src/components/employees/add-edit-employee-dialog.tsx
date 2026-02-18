@@ -5,6 +5,8 @@ import * as React from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
+import { useToast } from '@/hooks/use-toast';
+import { useState } from 'react';
 import {
   Dialog,
   DialogContent,
@@ -42,8 +44,12 @@ const employeeSchema = z.object({
   name: z.string().min(1, { message: 'Employee name is required.' }),
   email: z.string().email({ message: 'Invalid email address.' }),
   role: z.enum(['Manager', 'Field Agent', 'Accountant', 'Support']),
-  startDate: z.date({ required_error: 'Start date is required.' }),
-  salary: z.coerce.number().positive({ message: 'Salary must be a positive number.' }),
+  startDate: z.date(),
+
+  salary: z.preprocess(
+    (a) => (a === '' ? undefined : Number(a)),
+    z.number().positive({ message: 'Salary must be a positive number.' }).optional()
+  ).optional(),
   status: z.enum(['Active', 'On Leave', 'Terminated']),
 });
 
@@ -57,8 +63,11 @@ type AddEditEmployeeDialogProps = {
 };
 
 export function AddEditEmployeeDialog({ open, onOpenChange, employee, onSave }: AddEditEmployeeDialogProps) {
+  const { toast } = useToast();
+  const [loading, setLoading] = useState(false);
+
   const form = useForm<EmployeeFormValues>({
-    resolver: zodResolver(employeeSchema),
+    resolver: zodResolver(employeeSchema) as any,
     defaultValues: {
       name: '',
       email: '',
@@ -153,21 +162,26 @@ export function AddEditEmployeeDialog({ open, onOpenChange, employee, onSave }: 
                   </FormItem>
                 )}
               />
-               <FormField
+              <FormField
                 control={form.control}
                 name="salary"
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Salary</FormLabel>
                     <FormControl>
-                      <Input type="number" placeholder="e.g. 60000" {...field} />
+                      <Input
+                        type="number"
+                        placeholder="e.g. 60000"
+                        {...field}
+                        value={field.value ?? ''}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
                 )}
               />
             </div>
-             <FormField
+            <FormField
               control={form.control}
               name="startDate"
               render={({ field }) => (
@@ -205,28 +219,28 @@ export function AddEditEmployeeDialog({ open, onOpenChange, employee, onSave }: 
                 </FormItem>
               )}
             />
-             <FormField
-                control={form.control}
-                name="status"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Status</FormLabel>
-                    <Select onValueChange={field.onChange} defaultValue={field.value}>
-                      <FormControl>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select a status" />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent>
-                        <SelectItem value="Active">Active</SelectItem>
-                        <SelectItem value="On Leave">On Leave</SelectItem>
-                        <SelectItem value="Terminated">Terminated</SelectItem>
-                      </SelectContent>
-                    </Select>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+            <FormField
+              control={form.control}
+              name="status"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Status</FormLabel>
+                  <Select onValueChange={field.onChange} defaultValue={field.value}>
+                    <FormControl>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select a status" />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                      <SelectItem value="Active">Active</SelectItem>
+                      <SelectItem value="On Leave">On Leave</SelectItem>
+                      <SelectItem value="Terminated">Terminated</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
             <DialogFooter className="pt-4">
               <DialogClose asChild>
                 <Button type="button" variant="outline">Cancel</Button>
