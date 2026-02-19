@@ -56,10 +56,29 @@ export default function EmployeesPage() {
     }
   );
 
-  const employees = result?.data ?? [];
-  const totalCount = result?.total ?? 0;
+  // Maintain last results for smoother transitions/loading
+  const [data, setData] = React.useState<{ data: any[], total: number } | null>(null);
+
+  React.useEffect(() => {
+    if (result) {
+      setData(result);
+    }
+  }, [result]);
+
+  const employees = result?.data ?? data?.data ?? [];
+  const totalCount = result?.total ?? data?.total ?? 0;
   const totalPages = Math.ceil(totalCount / pagination.pageSize);
-  const isLoading = !result;
+  const isLoading = !result && !data;
+
+  // Handle case where current page becomes empty after deletion
+  React.useEffect(() => {
+    if (result && result.data.length === 0 && pagination.pageIndex > 0 && result.total > 0) {
+      const maxPage = Math.ceil(result.total / pagination.pageSize);
+      if (pagination.pageIndex + 1 > maxPage) {
+        setPagination(prev => ({ ...prev, pageIndex: Math.max(0, maxPage - 1) }));
+      }
+    }
+  }, [result, pagination.pageIndex, pagination.pageSize]);
 
   const [isAddEditDialogOpen, setIsAddEditDialogOpen] = React.useState(false);
   const [isSuccessDialogOpen, setIsSuccessDialogOpen] = React.useState(false);
@@ -109,8 +128,14 @@ export default function EmployeesPage() {
       try {
         const { deleteEmployee } = await import('@/lib/db/services/employees');
         await deleteEmployee(employeeId);
+
+        // No need to manually refresh, useLiveQuery handles it
+        // But we might want to adjust pagination if the page is now empty
+        // which is handled by the useEffect above
+
         toast({ title: "Employee Deleted", description: "The employee record has been removed." });
       } catch (error) {
+        console.error(error);
         toast({ title: "Delete Failed", description: "An error occurred while deleting the employee.", variant: "destructive" });
       }
     }

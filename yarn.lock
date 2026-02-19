@@ -545,7 +545,7 @@
   integrity sha512-MqO+MLfM6kjxcKoy0p1wRzG3b4ZZXtPI+z2IE26UogS2Cm/XHO+7gGRBh6gcJsOiIVoH93UwKvW4HdgiOZCy9Q==
 
 "@greenfield/desktop@file:/Users/musahibrahimali/Dev/typescript/greenfield_app/apps/desktop":
-  version "0.2.1"
+  version "0.2.2"
   resolved "file:apps/desktop"
   dependencies:
     electron-is-dev "^3.0.1"
