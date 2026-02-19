@@ -15,6 +15,7 @@ import { Badge } from '@/components/ui/badge';
 import type { Employee } from '@/lib/types';
 import { formatDistanceToNow } from 'date-fns';
 import { Checkbox } from '@/components/ui/checkbox';
+import { cn } from '@/lib/utils';
 
 const currencyFormatter = new Intl.NumberFormat('en-GH', {
   style: 'currency',
@@ -100,14 +101,15 @@ export const getColumns = ({ onEdit, onDelete, onViewDetails }: { onEdit: (emplo
     header: 'Status',
     cell: ({ row }) => {
       const status = row.getValue('status') as Employee['status'];
-      const variant: 'default' | 'secondary' | 'destructive' =
-        status === 'Active' ? 'default' :
-          status === 'On Leave' ? 'secondary' : 'destructive';
 
-      const className = status === 'Active' ? 'bg-primary/20 text-primary-foreground' : '';
+      const variantClasses = {
+        'Active': 'bg-emerald-100 text-emerald-700 dark:bg-emerald-500/20 dark:text-emerald-400 border-emerald-200 dark:border-emerald-500/30',
+        'On Leave': 'bg-amber-100 text-amber-700 dark:bg-amber-500/20 dark:text-amber-400 border-amber-200 dark:border-amber-500/30',
+        'Terminated': 'bg-red-100 text-red-700 dark:bg-red-500/20 dark:text-red-400 border-red-200 dark:border-red-500/30',
+      };
 
       return (
-        <Badge variant={variant} className={className}>
+        <Badge variant="outline" className={cn("font-medium", variantClasses[status])}>
           {status}
         </Badge>
       );

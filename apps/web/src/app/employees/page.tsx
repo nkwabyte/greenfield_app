@@ -10,6 +10,7 @@ import { DataTable } from '@/components/data-table';
 import { getColumns } from '@/components/employees/employee-columns';
 import { useToast } from '@/hooks/use-toast';
 import { AddEditEmployeeDialog, type EmployeeFormValues } from '@/components/employees/add-edit-employee-dialog';
+import { EmployeeSuccessDialog } from '@/components/employees/employee-success-dialog';
 import { EmployeeFilters, type EmployeeFiltersState } from '@/components/employees/employee-filters';
 import { useEmployeesPaginatedAndFiltered } from '@/hooks/useData';
 
@@ -61,6 +62,8 @@ export default function EmployeesPage() {
   const isLoading = !result;
 
   const [isAddEditDialogOpen, setIsAddEditDialogOpen] = React.useState(false);
+  const [isSuccessDialogOpen, setIsSuccessDialogOpen] = React.useState(false);
+  const [newEmployeeData, setNewEmployeeData] = React.useState<{ name: string, email: string, password: string } | null>(null);
   const [editingEmployee, setEditingEmployee] = React.useState<typeof employees[0] | null>(null);
 
   const handleOpenAddDialog = () => {
@@ -83,12 +86,15 @@ export default function EmployeesPage() {
       } else {
         // Direct Service Call
         const { addEmployee } = await import('@/lib/db/services/employees');
-        const password = await addEmployee(data); // Removed crypto.randomUUID()
+        const password = await addEmployee(data);
 
-        // Show password to admin
-        // We can use a custom dialog or just a persistent toast/alert for now. 
-        // A simple alert is safest to ensure they see it.
-        alert(`Employee Account Created!\n\nEmail: ${data.email}\nPassword: ${password}\n\nPlease share these credentials with the employee securely.`);
+        // Show custom success dialog
+        setNewEmployeeData({
+          name: data.name,
+          email: data.email,
+          password: password
+        });
+        setIsSuccessDialogOpen(true);
 
         toast({ title: "Employee Added", description: `${data.name} has been added to the system.` });
       }
@@ -147,6 +153,12 @@ export default function EmployeesPage() {
         onOpenChange={setIsAddEditDialogOpen}
         employee={editingEmployee}
         onSave={handleSaveEmployee}
+      />
+
+      <EmployeeSuccessDialog
+        open={isSuccessDialogOpen}
+        onOpenChange={setIsSuccessDialogOpen}
+        employeeData={newEmployeeData}
       />
     </AppShell>
   );

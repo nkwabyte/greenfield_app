@@ -109,8 +109,8 @@ export async function addEmployee(
 ): Promise<string> {
     const now = new Date().toISOString();
 
-    // 1. Generate Password
-    const password = Math.random().toString(36).slice(-8) + Math.random().toString(36).slice(-8);
+    // 1. Generate Password (8 characters)
+    const password = Math.random().toString(36).slice(-8);
 
     // 2. Create Auth User (if online)
     // Note: This requires online connection. If offline, we might need a different strategy 

@@ -97,47 +97,47 @@ export default function ProductDetailsPage({ params }: { params: Promise<{ id: s
 
                 {/* Stats Cards */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <Card className="bg-linear-to-br from-blue-50 to-blue-100/50 dark:from-blue-950/30 dark:to-blue-900/10 border-blue-200/50 dark:border-blue-800/30">
+                    <Card className="bg-linear-to-br from-blue-50 to-blue-100/50 dark:from-blue-500/15 dark:to-blue-600/5 border-blue-200/50 dark:border-blue-500/20 shadow-none">
                         <CardContent className="pt-5 pb-4">
                             <div className="flex items-center justify-between">
                                 <div>
-                                    <p className="text-sm text-muted-foreground">Unit Price</p>
-                                    <p className="text-2xl font-bold">{currencyFormatter.format(product.price)}</p>
+                                    <p className="text-xs font-semibold uppercase tracking-wider text-blue-600/80 dark:text-blue-400/90 mb-1">Unit Price</p>
+                                    <p className="text-2xl font-bold text-slate-900 dark:text-white">{currencyFormatter.format(product.price)}</p>
                                 </div>
-                                <DollarSign className="h-8 w-8 text-blue-500/60" />
+                                <DollarSign className="h-8 w-8 text-blue-500/40 dark:text-blue-400/40" />
                             </div>
                         </CardContent>
                     </Card>
-                    <Card className="bg-linear-to-br from-green-50 to-green-100/50 dark:from-green-950/30 dark:to-green-900/10 border-green-200/50 dark:border-green-800/30">
+                    <Card className="bg-linear-to-br from-emerald-50 to-emerald-100/50 dark:from-emerald-500/15 dark:to-emerald-600/5 border-emerald-200/50 dark:border-emerald-500/20 shadow-none">
                         <CardContent className="pt-5 pb-4">
                             <div className="flex items-center justify-between">
                                 <div>
-                                    <p className="text-sm text-muted-foreground">Quantity</p>
-                                    <p className="text-2xl font-bold">{product.quantity.toLocaleString()}</p>
+                                    <p className="text-xs font-semibold uppercase tracking-wider text-emerald-600/80 dark:text-emerald-400/90 mb-1">Quantity</p>
+                                    <p className="text-2xl font-bold text-slate-900 dark:text-white">{product.quantity.toLocaleString()}</p>
                                 </div>
-                                <Hash className="h-8 w-8 text-green-500/60" />
+                                <Hash className="h-8 w-8 text-emerald-500/40 dark:text-emerald-400/40" />
                             </div>
                         </CardContent>
                     </Card>
-                    <Card className="bg-linear-to-br from-purple-50 to-purple-100/50 dark:from-purple-950/30 dark:to-purple-900/10 border-purple-200/50 dark:border-purple-800/30">
+                    <Card className="bg-linear-to-br from-violet-50 to-violet-100/50 dark:from-violet-500/15 dark:to-violet-600/5 border-violet-200/50 dark:border-violet-500/20 shadow-none">
                         <CardContent className="pt-5 pb-4">
                             <div className="flex items-center justify-between">
                                 <div>
-                                    <p className="text-sm text-muted-foreground">Inventory Value</p>
-                                    <p className="text-2xl font-bold">{currencyFormatter.format(inventoryValue)}</p>
+                                    <p className="text-xs font-semibold uppercase tracking-wider text-violet-600/80 dark:text-violet-400/90 mb-1">Inventory Value</p>
+                                    <p className="text-2xl font-bold text-slate-900 dark:text-white">{currencyFormatter.format(inventoryValue)}</p>
                                 </div>
-                                <DollarSign className="h-8 w-8 text-purple-500/60" />
+                                <DollarSign className="h-8 w-8 text-violet-500/40 dark:text-violet-400/40" />
                             </div>
                         </CardContent>
                     </Card>
-                    <Card className="bg-linear-to-br from-amber-50 to-amber-100/50 dark:from-amber-950/30 dark:to-amber-900/10 border-amber-200/50 dark:border-amber-800/30">
+                    <Card className="bg-linear-to-br from-amber-50 to-amber-100/50 dark:from-amber-500/15 dark:to-amber-600/5 border-amber-200/50 dark:border-amber-500/20 shadow-none">
                         <CardContent className="pt-5 pb-4">
                             <div className="flex items-center justify-between">
                                 <div>
-                                    <p className="text-sm text-muted-foreground">Category</p>
-                                    <p className="text-lg font-bold truncate">{product.category}</p>
+                                    <p className="text-xs font-semibold uppercase tracking-wider text-amber-600/80 dark:text-amber-400/90 mb-1">Category</p>
+                                    <p className="text-lg font-bold truncate text-slate-900 dark:text-white">{product.category}</p>
                                 </div>
-                                <Tag className="h-8 w-8 text-amber-500/60" />
+                                <Tag className="h-8 w-8 text-amber-500/40 dark:text-amber-400/40" />
                             </div>
                         </CardContent>
                     </Card>

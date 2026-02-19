@@ -10,6 +10,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Badge } from '@/components/ui/badge';
 import type { Farmer } from '@/lib/types';
 import { format } from 'date-fns';
+import { cn } from '@/lib/utils';
 
 type RecentFarmersTableProps = {
   farmers: Farmer[];
@@ -48,9 +49,24 @@ export function RecentFarmersTable({ farmers }: RecentFarmersTableProps) {
                   {farmer.createdAt ? format(new Date(farmer.createdAt), 'PPP') : 'N/A'}
                 </TableCell>
                 <TableCell className="text-right">
-                  <Badge variant={farmer.status === 'Active' ? 'default' : 'secondary'} className={farmer.status === 'Active' ? 'bg-primary/20 text-primary-foreground' : ''}>
-                    {farmer.status || 'Unknown'}
-                  </Badge>
+                  {(() => {
+                    const status = farmer.status as 'Active' | 'Inactive' | undefined;
+                    const displayStatus = status || 'Unknown';
+                    const variantClasses = {
+                      'Active': 'bg-emerald-100 text-emerald-700 dark:bg-emerald-500/20 dark:text-emerald-400 border-emerald-200 dark:border-emerald-500/30',
+                      'Inactive': 'bg-red-100 text-red-700 dark:bg-red-500/20 dark:text-red-400 border-red-200 dark:border-red-500/30',
+                      'Unknown': 'bg-slate-100 text-slate-700 dark:bg-slate-500/20 dark:text-slate-400 border-slate-200 dark:border-slate-500/30',
+                    };
+
+                    return (
+                      <Badge
+                        variant="outline"
+                        className={cn("font-medium", variantClasses[displayStatus])}
+                      >
+                        {displayStatus}
+                      </Badge>
+                    );
+                  })()}
                 </TableCell>
               </TableRow>
             ))}

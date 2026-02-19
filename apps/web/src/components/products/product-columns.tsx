@@ -88,20 +88,23 @@ export const getColumns = ({ onEdit, onDelete, suppliers }: { onEdit: (product: 
   },
   {
     accessorKey: 'quantity',
-    header: () => <div className="text-right">Quantity</div>,
+    header: () => <div className="text-center">Quantity</div>,
     cell: ({ row }) => {
       const quantity = row.getValue('quantity') as number;
       const status = getStockStatus(quantity);
+
+      const variantClasses = {
+        'In Stock': 'bg-emerald-100 text-emerald-700 dark:bg-emerald-500/20 dark:text-emerald-400 border-emerald-200 dark:border-emerald-500/30',
+        'Low Stock': 'bg-amber-100 text-amber-700 dark:bg-amber-500/20 dark:text-amber-400 border-amber-200 dark:border-amber-500/30',
+        'Out of Stock': 'bg-red-100 text-red-700 dark:bg-red-500/20 dark:text-red-400 border-red-200 dark:border-red-500/30',
+      };
+
       return (
-        <div className="text-right flex flex-col items-end">
-          <span>{quantity}</span>
+        <div className="text-center flex flex-col items-center gap-1">
+          <span className="font-medium">{quantity}</span>
           <Badge
-            variant={status.variant}
-            className={cn('text-xs', {
-              'bg-primary/20 text-primary-foreground': status.label === 'In Stock',
-              'bg-yellow-500/20 text-yellow-700': status.label === 'Low Stock',
-              'bg-destructive/20': status.label === 'Out of Stock'
-            })}
+            variant="outline"
+            className={cn('text-xs font-medium', variantClasses[status.label as keyof typeof variantClasses])}
           >
             {status.label}
           </Badge>
