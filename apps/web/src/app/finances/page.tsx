@@ -31,6 +31,7 @@ import {
 import { useToast } from '@/hooks/use-toast';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useEmployees, useTransactionsPaginated } from '@/hooks/useData';
+import { ConfirmDialog } from '@/components/ui/confirm-dialog';
 
 const currencyFormatter = new Intl.NumberFormat('en-GH', {
   style: 'currency',
@@ -58,6 +59,8 @@ export default function FinancesPage() {
 
   const [isAddEditDialogOpen, setIsAddEditDialogOpen] = React.useState(false);
   const [editingTransaction, setEditingTransaction] = React.useState<Transaction | null>(null);
+  const [transactionToDelete, setTransactionToDelete] = React.useState<string | null>(null);
+  const [isDeleteDialogOpen, setIsDeleteDialogOpen] = React.useState(false);
 
   const kpis: Kpi[] = React.useMemo(() => {
     // Note: This calculation is now only for the CURRENT PAGE of transactions.
@@ -107,19 +110,26 @@ export default function FinancesPage() {
     }
   };
 
-  const handleDeleteTransaction = async (id: string) => {
-    if (window.confirm('Are you sure you want to delete this transaction?')) {
-      try {
-        const { deleteTransaction } = await import('@/lib/db/services/transactions');
-        await deleteTransaction(id);
-        toast({ title: 'Transaction Deleted', description: 'Transaction has been removed.' });
-      } catch (error) {
-        toast({
-          title: 'Delete Failed',
-          description: 'An error occurred while deleting the transaction.',
-          variant: 'destructive',
-        });
-      }
+  const handleDeleteTransaction = (id: string) => {
+    setTransactionToDelete(id);
+    setIsDeleteDialogOpen(true);
+  };
+
+  const confirmDeleteTransaction = async () => {
+    if (!transactionToDelete) return;
+
+    try {
+      const { deleteTransaction } = await import('@/lib/db/services/transactions');
+      await deleteTransaction(transactionToDelete);
+      toast({ title: 'Transaction Deleted', description: 'Transaction has been removed.' });
+    } catch (error) {
+      toast({
+        title: 'Delete Failed',
+        description: 'An error occurred while deleting the transaction.',
+        variant: 'destructive',
+      });
+    } finally {
+      setTransactionToDelete(null);
     }
   };
 
@@ -182,6 +192,14 @@ export default function FinancesPage() {
         transaction={editingTransaction}
         onSave={handleSaveTransaction}
         employees={employees || []}
+      />
+
+      <ConfirmDialog
+        open={isDeleteDialogOpen}
+        onOpenChange={setIsDeleteDialogOpen}
+        title="Delete Transaction"
+        description="Are you sure you want to delete this transaction? This action cannot be undone."
+        onConfirm={confirmDeleteTransaction}
       />
     </AppShell>
   );

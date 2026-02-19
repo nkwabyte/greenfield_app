@@ -15,6 +15,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 import type { Kpi } from '@/lib/types';
 import { useProductsPaginatedAndFiltered, useSuppliers } from '@/hooks/useData';
 import { ProductFilters, type ProductFiltersState } from '@/components/products/product-filters';
+import { ConfirmDialog } from '@/components/ui/confirm-dialog';
 
 const currencyFormatter = new Intl.NumberFormat('en-GH', {
   style: 'currency',
@@ -68,6 +69,8 @@ export default function ProductsPage() {
   const suppliers = useSuppliers();
   const [isAddEditDialogOpen, setIsAddEditDialogOpen] = React.useState(false);
   const [editingProduct, setEditingProduct] = React.useState<typeof products[0] | null>(null);
+  const [productToDelete, setProductToDelete] = React.useState<string | null>(null);
+  const [isDeleteDialogOpen, setIsDeleteDialogOpen] = React.useState(false);
 
   const kpis: Kpi[] = React.useMemo(() => {
     const totalProducts = totalCount;
@@ -107,15 +110,22 @@ export default function ProductsPage() {
     }
   };
 
-  const handleDeleteProduct = async (id: string) => {
-    if (window.confirm('Are you sure you want to delete this product? This action cannot be undone.')) {
-      try {
-        const { deleteProduct } = await import('@/lib/db/services/products');
-        await deleteProduct(id);
-        toast({ title: 'Product Deleted', description: 'The product record has been removed.' });
-      } catch (error) {
-        toast({ title: 'Delete Failed', description: 'An error occurred while deleting the product.', variant: 'destructive' });
-      }
+  const handleDeleteProduct = (id: string) => {
+    setProductToDelete(id);
+    setIsDeleteDialogOpen(true);
+  };
+
+  const confirmDeleteProduct = async () => {
+    if (!productToDelete) return;
+
+    try {
+      const { deleteProduct } = await import('@/lib/db/services/products');
+      await deleteProduct(productToDelete);
+      toast({ title: 'Product Deleted', description: 'The product record has been removed.' });
+    } catch (error) {
+      toast({ title: 'Delete Failed', description: 'An error occurred while deleting the product.', variant: 'destructive' });
+    } finally {
+      setProductToDelete(null);
     }
   };
 
@@ -170,6 +180,13 @@ export default function ProductsPage() {
         product={editingProduct}
         onSave={handleSaveProduct}
         suppliers={suppliers || []}
+      />
+      <ConfirmDialog
+        open={isDeleteDialogOpen}
+        onOpenChange={setIsDeleteDialogOpen}
+        title="Delete Product"
+        description="Are you sure you want to delete this product? This action cannot be undone."
+        onConfirm={confirmDeleteProduct}
       />
     </AppShell>
   );

@@ -13,6 +13,7 @@ import { AddEditEmployeeDialog, type EmployeeFormValues } from '@/components/emp
 import { EmployeeSuccessDialog } from '@/components/employees/employee-success-dialog';
 import { EmployeeFilters, type EmployeeFiltersState } from '@/components/employees/employee-filters';
 import { useEmployeesPaginatedAndFiltered } from '@/hooks/useData';
+import { ConfirmDialog } from '@/components/ui/confirm-dialog';
 
 export default function EmployeesPage() {
   const router = useRouter();
@@ -84,6 +85,8 @@ export default function EmployeesPage() {
   const [isSuccessDialogOpen, setIsSuccessDialogOpen] = React.useState(false);
   const [newEmployeeData, setNewEmployeeData] = React.useState<{ name: string, email: string, password: string } | null>(null);
   const [editingEmployee, setEditingEmployee] = React.useState<typeof employees[0] | null>(null);
+  const [employeeToDelete, setEmployeeToDelete] = React.useState<string | null>(null);
+  const [isDeleteDialogOpen, setIsDeleteDialogOpen] = React.useState(false);
 
   const handleOpenAddDialog = () => {
     setEditingEmployee(null);
@@ -123,21 +126,23 @@ export default function EmployeesPage() {
     }
   };
 
-  const handleDeleteEmployee = async (employeeId: string) => {
-    if (window.confirm("Are you sure you want to delete this employee? This action cannot be undone.")) {
-      try {
-        const { deleteEmployee } = await import('@/lib/db/services/employees');
-        await deleteEmployee(employeeId);
+  const handleDeleteEmployee = (employeeId: string) => {
+    setEmployeeToDelete(employeeId);
+    setIsDeleteDialogOpen(true);
+  };
 
-        // No need to manually refresh, useLiveQuery handles it
-        // But we might want to adjust pagination if the page is now empty
-        // which is handled by the useEffect above
+  const confirmDeleteEmployee = async () => {
+    if (!employeeToDelete) return;
 
-        toast({ title: "Employee Deleted", description: "The employee record has been removed." });
-      } catch (error) {
-        console.error(error);
-        toast({ title: "Delete Failed", description: "An error occurred while deleting the employee.", variant: "destructive" });
-      }
+    try {
+      const { deleteEmployee } = await import('@/lib/db/services/employees');
+      await deleteEmployee(employeeToDelete);
+      toast({ title: "Employee Deleted", description: "The employee record has been removed." });
+    } catch (error) {
+      console.error(error);
+      toast({ title: "Delete Failed", description: "An error occurred while deleting the employee.", variant: "destructive" });
+    } finally {
+      setEmployeeToDelete(null);
     }
   };
 
@@ -184,6 +189,14 @@ export default function EmployeesPage() {
         open={isSuccessDialogOpen}
         onOpenChange={setIsSuccessDialogOpen}
         employeeData={newEmployeeData}
+      />
+
+      <ConfirmDialog
+        open={isDeleteDialogOpen}
+        onOpenChange={setIsDeleteDialogOpen}
+        title="Delete Employee"
+        description="Are you sure you want to delete this employee? This action cannot be undone."
+        onConfirm={confirmDeleteEmployee}
       />
     </AppShell>
   );

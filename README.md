@@ -105,5 +105,5 @@ yarn workspace @greenfield/desktop build
 # Release
 
 ```bash
-./scripts/release-desktop.sh v0.2.2
+./scripts/release-desktop.sh v0.2.3
 ```

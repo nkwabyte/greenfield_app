@@ -23,6 +23,7 @@ import { type BulkEditField } from '@/components/farmers/bulk-edit-dialog';
 // NEW: Import Dexie hooks and services instead of Redux
 import { useFarmersPaginatedAndFiltered } from '@/hooks/useData';
 import { FarmerFilters, type FarmerFiltersState } from '@/components/farmers/farmer-filters';
+import { ConfirmDialog } from '@/components/ui/confirm-dialog';
 
 import {
   addFarmer as addFarmerService,
@@ -89,6 +90,8 @@ export default function FarmersPage() {
   const [editingFarmer, setEditingFarmer] = React.useState<Farmer | null>(null);
   const [isUploading, setIsUploading] = React.useState(false);
   const [uploadProgress, setUploadProgress] = React.useState({ processed: 0, total: 0 });
+  const [farmerToDelete, setFarmerToDelete] = React.useState<string | null>(null);
+  const [isDeleteDialogOpen, setIsDeleteDialogOpen] = React.useState(false);
 
   // Bulk Edit State
   const [rowSelection, setRowSelection] = React.useState({});
@@ -146,14 +149,21 @@ export default function FarmersPage() {
     }
   };
 
-  const handleDeleteFarmer = async (farmerId: string) => {
-    if (window.confirm("Are you sure you want to delete this farmer?")) {
-      try {
-        await deleteFarmerService(farmerId);
-        toast({ title: "Farmer Deleted", description: "Farmer record has been removed." });
-      } catch (error) {
-        toast({ title: "Delete Failed", description: "Failed to delete farmer.", variant: "destructive" });
-      }
+  const handleDeleteFarmer = (farmerId: string) => {
+    setFarmerToDelete(farmerId);
+    setIsDeleteDialogOpen(true);
+  };
+
+  const confirmDeleteFarmer = async () => {
+    if (!farmerToDelete) return;
+
+    try {
+      await deleteFarmerService(farmerToDelete);
+      toast({ title: "Farmer Deleted", description: "Farmer record has been removed." });
+    } catch (error) {
+      toast({ title: "Delete Failed", description: "Failed to delete farmer.", variant: "destructive" });
+    } finally {
+      setFarmerToDelete(null);
     }
   };
 
@@ -430,6 +440,13 @@ export default function FarmersPage() {
         onConfirm={handlePurgeData}
       />
       <AddEditFarmerDialog open={isAddEditDialogOpen} onOpenChange={setIsAddEditDialogOpen} farmer={editingFarmer} onSave={handleSaveFarmer} />
+      <ConfirmDialog
+        open={isDeleteDialogOpen}
+        onOpenChange={setIsDeleteDialogOpen}
+        title="Delete Farmer"
+        description="Are you sure you want to delete this farmer? This action cannot be undone."
+        onConfirm={confirmDeleteFarmer}
+      />
     </AppShell >
   );
 }

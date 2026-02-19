@@ -15,6 +15,7 @@ import { useSelector } from 'react-redux';
 import { RootState } from '@/lib/store/store';
 import { Skeleton } from '@/components/ui/skeleton';
 import { formatDistanceToNow } from 'date-fns';
+import { ConfirmDialog } from '@/components/ui/confirm-dialog';
 
 export default function EmployeeDetailsPage({ params }: { params: Promise<{ id: string }> }) {
     const router = useRouter();
@@ -22,6 +23,7 @@ export default function EmployeeDetailsPage({ params }: { params: Promise<{ id: 
     const { id } = React.use(params);
     const employee = useEmployee(id);
     const [isEditOpen, setIsEditOpen] = React.useState(false);
+    const [isDeleteOpen, setIsDeleteOpen] = React.useState(false);
 
     const user = useSelector((state: RootState) => state.auth.user);
     const isAdmin = user?.role === 'Admin';
@@ -59,14 +61,12 @@ export default function EmployeeDetailsPage({ params }: { params: Promise<{ id: 
     };
 
     const handleDelete = async () => {
-        if (window.confirm(`Are you sure you want to delete ${employee.name}? This action cannot be undone.`)) {
-            try {
-                await deleteEmployeeService(employee.id);
-                toast({ title: "Employee Deleted", description: "The employee record has been removed." });
-                router.push('/employees');
-            } catch (error) {
-                toast({ title: "Delete Failed", description: "An error occurred while deleting the employee.", variant: "destructive" });
-            }
+        try {
+            await deleteEmployeeService(employee!.id);
+            toast({ title: "Employee Deleted", description: "The employee record has been removed." });
+            router.push('/employees');
+        } catch (error) {
+            toast({ title: "Delete Failed", description: "An error occurred while deleting the employee.", variant: "destructive" });
         }
     };
 
@@ -171,7 +171,7 @@ export default function EmployeeDetailsPage({ params }: { params: Promise<{ id: 
                                     <p className="text-sm text-muted-foreground mb-4">
                                         Deleting an employee will remove all their records from the system. This action cannot be undone.
                                     </p>
-                                    <Button variant="destructive" onClick={handleDelete} className="w-full">
+                                    <Button variant="destructive" onClick={() => setIsDeleteOpen(true)} className="w-full">
                                         Delete Employee
                                     </Button>
                                 </CardContent>
@@ -185,6 +185,14 @@ export default function EmployeeDetailsPage({ params }: { params: Promise<{ id: 
                     onOpenChange={setIsEditOpen}
                     employee={employee}
                     onSave={handleSave}
+                />
+
+                <ConfirmDialog
+                    open={isDeleteOpen}
+                    onOpenChange={setIsDeleteOpen}
+                    title="Delete Employee"
+                    description={`Are you sure you want to delete ${employee.name}? This action cannot be undone.`}
+                    onConfirm={handleDelete}
                 />
             </div>
         </AppShell>
