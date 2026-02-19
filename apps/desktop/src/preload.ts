@@ -1,3 +1,4 @@
+console.log('[Preload] Script starting...');
 import { contextBridge, ipcRenderer } from 'electron';
 
 // Expose protected methods that allow the renderer process to use

@@ -13,6 +13,7 @@ import { AddEditEmployeeDialog, type EmployeeFormValues } from '@/components/emp
 import { EmployeeSuccessDialog } from '@/components/employees/employee-success-dialog';
 import { EmployeeFilters, type EmployeeFiltersState } from '@/components/employees/employee-filters';
 import { useEmployeesPaginatedAndFiltered } from '@/hooks/useData';
+import { ConfirmDialog } from '@/components/ui/confirm-dialog';
 
 export default function EmployeesPage() {
   const router = useRouter();
@@ -56,15 +57,36 @@ export default function EmployeesPage() {
     }
   );
 
-  const employees = result?.data ?? [];
-  const totalCount = result?.total ?? 0;
+  // Maintain last results for smoother transitions/loading
+  const [data, setData] = React.useState<{ data: any[], total: number } | null>(null);
+
+  React.useEffect(() => {
+    if (result) {
+      setData(result);
+    }
+  }, [result]);
+
+  const employees = result?.data ?? data?.data ?? [];
+  const totalCount = result?.total ?? data?.total ?? 0;
   const totalPages = Math.ceil(totalCount / pagination.pageSize);
-  const isLoading = !result;
+  const isLoading = !result && !data;
+
+  // Handle case where current page becomes empty after deletion
+  React.useEffect(() => {
+    if (result && result.data.length === 0 && pagination.pageIndex > 0 && result.total > 0) {
+      const maxPage = Math.ceil(result.total / pagination.pageSize);
+      if (pagination.pageIndex + 1 > maxPage) {
+        setPagination(prev => ({ ...prev, pageIndex: Math.max(0, maxPage - 1) }));
+      }
+    }
+  }, [result, pagination.pageIndex, pagination.pageSize]);
 
   const [isAddEditDialogOpen, setIsAddEditDialogOpen] = React.useState(false);
   const [isSuccessDialogOpen, setIsSuccessDialogOpen] = React.useState(false);
   const [newEmployeeData, setNewEmployeeData] = React.useState<{ name: string, email: string, password: string } | null>(null);
   const [editingEmployee, setEditingEmployee] = React.useState<typeof employees[0] | null>(null);
+  const [employeeToDelete, setEmployeeToDelete] = React.useState<string | null>(null);
+  const [isDeleteDialogOpen, setIsDeleteDialogOpen] = React.useState(false);
 
   const handleOpenAddDialog = () => {
     setEditingEmployee(null);
@@ -104,15 +126,23 @@ export default function EmployeesPage() {
     }
   };
 
-  const handleDeleteEmployee = async (employeeId: string) => {
-    if (window.confirm("Are you sure you want to delete this employee? This action cannot be undone.")) {
-      try {
-        const { deleteEmployee } = await import('@/lib/db/services/employees');
-        await deleteEmployee(employeeId);
-        toast({ title: "Employee Deleted", description: "The employee record has been removed." });
-      } catch (error) {
-        toast({ title: "Delete Failed", description: "An error occurred while deleting the employee.", variant: "destructive" });
-      }
+  const handleDeleteEmployee = (employeeId: string) => {
+    setEmployeeToDelete(employeeId);
+    setIsDeleteDialogOpen(true);
+  };
+
+  const confirmDeleteEmployee = async () => {
+    if (!employeeToDelete) return;
+
+    try {
+      const { deleteEmployee } = await import('@/lib/db/services/employees');
+      await deleteEmployee(employeeToDelete);
+      toast({ title: "Employee Deleted", description: "The employee record has been removed." });
+    } catch (error) {
+      console.error(error);
+      toast({ title: "Delete Failed", description: "An error occurred while deleting the employee.", variant: "destructive" });
+    } finally {
+      setEmployeeToDelete(null);
     }
   };
 
@@ -159,6 +189,14 @@ export default function EmployeesPage() {
         open={isSuccessDialogOpen}
         onOpenChange={setIsSuccessDialogOpen}
         employeeData={newEmployeeData}
+      />
+
+      <ConfirmDialog
+        open={isDeleteDialogOpen}
+        onOpenChange={setIsDeleteDialogOpen}
+        title="Delete Employee"
+        description="Are you sure you want to delete this employee? This action cannot be undone."
+        onConfirm={confirmDeleteEmployee}
       />
     </AppShell>
   );

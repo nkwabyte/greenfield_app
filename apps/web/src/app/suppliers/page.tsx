@@ -11,6 +11,7 @@ import { getColumns } from '@/components/suppliers/supplier-columns';
 import { useToast } from '@/hooks/use-toast';
 import { AddEditSupplierDialog, type SupplierFormValues } from '@/components/suppliers/add-edit-supplier-dialog';
 import { useSuppliersPaginated } from '@/hooks/useData';
+import { ConfirmDialog } from '@/components/ui/confirm-dialog';
 
 export default function SuppliersPage() {
   const router = useRouter();
@@ -32,6 +33,8 @@ export default function SuppliersPage() {
 
   const [isAddEditDialogOpen, setIsAddEditDialogOpen] = React.useState(false);
   const [editingSupplier, setEditingSupplier] = React.useState<typeof suppliers[0] | null>(null);
+  const [supplierToDelete, setSupplierToDelete] = React.useState<string | null>(null);
+  const [isDeleteDialogOpen, setIsDeleteDialogOpen] = React.useState(false);
 
   const handleOpenAddDialog = () => {
     setEditingSupplier(null);
@@ -59,15 +62,22 @@ export default function SuppliersPage() {
     }
   };
 
-  const handleDeleteSupplier = async (supplierId: string) => {
-    if (window.confirm("Are you sure you want to delete this supplier? This action cannot be undone.")) {
-      try {
-        const { deleteSupplier } = await import('@/lib/db/services/suppliers');
-        await deleteSupplier(supplierId);
-        toast({ title: "Supplier Deleted", description: "The supplier record has been removed." });
-      } catch (error) {
-        toast({ title: "Delete Failed", description: "An error occurred while deleting the supplier.", variant: "destructive" });
-      }
+  const handleDeleteSupplier = (supplierId: string) => {
+    setSupplierToDelete(supplierId);
+    setIsDeleteDialogOpen(true);
+  };
+
+  const confirmDeleteSupplier = async () => {
+    if (!supplierToDelete) return;
+
+    try {
+      const { deleteSupplier } = await import('@/lib/db/services/suppliers');
+      await deleteSupplier(supplierToDelete);
+      toast({ title: "Supplier Deleted", description: "The supplier record has been removed." });
+    } catch (error) {
+      toast({ title: "Delete Failed", description: "An error occurred while deleting the supplier.", variant: "destructive" });
+    } finally {
+      setSupplierToDelete(null);
     }
   };
 
@@ -108,6 +118,13 @@ export default function SuppliersPage() {
         onOpenChange={setIsAddEditDialogOpen}
         supplier={editingSupplier}
         onSave={handleSaveSupplier}
+      />
+      <ConfirmDialog
+        open={isDeleteDialogOpen}
+        onOpenChange={setIsDeleteDialogOpen}
+        title="Delete Supplier"
+        description="Are you sure you want to delete this supplier? This action cannot be undone."
+        onConfirm={confirmDeleteSupplier}
       />
     </AppShell>
   );

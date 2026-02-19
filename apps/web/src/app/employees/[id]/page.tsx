@@ -4,15 +4,18 @@ import * as React from 'react';
 import { useRouter } from 'next/navigation';
 import { useEmployee } from '@/hooks/useData';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { AppShell } from '@/components/app-shell';
-import { ArrowLeft, Edit, Mail, Calendar, DollarSign, Briefcase, User } from 'lucide-react';
+import { ArrowLeft, Edit, Mail, Calendar, DollarSign, Briefcase, User, AlertTriangle } from 'lucide-react';
 import { AddEditEmployeeDialog, type EmployeeFormValues } from '@/components/employees/add-edit-employee-dialog';
-import { updateEmployee as updateEmployeeService } from '@/lib/db/services/employees';
+import { updateEmployee as updateEmployeeService, deleteEmployee as deleteEmployeeService } from '@/lib/db/services/employees';
 import { useToast } from '@/hooks/use-toast';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/lib/store/store';
 import { Skeleton } from '@/components/ui/skeleton';
 import { formatDistanceToNow } from 'date-fns';
+import { ConfirmDialog } from '@/components/ui/confirm-dialog';
 
 export default function EmployeeDetailsPage({ params }: { params: Promise<{ id: string }> }) {
     const router = useRouter();
@@ -20,6 +23,10 @@ export default function EmployeeDetailsPage({ params }: { params: Promise<{ id: 
     const { id } = React.use(params);
     const employee = useEmployee(id);
     const [isEditOpen, setIsEditOpen] = React.useState(false);
+    const [isDeleteOpen, setIsDeleteOpen] = React.useState(false);
+
+    const user = useSelector((state: RootState) => state.auth.user);
+    const isAdmin = user?.role === 'Admin';
 
     if (employee === undefined) {
         return (
@@ -50,6 +57,16 @@ export default function EmployeeDetailsPage({ params }: { params: Promise<{ id: 
             setIsEditOpen(false);
         } catch (error) {
             toast({ title: "Error", description: "Failed to update employee.", variant: "destructive" });
+        }
+    };
+
+    const handleDelete = async () => {
+        try {
+            await deleteEmployeeService(employee!.id);
+            toast({ title: "Employee Deleted", description: "The employee record has been removed." });
+            router.push('/employees');
+        } catch (error) {
+            toast({ title: "Delete Failed", description: "An error occurred while deleting the employee.", variant: "destructive" });
         }
     };
 
@@ -106,7 +123,7 @@ export default function EmployeeDetailsPage({ params }: { params: Promise<{ id: 
                                 <span className="text-sm font-medium text-muted-foreground">Salary</span>
                                 <div className="font-medium flex items-center">
                                     <DollarSign className="mr-2 h-4 w-4 text-muted-foreground" />
-                                    {currencyFormatter.format(employee.salary)}
+                                    {currencyFormatter.format(employee.salary ?? 0)}
                                 </div>
                             </div>
                             <div className="space-y-1">
@@ -126,17 +143,41 @@ export default function EmployeeDetailsPage({ params }: { params: Promise<{ id: 
                     </Card>
 
                     {/* Stats / Performance Placeholder */}
-                    <Card>
-                        <CardHeader>
-                            <CardTitle>Performance Stats</CardTitle>
-                        </CardHeader>
-                        <CardContent className="space-y-6">
-                            <div className="flex flex-col items-center justify-center p-6 text-center text-muted-foreground">
-                                <User className="h-12 w-12 mb-4 opacity-20" />
-                                <p>Performance metrics coming soon...</p>
-                            </div>
-                        </CardContent>
-                    </Card>
+                    <div className="space-y-6">
+                        <Card>
+                            <CardHeader>
+                                <CardTitle>Performance Stats</CardTitle>
+                            </CardHeader>
+                            <CardContent className="space-y-6">
+                                <div className="flex flex-col items-center justify-center p-6 text-center text-muted-foreground">
+                                    <User className="h-12 w-12 mb-4 opacity-20" />
+                                    <p>Performance metrics coming soon...</p>
+                                </div>
+                            </CardContent>
+                        </Card>
+
+                        {isAdmin && (
+                            <Card className="border-destructive/50 bg-destructive/5">
+                                <CardHeader>
+                                    <CardTitle className="text-destructive flex items-center text-lg">
+                                        <AlertTriangle className="mr-2 h-5 w-5" />
+                                        Danger Zone
+                                    </CardTitle>
+                                    <CardDescription>
+                                        Irreversible actions related to this employee.
+                                    </CardDescription>
+                                </CardHeader>
+                                <CardContent>
+                                    <p className="text-sm text-muted-foreground mb-4">
+                                        Deleting an employee will remove all their records from the system. This action cannot be undone.
+                                    </p>
+                                    <Button variant="destructive" onClick={() => setIsDeleteOpen(true)} className="w-full">
+                                        Delete Employee
+                                    </Button>
+                                </CardContent>
+                            </Card>
+                        )}
+                    </div>
                 </div>
 
                 <AddEditEmployeeDialog
@@ -144,6 +185,14 @@ export default function EmployeeDetailsPage({ params }: { params: Promise<{ id: 
                     onOpenChange={setIsEditOpen}
                     employee={employee}
                     onSave={handleSave}
+                />
+
+                <ConfirmDialog
+                    open={isDeleteOpen}
+                    onOpenChange={setIsDeleteOpen}
+                    title="Delete Employee"
+                    description={`Are you sure you want to delete ${employee.name}? This action cannot be undone.`}
+                    onConfirm={handleDelete}
                 />
             </div>
         </AppShell>
