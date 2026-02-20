@@ -40,6 +40,7 @@ export type Farmer = {
   createdAt: string; // ISO date string
   updatedAt: string; // ISO date string
   deleted?: boolean; // Soft-delete flag for delta sync
+  groupId?: string; // Reference to FarmerGroup
 };
 
 export type Employee = {
@@ -105,10 +106,15 @@ export interface FarmerGroup {
   id: string;
   name: string;             // Custom name (e.g., "Best Farmers A")
   description?: string;
-  seasonYear: string;       // Annual segregation (e.g., "2024", "2025")
-  farmerIds: string[];      // List of IDs belonging to this group
+  region: string;
+  district: string;
+  community?: string;
+  leaderId?: string;
+  seasonYear?: string;       // Annual segregation (e.g., "2024", "2025")
+  farmerIds?: string[];      // List of IDs belonging to this group (optional, can join via Farmers table)
   createdAt: string;
   updatedAt: string;
+  deleted?: boolean;
 }
 
 export interface RequestItem {
@@ -123,11 +129,12 @@ export interface FarmerRequest {
   id: string;
   farmerId: string;         // Who made the request
   groupId?: string;         // Optional: if made as part of a group
-  seasonYear: string;       // For filtering by year
+  seasonYear?: string;       // For filtering by year
   items: RequestItem[];
   grandTotal: number;
   status: 'Pending' | 'Approved' | 'Rejected' | 'Delivered';
   requestDate: string;      // ISO Date
   createdAt: string;
   updatedAt: string;
+  deleted?: boolean;
 }

@@ -11,6 +11,9 @@ import { Badge } from '@/components/ui/badge';
 import type { Farmer } from '@/lib/types';
 import { format } from 'date-fns';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { ArrowRight } from 'lucide-react';
 
 type RecentFarmersTableProps = {
   farmers: Farmer[];
@@ -23,9 +26,16 @@ export function RecentFarmersTable({ farmers }: RecentFarmersTableProps) {
 
   return (
     <Card className="shadow-md">
-      <CardHeader>
-        <CardTitle className="font-headline">Recent Additions</CardTitle>
-        <CardDescription>The latest farmers to join the network.</CardDescription>
+      <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
+        <div>
+          <CardTitle className="font-headline">Recent Additions</CardTitle>
+          <CardDescription>The latest farmers to join the network.</CardDescription>
+        </div>
+        <Link href="/farmers/all">
+          <Button variant="outline" size="sm" className="hidden sm:flex items-center gap-1">
+            View All <ArrowRight className="h-4 w-4" />
+          </Button>
+        </Link>
       </CardHeader>
       <CardContent>
         <Table>

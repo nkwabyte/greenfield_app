@@ -57,6 +57,7 @@ export async function updateSupabaseFarmerRequest(requestId: string, updates: Pa
         if ((updates as any).grandTotal !== undefined) mappedUpdates.grand_total = (updates as any).grandTotal;
         if ((updates as any).requestDate !== undefined) mappedUpdates.request_date = (updates as any).requestDate;
         if (updates.updatedAt !== undefined) mappedUpdates.updated_at = updates.updatedAt;
+        if (updates.deleted !== undefined) mappedUpdates.deleted = updates.deleted;
 
         const { error } = await supabase.from('farmer_requests').upsert({
             id: requestId,
@@ -105,6 +106,7 @@ export async function syncFarmerRequestsBatch(operations: { id: string, type: 'c
                 if (mappedData.seasonYear !== undefined) { mappedData.season_year = mappedData.seasonYear; delete mappedData.seasonYear; }
                 if (mappedData.grandTotal !== undefined) { mappedData.grand_total = mappedData.grandTotal; delete mappedData.grandTotal; }
                 if (mappedData.requestDate !== undefined) { mappedData.request_date = mappedData.requestDate; delete mappedData.requestDate; }
+                if (mappedData.deleted !== undefined) { mappedData.deleted = mappedData.deleted; }
                 await supabase.from('farmer_requests').update(mappedData).eq('id', op.id);
             }
         }
@@ -127,5 +129,6 @@ function mapFarmerRequestRow(row: any): FarmerRequest {
         requestDate: row.request_date ? new Date(row.request_date).toISOString() : '',
         createdAt: row.created_at ? new Date(row.created_at).toISOString() : '',
         updatedAt: row.updated_at ? new Date(row.updated_at).toISOString() : '',
+        deleted: row.deleted,
     };
 }
