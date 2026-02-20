@@ -90,6 +90,11 @@ export class GreenfieldDB extends Dexie {
             statistics: 'id',
             syncQueue: '++id, entityType, entityId, synced, status, timestamp',
         });
+
+        // Version 7: Add Payment Plans and Transactions to Farmer Requests
+        this.version(7).stores({
+            farmerRequests: 'id, farmerId, groupId, seasonYear, status, requestDate, paymentPlan, deleted, updatedAt, createdAt',
+        });
     }
 }
 

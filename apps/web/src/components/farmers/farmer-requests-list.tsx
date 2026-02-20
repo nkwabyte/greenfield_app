@@ -8,8 +8,9 @@ import { Badge } from '@/components/ui/badge';
 import { DataTable } from '@/components/data-table';
 import { ColumnDef } from '@tanstack/react-table';
 import { FarmerRequest } from '@/lib/types';
-import { PackageOpen, Calendar, CircleDollarSign, Plus } from 'lucide-react';
+import { PackageOpen, Calendar, CircleDollarSign, Plus, Eye } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { RequestDetailsDialog } from './request-details-dialog';
 
 interface FarmerRequestsListProps {
     farmerId: string;
@@ -23,16 +24,18 @@ export function FarmerRequestsList({ farmerId, farmerGroupId, onRequireGroup }: 
         [farmerId]
     );
 
-    // TODO: Pull financial records when the FarmerPayments table is implemented
-    const dummyFinancials = {
+    const [selectedRequest, setSelectedRequest] = React.useState<FarmerRequest | null>(null);
+
+    const financials = {
         totalAmount: 0,
         depositPaid: 0,
         outstandingBalance: 0
     };
 
     if (requests && requests.length > 0) {
-        dummyFinancials.totalAmount = requests.reduce((acc, req) => acc + (req.grandTotal || 0), 0);
-        dummyFinancials.outstandingBalance = dummyFinancials.totalAmount - dummyFinancials.depositPaid;
+        financials.totalAmount = requests.reduce((acc, req) => acc + (req.grandTotal || 0), 0);
+        financials.depositPaid = requests.reduce((acc, req) => acc + (req.payments?.reduce((sum, p) => sum + p.amount, 0) || 0), 0);
+        financials.outstandingBalance = financials.totalAmount - financials.depositPaid;
     }
 
     const handleAddRequestClick = () => {
@@ -94,6 +97,15 @@ export function FarmerRequestsList({ farmerId, farmerGroupId, onRequireGroup }: 
                 );
             }
         },
+        {
+            id: 'actions',
+            cell: ({ row }) => (
+                <Button variant="ghost" size="sm" onClick={() => setSelectedRequest(row.original)}>
+                    <Eye className="w-4 h-4 mr-2" />
+                    View / Pay
+                </Button>
+            ),
+        }
     ];
 
     if (!requests) {
@@ -114,16 +126,16 @@ export function FarmerRequestsList({ farmerId, farmerGroupId, onRequireGroup }: 
                         <CircleDollarSign className="h-4 w-4 text-muted-foreground" />
                     </CardHeader>
                     <CardContent>
-                        <div className="text-2xl font-bold">GH₵{dummyFinancials.totalAmount.toFixed(2)}</div>
+                        <div className="text-2xl font-bold">GH₵{financials.totalAmount.toFixed(2)}</div>
                     </CardContent>
                 </Card>
                 <Card>
                     <CardHeader className="py-4 flex flex-row items-center justify-between pb-2">
-                        <CardTitle className="text-sm font-medium text-muted-foreground">Deposit Paid</CardTitle>
+                        <CardTitle className="text-sm font-medium text-muted-foreground">Total Paid</CardTitle>
                         <CircleDollarSign className="h-4 w-4 text-green-500" />
                     </CardHeader>
                     <CardContent>
-                        <div className="text-2xl font-bold text-green-600">GH₵{dummyFinancials.depositPaid.toFixed(2)}</div>
+                        <div className="text-2xl font-bold text-green-600">GH₵{financials.depositPaid.toFixed(2)}</div>
                     </CardContent>
                 </Card>
                 <Card>
@@ -132,7 +144,7 @@ export function FarmerRequestsList({ farmerId, farmerGroupId, onRequireGroup }: 
                         <CircleDollarSign className="h-4 w-4 text-destructive" />
                     </CardHeader>
                     <CardContent>
-                        <div className="text-2xl font-bold text-destructive">GH₵{dummyFinancials.outstandingBalance.toFixed(2)}</div>
+                        <div className="text-2xl font-bold text-destructive">GH₵{financials.outstandingBalance.toFixed(2)}</div>
                     </CardContent>
                 </Card>
             </div>
@@ -157,6 +169,12 @@ export function FarmerRequestsList({ farmerId, farmerGroupId, onRequireGroup }: 
                     />
                 </CardContent>
             </Card>
+
+            <RequestDetailsDialog
+                open={!!selectedRequest}
+                onOpenChange={(open) => !open && setSelectedRequest(null)}
+                request={selectedRequest}
+            />
         </div>
     );
 }

@@ -55,6 +55,19 @@ const requestSchema = z.object({
     grandTotal: z.number(),
     status: z.enum(['Pending', 'Approved', 'Rejected', 'Delivered']),
     requestDate: z.date(),
+    paymentPlan: z.enum([
+        'Pay on spot',
+        'Monthly',
+        '3 months',
+        '6 months',
+        '1 year',
+        'Complete payment before collection',
+        'Upon harvest 50% & completion in subsequent months',
+        'Make a deposit & complete in subsequent months',
+        'Other'
+    ]).optional(),
+    depositPaid: z.coerce.number().optional(),
+    otherPaymentPlan: z.string().optional(),
 });
 
 export type RequestFormValues = z.infer<typeof requestSchema>;
@@ -72,6 +85,7 @@ export function AddEditRequestDialog({ open, onOpenChange, request, onSave }: Ad
     const products = useProducts();
 
     const form = useForm<RequestFormValues>({
+        // @ts-ignore
         resolver: zodResolver(requestSchema),
         defaultValues: {
             farmerId: '',
@@ -81,6 +95,9 @@ export function AddEditRequestDialog({ open, onOpenChange, request, onSave }: Ad
             grandTotal: 0,
             status: 'Pending',
             requestDate: new Date(),
+            paymentPlan: undefined,
+            depositPaid: undefined,
+            otherPaymentPlan: '',
         },
     });
 
@@ -99,6 +116,9 @@ export function AddEditRequestDialog({ open, onOpenChange, request, onSave }: Ad
                 grandTotal: request.grandTotal,
                 status: request.status,
                 requestDate: new Date(request.requestDate),
+                paymentPlan: request.paymentPlan,
+                depositPaid: request.depositPaid,
+                otherPaymentPlan: request.otherPaymentPlan,
             });
         } else if (open) {
             form.reset({
@@ -109,6 +129,9 @@ export function AddEditRequestDialog({ open, onOpenChange, request, onSave }: Ad
                 grandTotal: 0,
                 status: 'Pending',
                 requestDate: new Date(),
+                paymentPlan: undefined,
+                depositPaid: undefined,
+                otherPaymentPlan: '',
             });
         }
     }, [request, form, open]);
@@ -144,7 +167,7 @@ export function AddEditRequestDialog({ open, onOpenChange, request, onSave }: Ad
 
     return (
         <Dialog open={open} onOpenChange={onOpenChange}>
-            <DialogContent className="sm:max-w-3xl max-h-[90vh] overflow-y-auto">
+            <DialogContent className="sm:max-w-3xl max-h-[90vh] overflow-y-auto pb-10">
                 <DialogHeader>
                     <DialogTitle>{request ? 'Edit Farmer Request' : 'Create Farmer Request'}</DialogTitle>
                     <DialogDescription>
@@ -152,11 +175,11 @@ export function AddEditRequestDialog({ open, onOpenChange, request, onSave }: Ad
                     </DialogDescription>
                 </DialogHeader>
                 <Form {...form}>
-                    <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-6 py-4">
+                    <form onSubmit={form.handleSubmit(handleSubmit as any)} className="space-y-6 py-4">
 
                         <div className="grid grid-cols-2 gap-4">
                             <FormField
-                                control={form.control}
+                                control={form.control as any}
                                 name="farmerId"
                                 render={({ field }) => (
                                     <FormItem>
@@ -179,7 +202,7 @@ export function AddEditRequestDialog({ open, onOpenChange, request, onSave }: Ad
                             />
 
                             <FormField
-                                control={form.control}
+                                control={form.control as any}
                                 name="groupId"
                                 render={({ field }) => (
                                     <FormItem>
@@ -203,7 +226,7 @@ export function AddEditRequestDialog({ open, onOpenChange, request, onSave }: Ad
                             />
 
                             <FormField
-                                control={form.control}
+                                control={form.control as any}
                                 name="seasonYear"
                                 render={({ field }) => (
                                     <FormItem>
@@ -215,7 +238,7 @@ export function AddEditRequestDialog({ open, onOpenChange, request, onSave }: Ad
                             />
 
                             <FormField
-                                control={form.control}
+                                control={form.control as any}
                                 name="status"
                                 render={({ field }) => (
                                     <FormItem>
@@ -239,7 +262,7 @@ export function AddEditRequestDialog({ open, onOpenChange, request, onSave }: Ad
                             />
 
                             <FormField
-                                control={form.control}
+                                control={form.control as any}
                                 name="requestDate"
                                 render={({ field }) => (
                                     <FormItem className="flex flex-col justify-end">
@@ -278,6 +301,69 @@ export function AddEditRequestDialog({ open, onOpenChange, request, onSave }: Ad
                             />
                         </div>
 
+                        <div className="grid grid-cols-2 gap-4">
+                            <FormField
+                                control={form.control as any}
+                                name="paymentPlan"
+                                render={({ field }) => (
+                                    <FormItem className="col-span-2">
+                                        <FormLabel>Payment Plan</FormLabel>
+                                        <Select onValueChange={field.onChange} value={field.value}>
+                                            <FormControl>
+                                                <SelectTrigger>
+                                                    <SelectValue placeholder="Select Payment Plan" />
+                                                </SelectTrigger>
+                                            </FormControl>
+                                            <SelectContent>
+                                                <SelectItem value="Pay on spot">Pay on spot</SelectItem>
+                                                <SelectItem value="Monthly">Monthly</SelectItem>
+                                                <SelectItem value="3 months">3 months</SelectItem>
+                                                <SelectItem value="6 months">6 months</SelectItem>
+                                                <SelectItem value="1 year">1 year</SelectItem>
+                                                <SelectItem value="Complete payment before collection">Complete payment before collection</SelectItem>
+                                                <SelectItem value="Upon harvest 50% &amp; completion in subsequent months">Upon harvest 50% &amp; completion in subsequent months</SelectItem>
+                                                <SelectItem value="Make a deposit &amp; complete in subsequent months">Make a deposit &amp; complete in subsequent months</SelectItem>
+                                                <SelectItem value="Other">Other</SelectItem>
+                                            </SelectContent>
+                                        </Select>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+
+                            {form.watch('paymentPlan') === 'Make a deposit & complete in subsequent months' && (
+                                <FormField
+                                    control={form.control as any}
+                                    name="depositPaid"
+                                    render={({ field }) => (
+                                        <FormItem>
+                                            <FormLabel>Deposit Paid (₵)</FormLabel>
+                                            <FormControl>
+                                                <Input type="number" step="any" placeholder="e.g. 50" {...field} onChange={e => field.onChange(e.target.value === '' ? undefined : Number(e.target.value))} />
+                                            </FormControl>
+                                            <FormMessage />
+                                        </FormItem>
+                                    )}
+                                />
+                            )}
+
+                            {form.watch('paymentPlan') === 'Other' && (
+                                <FormField
+                                    control={form.control as any}
+                                    name="otherPaymentPlan"
+                                    render={({ field }) => (
+                                        <FormItem>
+                                            <FormLabel>Specify Payment Plan</FormLabel>
+                                            <FormControl>
+                                                <Input placeholder="Describe payment terms" {...field} />
+                                            </FormControl>
+                                            <FormMessage />
+                                        </FormItem>
+                                    )}
+                                />
+                            )}
+                        </div>
+
                         <div className="space-y-4 border-t pt-4">
                             <div className="flex justify-between items-center">
                                 <h4 className="text-sm font-medium">Requested Items</h4>
@@ -289,7 +375,7 @@ export function AddEditRequestDialog({ open, onOpenChange, request, onSave }: Ad
                             {fields.map((field, index) => (
                                 <div key={field.id} className="flex gap-3 items-end p-3 border rounded-md bg-muted/20">
                                     <FormField
-                                        control={form.control}
+                                        control={form.control as any}
                                         name={`items.${index}.productId`}
                                         render={({ field: selectField }) => (
                                             <FormItem className="flex-1">
@@ -317,7 +403,7 @@ export function AddEditRequestDialog({ open, onOpenChange, request, onSave }: Ad
                                     />
 
                                     <FormField
-                                        control={form.control}
+                                        control={form.control as any}
                                         name={`items.${index}.quantity`}
                                         render={({ field: inputField }) => (
                                             <FormItem className="w-24">
@@ -336,7 +422,7 @@ export function AddEditRequestDialog({ open, onOpenChange, request, onSave }: Ad
                                     />
 
                                     <FormField
-                                        control={form.control}
+                                        control={form.control as any}
                                         name={`items.${index}.dynamicPrice`}
                                         render={({ field: inputField }) => (
                                             <FormItem className="w-32">
