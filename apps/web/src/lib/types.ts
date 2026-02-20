@@ -95,3 +95,34 @@ export type Kpi = {
   icon: any;
   change?: string;
 };
+
+export interface FarmerGroup {
+  id: string;
+  name: string;             // Custom name (e.g., "Best Farmers A")
+  description?: string;
+  seasonYear: string;       // Annual segregation (e.g., "2024", "2025")
+  farmerIds: string[];      // List of IDs belonging to this group
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface RequestItem {
+  productId: string;
+  productName: string;      // Store name in case product is deleted later
+  quantity: number;
+  dynamicPrice: number;     // Manual price entry (per unit)
+  total: number;            // quantity * dynamicPrice
+}
+
+export interface FarmerRequest {
+  id: string;
+  farmerId: string;         // Who made the request
+  groupId?: string;         // Optional: if made as part of a group
+  seasonYear: string;       // For filtering by year
+  items: RequestItem[];
+  grandTotal: number;
+  status: 'Pending' | 'Approved' | 'Rejected' | 'Delivered';
+  requestDate: string;      // ISO Date
+  createdAt: string;
+  updatedAt: string;
+}

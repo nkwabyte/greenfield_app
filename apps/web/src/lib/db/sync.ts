@@ -37,6 +37,8 @@ import {
     updateFirebaseTransaction,
     deleteFirebaseTransaction
 } from '@/lib/firebase/services/transactions';
+import { db as firebaseDb } from '@/lib/firebase/config';
+import { writeBatch, doc, serverTimestamp } from 'firebase/firestore';
 
 const MAX_RETRY_COUNT = 3;
 const SYNC_INTERVAL = 30000; // 30 seconds
@@ -79,22 +81,21 @@ class SyncService {
      */
     async syncAll(): Promise<SyncResult> {
         if (this.isSyncing) {
-            // console.log('⏳ Sync already in progress, skipping...');
             return { success: true, itemsProcessed: 0, itemsFailed: 0, errors: [] };
         }
 
-        if (!connectivityService.isOnline()) {
-            // console.log('📡 Offline - sync deferred');
+        if (!connectivityService.isOnline() || !isAuthenticated() || this.isPaused) {
             return { success: false, itemsProcessed: 0, itemsFailed: 0, errors: [] };
         }
 
-        if (!isAuthenticated()) {
-            // Skip sync when user is not authenticated to avoid Firebase permission errors
-            return { success: false, itemsProcessed: 0, itemsFailed: 0, errors: [] };
-        }
+        // Quick check before triggering Redux state updates
+        const pendingCount = await db.syncQueue
+            .where('synced')
+            .equals(0)
+            .and(item => (item.retryCount || 0) < MAX_RETRY_COUNT)
+            .count();
 
-        if (this.isPaused) {
-            // console.log('⏸️ Sync is paused');
+        if (pendingCount === 0) {
             return { success: true, itemsProcessed: 0, itemsFailed: 0, errors: [] };
         }
 
@@ -108,41 +109,83 @@ class SyncService {
         };
 
         try {
-            // Get all pending items
             const pendingItems = await db.syncQueue
                 .where('synced')
-                .equals(0) // 0 = false (number)
+                .equals(0)
                 .and(item => (item.retryCount || 0) < MAX_RETRY_COUNT)
                 .toArray();
 
-            if (pendingItems.length === 0) {
-                // console.log('✅ Sync queue is empty');
-                return result;
-            }
+            // Process each item in batches of 500 (Firestore's limit)
+            const batchSize = 500;
+            for (let i = 0; i < pendingItems.length; i += batchSize) {
+                if (this.isPaused) break;
 
-            // console.log(`🔄 Syncing ${pendingItems.length} items...`);
+                const chunk = pendingItems.slice(i, i + batchSize);
+                const batch = writeBatch(firebaseDb);
+                const chunkIds = chunk.map(item => item.id as number);
 
-            // Process each item
-            for (const item of pendingItems) {
-                if (this.isPaused) {
-                    // console.log('⏸️ Sync paused during processing');
-                    break;
-                }
+                await db.syncQueue.where('id').anyOf(chunkIds).modify({ status: 'syncing' });
+
                 try {
-                    await this.syncItem(item);
-                    result.itemsProcessed++;
-                } catch (error) {
-                    result.itemsFailed++;
-                    result.errors.push({
-                        item,
-                        error: error instanceof Error ? error.message : 'Unknown error',
+                    for (const item of chunk) {
+                        if (item.operation === 'purge' && item.entityType === 'farmer') {
+                            await purgeFirebaseFarmers();
+                            continue;
+                        }
+
+                        // Collection names match entityTypes + 's' generally
+                        const collectionName = item.entityType === 'transaction' ? 'transactions' : `${item.entityType}s`;
+                        const docRef = doc(firebaseDb, collectionName, item.entityId);
+
+                        if (item.operation === 'delete') {
+                            // Implement Soft Deletes for all entities to avoid orphan records on other devices
+                            batch.update(docRef, { deleted: true, updatedAt: serverTimestamp() });
+                        } else if (item.operation === 'create') {
+                            const dataToSave = { ...item.data };
+                            if (typeof dataToSave.joinDate === 'string') dataToSave.joinDate = new Date(dataToSave.joinDate);
+                            Object.keys(dataToSave).forEach(k => dataToSave[k] === undefined && delete dataToSave[k]);
+
+                            batch.set(docRef, {
+                                ...dataToSave,
+                                createdAt: serverTimestamp(),
+                                updatedAt: serverTimestamp()
+                            });
+                        } else if (item.operation === 'update') {
+                            const dataToSave = { ...item.data };
+                            if (typeof dataToSave.joinDate === 'string') dataToSave.joinDate = new Date(dataToSave.joinDate);
+                            Object.keys(dataToSave).forEach(k => dataToSave[k] === undefined && delete dataToSave[k]);
+
+                            batch.update(docRef, {
+                                ...dataToSave,
+                                updatedAt: serverTimestamp()
+                            });
+                        }
+                    }
+
+                    await batch.commit();
+
+                    await db.syncQueue.where('id').anyOf(chunkIds).modify({
+                        synced: 1,
+                        status: 'synced',
                     });
+
+                    result.itemsProcessed += chunk.length;
+                } catch (error) {
+                    result.itemsFailed += chunk.length;
+
+                    // Increment retry counts for failed batch
+                    for (const item of chunk) {
+                        const newRetryCount = (item.retryCount || 0) + 1;
+                        await db.syncQueue.update(item.id!, {
+                            status: newRetryCount >= MAX_RETRY_COUNT ? 'failed' : 'pending',
+                            retryCount: newRetryCount,
+                            lastError: error instanceof Error ? error.message : 'Unknown error',
+                        });
+                        result.errors.push({ item, error: error instanceof Error ? error.message : 'Batch error' });
+                    }
                 }
             }
-
-            // console.log(`✅ Sync complete: ${result.itemsProcessed} synced, ${result.itemsFailed} failed`);
         } catch (error) {
-            // console.error('❌ Sync failed:', error);
             result.success = false;
         } finally {
             this.isSyncing = false;

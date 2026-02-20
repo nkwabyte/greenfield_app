@@ -12,6 +12,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 export const metadata: Metadata = {
   title: 'GREENFIELD CRM',
   description: 'Modern CRM for Agriculture',
+  manifest: '/manifest.json',
 };
 
 export default function RootLayout({

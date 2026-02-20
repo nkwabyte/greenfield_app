@@ -37,10 +37,10 @@ export function InitialSyncProvider({ children }: { children: React.ReactNode })
                 // Check if we need to perform initial sync
                 const lastSync = localStorage.getItem('lastInitialSync');
                 const now = Date.now();
-                const SIX_HOURS = 6 * 60 * 60 * 1000;
+                const FIVE_MINUTES = 5 * 60 * 1000;
 
-                // Only sync if first time or data is older than 6 hours
-                if (!lastSync || now - parseInt(lastSync) > SIX_HOURS) {
+                // Only sync if first time or data is older than 5 minutes
+                if (!lastSync || now - parseInt(lastSync) > FIVE_MINUTES) {
                     // Helper: wraps a sync function with per-entity status dispatching
                     // All Firebase sync fns return Promise<number> (the count synced)
                     const syncEntity = async (

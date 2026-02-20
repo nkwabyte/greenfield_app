@@ -56,16 +56,27 @@ import {
 } from '@/lib/db/services/suppliers';
 import {
     getAllTransactions,
-    getPaginatedTransactions, // NEW
+    getPaginatedTransactions,
     getTransactionsFiltered,
     getTransactionsCount,
     getTotalIncome,
     getTotalExpenses,
     getRecentTransactions,
-    getTransactionsByDateRange, // NEW
+    getTransactionsByDateRange,
 } from '@/lib/db/services/transactions';
+import {
+    getAllFarmerGroups,
+    getFarmerGroup,
+    getFarmerGroupsByYear,
+} from '@/lib/db/services/farmer-groups';
+import {
+    getAllFarmerRequests,
+    getFarmerRequest,
+    getFarmerRequestsByFarmer,
+    getFarmerRequestsByGroup,
+} from '@/lib/db/services/farmer-requests';
 
-import type { Farmer, Employee, Product, Supplier, Transaction } from '@/lib/types';
+import type { Farmer, Employee, Product, Supplier, Transaction, FarmerGroup, FarmerRequest } from '@/lib/types';
 
 // ============================================================================
 // FARMERS HOOKS
@@ -152,6 +163,11 @@ export function useFarmersPaginatedAndFiltered(
         status?: 'Active' | 'Inactive';
         minFarmSize?: number;
         maxFarmSize?: number;
+        gender?: string;
+        minAge?: number;
+        maxAge?: number;
+        startDate?: Date;
+        endDate?: Date;
         search?: string;
     }
 ) {
@@ -167,6 +183,11 @@ export function useFarmersPaginatedAndFiltered(
             filters.status,
             filters.minFarmSize,
             filters.maxFarmSize,
+            filters.gender,
+            filters.minAge,
+            filters.maxAge,
+            filters.startDate,
+            filters.endDate,
             filters.search
         ]
     );
@@ -203,6 +224,42 @@ export function useRelatedFarmers(farmer: Farmer | undefined | null) {
         const allInCommunity = await db.farmers.where('community').equals(farmer.community).toArray();
         return allInCommunity.filter((f: Farmer) => f.id !== farmer.id);
     }, [farmer?.id, farmer?.community]);
+}
+
+// ============================================================================
+// FARMER GROUPS HOOKS
+// ============================================================================
+
+export function useFarmerGroups() {
+    return useLiveQuery(() => getAllFarmerGroups(), []);
+}
+
+export function useFarmerGroup(id: string) {
+    return useLiveQuery(() => getFarmerGroup(id), [id]);
+}
+
+export function useFarmerGroupsByYear(year: string) {
+    return useLiveQuery(() => getFarmerGroupsByYear(year), [year]);
+}
+
+// ============================================================================
+// FARMER REQUESTS HOOKS
+// ============================================================================
+
+export function useFarmerRequests() {
+    return useLiveQuery(() => getAllFarmerRequests(), []);
+}
+
+export function useFarmerRequest(id: string) {
+    return useLiveQuery(() => getFarmerRequest(id), [id]);
+}
+
+export function useFarmerRequestsByFarmer(farmerId: string) {
+    return useLiveQuery(() => getFarmerRequestsByFarmer(farmerId), [farmerId]);
+}
+
+export function useFarmerRequestsByGroup(groupId: string) {
+    return useLiveQuery(() => getFarmerRequestsByGroup(groupId), [groupId]);
 }
 
 // ============================================================================

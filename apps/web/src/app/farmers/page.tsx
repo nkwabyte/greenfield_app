@@ -17,7 +17,6 @@ import dynamic from 'next/dynamic';
 const UploadReportDialog = dynamic(() => import('@/components/farmers/upload-report-dialog').then(mod => mod.UploadReportDialog), { ssr: false });
 const AddEditFarmerDialog = dynamic(() => import('@/components/farmers/add-edit-farmer-dialog').then(mod => mod.AddEditFarmerDialog), { ssr: false });
 const BulkEditFarmerDialog = dynamic(() => import('@/components/farmers/bulk-edit-dialog').then(mod => mod.BulkEditFarmerDialog), { ssr: false });
-const PurgeConfirmDialog = dynamic(() => import('@/components/farmers/purge-confirm-dialog').then(mod => mod.PurgeConfirmDialog), { ssr: false });
 import { type BulkEditField } from '@/components/farmers/bulk-edit-dialog';
 
 // NEW: Import Dexie hooks and services instead of Redux
@@ -29,8 +28,7 @@ import {
   addFarmer as addFarmerService,
   updateFarmer as updateFarmerService,
   deleteFarmer as deleteFarmerService,
-  updateFarmersBatch,
-  deleteAllFarmers
+  updateFarmersBatch
 } from '@/lib/db/services/farmers';
 import { v4 as uuidv4 } from 'uuid';
 import { normalizeRegion } from '@/lib/utils/region-normalizer';
@@ -65,6 +63,10 @@ export default function FarmersPage() {
     status: 'all',
     minFarmSize: '',
     maxFarmSize: '',
+    gender: 'all',
+    minAge: '',
+    maxAge: '',
+    dateRange: undefined,
   });
 
   // Fetch paginated data
@@ -80,6 +82,11 @@ export default function FarmersPage() {
       status: filters.status === 'all' ? undefined : filters.status as 'Active' | 'Inactive',
       minFarmSize: filters.minFarmSize ? Number(filters.minFarmSize) : undefined,
       maxFarmSize: filters.maxFarmSize ? Number(filters.maxFarmSize) : undefined,
+      gender: filters.gender === 'all' ? undefined : filters.gender,
+      minAge: filters.minAge ? Number(filters.minAge) : undefined,
+      maxAge: filters.maxAge ? Number(filters.maxAge) : undefined,
+      startDate: filters.dateRange?.from,
+      endDate: filters.dateRange?.to,
     }
   ) || { data: [], total: 0 };
 
@@ -96,7 +103,6 @@ export default function FarmersPage() {
   // Bulk Edit State
   const [rowSelection, setRowSelection] = React.useState({});
   const [isBulkEditOpen, setIsBulkEditOpen] = React.useState(false);
-  const [isPurgeDialogOpen, setIsPurgeDialogOpen] = React.useState(false);
 
   const handleBulkSave = async (field: BulkEditField, value: string) => {
     const selectedIds = Object.keys(rowSelection);
@@ -133,19 +139,6 @@ export default function FarmersPage() {
       }
     } catch (error) {
       toast({ title: "Save Failed", description: "An error occurred while saving the farmer.", variant: "destructive" });
-    }
-  };
-
-  const handlePurgeData = async () => {
-    try {
-      setIsUploading(true); // Re-use uploading state to show busy
-      await deleteAllFarmers();
-      toast({ title: "Data Purged", description: "All farmer data has been deleted." });
-      setPagination({ ...pagination, pageIndex: 0 });
-    } catch (error) {
-      toast({ title: "Purge Failed", description: "Failed to delete data.", variant: "destructive" });
-    } finally {
-      setIsUploading(false);
     }
   };
 
@@ -381,12 +374,6 @@ export default function FarmersPage() {
       <PageHeader title="Farmer Management" description="View, add, edit, and manage all farmer records.">
         <input type="file" ref={fileInputRef} onChange={handleFileChange} accept=".csv,.xlsx" style={{ display: 'none' }} />
 
-        {user?.role === 'Admin' && (
-          <Button variant="destructive" onClick={() => setIsPurgeDialogOpen(true)} disabled={isUploading}>
-            <Trash2 className="mr-2 h-4 w-4" /> Purge All
-          </Button>
-        )}
-
         <Button variant="outline" onClick={handleUploadClick} disabled={isUploading}>
           {isUploading ? `Uploading ${uploadProgress.processed}/${uploadProgress.total}...` : <><Upload className="mr-2" /> Upload</>}
         </Button>
@@ -433,11 +420,6 @@ export default function FarmersPage() {
         onOpenChange={setIsBulkEditOpen}
         selectedCount={Object.keys(rowSelection).length}
         onSave={handleBulkSave}
-      />
-      <PurgeConfirmDialog
-        open={isPurgeDialogOpen}
-        onOpenChange={setIsPurgeDialogOpen}
-        onConfirm={handlePurgeData}
       />
       <AddEditFarmerDialog open={isAddEditDialogOpen} onOpenChange={setIsAddEditDialogOpen} farmer={editingFarmer} onSave={handleSaveFarmer} />
       <ConfirmDialog
