@@ -24,13 +24,14 @@ import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import {
   Bot, Send, BarChart2, Lightbulb, UserCheck, Package, DollarSign,
-  PanelLeftClose, PanelLeftOpen, Plus, Trash2, MessageSquare,
+  PanelLeftClose, PanelLeftOpen, Plus, Trash2, MessageSquare, Download,
 } from 'lucide-react';
 import type { Farmer, Employee, Product, Supplier, Transaction } from '@/lib/types';
 import { runChatWithContext } from '@/lib/ai-actions';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/lib/store/store';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { cn } from '@/lib/utils';
@@ -213,6 +214,7 @@ export function AiAssistant({
   transactions = [],
 }: AiAssistantProps) {
   const user = useSelector((state: RootState) => state.auth.user);
+  const router = useRouter();
   const apiKey = user?.geminiApiKey;
   const [showKeyAlert, setShowKeyAlert] = React.useState(false);
   const [selectedModel, setSelectedModel] = React.useState<string>(
@@ -486,6 +488,18 @@ export function AiAssistant({
   const promptCards = React.useMemo(() => buildPromptCards(), []);
   const isEmpty = chatMessages.length === 0;
 
+  const handleExportMessage = (text: string, index: number) => {
+    const blob = new Blob([text], { type: 'text/markdown;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.setAttribute('download', `Insight_Report_${index}.md`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  };
+
   return (
     <div className="flex h-full bg-background rounded-lg border shadow-sm overflow-hidden">
 
@@ -645,15 +659,28 @@ export function AiAssistant({
             <div className="space-y-4">
               {chatMessages.map((msg, i) => (
                 <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                  <div
-                    className={`max-w-[85%] rounded-2xl px-4 py-3 text-sm ${msg.role === 'user'
-                      ? 'bg-green-800 text-white rounded-br-sm'
-                      : 'bg-blue-900 text-white rounded-bl-sm'
-                      }`}
-                  >
-                    <div className="prose prose-sm prose-invert max-w-none wrap-break-word [&>p]:mb-2 [&>p:last-child]:mb-0 [&>ul]:list-disc [&>ul]:pl-4 [&>ol]:list-decimal [&>ol]:pl-4 [&>table]:text-xs [&>pre]:text-xs [&>pre]:overflow-x-auto">
-                      <ReactMarkdown remarkPlugins={[remarkGfm]}>{msg.text}</ReactMarkdown>
+                  <div className="group relative max-w-[85%]">
+                    <div
+                      className={`rounded-2xl px-4 py-3 text-sm border shadow-sm ${msg.role === 'user'
+                        ? 'bg-black text-white rounded-br-sm border-black dark:bg-white dark:text-black dark:border-white'
+                        : 'bg-white text-black rounded-bl-sm border-border dark:bg-zinc-950 dark:text-white'
+                        }`}
+                    >
+                      <div className={`prose prose-sm max-w-none wrap-break-word [&>p]:mb-2 [&>p:last-child]:mb-0 [&>ul]:list-disc [&>ul]:pl-4 [&>ol]:list-decimal [&>ol]:pl-4 [&>table]:text-xs [&>pre]:text-xs [&>pre]:overflow-x-auto ${msg.role === 'user' ? 'prose-invert dark:prose-neutral' : 'dark:prose-invert'}`}>
+                        <ReactMarkdown remarkPlugins={[remarkGfm]}>{msg.text}</ReactMarkdown>
+                      </div>
                     </div>
+
+                    {/* Export button for AI messages */}
+                    {msg.role === 'model' && (
+                      <button
+                        onClick={() => handleExportMessage(msg.text, i)}
+                        className="absolute -right-10 top-2 p-1.5 opacity-0 group-hover:opacity-100 transition-opacity rounded-md hover:bg-muted text-muted-foreground hover:text-foreground"
+                        title="Export as Markdown"
+                      >
+                        <Download className="h-4 w-4" />
+                      </button>
+                    )}
                   </div>
                 </div>
               ))}
@@ -661,10 +688,10 @@ export function AiAssistant({
               {/* Typing indicator */}
               {chatLoading && (
                 <div className="flex justify-start">
-                  <div className="bg-blue-900 rounded-2xl rounded-bl-sm px-4 py-3 flex items-center gap-1.5">
-                    <span className="h-2 w-2 bg-white/60 rounded-full animate-bounce" />
-                    <span className="h-2 w-2 bg-white/60 rounded-full animate-bounce [animation-delay:0.15s]" />
-                    <span className="h-2 w-2 bg-white/60 rounded-full animate-bounce [animation-delay:0.3s]" />
+                  <div className="bg-white dark:bg-zinc-950 border border-border shadow-sm rounded-2xl rounded-bl-sm px-4 py-3 flex items-center gap-1.5">
+                    <span className="h-2 w-2 bg-black/40 dark:bg-white/40 rounded-full animate-bounce" />
+                    <span className="h-2 w-2 bg-black/40 dark:bg-white/40 rounded-full animate-bounce [animation-delay:0.15s]" />
+                    <span className="h-2 w-2 bg-black/40 dark:bg-white/40 rounded-full animate-bounce [animation-delay:0.3s]" />
                   </div>
                 </div>
               )}
@@ -690,7 +717,15 @@ export function AiAssistant({
       </div>
 
       {/* ── API Key Alert ── */}
-      <AlertDialog open={showKeyAlert} onOpenChange={setShowKeyAlert}>
+      <AlertDialog
+        open={showKeyAlert}
+        onOpenChange={(open) => {
+          setShowKeyAlert(open);
+          if (!open) {
+            router.push('/dashboard');
+          }
+        }}
+      >
         <AlertDialogContent>
           <AlertDialogHeader>
             <AlertDialogTitle>Gemini API Key Required</AlertDialogTitle>

@@ -77,6 +77,24 @@ export class GreenfieldDB extends Dexie {
                 tx.table('syncQueue').clear(),
             ]);
         });
+
+        // Version 6: Expanded Farmer Groups Schema (Regions, Dynamic Pricing, Deletion flags)
+        this.version(6).stores({
+            farmers: 'id, name, region, district, society, community, groupId, status, deleted, updatedAt, createdAt, [region+district], [region+district+society], [region+status]',
+            employees: 'id, name, email, role, status, deleted, updatedAt, createdAt',
+            products: 'id, name, category, supplierId, deleted, updatedAt, createdAt',
+            suppliers: 'id, name, email, deleted, updatedAt, createdAt',
+            transactions: 'id, type, category, date, deleted, updatedAt, createdAt',
+            farmerGroups: 'id, name, region, district, community, leaderId, seasonYear, *farmerIds, deleted, updatedAt, createdAt',
+            farmerRequests: 'id, farmerId, groupId, seasonYear, status, requestDate, deleted, updatedAt, createdAt',
+            statistics: 'id',
+            syncQueue: '++id, entityType, entityId, synced, status, timestamp',
+        });
+
+        // Version 7: Add Payment Plans and Transactions to Farmer Requests
+        this.version(7).stores({
+            farmerRequests: 'id, farmerId, groupId, seasonYear, status, requestDate, paymentPlan, deleted, updatedAt, createdAt',
+        });
     }
 }
 

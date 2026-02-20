@@ -10,6 +10,7 @@
 
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from '@/lib/db/schema';
+import { GHANA_REGIONS, type GhanaRegion } from '@/lib/utils/region-normalizer';
 
 // ... (imports)
 import {
@@ -134,6 +135,24 @@ export function useFarmersByRegion() {
  */
 export function useFarmersByGender() {
     return useLiveQuery(() => getFarmersByGender(), []);
+}
+
+/**
+ * Get farmer counts per region directly
+ */
+export function useRegionCounts() {
+    return useLiveQuery(async () => {
+        const counts: Record<string, number> = {};
+        for (const region of GHANA_REGIONS) {
+            counts[region] = await db.farmers.where('region').equals(region).count();
+        }
+
+        // Also count farmers with no region or unknown region ('N/A' from normalizer)
+        counts['Unknown'] = await db.farmers.where('region').equals('N/A').count() +
+            await db.farmers.where('region').equals('').count();
+
+        return counts;
+    }, []);
 }
 
 /**
