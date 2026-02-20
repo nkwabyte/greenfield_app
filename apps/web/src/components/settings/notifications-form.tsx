@@ -4,8 +4,7 @@ import * as React from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { doc, getDoc, setDoc } from 'firebase/firestore';
-import { db } from '@/lib/firebase/config';
+import { supabase } from '@/lib/supabase/client';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel } from '@/components/ui/form';
@@ -39,10 +38,14 @@ export function NotificationsForm() {
         async function loadSettings() {
             if (user) {
                 try {
-                    const settingsRef = doc(db, 'users', user.uid, 'settings', 'notifications');
-                    const docSnap = await getDoc(settingsRef);
-                    if (docSnap.exists()) {
-                        form.reset(docSnap.data() as NotificationsFormValues);
+                    const { data, error } = await supabase
+                        .from('users')
+                        .select('notification_settings')
+                        .eq('id', user.uid)
+                        .single();
+
+                    if (!error && data?.notification_settings) {
+                        form.reset(data.notification_settings as NotificationsFormValues);
                     }
                 } catch (error) {
                     console.error('Failed to load notification settings:', error);
@@ -55,8 +58,12 @@ export function NotificationsForm() {
     const onSubmit = async (data: NotificationsFormValues) => {
         if (user) {
             try {
-                const settingsRef = doc(db, 'users', user.uid, 'settings', 'notifications');
-                await setDoc(settingsRef, data);
+                const { error } = await supabase
+                    .from('users')
+                    .update({ notification_settings: data })
+                    .eq('id', user.uid);
+
+                if (error) throw error;
 
                 toast({
                     title: 'Settings Saved',

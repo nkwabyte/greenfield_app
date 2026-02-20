@@ -14,10 +14,14 @@ import { EmployeeSuccessDialog } from '@/components/employees/employee-success-d
 import { EmployeeFilters, type EmployeeFiltersState } from '@/components/employees/employee-filters';
 import { useEmployeesPaginatedAndFiltered } from '@/hooks/useData';
 import { ConfirmDialog } from '@/components/ui/confirm-dialog';
+import { useRequireRole } from '@/hooks/use-role-guard';
 
 export default function EmployeesPage() {
+  const { allowed } = useRequireRole(['Admin']);
   const router = useRouter();
   const { toast } = useToast();
+
+  if (!allowed) return null;
 
   // Pagination State
   const [pagination, setPagination] = React.useState({

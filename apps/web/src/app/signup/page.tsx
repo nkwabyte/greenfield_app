@@ -3,9 +3,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
-import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
-import { doc, setDoc, serverTimestamp, collection, getDocs, limit, query } from 'firebase/firestore';
-import { auth, db } from '@/lib/firebase/config';
+import { supabase } from '@/lib/supabase/client';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -15,7 +13,7 @@ import { useToast } from '@/hooks/use-toast';
 import Image from 'next/image';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/lib/store/store';
-import { getFriendlyErrorMessage } from '@/lib/firebase/error-messages';
+import { getFriendlyErrorMessage } from '@/lib/supabase/error-messages';
 import { AppLoadingSkeleton } from '@/components/app-loading-skeleton';
 
 export default function SignUpPage() {
@@ -67,34 +65,35 @@ export default function SignUpPage() {
         setSubmitting(true);
 
         try {
-            // 1. Create Authentication User
-            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-            const user = userCredential.user;
-
-            // 2. Update Profile Name
-            if (user) {
-                await updateProfile(user, { displayName: name });
-            }
-
-            // 3. Create Firestore User Document
-            await setDoc(doc(db, 'users', user.uid), {
-                name,
+            // Sign up — pass name, role, status as metadata.
+            // A Postgres trigger (handle_new_auth_user) will automatically create
+            // the public.users profile row server-side (SECURITY DEFINER),
+            // bypassing RLS. No client-side insert needed.
+            const { data: authData, error: authError } = await supabase.auth.signUp({
                 email,
-                role,
-                status,
-                createdAt: serverTimestamp(),
-                updatedAt: serverTimestamp(),
+                password,
+                options: {
+                    data: {
+                        name,
+                        role,
+                        status,
+                    },
+                },
             });
+
+            if (authError) throw authError;
+
+            if (!authData.user) throw new Error('User creation failed.');
 
             toast({
-                title: 'Account Created',
+                title: 'Account Created! ✅',
                 description: status === 'Active'
-                    ? 'Your admin account has been created successfully.'
-                    : 'Your account has been created. You can now access the dashboard.',
+                    ? 'Admin account created. Check your email to confirm, then sign in.'
+                    : 'Account created. Check your email to confirm, then sign in.',
             });
 
-            // Redirect to dashboard immediately
-            router.push('/dashboard');
+            // Send to login — email confirmation required before session is live
+            router.push('/');
 
         } catch (error: any) {
             toast({
@@ -110,7 +109,6 @@ export default function SignUpPage() {
     // Redirect authenticated users to dashboard if they are already active
     useEffect(() => {
         if (!isLoading && isAuthenticated) {
-            // We rely on the dashboard protection to handle pending users
             router.replace('/dashboard');
         }
     }, [isLoading, isAuthenticated, router]);

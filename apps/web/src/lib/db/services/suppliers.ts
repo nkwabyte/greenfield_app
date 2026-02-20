@@ -1,13 +1,13 @@
 /**
  * Offline-First CRUD Service for Suppliers
- * Implements Dexie-first approach with automatic sync to Firebase
+ * Implements Dexie-first approach with automatic sync to Supabase
  */
 
 import { db } from '../schema';
 import { syncService } from '../sync';
 import type { Supplier } from '@/lib/types';
 import type { SupplierFormValues } from '@/components/suppliers/add-edit-supplier-dialog';
-import { getFirebaseSuppliers } from '@/lib/firebase/services/suppliers';
+import { getSupabaseSuppliers } from '@/lib/supabase/services/suppliers';
 
 /**
  * Get all suppliers from local database
@@ -72,8 +72,6 @@ export async function addSupplier(
 
     // 2. Add to sync queue
     await syncService.addToQueue('supplier', 'create', id, supplierData);
-
-    // console.log(`✅ Supplier added locally: ${supplier.name}`);
 }
 
 /**
@@ -105,27 +103,25 @@ export async function updateSupplier(
 
     // 2. Add to sync queue
     await syncService.addToQueue('supplier', 'update', id, supplierData);
-
-    // console.log(`✅ Supplier updated locally: ${updatedSupplier.name}`);
 }
 
 /**
  * Delete a supplier (offline-first)
  */
 export async function deleteSupplier(id: string): Promise<void> {
+    const existing = await db.suppliers.get(id);
+
     // 1. Delete from local database
     await db.suppliers.delete(id);
 
     // 2. Add to sync queue
     await syncService.addToQueue('supplier', 'delete', id, null);
-
-    // console.log(`✅ Supplier deleted locally: ${id}`);
 }
 
 /**
- * Sync suppliers from Firebase to local database (delta sync)
+ * Sync suppliers from Supabase to local database (delta sync)
  */
-export async function syncSuppliersFromFirebase(): Promise<number> {
+export async function syncSuppliersFromSupabase(): Promise<number> {
     try {
         const lastSync = localStorage.getItem('lastSync_suppliers');
         const lastSyncTime = lastSync ? parseInt(lastSync) : undefined;
@@ -133,9 +129,9 @@ export async function syncSuppliersFromFirebase(): Promise<number> {
         // Capture start time BEFORE the query to avoid race conditions
         const syncStartTime = Date.now();
 
-        const firebaseSuppliers = await getFirebaseSuppliers(lastSyncTime);
+        const supabaseSuppliers = await getSupabaseSuppliers(lastSyncTime);
 
-        if (firebaseSuppliers.length === 0) {
+        if (supabaseSuppliers.length === 0) {
             localStorage.setItem('lastSync_suppliers', syncStartTime.toString());
             return 0;
         }
@@ -143,7 +139,7 @@ export async function syncSuppliersFromFirebase(): Promise<number> {
         const suppliersToPut: Supplier[] = [];
         const idsToDelete: string[] = [];
 
-        for (const supplier of firebaseSuppliers as (Supplier & { deleted?: boolean })[]) {
+        for (const supplier of supabaseSuppliers as (Supplier & { deleted?: boolean })[]) {
             if (supplier.deleted) {
                 idsToDelete.push(supplier.id);
             } else {
@@ -162,9 +158,9 @@ export async function syncSuppliersFromFirebase(): Promise<number> {
 
         localStorage.setItem('lastSync_suppliers', syncStartTime.toString());
 
-        return firebaseSuppliers.length;
+        return supabaseSuppliers.length;
     } catch (error) {
-        console.error('❌ Failed to sync suppliers from Firebase:', error);
+        console.error('❌ Failed to sync suppliers from Supabase:', error);
         throw error;
     }
 }

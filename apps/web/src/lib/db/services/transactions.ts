@@ -1,13 +1,13 @@
 /**
  * Offline-First CRUD Service for Transactions
- * Implements Dexie-first approach with automatic sync to Firebase
+ * Implements Dexie-first approach with automatic sync to Supabase
  */
 
 import { db } from '../schema';
 import { syncService } from '../sync';
 import type { Transaction } from '@/lib/types';
 import type { TransactionFormValues } from '@/components/finances/add-edit-transaction-dialog';
-import { getFirebaseTransactions } from '@/lib/firebase/services/transactions';
+import { getSupabaseTransactions } from '@/lib/supabase/services/transactions';
 
 /**
  * Get all transactions from local database
@@ -110,8 +110,6 @@ export async function addTransaction(
 
     // 2. Add to sync queue
     await syncService.addToQueue('transaction', 'create', id, transactionData);
-
-    // console.log(`✅ Transaction added locally: ${transaction.description}`);
 }
 
 /**
@@ -146,27 +144,25 @@ export async function updateTransaction(
 
     // 2. Add to sync queue
     await syncService.addToQueue('transaction', 'update', id, transactionData);
-
-    // console.log(`✅ Transaction updated locally: ${updatedTransaction.description}`);
 }
 
 /**
  * Delete a transaction (offline-first)
  */
 export async function deleteTransaction(id: string): Promise<void> {
+    const existing = await db.transactions.get(id);
+
     // 1. Delete from local database
     await db.transactions.delete(id);
 
     // 2. Add to sync queue
     await syncService.addToQueue('transaction', 'delete', id, null);
-
-    // console.log(`✅ Transaction deleted locally: ${id}`);
 }
 
 /**
- * Sync transactions from Firebase to local database (delta sync)
+ * Sync transactions from Supabase to local database (delta sync)
  */
-export async function syncTransactionsFromFirebase(): Promise<number> {
+export async function syncTransactionsFromSupabase(): Promise<number> {
     try {
         const lastSync = localStorage.getItem('lastSync_transactions');
         const lastSyncTime = lastSync ? parseInt(lastSync) : undefined;
@@ -174,9 +170,9 @@ export async function syncTransactionsFromFirebase(): Promise<number> {
         // Capture start time BEFORE the query to avoid race conditions
         const syncStartTime = Date.now();
 
-        const firebaseTransactions = await getFirebaseTransactions(lastSyncTime);
+        const supabaseTransactions = await getSupabaseTransactions(lastSyncTime);
 
-        if (firebaseTransactions.length === 0) {
+        if (supabaseTransactions.length === 0) {
             localStorage.setItem('lastSync_transactions', syncStartTime.toString());
             return 0;
         }
@@ -184,7 +180,7 @@ export async function syncTransactionsFromFirebase(): Promise<number> {
         const transactionsToPut: Transaction[] = [];
         const idsToDelete: string[] = [];
 
-        for (const transaction of firebaseTransactions as (Transaction & { deleted?: boolean })[]) {
+        for (const transaction of supabaseTransactions as (Transaction & { deleted?: boolean })[]) {
             if (transaction.deleted) {
                 idsToDelete.push(transaction.id);
             } else {
@@ -203,9 +199,9 @@ export async function syncTransactionsFromFirebase(): Promise<number> {
 
         localStorage.setItem('lastSync_transactions', syncStartTime.toString());
 
-        return firebaseTransactions.length;
+        return supabaseTransactions.length;
     } catch (error) {
-        console.error('❌ Failed to sync transactions from Firebase:', error);
+        console.error('❌ Failed to sync transactions from Supabase:', error);
         throw error;
     }
 }

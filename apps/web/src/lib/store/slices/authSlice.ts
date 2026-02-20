@@ -4,20 +4,17 @@ import type { User } from '@/lib/types';
 
 const LOCAL_STORAGE_USER_KEY = 'greenfield_user_session';
 
-export type SerializableFirebaseUser = {
-    uid: string;
+export type SerializableAuthUser = {
+    id: string;
     email: string | null;
-    displayName: string | null;
-    photoURL: string | null;
-    emailVerified: boolean;
-    isAnonymous: boolean;
-    providerId: string;
-    phoneNumber: string | null;
+    phone: string | null;
+    emailConfirmedAt: string | null;
+    lastSignInAt: string | null;
 };
 
 export interface AuthState {
     user: User | null;
-    firebaseUser: SerializableFirebaseUser | null;
+    supabaseUser: SerializableAuthUser | null;
     isAuthenticated: boolean;
     isLoading: boolean;
 }
@@ -25,7 +22,7 @@ export interface AuthState {
 /**
  * Attempt to restore user session from localStorage for offline-first support.
  * This allows the app to show the user as logged in immediately on load,
- * even before Firebase auth state resolves or when offline.
+ * even before Supabase auth state resolves or when offline.
  */
 function getPersistedUser(): User | null {
     if (typeof window === 'undefined') return null;
@@ -44,7 +41,7 @@ const persistedUser = getPersistedUser();
 
 export const initialState: AuthState = {
     user: persistedUser,
-    firebaseUser: null,
+    supabaseUser: null,
     isAuthenticated: !!persistedUser,
     isLoading: true,
 };
@@ -53,8 +50,8 @@ const authSlice = createSlice({
     name: 'auth',
     initialState,
     reducers: {
-        setFirebaseUser(state, action: PayloadAction<SerializableFirebaseUser | null>) {
-            state.firebaseUser = action.payload;
+        setSupabaseUser(state, action: PayloadAction<SerializableAuthUser | null>) {
+            state.supabaseUser = action.payload;
         },
         setUser(state, action: PayloadAction<User | null>) {
             state.user = action.payload;
@@ -74,7 +71,7 @@ const authSlice = createSlice({
         },
         logout(state) {
             state.user = null;
-            state.firebaseUser = null;
+            state.supabaseUser = null;
             state.isAuthenticated = false;
 
             // Clear persisted session
@@ -85,5 +82,5 @@ const authSlice = createSlice({
     },
 });
 
-export const { setUser, setFirebaseUser, setLoading, logout } = authSlice.actions;
+export const { setUser, setSupabaseUser, setLoading, logout } = authSlice.actions;
 export default authSlice.reducer;

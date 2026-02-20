@@ -3,8 +3,7 @@
 import * as React from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import { signOut } from 'firebase/auth';
-import { auth } from '@/lib/firebase/config';
+import { supabase } from '@/lib/supabase/client';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -48,7 +47,7 @@ const allNavItems = [
   { href: '/employees', icon: Briefcase, label: 'Employees', roles: ['Admin'] },
   { href: '/suppliers', icon: Truck, label: 'Suppliers', roles: ['Admin', 'Employee'] },
   { href: '/products', icon: Package, label: 'Products', roles: ['Admin', 'Employee'] },
-  { href: '/finances', icon: Landmark, label: 'Finances', roles: ['Admin'] },
+  { href: '/finances', icon: Landmark, label: 'Finances', roles: ['Admin', 'Employee'] },
 ];
 
 export function AppShell({ children }: { children: React.ReactNode }) {
@@ -60,7 +59,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   const isLoading = useSelector((state: RootState) => state.auth.isLoading);
 
   const handleLogout = async () => {
-    await signOut(auth);
+    await supabase.auth.signOut();
     router.push('/');
   };
 

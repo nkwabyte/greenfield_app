@@ -1,7 +1,7 @@
 import { db } from '../schema';
 import { syncService } from '../sync';
 import type { FarmerRequest } from '@/lib/types';
-import { getFirebaseFarmerRequests } from '@/lib/firebase/services/farmer-requests';
+import { getSupabaseFarmerRequests } from '@/lib/supabase/services/farmer-requests';
 
 export async function getAllFarmerRequests(): Promise<FarmerRequest[]> {
     return await db.farmerRequests.toArray();
@@ -62,21 +62,21 @@ export async function deleteFarmerRequest(id: string): Promise<void> {
     await syncService.addToQueue('farmerRequest', 'delete', id, null);
 }
 
-export async function syncFarmerRequestsFromFirebase(): Promise<number> {
+export async function syncFarmerRequestsFromSupabase(): Promise<number> {
     try {
         const lastSync = localStorage.getItem('lastSync_farmerRequests');
         const lastSyncTime = lastSync ? parseInt(lastSync) : undefined;
 
-        const firebaseReqs = await getFirebaseFarmerRequests(lastSyncTime);
+        const supabaseReqs = await getSupabaseFarmerRequests(lastSyncTime);
 
-        if (firebaseReqs.length === 0) {
+        if (supabaseReqs.length === 0) {
             return 0;
         }
 
         const toPut = [];
         const idsToDelete = [];
 
-        for (const req of firebaseReqs as any[]) {
+        for (const req of supabaseReqs as any[]) {
             if (req.deleted) {
                 idsToDelete.push(req.id);
             } else {
@@ -95,9 +95,9 @@ export async function syncFarmerRequestsFromFirebase(): Promise<number> {
 
         localStorage.setItem('lastSync_farmerRequests', Date.now().toString());
 
-        return firebaseReqs.length;
+        return supabaseReqs.length;
     } catch (error) {
-        console.error('❌ Failed to sync farmer requests from Firebase:', error);
+        console.error('❌ Failed to sync farmer requests from Supabase:', error);
         throw error;
     }
 }

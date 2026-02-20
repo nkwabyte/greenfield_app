@@ -49,14 +49,50 @@ export class GreenfieldDB extends Dexie {
         this.version(4).stores({
             farmerGroups: 'id, name, seasonYear, *farmerIds, syncStatus, updatedAt, createdAt',
             farmerRequests: 'id, farmerId, groupId, seasonYear, status, requestDate, updatedAt, createdAt'
-        }).upgrade(tx => {
-            // Optional data migration or initial setup code could go here
+        });
+
+        // Version 5: Migrated from Firebase → Supabase.
+        // Clear all entity tables so Supabase sync can repopulate with clean data.
+        this.version(5).stores({
+            farmers: 'id, name, region, district, society, community, status, updatedAt, createdAt, [region+district], [region+district+society], [region+status]',
+            employees: 'id, name, email, role, status, updatedAt, createdAt',
+            products: 'id, name, category, supplierId, updatedAt, createdAt',
+            suppliers: 'id, name, email, updatedAt, createdAt',
+            transactions: 'id, type, category, date, updatedAt, createdAt',
+            farmerGroups: 'id, name, seasonYear, *farmerIds, updatedAt, createdAt',
+            farmerRequests: 'id, farmerId, groupId, seasonYear, status, requestDate, updatedAt, createdAt',
+            statistics: 'id',
+            syncQueue: '++id, entityType, entityId, synced, status, timestamp',
+        }).upgrade(async tx => {
+            // Wipe Firebase-era data — Supabase sync will repopulate on next load
+            await Promise.all([
+                tx.table('farmers').clear(),
+                tx.table('employees').clear(),
+                tx.table('products').clear(),
+                tx.table('suppliers').clear(),
+                tx.table('transactions').clear(),
+                tx.table('farmerGroups').clear(),
+                tx.table('farmerRequests').clear(),
+                tx.table('statistics').clear(),
+                tx.table('syncQueue').clear(),
+            ]);
         });
     }
 }
 
 // Create and export database instance
 export const db = new GreenfieldDB();
+
+// Recover from schema version conflicts (common in Electron after upgrades)
+// If the DB fails to open, delete it and reload — data will re-sync from Supabase
+if (typeof window !== 'undefined') {
+    db.open().catch((err) => {
+        console.error('[Dexie] Failed to open DB, deleting and reloading:', err);
+        db.delete().then(() => {
+            window.location.reload();
+        });
+    });
+}
 
 /**
  * Request persistent storage to prevent browser from clearing data

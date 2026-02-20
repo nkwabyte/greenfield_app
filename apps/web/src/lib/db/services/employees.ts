@@ -1,13 +1,13 @@
 /**
  * Offline-First CRUD Service for Employees
- * Implements Dexie-first approach with automatic sync to Firebase
+ * Implements Dexie-first approach with automatic sync to Supabase
  */
 
 import { db } from '../schema';
 import { syncService } from '../sync';
 import type { Employee } from '@/lib/types';
 import type { EmployeeFormValues } from '@/components/employees/add-edit-employee-dialog';
-import { getFirebaseEmployees } from '@/lib/firebase/services/employees';
+import { getSupabaseEmployees } from '@/lib/supabase/services/employees';
 
 /**
  * Get all employees from local database
@@ -117,7 +117,7 @@ export async function addEmployee(
     // or queue it. For now, assuming admin implies online for this action or we handle error.
     let authUid = id;
     try {
-        const { createEmployeeAuth } = await import('@/lib/firebase/admin-auth');
+        const { createEmployeeAuth } = await import('@/lib/supabase/admin-auth');
         authUid = await createEmployeeAuth(employeeData.email, password);
     } catch (error) {
         console.error("Failed to create auth user, falling back to local ID", error);
@@ -145,13 +145,10 @@ export async function addEmployee(
     // 1. Save to local database immediately
     await db.employees.add(employee);
 
-    // 3. Add to sync queue (with password for UI display if needed, but risky to store)
-    // Actually, we return the password to the UI.
+    // 2. Add to sync queue
     await syncService.addToQueue('employee', 'create', authUid!, { ...employeeData, password });
 
     return password;
-
-    // console.log(`✅ Employee added locally: ${employee.name}`);
 }
 
 /**
@@ -186,27 +183,25 @@ export async function updateEmployee(
 
     // 2. Add to sync queue
     await syncService.addToQueue('employee', 'update', id, employeeData);
-
-    // console.log(`✅ Employee updated locally: ${updatedEmployee.name}`);
 }
 
 /**
  * Delete an employee (offline-first)
  */
 export async function deleteEmployee(id: string): Promise<void> {
+    const existing = await db.employees.get(id);
+
     // 1. Delete from local database
     await db.employees.delete(id);
 
     // 2. Add to sync queue
     await syncService.addToQueue('employee', 'delete', id, null);
-
-    // console.log(`✅ Employee deleted locally: ${id}`);
 }
 
 /**
- * Sync employees from Firebase to local database (delta sync)
+ * Sync employees from Supabase to local database (delta sync)
  */
-export async function syncEmployeesFromFirebase(): Promise<number> {
+export async function syncEmployeesFromSupabase(): Promise<number> {
     try {
         const lastSync = localStorage.getItem('lastSync_employees');
         const lastSyncTime = lastSync ? parseInt(lastSync) : undefined;
@@ -214,9 +209,9 @@ export async function syncEmployeesFromFirebase(): Promise<number> {
         // Capture start time BEFORE the query to avoid race conditions
         const syncStartTime = Date.now();
 
-        const firebaseEmployees = await getFirebaseEmployees(lastSyncTime);
+        const supabaseEmployees = await getSupabaseEmployees(lastSyncTime);
 
-        if (firebaseEmployees.length === 0) {
+        if (supabaseEmployees.length === 0) {
             localStorage.setItem('lastSync_employees', syncStartTime.toString());
             return 0;
         }
@@ -224,7 +219,7 @@ export async function syncEmployeesFromFirebase(): Promise<number> {
         const employeesToPut: Employee[] = [];
         const idsToDelete: string[] = [];
 
-        for (const employee of firebaseEmployees as (Employee & { deleted?: boolean })[]) {
+        for (const employee of supabaseEmployees as (Employee & { deleted?: boolean })[]) {
             if (employee.deleted) {
                 idsToDelete.push(employee.id);
             } else {
@@ -243,9 +238,9 @@ export async function syncEmployeesFromFirebase(): Promise<number> {
 
         localStorage.setItem('lastSync_employees', syncStartTime.toString());
 
-        return firebaseEmployees.length;
+        return supabaseEmployees.length;
     } catch (error) {
-        console.error('❌ Failed to sync employees from Firebase:', error);
+        console.error('❌ Failed to sync employees from Supabase:', error);
         throw error;
     }
 }

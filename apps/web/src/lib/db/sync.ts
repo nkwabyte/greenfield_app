@@ -10,16 +10,65 @@ import { store } from '@/lib/store/store';
 import { setSyncStatus } from '@/lib/store/slices/dataSlice';
 import { isAuthenticated } from '@/lib/auth-utils';
 
-// Import Firebase services for syncing
-import {
-    purgeFirebaseFarmers
-} from '@/lib/firebase/services/farmers';
-import { db as firebaseDb } from '@/lib/firebase/config';
-import { writeBatch, doc, serverTimestamp } from 'firebase/firestore';
+// Import Supabase services for syncing
+import { purgeSupabaseFarmers } from '@/lib/supabase/services/farmers';
+import { supabase } from '@/lib/supabase/client';
 
 
 const MAX_RETRY_COUNT = 3;
 const SYNC_INTERVAL = 30000; // 30 seconds
+
+/** Maps entity types to Supabase table names */
+function getTableName(entityType: EntityType): string {
+    const tableMap: Record<string, string> = {
+        farmer: 'farmers',
+        employee: 'employees',
+        product: 'products',
+        supplier: 'suppliers',
+        transaction: 'transactions',
+        farmerGroup: 'farmer_groups',
+        farmerRequest: 'farmer_requests',
+    };
+    return tableMap[entityType] || `${entityType}s`;
+}
+
+/**
+ * Convert camelCase data keys to snake_case for Postgres.
+ * Common field mappings used across all entities.
+ */
+function toSnakeCase(data: any): any {
+    const keyMap: Record<string, string> = {
+        createdAt: 'created_at',
+        updatedAt: 'updated_at',
+        joinDate: 'join_date',
+        startDate: 'start_date',
+        educationLevel: 'education_level',
+        farmSize: 'farm_size',
+        cropsGrown: 'crops_grown',
+        isVerified: 'is_verified',
+        supplierId: 'supplier_id',
+        contactPerson: 'contact_person',
+        employeeName: 'employee_name',
+        seasonYear: 'season_year',
+        farmerIds: 'farmer_ids',
+        farmerId: 'farmer_id',
+        groupId: 'group_id',
+        grandTotal: 'grand_total',
+        requestDate: 'request_date',
+        productId: 'product_id',
+        productName: 'product_name',
+        dynamicPrice: 'dynamic_price',
+        geminiApiKey: 'gemini_api_key',
+        preferredModel: 'preferred_model',
+    };
+
+    const result: any = {};
+    for (const [key, value] of Object.entries(data)) {
+        const newKey = keyMap[key] || key;
+        result[newKey] = value;
+    }
+    return result;
+}
 
 class SyncService {
     private syncInterval: NodeJS.Timeout | null = null;
@@ -45,8 +94,6 @@ class SyncService {
             retryCount: 0,
             status: 'pending',
         });
-
-
 
         // Try to sync immediately if online and not paused
         if (connectivityService.isOnline() && !this.isPaused) {
@@ -93,54 +140,61 @@ class SyncService {
                 .and(item => (item.retryCount || 0) < MAX_RETRY_COUNT)
                 .toArray();
 
-            // Process each item in batches of 500 (Firestore's limit)
-            const batchSize = 500;
-            for (let i = 0; i < pendingItems.length; i += batchSize) {
+            // Process items in chunks
+            const chunkSize = 500;
+            for (let i = 0; i < pendingItems.length; i += chunkSize) {
                 if (this.isPaused) break;
 
-                const chunk = pendingItems.slice(i, i + batchSize);
-                const batch = writeBatch(firebaseDb);
+                const chunk = pendingItems.slice(i, i + chunkSize);
                 const chunkIds = chunk.map(item => item.id as number);
 
                 await db.syncQueue.where('id').anyOf(chunkIds).modify({ status: 'syncing' });
 
                 try {
                     for (const item of chunk) {
+                        // Handle special purge operation
                         if (item.operation === 'purge' && item.entityType === 'farmer') {
-                            await purgeFirebaseFarmers();
+                            await purgeSupabaseFarmers();
                             continue;
                         }
 
-                        // Collection names match entityTypes + 's' generally
-                        const collectionName = item.entityType === 'transaction' ? 'transactions' : `${item.entityType}s`;
-                        const docRef = doc(firebaseDb, collectionName, item.entityId);
+                        const tableName = getTableName(item.entityType);
 
                         if (item.operation === 'delete') {
-                            // Implement Soft Deletes for all entities to avoid orphan records on other devices
-                            batch.update(docRef, { deleted: true, updatedAt: serverTimestamp() });
+                            // Soft-delete
+                            const { error } = await supabase
+                                .from(tableName)
+                                .update({ deleted: true })
+                                .eq('id', item.entityId);
+                            if (error) throw error;
+
                         } else if (item.operation === 'create') {
-                            const dataToSave = { ...item.data };
-                            if (typeof dataToSave.joinDate === 'string') dataToSave.joinDate = new Date(dataToSave.joinDate);
+                            const dataToSave = toSnakeCase({ ...item.data });
+                            // Remove undefined values
                             Object.keys(dataToSave).forEach(k => dataToSave[k] === undefined && delete dataToSave[k]);
+                            // Remove camelCase timestamp fields (Postgres auto-manages these)
+                            delete dataToSave.created_at;
+                            delete dataToSave.updated_at;
 
-                            batch.set(docRef, {
-                                ...dataToSave,
-                                createdAt: serverTimestamp(),
-                                updatedAt: serverTimestamp()
-                            });
+                            const { error } = await supabase
+                                .from(tableName)
+                                .upsert({ id: item.entityId, ...dataToSave }, { onConflict: 'id' });
+                            if (error) throw error;
+
                         } else if (item.operation === 'update') {
-                            const dataToSave = { ...item.data };
-                            if (typeof dataToSave.joinDate === 'string') dataToSave.joinDate = new Date(dataToSave.joinDate);
+                            const dataToSave = toSnakeCase({ ...item.data });
                             Object.keys(dataToSave).forEach(k => dataToSave[k] === undefined && delete dataToSave[k]);
+                            // Don't overwrite server timestamps
+                            delete dataToSave.created_at;
+                            delete dataToSave.updated_at;
 
-                            batch.update(docRef, {
-                                ...dataToSave,
-                                updatedAt: serverTimestamp()
-                            });
+                            const { error } = await supabase
+                                .from(tableName)
+                                .update(dataToSave)
+                                .eq('id', item.entityId);
+                            if (error) throw error;
                         }
                     }
-
-                    await batch.commit();
 
                     await db.syncQueue.where('id').anyOf(chunkIds).modify({
                         synced: 1,
@@ -176,16 +230,12 @@ class SyncService {
 
     startBackgroundSync(): void {
         if (this.syncInterval) {
-            // console.log('⚠️ Background sync already running');
             return;
         }
-
-        // console.log('🔄 Starting background sync...');
 
         // Sync on connection restore
         connectivityService.subscribe((isOnline) => {
             if (isOnline) {
-                // console.log('🟢 Connection restored - triggering sync');
                 this.syncAll().catch(console.error);
             }
         });
@@ -210,7 +260,6 @@ class SyncService {
         if (this.syncInterval) {
             clearInterval(this.syncInterval);
             this.syncInterval = null;
-            // console.log('⏹️ Background sync stopped');
         }
     }
 
@@ -232,7 +281,6 @@ class SyncService {
             .where('synced')
             .equals(1) // 1 = true
             .delete();
-        // console.log('🧹 Cleared synced items from queue');
     }
 
     /**
@@ -240,7 +288,6 @@ class SyncService {
      */
     async clearAllItems(): Promise<void> {
         await db.syncQueue.clear();
-        // console.log('🧹 Cleared all items from sync queue');
     }
 
     /**
@@ -249,7 +296,6 @@ class SyncService {
     pause(): void {
         this.isPaused = true;
         store.dispatch(setSyncStatus({ isPaused: true }));
-        // console.log('⏸️ Sync paused');
     }
 
     /**
@@ -258,7 +304,6 @@ class SyncService {
     resume(): void {
         this.isPaused = false;
         store.dispatch(setSyncStatus({ isPaused: false }));
-        // console.log('▶️ Sync resumed');
         if (connectivityService.isOnline()) {
             this.syncAll().catch(console.error);
         }

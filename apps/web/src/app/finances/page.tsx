@@ -32,6 +32,7 @@ import { useToast } from '@/hooks/use-toast';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useEmployees, useTransactionsPaginated } from '@/hooks/useData';
 import { ConfirmDialog } from '@/components/ui/confirm-dialog';
+import { useRequireRole } from '@/hooks/use-role-guard';
 
 const currencyFormatter = new Intl.NumberFormat('en-GH', {
   style: 'currency',
@@ -39,7 +40,10 @@ const currencyFormatter = new Intl.NumberFormat('en-GH', {
 });
 
 export default function FinancesPage() {
+  const { allowed } = useRequireRole(['Admin', 'Employee']);
   const { toast } = useToast();
+
+  if (!allowed) return null;
 
   // Pagination State
   const [pagination, setPagination] = React.useState({

@@ -3,8 +3,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React from 'react';
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '@/lib/firebase/config';
+import { supabase } from '@/lib/supabase/client';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -14,7 +13,7 @@ import { useToast } from '@/hooks/use-toast';
 import Image from 'next/image';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/lib/store/store';
-import { getFriendlyErrorMessage } from '@/lib/firebase/error-messages';
+import { getFriendlyErrorMessage } from '@/lib/supabase/error-messages';
 import { AppLoadingSkeleton } from '@/components/app-loading-skeleton';
 
 export default function LoginPage() {
@@ -32,7 +31,8 @@ export default function LoginPage() {
     e.preventDefault();
     setSubmitting(true);
     try {
-      await signInWithEmailAndPassword(auth, email, password);
+      const { error } = await supabase.auth.signInWithPassword({ email, password });
+      if (error) throw error;
       toast({ title: 'Login Successful', description: 'Welcome back!' });
       // Redirection is handled by useEffect when auth state changes
     } catch (error: any) {
@@ -50,9 +50,7 @@ export default function LoginPage() {
 
   // Redirect authenticated users to dashboard
   React.useEffect(() => {
-    // console.log("Login Page Effect:", { isLoading, isAuthenticated, status: user?.status });
     if (!isLoading && isAuthenticated && (user?.status === 'Active' || user?.status === 'Pending')) {
-      // console.log("Redirecting to dashboard...");
       router.replace('/dashboard');
     }
   }, [isLoading, isAuthenticated, user, router]);

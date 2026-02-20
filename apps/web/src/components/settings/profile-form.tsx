@@ -13,8 +13,7 @@ import {
     SelectValue,
 } from "@/components/ui/select";
 import { Eye, EyeOff } from 'lucide-react';
-import { doc, updateDoc } from 'firebase/firestore';
-import { db } from '@/lib/firebase/config';
+import { supabase } from '@/lib/supabase/client';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
@@ -63,12 +62,16 @@ export function ProfileForm() {
     const onSubmit = async (data: ProfileFormValues) => {
         if (user) {
             try {
-                const userDocRef = doc(db, 'users', user.uid);
-                await updateDoc(userDocRef, {
-                    name: data.name,
-                    geminiApiKey: data.geminiApiKey || '',
-                    preferredModel: data.preferredModel || 'models/gemini-2.5-flash'
-                });
+                const { error } = await supabase
+                    .from('users')
+                    .update({
+                        name: data.name,
+                        gemini_api_key: data.geminiApiKey || '',
+                        preferred_model: data.preferredModel || 'models/gemini-2.5-flash',
+                    })
+                    .eq('id', user.uid);
+
+                if (error) throw error;
 
                 // Update Redux state manually to reflect changes immediately
                 dispatch(setUser({

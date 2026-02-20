@@ -34,7 +34,7 @@ export interface DataState {
         lastSyncAt?: number;
         isSyncing: boolean;
         isPaused: boolean;
-        // Per-entity Firebase → Dexie initial sync progress
+        // Per-entity Supabase → Dexie initial sync progress
         entitySync: {
             farmers: { status: 'idle' | 'syncing' | 'done' | 'error'; count: number };
             employees: { status: 'idle' | 'syncing' | 'done' | 'error'; count: number };
@@ -141,7 +141,7 @@ const dataSlice = createSlice({
             state.sync = { ...state.sync, ...action.payload };
         },
 
-        // Update per-entity Firebase→Dexie sync status
+        // Update per-entity Supabase→Dexie sync status
         setEntitySyncStatus(
             state,
             action: PayloadAction<{

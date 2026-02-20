@@ -13,8 +13,10 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Info } from 'lucide-react';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/lib/store/store';
+
 export default function SettingsPage() {
   const user = useSelector((state: RootState) => state.auth.user);
+  const isAdmin = user?.role === 'Admin';
 
   return (
     <AppShell>
@@ -35,7 +37,9 @@ export default function SettingsPage() {
             <TabsTrigger value="security">Security</TabsTrigger>
             <TabsTrigger value="appearance">Appearance</TabsTrigger>
             <TabsTrigger value="notifications">Notifications</TabsTrigger>
-            <TabsTrigger value="danger" className="text-red-500">Danger Zone</TabsTrigger>
+            {isAdmin && (
+              <TabsTrigger value="danger" className="text-red-500">Danger Zone</TabsTrigger>
+            )}
           </TabsList>
           <TabsContent value="profile" className="space-y-4">
             <ProfileForm />
@@ -49,9 +53,11 @@ export default function SettingsPage() {
           <TabsContent value="notifications" className="space-y-4">
             <NotificationsForm />
           </TabsContent>
-          <TabsContent value="danger" className="space-y-4">
-            <DangerZone />
-          </TabsContent>
+          {isAdmin && (
+            <TabsContent value="danger" className="space-y-4">
+              <DangerZone />
+            </TabsContent>
+          )}
         </Tabs>
       </div>
     </AppShell>
