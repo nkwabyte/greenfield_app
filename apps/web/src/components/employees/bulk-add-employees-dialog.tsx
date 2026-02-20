@@ -145,22 +145,27 @@ export function BulkAddEmployeesDialog({
                     name,
                     email,
                     role: defaultRole,
+                    salary: 0,
                     startDate: now,
                     status: 'Active',
                     isVerified: true,
                     createdAt: now,
                     updatedAt: now,
                 });
-                await syncService.addToQueue('employee', 'create', authUid, { name, email, role: defaultRole });
+                await syncService.addToQueue('employee', 'create', authUid, { name, email, role: defaultRole, salary: 0 });
 
                 collected.push({ email, name, password, status: 'success' });
             } catch (err: any) {
+                const rawMsg: string = err?.message ?? 'Unknown error';
+                const friendlyMsg = rawMsg.toLowerCase().includes('already registered') || rawMsg.toLowerCase().includes('already exists')
+                    ? 'Already exists — skipped'
+                    : rawMsg;
                 collected.push({
                     email,
                     name,
                     password: '',
                     status: 'error',
-                    error: err?.message ?? 'Unknown error',
+                    error: friendlyMsg,
                 });
             }
 
