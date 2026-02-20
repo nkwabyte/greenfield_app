@@ -39,6 +39,7 @@ export type Farmer = {
   joinDate?: string; // ISO date string
   createdAt: string; // ISO date string
   updatedAt: string; // ISO date string
+  deleted?: boolean; // Soft-delete flag for delta sync
 };
 
 export type Employee = {
@@ -52,6 +53,7 @@ export type Employee = {
   isVerified: boolean; // true when added by admin; false for self-registered pending approval
   createdAt: string; // ISO date string
   updatedAt: string; // ISO date string
+  deleted?: boolean; // Soft-delete flag for delta sync
 };
 
 export type Transaction = {
@@ -64,6 +66,7 @@ export type Transaction = {
   employeeName: string;
   createdAt: string; // ISO date string
   updatedAt: string; // ISO date string
+  deleted?: boolean; // Soft-delete flag for delta sync
 };
 
 export type Supplier = {
@@ -74,6 +77,7 @@ export type Supplier = {
   phone: string;
   createdAt: string; // ISO date string
   updatedAt: string; // ISO date string
+  deleted?: boolean; // Soft-delete flag for delta sync
 };
 
 export type ProductCategory = 'Seeds' | 'Fertilizers' | 'Pesticides' | 'Equipment' | 'Other';
@@ -87,6 +91,7 @@ export type Product = {
   price: number; // per unit
   createdAt: string; // ISO date string
   updatedAt: string; // ISO date string
+  deleted?: boolean; // Soft-delete flag for delta sync
 };
 
 export type Kpi = {

@@ -123,17 +123,45 @@ export async function deleteSupplier(id: string): Promise<void> {
 }
 
 /**
- * Sync suppliers from Firebase to local database
+ * Sync suppliers from Firebase to local database (delta sync)
  */
 export async function syncSuppliersFromFirebase(): Promise<number> {
     try {
-        const firebaseSuppliers = await getFirebaseSuppliers();
+        const lastSync = localStorage.getItem('lastSync_suppliers');
+        const lastSyncTime = lastSync ? parseInt(lastSync) : undefined;
 
-        // Clear local suppliers and replace with Firebase data
-        await db.suppliers.clear();
-        await db.suppliers.bulkAdd(firebaseSuppliers);
+        // Capture start time BEFORE the query to avoid race conditions
+        const syncStartTime = Date.now();
 
-        // console.log(`✅ Synced ${firebaseSuppliers.length} suppliers from Firebase`);
+        const firebaseSuppliers = await getFirebaseSuppliers(lastSyncTime);
+
+        if (firebaseSuppliers.length === 0) {
+            localStorage.setItem('lastSync_suppliers', syncStartTime.toString());
+            return 0;
+        }
+
+        const suppliersToPut: Supplier[] = [];
+        const idsToDelete: string[] = [];
+
+        for (const supplier of firebaseSuppliers as (Supplier & { deleted?: boolean })[]) {
+            if (supplier.deleted) {
+                idsToDelete.push(supplier.id);
+            } else {
+                delete supplier.deleted;
+                suppliersToPut.push(supplier);
+            }
+        }
+
+        if (suppliersToPut.length > 0) {
+            await db.suppliers.bulkPut(suppliersToPut);
+        }
+
+        if (idsToDelete.length > 0) {
+            await db.suppliers.bulkDelete(idsToDelete);
+        }
+
+        localStorage.setItem('lastSync_suppliers', syncStartTime.toString());
+
         return firebaseSuppliers.length;
     } catch (error) {
         console.error('❌ Failed to sync suppliers from Firebase:', error);

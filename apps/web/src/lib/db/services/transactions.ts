@@ -164,17 +164,45 @@ export async function deleteTransaction(id: string): Promise<void> {
 }
 
 /**
- * Sync transactions from Firebase to local database
+ * Sync transactions from Firebase to local database (delta sync)
  */
 export async function syncTransactionsFromFirebase(): Promise<number> {
     try {
-        const firebaseTransactions = await getFirebaseTransactions();
+        const lastSync = localStorage.getItem('lastSync_transactions');
+        const lastSyncTime = lastSync ? parseInt(lastSync) : undefined;
 
-        // Clear local transactions and replace with Firebase data
-        await db.transactions.clear();
-        await db.transactions.bulkAdd(firebaseTransactions);
+        // Capture start time BEFORE the query to avoid race conditions
+        const syncStartTime = Date.now();
 
-        // console.log(`✅ Synced ${firebaseTransactions.length} transactions from Firebase`);
+        const firebaseTransactions = await getFirebaseTransactions(lastSyncTime);
+
+        if (firebaseTransactions.length === 0) {
+            localStorage.setItem('lastSync_transactions', syncStartTime.toString());
+            return 0;
+        }
+
+        const transactionsToPut: Transaction[] = [];
+        const idsToDelete: string[] = [];
+
+        for (const transaction of firebaseTransactions as (Transaction & { deleted?: boolean })[]) {
+            if (transaction.deleted) {
+                idsToDelete.push(transaction.id);
+            } else {
+                delete transaction.deleted;
+                transactionsToPut.push(transaction);
+            }
+        }
+
+        if (transactionsToPut.length > 0) {
+            await db.transactions.bulkPut(transactionsToPut);
+        }
+
+        if (idsToDelete.length > 0) {
+            await db.transactions.bulkDelete(idsToDelete);
+        }
+
+        localStorage.setItem('lastSync_transactions', syncStartTime.toString());
+
         return firebaseTransactions.length;
     } catch (error) {
         console.error('❌ Failed to sync transactions from Firebase:', error);
