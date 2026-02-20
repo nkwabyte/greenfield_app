@@ -15,6 +15,7 @@ import {
   DocumentData,
   limit,
   startAfter,
+  where,
 } from 'firebase/firestore';
 import type { Farmer } from '@/lib/types';
 import type { FarmerFormValues } from '@/components/farmers/add-edit-farmer-dialog';
@@ -70,8 +71,19 @@ export async function getPaginatedFarmers(
   };
 }
 
-export async function getFirebaseFarmers(): Promise<Farmer[]> {
-  const q = query(farmerCollection, orderBy('updatedAt', 'desc'));
+export async function getFirebaseFarmers(lastSyncTime?: number): Promise<Farmer[]> {
+  let q;
+  if (lastSyncTime) {
+    const lastSyncDate = new Date(lastSyncTime);
+    q = query(
+      farmerCollection,
+      where('updatedAt', '>', lastSyncDate),
+      orderBy('updatedAt', 'desc')
+    );
+  } else {
+    q = query(farmerCollection, orderBy('updatedAt', 'desc'));
+  }
+
   const snapshot = await getDocs(q);
   return snapshot.docs.map((doc) => {
     const data = doc.data();
@@ -79,10 +91,54 @@ export async function getFirebaseFarmers(): Promise<Farmer[]> {
       id: doc.id,
       ...data,
       joinDate: data.joinDate?.toDate().toISOString(),
-      createdAt: data.createdAt.toDate().toISOString(),
-      updatedAt: data.updatedAt.toDate().toISOString(),
+      createdAt: data.createdAt?.toDate().toISOString() ?? null,
+      updatedAt: data.updatedAt?.toDate().toISOString() ?? null,
     };
   }) as Farmer[];
+}
+
+export async function getFirebaseFarmersPaginated(
+  lastSyncTime?: number,
+  lastDocCursor?: any,
+  chunkSize = 500
+): Promise<{ farmers: Farmer[]; lastDoc?: any }> {
+  let q;
+  if (lastSyncTime) {
+    const lastSyncDate = new Date(lastSyncTime);
+    q = query(
+      farmerCollection,
+      where('updatedAt', '>', lastSyncDate),
+      orderBy('updatedAt', 'desc'),
+      limit(chunkSize)
+    );
+  } else {
+    q = query(
+      farmerCollection,
+      orderBy('updatedAt', 'desc'),
+      limit(chunkSize)
+    );
+  }
+
+  if (lastDocCursor) {
+    q = query(q, startAfter(lastDocCursor));
+  }
+
+  const snapshot = await getDocs(q);
+  const farmers = snapshot.docs.map((doc) => {
+    const data = doc.data();
+    return {
+      id: doc.id,
+      ...data,
+      joinDate: data.joinDate?.toDate().toISOString(),
+      createdAt: data.createdAt?.toDate().toISOString() ?? null,
+      updatedAt: data.updatedAt?.toDate().toISOString() ?? null,
+    };
+  }) as Farmer[];
+
+  return {
+    farmers,
+    lastDoc: snapshot.docs.length > 0 ? snapshot.docs[snapshot.docs.length - 1] : undefined
+  };
 }
 
 const prepareFarmerData = (farmerData: FarmerFormValues) => {
@@ -141,7 +197,10 @@ export async function updateFirebaseFarmer(id: string, farmerData: FarmerFormVal
 
 export async function deleteFirebaseFarmer(id: string) {
   const farmerDoc = doc(db, 'farmers', id);
-  await deleteDoc(farmerDoc);
+  await updateDoc(farmerDoc, {
+    deleted: true,
+    updatedAt: serverTimestamp(),
+  });
 }
 
 export async function purgeFirebaseFarmers() {

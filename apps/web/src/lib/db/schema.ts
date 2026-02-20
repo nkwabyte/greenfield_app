@@ -4,7 +4,7 @@
  */
 
 import Dexie, { Table } from 'dexie';
-import type { Farmer, Employee, Product, Supplier, Transaction } from '@/lib/types';
+import type { Farmer, Employee, Product, Supplier, Transaction, FarmerGroup, FarmerRequest } from '@/lib/types';
 import type { SyncQueueItem } from './types';
 
 export class GreenfieldDB extends Dexie {
@@ -14,6 +14,9 @@ export class GreenfieldDB extends Dexie {
     products!: Table<Product>;
     suppliers!: Table<Supplier>;
     transactions!: Table<Transaction>;
+    farmerGroups!: Table<FarmerGroup>;    // NEW: Phase 2 Table
+    farmerRequests!: Table<FarmerRequest>; // NEW: Phase 3 Table
+    statistics!: Table<{ id: string; byRegion: Record<string, number>; byGender: Record<string, number> }>;
 
     // Sync queue table
     syncQueue!: Table<SyncQueueItem>;
@@ -23,29 +26,31 @@ export class GreenfieldDB extends Dexie {
 
         // Define schema version 1
         this.version(1).stores({
-            // Farmers table - indexed fields for efficient queries
-            // Matches the structure from data_modified.xlsx
             farmers: 'id, name, region, district, society, status, updatedAt, createdAt',
-
-            // Employees table
             employees: 'id, name, email, role, status, updatedAt, createdAt',
-
-            // Products table
             products: 'id, name, category, supplierId, updatedAt, createdAt',
-
-            // Suppliers table
             suppliers: 'id, name, email, updatedAt, createdAt',
-
-            // Transactions table
             transactions: 'id, type, category, date, updatedAt, createdAt',
-
-            // Sync queue - auto-increment ID, indexed by entity type and sync status
             syncQueue: '++id, entityType, entityId, synced, status, timestamp',
         });
 
         // Upgrade schema version 2: Add compound indices for fast filtering
         this.version(2).stores({
             farmers: 'id, name, region, district, society, status, updatedAt, createdAt, [region+district], [region+district+society], [region+status]',
+        });
+
+        // Upgrade schema version 3: Add new indices for querying optimizations
+        this.version(3).stores({
+            farmers: 'id, name, region, district, society, community, status, updatedAt, createdAt, [region+district], [region+district+society], [region+status]',
+            statistics: 'id',
+        });
+
+        // Upgrade schema version 4: Add Farmer Groups and Requests
+        this.version(4).stores({
+            farmerGroups: 'id, name, seasonYear, *farmerIds, syncStatus, updatedAt, createdAt',
+            farmerRequests: 'id, farmerId, groupId, seasonYear, status, requestDate, updatedAt, createdAt'
+        }).upgrade(tx => {
+            // Optional data migration or initial setup code could go here
         });
     }
 }

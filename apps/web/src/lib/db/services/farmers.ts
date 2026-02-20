@@ -7,7 +7,7 @@ import { db } from '../schema';
 import { syncService } from '../sync';
 import type { Farmer } from '@/lib/types';
 import type { FarmerFormValues } from '@/components/farmers/add-edit-farmer-dialog';
-import { getFirebaseFarmers } from '@/lib/firebase/services/farmers';
+import { getFirebaseFarmers, getFirebaseFarmersPaginated } from '@/lib/firebase/services/farmers';
 
 /**
  * Get all farmers from local database
@@ -76,6 +76,11 @@ export async function getFarmersPaginatedAndFiltered(
         status?: 'Active' | 'Inactive';
         minFarmSize?: number;
         maxFarmSize?: number; // Optional range support
+        gender?: string;
+        minAge?: number;
+        maxAge?: number;
+        startDate?: Date;
+        endDate?: Date;
         search?: string;
     }
 ): Promise<{ data: Farmer[], total: number }> {
@@ -108,9 +113,22 @@ export async function getFarmersPaginatedAndFiltered(
         if (filters.community && f.community !== filters.community) match = false;
         if (filters.status && f.status !== filters.status) match = false;
 
+        // Gender Filter
+        if (filters.gender && filters.gender !== 'all' && f.gender !== filters.gender) match = false;
+
+        // Age Range Filter
+        if (filters.minAge !== undefined && (f.age ?? 0) < filters.minAge) match = false;
+        if (filters.maxAge !== undefined && (f.age ?? 0) > filters.maxAge) match = false;
+
         // Farm Size Filter
         if (filters.minFarmSize !== undefined && (f.farmSize ?? 0) < filters.minFarmSize) match = false;
         if (filters.maxFarmSize !== undefined && (f.farmSize ?? 0) > filters.maxFarmSize) match = false;
+
+        // Date Range Filter (using joinDate or createdAt)
+        if (filters.startDate && filters.endDate) {
+            const dateToCheck = f.joinDate ? new Date(f.joinDate) : new Date(f.createdAt);
+            if (dateToCheck < filters.startDate || dateToCheck > filters.endDate) match = false;
+        }
 
         if (!match) return false;
 
@@ -245,7 +263,8 @@ export async function addFarmer(
     // 2. Add to sync queue
     await syncService.addToQueue('farmer', 'create', id, farmerData);
 
-    // console.log(`✅ Farmer added locally: ${farmer.name}`);
+    // 3. Update cache
+    await updateFarmersCache();
 }
 
 /**
@@ -283,7 +302,8 @@ export async function updateFarmer(
     // 2. Add to sync queue
     await syncService.addToQueue('farmer', 'update', id, farmerData);
 
-    // console.log(`✅ Farmer updated locally: ${updatedFarmer.name}`);
+    // 3. Update cache
+    await updateFarmersCache();
 }
 
 /**
@@ -296,7 +316,8 @@ export async function deleteFarmer(id: string): Promise<void> {
     // 2. Add to sync queue
     await syncService.addToQueue('farmer', 'delete', id, null);
 
-    // console.log(`✅ Farmer deleted locally: ${id}`);
+    // 3. Update cache
+    await updateFarmersCache();
 }
 
 /**
@@ -311,7 +332,8 @@ export async function addFarmersBatch(farmers: Farmer[]): Promise<void> {
         await syncService.addToQueue('farmer', 'create', farmer.id, farmer);
     }
 
-    // console.log(`✅ ${farmers.length} farmers added locally (batch)`);
+    // 3. Update cache
+    await updateFarmersCache();
 }
 
 /**
@@ -333,16 +355,12 @@ export async function updateFarmersBatch(ids: string[], updates: Partial<Farmer>
     // 1. Update local database
     await db.farmers.bulkPut(updatedFarmers);
 
-    // 2. Add each to sync queue
-    // Note: Ideally we'd have a bulk update sync action, but for now we queue individual updates
     for (const farmer of updatedFarmers) {
-        // Create a change object that only includes the fields that changed + id
-        // But syncService expects the full object or partial? 
-        // Looking at updateFarmer, it passes `farmerData` (the partial updates).
         await syncService.addToQueue('farmer', 'update', farmer.id, updates);
     }
 
-    // console.log(`✅ ${updatedFarmers.length} farmers updated locally (batch)`);
+    // 3. Update cache
+    await updateFarmersCache();
 }
 
 /**
@@ -351,13 +369,37 @@ export async function updateFarmersBatch(ids: string[], updates: Partial<Farmer>
  */
 export async function syncFarmersFromFirebase(): Promise<number> {
     try {
-        const firebaseFarmers = await getFirebaseFarmers();
+        const lastSync = localStorage.getItem('lastSync_farmers');
+        const lastSyncTime = lastSync ? parseInt(lastSync) : undefined;
 
-        // Clear local farmers and replace with Firebase data
-        await db.farmers.clear();
-        await db.farmers.bulkAdd(firebaseFarmers);
+        const firebaseFarmers = await getFirebaseFarmers(lastSyncTime);
 
-        // console.log(`✅ Synced ${firebaseFarmers.length} farmers from Firebase`);
+        if (firebaseFarmers.length === 0) {
+            return 0;
+        }
+
+        const farmersToPut = [];
+        const idsToDelete = [];
+
+        for (const farmer of firebaseFarmers as any[]) {
+            if (farmer.deleted) {
+                idsToDelete.push(farmer.id);
+            } else {
+                delete farmer.deleted;
+                farmersToPut.push(farmer as Farmer);
+            }
+        }
+
+        if (farmersToPut.length > 0) {
+            await db.farmers.bulkPut(farmersToPut);
+        }
+
+        if (idsToDelete.length > 0) {
+            await db.farmers.bulkDelete(idsToDelete);
+        }
+
+        localStorage.setItem('lastSync_farmers', Date.now().toString());
+
         return firebaseFarmers.length;
     } catch (error) {
         console.error('❌ Failed to sync farmers from Firebase:', error);
@@ -373,35 +415,59 @@ export async function getFarmersCount(): Promise<number> {
 }
 
 /**
- * Get farmers by region (for analytics)
+ * Helper to update the aggregation cache
+ * Should be called whenever a farmer is added, updated, or deleted natively 
  */
-export async function getFarmersByRegion(): Promise<Record<string, number>> {
+export async function updateFarmersCache(): Promise<void> {
     const farmers = await db.farmers.toArray();
-    const regionCounts: Record<string, number> = {};
+
+    const byRegion: Record<string, number> = {};
+    const byGender: Record<string, number> = {};
 
     farmers.forEach(farmer => {
         if (farmer.region) {
-            regionCounts[farmer.region] = (regionCounts[farmer.region] || 0) + 1;
+            byRegion[farmer.region] = (byRegion[farmer.region] || 0) + 1;
+        }
+        if (farmer.gender) {
+            byGender[farmer.gender] = (byGender[farmer.gender] || 0) + 1;
         }
     });
 
-    return regionCounts;
+    await db.statistics.put({
+        id: 'farmer_counts',
+        byRegion,
+        byGender
+    });
 }
 
 /**
- * Get farmers by gender (for analytics)
+ * Get farmers by region (for analytics) using Aggregation Cache
+ */
+export async function getFarmersByRegion(): Promise<Record<string, number>> {
+    const stats = await db.statistics.get('farmer_counts');
+    if (stats && stats.byRegion) {
+        return stats.byRegion;
+    }
+
+    // Fallback if cache isn't built yet
+    await updateFarmersCache();
+    const newStats = await db.statistics.get('farmer_counts');
+    return newStats?.byRegion || {};
+}
+
+/**
+ * Get farmers by gender (for analytics) using Aggregation Cache
  */
 export async function getFarmersByGender(): Promise<Record<string, number>> {
-    const farmers = await db.farmers.toArray();
-    const genderCounts: Record<string, number> = {};
+    const stats = await db.statistics.get('farmer_counts');
+    if (stats && stats.byGender) {
+        return stats.byGender;
+    }
 
-    farmers.forEach(farmer => {
-        if (farmer.gender) {
-            genderCounts[farmer.gender] = (genderCounts[farmer.gender] || 0) + 1;
-        }
-    });
-
-    return genderCounts;
+    // Fallback if cache isn't built yet
+    await updateFarmersCache();
+    const newStats = await db.statistics.get('farmer_counts');
+    return newStats?.byGender || {};
 }
 
 /**

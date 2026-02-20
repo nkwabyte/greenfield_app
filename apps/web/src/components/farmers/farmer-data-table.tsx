@@ -34,6 +34,8 @@ import {
 import { ChevronDown } from "lucide-react"
 import { normalizeRegion } from "@/lib/utils/region-normalizer"
 import { getAllFarmers, updateFarmer } from "@/lib/db/services/farmers"
+import { useDebounce } from "use-debounce"
+import { useVirtualizer } from "@tanstack/react-virtual"
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
@@ -49,11 +51,16 @@ export function DataTable<TData, TValue>({
   filterPlaceholder,
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = React.useState<SortingState>([])
-  const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
-    []
-  )
-  const [columnVisibility, setColumnVisibility] =
-    React.useState<VisibilityState>({})
+  const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([])
+  const [columnVisibility, setColumnVisibility] = React.useState<VisibilityState>({})
+
+  const [rawSearchFilter, setRawSearchFilter] = React.useState<string>("")
+  const [debouncedSearchFilter] = useDebounce(rawSearchFilter, 300)
+
+  // Sync debounced value down to the table's filter state
+  React.useEffect(() => {
+    table.getColumn(filterColumnId)?.setFilterValue(debouncedSearchFilter)
+  }, [debouncedSearchFilter, filterColumnId])
 
   const table = useReactTable({
     data,
@@ -70,6 +77,16 @@ export function DataTable<TData, TValue>({
       columnFilters,
       columnVisibility,
     },
+  })
+
+  const tableContainerRef = React.useRef<HTMLDivElement>(null)
+  const { rows } = table.getRowModel()
+
+  const rowVirtualizer = useVirtualizer({
+    count: rows.length,
+    getScrollElement: () => tableContainerRef.current,
+    estimateSize: () => 53,
+    overscan: 5,
   })
 
   // ... inside DataTable component ...
@@ -101,10 +118,8 @@ export function DataTable<TData, TValue>({
       <div className="flex items-center py-4">
         <Input
           placeholder={filterPlaceholder}
-          value={(table.getColumn(filterColumnId)?.getFilterValue() as string) ?? ""}
-          onChange={(event) =>
-            table.getColumn(filterColumnId)?.setFilterValue(event.target.value)
-          }
+          value={rawSearchFilter}
+          onChange={(event) => setRawSearchFilter(event.target.value)}
           className="max-w-sm"
         />
         <Button variant="outline" className="ml-2" onClick={handleFixRegions}>
@@ -139,9 +154,9 @@ export function DataTable<TData, TValue>({
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
-      <div className="rounded-md border">
+      <div ref={tableContainerRef} className="rounded-md border max-h-[600px] overflow-auto relative">
         <Table>
-          <TableHeader>
+          <TableHeader className="sticky top-0 z-10 bg-background shadow-sm">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
@@ -160,19 +175,36 @@ export function DataTable<TData, TValue>({
             ))}
           </TableHeader>
           <TableBody>
-            {table.getRowModel().rows?.length ? (
-              table.getRowModel().rows.map((row) => (
-                <TableRow
-                  key={row.id}
-                  data-state={row.getIsSelected() && "selected"}
-                >
-                  {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id}>
-                      {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                    </TableCell>
-                  ))}
-                </TableRow>
-              ))
+            {rows.length ? (
+              <>
+                {rowVirtualizer.getVirtualItems().length > 0 && rowVirtualizer.getVirtualItems()[0]?.start > 0 && (
+                  <TableRow>
+                    <TableCell style={{ height: `${rowVirtualizer.getVirtualItems()[0]?.start}px` }} colSpan={columns.length} />
+                  </TableRow>
+                )}
+                {rowVirtualizer.getVirtualItems().map((virtualRow: any) => {
+                  const row = rows[virtualRow.index]
+                  return (
+                    <TableRow
+                      key={row.id}
+                      data-state={row.getIsSelected() && "selected"}
+                      ref={rowVirtualizer.measureElement}
+                      data-index={virtualRow.index}
+                    >
+                      {row.getVisibleCells().map((cell) => (
+                        <TableCell key={cell.id}>
+                          {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                        </TableCell>
+                      ))}
+                    </TableRow>
+                  )
+                })}
+                {rowVirtualizer.getVirtualItems().length > 0 && rowVirtualizer.getTotalSize() - (rowVirtualizer.getVirtualItems()[rowVirtualizer.getVirtualItems().length - 1]?.end || 0) > 0 && (
+                  <TableRow>
+                    <TableCell style={{ height: `${rowVirtualizer.getTotalSize() - (rowVirtualizer.getVirtualItems()[rowVirtualizer.getVirtualItems().length - 1]?.end || 0)}px` }} colSpan={columns.length} />
+                  </TableRow>
+                )}
+              </>
             ) : (
               <TableRow>
                 <TableCell colSpan={columns.length} className="h-24 text-center">

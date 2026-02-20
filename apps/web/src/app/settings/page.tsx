@@ -8,6 +8,7 @@ import { ProfileForm } from '@/components/settings/profile-form';
 import { SecurityForm } from '@/components/settings/security-form';
 import { AppearanceForm } from '@/components/settings/appearance-form';
 import { NotificationsForm } from '@/components/settings/notifications-form';
+import { DangerZone } from '@/components/settings/danger-zone';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Info } from 'lucide-react';
 import { useSelector } from 'react-redux';
@@ -34,6 +35,7 @@ export default function SettingsPage() {
             <TabsTrigger value="security">Security</TabsTrigger>
             <TabsTrigger value="appearance">Appearance</TabsTrigger>
             <TabsTrigger value="notifications">Notifications</TabsTrigger>
+            <TabsTrigger value="danger" className="text-red-500">Danger Zone</TabsTrigger>
           </TabsList>
           <TabsContent value="profile" className="space-y-4">
             <ProfileForm />
@@ -46,6 +48,9 @@ export default function SettingsPage() {
           </TabsContent>
           <TabsContent value="notifications" className="space-y-4">
             <NotificationsForm />
+          </TabsContent>
+          <TabsContent value="danger" className="space-y-4">
+            <DangerZone />
           </TabsContent>
         </Tabs>
       </div>

@@ -10,8 +10,9 @@ import {
 } from '@/components/ui/select';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { Label } from '@/components/ui/label';
 import { X } from 'lucide-react';
+import { CalendarDateRangePicker } from '@/components/dashboard/date-range-picker';
+import { DateRange } from 'react-day-picker';
 import {
     useUniqueRegions,
     useUniqueDistricts,
@@ -27,6 +28,10 @@ export type FarmerFiltersState = {
     status: string;
     minFarmSize: string;
     maxFarmSize: string;
+    gender: string;
+    minAge: string;
+    maxAge: string;
+    dateRange?: DateRange;
 };
 
 export type FarmerFiltersProps = {
@@ -35,14 +40,14 @@ export type FarmerFiltersProps = {
 };
 
 export function FarmerFilters({ filters, onFilterChange }: FarmerFiltersProps) {
-    const { region, district, society, community, status, minFarmSize, maxFarmSize } = filters;
+    const { region, district, society, community, status, minFarmSize, maxFarmSize, gender, minAge, maxAge, dateRange } = filters;
 
     const uniqueRegions = useUniqueRegions();
     const uniqueDistricts = useUniqueDistricts(region !== 'all' ? region : undefined);
     const uniqueSocieties = useUniqueSocieties(district !== 'all' ? district : undefined);
     const uniqueCommunities = useUniqueCommunities(society !== 'all' ? society : undefined);
 
-    const handleFilterChange = (key: string, value: string) => {
+    const handleFilterChange = (key: string, value: any) => {
         const newFilters = { ...filters, [key]: value };
         if (key === 'region') {
             newFilters.district = 'all';
@@ -66,10 +71,14 @@ export function FarmerFilters({ filters, onFilterChange }: FarmerFiltersProps) {
             status: 'all',
             minFarmSize: '',
             maxFarmSize: '',
+            gender: 'all',
+            minAge: '',
+            maxAge: '',
+            dateRange: undefined,
         });
     };
 
-    const hasActiveFilters = region !== 'all' || district !== 'all' || society !== 'all' || community !== 'all' || status !== 'all' || minFarmSize || maxFarmSize;
+    const hasActiveFilters = region !== 'all' || district !== 'all' || society !== 'all' || community !== 'all' || status !== 'all' || minFarmSize || maxFarmSize || gender !== 'all' || minAge || maxAge || dateRange?.from;
 
     return (
         <div className="mb-4">
@@ -143,6 +152,38 @@ export function FarmerFilters({ filters, onFilterChange }: FarmerFiltersProps) {
                     </Select>
                 </div>
 
+                <div>
+                    <Select value={gender} onValueChange={(val) => handleFilterChange('gender', val)}>
+                        <SelectTrigger>
+                            <SelectValue placeholder="All Genders" />
+                        </SelectTrigger>
+                        <SelectContent>
+                            <SelectItem value="all">All Genders</SelectItem>
+                            <SelectItem value="Male">Male</SelectItem>
+                            <SelectItem value="Female">Female</SelectItem>
+                            <SelectItem value="Other">Other</SelectItem>
+                        </SelectContent>
+                    </Select>
+                </div>
+
+                <div className="flex gap-2 items-center">
+                    <Input
+                        type="number"
+                        placeholder="Min Age"
+                        value={minAge}
+                        onChange={(e) => handleFilterChange('minAge', e.target.value)}
+                        className="min-w-0"
+                    />
+                    <span className="text-muted-foreground">-</span>
+                    <Input
+                        type="number"
+                        placeholder="Max Age"
+                        value={maxAge}
+                        onChange={(e) => handleFilterChange('maxAge', e.target.value)}
+                        className="min-w-0"
+                    />
+                </div>
+
                 <div className="flex gap-2">
                     <Input
                         type="number"
@@ -150,6 +191,13 @@ export function FarmerFilters({ filters, onFilterChange }: FarmerFiltersProps) {
                         value={minFarmSize}
                         onChange={(e) => handleFilterChange('minFarmSize', e.target.value)}
                         className="min-w-0"
+                    />
+                </div>
+
+                <div className="flex gap-2 items-center">
+                    <CalendarDateRangePicker
+                        date={dateRange}
+                        onDateChange={(date) => handleFilterChange('dateRange', date)}
                     />
                     {hasActiveFilters && (
                         <Button variant="ghost" size="icon" onClick={clearFilters} className="shrink-0 h-10 w-10">

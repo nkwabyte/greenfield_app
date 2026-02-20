@@ -2,7 +2,7 @@
  * Types for offline sync and database operations
  */
 
-export type EntityType = 'farmer' | 'employee' | 'product' | 'supplier' | 'transaction';
+export type EntityType = 'farmer' | 'employee' | 'product' | 'supplier' | 'transaction' | 'farmerGroup' | 'farmerRequest';
 
 export type SyncOperation = 'create' | 'update' | 'delete' | 'purge';
 
