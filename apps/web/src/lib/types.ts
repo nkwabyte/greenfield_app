@@ -149,6 +149,7 @@ export interface FarmerGroup {
   region: string;
   district: string;
   community?: string;
+  society?: string;
   leaderId?: string;
   seasonYear?: string;       // Annual segregation (e.g., "2024", "2025")
   farmerIds?: string[];      // List of IDs belonging to this group (optional, can join via Farmers table)
