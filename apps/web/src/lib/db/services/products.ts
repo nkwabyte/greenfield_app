@@ -1,13 +1,13 @@
 /**
  * Offline-First CRUD Service for Products
- * Implements Dexie-first approach with automatic sync to Firebase
+ * Implements Dexie-first approach with automatic sync to Supabase
  */
 
 import { db } from '../schema';
 import { syncService } from '../sync';
 import type { Product } from '@/lib/types';
 import type { ProductFormValues } from '@/components/products/add-edit-product-dialog';
-import { getFirebaseProducts } from '@/lib/firebase/services/products';
+import { getSupabaseProducts } from '@/lib/supabase/services/products';
 
 /**
  * Get all products from local database
@@ -79,8 +79,6 @@ export async function addProduct(
 
     // 2. Add to sync queue
     await syncService.addToQueue('product', 'create', id, productData);
-
-    // console.log(`✅ Product added locally: ${product.name}`);
 }
 
 /**
@@ -112,27 +110,25 @@ export async function updateProduct(
 
     // 2. Add to sync queue
     await syncService.addToQueue('product', 'update', id, productData);
-
-    // console.log(`✅ Product updated locally: ${updatedProduct.name}`);
 }
 
 /**
  * Delete a product (offline-first)
  */
 export async function deleteProduct(id: string): Promise<void> {
+    const existing = await db.products.get(id);
+
     // 1. Delete from local database
     await db.products.delete(id);
 
     // 2. Add to sync queue
     await syncService.addToQueue('product', 'delete', id, null);
-
-    // console.log(`✅ Product deleted locally: ${id}`);
 }
 
 /**
- * Sync products from Firebase to local database (delta sync)
+ * Sync products from Supabase to local database (delta sync)
  */
-export async function syncProductsFromFirebase(): Promise<number> {
+export async function syncProductsFromSupabase(): Promise<number> {
     try {
         const lastSync = localStorage.getItem('lastSync_products');
         const lastSyncTime = lastSync ? parseInt(lastSync) : undefined;
@@ -140,9 +136,9 @@ export async function syncProductsFromFirebase(): Promise<number> {
         // Capture start time BEFORE the query to avoid race conditions
         const syncStartTime = Date.now();
 
-        const firebaseProducts = await getFirebaseProducts(lastSyncTime);
+        const supabaseProducts = await getSupabaseProducts(lastSyncTime);
 
-        if (firebaseProducts.length === 0) {
+        if (supabaseProducts.length === 0) {
             localStorage.setItem('lastSync_products', syncStartTime.toString());
             return 0;
         }
@@ -150,7 +146,7 @@ export async function syncProductsFromFirebase(): Promise<number> {
         const productsToPut: Product[] = [];
         const idsToDelete: string[] = [];
 
-        for (const product of firebaseProducts as (Product & { deleted?: boolean })[]) {
+        for (const product of supabaseProducts as (Product & { deleted?: boolean })[]) {
             if (product.deleted) {
                 idsToDelete.push(product.id);
             } else {
@@ -169,9 +165,9 @@ export async function syncProductsFromFirebase(): Promise<number> {
 
         localStorage.setItem('lastSync_products', syncStartTime.toString());
 
-        return firebaseProducts.length;
+        return supabaseProducts.length;
     } catch (error) {
-        console.error('❌ Failed to sync products from Firebase:', error);
+        console.error('❌ Failed to sync products from Supabase:', error);
         throw error;
     }
 }

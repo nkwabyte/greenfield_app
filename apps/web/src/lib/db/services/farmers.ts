@@ -1,13 +1,13 @@
 /**
  * Offline-First CRUD Service for Farmers
- * Implements Dexie-first approach with automatic sync to Firebase
+ * Implements Dexie-first approach with automatic sync to Supabase
  */
 
 import { db } from '../schema';
 import { syncService } from '../sync';
 import type { Farmer } from '@/lib/types';
 import type { FarmerFormValues } from '@/components/farmers/add-edit-farmer-dialog';
-import { getFirebaseFarmers, getFirebaseFarmersPaginated } from '@/lib/firebase/services/farmers';
+import { getSupabaseFarmers, getSupabaseFarmersPaginated } from '@/lib/supabase/services/farmers';
 
 /**
  * Get all farmers from local database
@@ -310,6 +310,9 @@ export async function updateFarmer(
  * Delete a farmer (offline-first)
  */
 export async function deleteFarmer(id: string): Promise<void> {
+    // Capture name before deletion
+    const existing = await db.farmers.get(id);
+
     // 1. Delete from local database
     await db.farmers.delete(id);
 
@@ -364,10 +367,10 @@ export async function updateFarmersBatch(ids: string[], updates: Partial<Farmer>
 }
 
 /**
- * Sync farmers from Firebase to local database
+ * Sync farmers from Supabase to local database
  * This is used for initial load or manual refresh
  */
-export async function syncFarmersFromFirebase(): Promise<number> {
+export async function syncFarmersFromSupabase(): Promise<number> {
     try {
         const lastSync = localStorage.getItem('lastSync_farmers');
         const lastSyncTime = lastSync ? parseInt(lastSync) : undefined;
@@ -377,9 +380,9 @@ export async function syncFarmersFromFirebase(): Promise<number> {
         // be >= syncStartTime, so we'll catch it on the next sync.
         const syncStartTime = Date.now();
 
-        const firebaseFarmers = await getFirebaseFarmers(lastSyncTime);
+        const supabaseFarmers = await getSupabaseFarmers(lastSyncTime);
 
-        if (firebaseFarmers.length === 0) {
+        if (supabaseFarmers.length === 0) {
             localStorage.setItem('lastSync_farmers', syncStartTime.toString());
             return 0;
         }
@@ -387,7 +390,7 @@ export async function syncFarmersFromFirebase(): Promise<number> {
         const farmersToPut: Farmer[] = [];
         const idsToDelete: string[] = [];
 
-        for (const farmer of firebaseFarmers as (Farmer & { deleted?: boolean })[]) {
+        for (const farmer of supabaseFarmers as (Farmer & { deleted?: boolean })[]) {
             if (farmer.deleted) {
                 idsToDelete.push(farmer.id);
             } else {
@@ -407,9 +410,9 @@ export async function syncFarmersFromFirebase(): Promise<number> {
         // ✅ Save the start time (not completion time) to localStorage
         localStorage.setItem('lastSync_farmers', syncStartTime.toString());
 
-        return firebaseFarmers.length;
+        return supabaseFarmers.length;
     } catch (error) {
-        console.error('❌ Failed to sync farmers from Firebase:', error);
+        console.error('❌ Failed to sync farmers from Supabase:', error);
         throw error;
     }
 }
@@ -489,7 +492,7 @@ export async function deleteAllFarmers(): Promise<void> {
     // 2. Clear sync queue of any pending farmer actions
     await db.syncQueue.where('entityType').equals('farmer').delete();
 
-    // 3. Queue a purge operation for Firebase
+    // 3. Queue a purge operation for Supabase
     await syncService.addToQueue('farmer', 'purge', 'ALL', null);
 
     // console.log('⚠️ All farmer data purged locally and queued for remote purge.');

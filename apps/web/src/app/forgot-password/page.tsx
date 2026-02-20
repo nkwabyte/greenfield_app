@@ -3,14 +3,13 @@
 import Link from 'next/link';
 import * as React from 'react';
 import { useRouter } from 'next/navigation';
-import { sendPasswordResetEmail } from 'firebase/auth';
-import { auth } from '@/lib/firebase/config';
+import { supabase } from '@/lib/supabase/client';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
-import { getFriendlyErrorMessage } from '@/lib/firebase/error-messages';
+import { getFriendlyErrorMessage } from '@/lib/supabase/error-messages';
 import Image from 'next/image';
 
 export default function ForgotPasswordPage() {
@@ -23,7 +22,10 @@ export default function ForgotPasswordPage() {
     e.preventDefault();
     setIsLoading(true);
     try {
-      await sendPasswordResetEmail(auth, email);
+      const { error } = await supabase.auth.resetPasswordForEmail(email, {
+        redirectTo: `${window.location.origin}/reset-password`,
+      });
+      if (error) throw error;
       toast({
         title: 'Password Reset Link Sent',
         description: 'If an account exists with that email, a reset link has been sent.',

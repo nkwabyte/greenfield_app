@@ -1,6 +1,6 @@
 /**
  * Sync Status Badge
- * Shows: online/offline status, per-entity Firebase→Dexie sync progress,
+ * Shows: online/offline status, per-entity Supabase→Dexie sync progress,
  * outbound queue pending count, and manual sync controls.
  */
 
@@ -130,7 +130,7 @@ export function SyncStatusBadge() {
                             </span>
                         </TooltipTrigger>
                         <TooltipContent side="bottom" className="w-52">
-                            <p className="font-semibold mb-2 text-xs">Firebase → Local Sync</p>
+                            <p className="font-semibold mb-2 text-xs">Cloud → Local Sync</p>
                             {tooltipContent}
                         </TooltipContent>
                     </Tooltip>

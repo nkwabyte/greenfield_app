@@ -1,7 +1,7 @@
 import { db } from '../schema';
 import { syncService } from '../sync';
 import type { FarmerGroup } from '@/lib/types';
-import { getFirebaseFarmerGroups } from '@/lib/firebase/services/farmer-groups';
+import { getSupabaseFarmerGroups } from '@/lib/supabase/services/farmer-groups';
 
 export async function getAllFarmerGroups(): Promise<FarmerGroup[]> {
     return await db.farmerGroups.toArray();
@@ -54,25 +54,26 @@ export async function updateFarmerGroup(
 }
 
 export async function deleteFarmerGroup(id: string): Promise<void> {
+    const existing = await db.farmerGroups.get(id);
     await db.farmerGroups.delete(id);
     await syncService.addToQueue('farmerGroup', 'delete', id, null);
 }
 
-export async function syncFarmerGroupsFromFirebase(): Promise<number> {
+export async function syncFarmerGroupsFromSupabase(): Promise<number> {
     try {
         const lastSync = localStorage.getItem('lastSync_farmerGroups');
         const lastSyncTime = lastSync ? parseInt(lastSync) : undefined;
 
-        const firebaseGroups = await getFirebaseFarmerGroups(lastSyncTime);
+        const supabaseGroups = await getSupabaseFarmerGroups(lastSyncTime);
 
-        if (firebaseGroups.length === 0) {
+        if (supabaseGroups.length === 0) {
             return 0;
         }
 
         const groupsToPut = [];
         const idsToDelete = [];
 
-        for (const group of firebaseGroups as any[]) {
+        for (const group of supabaseGroups as any[]) {
             if (group.deleted) {
                 idsToDelete.push(group.id);
             } else {
@@ -91,9 +92,9 @@ export async function syncFarmerGroupsFromFirebase(): Promise<number> {
 
         localStorage.setItem('lastSync_farmerGroups', Date.now().toString());
 
-        return firebaseGroups.length;
+        return supabaseGroups.length;
     } catch (error) {
-        console.error('❌ Failed to sync farmer groups from Firebase:', error);
+        console.error('❌ Failed to sync farmer groups from Supabase:', error);
         throw error;
     }
 }

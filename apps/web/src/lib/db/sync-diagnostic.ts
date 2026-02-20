@@ -5,7 +5,7 @@
  * 1. Check sync queue status
  * 2. View sample queue items
  * 3. Test manual sync
- * 4. Check Firebase connection
+ * 4. Check Supabase connection
  */
 
 import { db } from './schema';
@@ -41,14 +41,13 @@ export async function diagnoseSyncQueue() {
         //     if (item.lastError) console.log(`     Error: ${item.lastError}`);
         // });
 
-        // Check Firebase config
-        // console.log('\n🔥 Firebase Configuration:');
-        const firebaseConfig = {
-            apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY ? '✅ Set' : '❌ Missing',
-            authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN ? '✅ Set' : '❌ Missing',
-            projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID || '❌ Missing',
+        // Check Supabase config
+        // console.log('\n☁️ Supabase Configuration:');
+        const supabaseConfig = {
+            url: process.env.NEXT_PUBLIC_SUPABASE_URL ? '✅ Set' : '❌ Missing',
+            anonKey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ? '✅ Set' : '❌ Missing',
         };
-        // console.table(firebaseConfig);
+        // console.table(supabaseConfig);
 
         return {
             totalItems,

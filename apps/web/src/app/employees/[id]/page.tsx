@@ -16,11 +16,15 @@ import { RootState } from '@/lib/store/store';
 import { Skeleton } from '@/components/ui/skeleton';
 import { formatDistanceToNow } from 'date-fns';
 import { ConfirmDialog } from '@/components/ui/confirm-dialog';
+import { useRequireRole } from '@/hooks/use-role-guard';
 
 export default function EmployeeDetailsPage({ params }: { params: Promise<{ id: string }> }) {
+    const { allowed } = useRequireRole(['Admin']);
     const router = useRouter();
     const { toast } = useToast();
     const { id } = React.use(params);
+
+    if (!allowed) return null;
     const employee = useEmployee(id);
     const [isEditOpen, setIsEditOpen] = React.useState(false);
     const [isDeleteOpen, setIsDeleteOpen] = React.useState(false);

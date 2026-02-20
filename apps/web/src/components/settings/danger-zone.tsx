@@ -37,7 +37,7 @@ export function DangerZone() {
                     <div className="space-y-1">
                         <h4 className="font-semibold text-red-600 dark:text-red-400">Purge All Farmer Data</h4>
                         <p className="text-sm text-muted-foreground">
-                            This will permanently delete all farmers from this device and queue a remote deletion command to Firebase. This action cannot be undone.
+                            This will permanently delete all farmers from this device and queue a remote deletion command to Database. This action cannot be undone.
                         </p>
                     </div>
                     <Button

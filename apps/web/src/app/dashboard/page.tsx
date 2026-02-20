@@ -5,7 +5,7 @@ import { AppShell } from '@/components/app-shell';
 import { PageHeader } from '@/components/page-header';
 import { Button } from '@/components/ui/button';
 import { KpiCard } from '@/components/dashboard/kpi-card';
-import type { Kpi } from '@/lib/types';
+import type { Kpi, Farmer } from '@/lib/types';
 import { Users, MapPin, BarChart2, Bot, Calendar as CalendarIcon, Download } from 'lucide-react';
 // Removed duplicate import
 import dynamic from 'next/dynamic';
@@ -45,8 +45,6 @@ import { useFarmersByDateRange } from '@/hooks/useData';
 import Link from 'next/link';
 
 export default function DashboardPage() {
-  // Removed isAiAssistantOpen state
-
   // Default range: Last 30 days
   const [dateRange, setDateRange] = React.useState<DateRange | undefined>({
     from: subDays(new Date(), 30),
@@ -58,11 +56,11 @@ export default function DashboardPage() {
   // Fetch data based on filtered date range
   const dateFilteredFarmers = useFarmersByDateRange(dateRange);
 
-  // Apply Region Filter
-  const filteredFarmers = React.useMemo(() => {
-    if (!dateFilteredFarmers) return undefined;
-    if (selectedRegion === "all") return dateFilteredFarmers;
-    return dateFilteredFarmers.filter(f => f.region === selectedRegion);
+  // Apply Region Filter — default to [] while Dexie is initialising
+  const filteredFarmers: Farmer[] = React.useMemo(() => {
+    const base = dateFilteredFarmers ?? [];  // treat undefined (loading) as empty
+    if (selectedRegion === "all") return base;
+    return base.filter(f => f.region === selectedRegion);
   }, [dateFilteredFarmers, selectedRegion]);
 
   // Derived unique regions for dropdown

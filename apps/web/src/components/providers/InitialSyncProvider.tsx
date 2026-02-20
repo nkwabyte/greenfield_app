@@ -1,7 +1,7 @@
 /**
- * Initial Sync Provider - Performs one-time background sync from Firebase to IndexedDB
+ * Initial Sync Provider - Performs one-time background sync from Supabase to IndexedDB
  * This runs in the background without blocking the UI
- * Only syncs when a user is authenticated to avoid Firebase permission errors
+ * Only syncs when a user is authenticated to avoid permission errors
  */
 
 'use client';
@@ -12,11 +12,11 @@ import type { RootState } from '@/lib/store/store';
 import { setEntitySyncStatus } from '@/lib/store/slices/dataSlice';
 import { requestPersistentStorage } from '@/lib/db';
 import {
-    syncFarmersFromFirebase,
-    syncEmployeesFromFirebase,
-    syncProductsFromFirebase,
-    syncSuppliersFromFirebase,
-    syncTransactionsFromFirebase,
+    syncFarmersFromSupabase,
+    syncEmployeesFromSupabase,
+    syncProductsFromSupabase,
+    syncSuppliersFromSupabase,
+    syncTransactionsFromSupabase,
 } from '@/lib/db';
 
 export function InitialSyncProvider({ children }: { children: React.ReactNode }) {
@@ -24,7 +24,7 @@ export function InitialSyncProvider({ children }: { children: React.ReactNode })
     const isAuthenticated = useSelector((state: RootState) => state.auth.isAuthenticated);
 
     useEffect(() => {
-        // Don't sync if user is not authenticated — Firebase will reject with permission errors
+        // Don't sync if user is not authenticated — Supabase will reject with permission errors
         if (!isAuthenticated) {
             return;
         }
@@ -42,7 +42,6 @@ export function InitialSyncProvider({ children }: { children: React.ReactNode })
                 // Only sync if first time or data is older than 5 minutes
                 if (!lastSync || now - parseInt(lastSync) > FIVE_MINUTES) {
                     // Helper: wraps a sync function with per-entity status dispatching
-                    // All Firebase sync fns return Promise<number> (the count synced)
                     const syncEntity = async (
                         entity: 'farmers' | 'employees' | 'suppliers' | 'products',
                         syncFn: () => Promise<number>
@@ -59,12 +58,12 @@ export function InitialSyncProvider({ children }: { children: React.ReactNode })
 
                     // Sync all entities in parallel — each updates its own status independently
                     await Promise.allSettled([
-                        syncEntity('farmers', syncFarmersFromFirebase),
-                        syncEntity('employees', syncEmployeesFromFirebase),
-                        syncEntity('suppliers', syncSuppliersFromFirebase),
-                        syncEntity('products', syncProductsFromFirebase),
+                        syncEntity('farmers', syncFarmersFromSupabase),
+                        syncEntity('employees', syncEmployeesFromSupabase),
+                        syncEntity('suppliers', syncSuppliersFromSupabase),
+                        syncEntity('products', syncProductsFromSupabase),
                         // Transactions don't need a header indicator but still sync
-                        syncTransactionsFromFirebase().catch(console.error),
+                        syncTransactionsFromSupabase().catch(console.error),
                     ]);
 
                     localStorage.setItem('lastInitialSync', now.toString());
