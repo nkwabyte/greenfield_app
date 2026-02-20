@@ -4,6 +4,9 @@ export type User = {
   email: string;
   role: 'Admin' | 'Employee';
   status: 'Active' | 'Pending' | 'Disabled';
+  phone?: string;
+  jobTitle?: string;
+  avatarUrl?: string;
   geminiApiKey?: string;
   preferredModel?: string;
 };

@@ -18,6 +18,8 @@ import {
     syncSuppliersFromSupabase,
     syncTransactionsFromSupabase,
 } from '@/lib/db';
+import { db } from '@/lib/db/schema';
+import { syncService } from '@/lib/db/sync';
 
 export function InitialSyncProvider({ children }: { children: React.ReactNode }) {
     const dispatch = useDispatch();
@@ -33,6 +35,24 @@ export function InitialSyncProvider({ children }: { children: React.ReactNode })
             try {
                 // Request persistent storage to prevent browser from clearing data
                 await requestPersistentStorage();
+
+                // ── One-time salary NaN fix (runs once, then never again) ──
+                const salaryFixed = localStorage.getItem('migration_salary_nan_fix_v1');
+                if (!salaryFixed) {
+                    const all = await db.employees.toArray();
+                    const toFix = all.filter(e => e.salary === null || e.salary === undefined || Number.isNaN(e.salary));
+                    if (toFix.length > 0) {
+                        const now = new Date().toISOString();
+                        await Promise.all(
+                            toFix.map(async (e) => {
+                                await db.employees.update(e.id, { salary: 0, updatedAt: now });
+                                await syncService.addToQueue('employee', 'update', e.id, { salary: 0 });
+                            })
+                        );
+                        console.log(`✅ Salary migration: fixed ${toFix.length} employee(s) with NaN/null salary → 0`);
+                    }
+                    localStorage.setItem('migration_salary_nan_fix_v1', 'done');
+                }
 
                 // Check if we need to perform initial sync
                 const lastSync = localStorage.getItem('lastInitialSync');

@@ -3,7 +3,7 @@
 import * as React from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import { supabase } from '@/lib/supabase/client';
+import { useLogout } from '@/hooks/use-logout';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -58,10 +58,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   const isAuthenticated = useSelector((state: RootState) => state.auth.isAuthenticated);
   const isLoading = useSelector((state: RootState) => state.auth.isLoading);
 
-  const handleLogout = async () => {
-    await supabase.auth.signOut();
-    router.push('/');
-  };
+  const handleLogout = useLogout();
 
   React.useEffect(() => {
     if (!isLoading && !isAuthenticated) {
@@ -129,7 +126,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" className="relative h-10 w-10 rounded-full">
                 <Avatar className="h-9 w-9">
-                  <AvatarImage src="/account.svg" alt={user.name} />
+                  <AvatarImage src={user.avatarUrl ?? '/account.svg'} alt={user.name} />
                   <AvatarFallback>{getInitials(user.name)}</AvatarFallback>
                 </Avatar>
               </Button>

@@ -24,6 +24,9 @@ async function resolveUserProfile(sbUser: any) {
       name: profile.name,
       role: profile.role,
       status: profile.status || 'Active',
+      phone: profile.phone as string | undefined,
+      jobTitle: profile.job_title as string | undefined,
+      avatarUrl: profile.avatar_url as string | undefined,
       geminiApiKey: profile.gemini_api_key as string | undefined,
       preferredModel: profile.preferred_model as string | undefined,
     };
@@ -35,8 +38,8 @@ async function resolveUserProfile(sbUser: any) {
     uid: sbUser.id,
     email: sbUser.email!,
     name: (meta.name as string) ?? sbUser.email?.split('@')[0] ?? 'User',
-    role: (meta.role as string) ?? 'Employee',
-    status: (meta.status as string) ?? 'Active',
+    role: ((meta.role as string) ?? 'Employee') as 'Admin' | 'Employee',
+    status: ((meta.status as string) ?? 'Active') as 'Active' | 'Pending' | 'Disabled',
     geminiApiKey: undefined as string | undefined,
     preferredModel: undefined as string | undefined,
   };
