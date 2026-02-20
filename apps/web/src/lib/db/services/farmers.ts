@@ -372,21 +372,27 @@ export async function syncFarmersFromFirebase(): Promise<number> {
         const lastSync = localStorage.getItem('lastSync_farmers');
         const lastSyncTime = lastSync ? parseInt(lastSync) : undefined;
 
+        // ✅ Capture the exact time BEFORE the query to avoid race conditions:
+        // If another device updates a record during our fetch, its updatedAt will
+        // be >= syncStartTime, so we'll catch it on the next sync.
+        const syncStartTime = Date.now();
+
         const firebaseFarmers = await getFirebaseFarmers(lastSyncTime);
 
         if (firebaseFarmers.length === 0) {
+            localStorage.setItem('lastSync_farmers', syncStartTime.toString());
             return 0;
         }
 
-        const farmersToPut = [];
-        const idsToDelete = [];
+        const farmersToPut: Farmer[] = [];
+        const idsToDelete: string[] = [];
 
-        for (const farmer of firebaseFarmers as any[]) {
+        for (const farmer of firebaseFarmers as (Farmer & { deleted?: boolean })[]) {
             if (farmer.deleted) {
                 idsToDelete.push(farmer.id);
             } else {
                 delete farmer.deleted;
-                farmersToPut.push(farmer as Farmer);
+                farmersToPut.push(farmer);
             }
         }
 
@@ -398,7 +404,8 @@ export async function syncFarmersFromFirebase(): Promise<number> {
             await db.farmers.bulkDelete(idsToDelete);
         }
 
-        localStorage.setItem('lastSync_farmers', Date.now().toString());
+        // ✅ Save the start time (not completion time) to localStorage
+        localStorage.setItem('lastSync_farmers', syncStartTime.toString());
 
         return firebaseFarmers.length;
     } catch (error) {

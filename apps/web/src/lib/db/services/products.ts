@@ -130,17 +130,45 @@ export async function deleteProduct(id: string): Promise<void> {
 }
 
 /**
- * Sync products from Firebase to local database
+ * Sync products from Firebase to local database (delta sync)
  */
 export async function syncProductsFromFirebase(): Promise<number> {
     try {
-        const firebaseProducts = await getFirebaseProducts();
+        const lastSync = localStorage.getItem('lastSync_products');
+        const lastSyncTime = lastSync ? parseInt(lastSync) : undefined;
 
-        // Clear local products and replace with Firebase data
-        await db.products.clear();
-        await db.products.bulkAdd(firebaseProducts);
+        // Capture start time BEFORE the query to avoid race conditions
+        const syncStartTime = Date.now();
 
-        // console.log(`✅ Synced ${firebaseProducts.length} products from Firebase`);
+        const firebaseProducts = await getFirebaseProducts(lastSyncTime);
+
+        if (firebaseProducts.length === 0) {
+            localStorage.setItem('lastSync_products', syncStartTime.toString());
+            return 0;
+        }
+
+        const productsToPut: Product[] = [];
+        const idsToDelete: string[] = [];
+
+        for (const product of firebaseProducts as (Product & { deleted?: boolean })[]) {
+            if (product.deleted) {
+                idsToDelete.push(product.id);
+            } else {
+                delete product.deleted;
+                productsToPut.push(product);
+            }
+        }
+
+        if (productsToPut.length > 0) {
+            await db.products.bulkPut(productsToPut);
+        }
+
+        if (idsToDelete.length > 0) {
+            await db.products.bulkDelete(idsToDelete);
+        }
+
+        localStorage.setItem('lastSync_products', syncStartTime.toString());
+
         return firebaseProducts.length;
     } catch (error) {
         console.error('❌ Failed to sync products from Firebase:', error);

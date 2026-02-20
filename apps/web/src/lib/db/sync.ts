@@ -12,33 +12,11 @@ import { isAuthenticated } from '@/lib/auth-utils';
 
 // Import Firebase services for syncing
 import {
-    addFirebaseFarmer,
-    updateFirebaseFarmer,
-    deleteFirebaseFarmer,
     purgeFirebaseFarmers
 } from '@/lib/firebase/services/farmers';
-import {
-    addFirebaseEmployee,
-    updateFirebaseEmployee,
-    deleteFirebaseEmployee
-} from '@/lib/firebase/services/employees';
-import {
-    addFirebaseProduct,
-    updateFirebaseProduct,
-    deleteFirebaseProduct
-} from '@/lib/firebase/services/products';
-import {
-    addFirebaseSupplier,
-    updateFirebaseSupplier,
-    deleteFirebaseSupplier
-} from '@/lib/firebase/services/suppliers';
-import {
-    addFirebaseTransaction,
-    updateFirebaseTransaction,
-    deleteFirebaseTransaction
-} from '@/lib/firebase/services/transactions';
 import { db as firebaseDb } from '@/lib/firebase/config';
 import { writeBatch, doc, serverTimestamp } from 'firebase/firestore';
+
 
 const MAX_RETRY_COUNT = 3;
 const SYNC_INTERVAL = 30000; // 30 seconds
@@ -195,93 +173,7 @@ class SyncService {
         return result;
     }
 
-    /**
-     * Sync a single item from the queue
-     */
-    private async syncItem(item: SyncQueueItem): Promise<void> {
-        if (!item.id) {
-            throw new Error('Queue item missing ID');
-        }
 
-        // console.log(`⏳ Syncing: ${item.operation} ${item.entityType} ${item.entityId}`);
-
-        // Update status to syncing
-        await db.syncQueue.update(item.id, { status: 'syncing' });
-
-        try {
-            // Call appropriate Firebase service based on entity type and operation
-            await this.executeSync(item);
-
-            // Mark as synced
-            await db.syncQueue.update(item.id, {
-                synced: 1, // 1 = true (number)
-                status: 'synced',
-            });
-
-            // console.log(`✅ Synced: ${item.operation} ${item.entityType} ${item.entityId}`);
-        } catch (error) {
-            const retryCount = (item.retryCount || 0) + 1;
-            const lastError = error instanceof Error ? error.message : 'Unknown error';
-
-            await db.syncQueue.update(item.id, {
-                status: retryCount >= MAX_RETRY_COUNT ? 'failed' : 'pending',
-                retryCount,
-                lastError,
-            });
-
-            console.error(`❌ Sync failed (attempt ${retryCount}/${MAX_RETRY_COUNT}):`, lastError);
-            throw error;
-        }
-    }
-
-    /**
-     * Execute the actual sync operation to Firebase
-     */
-    private async executeSync(item: SyncQueueItem): Promise<void> {
-        const { entityType, operation, entityId, data } = item;
-
-        // console.log(`📤 Executing Firebase ${operation} for ${entityType}:`, entityId);
-
-        switch (entityType) {
-            case 'farmer':
-                if (operation === 'create') await addFirebaseFarmer(data, entityId);
-                else if (operation === 'update') await updateFirebaseFarmer(entityId, data);
-                else if (operation === 'delete') await deleteFirebaseFarmer(entityId);
-                else if (operation === 'purge') await purgeFirebaseFarmers();
-                break;
-
-            case 'employee':
-                if (operation === 'create') await addFirebaseEmployee(data, entityId);
-                else if (operation === 'update') await updateFirebaseEmployee(entityId, data);
-                else if (operation === 'delete') await deleteFirebaseEmployee(entityId);
-                break;
-
-            case 'product':
-                if (operation === 'create') await addFirebaseProduct(data, entityId);
-                else if (operation === 'update') await updateFirebaseProduct(entityId, data);
-                else if (operation === 'delete') await deleteFirebaseProduct(entityId);
-                break;
-
-            case 'supplier':
-                if (operation === 'create') await addFirebaseSupplier(data, entityId);
-                else if (operation === 'update') await updateFirebaseSupplier(entityId, data);
-                else if (operation === 'delete') await deleteFirebaseSupplier(entityId);
-                break;
-
-            case 'transaction':
-                if (operation === 'create') await addFirebaseTransaction(data, entityId);
-                else if (operation === 'update') await updateFirebaseTransaction(entityId, data);
-                else if (operation === 'delete') await deleteFirebaseTransaction(entityId);
-                break;
-
-            default:
-                throw new Error(`Unknown entity type: ${entityType}`);
-        }
-    }
-
-    /**
-     * Start background sync
-     */
     startBackgroundSync(): void {
         if (this.syncInterval) {
             // console.log('⚠️ Background sync already running');

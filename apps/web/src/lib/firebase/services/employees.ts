@@ -10,23 +10,49 @@ import {
   serverTimestamp,
   query,
   orderBy,
+  where,
 } from 'firebase/firestore';
 import type { Employee } from '@/lib/types';
 import type { EmployeeFormValues } from '@/components/employees/add-edit-employee-dialog';
+import { Timestamp } from 'firebase/firestore';
 
 const employeeCollection = collection(db, 'employees');
 
-export async function getFirebaseEmployees(): Promise<Employee[]> {
-  const q = query(employeeCollection, orderBy('updatedAt', 'desc'));
+/**
+ * Delta sync: fetches only employees modified since lastSyncTime.
+ * Includes soft-deleted records so the local DB can remove them.
+ */
+export async function getFirebaseEmployees(lastSyncTime?: number): Promise<Employee[]> {
+  let q;
+  if (lastSyncTime) {
+    const lastSyncDate = new Date(lastSyncTime);
+    q = query(
+      employeeCollection,
+      where('updatedAt', '>', lastSyncDate),
+      orderBy('updatedAt', 'desc')
+    );
+  } else {
+    q = query(employeeCollection, orderBy('updatedAt', 'desc'));
+  }
+
   const snapshot = await getDocs(q);
-  return snapshot.docs.map((doc) => ({
-    id: doc.id,
-    ...doc.data(),
-    isVerified: doc.data().isVerified ?? true, // Default true for existing records added by admin
-    startDate: doc.data().startDate.toDate().toISOString(),
-    createdAt: doc.data().createdAt.toDate().toISOString(),
-    updatedAt: doc.data().updatedAt.toDate().toISOString(),
-  })) as Employee[];
+  return snapshot.docs.map((doc) => {
+    const data = doc.data();
+    return {
+      id: doc.id,
+      ...data,
+      isVerified: data.isVerified ?? true,
+      startDate: data.startDate instanceof Timestamp
+        ? data.startDate.toDate().toISOString()
+        : data.startDate ?? null,
+      createdAt: data.createdAt instanceof Timestamp
+        ? data.createdAt.toDate().toISOString()
+        : data.createdAt ?? null,
+      updatedAt: data.updatedAt instanceof Timestamp
+        ? data.updatedAt.toDate().toISOString()
+        : data.updatedAt ?? null,
+    };
+  }) as Employee[];
 }
 
 export async function addFirebaseEmployee(employeeData: EmployeeFormValues, id: string) {
@@ -54,9 +80,15 @@ export async function updateFirebaseEmployee(
   });
 }
 
+/**
+ * Soft-delete: marks the record as deleted so other devices pick it up via delta sync.
+ */
 export async function deleteFirebaseEmployee(id: string) {
   const employeeDoc = doc(db, 'employees', id);
-  await deleteDoc(employeeDoc);
+  await updateDoc(employeeDoc, {
+    deleted: true,
+    updatedAt: serverTimestamp(),
+  });
 }
 
 
