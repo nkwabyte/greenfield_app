@@ -73,6 +73,7 @@ export default function SignUpPage() {
                 email,
                 password,
                 options: {
+                    emailRedirectTo: window.location.origin,
                     data: {
                         name,
                         role,

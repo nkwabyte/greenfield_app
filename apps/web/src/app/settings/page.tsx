@@ -9,6 +9,7 @@ import { SecurityForm } from '@/components/settings/security-form';
 import { AppearanceForm } from '@/components/settings/appearance-form';
 import { NotificationsForm } from '@/components/settings/notifications-form';
 import { DangerZone } from '@/components/settings/danger-zone';
+import { LogoutCard } from '@/components/settings/logout-card';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Info } from 'lucide-react';
 import { useSelector } from 'react-redux';
@@ -59,6 +60,9 @@ export default function SettingsPage() {
             </TabsContent>
           )}
         </Tabs>
+
+        {/* Logout — visible to all roles */}
+        <LogoutCard />
       </div>
     </AppShell>
   );

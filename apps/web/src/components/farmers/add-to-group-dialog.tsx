@@ -79,7 +79,7 @@ export function AddToGroupDialog({ open, onOpenChange, currentGroupId, onSave }:
                             </div>
                         ) : filteredGroups.length === 0 ? (
                             <div className="p-8 text-center text-sm text-muted-foreground">
-                                No groups found matching "{searchQuery}".
+                                {searchQuery ? `No groups found matching "${searchQuery}".` : 'No groups yet.'}
                             </div>
                         ) : (
                             <div className="space-y-1">

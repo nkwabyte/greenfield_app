@@ -5,12 +5,13 @@ import { useRouter } from 'next/navigation';
 import { AppShell } from '@/components/app-shell';
 import { PageHeader } from '@/components/page-header';
 import { Button } from '@/components/ui/button';
-import { PlusCircle } from 'lucide-react';
+import { PlusCircle, Users } from 'lucide-react';
 import { DataTable } from '@/components/data-table';
 import { getColumns } from '@/components/employees/employee-columns';
 import { useToast } from '@/hooks/use-toast';
 import { AddEditEmployeeDialog, type EmployeeFormValues } from '@/components/employees/add-edit-employee-dialog';
 import { EmployeeSuccessDialog } from '@/components/employees/employee-success-dialog';
+import { BulkAddEmployeesDialog } from '@/components/employees/bulk-add-employees-dialog';
 import { EmployeeFilters, type EmployeeFiltersState } from '@/components/employees/employee-filters';
 import { useEmployeesPaginatedAndFiltered } from '@/hooks/useData';
 import { ConfirmDialog } from '@/components/ui/confirm-dialog';
@@ -87,6 +88,7 @@ export default function EmployeesPage() {
 
   const [isAddEditDialogOpen, setIsAddEditDialogOpen] = React.useState(false);
   const [isSuccessDialogOpen, setIsSuccessDialogOpen] = React.useState(false);
+  const [isBulkDialogOpen, setIsBulkDialogOpen] = React.useState(false);
   const [newEmployeeData, setNewEmployeeData] = React.useState<{ name: string, email: string, password: string } | null>(null);
   const [editingEmployee, setEditingEmployee] = React.useState<typeof employees[0] | null>(null);
   const [employeeToDelete, setEmployeeToDelete] = React.useState<string | null>(null);
@@ -162,6 +164,10 @@ export default function EmployeesPage() {
         title="Employee Management"
         description="View, add, edit, and manage all employee records."
       >
+        <Button variant="outline" onClick={() => setIsBulkDialogOpen(true)}>
+          <Users className="mr-2 h-4 w-4" />
+          Bulk Add
+        </Button>
         <Button onClick={handleOpenAddDialog}>
           <PlusCircle className="mr-2" />
           Add Employee
@@ -201,6 +207,16 @@ export default function EmployeesPage() {
         title="Delete Employee"
         description="Are you sure you want to delete this employee? This action cannot be undone."
         onConfirm={confirmDeleteEmployee}
+      />
+
+      <BulkAddEmployeesDialog
+        open={isBulkDialogOpen}
+        onOpenChange={setIsBulkDialogOpen}
+        onComplete={(count) => {
+          if (count > 0) {
+            toast({ title: 'Bulk Import Complete', description: `${count} employee account${count !== 1 ? 's' : ''} created successfully.` });
+          }
+        }}
       />
     </AppShell>
   );
