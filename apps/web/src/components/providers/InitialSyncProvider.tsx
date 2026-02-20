@@ -54,6 +54,20 @@ export function InitialSyncProvider({ children }: { children: React.ReactNode })
                     localStorage.setItem('migration_salary_nan_fix_v1', 'done');
                 }
 
+                // ── One-time: clear stale employee sync-queue items ──────────
+                // Employees are now written directly to Supabase by the API route,
+                // so any queued 'employee' operations are redundant.
+                const queueCleared = localStorage.getItem('migration_clear_employee_queue_v1');
+                if (!queueCleared) {
+                    const deleted = await db.syncQueue
+                        .filter(item => item.entityType === 'employee')
+                        .delete();
+                    if (deleted > 0) {
+                        console.log(`✅ Queue migration: removed ${deleted} stale employee sync item(s)`);
+                    }
+                    localStorage.setItem('migration_clear_employee_queue_v1', 'done');
+                }
+
                 // Check if we need to perform initial sync
                 const lastSync = localStorage.getItem('lastInitialSync');
                 const now = Date.now();

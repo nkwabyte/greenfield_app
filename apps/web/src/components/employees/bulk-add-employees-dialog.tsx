@@ -129,18 +129,15 @@ export function BulkAddEmployeesDialog({
             setCurrentIndex(i + 1);
 
             try {
-                // Call the existing addEmployee service — we override the generated
-                // password by passing our own through the form values shape.
-                // addEmployee generates its own password internally, so we call
-                // createEmployeeAuth directly to use our password.
+                // Call the API which: creates Auth user + immediately writes to
+                // public.users (profile) and public.employees in Supabase.
                 const { createEmployeeAuth } = await import('@/lib/supabase/admin-auth');
-                const authUid = await createEmployeeAuth(email, password);
+                const authUid = await createEmployeeAuth(email, password, name, defaultRole, 0);
 
-                // Save to Dexie
+                // Also write to local Dexie for offline-first access
                 const { db } = await import('@/lib/db/schema');
-                const { syncService } = await import('@/lib/db/sync');
                 const now = new Date().toISOString();
-                await db.employees.add({
+                await db.employees.put({
                     id: authUid,
                     name,
                     email,
@@ -152,7 +149,6 @@ export function BulkAddEmployeesDialog({
                     createdAt: now,
                     updatedAt: now,
                 });
-                await syncService.addToQueue('employee', 'create', authUid, { name, email, role: defaultRole, salary: 0 });
 
                 collected.push({ email, name, password, status: 'success' });
             } catch (err: any) {
