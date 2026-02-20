@@ -43,7 +43,9 @@ export const initialState: AuthState = {
     user: persistedUser,
     supabaseUser: null,
     isAuthenticated: !!persistedUser,
-    isLoading: true,
+    // If we already have a cached user, show the app immediately while we
+    // verify the session in the background. This prevents the freeze on refresh.
+    isLoading: !persistedUser,
 };
 
 const authSlice = createSlice({

@@ -7,15 +7,19 @@ import { setUser, setSupabaseUser, setLoading, SerializableAuthUser } from '@/li
 
 /**
  * Resolve a user profile from the DB, with upsert fallback.
- * If the public.users row doesn't exist (e.g. user signed up before the trigger was added),
- * we build it from auth metadata and upsert it in the background.
+ * If the public.users row doesn't exist we build it from auth metadata.
  */
 async function resolveUserProfile(sbUser: any) {
-  const { data: profile } = await supabase
+  // 5-second timeout so a slow Supabase response never hangs the app
+  const timeoutPromise = new Promise<null>((resolve) => setTimeout(() => resolve(null), 5000));
+  const fetchPromise = supabase
     .from('users')
     .select('*')
     .eq('id', sbUser.id)
-    .single();
+    .single()
+    .then(({ data }) => data);
+
+  const profile = await Promise.race([fetchPromise, timeoutPromise]);
 
   if (profile) {
     return {
@@ -32,7 +36,7 @@ async function resolveUserProfile(sbUser: any) {
     };
   }
 
-  // Profile row missing — fall back to auth metadata
+  // Profile row missing (or timed out) — fall back to auth metadata
   const meta = sbUser.user_metadata ?? {};
   const fallback = {
     uid: sbUser.id,
@@ -62,7 +66,45 @@ export const useAuth = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // ── Initial session check (shows loading spinner while we fetch) ──
+    let initialSessionHandled = false; // prevent double resolveUserProfile
+
+    // ── Subsequent auth events (sign in/out, token refresh) ──
+    // Register BEFORE initSession so we don't miss events.
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(
+      async (event, session) => {
+        try {
+          if (session?.user) {
+            const sbUser = session.user;
+            dispatch(setSupabaseUser({
+              id: sbUser.id,
+              email: sbUser.email ?? null,
+              phone: sbUser.phone ?? null,
+              emailConfirmedAt: sbUser.email_confirmed_at ?? null,
+              lastSignInAt: sbUser.last_sign_in_at ?? null,
+            } satisfies SerializableAuthUser));
+
+            // INITIAL_SESSION fires alongside initSession — skip to avoid double fetch
+            if (event === 'INITIAL_SESSION') return;
+
+            if (event === 'SIGNED_IN') {
+              const resolved = await resolveUserProfile(sbUser);
+              dispatch(setUser(resolved));
+              dispatch(setLoading(false));
+            }
+          } else {
+            // SIGNED_OUT
+            dispatch(setSupabaseUser(null));
+            dispatch(setUser(null));
+            dispatch(setLoading(false));
+          }
+        } catch (error) {
+          console.error('Error in onAuthStateChange:', error);
+          dispatch(setLoading(false));
+        }
+      }
+    );
+
+    // ── Initial session check ──
     const initSession = async () => {
       try {
         const { data: { session } } = await supabase.auth.getSession();
@@ -78,53 +120,21 @@ export const useAuth = () => {
           } satisfies SerializableAuthUser));
           const resolved = await resolveUserProfile(sbUser);
           dispatch(setUser(resolved));
+          initialSessionHandled = true;
         } else {
           dispatch(setSupabaseUser(null));
           dispatch(setUser(null));
+          initialSessionHandled = true;
         }
       } catch (error) {
         console.error('Error in useAuth init:', error);
         dispatch(setUser(null));
       } finally {
-        // Only the initial check controls isLoading.
-        // onAuthStateChange below does NOT touch isLoading to avoid
-        // re-triggering the full-screen spinner on TOKEN_REFRESHED etc.
         dispatch(setLoading(false));
       }
     };
 
     initSession();
-
-    // ── Subsequent auth events (sign in/out, token refresh) ──
-    // We do NOT set isLoading here — that would cause the spinner loop.
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      async (event, session) => {
-        try {
-          if (session?.user) {
-            const sbUser = session.user;
-            dispatch(setSupabaseUser({
-              id: sbUser.id,
-              email: sbUser.email ?? null,
-              phone: sbUser.phone ?? null,
-              emailConfirmedAt: sbUser.email_confirmed_at ?? null,
-              lastSignInAt: sbUser.last_sign_in_at ?? null,
-            } satisfies SerializableAuthUser));
-
-            // On SIGNED_IN we need profile to update Redux → triggers redirect
-            if (event === 'SIGNED_IN' || event === 'INITIAL_SESSION') {
-              const resolved = await resolveUserProfile(sbUser);
-              dispatch(setUser(resolved));
-            }
-          } else {
-            // SIGNED_OUT
-            dispatch(setSupabaseUser(null));
-            dispatch(setUser(null));
-          }
-        } catch (error) {
-          console.error('Error in onAuthStateChange:', error);
-        }
-      }
-    );
 
     return () => subscription.unsubscribe();
   }, [dispatch]);
