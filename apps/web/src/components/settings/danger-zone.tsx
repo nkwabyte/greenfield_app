@@ -5,10 +5,12 @@ import { Button } from '@/components/ui/button';
 import { PurgeConfirmDialog } from '@/components/farmers/purge-confirm-dialog';
 import { toast } from '@/hooks/use-toast';
 import { deleteAllFarmers } from '@/lib/db/services/farmers';
+import { clearAllData } from '@/lib/db/schema';
 
 export function DangerZone() {
     const [isPurgeDialogOpen, setIsPurgeDialogOpen] = useState(false);
     const [isPurging, setIsPurging] = useState(false);
+    const [isResetting, setIsResetting] = useState(false);
 
     const handlePurgeData = async () => {
         try {
@@ -20,6 +22,20 @@ export function DangerZone() {
         } finally {
             setIsPurging(false);
             setIsPurgeDialogOpen(false);
+        }
+    };
+
+    const handleResetCache = async () => {
+        if (!confirm('Are you sure you want to clear your local cache? The app will reload and fetch a fresh copy of everything.')) return;
+
+        try {
+            setIsResetting(true);
+            await clearAllData();
+            toast({ title: "Local Cache Cleared", description: "Reloading application..." });
+            setTimeout(() => window.location.reload(), 1500);
+        } catch (error) {
+            toast({ title: "Reset Failed", description: "Failed to clear local cache.", variant: "destructive" });
+            setIsResetting(false);
         }
     };
 
@@ -43,9 +59,25 @@ export function DangerZone() {
                     <Button
                         variant="destructive"
                         onClick={() => setIsPurgeDialogOpen(true)}
-                        disabled={isPurging}
+                        disabled={isPurging || isResetting}
                     >
                         {isPurging ? 'Purging Data...' : 'Purge Data'}
+                    </Button>
+                </div>
+
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pt-4 mt-4 border-t border-red-200 dark:border-red-900">
+                    <div className="space-y-1">
+                        <h4 className="font-semibold text-red-600 dark:text-red-400">Reset Local Application Cache</h4>
+                        <p className="text-sm text-muted-foreground">
+                            If your database has been wiped manually or is out of sync, this resolves errors by erasing all downloaded data locally and fetching a fresh copy from the cloud.
+                        </p>
+                    </div>
+                    <Button
+                        variant="destructive"
+                        onClick={handleResetCache}
+                        disabled={isPurging || isResetting}
+                    >
+                        {isResetting ? 'Resetting...' : 'Reset Local Cache'}
                     </Button>
                 </div>
             </div>

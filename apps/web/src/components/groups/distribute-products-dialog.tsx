@@ -16,7 +16,6 @@ import {
 import {
     Form,
     FormControl,
-    FormDescription,
     FormField,
     FormItem,
     FormLabel,
@@ -36,8 +35,10 @@ import { Calendar } from '@/components/ui/calendar';
 import { Calendar as CalendarIcon, PlusCircle, Trash2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { format } from 'date-fns';
-import type { FarmerRequest, Farmer, FarmerGroup, Product } from '@/lib/types';
-import { useFarmers, useFarmerGroups, useProducts } from '@/hooks/useData';
+import { useToast } from '@/hooks/use-toast';
+import type { FarmerGroup, Farmer, FarmerRequest } from '@/lib/types';
+import { useProducts } from '@/hooks/useData';
+import { addFarmerRequest } from '@/lib/db/services/farmer-requests';
 
 const requestItemSchema = z.object({
     productId: z.string().min(1, { message: 'Product is required' }),
@@ -47,9 +48,7 @@ const requestItemSchema = z.object({
     total: z.number(),
 });
 
-const requestSchema = z.object({
-    farmerId: z.string().min(1, { message: 'Farmer is required.' }),
-    groupId: z.string().optional(),
+const distributeSchema = z.object({
     seasonYear: z.string().min(4),
     items: z.array(requestItemSchema).min(1, { message: 'At least one item is required.' }),
     grandTotal: z.number(),
@@ -70,32 +69,27 @@ const requestSchema = z.object({
     otherPaymentPlan: z.string().optional(),
 });
 
-export type RequestFormValues = z.infer<typeof requestSchema>;
+export type DistributeFormValues = z.infer<typeof distributeSchema>;
 
-type AddEditRequestDialogProps = {
+type DistributeProductsDialogProps = {
     open: boolean;
     onOpenChange: (open: boolean) => void;
-    request: FarmerRequest | null;
-    onSave: (data: RequestFormValues) => void;
-    prefillFarmerId?: string;
-    prefillGroupId?: string;
+    group: FarmerGroup | null;
+    members: Farmer[] | undefined;
 };
 
-export function AddEditRequestDialog({ open, onOpenChange, request, onSave, prefillFarmerId, prefillGroupId }: AddEditRequestDialogProps) {
-    const farmers = useFarmers();
-    const groups = useFarmerGroups();
+export function DistributeProductsDialog({ open, onOpenChange, group, members }: DistributeProductsDialogProps) {
     const products = useProducts();
+    const { toast } = useToast();
 
-    const form = useForm<RequestFormValues>({
+    const form = useForm<DistributeFormValues>({
         // @ts-ignore
-        resolver: zodResolver(requestSchema),
+        resolver: zodResolver(distributeSchema),
         defaultValues: {
-            farmerId: '',
-            groupId: undefined,
             seasonYear: new Date().getFullYear().toString(),
             items: [],
             grandTotal: 0,
-            status: 'Pending',
+            status: 'Delivered', // Default to delivered since it's a direct distribution
             requestDate: new Date(),
             paymentPlan: undefined,
             depositPaid: undefined,
@@ -109,34 +103,19 @@ export function AddEditRequestDialog({ open, onOpenChange, request, onSave, pref
     });
 
     React.useEffect(() => {
-        if (open && request) {
+        if (open) {
             form.reset({
-                farmerId: request.farmerId,
-                groupId: request.groupId || undefined,
-                seasonYear: request.seasonYear,
-                items: request.items,
-                grandTotal: request.grandTotal,
-                status: request.status,
-                requestDate: new Date(request.requestDate),
-                paymentPlan: request.paymentPlan,
-                depositPaid: request.depositPaid,
-                otherPaymentPlan: request.otherPaymentPlan,
-            });
-        } else if (open) {
-            form.reset({
-                farmerId: prefillFarmerId || '',
-                groupId: prefillGroupId || undefined,
-                seasonYear: new Date().getFullYear().toString(),
+                seasonYear: group?.seasonYear || new Date().getFullYear().toString(),
                 items: [],
                 grandTotal: 0,
-                status: 'Pending',
+                status: 'Delivered',
                 requestDate: new Date(),
                 paymentPlan: undefined,
                 depositPaid: undefined,
                 otherPaymentPlan: '',
             });
         }
-    }, [request, form, open, prefillFarmerId, prefillGroupId]);
+    }, [open, form, group]);
 
     // Handle derived total values
     const watchedItems = form.watch('items');
@@ -154,16 +133,53 @@ export function AddEditRequestDialog({ open, onOpenChange, request, onSave, pref
         });
     }, [watchedItems, form]);
 
-    const handleSubmit = (data: RequestFormValues) => {
-        onSave(data);
-        onOpenChange(false);
+    const onSubmit = async (data: DistributeFormValues) => {
+        if (!group || !members || members.length === 0) {
+            toast({
+                title: 'Cannot distribute',
+                description: 'The group must have at least one member to distribute products.',
+                variant: 'destructive',
+            });
+            return;
+        }
+
+        try {
+            // Create a request for each farmer in the group
+            await Promise.all(members.map(member => {
+                const requestId = crypto.randomUUID();
+                return addFarmerRequest({
+                    farmerId: member.id,
+                    groupId: group.id,
+                    seasonYear: data.seasonYear,
+                    items: data.items,
+                    grandTotal: data.grandTotal,
+                    status: data.status,
+                    requestDate: data.requestDate.toISOString(),
+                    paymentPlan: data.paymentPlan,
+                    depositPaid: data.depositPaid,
+                    otherPaymentPlan: data.otherPaymentPlan,
+                }, requestId);
+            }));
+
+            toast({
+                title: 'Products Distributed',
+                description: `Successfully distributed products to ${members.length} members.`,
+            });
+            onOpenChange(false);
+        } catch (error: any) {
+            toast({
+                title: 'Distribution Failed',
+                description: error.message ?? 'An unexpected error occurred.',
+                variant: 'destructive',
+            });
+        }
     };
 
     const handleProductSelect = (index: number, productId: string) => {
         const product = products?.find(p => p.id === productId);
         if (product) {
             form.setValue(`items.${index}.productName`, product.name);
-            // You could also set a default price here if products had a price field
+            form.setValue(`items.${index}.dynamicPrice`, product.price);
         }
     };
 
@@ -171,62 +187,15 @@ export function AddEditRequestDialog({ open, onOpenChange, request, onSave, pref
         <Dialog open={open} onOpenChange={onOpenChange}>
             <DialogContent className="sm:max-w-3xl max-h-[90vh] overflow-y-auto pb-10">
                 <DialogHeader>
-                    <DialogTitle>{request ? 'Edit Farmer Request' : 'Create Farmer Request'}</DialogTitle>
+                    <DialogTitle>Distribute Products</DialogTitle>
                     <DialogDescription>
-                        {request ? 'Update the details for this resource request.' : 'Submit a new request for agricultural inputs on behalf of a farmer.'}
+                        Assign agricultural inputs to all {members?.length || 0} members of <span className="font-semibold text-foreground">{group?.name}</span> simultaneously.
                     </DialogDescription>
                 </DialogHeader>
                 <Form {...form}>
-                    <form onSubmit={form.handleSubmit(handleSubmit as any)} className="space-y-6 py-4">
+                    <form onSubmit={form.handleSubmit(onSubmit as any)} className="space-y-6 py-4">
 
                         <div className="grid grid-cols-2 gap-4">
-                            <FormField
-                                control={form.control as any}
-                                name="farmerId"
-                                render={({ field }) => (
-                                    <FormItem>
-                                        <FormLabel>Farmer</FormLabel>
-                                        <Select onValueChange={field.onChange} value={field.value}>
-                                            <FormControl>
-                                                <SelectTrigger>
-                                                    <SelectValue placeholder="Select Farmer" />
-                                                </SelectTrigger>
-                                            </FormControl>
-                                            <SelectContent>
-                                                {farmers?.map(f => (
-                                                    <SelectItem key={f.id} value={f.id}>{f.name} {f.contact && `(${f.contact})`}</SelectItem>
-                                                ))}
-                                            </SelectContent>
-                                        </Select>
-                                        <FormMessage />
-                                    </FormItem>
-                                )}
-                            />
-
-                            <FormField
-                                control={form.control as any}
-                                name="groupId"
-                                render={({ field }) => (
-                                    <FormItem>
-                                        <FormLabel>Farmer Group (Optional)</FormLabel>
-                                        <Select onValueChange={field.onChange} value={field.value}>
-                                            <FormControl>
-                                                <SelectTrigger>
-                                                    <SelectValue placeholder="No Group Selected" />
-                                                </SelectTrigger>
-                                            </FormControl>
-                                            <SelectContent>
-                                                <SelectItem value="">None</SelectItem>
-                                                {groups?.map(g => (
-                                                    <SelectItem key={g.id} value={g.id}>{g.name} ({g.seasonYear})</SelectItem>
-                                                ))}
-                                            </SelectContent>
-                                        </Select>
-                                        <FormMessage />
-                                    </FormItem>
-                                )}
-                            />
-
                             <FormField
                                 control={form.control as any}
                                 name="seasonYear"
@@ -268,7 +237,7 @@ export function AddEditRequestDialog({ open, onOpenChange, request, onSave, pref
                                 name="requestDate"
                                 render={({ field }) => (
                                     <FormItem className="flex flex-col justify-end">
-                                        <FormLabel>Request Date</FormLabel>
+                                        <FormLabel>Distribution Date</FormLabel>
                                         <Popover>
                                             <PopoverTrigger asChild>
                                                 <FormControl>
@@ -368,7 +337,7 @@ export function AddEditRequestDialog({ open, onOpenChange, request, onSave, pref
 
                         <div className="space-y-4 border-t pt-4">
                             <div className="flex justify-between items-center">
-                                <h4 className="text-sm font-medium">Requested Items</h4>
+                                <h4 className="text-sm font-medium">Distributed Items <span className="text-xs text-muted-foreground font-normal ml-2">(Per Member)</span></h4>
                                 <Button type="button" variant="outline" size="sm" onClick={() => append({ productId: '', productName: '', quantity: 1, dynamicPrice: 0, total: 0 })}>
                                     <PlusCircle className="h-3 w-3 mr-2" /> Add Item
                                 </Button>
@@ -464,7 +433,7 @@ export function AddEditRequestDialog({ open, onOpenChange, request, onSave, pref
 
                             {fields.length === 0 && (
                                 <div className="text-center p-4 border border-dashed rounded-md text-sm text-muted-foreground">
-                                    No items added yet. Click "Add Item" to begin tracking products.
+                                    No items added yet. Click "Add Item" to begin.
                                 </div>
                             )}
                         </div>
@@ -472,8 +441,9 @@ export function AddEditRequestDialog({ open, onOpenChange, request, onSave, pref
                         {fields.length > 0 && (
                             <div className="flex justify-end p-4 border rounded-md bg-primary/5">
                                 <div className="text-right">
-                                    <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">Grand Total</span>
+                                    <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">Per Farmer Total</span>
                                     <p className="text-2xl font-bold font-mono">₵{form.watch('grandTotal').toFixed(2)}</p>
+                                    <p className="text-xs text-muted-foreground mt-1">Total for {members?.length || 0} members: ₵{(form.watch('grandTotal') * (members?.length || 0)).toFixed(2)}</p>
                                 </div>
                             </div>
                         )}
@@ -482,7 +452,9 @@ export function AddEditRequestDialog({ open, onOpenChange, request, onSave, pref
                             <DialogClose asChild>
                                 <Button type="button" variant="outline">Cancel</Button>
                             </DialogClose>
-                            <Button type="submit">Save Request</Button>
+                            <Button type="submit" disabled={!members || members.length === 0 || form.formState.isSubmitting}>
+                                {form.formState.isSubmitting ? 'Distributing...' : 'Distribute Products'}
+                            </Button>
                         </DialogFooter>
                     </form>
                 </Form>

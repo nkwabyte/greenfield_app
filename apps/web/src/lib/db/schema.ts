@@ -162,8 +162,21 @@ export async function clearAllData(): Promise<void> {
     await db.products.clear();
     await db.suppliers.clear();
     await db.transactions.clear();
+    await db.farmerGroups.clear();
+    await db.farmerRequests.clear();
     await db.syncQueue.clear();
-    // console.log('All local data cleared');
+
+    // Clear all sync timestamps from localStorage
+    if (typeof window !== 'undefined') {
+        const keysToRemove = [];
+        for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i);
+            if (key && key.startsWith('lastSync_')) {
+                keysToRemove.push(key);
+            }
+        }
+        keysToRemove.forEach(key => localStorage.removeItem(key));
+    }
 }
 
 /**
