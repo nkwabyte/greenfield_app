@@ -32,9 +32,7 @@ import {
   updateFarmersBatch
 } from '@/lib/db/services/farmers';
 import { v4 as uuidv4 } from 'uuid';
-import { normalizeRegion } from '@/lib/utils/region-normalizer';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { GHANA_REGIONS_AND_DISTRICTS, GHANA_REGION_NAMES } from '@/lib/data/ghana-regions-districts';
 
 function FarmersContent() {
   const router = useRouter();
@@ -227,6 +225,8 @@ function FarmersContent() {
     });
   };
 
+  const workerRef = React.useRef<Worker | null>(null);
+
   const handleUploadClick = () => {
     fileInputRef.current?.click();
   };
@@ -234,178 +234,72 @@ function FarmersContent() {
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (!file) return;
+    if (event.target) event.target.value = '';
 
-    const MAX_FILE_SIZE = 5 * 1024 * 1024;
-    if (file.size > MAX_FILE_SIZE) {
-      toast({ title: 'File Too Large', description: 'Please upload a file smaller than 5MB.', variant: 'destructive' });
-      if (event.target) event.target.value = '';
+    const ext = file.name.split('.').pop()?.toLowerCase();
+    if (ext !== 'xlsx' && ext !== 'csv') {
+      toast({ title: 'Unsupported File Type', description: 'Please upload a .csv or .xlsx file.', variant: 'destructive' });
       return;
     }
 
     const reader = new FileReader();
-    const fileExtension = file.name.split('.').pop()?.toLowerCase();
-
-    if (fileExtension === 'csv') {
-      reader.onload = (e) => {
-        const text = e.target?.result as string;
-        const csvBuffer = new TextEncoder().encode(text);
-        processFarmerData(csvBuffer.buffer);
-      };
-      reader.readAsText(file);
-    } else if (fileExtension === 'xlsx') {
-      reader.onload = (e) => {
-        const data = e.target?.result;
-        if (data) processFarmerData(data as ArrayBuffer);
-      };
-      reader.readAsArrayBuffer(file);
-    } else {
-      toast({ title: 'Unsupported File Type', description: 'Please upload a .csv or .xlsx file.', variant: 'destructive' });
-    }
-    if (event.target) event.target.value = '';
+    reader.onload = (e) => {
+      const buffer = e.target?.result as ArrayBuffer;
+      if (!buffer) return;
+      startWorkerImport(buffer);
+    };
+    reader.readAsArrayBuffer(file);
   };
 
-  // Move parsing logic outside or keep here but optimize imports
-  // To avoid breaking the existing complex parsing logic, we'll keep it but ensure XLSX is imported dynamically inside.
+  const startWorkerImport = (buffer: ArrayBuffer) => {
+    // Spin up the worker (terminate any previous one)
+    if (workerRef.current) workerRef.current.terminate();
 
-  const processFarmerData = async (dataBuffer: ArrayBuffer) => {
-    // DYNAMIC IMPORT XLSX
-    const XLSX = await import('xlsx');
+    const worker = new Worker(
+      new URL('@/workers/farmer-import.worker.ts', import.meta.url),
+      { type: 'module' }
+    );
+    workerRef.current = worker;
 
-    // ... (rest of parsing logic adapted to use the dynamically imported XLSX)
-    // Since we can't easily paste the whole 100 lines of parsing logic here without error risk, 
-    // allow me to use a simpler approach: 
-    // I will replace the component but keeping the logic, just wrapping XLSX usage.
+    setIsUploading(true);
+    setUploadProgress({ processed: 0, total: 0 });
+    toast({ title: 'Processing file…', description: 'Reading and validating rows in background.' });
 
-    const workbook = XLSX.read(dataBuffer, { type: 'array' });
-    const validFarmers: Omit<Farmer, 'id' | 'createdAt' | 'updatedAt'>[] = [];
-    const failedRecords: FailedRecord[] = [];
-
-    // ... (logic from original file for parsing) ...
-    // Note: Re-implementing parsing logic concisely for this tool call to function correcty.
-
-    const sheetNames = workbook.SheetNames.filter(sheet => sheet.toLowerCase() !== 'summary');
-
-    for (const sheetName of sheetNames) {
-      const sheet = workbook.Sheets[sheetName];
-      const sheetData = XLSX.utils.sheet_to_json<any>(sheet, { defval: '' });
-      if (sheetData.length === 0) continue;
-
-      const columnNames = Object.keys(sheetData[0]);
-      const getColumn = (key: string) => columnNames.find(col => col.toLowerCase().includes(key)) || '';
-      const columnMap = {
-        name: getColumn('name'),
-        gender: getColumn('gender'),
-        age: getColumn('age'),
-        farmSize: getColumn('farm size'),
-        region: getColumn('region'),
-        district: getColumn('district'),
-        society: getColumn('society'),
-        community: getColumn('community'),
-      };
-      const otherColumns = columnNames.filter(col => !Object.values(columnMap).includes(col));
-
-      for (let i = 0; i < sheetData.length; i++) {
-        const row = sheetData[i];
-        const name = (row[columnMap.name] || '').toString().trim();
-
-        // Region processing and validation
-        const rawRegion = (row[columnMap.region] || '').toString().trim();
-        const normalizedRegion = normalizeRegion(rawRegion).replace(/ Region$/i, '').trim();
-
-        // Use normalized region if it perfectly matches a standard name, or do a case-insensitive check
-        const mappedRegion = GHANA_REGION_NAMES.find(r => r.toLowerCase() === normalizedRegion.toLowerCase());
-
-        // District processing and validation (fallback to sheet name)
-        const rawDistrict = (row[columnMap.district] || '').toString().trim();
-        const districtToUse = rawDistrict || sheetName.trim();
-
-        // Age processing - extract only numbers
-        const rawAge = (row[columnMap.age] || '').toString().trim();
-        const ageMatch = rawAge.match(/\d+/);
-        const ageNumber = ageMatch ? parseInt(ageMatch[0], 10) : NaN;
-
-        const errorMessages = [];
-
-        if (!name) errorMessages.push('Missing name');
-        if (!mappedRegion) errorMessages.push(rawRegion ? `Invalid region: ${rawRegion}` : 'Missing region');
-
-        // Validate district against the mapped region if the region is valid
-        let validatedDistrict = '';
-        if (mappedRegion) {
-          const regionDistricts = GHANA_REGIONS_AND_DISTRICTS[mappedRegion] || [];
-          validatedDistrict = regionDistricts.find(d => d.toLowerCase() === districtToUse.toLowerCase()) || '';
-          if (!validatedDistrict) {
-            errorMessages.push(`District "${districtToUse}" not found in region "${mappedRegion}"`);
-          }
-        }
-
-        if (isNaN(ageNumber) || ageNumber <= 0) {
-          errorMessages.push(`Invalid age format: ${rawAge}`);
-        }
-
-        if (errorMessages.length === 0) {
-          validFarmers.push({
-            name: name.toLowerCase(),
-            gender: ((g) => {
-              const lower = g.toLowerCase();
-              if (lower === 'f' || lower === 'female') return 'Female';
-              if (lower === 'm' || lower === 'male') return 'Male';
-              return g; // Fallback to original if not matched
-            })((row[columnMap.gender] || '').toString().trim()),
-            region: mappedRegion as string,
-            district: validatedDistrict,
-            society: (row[columnMap.society] || '').toString().trim(),
-            community: (row[columnMap.community] || '').toString().trim(),
-            contact: '',
-            age: ageNumber,
-            educationLevel: 'None',
-            farmSize: parseFloat(row[columnMap.farmSize]) || 0,
-            cropsGrown: [],
-            status: 'Active',
-            joinDate: new Date().toISOString().split('T')[0]
-          });
-        } else {
-          failedRecords.push({
-            rowIndex: i + 2,
-            rowData: JSON.stringify(row), // Keep the raw data for the CSV export
-            error: errorMessages.join(', ')
-          });
-        }
-      }
-    }
-
-    if (validFarmers.length > 0) {
-      setIsUploading(true);
-      setUploadProgress({ processed: 0, total: validFarmers.length });
-      const chunkSize = 500;
-      try {
-        const { addFarmersBatch } = await import('@/lib/db/services/farmers');
-        for (let i = 0; i < validFarmers.length; i += chunkSize) {
-          const chunk = validFarmers.slice(i, i + chunkSize);
-          const farmersBatch = chunk.map(farmer => ({
-            ...farmer,
-            id: uuidv4(),
-            joinDate: farmer.joinDate || new Date().toISOString(),
-            createdAt: new Date().toISOString(),
-            updatedAt: new Date().toISOString(),
-          })) as Farmer[];
-          await addFarmersBatch(farmersBatch);
-          setUploadProgress(prev => ({ processed: Math.min(prev.processed + chunk.length, validFarmers.length), total: validFarmers.length }));
-          await new Promise(resolve => setTimeout(resolve, 10));
-        }
-        toast({ title: 'Import Complete', description: `${validFarmers.length} farmers uploaded successfully.` });
-      } catch (error) {
-        toast({ title: 'Upload Failed', description: 'Error saving farmers.', variant: 'destructive' });
-      } finally {
+    worker.onmessage = (e) => {
+      const msg = e.data;
+      if (msg.type === 'progress') {
+        setUploadProgress({ processed: msg.savedSoFar, total: msg.savedSoFar + 1 });
+      } else if (msg.type === 'staged') {
+        // Staging complete — navigate to preview
         setIsUploading(false);
-        if (fileInputRef.current) fileInputRef.current.value = '';
+        worker.terminate();
+        workerRef.current = null;
+        // Store error count so the preview page can show the "Fix errors" button
+        sessionStorage.setItem('farmer_import_error_count', String(msg.errorCount ?? 0));
+        router.push('/farmers/import-preview');
+      } else if (msg.type === 'error') {
+        setIsUploading(false);
+        worker.terminate();
+        workerRef.current = null;
+        toast({ title: 'Import Failed', description: msg.message, variant: 'destructive' });
       }
-    }
-    if (failedRecords.length > 0) {
-      setFailedRecords(failedRecords);
-      setIsReportOpen(true);
-    }
+    };
+
+    worker.onerror = (err) => {
+      setIsUploading(false);
+      worker.terminate();
+      workerRef.current = null;
+      toast({ title: 'Worker Error', description: err.message, variant: 'destructive' });
+    };
+
+    // Phase 1: stage — zero-copy buffer transfer to worker
+    worker.postMessage({ mode: 'stage', buffer }, [buffer]);
   };
+
+  // Clean up worker on unmount
+  React.useEffect(() => {
+    return () => { workerRef.current?.terminate(); };
+  }, []);
 
   return (
     <AppShell>
