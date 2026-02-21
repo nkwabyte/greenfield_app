@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import type { Farmer } from '@/lib/types';
 
 type FarmersByGenderChartProps = {
-  farmers: Farmer[];
+  dataObj: Record<string, Record<string, number>> | undefined;
 };
 
 const CustomTooltip = ({ active, payload, label }: any) => {
@@ -26,23 +26,12 @@ const CustomTooltip = ({ active, payload, label }: any) => {
   return null;
 };
 
-export function FarmersByGenderChart({ farmers }: FarmersByGenderChartProps) {
+export function FarmersByGenderChart({ dataObj }: FarmersByGenderChartProps) {
   const data = React.useMemo(() => {
-    // Group by region and gender
-    const regionGenderMap: Record<string, Record<string, number>> = {};
-
-    farmers.forEach(farmer => {
-      const region = farmer.region || 'N/A';
-      const gender = farmer.gender || 'Unknown';
-
-      if (!regionGenderMap[region]) {
-        regionGenderMap[region] = {};
-      }
-      regionGenderMap[region][gender] = (regionGenderMap[region][gender] || 0) + 1;
-    });
+    if (!dataObj) return [];
 
     // Convert to array format for recharts
-    return Object.entries(regionGenderMap)
+    return Object.entries(dataObj)
       .map(([region, genders]) => ({
         region,
         Male: genders['Male'] || 0,
@@ -55,7 +44,7 @@ export function FarmersByGenderChart({ farmers }: FarmersByGenderChartProps) {
         if (b.region === 'N/A') return -1;
         return (b.Male + b.Female + b.Other + b.Unknown) - (a.Male + a.Female + a.Other + a.Unknown);
       });
-  }, [farmers]);
+  }, [dataObj]);
 
   return (
     <Card className="shadow-md h-full">

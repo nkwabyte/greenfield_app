@@ -16,7 +16,7 @@ export class GreenfieldDB extends Dexie {
     transactions!: Table<Transaction>;
     farmerGroups!: Table<FarmerGroup>;    // NEW: Phase 2 Table
     farmerRequests!: Table<FarmerRequest>; // NEW: Phase 3 Table
-    statistics!: Table<{ id: string; byRegion: Record<string, number>; byGender: Record<string, number> }>;
+    statistics!: Table<{ id: string; byRegion: Record<string, number>; byGender: Record<string, number>; byFarmSize: Record<string, number>; byAge: Record<string, number>; byRegionAndGender: Record<string, Record<string, number>> }>;
 
     // Sync queue table
     syncQueue!: Table<SyncQueueItem>;

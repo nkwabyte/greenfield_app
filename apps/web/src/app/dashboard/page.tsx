@@ -41,7 +41,9 @@ import {
 } from "@/components/ui/select"
 
 // NEW: Import filtered hooks
-import { useFarmersByDateRange } from '@/hooks/useData';
+import { useRegionCounts, useFarmSizeStats, useAgeStats, useRegionGenderStats } from '@/hooks/useData';
+import { db } from '@/lib/db/schema';
+import { useLiveQuery } from 'dexie-react-hooks';
 import Link from 'next/link';
 
 export default function DashboardPage() {
@@ -53,43 +55,61 @@ export default function DashboardPage() {
 
   const [selectedRegion, setSelectedRegion] = React.useState<string>("all");
 
-  // Fetch data based on filtered date range
-  const dateFilteredFarmers = useFarmersByDateRange(dateRange);
+  const regionCounts = useRegionCounts();
+  const farmSizeStats = useFarmSizeStats();
+  const ageStats = useAgeStats();
+  const regionGenderStats = useRegionGenderStats();
 
-  // Apply Region Filter — default to [] while Dexie is initialising
-  const filteredFarmers: Farmer[] = React.useMemo(() => {
-    const base = dateFilteredFarmers ?? [];  // treat undefined (loading) as empty
-    if (selectedRegion === "all") return base;
-    return base.filter(f => f.region === selectedRegion);
-  }, [dateFilteredFarmers, selectedRegion]);
+  const recentFarmers = useLiveQuery(() =>
+    db.farmers.orderBy('createdAt').reverse().limit(10).toArray()
+    , []);
+
+  // For KPIs
+  const totalFarmers = useLiveQuery(() => db.farmers.count());
+  const activeFarmersCount = useLiveQuery(() => db.farmers.where('status').equals('Active').count());
+  const newFarmersCount = useLiveQuery(() => {
+    if (!dateRange?.from || !dateRange?.to) return db.farmers.count();
+    const end = new Date(dateRange.to);
+    end.setHours(23, 59, 59, 999);
+    return db.farmers.where('createdAt').between(dateRange.from.toISOString(), end.toISOString(), true, true).count();
+  }, [dateRange?.from, dateRange?.to]);
 
   // Derived unique regions for dropdown
   const uniqueRegions = React.useMemo(() => {
-    if (!dateFilteredFarmers) return [];
-    return Array.from(new Set(dateFilteredFarmers.map(f => f.region).filter((r): r is string => !!r))).sort();
-  }, [dateFilteredFarmers]);
+    if (!regionCounts) return [];
+    return Object.keys(regionCounts).filter(r => r !== 'Unknown' && r !== 'N/A').sort();
+  }, [regionCounts]);
 
   const kpis: Kpi[] = React.useMemo(() => {
-    if (!filteredFarmers) return [];
+    let maleFarmers = 0;
+    let femaleFarmers = 0;
 
-    // KPIs based on the SELECTED range & region
-    const activeFarmers = filteredFarmers.filter((f) => f.status === 'Active').length;
-    const regions = new Set(filteredFarmers.map((f) => f.region).filter(Boolean)).size;
-    const maleFarmers = filteredFarmers.filter((f) => f.gender === 'Male').length;
-    const femaleFarmers = filteredFarmers.filter((f) => f.gender === 'Female').length;
+    if (regionGenderStats) {
+      if (selectedRegion !== 'all' && regionGenderStats[selectedRegion]) {
+        maleFarmers = regionGenderStats[selectedRegion]['Male'] || 0;
+        femaleFarmers = regionGenderStats[selectedRegion]['Female'] || 0;
+      } else {
+        // aggregate all
+        Object.values(regionGenderStats).forEach(r => {
+          maleFarmers += r['Male'] || 0;
+          femaleFarmers += r['Female'] || 0;
+        });
+      }
+    }
+
     const genderRatio = femaleFarmers > 0 ? `${(maleFarmers / femaleFarmers).toFixed(1)}:1 M/F` : 'N/A';
 
     return [
       {
-        label: 'New Farmers', // Changed label to reflect range
-        value: filteredFarmers.length.toString(),
-        icon: Users
+        label: 'New Farmers',
+        value: (newFarmersCount || 0).toString(),
+        icon: Users,
       },
       {
-        label: 'Active (In Range)',
-        value: activeFarmers.toString(),
+        label: 'Active Farmers',
+        value: (activeFarmersCount || 0).toString(),
         icon: Users,
-        change: selectedRegion === 'all' ? `${regions} Regions` : selectedRegion
+        change: 'Total DB Active'
       },
       {
         label: 'Gender Ratio',
@@ -97,22 +117,28 @@ export default function DashboardPage() {
         icon: BarChart2
       },
     ];
-  }, [filteredFarmers, selectedRegion]);
+  }, [newFarmersCount, activeFarmersCount, regionGenderStats, selectedRegion]);
 
-  const handleExport = () => {
-    // Basic CSV export of filtered data
-    if (!filteredFarmers) return;
+  const handleExport = async () => {
+    // Run full query on demand to save memory
+    let collection: any = db.farmers.toCollection();
+    if (selectedRegion !== 'all') {
+      collection = db.farmers.where('region').equals(selectedRegion);
+    }
+    const exportData = await collection.toArray() as Farmer[];
+
+    if (exportData.length === 0) return;
 
     const headers = ['ID', 'Name', 'Region', 'District', 'Status', 'Join Date'];
     const csvContent = [
       headers.join(','),
-      ...filteredFarmers.map(f => [
+      ...exportData.map(f => [
         f.id,
         `"${f.name}"`,
         f.region,
         f.district,
         f.status,
-        f.joinDate || f.createdAt
+        f.createdAt
       ].join(','))
     ].join('\n');
 
@@ -127,7 +153,7 @@ export default function DashboardPage() {
   };
 
   // Show loading state while data loads
-  if (filteredFarmers === undefined) {
+  if (totalFarmers === undefined) {
     return (
       <AppShell>
         <PageHeader
@@ -194,20 +220,20 @@ export default function DashboardPage() {
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-5">
           <div className="lg:col-span-3">
-            <FarmersByRegionChart farmers={filteredFarmers} />
+            <FarmersByRegionChart dataObj={regionCounts} />
           </div>
           <div className="lg:col-span-2">
-            <FarmersAgeChart farmers={filteredFarmers} />
+            <FarmersAgeChart dataObj={ageStats} />
           </div>
         </div>
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-          <FarmersByGenderChart farmers={filteredFarmers} />
-          <FarmSizeChart farmers={filteredFarmers} />
+          <FarmersByGenderChart dataObj={regionGenderStats} />
+          <FarmSizeChart dataObj={farmSizeStats} />
         </div>
 
         <div>
-          <RecentFarmersTable farmers={filteredFarmers} />
+          <RecentFarmersTable farmers={recentFarmers || []} />
         </div>
       </div>
 

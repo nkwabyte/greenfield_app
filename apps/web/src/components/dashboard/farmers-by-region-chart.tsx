@@ -10,7 +10,7 @@ import {
 import type { Farmer } from '@/lib/types';
 
 type FarmersByRegionChartProps = {
-  farmers: Farmer[];
+  dataObj: Record<string, number> | undefined;
 };
 
 const CustomTooltip = ({ active, payload, label }: any) => {
@@ -26,15 +26,11 @@ const CustomTooltip = ({ active, payload, label }: any) => {
 };
 
 
-export function FarmersByRegionChart({ farmers }: FarmersByRegionChartProps) {
+export function FarmersByRegionChart({ dataObj }: FarmersByRegionChartProps) {
   const data = React.useMemo(() => {
-    const regionCounts = farmers.reduce((acc, farmer) => {
-      const region = farmer.region || 'N/A';
-      acc[region] = (acc[region] || 0) + 1;
-      return acc;
-    }, {} as Record<string, number>);
+    if (!dataObj) return [];
 
-    return Object.entries(regionCounts)
+    return Object.entries(dataObj)
       .map(([region, count]) => ({
         region,
         count,
@@ -44,7 +40,7 @@ export function FarmersByRegionChart({ farmers }: FarmersByRegionChartProps) {
         if (b.region === 'N/A') return -1;
         return b.count - a.count; // Sort by count descending for others
       });
-  }, [farmers]);
+  }, [dataObj]);
 
   return (
     <Card className="shadow-md">

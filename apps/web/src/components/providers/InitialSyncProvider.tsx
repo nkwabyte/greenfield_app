@@ -20,6 +20,7 @@ import {
 } from '@/lib/db';
 import { db } from '@/lib/db/schema';
 import { syncService } from '@/lib/db/sync';
+import { connectivityService } from '@/lib/db/connectivity';
 
 export function InitialSyncProvider({ children }: { children: React.ReactNode }) {
     const dispatch = useDispatch();
@@ -31,7 +32,11 @@ export function InitialSyncProvider({ children }: { children: React.ReactNode })
             return;
         }
 
-        const performInitialSync = async () => {
+        let isSubscribed = true;
+        let unsubscribeConnectivity: (() => void) | undefined;
+
+        const performInitialSync = async (force: boolean = false) => {
+            if (!isSubscribed) return;
             try {
                 // Request persistent storage to prevent browser from clearing data
                 await requestPersistentStorage();
@@ -71,10 +76,10 @@ export function InitialSyncProvider({ children }: { children: React.ReactNode })
                 // Check if we need to perform initial sync
                 const lastSync = localStorage.getItem('lastInitialSync');
                 const now = Date.now();
-                const FIVE_MINUTES = 5 * 60 * 1000;
+                const THIRTY_MINUTES = 30 * 60 * 1000;
 
-                // Only sync if first time or data is older than 5 minutes
-                if (!lastSync || now - parseInt(lastSync) > FIVE_MINUTES) {
+                // Sync if first time, if forced by reconnection, or data is older than 30 minutes
+                if (force || !lastSync || now - parseInt(lastSync) > THIRTY_MINUTES) {
                     // Helper: wraps a sync function with per-entity status dispatching
                     const syncEntity = async (
                         entity: 'farmers' | 'employees' | 'suppliers' | 'products',
@@ -114,7 +119,21 @@ export function InitialSyncProvider({ children }: { children: React.ReactNode })
         };
 
         // Run in background - don't block rendering
-        performInitialSync();
+        performInitialSync(false).then(() => {
+            if (isSubscribed) {
+                unsubscribeConnectivity = connectivityService.subscribe((isOnline) => {
+                    if (isOnline && isSubscribed) {
+                        console.log('🌐 Connection restored, triggering adaptive delta sync...');
+                        performInitialSync(true);
+                    }
+                });
+            }
+        });
+
+        return () => {
+            isSubscribed = false;
+            if (unsubscribeConnectivity) unsubscribeConnectivity();
+        };
     }, [isAuthenticated, dispatch]);
 
     // Always render children immediately - don't block UI
