@@ -24,6 +24,20 @@ export async function getFarmer(id: string): Promise<Farmer | undefined> {
 }
 
 /**
+ * Get simple farmer options for dropdowns (Memory Optimized)
+ */
+export async function getFarmerOptions(): Promise<Pick<Farmer, 'id' | 'name' | 'contact' | 'community'>[]> {
+    return await db.farmers
+        .filter(f => !f.deleted)
+        .toArray(farmers => farmers.map(f => ({
+            id: f.id,
+            name: f.name,
+            contact: f.contact,
+            community: f.community
+        })));
+}
+
+/**
  * Get farmers with pagination
  */
 export async function getPaginatedFarmers(page: number, pageSize: number): Promise<{ data: Farmer[], total: number }> {
@@ -86,8 +100,10 @@ export async function getFarmersPaginatedAndFiltered(
 ): Promise<{ data: Farmer[], total: number }> {
     let collection: any = db.farmers.toCollection();
 
-    // 1. Index Selection
-    if (filters.region && filters.region !== 'all') {
+    // 1. Index Selection (Prioritize highly restrictive search)
+    if (filters.search) {
+        collection = db.farmers.where('name').startsWithIgnoreCase(filters.search);
+    } else if (filters.region && filters.region !== 'all') {
         if (filters.district && filters.society) {
             collection = db.farmers.where('[region+district+society]').equals([filters.region, filters.district, filters.society]);
         } else if (filters.district) {
@@ -105,6 +121,8 @@ export async function getFarmersPaginatedAndFiltered(
 
     // 2. In-Memory Filtering for remaining fields
     collection = collection.filter((f: Farmer) => {
+        if (f.deleted) return false;
+
         let match = true;
 
         if (filters.region && filters.region !== 'all' && f.region !== filters.region) match = false;
@@ -132,12 +150,8 @@ export async function getFarmersPaginatedAndFiltered(
 
         if (!match) return false;
 
-        if (filters.search) {
-            const searchLower = filters.search.toLowerCase();
-            return f.name.toLowerCase().includes(searchLower) ||
-                (f.contact?.includes(searchLower) ?? false) ||
-                (f.community?.toLowerCase().includes(searchLower) ?? false);
-        }
+        // If search is active, the Dexie index `startsWithIgnoreCase` already filtered the collection by name.
+        // We do not need to do further string matching here, just return true since the name matched.
         return true;
     });
 
@@ -441,20 +455,58 @@ export async function updateFarmersCache(): Promise<void> {
 
     const byRegion: Record<string, number> = {};
     const byGender: Record<string, number> = {};
+    const byFarmSize: Record<string, number> = {
+        'Small (< 2 acres)': 0,
+        'Medium (2-5 acres)': 0,
+        'Large (5-10 acres)': 0,
+        'Estates (> 10 acres)': 0,
+    };
+    const byAge: Record<string, number> = {
+        '18-25': 0, '26-35': 0, '36-45': 0, '46-60': 0, '60+': 0, 'Unknown': 0
+    };
+    const byRegionAndGender: Record<string, Record<string, number>> = {};
 
     farmers.forEach(farmer => {
-        if (farmer.region) {
-            byRegion[farmer.region] = (byRegion[farmer.region] || 0) + 1;
-        }
-        if (farmer.gender) {
-            byGender[farmer.gender] = (byGender[farmer.gender] || 0) + 1;
+        if (!farmer.deleted) {
+            if (farmer.region) {
+                byRegion[farmer.region] = (byRegion[farmer.region] || 0) + 1;
+
+                const r = farmer.region;
+                const g = farmer.gender || 'Unknown';
+                if (!byRegionAndGender[r]) byRegionAndGender[r] = {};
+                byRegionAndGender[r][g] = (byRegionAndGender[r][g] || 0) + 1;
+            }
+            if (farmer.gender) {
+                byGender[farmer.gender] = (byGender[farmer.gender] || 0) + 1;
+            }
+
+            const size = farmer.farmSize || 0;
+            if (size < 2) byFarmSize['Small (< 2 acres)']++;
+            else if (size < 5) byFarmSize['Medium (2-5 acres)']++;
+            else if (size < 10) byFarmSize['Large (5-10 acres)']++;
+            else byFarmSize['Estates (> 10 acres)']++;
+
+            const age = farmer.age;
+            if (typeof age !== 'number') {
+                byAge['Unknown']++;
+            } else {
+                if (age >= 18 && age <= 25) byAge['18-25']++;
+                else if (age >= 26 && age <= 35) byAge['26-35']++;
+                else if (age >= 36 && age <= 45) byAge['36-45']++;
+                else if (age >= 46 && age <= 60) byAge['46-60']++;
+                else if (age > 60) byAge['60+']++;
+                else byAge['Unknown']++;
+            }
         }
     });
 
     await db.statistics.put({
         id: 'farmer_counts',
         byRegion,
-        byGender
+        byGender,
+        byFarmSize,
+        byAge,
+        byRegionAndGender
     });
 }
 
@@ -486,6 +538,51 @@ export async function getFarmersByGender(): Promise<Record<string, number>> {
     await updateFarmersCache();
     const newStats = await db.statistics.get('farmer_counts');
     return newStats?.byGender || {};
+}
+
+/**
+ * Get farmers by farm size (for analytics) using Aggregation Cache
+ */
+export async function getFarmersByFarmSize(): Promise<Record<string, number>> {
+    const stats = await db.statistics.get('farmer_counts');
+    if (stats && stats.byFarmSize) {
+        return stats.byFarmSize;
+    }
+
+    // Fallback if cache isn't built yet
+    await updateFarmersCache();
+    const newStats = await db.statistics.get('farmer_counts');
+    return newStats?.byFarmSize || {};
+}
+
+/**
+ * Get farmers by age (for analytics) using Aggregation Cache
+ */
+export async function getFarmersByAge(): Promise<Record<string, number>> {
+    const stats = await db.statistics.get('farmer_counts');
+    if (stats && stats.byAge) {
+        return stats.byAge;
+    }
+
+    // Fallback if cache isn't built yet
+    await updateFarmersCache();
+    const newStats = await db.statistics.get('farmer_counts');
+    return newStats?.byAge || {};
+}
+
+/**
+ * Get farmers by region and gender (for analytics) using Aggregation Cache
+ */
+export async function getFarmersByRegionAndGender(): Promise<Record<string, Record<string, number>>> {
+    const stats = await db.statistics.get('farmer_counts');
+    if (stats && stats.byRegionAndGender) {
+        return stats.byRegionAndGender;
+    }
+
+    // Fallback if cache isn't built yet
+    await updateFarmersCache();
+    const newStats = await db.statistics.get('farmer_counts');
+    return newStats?.byRegionAndGender || {};
 }
 
 /**

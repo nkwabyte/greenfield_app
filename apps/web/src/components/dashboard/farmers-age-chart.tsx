@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import type { Farmer } from '@/lib/types';
 
 type FarmersAgeChartProps = {
-    farmers: Farmer[];
+    dataObj: Record<string, number> | undefined;
 };
 
 const CustomTooltip = ({ active, payload, label }: any) => {
@@ -21,38 +21,16 @@ const CustomTooltip = ({ active, payload, label }: any) => {
     return null;
 };
 
-export function FarmersAgeChart({ farmers }: FarmersAgeChartProps) {
+export function FarmersAgeChart({ dataObj }: FarmersAgeChartProps) {
     const data = React.useMemo(() => {
-        const buckets = {
-            '18-25': 0,
-            '26-35': 0,
-            '36-45': 0,
-            '46-60': 0,
-            '60+': 0,
-            'Unknown': 0
-        };
+        if (!dataObj) return [];
 
-        farmers.forEach(farmer => {
-            const age = farmer.age;
-            if (typeof age !== 'number') {
-                buckets['Unknown']++;
-                return;
-            }
-
-            if (age >= 18 && age <= 25) buckets['18-25']++;
-            else if (age >= 26 && age <= 35) buckets['26-35']++;
-            else if (age >= 36 && age <= 45) buckets['36-45']++;
-            else if (age >= 46 && age <= 60) buckets['46-60']++;
-            else if (age > 60) buckets['60+']++;
-            else buckets['Unknown']++;
-        });
-
-        return Object.entries(buckets)
+        return Object.entries(dataObj)
             .map(([range, count]) => ({
                 range,
                 count
             }));
-    }, [farmers]);
+    }, [dataObj]);
 
     return (
         <Card className="shadow-md h-full">

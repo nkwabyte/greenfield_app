@@ -23,11 +23,15 @@ import {
     getFarmersByGender,
     getFarmersByDateRange,
     getFarmersPaginatedAndFiltered, // NEW
+    getFarmerOptions,
     getUniqueRegions,
     getUniqueDistricts,
     getUniqueSocieties,
     getUniqueCommunities,
     getSyncStats,
+    getFarmersByFarmSize,
+    getFarmersByAge,
+    getFarmersByRegionAndGender,
 } from '@/lib/db/services/farmers';
 import {
     getAllEmployees,
@@ -91,9 +95,6 @@ export function useFarmers() {
     return useLiveQuery(() => getAllFarmers(), []);
 }
 
-/**
- * Get filtered farmers with live updates
- */
 export function useFarmersFiltered(filters: {
     region?: string;
     district?: string;
@@ -104,6 +105,13 @@ export function useFarmersFiltered(filters: {
         () => getFarmersFiltered(filters),
         [filters.region, filters.district, filters.society, filters.status]
     );
+}
+
+/**
+ * Get simple farmer options for dropdowns and selectors
+ */
+export function useFarmerOptions() {
+    return useLiveQuery(() => getFarmerOptions(), []);
 }
 
 /**
@@ -155,6 +163,27 @@ export function useRegionCounts() {
 
         return counts;
     }, []);
+}
+
+/**
+ * Get farmers by farm size directly using cache
+ */
+export function useFarmSizeStats() {
+    return useLiveQuery(() => getFarmersByFarmSize(), []);
+}
+
+/**
+ * Get farmers by age directly using cache
+ */
+export function useAgeStats() {
+    return useLiveQuery(() => getFarmersByAge(), []);
+}
+
+/**
+ * Get farmers by region and gender directly using cache
+ */
+export function useRegionGenderStats() {
+    return useLiveQuery(() => getFarmersByRegionAndGender(), []);
 }
 
 /**

@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import type { Farmer } from '@/lib/types';
 
 type FarmSizeChartProps = {
-    farmers: Farmer[];
+    dataObj: Record<string, number> | undefined;
 };
 
 const CustomTooltip = ({ active, payload }: any) => {
@@ -22,27 +22,14 @@ const CustomTooltip = ({ active, payload }: any) => {
     return null;
 };
 
-export function FarmSizeChart({ farmers }: FarmSizeChartProps) {
+export function FarmSizeChart({ dataObj }: FarmSizeChartProps) {
     const data = React.useMemo(() => {
-        const buckets = {
-            'Small (< 2 acres)': 0,
-            'Medium (2-5 acres)': 0,
-            'Large (5-10 acres)': 0,
-            'Estates (> 10 acres)': 0,
-        };
+        if (!dataObj) return [];
 
-        farmers.forEach(farmer => {
-            const size = farmer.farmSize || 0;
-            if (size < 2) buckets['Small (< 2 acres)']++;
-            else if (size < 5) buckets['Medium (2-5 acres)']++;
-            else if (size < 10) buckets['Large (5-10 acres)']++;
-            else buckets['Estates (> 10 acres)']++;
-        });
-
-        return Object.entries(buckets)
+        return Object.entries(dataObj)
             .map(([name, value]) => ({ name, value }))
             .filter(item => item.value > 0); // Hide empty buckets
-    }, [farmers]);
+    }, [dataObj]);
 
     // HSL colors (Chart 1-5 + Primary)
     // Distinct colors for better contrast

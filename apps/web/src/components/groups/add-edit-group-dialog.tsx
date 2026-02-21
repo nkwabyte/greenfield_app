@@ -34,9 +34,10 @@ import {
 } from '@/components/ui/select';
 import { Checkbox } from '@/components/ui/checkbox';
 import type { FarmerGroup, Farmer } from '@/lib/types';
+import { useFarmerOptions } from '@/hooks/useData';
 import { useFarmers } from '@/hooks/useData';
 import { Badge } from '@/components/ui/badge';
-import { ScrollArea } from '@/components/ui/scroll-area';
+import { useVirtualizer } from '@tanstack/react-virtual';
 
 const groupSchema = z.object({
     name: z.string().min(1, { message: 'Group name is required.' }),
@@ -55,7 +56,7 @@ type AddEditGroupDialogProps = {
 };
 
 export function AddEditGroupDialog({ open, onOpenChange, group, onSave }: AddEditGroupDialogProps) {
-    const farmers = useFarmers();
+    const farmers = useFarmerOptions();
     const [search, setSearch] = React.useState('');
 
     const form = useForm<GroupFormValues>({
@@ -112,6 +113,14 @@ export function AddEditGroupDialog({ open, onOpenChange, group, onSave }: AddEdi
     };
 
     const selectedCount = form.watch('farmerIds').length;
+
+    const parentRef = React.useRef<HTMLDivElement>(null);
+    const rowVirtualizer = useVirtualizer({
+        count: filteredFarmers.length,
+        getScrollElement: () => parentRef.current,
+        estimateSize: () => 60,
+        overscan: 5,
+    });
 
     return (
         <Dialog open={open} onOpenChange={onOpenChange}>
@@ -188,30 +197,52 @@ export function AddEditGroupDialog({ open, onOpenChange, group, onSave }: AddEdi
                                 onChange={(e) => setSearch(e.target.value)}
                             />
 
-                            <ScrollArea className="h-48 border rounded-md p-2">
+                            <div ref={parentRef} className="h-48 overflow-y-auto border rounded-md p-2 relative">
                                 {filteredFarmers.length === 0 ? (
                                     <div className="p-4 text-center text-sm text-muted-foreground">No farmers found</div>
                                 ) : (
-                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                                        {filteredFarmers.map((farmer: Farmer) => (
-                                            <div key={farmer.id} className="flex items-start space-x-2 rounded-md border p-2 bg-card hover:bg-accent/50 cursor-pointer transition-colors"
-                                                onClick={() => toggleFarmer(farmer.id)}>
-                                                <Checkbox
-                                                    checked={form.watch('farmerIds').includes(farmer.id)}
-                                                    onCheckedChange={() => toggleFarmer(farmer.id)}
-                                                    className="mt-0.5 pointer-events-none"
-                                                />
-                                                <div className="space-y-1 leading-none pointer-events-none">
-                                                    <p className="text-sm font-medium leading-none">{farmer.name}</p>
-                                                    <p className="text-xs text-muted-foreground">
-                                                        {farmer.community ? farmer.community : (farmer.contact || 'No Contact')}
-                                                    </p>
+                                    <div
+                                        style={{
+                                            height: `${rowVirtualizer.getTotalSize()}px`,
+                                            width: '100%',
+                                            position: 'relative',
+                                        }}
+                                    >
+                                        {rowVirtualizer.getVirtualItems().map((virtualRow) => {
+                                            const farmer = filteredFarmers[virtualRow.index];
+                                            return (
+                                                <div
+                                                    key={farmer.id}
+                                                    style={{
+                                                        position: 'absolute',
+                                                        top: 0,
+                                                        left: 0,
+                                                        width: '100%',
+                                                        height: `${virtualRow.size}px`,
+                                                        transform: `translateY(${virtualRow.start}px)`,
+                                                    }}
+                                                    className="p-1"
+                                                >
+                                                    <div className="flex w-full items-start space-x-2 rounded-md border p-2 bg-card hover:bg-accent/50 cursor-pointer transition-colors"
+                                                        onClick={() => toggleFarmer(farmer.id)}>
+                                                        <Checkbox
+                                                            checked={form.watch('farmerIds').includes(farmer.id)}
+                                                            onCheckedChange={() => toggleFarmer(farmer.id)}
+                                                            className="mt-0.5 pointer-events-none"
+                                                        />
+                                                        <div className="space-y-1 leading-none pointer-events-none">
+                                                            <p className="text-sm font-medium leading-none">{farmer.name}</p>
+                                                            <p className="text-xs text-muted-foreground">
+                                                                {farmer.community ? farmer.community : (farmer.contact || 'No Contact')}
+                                                            </p>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        ))}
+                                            );
+                                        })}
                                     </div>
                                 )}
-                            </ScrollArea>
+                            </div>
                             <FormMessage />
                         </div>
 

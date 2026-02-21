@@ -7,6 +7,21 @@ import Dexie, { Table } from 'dexie';
 import type { Farmer, Employee, Product, Supplier, Transaction, FarmerGroup, FarmerRequest } from '@/lib/types';
 import type { SyncQueueItem } from './types';
 
+export interface MediaItem {
+    id: string;              // UUID, e.g. farmer_${farmerId}_avatar
+    entityType: string;      // 'farmer' | 'employee' | etc.
+    entityId: string;        // ID of the owning entity
+    fieldName: string;       // Field this image maps to, e.g. 'avatarUrl'
+    mimeType: string;        // e.g. 'image/jpeg'
+    data: ArrayBuffer;       // The raw image bytes stored offline
+    remoteUrl?: string;      // Populated after successful upload to Supabase Storage
+    status: 'pending' | 'uploading' | 'uploaded' | 'error';
+    retryCount: number;
+    errorMessage?: string;
+    createdAt: string;
+    updatedAt: string;
+}
+
 export class GreenfieldDB extends Dexie {
     // Entity tables
     farmers!: Table<Farmer>;
@@ -16,7 +31,8 @@ export class GreenfieldDB extends Dexie {
     transactions!: Table<Transaction>;
     farmerGroups!: Table<FarmerGroup>;    // NEW: Phase 2 Table
     farmerRequests!: Table<FarmerRequest>; // NEW: Phase 3 Table
-    statistics!: Table<{ id: string; byRegion: Record<string, number>; byGender: Record<string, number> }>;
+    statistics!: Table<{ id: string; byRegion: Record<string, number>; byGender: Record<string, number>; byFarmSize: Record<string, number>; byAge: Record<string, number>; byRegionAndGender: Record<string, Record<string, number>> }>;
+    mediaStore!: Table<MediaItem>;        // Offline image store
 
     // Sync queue table
     syncQueue!: Table<SyncQueueItem>;
@@ -94,6 +110,11 @@ export class GreenfieldDB extends Dexie {
         // Version 7: Add Payment Plans and Transactions to Farmer Requests
         this.version(7).stores({
             farmerRequests: 'id, farmerId, groupId, seasonYear, status, requestDate, paymentPlan, deleted, updatedAt, createdAt',
+        });
+
+        // Version 8: Add offline media store for images
+        this.version(8).stores({
+            mediaStore: 'id, entityType, entityId, fieldName, status, createdAt',
         });
     }
 }
