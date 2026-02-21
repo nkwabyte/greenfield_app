@@ -1,0 +1,1001 @@
+id,name,gender,region,district,society,community,contact,age,education_level,farm_size,crops_grown,status,join_date,deleted,created_at,updated_at
+a89f1f1b-0e33-4cb7-9ce1-730a9e45615a,"Michael Korang",Male,"Bono","Sunyani","Wamfie",,,40,,6,[],Active,2026-02-21T21:43:26.307Z,false,2026-02-21T21:43:26.307Z,2026-02-21T21:43:26.307Z
+6e76efbb-9057-40e8-a688-1b8f2c1fbd34,"Amponsah Diana",Male,"Bono","Sunyani","Wamfie",,,44,,4,[],Active,2026-02-21T21:43:26.307Z,false,2026-02-21T21:43:26.307Z,2026-02-21T21:43:26.307Z
+d06152a8-37bf-4b5e-944c-96992147d979,"Samuel Kumi",Male,"Bono","Sunyani","Wamfie",,,47,,4,[],Active,2026-02-21T21:43:26.307Z,false,2026-02-21T21:43:26.307Z,2026-02-21T21:43:26.307Z
+b95d111d-1b5a-4e9e-b71e-7ec9d6894327,"Mary Yeboah",Male,"Bono","Sunyani","Wamfie",,,44,,6,[],Active,2026-02-21T21:43:26.307Z,false,2026-02-21T21:43:26.307Z,2026-02-21T21:43:26.307Z
+8cc390ee-d4b1-428c-982d-531e0e0669ab,"Atta Kwabena",Male,"Bono","Sunyani","Wamfie",,,58,,7,[],Active,2026-02-21T21:43:26.307Z,false,2026-02-21T21:43:26.307Z,2026-02-21T21:43:26.307Z
+2df88dde-cddc-4080-9cd4-6acd8845feae,"Paul Atta Kofi",Male,"Bono","Sunyani","Wamfie",,,33,,7,[],Active,2026-02-21T21:43:26.307Z,false,2026-02-21T21:43:26.307Z,2026-02-21T21:43:26.307Z
+700a8f46-1adc-4318-9bf7-1f33c37b4d8d,"Afia Fofie",Male,"Bono","Sunyani","Wamfie",,,43,,5,[],Active,2026-02-21T21:43:26.307Z,false,2026-02-21T21:43:26.307Z,2026-02-21T21:43:26.307Z
+cbf19cc1-41fd-4f42-9356-f4a8fec15e42,"Emmanuel Asamoah",Male,"Ashanti","Sekyere South","Tosen Shed",,,23,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+26042888-7efc-482b-9b78-8bf41ff10938,"Edward Manu",Male,"Ashanti","Sekyere South","Tosen Shed",,,27,,8,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+aa2c11e5-7f3e-45bd-89d8-8a8e61afa73c,"Georgina Donkor",Female,"Ashanti","Sekyere South","Tosen Shed",,,26,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+518d7ab1-c88c-48b5-8f21-3aa7d314508b,"Mary Asumani",Female,"Ashanti","Sekyere South","Tosen Shed",,,23,,2,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+5b16c9cf-b2ae-41ab-835f-70a66707975a,"George Weah",Male,"Ashanti","Sekyere South","Tosen Shed",,,26,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+dc62fadc-6674-43e9-a8f1-d06fc5380965,"Richard Addai",Male,"Ashanti","Sekyere South","Tosen Shed",,,25,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+7e31636c-1644-45a6-97e3-1c5f0d3f2795,"Kwame Abu",Male,"Ashanti","Sekyere South","Tosen Shed",,,20,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+713e9d90-0f30-4077-a479-b82c35159f6a,"Emmanuel Asare",Male,"Ashanti","Sekyere South","Tosen Shed",,,26,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+0c43a68d-55b4-448a-b5df-87fda6805312,"Elizabeth Appiah",Female,"Ashanti","Sekyere South","Tosen Shed",,,33,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+4504a375-a303-491c-8413-41249d138b08,"Afari John",Male,"Ashanti","Sekyere South","Tosen Shed",,,28,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+5d2ca501-f824-4d75-87b5-49644e397508,"John Kuma",Male,"Ashanti","Sekyere South","Tosen Shed",,,24,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+c1c94b0d-3cd1-4777-a77f-4b15398e7bd8,"Comfort Sani",Female,"Ashanti","Sekyere South","Tosen Shed",,,29,,9,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+9c1429fe-9c35-4ce9-b36b-aee7070e80fa,"Regina Yaa",Female,"Ashanti","Sekyere South","Tosen Shed",,,58,,3,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+d6df3ce8-8202-4aa3-b423-302faf4a6a70,"Sampson Aduomi",Male,"Ashanti","Sekyere South","Tosen Shed",,,33,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+88e9e4bb-3b7c-4df0-92de-2a232aa6ad36,"Theophilus Kyei",Male,"Ashanti","Sekyere South","Tosen Shed",,,43,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+2bd1ce38-e9eb-4eb8-a7dc-0dfc74006f86,"Kwame Kwarteng",Male,"Ashanti","Sekyere South","Tosen Shed",,,40,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+ab98c959-06ad-44c8-bc84-397fb4b918f2,"Kwabena Badu",Male,"Ashanti","Sekyere South","Tosen Shed",,,44,,2,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+69d86451-f908-4338-a7c2-eeeae3efde35,"Naomi Obese",Female,"Ashanti","Sekyere South","Tosen Shed",,,47,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+388adf19-0bbf-4e45-a3a7-7ac02debe5f8,"Sabina Tua",Female,"Ashanti","Sekyere South","Tosen Shed",,,44,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+3f718bca-8c39-4729-8e5d-0233b403078d,"Daniel Attuah",Male,"Ashanti","Sekyere South","Tosen Shed",,,33,,8,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+17e706bb-21e7-47d4-ad40-86587e474170,"Abigail Boafo",Female,"Ashanti","Sekyere South","Tosen Shed",,,43,,1,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+4f75982f-63d5-44d7-b87e-6cff48b75cb5,"John Otoo",Male,"Ashanti","Sekyere South","Tosen Shed",,,40,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+8659f9eb-2dfc-49eb-b54f-7f4c3714bb91,"Kwame Alex",Male,"Ashanti","Sekyere South","Tosen Shed",,,44,,8,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+a602f2eb-c4f2-4f9c-a76f-6b5a1a753351,"Moses Appiah",Male,"Ashanti","Sekyere South","Tosen Shed",,,47,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+72e679b2-4e2c-44cb-a5b0-6625649a9dd9,"Peter Moses",Male,"Ashanti","Sekyere South","Tosen Shed",,,44,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+d93dc3d1-ddd9-4a1d-9e3a-1ed9bda3a1b2,"Agnes Baah",Female,"Ashanti","Sekyere South","Tosen Shed",,,28,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+10f82c5f-0b5d-4320-b0b3-6f7802f14bdc,"Ebenezer Donkor",Male,"Ashanti","Sekyere South","Tosen Shed",,,47,,8,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+8505bd61-fa0a-4b58-8ef7-589f6c2554b0,"Isaac Agyei",Male,"Ashanti","Sekyere South","Tosen Shed",,,61,,9,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+d3036761-6032-4444-a1c8-c0af253bf7e3,"Emmanuel Adu",Male,"Ashanti","Sekyere South","Tosen Shed",,,46,,8,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+389be310-b4f5-490a-a23d-3935e242374f,"Emelia Tei",Female,"Ashanti","Sekyere South","Tosen Shed",,,37,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+a23a601f-85bd-425c-8b75-04eb3bcd709a,"Ebenezer Mona",Male,"Ashanti","Sekyere South","Tosen Shed",,,58,,2,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+1372b0d2-07d2-4bdd-b229-919af1dbaa3c,"Kojo Antwi",Male,"Ashanti","Sekyere South","Tosen Shed",,,33,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+6f067273-0b0d-492e-87e3-dd65e4dff691,"John Appiah",Male,"Ashanti","Sekyere South","Tosen Shed",,,43,,8,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+7952e1c5-3188-43ac-88d4-c1c557d6ef1b,"Juliana Agyei",Female,"Ashanti","Sekyere South","Tosen Shed",,,40,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+67a5f0c1-b6ec-4ecd-933a-ccb1d368f374,"Georgina Susuan",Female,"Ashanti","Sekyere South","Tosen Shed",,,44,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+433eb8cf-e9cc-4f47-8012-d8797c1c54dd,"Ebenezer Ahyia",Male,"Ashanti","Sekyere South","Tosen Shed",,,47,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+7452a24c-0a05-49de-8ff7-fa48eba08a6e,"Comfort Annor",Female,"Ashanti","Sekyere South","Tosen Shed",,,44,,8,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+374c72d3-dcc7-4d1e-98d9-ad1a04509295,"Margaret Awuah",Female,"Ashanti","Sekyere South","Tosen Shed",,,28,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+b7e85620-a59f-4f7b-a117-59723f4d3b4a,"Richard Ofori",Male,"Ashanti","Sekyere South","Tosen Shed",,,47,,9,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+5bd391ff-29bf-4a2c-afab-d16a88c46f60,"Faustina Adu",Female,"Ashanti","Sekyere South","Tosen Shed",,,61,,3,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+82cd8d1e-cf67-48b2-8b8f-bc4d5bd4289e,"Sanaa John",Male,"Ashanti","Sekyere South","Tosen Shed",,,46,,8,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+f4e04562-b51f-4988-b92b-75075711f497,"Esther Coffie",Female,"Ashanti","Sekyere South","Tosen Shed",,,37,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+2ac66cf4-3888-4b81-9bfe-3ac7afabf019,"Wisdom Kusi",Male,"Ashanti","Sekyere South","Tosen Shed",,,58,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+1dcdd838-7d3c-4bae-806c-e9dd0c73b865,"Charles Nuamah",Male,"Ashanti","Sekyere South","Tosen Shed",,,33,,2,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+4c4e5ebc-63b4-4798-b8e7-3ce01cfb0fbf,"Nicholas Ackaah",Male,"Ashanti","Sekyere South","Tosen Shed",,,43,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+9bfc0ee0-95ef-4512-86d4-0bf781061268,"Martha Ankomah",Female,"Ashanti","Sekyere South","Tosen Shed",,,40,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+1d61bc05-ccf1-4565-b762-956d21b3e4b1,"Sarah Bono",Female,"Ashanti","Sekyere South","Tosen Shed",,,44,,8,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+2a2fbe75-daca-490c-93fb-c21a08335352,"Christina Ama",Female,"Ashanti","Sekyere South","Tosen Shed",,,47,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+255d5de6-63ae-4297-b56d-9125406a1d31,"Seth Opoku",Male,"Ashanti","Sekyere South","Tosen Shed",,,44,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+795d596a-13a1-4d1e-a54f-e6ed9e0642e3,"Soma Junior",Male,"Ashanti","Sekyere South","Tosen Shed",,,43,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+3a2b6381-e73d-47c8-a663-61767e68ae37,"Stella Dugan",Female,"Ashanti","Sekyere South","Tosen Shed",,,40,,3,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+f1ee62fd-2715-442f-947e-2417e42440ff,"Isaac Boafo",Male,"Ashanti","Sekyere South","Tosen Shed",,,44,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+6237e168-eaa9-4910-8f0e-5fdaedf09e3a,"Richard Asare",Male,"Ashanti","Sekyere South","Tosen Shed",,,47,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+0c8fcf79-0223-41f9-8355-d423e4b6ec71,"Daniel Opoku",Male,"Ashanti","Sekyere South","Tosen",,,44,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+4f66e9ff-4c68-4de2-b0f3-4aef26860db2,"Edward Kwabena",Male,"Ashanti","Sekyere South","Tosen",,,28,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+7451408b-9d66-44c1-8551-3057b3d636bb,"Daniel Yaw",Male,"Ashanti","Sekyere South","Tosen",,,47,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+0df4b1db-23f9-4879-8827-2ebefe7eeaad,"Daniel Mansu",Male,"Ashanti","Sekyere South","Tosen",,,61,,9,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+5d2dace9-4962-4325-9f47-e03a980ab5e1,"Danny Jaha",Male,"Ashanti","Sekyere South","Tosen",,,46,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+8679c6c5-85a6-48a5-abc9-369934e40649,"Emmanuel Kofi Junior",Male,"Ashanti","Sekyere South","Tosen",,,37,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+7651838c-ae2b-43ca-9ee3-ba4259a486e3,"Emmanuel Juamena",Male,"Ashanti","Sekyere South","Tosen",,,58,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+6af9aa75-887f-473c-9259-8f3f1df5e9c4,"Frank Oppong",Male,"Ashanti","Sekyere South","Tosen",,,33,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+a7729c9e-646a-47c4-8e05-154fe1d2bd97,"Comfort Dufie",Female,"Ashanti","Sekyere South","Tosen",,,43,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+92234ddc-9367-40c2-b173-9eb51aa637dd,"Fredrick Kwesi",Male,"Ashanti","Sekyere South","Tosen",,,40,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+731ca4aa-1003-49b5-8d30-1b452ff22e12,"Kwabena Manu",Male,"Ashanti","Sekyere South","Tosen",,,44,,2,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+4e6469a7-acea-407b-8b85-0a000c4c556c,"Sampson Mina",Male,"Ashanti","Sekyere South","Tosen",,,47,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+a55b5f2d-d2b5-4664-b96f-6b015d753ee1,"Francis Adu",Male,"Ashanti","Sekyere South","Tosen",,,44,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+5a7e2c47-0bfd-4ce8-8f21-432b9979aa3b,"Gladys Osuma",Female,"Ashanti","Sekyere South","Tosen",,,26,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+59a6eeec-b650-43f3-adf7-db27ab5e4811,"Michael Benard",Male,"Ashanti","Sekyere South","Tosen",,,26,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+9b436fb3-3968-491b-b3f6-61932d3a453c,"Frank Appiah",Male,"Ashanti","Sekyere South","Tosen",,,26,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+8ccc5ae9-cf89-46aa-bfad-392f9a4c9413,"Ebenezer",Male,"Ashanti","Sekyere South","Tosen",,,23,,8,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+5852cf8d-7f28-4008-a2de-b20e0129b6cd,"Sampson",Male,"Ashanti","Sekyere South","Tosen",,,23,,2,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+923a909a-bdab-4f17-94b3-5a686aad6484,"Samuel",Male,"Ashanti","Sekyere South","Tosen",,,21,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+b71195ea-874c-4245-a315-1ccc093f7c3b,"Maxwell A.",Male,"Ashanti","Sekyere South","Tosen",,,22,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+9d9c1b40-e414-4a25-80d2-dc228662060b,"Michael",Male,"Ashanti","Sekyere South","Tosen",,,24,,3,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+beb4d824-77c5-4188-add4-e9a61b4d5ba0,"Paulina",Female,"Ashanti","Sekyere South","Tosen",,,33,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+aae1e826-ab2f-459e-9243-6d4e815a9528,"Edward",Male,"Ashanti","Sekyere South","Tosen",,,26,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+c5f89e66-734e-43ba-afd2-e743f105d8c5,"Dominic Sagoe",Male,"Ashanti","Sekyere South","Tosen",,,24,,9,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+0fd20282-9552-4baf-b434-fb5147863f75,"Asum Stephen",Male,"Ashanti","Sekyere South","Wiamoase",,,49,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+3af41e09-d1e3-4b24-ba2d-fe7111927dcb,"Alice Ferkaa",Female,"Ashanti","Sekyere South","Wiamoase",,,47,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+89133e28-a12f-4cc9-b47d-d5d2118dcb40,"Justina Amuaa",Female,"Ashanti","Sekyere South","Wiamoase",,,38,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+05d36343-081e-4ad6-947c-71d953db2cf2,"Rose Ferkaa",Female,"Ashanti","Sekyere South","Wiamoase",,,51,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+abf8c130-7db0-4e99-9bb5-02a4b17779a8,"Martha Asoma",Female,"Ashanti","Sekyere South","Wiamoase",,,40,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+cc030064-4845-402b-8f67-d72b6cf632d7,"Victoria Twenewaa",Female,"Ashanti","Sekyere South","Wiamoase",,,45,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+bc95eb14-a978-4652-9665-86692e011d90,"Magrate Kuma",Female,"Ashanti","Sekyere South","Wiamoase",,,42,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+26aec9c6-b7b4-4573-9630-d9e144936013,"Amma Pomaa",Female,"Ashanti","Sekyere South","Wiamoase",,,55,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+53f1056a-e24f-4e6e-aae7-837e587a492b,"Yaw Bosea",Male,"Ashanti","Sekyere South","Wiamoase",,,57,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+339ef279-9c55-4c69-8493-fa6bc9c50e3b,"Francis Ofori",Male,"Ashanti","Sekyere South","Wiamoase",,,60,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+04a1efb2-f10b-4579-a330-5a3b8789d7e0,"Martha Adinkra",Female,"Ashanti","Sekyere South","Wiamoase",,,58,,3,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+f99cceed-a377-46d3-85d5-834b50d50de8,"Yaw Gyabaah",Male,"Ashanti","Sekyere South","Wiamoase",,,60,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+d1a751fa-3c4e-4828-97e2-9ccf1f79b52f,"Kyereme Kofi",Male,"Ashanti","Sekyere South","Wiamoase",,,59,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+2c3fb919-f635-4672-bf1e-ed6ae2ac0c7d,"Agyei Kwame",Male,"Ashanti","Sekyere South","Wiamoase",,,47,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+364d2bda-69ee-4675-b2c3-f17011400e21,"Kwaku Takyi",Male,"Ashanti","Sekyere South","Wiamoase",,,50,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+64a0a3b5-b234-4b8e-b6ac-9463eeb023d6,"Emmanuel Kwasi Bosea",Male,"Ashanti","Sekyere South","Wiamoase",,,49,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+21235fa2-d072-41ca-b0f7-f1095a811c89,"Ama Fosuaa",Female,"Ashanti","Sekyere South","Wiamoase",,,56,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+3ca96bb8-0cc2-4e34-985d-f06522274372,"Atta Kuma",Male,"Ashanti","Sekyere South","Wiamoase",,,51,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+343c7cda-8473-4dc7-8d97-07ac9e113d29,"Agyei James",Male,"Ashanti","Sekyere South","Wiamoase",,,45,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+0b2346b8-9106-4e8b-9d05-3b2d6cfb3eea,"Slyvester K. Achampong",Male,"Ashanti","Sekyere South","Wiamoase",,,41,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+73d5d7bc-e7f9-4280-aa26-798ab56a38e0,"Nketia Thomas",Male,"Ashanti","Sekyere South","Wiamoase",,,60,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+7dfd46b5-f597-47d7-bdc2-d9e4c37a1f3b,"Agyeiwaa Comfort",Female,"Ashanti","Sekyere South","Wiamoase",,,50,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+1f0ccb59-4021-4fa3-881f-113c4ad4f508,"Attaa Cicilia",Female,"Ashanti","Sekyere South","Wiamoase",,,61,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+85388501-6c0f-4ba3-9fe1-05196a310e96,"Yaw Agyei",Male,"Ashanti","Sekyere South","Wiamoase",,,55,,3,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+b19edda4-b8a9-4c9a-b687-d99aee1ec522,"Ante Yaa Mary",Female,"Ashanti","Sekyere South","Wiamoase",,,55,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+9571f862-fda3-44f5-89e5-211a9b33a374,"Grace Adjeiwaa",Female,"Ashanti","Sekyere South","Wiamoase",,,48,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+dce18f30-21e1-4de1-8fee-aa5c263aeb1a,"Ferkah Solomon",Male,"Ashanti","Sekyere South","Wiamoase",,,56,,2,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+66592b32-90d1-48d5-bbce-27b9fa74cc95,"Antwiwaa Vida",Female,"Ashanti","Sekyere South","Wiamoase",,,49,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+3021cd7e-d4cd-49bf-bb96-1e7016421e16,"Akua Kraa",Female,"Ashanti","Sekyere South","Wiamoase",,,48,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+2e52dbba-b3fb-4b67-aec3-c99983ac9002,"Kwabena Boseah",Female,"Ashanti","Sekyere South","Wiamoase",,,51,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+ccc47ece-315e-43f7-8745-aa49e9f42931,"Adwoa Saah",Female,"Ashanti","Sekyere South","Wiamoase",,,51,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+fff2387a-3d3b-4143-9c25-17f384a95fca,"Adjei Daniel",Female,"Ashanti","Sekyere South","Wiamoase",,,53,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+92889dd6-b8c6-40c8-b6a5-efc6a3976df8,"Alice Bommo",Female,"Ashanti","Sekyere South","Wiamoase",,,48,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+c4089662-24a6-4ea4-8bd4-be025b2d104a,"Agyei Amos",Female,"Ashanti","Sekyere South","Wiamoase",,,60,,2,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+d9a58fbb-9565-4d4b-bd2b-d3806047b531,"Bosea Stephen",Female,"Ashanti","Sekyere South","Wiamoase",,,59,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+4bc96d4b-9cfc-4a36-8551-8c36572b75df,"Bosea Justice",Female,"Ashanti","Sekyere South","Wiamoase",,,53,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+3b3e6406-1626-4ecb-aeb1-2c99368c4a8d,"Grace Yeboaah",Female,"Ashanti","Sekyere South","Wiamoase",,,55,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+62df2fdb-3d60-43fc-b74d-cb0e7994717e,"Elizabeth Boamaa",Female,"Ashanti","Sekyere South","Wiamoase",,,61,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+afd46247-7e13-4044-95b3-6494790ad1e9,"Koosono Paul",Male,"Ashanti","Sekyere South","Wiamoase",,,54,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+9d15dc58-7ffd-48be-9f3a-07297af5fed3,"Ansu Daniel",Male,"Ashanti","Sekyere South","Wiamoase",,,55,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+b3cc11d1-64cc-42f6-a078-68c76f8d0abc,"Yaa Amponsah",Female,"Ashanti","Sekyere South","Wiamoase",,,41,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+250dcaa3-5e51-45aa-9b29-ca47a1e4aab4,"Akua Serwaa",Female,"Ashanti","Sekyere South","Wiamoase",,,45,,9,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+bcd4dcbe-8b93-4ba3-b5c2-5dbf0014030d,"Obeng Anthony",Male,"Ashanti","Sekyere South","Wiamoase",,,45,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+d1362d04-cbac-45fc-967d-760a30ef8260,"Afia Kyeremaa",Female,"Ashanti","Sekyere South","Wiamoase",,,49,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+5e5453fa-3bf3-4f9d-bd80-5412930590c8,"Kyereme Stephen",Male,"Ashanti","Sekyere South","Wiamoase",,,60,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+3e6e6dea-96e8-4765-9544-b6b9d5f9a34c,"Bae Bismark",Male,"Ashanti","Sekyere South","Wiamoase",,,53,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+23daf43c-b410-4a89-86de-6cd972d977f2,"Kwasi Agyei (man)",Female,"Ashanti","Sekyere South","Wiamoase",,,44,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+eac90142-8fd8-46d4-b25f-92fe6727b63d,"Afia Asantewaa",Male,"Ashanti","Sekyere South","Wiamoase",,,46,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+a9eda024-7eb5-4edf-975d-6e596b6fbb80,"Asedua Rose",Male,"Ashanti","Sekyere South","Wiamoase",,,54,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+17d69bca-c461-4b72-ac18-17926480bc9a,"Kwaku Benne",Male,"Ashanti","Sekyere South","Wiamoase",,,40,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+cb86bcc9-6f59-4ff1-9398-d328b807a8b7,"Ferka Stephen",Male,"Ashanti","Sekyere South","Wiamoase",,,58,,8,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+3a607598-374e-4fcf-a522-5a0447b6d9fe,"Bosea Albert",Male,"Ashanti","Sekyere South","Wiamoase",,,37,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+a0786734-0b3a-4526-893d-9353eadc9a2f,"Asaa Theresa",Female,"Ashanti","Sekyere South","Wiamoase",,,46,,2,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+6a0a13dc-a4dc-4dca-99aa-c4f8be973941,"Rebecca Benewaa",Female,"Ashanti","Sekyere South","Wiamoase",,,61,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+babd0666-224e-4ce3-b3ec-eb270d729063,"Joseph Kwaku Nketia",Male,"Ashanti","Sekyere South","Wiamoase",,,56,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+2cc35ea1-00b6-4eca-a4e6-25aaff4b6648,"Osono Emmanuel",Male,"Ashanti","Sekyere South","Wiamoase",,,59,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+7a882a94-2d00-4682-b542-1b6e045d1595,"Bermaa Agnes",Female,"Ashanti","Sekyere South","Wiamoase",,,46,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+707a2712-9678-4b04-98eb-d06d7389d15c,"Oppong Yaw",Male,"Ashanti","Sekyere South","Wiamoase",,,59,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+195e826e-43bb-4bbe-b352-5a19d4398a97,"Akosua Kuma",Female,"Ashanti","Sekyere South","Wiamoase",,,34,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+6638323f-8a07-4d10-8092-b0c8a7009dda,"Yaw Gyedu",Male,"Ashanti","Sekyere South","Wiamoase",,,51,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+064d3c75-a3cc-440d-9cb8-df81654b8f9b,"Benne Seth",Male,"Ashanti","Sekyere South","Wiamoase",,,52,,9,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+d5ab212a-eb42-4b95-a004-497567baee61,"Akyiaa Doris",Female,"Ashanti","Sekyere South","Wiamoase",,,29,,3,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+b08c371f-19ed-4adc-b554-c988599ff0c8,"Baba Ayamga",Male,"Ashanti","Sekyere South","Wiamoase",,,32,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+7738bc18-252f-446e-b4ee-0eb0dfb3a865,"Grace Kuruwa",Female,"Ashanti","Sekyere South","Wiamoase",,,48,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+bdc1efed-2dea-4ce3-8b99-f3b961c905d4,"Joseph Nketia",Male,"Ashanti","Sekyere South","Wiamoase",,,58,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+1c13e119-aa61-46b5-9083-a553d3c1dc35,"Saeed Yusif",Male,"Ashanti","Sekyere South","Wiamoase",,,48,,2,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+3575fcb1-18ce-457c-a119-c09c0853b2bd,"Ernest Ntow",Male,"Ashanti","Sekyere South","Wiamoase",,,51,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+7411a593-4037-4261-b005-54cc618d1d91,"Asuama Madina",Female,"Ashanti","Sekyere South","Wiamoase",,,51,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+4d57748e-b760-4460-a3a8-0988d3dda34b,"Ante Afia",Female,"Ashanti","Sekyere South","Wiamoase",,,61,,8,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+d6873461-66da-4245-bb02-8c20a813cceb,"Apraku Fojoa",Female,"Ashanti","Sekyere South","Wiamoase",,,55,,1,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+93fa606b-d3aa-40e5-a6d6-06536ad2e629,"Kyere Stephen",Male,"Ashanti","Sekyere South","Wiamoase",,,49,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+b7b61df1-fc8f-415c-adc5-eba79aa999ab,"Yaa Kyeraa",Female,"Ashanti","Sekyere South","Wiamoase",,,55,,8,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+98e41a03-ce33-4565-b433-ce9b0f84d629,"Ansu Ransford",Male,"Ashanti","Sekyere South","Wiamoase",,,46,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+cfd5636b-e9d7-43db-a9ae-0592869da327,"Mary Badu",Female,"Ashanti","Sekyere South","Wiamoase",,,34,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+92571980-c60f-4ad5-8164-863e85e09ce4,"Takyiwaa Ama",Female,"Ashanti","Sekyere South","Wiamoase",,,46,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+fd87225e-7d03-4e0f-8791-519a74ed7bff,"Mensah Joseph Kingsley",Male,"Ashanti","Sekyere South","Wiamoase",,,56,,8,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+9bbba986-309b-45d7-90b8-1322e26e1e68,"Nana Yaw Obeng",Male,"Ashanti","Sekyere South","Wiamoase",,,44,,9,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+1f7099df-4cab-4cff-b8f2-13a04034f53b,"Twumwaa Comfort",Female,"Ashanti","Sekyere South","Wiamoase",,,47,,8,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+bcfbf7ed-9738-477e-8600-27aaaeb71da3,"Yeboaa Akua Lydia",Female,"Ashanti","Sekyere South","Wiamoase",,,55,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+e51aa061-3608-4763-ae82-7c5813b0927f,"Dina Ansu",Female,"Ashanti","Sekyere South","Wiamoase",,,48,,2,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+718863a5-023b-46a2-907e-5f46956f3c63,"Kyereme Paul",Male,"Ashanti","Sekyere South","Wiamoase",,,55,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+e2fb2650-7db5-465c-a382-3f605403e76a,"Benne Kwame",Male,"Ashanti","Sekyere South","Wiamoase",,,41,,8,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+4abe1cc5-7b61-4c77-afab-8686d6527dee,"Joyce Fosuaa",Female,"Ashanti","Sekyere South","Wiamoase",,,45,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+fe7c13eb-68f0-449a-8552-ab339b0c9b19,"Oteng Amankona",Male,"Ashanti","Sekyere South","Wiamoase",,,39,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+38f542a2-3ced-412f-9d39-a80025e5c5d0,"Yaa Donkor",Female,"Ashanti","Sekyere South","Wiamoase",,,41,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+a90cb371-1bde-435c-a454-aea4296cc36d,"Yaw Kyereme",Male,"Ashanti","Sekyere South","Wiamoase",,,58,,8,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+8fa51833-5c92-4340-ad9e-a955109488ef,"Kwadwo Kyereme",Female,"Ashanti","Sekyere South","Wiamoase",,,36,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+290d8198-1084-4d99-943b-05d73c2ad298,"Ferka Kwaku",Male,"Ashanti","Sekyere South","Wiamoase",,,50,,9,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+8db509d0-6e7d-426f-92f3-d98671b1a29a,"Adu Martin",Male,"Ashanti","Sekyere South","Wiamoase",,,51,,3,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+036e9dcf-e2e2-4f92-9595-3119d6365463,"Charles Oppong Acquah",Male,"Ashanti","Sekyere South","Wiamoase",,,41,,8,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+d6bc2856-9a02-4f96-8e4b-baaf30e69f72,"Oppong Joshua",Male,"Ashanti","Sekyere South","Wiamoase",,,61,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+582926e5-736f-409f-af5a-67962cbfd221,"Kyeremeh Marison",Male,"Ashanti","Sekyere South","Wiamoase",,,42,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+50f04617-b2aa-4d08-8f92-fcc627816a60,"Amma Kyeremaa",Male,"Ashanti","Sekyere South","Wiamoase",,,34,,2,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+4a7560d7-f467-4a55-9134-859f7eb0c317,"Grace Oppong Aquah",Female,"Ashanti","Sekyere South","Wiamoase",,,26,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+c42a0cc4-8388-4fc3-ad48-11fb25a12857,"Badu Yeboah Fred",Male,"Ashanti","Sekyere South","Wiamoase",,,58,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+71d96ddf-a5fb-4d6b-a0e2-697d1a24d02d,"Auguestina Gyabea Acquah",Female,"Ashanti","Sekyere South","Wiamoase",,,49,,8,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+681b1e2a-14e4-4448-9045-7dc3f37b45ba,"Abena Manu",Female,"Ashanti","Sekyere South","Twereso",,,43,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+56180b4c-9bc8-46d9-acc3-246c8d427c36,"Asante Michael",Male,"Ashanti","Sekyere South","Twereso",,,58,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+e3fd3c24-aab6-44c8-be62-f7253867bbf1,"Kosua Pomaa",Female,"Ashanti","Sekyere South","Twereso",,,61,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+1cad4944-ec3e-4c23-bcb6-c32981c7a045,"Adwoa Susana",Female,"Ashanti","Sekyere South","Twereso",,,45,,3,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+f778578e-96ec-4a5b-8067-9ebb37e3733d,"Appiah Frank",Male,"Ashanti","Sekyere South","Twereso",,,36,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+58d39af4-3f58-4743-9c1f-1b5b44ae240b,"Daniel Kyeremeh",Female,"Ashanti","Sekyere South","Twereso",,,53,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+7ec4b87b-bcd5-43c9-8ac5-c9ddda985412,"Afia Safoaa",Female,"Ashanti","Sekyere South","Twereso",,,40,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+cb765a28-e752-490a-8766-138499668a2a,"Yaw Tabiri",Male,"Ashanti","Sekyere South","Twereso",,,55,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+f63a2497-cd4b-4161-819d-81dbc498b04e,"Kwasi Ameyaw",Male,"Ashanti","Sekyere South","Twereso",,,60,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+8b421701-b00f-4bb9-8ca6-74a5c4ed3e53,"Kwadwo Oppong",Male,"Ashanti","Sekyere South","Twereso",,,49,,9,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+d1d352ca-b7fa-4e43-a4f7-fe3c560bb269,"Kwadwo Asante",Male,"Ashanti","Sekyere South","Twereso",,,47,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+fafd9e3c-24b8-404e-8e03-f1ccf2a9edb4,"Williams Oppong",Male,"Ashanti","Sekyere South","Twereso",,,52,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+488f2020-6029-44c1-a21a-d25b9d78585a,"Seth Oppong Amanfo",Male,"Ashanti","Sekyere South","Twereso",,,50,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+d7934660-b491-48bd-a588-6fcf93183464,"Joeseph E. Asuobenteng",Male,"Ashanti","Sekyere South","Twereso",,,53,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+1f3f4e97-ebfd-4978-b6d0-f7ce66e68e4f,"Twum Abraham",Male,"Ashanti","Sekyere South","Twereso",,,48,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+ef1ce9fe-bf41-498c-bccc-32378c16bf43,"Kumih Mary",Female,"Ashanti","Sekyere South","Twereso",,,53,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+c5927c37-3a40-493a-88dd-578ccf4d30a2,"Kofi Anto",Male,"Ashanti","Sekyere South","Twereso",,,41,,2,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+ef166dca-d5ba-4315-bfd4-e6d4fdb8baba,"Akosua Kumah",Male,"Ashanti","Sekyere South","Twereso",,,61,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+b7c238a1-df14-444c-8e8e-2667373ee29d,"Amponsah K. Hayford",Male,"Ashanti","Sekyere South","Twereso",,,51,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+d65aecec-764e-445e-ba1b-1072ef950cf3,"Ama Kraah",Female,"Ashanti","Sekyere South","Twereso",,,51,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+a52a7aaf-3303-4f3b-a27a-ddef5c954399,"Kwasi Kumih",Male,"Ashanti","Sekyere South","Twereso",,,33,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+2e5f6ccb-2565-4d95-96de-18fea58b2eac,"Akua Gyabea",Female,"Ashanti","Sekyere South","Twereso",,,34,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+406dd113-1827-444a-843c-3ecf7f5d4474,"Tettey Johnson",Male,"Ashanti","Sekyere South","Twereso",,,40,,8,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+9683216b-7dae-4247-9c65-4a0a5dc56d9f,"Attaa Kosua",Female,"Ashanti","Sekyere South","Twereso",,,51,,2,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+839677fc-9c28-4728-93ae-86735bae6cc0,"Addo Ransford",Male,"Ashanti","Sekyere South","Twereso",,,37,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+3a70ab58-fd32-4638-9fbf-19221ef622f3,"Kwadwo Duri",Male,"Ashanti","Sekyere South","Twereso",,,40,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+ed591ab6-acda-459f-97cc-838bf61187dd,"Oppong Kwasi Nicholas",Male,"Ashanti","Sekyere South","Twereso",,,45,,3,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+240c6e67-752b-44c0-851b-eee5460d5935,"Kwadwo Kumih",Male,"Ashanti","Sekyere South","Twereso",,,61,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+6913a3a3-4238-45bd-a575-c6606417c1c2,"Adoma Mensah",Male,"Ashanti","Sekyere South","Twereso",,,45,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+e76772df-c104-4b31-bdd4-606ae8fd4c5d,"Berima Yeboah Korde{",Male,"Ashanti","Sekyere South","Twereso",,,39,,9,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+fb0088eb-322d-44c0-afb2-673cbbfaefba,"Amponsah Ruth",Male,"Ashanti","Sekyere South","Twereso",,,49,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+b0840ea5-5b49-4e9d-867a-fa4249118e95,"Amppong Elizabeth",Male,"Ashanti","Sekyere South","Twereso",,,59,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+81dfe043-5307-4567-9f88-d1e51eaea816,"Adwoa Nyukomago",Male,"Ashanti","Sekyere South","Twereso",,,55,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+488d6151-59c2-41f5-97d6-e24923083c24,"Tabiri Issac",Male,"Ashanti","Sekyere South","Twereso",,,51,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+e8d6f960-dd02-4d77-af45-3a875098a758,"Dora Kyeremaa",Female,"Ashanti","Sekyere South","Twereso",,,51,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+b598e19f-5c6f-4fef-8cea-239b91b912ba,"Kwasi Tutu",Male,"Ashanti","Sekyere South","Twereso",,,45,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+8039afdb-b239-4838-92ba-635fe4e8760a,"Kyeremaa Naomi",Female,"Ashanti","Sekyere South","Twereso",,,54,,3,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+c4471359-d044-4fa7-9489-62daca56946a,"Kofi Manso",Male,"Ashanti","Sekyere South","Twereso",,,53,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+49cbd8a4-9e7d-448d-b37d-72bafd8b329c,"Kofi Yeboah",Male,"Ashanti","Sekyere South","Twereso",,,58,,3,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+7cd6c166-e5b3-4c87-b654-0b3c8dea5fc2,"Yaw Mensah",Male,"Ashanti","Sekyere South","Adukrom",,,57,,8,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+1b4065f9-28a2-455d-be68-9f3f57786a20,"Adwoa Pomaa",Female,"Ashanti","Sekyere South","Adukrom",,,47,,2,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+04e19e62-ebdf-4a7c-90a3-17bf874aa8e4,"Oppong John",Male,"Ashanti","Sekyere South","Adukrom",,,56,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+b5fcabe6-e9ee-47a3-a6d6-60603d6324e0,"Kofi Akwane",Male,"Ashanti","Sekyere South","Adukrom",,,61,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+fe59fb26-0858-4141-881f-eda9cfa26a28,"Alex Akwane",Male,"Ashanti","Sekyere South","Adukrom",,,51,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+8010e311-3370-41bb-a6a2-c69c17b02a2d,"Kosua Durowaa",Female,"Ashanti","Sekyere South","Adukrom",,,61,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+5c9e0f25-0c09-43da-9ef0-65306fcddbef,"Kofi Konadu",Male,"Ashanti","Sekyere South","Adukrom",,,56,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+703d8c16-e455-45e4-aa52-110cb41cae51,"Minta Martin",Male,"Ashanti","Sekyere South","Adukrom",,,44,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+b16976a3-1ab9-4869-a89d-3b38ce1a8473,"Charles Kusi",Male,"Ashanti","Sekyere South","Adukrom",,,44,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+91a70e4e-8211-4a33-960f-e44e7d129d61,"Kofi Adjei",Male,"Ashanti","Sekyere South","Adukrom",,,43,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+e7683871-5244-4460-95a5-5e6b39c42427,"Yaa Adjiewaa",Male,"Ashanti","Sekyere South","Adukrom",,,47,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+319017df-533e-414d-8b10-0057135cecd2,"Gladys Amankwaa",Female,"Ashanti","Sekyere South","Adukrom",,,51,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+4a390889-565b-45e8-a4ed-a8681db8a848,"Afia Kuma",Female,"Ashanti","Sekyere South","Adukrom",,,61,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+94020375-63b7-4b40-a432-f22d7852ea1e,"Ansu Kinspord",Male,"Ashanti","Sekyere South","Adukrom",,,59,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+e82b6fd0-ccd2-452d-ad4a-7df39ae5dd39,"Kofi Kyeremeh",Male,"Ashanti","Sekyere South","Adukrom",,,38,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+bf4ebb2d-9cf7-47e2-8e76-37272255b0a7,"Kyeremaa Dorcus",Male,"Ashanti","Sekyere South","Adukrom",,,39,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+c867caa2-a792-4d69-bb29-2f639f3aa4cc,"Abena Kumih",Male,"Ashanti","Sekyere South","Adukrom",,,46,,3,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+1bb03ae4-a541-48f9-bf29-b37dba28fd88,"Fustina Admah",Male,"Ashanti","Sekyere South","Adukrom",,,50,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+578bce74-5efb-4a94-a68b-2b4ee8636b0d,"Akosua Anto",Female,"Ashanti","Sekyere South","Adukrom",,,59,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+d77a2c4c-ead7-4fb4-bd63-72dab18e04a7,"Kwasi Kyiremeh",Male,"Ashanti","Sekyere South","Adukrom",,,43,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+514e1d57-4f1b-4c81-8f1c-5305046c2a77,"Kwadwo Oppong",Male,"Ashanti","Sekyere South","Adukrom",,,44,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+41526699-da7b-4a4d-b36f-f28ebd69d961,"Nana Kofi Boahene",Male,"Ashanti","Sekyere South","Adukrom",,,53,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+fb665371-0831-42aa-a7ae-b7d55ae4bd4f,"Barimah Okogyeatuo Ageman",Male,"Ashanti","Sekyere South","Adukrom",,,61,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+d2ce1da8-b7c2-49ac-aebe-852a0ba926ab,"Yaa Yeboaa",Female,"Ashanti","Sekyere South","Adukrom",,,56,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+153fffec-bb02-407e-92ba-2149c0e9f127,"Oppong Kyekyeku",Male,"Ashanti","Sekyere South","Adukrom",,,59,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+b7608978-b5a6-4d77-a852-d368ce88745b,"Yaw Adu",Male,"Ashanti","Sekyere South","Adukrom",,,58,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+a9681493-593d-4fc6-9c96-dac5ac94de4e,"Ansu Kwasi Emmanuel",Male,"Ashanti","Sekyere South","Adukrom",,,50,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+86cd370c-4811-4b6b-ba36-b2f15b0637b2,"Twum Mercy",Female,"Ashanti","Sekyere South","Adukrom",,,51,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+ddd7a85c-22f6-4ab0-938b-a19e3143921d,"Georgina Kusiwaa",Female,"Ashanti","Sekyere South","Adukrom",,,38,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+848aac2e-3fab-41e4-874e-3044689da636,"Yaa Kusiwaa",Female,"Ashanti","Sekyere South","Adukrom",,,44,,3,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+4f19b6e6-dfb1-49e9-9b93-c04aeacea0a0,"Danso Comfort",Male,"Ashanti","Sekyere South","Adukrom",,,44,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+2efb8c4d-4f80-4c1e-a9e5-059d247bdf0b,"Kwame Kunadu Augus Tine",Male,"Ashanti","Sekyere South","Adukrom",,,59,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+976fcbdc-9e10-4341-9dbc-3e392faeb434,"A Ma Fosuaa",Female,"Ashanti","Sekyere South","Adukrom",,,54,,2,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+fae1a3b7-bde2-4b2f-b004-8712b1895098,"Animaa Rose",Female,"Ashanti","Sekyere South","Adukrom",,,22,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+9e8020d0-a3c7-4ca5-890a-5cb49de0c39e,"Peprah Comport",Female,"Ashanti","Sekyere South","Adukrom",,,30,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+2cae0c8a-25c9-4ec3-becb-14e382fff6f2,"Felicial Dansowaa",Female,"Ashanti","Sekyere South","Adukrom",,,40,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+056ae6be-5d77-4ce2-ae66-ad2f24277cea,"Juliana Kwatimaa",Female,"Ashanti","Sekyere South","Adukrom",,,49,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+49c514ed-eaea-4cd9-a155-4f1b45a67c33,"Gyamfi Maichael",Male,"Ashanti","Sekyere South","Adukrom",,,47,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+d02e5946-696e-4c90-bba3-ed4f7ef72de3,"Addae Stephen",Male,"Ashanti","Sekyere South","Adukrom",,,38,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+92940fd6-c9bd-4561-9ccb-2768c57b339c,"Akosua Adomah",Female,"Ashanti","Sekyere South","Adukrom",,,51,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+f541ef0e-5b05-4601-805d-a4a4965ae173,"Asieduaa Taabea Agnes",Female,"Ashanti","Sekyere South","Adukrom",,,40,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+620c042f-9c8f-44e7-a32e-ea20d264fef2,"Edward Kwame Twum",Male,"Ashanti","Sekyere South","Adukrom",,,45,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+0e58753d-8961-4664-8b31-be03aa50a636,"Baba Dawuda",Male,"Ashanti","Sekyere South","Adukrom",,,42,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+db4df439-6bfc-44f4-86ba-baca1f70a23e,"Akua Gyabea",Male,"Ashanti","Sekyere South","Adukrom",,,55,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+b06384b3-2212-4205-9fa8-4d094b02beaf,"Akua Donkor",Male,"Ashanti","Sekyere South","Adukrom",,,57,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+63326f9f-73ea-466b-a00f-a1e976382b86,"Kwame Owusu",Male,"Ashanti","Sekyere South","Adukrom",,,60,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+76583824-fffe-4f11-a1d9-9fdaefd4a643,"Kyeremeh Yaw Charles",Male,"Ashanti","Sekyere South","Adukrom",,,58,,3,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+b11d597f-dd54-4ee1-9181-4543565220f5,"Adoma Dormk",Male,"Ashanti","Sekyere South","Adukrom",,,60,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+6f77b550-b29a-4b5d-906f-aa130f9b7052,"Georgina Gyamfi",Male,"Ashanti","Sekyere South","Adukrom",,,59,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+0ece6acb-801a-41e5-ba58-5e0a77635799,"Yaw Kyereh",Male,"Ashanti","Sekyere South","Adukrom",,,47,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+23191889-bfe6-4919-90f4-f8f9e0618dcd,"Adoma Eva",Female,"Ashanti","Sekyere South","Adukrom",,,50,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+a1dfc738-6b93-4065-89e8-c58d0292b893,"Adoma Mensah",Male,"Ashanti","Sekyere South","Adukrom",,,49,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+badc2581-86a2-46f0-9626-e5472e59e1b7,"Afia Densi",Female,"Ashanti","Sekyere South","Adukrom",,,56,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+c9e8825d-2b83-4dba-ac3e-8e4e0b1db452,"Kumi Janet",Female,"Ashanti","Sekyere South","Adukrom",,,51,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+1d26072e-0519-4c61-93b6-eb7b61786bd9,"Hawa Ibrahim",Female,"Ashanti","Sekyere South","Adukrom",,,45,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+58b4c440-751f-4a65-a7c4-2160ca811837,"Kyremeh Stephen",Male,"Ashanti","Sekyere South","Adukrom",,,41,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+53ec82e4-e482-401a-9c8b-b6639af1eb4e,"Kwaala Gurisi",Male,"Ashanti","Sekyere South","Adukrom",,,60,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+c72552a5-20db-47a1-a94c-a330ce58650a,"Felix Yeboah",Male,"Ashanti","Sekyere South","Adukrom",,,50,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+87387798-c258-4cbe-a52b-1464a340ac3e,"Yeboah Emmanuel",Male,"Ashanti","Sekyere South","Adukrom",,,61,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+8b014868-a85b-4bfa-b114-33d2255de2a4,"Yaw Siaw Andrews",Male,"Ashanti","Sekyere South","Adukrom",,,55,,3,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+a9fe3846-b200-4725-b862-b53bbf276817,"Margaret Appeaa",Female,"Ashanti","Sekyere South","Adukrom",,,55,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+9a3d61a9-0621-46d6-81e4-c26e11b8a60a,"Kumih Richard",Male,"Ashanti","Sekyere South","Adukrom",,,48,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+6c9cbcb3-8c3d-4086-8322-556a7561ebd7,"Twumwaa Fustina",Female,"Ashanti","Sekyere South","Adukrom",,,56,,2,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+db704052-7290-49c9-aed4-79c0d24668a2,"Adjei Robert",Male,"Ashanti","Sekyere South","Adukrom",,,49,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+7ba5d77d-d6db-481d-8912-634cc309be3c,"Yaw Peter",Female,"Ashanti","Sekyere South","Adukrom",,,48,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+436cc16c-b798-485d-aa70-962a21bd8690,"Speler Asamoah",Female,"Ashanti","Sekyere South","Adukrom",,,51,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+43341d42-b439-4675-b2bf-6876c7de5750,"Father Andrews",Male,"Ashanti","Sekyere South","Adukrom",,,51,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+4e2613ff-3a25-479c-a224-1e2a76d87856,"Kyeremeh Yaw Sam",Male,"Ashanti","Sekyere South","Adukrom",,,53,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+d8c7923e-ab92-4711-88b8-84aeb8e6aeb6,"Twum Sampson",Male,"Ashanti","Sekyere South","Adukrom",,,48,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+3c0a68a4-4da8-466f-a600-567e1b5b1519,"Kwame Fosu",Male,"Ashanti","Sekyere South","Adukrom",,,60,,2,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+d6e8d1cf-0f27-4106-bfbe-150c3016f679,"Yeboah Manson",Male,"Ashanti","Sekyere South","Adukrom",,,59,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+c7295cbe-8067-416f-9232-b354517c756b,"Dina Kyeremaa",Female,"Ashanti","Sekyere South","Adukrom",,,53,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+0b8ac7ad-7237-4a8e-94e4-ccd95ec1d276,"Kwadwo Yeboah",Male,"Ashanti","Sekyere South","Adukrom",,,55,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+65b4d2bc-20b9-4c75-bb88-21294c4afcfa,"Owusu Eddy-murffy",Other,"Ashanti","Sekyere South","Adukrom",,,61,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+c7d4ffe5-f849-409e-99ea-ba56358554f0,"Owusu Daniel",Other,"Ashanti","Sekyere South","Adukrom",,,54,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+f7498a05-ec2f-41d1-aadc-8f2667e8b966,"Kwabena Okrah",Other,"Ashanti","Sekyere South","Adukrom",,,55,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+5f2e83b7-498f-4243-a6d9-8109fcbe9839,"Yeboah Kordee Nkruman",Other,"Ashanti","Sekyere South","Adukrom",,,41,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+98397d9d-f48b-48c2-91e2-2428b367d0ef,"Owusu Alexander",Other,"Ashanti","Sekyere South","Adukrom",,,45,,9,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+ef5cea84-19a6-47a3-b2f7-1e2215739b61,"Osie Yaw",Other,"Ashanti","Sekyere South","Adukrom",,,45,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+a49ad29c-3825-4e86-a9f9-8fee9ffeec62,"Owusu Ansah",Other,"Ashanti","Sekyere South","Adukrom",,,49,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+0ad151bf-cde0-49ce-8318-12ba4d434a4e,"Nana Akua Adubea",Other,"Ashanti","Sekyere South","Adukrom",,,60,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+c7fc37da-1569-4ba3-97d6-7c31bcc14c39,"Felicia Gyamfi",Other,"Ashanti","Sekyere South","Adukrom",,,53,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+692afca0-2507-42ad-af6d-1f87ab3ba813,"Oppong Joseph",Other,"Ashanti","Sekyere South","Adukrom",,,44,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+58949055-8740-47ec-889f-d6696d4f818b,"Tutu Stephen",Other,"Ashanti","Sekyere South","Adukrom",,,46,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+e71d3ab7-ae68-4efe-a03b-7c8e87291cfa,"Kwabena Yeboah",Other,"Ashanti","Sekyere South","Adukrom",,,54,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+b9fba6f8-b3b2-4fe8-b03f-aa277944056c,"Kyeremaa Agather",Other,"Ashanti","Sekyere South","Adukrom",,,40,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+9867b138-101b-4488-a0cf-d1fed187c70a,"Pepra Comfort",Other,"Ashanti","Sekyere South","Adukrom",,,58,,8,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+0a500d56-4068-47ed-a7d7-13bcf96f6152,"Takyiwaa Grace",Other,"Ashanti","Sekyere South","Kinam",,,37,,5,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+33eca733-fe2b-4c4a-8049-ae1363b7e4b7,"Kofi Badu",Other,"Ashanti","Sekyere South","Kinam",,,46,,2,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+2517ca5d-f639-457c-b9da-7bbf15a99f34,"Yaw Mensah",Other,"Ashanti","Sekyere South","Kinam",,,61,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+db77ee4d-69ed-4356-a8d4-d5e9cd5cdd3e,"Siaw Beatice",Other,"Ashanti","Sekyere South","Kinam",,,56,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+e174970e-8b16-4bc3-b92b-2134d7eeab68,"Afia Gyinaa",Other,"Ashanti","Sekyere South","Kinam",,,59,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+3ac7616c-43cc-4051-bbb5-f4d50b113ba7,"Kwasi Yeboah",Other,"Ashanti","Sekyere South","Kinam",,,46,,4,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+376f80be-c601-4f39-bf7c-0851371c6d9f,"Abena Adjeiwaa",Other,"Ashanti","Sekyere South","Kinam",,,59,,6,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.308Z,2026-02-21T21:43:26.308Z
+cd4749d9-1722-4ab0-b948-d3f8aff86c98,"Abena Konama",Other,"Ashanti","Sekyere South","Kinam",,,34,,7,[],Active,2026-02-21T21:43:26.308Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+87c3a67d-1c26-43c1-9cdc-500975bf4eea,"Afia Nsiah",Other,"Ashanti","Sekyere South","Kinam",,,51,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+c9bf6edc-721c-4fab-8644-8eb3e17b49ec,"Charles K. Badu",Other,"Ashanti","Sekyere South","Kinam",,,52,,9,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+23a6cbe0-4d97-43c1-b6c7-07fbf96c2af4,"Kwabena Kyeremeh",Other,"Ashanti","Sekyere South","Kinam",,,29,,3,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+8d6a9778-b2da-46da-a6cd-5142dbd59e2d,"Kwabena Broyan",Other,"Ashanti","Sekyere South","Kinam",,,32,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+85d46dd1-07d0-49b2-b1ae-c243c3e277a0,"Simon Mensah",Other,"Ashanti","Sekyere South","Kinam",,,48,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+fbccb7e0-2e1e-47a4-acbe-d712c11fd786,"Kwame Asante",Other,"Ashanti","Sekyere South","Kinam",,,58,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+9cb15b8c-477d-47fe-9693-227e32ec2b88,"Comfort Pomaa",Other,"Ashanti","Sekyere South","Kinam",,,48,,2,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+adae6130-9a6d-4357-ae19-4ff162c8d17b,"John Oppong",Male,"Ashanti","Sekyere South","Tosen",,,29,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+ace4a78b-84bd-414f-835d-a34794458be2,"Mary Euince",Female,"Ashanti","Sekyere South","Tosen",,,28,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+4147332e-a23d-4799-80cd-485e48c102ee,"Kofi Kuma",Male,"Ashanti","Sekyere South","Tosen",,,24,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+b6b2d2b0-ce43-42b4-bfe8-f9fa537f1769,"Kwame Boakye",Male,"Ashanti","Sekyere South","Tosen",,,21,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+0a9afaee-f3b0-444a-90fd-9b8d968cc431,"Gloria Obeng",Female,"Ashanti","Sekyere South","Tosen",,,28,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+d3f76a64-94ef-4dcc-87c7-9f76c0138c03,"Reuben Danso",Male,"Ashanti","Sekyere South","Tosen",,,19,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+57b7f75b-142c-4974-b7fd-b39be9c1d39a,"Naomi Lampti",Female,"Ashanti","Sekyere South","Tosen",,,22,,3,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+e307b811-e049-47bd-986f-13496f0e0004,"Owusu Charcles",Male,"Ashanti","Sekyere South","Tosen",,,31,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+ed6cb360-8cfb-4e4a-a061-f84bf713e388,"George Naoh",Male,"Ashanti","Sekyere South","Tosen",,,34,,3,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+f3e0c2ce-e5dd-4ec8-80b0-7be219301531,"Cecilia Adu",Female,"Ashanti","Sekyere South","Tosen",,,21,,8,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+66b2347e-4b03-49f2-a206-fd0463e41d53,"Grace Goli",Female,"Ashanti","Sekyere South","Tosen",,,34,,2,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+5b1875ea-7e68-4d4e-9672-198e39e06e54,"Comfort Adu",Female,"Ashanti","Sekyere South","Tosen",,,26,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+f4617c2c-5ea7-4879-90fa-a4b7d6b6f119,"Salomey Ali",Female,"Ashanti","Sekyere South","Tosen",,,33,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+1d6b0861-e480-480c-b55b-d428463fb210,"Emmanuel Ellio",Male,"Ashanti","Sekyere South","Tosen",,,21,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+cb1cc0af-6aca-45e3-9361-ab5ddd36bea2,"Mary Eno",Female,"Ashanti","Sekyere South","Tosen",,,29,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+9eec20f4-53b6-48e4-a84c-acd65ab3c4b7,"Joyce Opoku",Female,"Ashanti","Sekyere South","Tosen",,,30,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+3cd853a2-f864-4de9-97ee-9d1bb083322c,"Alex Danso",Male,"Ashanti","Sekyere South","Tosen",,,33,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+6e28b37b-64b1-493c-8ab1-53d83df384b7,"Cynthia",Female,"Ashanti","Sekyere South","Tosen",,,26,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+9b5673bf-ba5b-455d-b538-05c729133a7e,"Peter",Male,"Ashanti","Sekyere South","Tosen",,,30,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+8bacfaff-f171-4637-8a9b-b597abee3d28,"Sabina",Female,"Ashanti","Sekyere South","Tosen",,,25,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+6f7655c2-4673-4322-b069-4be3dece581e,"Comfort",Female,"Ashanti","Sekyere South","Tosen",,,24,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+ad2f1cd7-642b-44ab-8ce8-1cc00e1e1ad9,"Emmanuel Addo",Male,"Ashanti","Sekyere South","Tosen",,,33,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+5294f555-fc24-41e7-8b89-5dd4479166e4,"Dora Addo",Female,"Ashanti","Sekyere South","Tosen",,,35,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+9fba535b-3c49-4bf5-bd69-5232428ba643,"Joshua",Male,"Ashanti","Sekyere South","Tosen",,,19,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+5061db64-dfae-4119-b4a4-793ce96149c1,"Dora",Female,"Ashanti","Sekyere South","Tosen",,,28,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+0c961117-7886-483f-9805-ec0d3ab4cfd9,"Gyau",Male,"Ashanti","Sekyere South","Tosen",,,24,,3,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+a490390f-b315-4a17-adc3-f7378fd89860,"Joyce",Female,"Ashanti","Sekyere South","Tosen",,,26,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+b87a3360-dec5-4818-bd0d-1fffa847dd43,"Comfort",Female,"Ashanti","Sekyere South","Tosen",,,24,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+b854db7f-6a89-4334-b6bc-8ef7b70972d9,"Adu",Male,"Ashanti","Sekyere South","Tosen",,,28,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+707d72db-2025-4d73-b264-3994269ebd78,"Isaac",Male,"Ashanti","Sekyere South","Tosen",,,21,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+c1c79ebe-0fb8-4d32-a0bf-574ff6555824,"Grace",Female,"Ashanti","Sekyere South","Tosen",,,31,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+243f0461-7559-4b65-95b5-96626000a0a3,"Isaac",Male,"Ashanti","Sekyere South","Tosen",,,29,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+a96ad641-841e-467d-be4e-05384d27b29e,"Sarah",Female,"Ashanti","Sekyere South","Tosen",,,24,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+a644a362-cccb-4b5d-8ccd-fc891f2dc589,"Agnes",Female,"Ashanti","Sekyere South","Tosen",,,28,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+a8b4311a-99aa-4320-9731-6899738efaf0,"Stephen",Male,"Ashanti","Sekyere South","Tosen",,,29,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+f8294203-0bea-444f-9239-aa74eba6d54a,"Samuel",Male,"Ashanti","Sekyere South","Tosen",,,30,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+94da5766-08a3-48d4-aa37-f92d7b0e2996,"Vida",Female,"Ashanti","Sekyere South","Tosen",,,26,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+b04994b7-ba98-4dd8-a2bf-fb9ede9ca467,"Eric",Male,"Ashanti","Sekyere South","Tosen",,,32,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+9ec46fb1-05fc-4ad9-8d9d-b5896af3df95,"Grace",Female,"Ashanti","Sekyere South","Tosen",,,28,,3,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+ab120c65-44e3-4ea8-b6a1-3d9a32a249d7,"Grace",Female,"Ashanti","Sekyere South","Tosen",,,33,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+f3baab8e-2c75-47a4-a22d-c9347312148f,"Emmanuel",Male,"Ashanti","Sekyere South","Tosen",,,33,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+65900cbb-6a1d-4ee0-a8ec-0a0243553ae1,"Dorcas",Female,"Ashanti","Sekyere South","Tosen",,,30,,2,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+9798ba4e-452a-4ba5-a1d4-b25f25cef8c9,"Robert",Male,"Ashanti","Sekyere South","Tosen",,,32,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+21f663c7-84f0-4972-90e7-fcf9eda472a4,"Francis",Male,"Ashanti","Sekyere South","Tosen",,,27,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+97747707-a4c1-428a-bc55-4dff934fc794,"Sampson",Male,"Ashanti","Sekyere South","Tosen",,,24,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+62aa8549-854c-4a90-aa12-1ba2cb29e295,"Salomey",Female,"Ashanti","Sekyere South","Tosen",,,28,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+edb85984-b644-48c9-a5d4-dc12c22ba173,"Janet",Female,"Ashanti","Sekyere South","Tosen",,,27,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+5b0cc340-35dd-449b-88e8-ee3f81c9d6cc,"Emmanuel",Male,"Ashanti","Sekyere South","Tosen",,,21,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+d351c48a-838a-43b0-9047-f7328f746c0d,"Daniel",Male,"Ashanti","Sekyere South","Tosen",,,29,,2,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+205e455c-dd7d-41ef-92af-6a1c702aa02d,"Joseph",Male,"Ashanti","Sekyere South","Tosen",,,24,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+eac699e1-ec5c-4f37-a169-030f4edf4994,"Ernest Okyere",Male,"Ashanti","Sekyere South","Tosen",,,23,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+4dd49bab-2466-4f91-9499-efc55e26a0d3,"Kofi",Male,"Ashanti","Sekyere South","Tosen",,,26,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+9c51edec-78bb-4778-ac99-1f353baa3663,"Isaac",Male,"Ashanti","Sekyere South","Domama",,,28,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+34da66c1-a6c7-4f07-9710-c2123c515234,"James",Male,"Ashanti","Sekyere South","Domama",,,23,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+4867df1b-aba3-4c27-a462-5981a768545a,"Kwamina",Male,"Ashanti","Sekyere South","Domama",,,25,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+1063a0c2-6559-4fbe-851d-27b7a6a821bd,"Kwame",Male,"Ashanti","Sekyere South","Domama",,,29,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+449edf2f-15f6-4a41-81c3-df9dba1f986e,"Tano",Male,"Ashanti","Sekyere South","Domama",,,25,,9,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+8fb179e0-19f9-4f29-a15a-bafa06e609ba,"Seth",Male,"Ashanti","Sekyere South","Domama",,,33,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+4ac5b623-f57d-443d-9155-6b195e888b88,"Kwesi",Male,"Ashanti","Sekyere South","Domama",,,34,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+c3dc181c-aad2-436e-bc23-8786f58459d8,"Ebenezer",Male,"Ashanti","Sekyere South","Domama",,,26,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+0da655de-88d0-4b61-bf49-f89bf4fab207,"Solomon Kwasi",Male,"Ashanti","Sekyere South","Domama",,,24,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+5673498c-6116-43bc-bffb-c50c43a01285,"Yaw",Male,"Ashanti","Sekyere South","Domama",,,34,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+2a285ca9-35b1-42bd-aeed-ec04f9024ca6,"John",Male,"Ashanti","Sekyere South","Domama",,,24,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+e01cef3b-cb90-4f05-8a39-82da918635a3,"Kwabena",Male,"Ashanti","Sekyere South","Domama",,,31,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+112327fc-6a63-45b0-9ddc-4d07134e25df,"Kwabena",Male,"Ashanti","Sekyere South","Domama",,,30,,8,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+6df78b3a-d23f-4667-afcc-52dd5e1c3a30,"Alhaji",Male,"Ashanti","Sekyere South","Domama",,,20,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+25e047a9-2ed2-426e-959c-1903e56638e4,"Kwame",Male,"Ashanti","Sekyere South","Domama",,,19,,2,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+ddf995bf-c5ef-425d-9795-4fc6ff578237,"Patrick",Male,"Ashanti","Sekyere South","Domama",,,26,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+198f4b1c-ec67-415c-b899-66178cd7d98f,"Kwamena",Male,"Ashanti","Sekyere South","Domama",,,29,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+d8e4ee24-681e-41be-8a07-63ddb83746a3,"Isaac",Male,"Ashanti","Sekyere South","Domama",,,19,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+9a4ea758-4da7-4d51-9a7e-cf3d6d4e7a08,"Peter",Male,"Ashanti","Sekyere South","Domama",,,28,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+da2159e5-48f3-42a3-9dc6-f62e622381c2,"Nana",Male,"Ashanti","Sekyere South","Domama",,,28,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+469c3fe8-cbad-4aa3-9e7f-92451e942e86,"Isaac",Male,"Ashanti","Sekyere South","Domama",,,26,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+98571972-2085-42b9-ab32-92d5709b7f6f,"Ohene",Male,"Ashanti","Sekyere South","Domama",,,20,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+072cabd1-b14d-4117-8efc-82aff4d56a8b,"Kwasi",Male,"Ashanti","Sekyere South","Domama",,,26,,9,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+d10adde5-1e11-4686-94df-d641f987a049,"Francis",Male,"Ashanti","Sekyere South","Domama",,,24,,3,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+ef4b6fff-75e8-4866-84de-a8ed663a0bf9,"Hayford",Male,"Ashanti","Sekyere South","Domama",,,29,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+08de644f-b61c-46cb-9c18-6a9763aa2030,"Dominic",Male,"Ashanti","Sekyere South","Domama",,,25,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+a2b460ad-b492-4bee-87e4-aafe892e8435,"Winifred",Female,"Ashanti","Sekyere South","Domama",,,22,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+882e33e9-2e50-499a-be82-09a68600dcda,"Francis",Male,"Ashanti","Sekyere South","Domama",,,33,,2,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+af779c9f-87cb-43af-818d-a99328fbc706,"Collins",Male,"Ashanti","Sekyere South","Domama",,,31,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+90e38b9f-9d70-42a7-a8d5-6159e9ffe369,"Kenneth",Male,"Ashanti","Sekyere South","Domama",,,31,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+255685af-6c4d-4eab-a5ed-3c73e95bcaa6,"Atidza",Female,"Ashanti","Sekyere South","Domama",,,28,,8,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+f8e89167-fd37-45af-81ae-61d983983180,"Kwabena",Male,"Ashanti","Sekyere South","Domama",,,29,,1,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+93135910-b103-41c2-98f9-852c20dad720,"Emmanuel",Male,"Ashanti","Sekyere South","Domama",,,28,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+4568ab08-42dd-45db-a3bc-46925b4e33ba,"John",Male,"Ashanti","Sekyere South","Domama",,,26,,8,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+5881eacb-ff68-44ae-862b-ee983cc6b057,"Akli",Male,"Ashanti","Sekyere South","Domama",,,25,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+4e602fa0-bd20-4395-a7bd-d52ea6e84c7a,"Naomi",Female,"Ashanti","Sekyere South","Domama",,,24,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+7f98cd49-bbb6-4a67-b705-8eaa0cb66cda,"Comfort",Female,"Ashanti","Sekyere South","Domama",,,27,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+2c969a22-29a3-4cf1-a6cc-bac823edcc70,"Esi",Female,"Ashanti","Sekyere South","Domama",,,24,,8,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+1ef9f143-70a1-4aae-9657-fc733b4619ca,"Ama",Female,"Ashanti","Sekyere South","Domama",,,25,,9,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+0320cc7d-e82b-45df-b060-f98f1e222de4,"Abena",Female,"Ashanti","Sekyere South","Domama",,,28,,8,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+6f17042e-c172-4088-a34a-39ae45bed440,"Adwoa",Female,"Ashanti","Sekyere South","Domama",,,25,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+c195cbca-e375-4c6e-a3f8-c63d8d70e1bd,"Afua",Female,"Ashanti","Sekyere South","Domama",,,27,,2,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+bcecd294-ea1d-4745-a3f8-1923bf801874,"Abena",Female,"Ashanti","Sekyere South","Domama",,,29,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+f09fd0d8-bdfc-4de7-a8a0-711366ec8547,"Hannah",Female,"Ashanti","Sekyere South","Domama",,,24,,8,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+7aecbd19-f530-4239-ab66-a134c5c7835b,"Abena",Female,"Ashanti","Sekyere South","Domama",,,31,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+d6c94ea7-927b-411d-9006-f08ca7002583,"Moses",Male,"Ashanti","Sekyere South","Domama",,,24,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+eb05fbd7-d7be-4ca5-876e-0999d3fddadd,"Mercy",Female,"Ashanti","Sekyere South","Domama",,,27,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+b17e557d-ffe4-4b86-a798-e8c4c26582ba,"Vivian",Female,"Ashanti","Sekyere South","Domama",,,26,,8,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+8c980c4b-136b-427e-97ce-a41e2de504ec,"Josephine",Female,"Ashanti","Sekyere South","Domama",,,34,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+8e595ba5-d7da-4172-9cbb-f11d8a54c260,"Ekuwa",Female,"Ashanti","Sekyere South","Domama",,,26,,9,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+8ebe79aa-3985-41dc-a1a3-f767dde9b767,"Matthew",Male,"Ashanti","Sekyere South","Domama",,,24,,3,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+683e1845-cc16-450f-8e87-349f2e221676,"Mary",Female,"Ashanti","Sekyere South","Domama",,,26,,8,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+3f070ff8-2370-486c-895e-c93e542b4a78,"Kojo",Male,"Ashanti","Sekyere South","Baase",,,28,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+f9ddc9d8-7b67-4e08-8092-ad3a6875aba7,"Robert",Male,"Ashanti","Sekyere South","Baase",,,26,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+79088c41-ccfd-4ae0-a541-b9b81a66818c,"N. Victoria",Female,"Ashanti","Sekyere South","Baase",,,27,,2,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+d117693d-c2d1-4ead-91d5-3cf1a60fccd2,"K. Paul",Male,"Ashanti","Sekyere South","Baase",,,22,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+b428313c-42a3-4bed-9570-7440f31237c0,"Vida",Female,"Ashanti","Sekyere South","Baase",,,28,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+9b524bbc-a826-4e38-8b7b-eaf5c2ef66d8,"Abena",Female,"Ashanti","Sekyere South","Baase",,,25,,8,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+18e0734d-7bc1-4d05-9632-09d9310371fa,"Elizabeth",Female,"Ashanti","Sekyere South","Baase",,,29,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+e1664384-b4ff-4d92-a91c-0ab61839c976,"Grace",Female,"Ashanti","Sekyere South","Baase",,,30,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+3e845f35-e71a-4417-9aec-19c73c6db01a,"A. Emmanuel",Male,"Ashanti","Sekyere South","Baase",,,33,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+078a120c-c0c0-4036-8246-213ff8144636,"K. Joseph",Male,"Ashanti","Sekyere South","Baase",,,25,,3,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+b7524441-4e8d-4540-a174-9404cc0e3e70,"Vida",Female,"Ashanti","Sekyere South","Baase",,,25,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+046dba37-c5ec-40a2-89c2-e5d096a318da,"Mercy",Female,"Ashanti","Sekyere South","Baase",,,31,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+b7fdb406-c446-4972-b96d-7fcee9684f21,"Faustina",Female,"Ashanti","Sekyere South","Baase",,,32,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+cf10b23a-cb44-4afd-8c39-87c6cd91e307,"Kojo",Male,"Ashanti","Sekyere South","Baase",,,31,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+9f2ec5f4-39c5-4392-a9b8-44e8ce9e3b53,"Charity",Female,"Ashanti","Sekyere South","Baase",,,33,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+ca44b994-9b6e-47e7-963c-484f7f60b790,"Stephen",Male,"Ashanti","Sekyere South","Baase",,,21,,9,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+16137830-db74-4dd4-aa08-461a8db68c4a,"Georgina",Female,"Ashanti","Sekyere South","Baase",,,28,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+15654bc2-53c7-4c4c-ba8c-4f73a206946d,"Juliana",Female,"Ashanti","Sekyere South","Baase",,,32,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+b72d7410-8bc4-4c46-9b4a-afebf2b3e9b9,"Francis",Female,"Ashanti","Sekyere South","Baase",,,28,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+33990795-3c92-4876-a549-1e5a6e2cc6a6,"Yaa",Female,"Ashanti","Sekyere South","Baase",,,28,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+5fe29874-ead9-4931-b746-4776970db1ea,"Efua",Female,"Ashanti","Sekyere South","Baase",,,31,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+fef48730-4445-4aa6-9964-4b35390da59b,"James",Male,"Ashanti","Sekyere South","Baase",,,25,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+345a89c1-4865-42eb-b28d-dfdb55d0eb64,"Kwame",Male,"Ashanti","Sekyere South","Baase",,,32,,2,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+e16285f4-ce31-4507-b23f-91b42b959fe3,"Ekua",Female,"Ashanti","Sekyere South","Baase",,,27,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+c321f1fc-1dc2-4892-8547-e8551cba6895,"Leo Mensah",Male,"Ashanti","Sekyere South","Baase",,,33,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+7c0ef17c-fc30-42c5-9281-d18303f26122,"Emmanuel",Male,"Ashanti","Sekyere South","Baase",,,26,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+b0f3c02b-f242-4a29-82b7-70e10d98b964,"Jonas",Male,"Ashanti","Sekyere South","Egya Nkwanta",,,21,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+65d52797-6c64-4b9c-8f53-c6927feb8b69,"Michael",Male,"Ashanti","Sekyere South","Egya Nkwanta",,,31,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+888c6711-559a-4377-b03f-ac278d474598,"Isaac",Male,"Ashanti","Sekyere South","Egya Nkwanta",,,32,,8,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+14d79354-9959-4edd-bb8f-91cd4c00f79c,"Hayford",Male,"Ashanti","Sekyere South","Egya Nkwanta",,,24,,2,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+e39a55d2-752c-4996-8ca8-81bdae266b22,"Samuel",Male,"Ashanti","Sekyere South","Egya Nkwanta",,,26,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+d121e3a0-394a-4f50-9048-44dedef1cacb,"Ben",Male,"Ashanti","Sekyere South","Egya Nkwanta",,,28,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+8db7a6c1-23e4-429b-9bf0-1bfedd715f8c,"Emmanuel",Male,"Ashanti","Sekyere South","Egya Nkwanta",,,30,,3,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+baa8ef7c-b6cd-46bd-87d8-4f7dc5a01b03,"Godwin",Male,"Ashanti","Sekyere South","Egya Nkwanta",,,31,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+42a2ae4c-e134-45cb-b045-85a01d45e54a,"Dumenyo",Male,"Ashanti","Sekyere South","Egya Nkwanta",,,29,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+0c26da7b-47c5-488d-b2d9-46b36a8dc49c,"Briht",Male,"Ashanti","Sekyere South","Egya Nkwanta",,,31,,9,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+15a3e7f8-4430-486f-a11a-a30a5e2e49a2,"George",Male,"Ashanti","Sekyere South","Egya Nkwanta",,,26,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+21451697-62fc-4e52-be7b-d8de54939b8b,"Eric",Male,"Ashanti","Sekyere South","Egya Nkwanta",,,28,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+47deaabf-23d0-4951-b67d-c282e3ea5334,"Emmanuel",Male,"Ashanti","Sekyere South","Egya Nkwanta",,,35,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+2bb40721-b0b2-496b-a6d4-58e9033478c7,"Andrews",Male,"Ashanti","Sekyere South","Egya Nkwanta",,,35,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+a1dc2f87-6654-4173-86b8-0bf27020a60a,"Emmanuel",Male,"Ashanti","Sekyere South","Egya Nkwanta",,,31,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+9daebe88-bcbd-43d6-b421-ed5ec4727430,"John",Male,"Ashanti","Sekyere South","Egya Nkwanta",,,30,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+ad854610-0eac-44d9-aeea-4d9bb6322c7f,"Alex",Male,"Ashanti","Sekyere South","Egya Nkwanta",,,29,,3,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+1d14508b-b9cd-4560-898b-11ea3c2809db,"Dominic",Male,"Ashanti","Sekyere South","Egya Nkwanta",,,22,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+0d9ecdad-4664-4f83-a382-fc9d135ac455,"Robert",Male,"Ashanti","Sekyere South","Egya Nkwanta",,,24,,3,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+fad0bc0c-154b-4675-a37f-dc6f29f4b24b,"Emmanuel",Male,"Ashanti","Sekyere South","Egya Nkwanta",,,26,,8,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+d7056150-4ce1-4bfe-a9be-b745a6bafc98,"Felicia",Female,"Ashanti","Sekyere South","Egya Nkwanta",,,21,,2,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+0b5e9d94-3db3-4460-a61b-f1b34f59b066,"Mary Abena",Female,"Ashanti","Sekyere South","Egya Nkwanta",,,27,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+537449a0-5647-4000-bb20-888c3aa470f6,"Agnes",Female,"Ashanti","Sekyere South","Egya Nkwanta",,,30,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+941d6eaa-29a5-4156-a624-f86a9daff3b6,"Comfort",Female,"Ashanti","Sekyere South","Egya Nkwanta",,,26,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+51f41a84-e15e-4642-b0a5-dc32050bb14a,"Evans",Male,"Ashanti","Sekyere South","Egya Nkwanta",,,32,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+6913f96e-29c2-4075-a541-b77082423dac,"Godfred",Male,"Ashanti","Sekyere South","Egya Nkwanta",,,31,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+d0a55c3b-d163-4b5c-91f6-f33ad20fbbeb,"Susana",Female,"Ashanti","Sekyere South","Egya Nkwanta",,,25,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+12266ab2-0103-472f-81a9-6376cba6e54b,"Godwin",Male,"Ashanti","Sekyere South","Egya Nkwanta",,,29,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+a1a1c3b4-567a-4868-bc4d-ffcab28aeef1,"John",Male,"Ashanti","Sekyere South","Egya Nkwanta",,,27,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+a2956178-7011-4e5b-b6f1-02805df80b84,"Samuel",Male,"Ashanti","Sekyere South","Egya Nkwanta",,,28,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+94e2d17b-2eeb-430d-a967-6c5afa906d91,"Juliana",Female,"Ashanti","Sekyere South","Egya Nkwanta",,,29,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+44dd08a9-f9a4-465b-81e3-adbeac5e99d5,"Joseph Nartey",Male,"Ashanti","Sekyere South","Kakabo",,,25,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+8afcb2a4-4eb5-4894-9e62-78a9ad7706f8,"Emmanuel",Male,"Ashanti","Sekyere South","Kakabo",,,28,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+d19d171a-3159-4337-bc11-a2e373281e10,"Kwao Peter",Male,"Ashanti","Sekyere South","Kakabo",,,24,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+74543978-bce8-4e7e-8a27-5ba1db8a65ad,"Beatrice",Female,"Ashanti","Sekyere South","Kakabo",,,29,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+30c863af-1b9f-4564-8a28-d7948cb3cf42,"Kwesi Stephen",Male,"Ashanti","Sekyere South","Kakabo",,,21,,3,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+b2a3aeb2-5092-45f6-a5c7-db6fbfc0a019,"Faustina",Female,"Ashanti","Sekyere South","Kakabo",,,28,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+0fb1b776-1455-4e70-b541-c1e3198a3d68,"N. Veronica",Female,"Ashanti","Sekyere South","Kakabo",,,28,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+5e414ea6-3933-4949-9d18-2e565178fdc9,"Kofi",Male,"Ashanti","Sekyere South","Kakabo",,,27,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+569fe223-4eb4-40db-bd95-ec4d42a8662f,"Florence",Female,"Ashanti","Sekyere South","Kakabo",,,22,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+b09b6338-6149-452f-948f-9537b372126b,"Hannah",Female,"Ashanti","Sekyere South","Kakabo",,,21,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+9c0988c1-396e-4086-a68b-1c47c2a16059,"Doris",Female,"Ashanti","Sekyere South","Kakabo",,,29,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+92e90c6b-9100-457c-9091-bfb0e483147a,"Edward",Male,"Ashanti","Sekyere South","Kakabo",,,34,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+1ca2507b-a047-481e-9860-22d3e04aabee,"Obare Kwame",Male,"Ashanti","Sekyere South","Kakabo",,,28,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+768815d8-a2d1-442a-9ed8-7de9d2f05bb9,"Elizabeth",Female,"Ashanti","Sekyere South","Kakabo",,,28,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+a5de3f4f-e326-4d5a-9f49-dafbfbf55450,"Godwin",Male,"Ashanti","Sekyere South","Kakabo",,,27,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+9849c769-5806-4b37-b8a9-7a03c71f8ec9,"Stephen",Male,"Ashanti","Sekyere South","Kakabo",,,23,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+fee9162a-d34f-4894-b22f-1c1a7b543a67,"Felicia",Female,"Ashanti","Sekyere South","Kakabo",,,27,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+6e867da9-2293-4f52-a6fc-d08fffc61619,"Felix",Male,"Ashanti","Sekyere South","Kakabo",,,25,,3,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+79f7052f-7e7c-4b82-8801-21c5cc817784,"Sarah",Female,"Ashanti","Sekyere South","Kakabo",,,26,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+35e712ac-f8a9-4617-af2e-b4e44d455cb5,"Joseph",Male,"Ashanti","Sekyere South","Kakabo",,,29,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+fe363865-16ba-411a-8acb-d5c3e53c473f,"Teye",Male,"Ashanti","Sekyere South","Kakabo",,,21,,2,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+617f00d7-6b0c-4ee7-b5d3-7255e5d6f547,"Mary",Female,"Ashanti","Sekyere South","Kakabo",,,25,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+8ae8eaa6-97a7-4cab-a512-bb6a65d93fbc,"Anthony",Male,"Ashanti","Sekyere South","Kakabo",,,29,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+21c914e6-d94e-4e04-8cd0-0a9c77d99d46,"Victoria",Female,"Ashanti","Sekyere South","Kakabo",,,28,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+05866b35-917a-4230-a28b-96b7ba4bd73f,"Emelia",Female,"Ashanti","Sekyere South","Kakabo",,,21,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+b6249339-105f-4fcb-a958-88426319f6f4,"Ebenezer",Male,"Ashanti","Sekyere South","Kakabo",,,25,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+d3d477e2-d491-4fc2-b0f2-ba66233d74a0,"Samuel",Male,"Ashanti","Sekyere South","Kakabo",,,28,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+7742853f-9693-49df-b666-734da69e4318,"John Kwame",Male,"Ashanti","Sekyere South","Kakabo",,,28,,2,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+2fa0ebe4-b2fc-431c-867f-e81171e5d56d,"Emmanuel",Male,"Ashanti","Sekyere South","Kakabo",,,26,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+e808ef09-0898-46d1-aacd-7b139b82ff27,"Dorcas",Female,"Ashanti","Sekyere South","Kakabo",,,28,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+d8ef8bfc-95d6-476b-86f7-8f9ac0e87f89,"Jonathan",Male,"Ashanti","Sekyere South","Kakabo",,,21,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+72051af1-3123-405a-8d40-e40b29f992c3,"Comfort",Female,"Ashanti","Sekyere South","Kakabo",,,26,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+1fd2c4b7-1776-4327-8215-231a397ed8a3,"M. Comfort",Female,"Ashanti","Sekyere South","Kakabo",,,27,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+afb70eef-3ada-4db6-a441-fd0a51169e1a,"Victor",Male,"Ashanti","Sekyere South","Kakabo",,,21,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+e5484de4-7a86-428f-991f-b2560c7ebe1d,"Hammond",Male,"Ashanti","Sekyere South","Kakabo",,,23,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+170d5b33-9698-4d16-a6f6-c5070298c839,"Ama Emelia",Female,"Ashanti","Sekyere South","Kakabo",,,21,,9,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+b330f32b-fe55-4cb3-9d31-5e60fa0006d4,"Tettey",Male,"Ashanti","Sekyere South","Kakabo",,,29,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+3b427a34-31cb-4d36-9e0c-ad383b8767a9,"Evelyn Anyarsor",Female,"Ashanti","Sekyere South","Kakabo",,,29,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+7e1b95dd-2d19-4b5d-8613-e62df305c365,"James",Male,"Ashanti","Sekyere South","Kakabo",,,26,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+74397153-e468-4781-9711-5c1471a5e0c3,"A. Victoria",Female,"Ashanti","Sekyere South","Kakabo",,,30,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+2e473a46-3ae4-4404-b2bd-4f3e6f54864b,"Agartha",Female,"Ashanti","Sekyere South","Kakabo",,,23,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+4181dc8d-0928-4a50-bbd7-80d877297246,"Mary",Female,"Ashanti","Sekyere South","Kakabo",,,25,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+eff241fd-6182-45db-899d-02ad24d95afa,"Osman",Male,"Ashanti","Sekyere South","Kakabo",,,21,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+d99312ce-e74e-4eb3-9b17-ea372849f88c,"Hogli",Male,"Ashanti","Sekyere South","Kakabo",,,25,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+ba85e1de-16ba-48ba-8147-bcac60cbd4e9,"Kwame",Male,"Ashanti","Sekyere South","Kakabo",,,26,,8,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+5b2e297a-31c0-4164-8e56-0fff3c0420cf,"Augustina",Female,"Ashanti","Sekyere South","Kakabo",,,28,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+1d61d6b5-9f93-48f4-8ca4-62e091a77348,"Emmanuel",Male,"Ashanti","Sekyere South","Kakabo",,,21,,2,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+208c43f4-6f1b-48a6-8c4d-ff27cb752b4e,"Solomon Kwasi",Male,"Ashanti","Sekyere South","Kakabo",,,23,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+f575bf50-8eb8-4d89-ae55-300fe6308046,"K Emmanuel",Male,"Ashanti","Sekyere South","Adukrom",,,27,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+d42be4b5-d0d2-44d3-827b-86695cf5145b,"K. Edmund",Male,"Ashanti","Sekyere South","Adukrom",,,21,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+81259034-6de6-4ad3-bd43-20cabc880083,"Smith",Male,"Ashanti","Sekyere South","Adukrom",,,20,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+a959f95c-1416-44a0-bf78-9e5956e54181,"K. Jacob",Male,"Ashanti","Sekyere South","Adukrom",,,31,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+6d3ed1f1-4ca6-4c26-835f-86cf7f4722b7,"Sampson",Male,"Ashanti","Sekyere South","Adukrom",,,30,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+957f9993-5414-415c-a839-e62e4171da3f,"Stephen",Male,"Ashanti","Sekyere South","Adukrom",,,34,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+da9569f0-b784-4218-9596-295c56cc6a35,"Alexander",Male,"Ashanti","Sekyere South","Adukrom",,,28,,9,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+a13297cd-1730-40ed-99f0-122e89fdd8fb,"Isaac",Male,"Ashanti","Sekyere South","Adukrom",,,25,,3,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+0db5224d-9e98-4cef-a4a5-71aec23fdd2f,"Ishatu",Female,"Ashanti","Sekyere South","Adukrom",,,29,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+e6e3389f-e4e8-427a-9ef6-fb2103c871de,"Comfort",Female,"Ashanti","Sekyere South","Adukrom",,,20,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+545df2a6-a38b-49f2-9e36-338bda3da16e,"Owusu",Male,"Ashanti","Sekyere South","Adukrom",,,27,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+a66a8e7f-323f-4b48-ac79-c64b1a5ede82,"Isaac",Male,"Ashanti","Sekyere South","Adukrom",,,27,,2,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+7509a0f2-2533-426b-a2bf-e54a488ec3f2,"Kobena",Male,"Ashanti","Sekyere South","Adukrom",,,21,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+d022001c-2e60-4820-92e6-d0619c02b608,"Kwame",Male,"Ashanti","Sekyere South","Adukrom",,,28,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+de030c60-1679-4373-92cc-98b544e373ff,"Ama",Female,"Ashanti","Sekyere South","Adukrom",,,23,,8,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+f7860670-9961-4a0a-95c8-bb27e7cb4dda,"John",Male,"Ashanti","Sekyere South","Adukrom",,,28,,1,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+d694b91b-9a9a-4fb8-b95f-4bc28678e886,"K. Samuel",Male,"Ashanti","Sekyere South","Adukrom",,,29,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+73c92922-e3a5-48bd-8334-921db972568c,"Akosua",Female,"Ashanti","Sekyere South","Adukrom",,,28,,8,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+b4711ba6-2742-4710-8133-b475b6e5337b,"Olivia",Female,"Ashanti","Sekyere South","Adukrom",,,28,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+cbfba000-1482-4161-8bfa-6f95b25751d1,"Akua Joyce",Female,"Ashanti","Sekyere South","Adukrom",,,20,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+ab4746ab-d893-460a-9704-c4db72b88f85,"Vida",Female,"Ashanti","Sekyere South","Adukrom",,,20,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+75331545-6e39-445e-a565-04d3e08334be,"Richardson",Male,"Ashanti","Sekyere South","Adukrom",,,26,,8,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+5de36a71-d684-4dc8-aeae-d34d88d3a2c5,"Victor",Male,"Ashanti","Sekyere South","Adukrom",,,26,,9,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+5ef2e43d-0970-4aac-8d34-37d2a422cc7b,"Kwesi",Male,"Ashanti","Sekyere South","Adukrom",,,29,,8,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+08f83e8f-3428-458e-9752-689521fb6364,"David",Male,"Ashanti","Sekyere South","Adukrom",,,23,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+a0a88389-b5ef-4246-ab94-cbfec30bd6df,"Henry",Male,"Ashanti","Sekyere South","Adukrom",,,27,,2,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+18809515-87cb-423a-a9d5-02e42cebd339,"Elizabeth",Female,"Ashanti","Sekyere South","Adukrom",,,28,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+2e23d0e2-5354-44e5-9d1a-26b2224509e1,"Kwaku",Male,"Ashanti","Sekyere South","Adukrom",,,21,,8,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+89e556a2-271f-4af2-a78d-4aef3e3d7719,"Anthony",Male,"Ashanti","Sekyere South","Adukrom",,,20,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+57b8ab98-ed53-4495-baad-2346cf9c064e,"Akosua",Female,"Ashanti","Sekyere South","Adukrom",,,23,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+8149f13a-c41f-4c9e-a0e5-22d64df9ece3,"Kojo",Male,"Ashanti","Sekyere South","Adukrom",,,26,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+3f516da2-1bbd-4a4f-a7dc-8bb74e42d793,"Abena",Female,"Ashanti","Sekyere South","Adukrom",,,28,,8,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+3d2efef4-f101-4f57-bce2-7541685eba7d,"Ama",Female,"Ashanti","Sekyere South","Adukrom",,,21,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+f939fe82-b8b7-46d4-903f-7cd7840cd2eb,"John",Male,"Ashanti","Sekyere South","Adukrom",,,26,,9,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+60f6bce6-a98f-4141-8f63-bf0694e885d8,"Zenabu",Female,"Ashanti","Sekyere South","Adukrom",,,23,,3,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+89f292ab-6f2d-4c35-8d23-5124931e537b,"Rebecca",Female,"Ashanti","Sekyere South","Adukrom",,,26,,8,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+f4852ea7-aab1-48da-b4f3-f8ffac2dc1f6,"J. Nicholas",Male,"Ashanti","Sekyere South","Adukrom",,,29,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+522febf5-25b8-44cf-90f3-5eeaef6c954d,"Esi",Female,"Ashanti","Sekyere South","Adukrom",,,29,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+713c6891-dd3c-4b17-8904-585cecde7857,"Selina",Female,"Ashanti","Sekyere South","Adukrom",,,25,,2,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+a5461ad4-500c-4c78-b0a3-3b22f291fa5d,"Elizabeth",Female,"Ashanti","Sekyere South","Adukrom",,,27,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+c236f6d5-78f1-414c-943f-e093d83337c2,"Mary",Female,"Ashanti","Sekyere South","Adukrom",,,30,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+c3f1cc91-1436-4dba-b87a-52e1785d0c50,"Elizabeth",Female,"Ashanti","Sekyere South","Adukrom",,,26,,8,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+e2648424-2bda-4879-8768-eb8890e8e08b,"Peter",Male,"Ashanti","Sekyere South","Adukrom",,,24,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+6efdb2de-9da7-4817-a66a-fc132d462468,"Anthony",Male,"Ashanti","Sekyere South","Adukrom",,,28,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+0c441fc3-06ce-4e0f-9ea6-fd33650a927a,"F. Rashid",Male,"Ashanti","Sekyere South","Adukrom",,,25,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+5f2f450c-5cf3-4b23-8475-51421cc45061,"Yaw Francis",Male,"Ashanti","Sekyere South","Adukrom",,,28,,3,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+c160fff5-8376-49a6-94f8-6ffd60f230f8,"Joyce",Female,"Ashanti","Sekyere South","Adukrom",,,25,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+bbb49bdb-6c61-41f6-9cca-bb1b96ee9d26,"Kobena",Male,"Ashanti","Sekyere South","Adukrom",,,23,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+2ee7323f-0dae-4f32-81ce-c17cf7bad105,"Abena",Female,"Ashanti","Sekyere South","Adukrom",,,30,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+8cbb5d14-04ae-4167-9e8e-d6ab465b6266,"Elizabeth",Female,"Ashanti","Sekyere South","Adukrom",,,26,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+bb2683fa-2b21-42f3-986a-bb325769e875,"Alex",Male,"Ashanti","Sekyere South","Adukrom",,,31,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+64d3999c-dea2-441c-ac77-4f8fc67ad7ea,"Christiana",Female,"Ashanti","Sekyere South","Adukrom",,,28,,9,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+ef9290f4-b4eb-4576-b94d-ff8f24a8d223,"Mercy",Female,"Ashanti","Sekyere South","Adukrom",,,30,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+32c8216b-0be7-4e93-af2c-f78e5ebbbe05,"Abena",Female,"Ashanti","Sekyere South","Adukrom",,,29,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+140a0059-0b25-456d-b2e0-ad0bc65594ab,"Elizabeth",Female,"Ashanti","Sekyere South","Adukrom",,,28,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+35a432e4-2d08-4d4b-9c4a-0a50a8b17235,"John T.",Male,"Ashanti","Sekyere South","Abetemasu",,,26,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+b421f854-b889-4b58-bf0c-956860b9ee32,"Moses",Male,"Ashanti","Sekyere South","Abetemasu",,,20,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+bb4d4ecb-bd2e-4141-b6f3-86c4e1f0939a,"Gideon",Male,"Ashanti","Sekyere South","Abetemasu",,,23,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+002546c9-32ef-436a-b363-500128e80986,"Frank",Male,"Ashanti","Sekyere South","Abetemasu",,,32,,2,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+2275a61a-239e-4a03-b281-a5e20ab51f2f,"Emma",Female,"Ashanti","Sekyere South","Abetemasu",,,23,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+9bb56c92-03a7-4ec1-a6c5-e709f1e217cc,"Samuel A.",Male,"Ashanti","Sekyere South","Abetemasu",,,21,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+8d6289cc-0857-42f6-8ab0-2271f39155ef,"Joyce",Female,"Ashanti","Sekyere South","Abetemasu",,,25,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+588672c3-eedb-4dff-947b-3aedad08b916,"Emmanuel",Male,"Ashanti","Sekyere South","Abetemasu",,,28,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+60f7a9ec-f5a0-4761-a7f3-f109d4905df8,"Bernice",Male,"Ashanti","Sekyere South","Abetemasu",,,29,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+88bac119-6daf-4d29-9010-9dd04b2b76c9,"K. Christain",Male,"Ashanti","Sekyere South","Abetemasu",,,24,,8,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+1ef1d630-3f58-40ae-8401-15a0396f0bef,"Mawusi",Male,"Ashanti","Sekyere South","Abetemasu",,,31,,2,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+abdd0e0f-9792-48e5-813f-240e352529e1,"Yohane",Male,"Ashanti","Sekyere South","Abetemasu",,,24,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+a2517e6f-3917-4098-bc2b-f523b0ce7063,"James",Male,"Ashanti","Sekyere South","Abetemasu",,,25,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+0837771a-b584-4d8f-b888-6b5bb91cba25,"K. Michael",Male,"Ashanti","Sekyere South","Abetemasu",,,29,,3,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+417e0d13-9c56-45cf-9d1e-e4fd0f88c3c2,"Faustina",Female,"Ashanti","Sekyere South","Abetemasu",,,27,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+174fdb30-7d4e-4653-8c45-4f20ca52c17e,"Veronica",Female,"Ashanti","Sekyere South","Abetemasu",,,26,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+4a1fff55-239d-4877-820d-57f4eab1a926,"Alex",Male,"Ashanti","Sekyere South","Abetemasu",,,23,,9,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+b4046c63-e208-4929-9e92-ee4f2f7574ba,"D. Francis",Male,"Ashanti","Sekyere South","Abetemasu",,,31,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+63bda5a4-52c1-4325-94f6-df79b661dc3c,"Teye",Male,"Ashanti","Sekyere South","Abetemasu",,,24,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+a58ec56d-b75d-4d23-a3ab-bfcb6c3b70eb,"Doris",Female,"Ashanti","Sekyere South","Abetemasu",,,27,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+5d8d547b-70b3-44d8-92c8-682f8136df0d,"Rebecca",Female,"Ashanti","Sekyere South","Abetemasu",,,24,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+f128221a-9012-4327-9454-5f5852a63853,"Emmanuel",Male,"Ashanti","Sekyere South","Abetemasu",,,26,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+7640410a-391c-453b-8c41-638f516d461a,"Elizabeth",Female,"Ashanti","Sekyere South","Abetemasu",,,23,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+a1e6d28b-2ffd-4f67-bf1c-9910153a898b,"Efua",Female,"Ashanti","Sekyere South","Abetemasu",,,20,,3,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+404b0b84-4594-4638-9057-abc1bd4cedc6,"Afua",Female,"Ashanti","Sekyere South","Abetemasu",,,28,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+861857c0-a5c4-4dde-9924-f6f3ea0f9cab,"Matthew",Male,"Ashanti","Sekyere South","Abetemasu",,,32,,3,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+ad02f70b-ce5a-43b0-81a8-91b505d5fa7e,"Comfort",Female,"Ashanti","Sekyere South","Abetemasu",,,21,,8,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+9dd6390e-1de0-4c23-bf6b-c20140ca56fc,"Adjo",Female,"Ashanti","Sekyere South","Abetemasu",,,25,,2,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+7d0ddfb6-0335-4b5c-b8a8-75327d23c44c,"Vida",Female,"Ashanti","Sekyere South","Abetemasu",,,19,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+834c389e-a651-4080-a3f7-c8bb5d6a8052,"Rawlings",Male,"Ashanti","Sekyere South","Abetemasu",,,28,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+810aeb9e-da4b-4e3b-a85f-0cd3c8a9acba,"Abena",Female,"Ashanti","Sekyere South","Abetemasu",,,28,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+6bf4506a-d123-429b-b76c-758a49695da1,"Abena",Female,"Ashanti","Sekyere South","Abetemasu",,,28,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+fb418fca-4e05-4a1f-90fa-69d872b3b653,"Ama",Female,"Ashanti","Sekyere South","Abetemasu",,,27,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+0ec391fb-e8ca-4a6c-a0b9-61fa69e31d66,"Grace",Female,"Ashanti","Sekyere South","Abetemasu",,,26,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+f1c5c6d3-3c9f-41d5-89b2-460579ed8a42,"Yaa",Female,"Ashanti","Sekyere South","Abetemasu",,,25,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+c5fde695-9a5f-499c-b0f1-77c9095232c5,"Gladys",Female,"Ashanti","Sekyere South","Abetemasu",,,26,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+23d3322f-4b13-44c3-a7fc-6f013421c4e4,"Christiana",Female,"Ashanti","Sekyere South","Abetemasu",,,29,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+ebc6b026-d387-4bfc-abdf-55d57648aefd,"Florence",Female,"Ashanti","Sekyere South","Abetemasu",,,28,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+97b6ae72-ef06-402b-be7f-f722d1164fc3,"Paulina",Female,"Ashanti","Sekyere South","Abetemasu",,,24,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+86b5b217-0b43-4468-bc3f-9e50345e1634,"Rebecca",Female,"Ashanti","Sekyere South","Abetemasu",,,23,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+67b80e21-02d9-4a49-ad31-eb48edf421ef,"Comfort",Female,"Ashanti","Sekyere South","Abetemasu",,,21,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+dc52285a-b524-48df-aae0-9df09f7c4c10,"Maxwell Kofi",Male,"Ashanti","Sekyere South","Abetemasu",,,32,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+a23bcb7b-5bb4-4457-b10b-a08cb1483710,"Kwame Yusif",Male,"Ashanti","Sekyere South","Sekunde Ekurase",,,24,,3,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+a87ff386-8c19-4ef3-bb5d-40f10df7f3ae,"Emmanuel",Male,"Ashanti","Sekyere South","Sekunde Ekurase",,,25,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+d7d426c2-c483-4b59-985d-9e01381e020e,"Noah",Male,"Ashanti","Sekyere South","Sekunde Ekurase",,,26,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+b763301d-9f14-44b6-acff-f48c7f138e14,"Moses",Male,"Ashanti","Sekyere South","Sekunde Ekurase",,,25,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+6faccac3-4d91-465c-8fea-11b0cb96039d,"Kobbin",Male,"Ashanti","Sekyere South","Sekunde Ekurase",,,24,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+7b68df9c-def1-4eb2-880c-fa34019f39fd,"Yaw",Male,"Ashanti","Sekyere South","Sekunde Ekurase",,,25,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+fc72b4d1-c6d0-4703-bbae-0dff1619ea1c,"Kofi",Male,"Ashanti","Sekyere South","Sekunde Ekurase",,,32,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+5396d0f6-5588-4c0c-b0b0-ad998698503c,"Kofi Saviour",Male,"Ashanti","Sekyere South","Sekunde Ekurase",,,32,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+7cf5b61b-33ca-4867-995c-2535541c9a81,"Kwame",Male,"Ashanti","Sekyere South","Sekunde Ekurase",,,32,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+c58ac344-7313-4a72-820f-0e0ec8fef048,"Paul",Male,"Ashanti","Sekyere South","Sekunde Ekurase",,,32,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+5b28acd1-5fea-4ae4-bc6a-1cd3f1474c57,"Isaac",Male,"Ashanti","Sekyere South","Sekunde Ekurase",,,28,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+ef630b59-78c8-4e7e-85d0-7e879966e080,"Jebrle",Male,"Ashanti","Sekyere South","Sekunde Ekurase",,,27,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+a2e07841-50a1-4d5f-9f28-237142270e34,"Suleman",Male,"Ashanti","Sekyere South","Sekunde Ekurase",,,29,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+699f0a86-33bb-4554-b0b7-fdfd3444960a,"Kojo",Male,"Ashanti","Sekyere South","Sekunde Ekurase",,,28,,3,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+d94c01ad-7a8a-4124-b0e3-1b86ad475769,"Ama",Female,"Ashanti","Sekyere South","Sekunde Ekurase",,,24,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+62fa5277-0aff-4c58-b49f-6851735f9899,"Abena",Female,"Ashanti","Sekyere South","Sekunde Ekurase",,,25,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+42db4312-fbf1-43a6-b1b7-fbab8e4cfd2f,"Esi",Female,"Ashanti","Sekyere South","Sekunde Ekurase",,,27,,2,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+43c8b83f-ecaf-4d51-9b5f-fac06a12be51,"Hajirah",Female,"Ashanti","Sekyere South","Sekunde Ekurase",,,21,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+c9b74f0e-048c-47c7-ad6f-bce01fadcee1,"Mariam",Female,"Ashanti","Sekyere South","Sekunde Ekurase",,,26,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+4f641d32-0b69-4c2a-a99f-8259b30b9be8,"Rahima",Female,"Ashanti","Sekyere South","Sekunde Ekurase",,,25,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+dbce72f8-5c81-42af-91dc-46e3ab492598,"Elizaberth",Female,"Ashanti","Sekyere South","Sekunde Ekurase",,,24,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+1aee5799-422c-404e-be33-fd36c7e4a0ff,"Sophia",Female,"Ashanti","Sekyere South","Sekunde Ekurase",,,28,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+72d14228-754b-4555-9f5b-f6f2fc075851,"Mackbeth",Male,"Ashanti","Sekyere South","Sekunde Ekurase",,,29,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+4a343438-ee19-49ac-85d6-59ead4010e0b,"Kofi",Male,"Ashanti","Sekyere South","Sekunde Ekurase",,,25,,2,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+05ee7f78-d785-4fbd-a302-abea5e72d04e,"David",Male,"Ashanti","Sekyere South","Sekunde Ekurase",,,25,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+63a6d8a7-5a11-4126-a92d-ac0f68e30560,"Sampson",Male,"Ashanti","Sekyere South","Sekunde Ekurase",,,26,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+b4831841-6416-4f2a-9d95-8cd449929d0b,"Ebenezer Kumah Kumi",Male,"Ashanti","Sekyere South","Sekunde Ekurase",,,24,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+7ef856ed-e3cb-48fc-ad58-17571b01b0ed,"Alex",Male,"Ashanti","Sekyere South","Sekunde Ekurase",,,25,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+062856e4-34ec-4fca-8b20-af1ebdd3b3db,"Issac",Male,"Ashanti","Sekyere South","Sekunde Ekurase",,,24,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+a9a4b852-1ff5-4034-b43e-0177788ed804,"David",Male,"Ashanti","Sekyere South","Sekunde Ekurase",,,28,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+67cb0590-1350-429f-83c9-6bf4162e2195,"Kofi",Male,"Ashanti","Sekyere South","Sekunde Ekurase",,,26,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+4eda7d06-3a4d-40b5-820f-802dccb810a4,"Kobbina",Male,"Ashanti","Sekyere South","Sekunde Ekurase",,,27,,9,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+17df6340-098b-4c85-baab-833a033f096b,"Abena",Female,"Ashanti","Sekyere South","Tsimtsimhwe",,,21,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+314765cf-8d59-44a2-925b-203956522312,"Francis",Male,"Ashanti","Sekyere South","Tsimtsimhwe",,,25,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+36432bd7-d810-4fdb-ba5f-9cab47243135,"Kwame",Male,"Ashanti","Sekyere South","Tsimtsimhwe",,,26,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+8bd09e9c-0c2a-4f95-bc62-84e98960cfbd,"Gladys",Female,"Ashanti","Sekyere South","Tsimtsimhwe",,,28,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+ac8e1232-a954-478c-b38b-e3a86891c2bf,"Luke",Male,"Ashanti","Sekyere South","Tsimtsimhwe",,,24,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+20459df7-7e97-4f2b-b8ac-fc8a8d2ab9b9,"Yaa",Female,"Ashanti","Sekyere South","Tsimtsimhwe",,,25,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+7a36e4c6-460b-44fe-ae2b-079e275dd912,"Stephen",Male,"Ashanti","Sekyere South","Tsimtsimhwe",,,26,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+6733c352-9068-4f22-9b67-eeb5fc0975f9,"Daniel",Male,"Ashanti","Sekyere South","Tsimtsimhwe",,,24,,8,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+250c4eaa-669c-4908-9d4b-0c1a91d8f51f,"Margaret",Female,"Ashanti","Sekyere South","Tsimtsimhwe",,,21,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+98f28a86-4f7f-4e56-b763-79e661d3ead9,"Luke",Male,"Ashanti","Sekyere South","Tsimtsimhwe",,,31,,2,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+c772d87a-6eaa-4cfa-89d7-4e81a640b8b6,"Kojo",Male,"Ashanti","Sekyere South","Tsimtsimhwe",,,28,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+a76b6865-9748-43f1-9e19-9a32f920dd3a,"Yaa",Female,"Ashanti","Sekyere South","Tsimtsimhwe",,,29,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+c180c27b-825c-4d84-9989-9085257e5b99,"Esi",Female,"Ashanti","Sekyere South","Tsimtsimhwe",,,27,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+081680eb-de2d-4b3e-b647-dfbc0af3cecd,"Kweku",Male,"Ashanti","Sekyere South","Tsimtsimhwe",,,24,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+034aea3c-a757-46cd-ac72-c86ca2fec0cf,"Regina",Female,"Ashanti","Sekyere South","Tsimtsimhwe",,,28,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+a8deb1d5-d4a1-493f-8d5e-bf1ae750dba6,"Faustina",Female,"Ashanti","Sekyere South","Tsimtsimhwe",,,26,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+4023ba7d-5213-44a9-8e31-835ce9db98ca,"Philip",Male,"Ashanti","Sekyere South","Tsimtsimhwe",,,24,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+0d4febbf-b09f-4561-bdf0-9feae46ad256,"Stephen",Male,"Ashanti","Sekyere South","Tsimtsimhwe",,,25,,9,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+eb2f7b42-88ec-4e4b-bb1f-970b37cec8fa,"Stephen",Male,"Ashanti","Sekyere South","Tsimtsimhwe",,,23,,3,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+2ee27c04-5660-4ccf-a338-8e7c970fe5b0,"Mary",Female,"Ashanti","Sekyere South","Tsimtsimhwe",,,24,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+9d715bb7-30fd-4d7e-9e92-3cb9117a2332,"Siedu",Male,"Ashanti","Sekyere South","Tsimtsimhwe",,,28,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+324d5203-0f2f-4c38-a022-d43ea4a886af,"Habiba",Female,"Ashanti","Sekyere South","Tsimtsimhwe",,,27,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+7380f494-832d-4f57-b39c-fdddbeaa5687,"Francis",Male,"Ashanti","Sekyere South","Tsimtsimhwe",,,25,,2,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+4a733433-d350-413f-8435-52265a9d5d75,"Theresah",Female,"Ashanti","Sekyere South","Tsimtsimhwe",,,24,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+db101136-48b4-4d2a-a071-b1d135fbe43e,"Francis",Male,"Ashanti","Sekyere South","Tsimtsimhwe",,,27,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+f29bb4b7-0cb5-4649-8c82-7d5536e21975,"Yaw",Male,"Ashanti","Sekyere South","Tsimtsimhwe",,,25,,8,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+5609b166-4623-4a8b-b23b-1d7a80207b7e,"Micheal",Male,"Ashanti","Sekyere South","Tsimtsimhwe",,,32,,1,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+ae7f5967-29ca-4603-acc1-8d1a3d68d2a8,"Kofi",Male,"Ashanti","Sekyere South","Tsimtsimhwe",,,24,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+997bc2e0-a744-4636-a11c-5fb55dbf566d,"Yaa",Female,"Ashanti","Sekyere South","Tsimtsimhwe",,,28,,8,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+82f925f1-b87c-4f2f-b282-540f3d601a8d,"Jocob",Male,"Ashanti","Sekyere South","Tsimtsimhwe",,,27,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+6f6f0584-9528-41ef-a2e3-d002730115b0,"Hawa",Female,"Ashanti","Sekyere South","Tsimtsimhwe",,,26,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+229d359b-ce2d-45a0-869f-d0720b3ec0cf,"Rose",Female,"Ashanti","Sekyere South","Tsimtsimhwe",,,24,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+89df3983-f7a1-4569-aaf0-d38bdcce5d26,"Kwame",Male,"Ashanti","Sekyere South","Tsimtsimhwe",,,24,,8,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+f8286bee-85f4-43e5-9972-0dabaa357a7c,"Grace",Female,"Ashanti","Sekyere South","Tsimtsimhwe",,,28,,9,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+93cdf14d-56b4-4bed-9d25-f0e7f24e85a8,"Vida",Female,"Ashanti","Sekyere South","Tsimtsimhwe",,,27,,8,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+11826358-48e2-4f13-9b7f-9202d2e0cb41,"Ama",Female,"Ashanti","Sekyere South","Tsimtsimhwe",,,29,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+75f516b5-9eac-4978-9c42-910647ff77b4,"Peter",Male,"Ashanti","Sekyere South","Tsimtsimhwe",,,24,,2,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+fe3aa33b-a7ca-4a1a-bd07-30dc7a76f664,"Francis Enyan",Male,"Ashanti","Sekyere South","Tsimtsimhwe",,,25,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+78c5522a-5fb3-4b34-a543-797d02e586da,"Donard-rex",Male,"Ashanti","Sekyere South","Tsimtsimhwe",,,21,,8,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+f5714566-bec3-44f5-8ca7-b7903fc240c3,"Vivian",Female,"Ashanti","Sekyere South","Tsimtsimhwe",,,26,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+03f29f93-04b2-4e46-a78c-06445915d135,"Isaac",Male,"Ashanti","Sekyere South","Tsimtsimhwe",,,32,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+cadcbe98-12ef-401b-978b-d50250e70a67,"John",Male,"Ashanti","Sekyere South","Tsimtsimhwe",,,24,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+bf2e6aa0-5731-4f5c-8879-ca3f5b896fa4,"Kobina",Male,"Ashanti","Sekyere South","Tsimtsimhwe",,,27,,8,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+c7ba193d-51dc-4256-83b6-1a73acadef2a,"Kwesi",Male,"Ashanti","Sekyere South","Tsimtsimhwe",,,28,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+fe0b324c-1af1-4f2b-9fbc-bc5e4d925817,"Stephanie",Female,"Ashanti","Sekyere South","Tsimtsimhwe",,,29,,9,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+1e0fbf53-8f83-44ec-87f4-0ff2cae3041b,"Emmanuel",Male,"Ashanti","Sekyere South","Tsimtsimhwe",,,27,,3,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+f34a8e93-5565-4723-ae39-bb7d5a62052d,"Janet",Female,"Ashanti","Sekyere South","Tsimtsimhwe",,,26,,8,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+81f60dd4-819e-40ab-9b06-eb472d47bb34,"Kwame",Male,"Ashanti","Sekyere South","Tsimtsimhwe",,,28,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+de832862-9c27-424e-a659-f60da518ce00,"Mark",Male,"Ashanti","Sekyere South","Tetteh Agbo",,,24,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+1db3e19f-82e8-494c-851c-c589566c33d6,"Kwasi",Male,"Ashanti","Sekyere South","Tetteh Agbo",,,27,,2,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+bacf5793-5cb0-4ac8-9f7d-5af75484c8e1,"Siame",Male,"Ashanti","Sekyere South","Tetteh Agbo",,,28,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+7384f7f8-c952-4d75-a55a-72fa7d8ca79c,"Mamley",Female,"Ashanti","Sekyere South","Tetteh Agbo",,,21,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+f861dc5f-7a17-436b-b550-17c1192a3ad5,"Nartey",Male,"Ashanti","Sekyere South","Tetteh Agbo",,,23,,8,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+b00dd463-955d-403b-896f-6aec479e1237,"Ebenezer",Male,"Ashanti","Sekyere South","Tetteh Agbo",,,20,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+d3fb9f99-393d-4cad-a199-ca122de0560e,"John Kwame",Male,"Ashanti","Sekyere South","Tetteh Agbo",,,25,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+4a237115-cdb4-4e31-9051-846274c9a1d7,"Esther",Female,"Ashanti","Sekyere South","Tetteh Agbo",,,24,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+6f0d99be-886b-4bd9-a13b-6410e70b3099,"James",Male,"Ashanti","Sekyere South","Tetteh Agbo",,,26,,3,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+7bbaa39e-25d7-4ca0-91a9-2ab84c285d38,"Kobina",Male,"Ashanti","Sekyere South","Tetteh Agbo",,,28,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+7e537467-92f6-433e-ba2a-33f6102f2329,"Paulina",Female,"Ashanti","Sekyere South","Tetteh Agbo",,,27,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+a1de106c-34c4-434b-be3e-137c7bc1f34d,"Mamley",Female,"Ashanti","Sekyere South","Tetteh Agbo",,,24,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+1e324aa1-c3a3-422b-87f3-0dad607c7a4e,"Agnes",Female,"Ashanti","Sekyere South","Tetteh Agbo",,,28,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+e99253a2-841b-400a-932d-89bece473ef8,"Promise",Male,"Ashanti","Sekyere South","Tetteh Agbo",,,24,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+2c38225d-aed1-4827-83a3-09c08c5d67cd,"Rebecca",Female,"Ashanti","Sekyere South","Tetteh Agbo",,,25,,9,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+eabadf18-95c2-4bbb-a0ea-772d01335ae4,"Margaret",Female,"Ashanti","Sekyere South","Tetteh Agbo",,,26,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+f1e1995f-2794-454d-b0b3-9849af1ae8fe,"K. Francis",Male,"Ashanti","Sekyere South","Tetteh Agbo",,,24,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+5f073256-e5dd-495a-a8ec-4aa22256bdba,"Naomi",Female,"Ashanti","Sekyere South","Tetteh Agbo",,,24,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+a20c9f6e-8e3b-4c5b-87dc-69912e73d7d6,"Siame",Female,"Ashanti","Sekyere South","Tetteh Agbo",,,28,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+7785d4af-b706-43a2-8ed8-b213bad477eb,"Charles",Male,"Ashanti","Sekyere South","Tetteh Agbo",,,27,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+536e64fd-4354-4946-859e-63a5456039af,"Esther",Female,"Ashanti","Sekyere South","Tetteh Agbo",,,25,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+3b9cd0b6-c5fc-45d6-af70-3cf394aef24a,"Charity",Female,"Ashanti","Sekyere South","Tetteh Agbo",,,24,,2,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+29736204-0ef1-4a13-9eec-cf8a5b49a81e,"Efuah",Female,"Ashanti","Sekyere South","Tetteh Agbo",,,25,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+4781d06f-b711-4352-b196-5254db6410e9,"Kwame Fredrick",Male,"Ashanti","Sekyere South","Tetteh Agbo",,,26,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+6a79b456-5fdb-4440-b4a2-599cd6266b23,"C.k John",Male,"Ashanti","Sekyere South","Tetteh Agbo",,,27,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+47319181-da40-4904-8e41-f2440b796fe1,"Ebenezer",Male,"Ashanti","Sekyere South","Tetteh Agbo",,,28,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+5da001eb-24c8-4824-a72d-c73885da357e,"Peter",Male,"Ashanti","Sekyere South","Tetteh Agbo",,,24,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+3fc75fc3-938f-417d-9a5b-01be366bebd2,"Ebenezer",Male,"Ashanti","Sekyere South","Tetteh Agbo",,,25,,8,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+e7b5e57a-f3aa-45bf-a88d-bac1f5ea6abd,"Ayishetu",Female,"Ashanti","Sekyere South","Tetteh Agbo",,,21,,2,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+fb84474c-cd65-468d-8e38-7efb47cf344a,"Rebecca",Female,"Ashanti","Sekyere South","Tetteh Agbo",,,26,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+5d22cd06-2bd0-47ee-a028-0665791c2caf,"Peter",Male,"Ashanti","Sekyere South","Tetteh Agbo",,,24,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+e29660a4-2793-4eba-8ada-18f03b9d965e,"Kofi",Male,"Ashanti","Sekyere South","Owumpesika",,,27,,3,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+e9980bf4-8753-482f-af60-4b65d3209e08,"Kwaku No.1",Male,"Ashanti","Sekyere South","Owumpesika",,,25,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+6f5e78db-9ac0-4cd3-9750-001ef532c098,"Kweku No.2",Male,"Ashanti","Sekyere South","Owumpesika",,,26,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+587e4aff-ddc0-465f-955b-f5ba5ea71061,"Kweku",Male,"Ashanti","Sekyere South","Owumpesika",,,24,,9,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+c1e83a70-bf86-4534-889f-00566b69c4e2,"Abena",Female,"Ashanti","Sekyere South","Owumpesika",,,27,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+6860df53-55c7-4aba-9892-f9e0bd3ebfd2,"Mariama",Female,"Ashanti","Sekyere South","Owumpesika",,,28,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+101fac31-afd1-41af-a86d-de84946fe743,"Grace",Female,"Ashanti","Sekyere South","Owumpesika",,,29,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+4a866527-1a13-4d60-9fea-d1211f8fbf53,"Akua",Female,"Ashanti","Sekyere South","Owumpesika",,,22,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+667863b4-d15c-430d-ad9f-9c514995503e,"Esi",Female,"Ashanti","Sekyere South","Owumpesika",,,22,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+22a5a4af-b85d-4abc-907d-ee7c974823d0,"Comfort",Female,"Ashanti","Sekyere South","Owumpesika",,,22,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+1fcd86c9-1654-4fc6-8c38-640223c26995,"Mary",Female,"Ashanti","Sekyere South","Owumpesika",,,23,,3,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+9f3e7c30-22eb-4ffb-ac53-824a0be8e05c,"Adwoa No.2",Female,"Ashanti","Sekyere South","Owumpesika",,,24,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+e671ba55-c0b8-4609-a5da-91dfee19dff3,"Amina",Female,"Ashanti","Sekyere South","Owumpesika",,,25,,3,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+8c059e28-0535-4ee4-969c-3dcb9e4849c7,"Cyinthia",Female,"Ashanti","Sekyere South","Owumpesika",,,21,,8,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+13fda936-4f59-4834-a469-f4e084d2b5cf,"Stephen",Male,"Ashanti","Sekyere South","Owumpesika",,,23,,2,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+b8b17efc-9bdb-4b6a-94e1-80e0630598c8,"Mercy",Female,"Ashanti","Sekyere South","Owumpesika",,,27,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+6dca361d-db0c-4d42-8ac9-8bcb2c1377c2,"Kofi",Male,"Ashanti","Sekyere South","Owumpesika",,,28,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+a4ac953a-8e5d-4ce5-b146-f47a2b280cfc,"Mark",Male,"Ashanti","Sekyere South","Owumpesika",,,24,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+787d70a1-e5ee-4668-975d-2d50ac936fb4,"Matthew",Male,"Ashanti","Sekyere South","Owumpesika",,,24,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+0eddfe1e-06ab-4ae4-8736-eae3905d1477,"Abena",Female,"Ashanti","Sekyere South","Owumpesika",,,21,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+7943dba0-b435-4ee2-9b67-c2bb8985d05f,"Lukeia",Female,"Ashanti","Sekyere South","Owumpesika",,,25,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+0d52457f-04b9-46ee-bd29-d0a4c198467d,"Adwoa",Female,"Ashanti","Sekyere South","Owumpesika",,,24,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+fd7d72f3-fb1b-4706-8214-0af24deffca4,"Kwesi",Male,"Ashanti","Sekyere South","Owumpesika",,,21,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+d013566e-d030-467a-a3eb-270d822b7400,"Stephen",Male,"Ashanti","Sekyere South","Owumpesika",,,22,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+ae449957-b6e2-434c-ac84-d3e39a9fdef4,"Kwame",Male,"Ashanti","Sekyere South","Owumpesika",,,22,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+a1082711-d950-4b00-851e-45b651612feb,"Kweku",Male,"Ashanti","Sekyere South","Owumpesika",,,26,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+396ef28e-3ee9-44bc-bcfd-7baa66894538,"Kwame",Male,"Ashanti","Sekyere South","Owumpesika",,,24,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+0e4b0be2-d956-473a-85f1-56ea6ba7bed5,"Aba",Female,"Ashanti","Sekyere South","Owumpesika",,,25,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+ae406cb9-1229-4d42-a3bc-e158b9b448ff,"Ama",Female,"Ashanti","Sekyere South","Owumpesika",,,21,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+02e888b4-cbbe-405f-8a11-79e7cf79b1c1,"Ekua",Female,"Ashanti","Sekyere South","Owumpesika",,,23,,3,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+e0365a5f-ebb1-4510-8b59-bcef5d784478,"Ekua",Female,"Ashanti","Sekyere South","Owumpesika",,,20,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+98ae0f69-c79c-49b9-9b19-714ee0364b6c,"Comfort",Female,"Ashanti","Sekyere South","Owumpesika",,,22,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+e34e4ca2-bab0-46bd-8202-919f3fd71754,"Kwame",Male,"Ashanti","Sekyere South","Owumpesika",,,25,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+99cfaf70-cda0-46c0-be6a-bf5cb84f8390,"Diana",Female,"Ashanti","Sekyere South","Owumpesika",,,27,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+cfd9d416-3b25-41c4-8a04-b544085538cd,"Isaac",Male,"Ashanti","Sekyere South","Owumpesika",,,28,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+339afc8d-9e44-4016-bd9c-39fbf4b115ef,"Elizabeth",Female,"Ashanti","Sekyere South","Owumpesika",,,21,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+7cf5200c-292d-4f85-9d20-5d2fee136711,"Frank",Male,"Ashanti","Sekyere South","Owumpesika",,,20,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+668ed916-c228-4210-9111-c4e324f8ac02,"Charles",Male,"Ashanti","Sekyere South","Owumpesika",,,26,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+6b503f06-7c1c-41f8-96a4-6774e5b6051c,"Akua",Female,"Ashanti","Sekyere South","Owumpesika",,,24,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+61fb2650-8bbe-49b4-9e25-a3409cf02693,"Bernard",Male,"Ashanti","Sekyere South","Owumpesika",,,23,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+72d2aea0-19a1-4c27-9034-bc65a5aed213,"Kobena",Male,"Ashanti","Sekyere South","Owumpesika",,,20,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+be205e1c-090e-423f-bd1e-672d1593d930,"Frank",Male,"Ashanti","Sekyere South","Owumpesika",,,25,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+3d10f3b6-814e-4b85-b8e2-7c26c7367d38,"Charles",Male,"Ashanti","Sekyere South","Owumpesika",,,21,,3,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+bac18bc1-7a1c-4053-80a3-f4e0b1bd6ea5,"K. Evans",Male,"Ashanti","Sekyere South","Owumpesika",,,23,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+5df4c08e-26ee-42aa-8a7e-6a449394348f,"Kwame",Male,"Ashanti","Sekyere South","Ologo",,,28,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+e76dfc1d-b4ee-451b-ba39-7ac2a5ca12e3,"Ebenezer",Male,"Ashanti","Sekyere South","Ologo",,,29,,2,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+230ab20e-93d7-4570-aa31-e0bbb356f957,"Mary",Female,"Ashanti","Sekyere South","Ologo",,,29,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+5533df6d-41c3-4c37-8c71-91d83438e170,"Agnes",Female,"Ashanti","Sekyere South","Ologo",,,25,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+1ceefdc0-fd00-4289-8169-4d62274c3647,"Joseph",Male,"Ashanti","Sekyere South","Ologo",,,21,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+80b23fd5-98e0-4c66-ad2d-d107d134c674,"Joseph",Male,"Ashanti","Sekyere South","Ologo",,,23,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+4cc0ec13-0db0-4eec-916c-bfd139981f0f,"Victoria",Female,"Ashanti","Sekyere South","Ologo",,,24,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+e8844c31-36b3-4caf-887d-a5c9eb9f268c,"Edward",Male,"Ashanti","Sekyere South","Ologo",,,26,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+4e49459d-55ae-43fa-b743-657d559fc951,"Gabriel",Male,"Ashanti","Sekyere South","Ologo",,,21,,2,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+f55cd8e7-cf75-4779-9a08-9593460ac35a,"Samuel",Male,"Ashanti","Sekyere South","Ologo",,,24,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+9f4c2488-ec65-4a9b-8b88-01b8356f4770,"Adwoa",Female,"Ashanti","Sekyere South","Ologo",,,25,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+842ca5f3-b70c-49c3-891c-d7a9cd80dd19,"Jonas",Male,"Ashanti","Sekyere South","Ologo",,,21,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+339c7c6c-3471-400d-aff5-6d68e37a6432,"Daniel",Male,"Ashanti","Sekyere South","Ologo",,,25,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+be51973c-7e09-49ac-aa98-21d5f2dd8a09,"Joseph",Male,"Ashanti","Sekyere South","Ologo",,,24,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+134c0d4e-e290-4a26-9ce3-749b8489b372,"Richard",Male,"Ashanti","Sekyere South","Ologo",,,26,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+320e6417-9ec8-439d-a1e1-08afce8d4b40,"Joseph",Male,"Ashanti","Sekyere South","Ologo",,,20,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+3272842e-650c-471f-8015-134279378c63,"Moses",Male,"Ashanti","Sekyere South","Ologo",,,21,,9,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+a986cd78-e76f-4721-ae2f-8e43d88d7f96,"Isaac",Male,"Ashanti","Sekyere South","Ologo",,,24,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+d61c0333-e3bc-4f6c-9938-a65d7f95f645,"David Yaw",Male,"Ashanti","Sekyere South","Ologo",,,27,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+2db5a1bd-199e-414c-8c81-5b1823b137dd,"John Narh",Male,"Ashanti","Sekyere South","Ologo",,,28,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+11fb4296-1280-4d4b-ab8c-864ca1e05d58,"Abena",Female,"Ashanti","Sekyere South","Ologo",,,24,,8,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+050b1e3f-b142-4a21-90c6-9daf9b836fcf,"Sarah",Female,"Ashanti","Sekyere South","Ologo",,,21,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+749b1ed3-5d80-4e55-8a38-b2e92e26c6dd,"Isaac",Male,"Ashanti","Sekyere South","Ologo",,,21,,2,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+a9d51737-a3f8-4171-9f06-1e173b648b2d,"Emmanuel",Male,"Ashanti","Sekyere South","Ologo",,,22,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+248946c4-12b2-4ea9-b4a6-2186f463ea1e,"Tetteh",Male,"Ashanti","Sekyere South","Ologo",,,22,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+87a856f1-0559-4c86-add2-40becff2b381,"Mary",Female,"Ashanti","Sekyere South","Ologo",,,22,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+d82ea3cf-7f64-4871-8e76-4d733834c721,"Moses",Female,"Ashanti","Sekyere South","Ologo",,,22,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+042d7352-adf4-46cc-b5a0-dbd8442d5ee2,"Florence",Female,"Ashanti","Sekyere South","Ologo",,,22,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+13557bd4-4477-490a-a0af-510212eb2b65,"Elizabeth",Female,"Ashanti","Sekyere South","Ologo",,,22,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+b52e37dd-fd0b-49b9-a614-7c1a20452744,"Doris",Female,"Ashanti","Sekyere South","Ologo",,,32,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+f192d86a-0bf3-4a22-88d3-44442704f289,"Grace",Female,"Ashanti","Sekyere South","Ologo",,,31,,9,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+fb44c9d2-791d-4251-909b-f21a48dacf0d,"Daniel",Male,"Ashanti","Sekyere South","Ologo",,,30,,3,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+23f375fe-d199-425c-b093-5fa0d8285394,"Dora",Female,"Ashanti","Sekyere South","Ologo",,,20,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+b858f015-dddf-4eff-a173-c84445f964b7,"Emmanuel",Male,"Ashanti","Sekyere South","Ologo",,,34,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+a40eb822-6486-4820-816c-762bb3d04be6,"Alex",Male,"Ashanti","Sekyere South","Ologo",,,20,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+a88d132c-689a-4a0b-ac0a-06036efae268,"Francis",Male,"Ashanti","Sekyere South","Ologo",,,21,,2,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+a42dd613-e4be-4664-96be-74c2db640d58,"Gifty",Female,"Ashanti","Sekyere South","Ologo",,,24,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+4f6470b7-8dfc-48a9-9366-f9492bdd7759,"Emmanuel",Male,"Ashanti","Sekyere South","Ologo",,,20,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+ec7d3701-243f-46c8-8fbd-253fee2fb639,"Louis",Male,"Ashanti","Sekyere South","Ologo",,,20,,8,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+c517acd7-bac9-4897-b07c-582f045b5ea6,"Abraham",Male,"Ashanti","Sekyere South","Ologo",,,21,,1,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+2eb6c13a-cb59-4d50-a353-1b8c5565509b,"Mary",Female,"Ashanti","Sekyere South","Ologo",,,24,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+0f1cebc6-0c4c-457b-a6e8-afcf5da0deef,"Nam",Male,"Ashanti","Sekyere South","Ologo",,,28,,8,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+28f8aeac-260f-4ca6-afad-94958afda9d1,"Stephen",Male,"Ashanti","Sekyere South","Ologo",,,25,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+b9038131-88b1-4502-9b6e-20e569da0a55,"Emmanuel",Male,"Ashanti","Sekyere South","Ologo",,,21,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+be9424c6-9585-4690-bdd8-9a7c51ff4650,"Isaac",Male,"Ashanti","Sekyere South","Nyekonakpoe",,,27,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+f56148df-9706-4bf8-8aed-812e4a3681de,"Micheal",Male,"Ashanti","Sekyere South","Nyekonakpoe",,,25,,8,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+ba11dd3a-8221-4175-bd22-81a6cd7f0947,"Mitchel",Male,"Ashanti","Sekyere South","Nyekonakpoe",,,24,,9,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+fa626356-26ca-45f2-811c-68741f6e79f3,"John",Male,"Ashanti","Sekyere South","Nyekonakpoe",,,26,,8,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+75b69276-275d-4433-9901-e5ea51f73666,"Kobina",Male,"Ashanti","Sekyere South","Nyekonakpoe",,,25,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+31f9ed30-cd04-49fd-8d04-684fe562329b,"Victoria",Female,"Ashanti","Sekyere South","Nyekonakpoe",,,28,,2,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+092ac138-85c5-4d6e-be82-0d394fabc9ce,"Joshua",Male,"Ashanti","Sekyere South","Nyekonakpoe",,,21,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+2d07647b-d8f5-4c39-9a30-42ed4149b4b7,"Stephen Saba",Male,"Ashanti","Sekyere South","Nyekonakpoe",,,24,,8,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+9d5b9915-7165-4201-af81-9444d9c7a860,"Francis",Male,"Ashanti","Sekyere South","Nyekonakpoe",,,28,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+153c06a7-d399-4357-92bc-ad9ac4fa5dc9,"Sone Tonto",Male,"Ashanti","Sekyere South","Nyekonakpoe",,,25,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+efd64df0-6f2c-4ae0-8a50-d385b048dd44,"Sam",Male,"Ashanti","Sekyere South","Nyekonakpoe",,,24,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+efad6c5e-4b2f-4349-a8ad-74d6b28d9222,"Kobina",Male,"Ashanti","Sekyere South","Nyekonakpoe",,,26,,8,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+6a5c2739-114a-4e52-8bee-6591bb036a91,"Ama",Female,"Ashanti","Sekyere South","Nyekonakpoe",,,21,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+51f2683e-7670-4179-b8a2-fd3ba2cbfedf,"Kobina",Male,"Ashanti","Sekyere South","Nyekonakpoe",,,21,,9,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+f0db5830-2b89-4dbe-a183-20e09719fb02,"Agbodzi",Male,"Ashanti","Sekyere South","Nyekonakpoe",,,27,,3,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+a9a4aa11-15d9-47fe-90e1-f09236fed9ff,"Keneth",Male,"Ashanti","Sekyere South","Nyekonakpoe",,,28,,8,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+90f86709-0edc-4cbb-a86c-531b011480a9,"Kobina",Male,"Ashanti","Sekyere South","Nyekonakpoe",,,29,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+81ca36c5-88af-4128-a1ec-85cf209cca40,"Alex",Male,"Ashanti","Sekyere South","Nyekonakpoe",,,24,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+675765ac-f4cf-49c1-bf30-33b361741759,"Mahama",Male,"Ashanti","Sekyere South","Nyekonakpoe",,,28,,2,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+a12812f4-b37d-4244-ba72-7af388ad1523,"Isaac",Male,"Ashanti","Sekyere South","Nyekonakpoe",,,24,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+cf5e1b1f-9863-4ad1-8957-4cd345f805ea,"David",Male,"Ashanti","Sekyere South","Nyekonakpoe",,,24,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+93eeef05-fc48-4352-829b-117cda0cf50d,"Kofi",Male,"Ashanti","Sekyere South","Nyekonakpoe",,,28,,8,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+c7f25028-819e-48bd-9901-797b9ba61624,"Stephen",Male,"Ashanti","Sekyere South","Nyekonakpoe",,,24,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+cffa5a2f-956b-43a9-b2dc-45ff75b2d43a,"Adjoa",Female,"Ashanti","Sekyere South","Nyekonakpoe",,,26,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+3969f465-57ef-413e-950c-90957d625707,"Daniel",Male,"Ashanti","Sekyere South","Nyekonakpoe",,,31,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+ab862085-030b-4a10-a7c2-82eb000019b8,"Francis",Male,"Ashanti","Sekyere South","Nyekonakpoe",,,24,,3,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+1be9dde7-86f5-43e4-bb62-83a2638fa57a,"Daniel",Male,"Ashanti","Sekyere South","Nyekonakpoe",,,27,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+e752536a-4f28-47f5-80f8-00973a44b706,"Habiba",Female,"Ashanti","Sekyere South","Nyekonakpoe",,,24,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+2379becd-1aa9-4cc2-8286-3cf6b6fe537d,"Kwame",Male,"Ashanti","Sekyere South","Nyekonakpoe",,,25,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+c37826f6-1d9e-4391-a75c-c6fd6ae44240,"Womboutey",Female,"Ashanti","Sekyere South","Nyekonakpoe",,,32,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+5c5b5a93-b15e-4187-96e6-c09b4d572584,"Masawudu",Male,"Ashanti","Sekyere South","Nyekonakpoe",,,25,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+43f67633-3db6-40be-8635-32238b5774e8,"John",Male,"Ashanti","Sekyere South","Nyekonakpoe",,,24,,9,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+166e020a-351e-4886-8366-9fa02b94942a,"Wisdom",Male,"Ashanti","Sekyere South","Nyekonakpoe",,,27,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+71e1663a-aa97-4e47-8292-2a1fabba2f5b,"Joyce",Female,"Ashanti","Sekyere South","Nyekonakpoe",,,28,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+ed144716-1c0c-4b00-8b16-ca4db956e609,"Ama",Female,"Ashanti","Sekyere South","Nyekonakpoe",,,29,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+6806b2ac-ad7c-4c13-8436-59a1dd495347,"Enie",Female,"Ashanti","Sekyere South","Nyekonakpoe",,,24,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+0e358766-01b7-4200-94f8-0ec7d8d95047,"Francis Teye",Male,"Ashanti","Sekyere South","Nyamendae",,,25,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+6c9c004c-7360-49e8-9026-1e46560d87c0,"Jonathan",Male,"Ashanti","Sekyere South","Nyamendae",,,26,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+e1b2f5c8-b0e5-49b0-a9c7-1c739e27abd9,"Bless Nartey",Male,"Ashanti","Sekyere South","Nyamendae",,,21,,2,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+d1f9274f-aeae-4add-acdc-84ee7c86fd3b,"Francis",Male,"Ashanti","Sekyere South","Nyamendae",,,20,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+f7a5030a-7857-485f-aa43-e61eaa7c1ae7,"Nartey",Male,"Ashanti","Sekyere South","Nyamendae",,,23,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+a4a16e00-13d2-46e1-b825-411f0c4c8d59,"Emmanuel",Male,"Ashanti","Sekyere South","Nyamendae",,,24,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+2f45fd89-74ef-4419-adb4-e69b357aa407,"Joshua",Male,"Ashanti","Sekyere South","Nyamendae",,,26,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+85ec5132-ab9a-453a-ad77-d003ddb5d893,"Jonathan Tetteh",Male,"Ashanti","Sekyere South","Nyamendae",,,28,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+2ff4b039-4c0e-4672-b6e1-7f1b13a6dd0b,"Philip Victor",Male,"Ashanti","Sekyere South","Nyamendae",,,27,,8,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+1774fda1-41e8-423a-8fca-03189273058e,"Enoch Teye",Male,"Ashanti","Sekyere South","Nyamendae",,,21,,2,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+3e7db06d-4447-416b-8f66-a8c09a647f12,"Francis",Male,"Ashanti","Sekyere South","Nyamendae",,,29,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+7d6ab24a-b048-4ff9-8d7e-3ffaa91efac7,"Noah",Male,"Ashanti","Sekyere South","Nyamendae",,,24,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+a9b202a9-01e3-4e66-ac2b-f8abf05d5027,"Ben",Male,"Ashanti","Sekyere South","Nyamendae",,,25,,3,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+06fac685-2c26-4730-8368-54b42af0b097,"Alex Kwame",Male,"Ashanti","Sekyere South","Nyamendae",,,21,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+5955f5fe-50e6-4958-81b9-2887dc105d3d,"Kofi",Male,"Ashanti","Sekyere South","Nyamendae",,,28,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+fd64ccb9-f751-4a29-85d1-2e0b380f76ba,"Ebenezer",Male,"Ashanti","Sekyere South","Nyamendae",,,28,,9,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+ba523de2-e40b-44c3-a2e6-9c267b496fd0,"Isaac",Male,"Ashanti","Sekyere South","Nyamendae",,,28,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+b0f08771-05dc-4893-8031-ad0fe4559f4d,"Daniel Ahuah",Male,"Ashanti","Sekyere South","Nyamendae",,,29,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+fb815f97-5678-4884-bc6a-bbca6ebb6980,"Ebenezer",Male,"Ashanti","Sekyere South","Nyamendae",,,27,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+5ac52bd6-1bdf-45b3-85db-578751b3b546,"Rebecca",Female,"Ashanti","Sekyere South","Nyamendae",,,24,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+1f698b66-5797-4b1f-933e-17ffed756a99,"Abraham",Male,"Ashanti","Sekyere South","Nyamendae",,,25,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+5a144c50-af8a-4e19-8ff1-1e72bb03f325,"Jerry David",Male,"Ashanti","Sekyere South","Nyamendae",,,28,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+cf966bea-2841-46a2-bc70-46cfec625f44,"Ebenezer",Male,"Ashanti","Sekyere South","Nyamendae",,,29,,3,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+9fcc71d2-93cb-4728-b3b8-dda6b98a544e,"Linda",Female,"Ashanti","Sekyere South","Nyamendae",,,25,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+db1e9f42-7af5-4448-83e9-89087019b5f4,"Dora",Female,"Ashanti","Sekyere South","Nyamendae",,,25,,3,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+25eac83e-e585-498d-a1d9-c1da34cc56af,"Doris",Female,"Ashanti","Sekyere South","Nyamendae",,,24,,8,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+ac955fcc-9d26-4475-8a55-a538c95b24cc,"Georgina",Female,"Ashanti","Sekyere South","Nyamendae",,,25,,2,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+d0de6710-e312-4256-ab4f-52d297412106,"Beatrice",Female,"Ashanti","Sekyere South","Nyamendae",,,25,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+e0be0f7f-5188-48d3-b399-73e398f7d7bc,"Janet",Female,"Ashanti","Sekyere South","Nyamendae",,,22,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+d0fb6858-54d9-4a2e-b3bd-fd75c6a57d7f,"Daniel",Female,"Ashanti","Sekyere South","Nyamendae",,,22,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+e2d09a71-d017-48dd-b8d6-3e8c7e69197e,"Florence",Female,"Ashanti","Sekyere South","Nyamendae",,,20,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+260ca7e1-5763-414a-95f1-173533b211f8,"Esther",Female,"Ashanti","Sekyere South","Nyamendae",,,19,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+701bbd9a-a6f9-4d3d-b1ac-e4341b5cd574,"Martha",Female,"Ashanti","Sekyere South","Nyamendae",,,18,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+59104b1f-81c2-409e-a5ba-d2bc3d1de032,"Gladys",Female,"Ashanti","Sekyere South","Nyamendae",,,22,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+319a9586-a6a8-491e-a9ae-fd17da646763,"Doris",Female,"Ashanti","Sekyere South","Nyamendae",,,22,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+5d9d304a-5750-40b6-8c0b-1c4ccf3b969b,"Cynthia Ama",Female,"Ashanti","Sekyere South","Nyamendae",,,23,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+83b6561a-fc58-4081-9d4b-38427050df65,"Elizabeth",Female,"Ashanti","Sekyere South","Nyamendae",,,25,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+48778eac-fc74-40c1-884b-fc5a9b40af39,"Nuekie Narteh",Female,"Ashanti","Sekyere South","Nyamendae",,,24,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+173a7381-9b2d-4c80-a9b6-b5b01aa691e8,"Martha",Female,"Ashanti","Sekyere South","Nyamendae",,,28,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+a29ee42e-5b50-4b20-a850-b853f368b34a,"Comfort",Female,"Ashanti","Sekyere South","Nyamendae",,,26,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+12b33ef2-67b4-4efc-8974-a73cb26854bd,"Elizabeth Wosornu",Female,"Ashanti","Sekyere South","Nyamendae",,,24,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+bd634c75-97b1-4fa4-acb3-7e001057f72d,"Cecilia",Female,"Ashanti","Sekyere South","Nyamendae",,,28,,3,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+75e88b7c-c886-4e84-8a22-8e18e4394cfe,"Nyime Tetteh",Male,"Ashanti","Sekyere South","Nyamendae",,,28,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+d328e72c-3555-4766-91ec-477e190e60a7,"Anthony",Male,"Ashanti","Sekyere South","Nyamendae",,,29,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+88c30f9b-f758-4b21-bd17-1f8f43df06d6,"Kinsford",Male,"Ashanti","Sekyere South","Nyamendae",,,27,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+095b94a5-5d4e-462a-887a-3b3b9d95532d,"Ezekiel N.",Male,"Ashanti","Sekyere South","Nyamendae",,,28,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+ee0ecd1b-3577-4e47-a7a8-3e2082e0c1e7,"Daniel",Male,"Ashanti","Sekyere South","Nyamendae",,,24,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+ea50e187-5a06-4342-bf6b-70fa676e43a3,"Ebenezer",Male,"Ashanti","Sekyere South","Nyamendae",,,21,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+b2b42e0d-ac1f-4be5-9a9e-7ca70925fe61,"Saviour",Male,"Ashanti","Sekyere South","Nyamendae",,,25,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+a454f13d-4cbe-4536-bbd9-b008c772318c,"Daniel",Male,"Ashanti","Sekyere South","Nyamendae",,,25,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+78e71687-ac09-480b-85d6-86978adf7a39,"S Edward",Male,"Ashanti","Sekyere South","Nyamendae",,,22,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+aa152d69-806f-4f44-b0e6-62cfbf5c825a,"Basadji",Male,"Ashanti","Sekyere South","Nyamendae",,,20,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+0e5bb79e-d155-4283-a70e-8b50c1396106,"Joseph",Male,"Ashanti","Sekyere South","Nyamendae",,,24,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+28dc9961-2905-4f1d-b9ac-4328bf04cc69,"Enoch Tetteh",Male,"Ashanti","Sekyere South","Nyamendae",,,25,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+283f8080-a569-47e6-9856-eb1e1e100989,"John N.",Male,"Ashanti","Sekyere South","Nyamendae",,,25,,3,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+e62ef98b-2300-4642-8e99-441a297ebd99,"Edward A.",Male,"Ashanti","Sekyere South","Nyamendae",,,24,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+981191ef-62dc-4b79-a7ba-3c711fc8e0ea,"Rockson",Male,"Ashanti","Sekyere South","Nyamendae",,,28,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+93737997-2486-412c-9d17-f780defd55d4,"Elizabeth",Male,"Ashanti","Sekyere South","Nyamendae",,,27,,2,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+d0792a53-9a10-43dd-9a19-18db20fc500f,"John K.",Male,"Ashanti","Sekyere South","Nyamendae",,,28,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+1fc84c38-fe90-4947-b9be-fa8b9f341371,"David Yaw",Male,"Ashanti","Sekyere South","Nyamendae",,,24,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+41cc5d46-b7d8-425f-9db0-0c4d437657e6,"Regina",Male,"Ashanti","Sekyere South","Nyamendae",,,26,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+31c1f0dc-f0b1-426b-a697-1986a724aa7f,"Stephen",Male,"Ashanti","Sekyere South","Nyamendae",,,25,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+95b1e7cd-aed1-45a9-bb3a-b7e2ef25b7b6,"Samuel",Male,"Ashanti","Sekyere South","Nyamendae",,,20,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+5064cc48-ffd4-4bda-9f57-88a4f012f20b,"Emmanuel",Male,"Ashanti","Sekyere South","Nyamendae",,,23,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+5af0c940-3b15-4e74-8bac-8b248878d7fd,"Kofi",Male,"Ashanti","Sekyere South","Nyamendae",,,26,,2,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+188b5258-f5bc-44ed-85dc-914a78c82887,"Akosua",Female,"Ashanti","Sekyere South","Nyamendae",,,24,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+d764e0e7-2fae-4295-b9cc-f9f626116da9,"Joyce",Female,"Ashanti","Sekyere South","Nyamendae",,,21,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+34641dd5-7d38-493e-833a-3054582eb2df,"Lardze",Male,"Ashanti","Sekyere South","Nyamendae",,,22,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+ec204ec2-3dba-4e0e-b12e-9a174f264cad,"Abenadze E.",Female,"Ashanti","Sekyere South","Nyamendae",,,23,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+f7839bf9-66fb-43a7-bec2-a05da084dd49,"Bernice",Female,"Ashanti","Sekyere South","Nyamendae",,,22,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+a5996dad-2aa2-4a79-acb1-06b47ef40e4f,"Grace",Female,"Ashanti","Sekyere South","Nyamendae",,,24,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+6cf27826-0780-4636-b384-294e25a65193,"Enoch N.",Male,"Ashanti","Sekyere South","Nyamendae",,,25,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+523559ed-8c85-4603-8e43-1484a4a8e692,"Rose",Female,"Ashanti","Sekyere South","Nyamendae",,,22,,9,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+b46354de-790a-44af-9498-c612fd808e42,"George",Male,"Ashanti","Sekyere South","Nyamendae",,,24,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+683346ff-0591-4208-b90e-b034c9171237,"Vida",Female,"Ashanti","Sekyere South","Nyamendae",,,27,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+f68aabcd-efd0-44c9-856d-57cadacef9d4,"Isaac Fummey",Male,"Ashanti","Sekyere South","Nyamendae",,,28,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+49900c71-e779-4974-b0db-6b35792ba920,"Amos",Male,"Ashanti","Sekyere South","Nyamendae",,,29,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+d9f75c25-a557-4827-98af-a512d4eb613b,"Eric",Male,"Ashanti","Sekyere South","Nyamendae",,,28,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+0e2580f5-16de-45da-b52c-361a2bdcf3c6,"David",Male,"Ashanti","Sekyere South","Nyamendae",,,24,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+b320e163-5efb-4968-9717-05224dd37c15,"Gladys",Female,"Ashanti","Sekyere South","Nyamendae",,,22,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+6c421774-46fa-4ea3-a2d7-fcb6d3124e91,"Sakyi Patrick",Male,"Ashanti","Sekyere South","Nyamendae",,,22,,8,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+66550d6f-4783-416a-be0c-c1fb3bffb441,"David",Male,"Ashanti","Sekyere South","Nyamendae",,,20,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+cbdf359f-7794-48e3-908e-953ce392aa8e,"Faustina",Female,"Ashanti","Sekyere South","Nyamendae",,,23,,2,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+e39ca660-3d15-4dd6-89ac-1420d80d8137,"Felicia",Female,"Ashanti","Sekyere South","Nyamendae",,,20,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+7725456c-cfca-4415-8af8-062e9be0e373,"Mercy",Female,"Ashanti","Sekyere South","Nkapiem",,,20,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+e5b4ff23-f3c9-4727-bef0-aa12835b23a2,"Ernest",Male,"Ashanti","Sekyere South","Nkapiem",,,21,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+41ee1a29-4b83-4789-a22b-655089670b4b,"Jonathan Gasu",Male,"Ashanti","Sekyere South","Nkapiem",,,23,,4,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+3a661388-e5f9-4be8-929e-678347ff26ae,"Newton",Male,"Ashanti","Sekyere South","Nkapiem",,,25,,6,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+5d72d6df-b7cb-4124-af8f-9262eafc044d,"Peter",Male,"Ashanti","Sekyere South","Nkapiem",,,20,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+f38b31a0-3838-47a4-aaca-8df208b7a423,"Simon",Male,"Ashanti","Sekyere South","Nkapiem",,,20,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+8031c1a3-e4d4-488f-9b4a-f6cc30ec6105,"Stephen",Male,"Ashanti","Sekyere South","Nkapiem",,,26,,9,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+96a3e9ca-8ac4-4bbc-8980-78067b658714,"Saviour",Male,"Ashanti","Sekyere South","Nkapiem",,,26,,3,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+3f13ec3b-98f0-411f-95a5-5d64fd2f69c6,"Philip",Male,"Ashanti","Sekyere South","Nkapiem",,,25,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+eac0a481-efbd-4a07-992a-b5793672e3d8,"Emmanuel",Male,"Ashanti","Sekyere South","Nkapiem",,,26,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+32a4eade-e8c1-4620-9dde-453ddd35be9d,"William",Male,"Ashanti","Sekyere South","Nkapiem",,,24,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+1b7ba521-8aeb-4084-945b-6d01c4f6fdcc,"Johnson",Male,"Ashanti","Sekyere South","Nkapiem",,,28,,2,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+d11d42a8-798b-4da1-b6b6-f63d640821f5,"Sampson",Male,"Ashanti","Sekyere South","Nkapiem",,,20,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+83f3a81c-5043-4ecd-9f17-c16e46eebe2b,"Wonder",Male,"Ashanti","Sekyere South","Nkapiem",,,24,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+0d52bcaf-a047-44c0-ba9e-17729c55dc98,"Georgina",Female,"Ashanti","Sekyere South","Nkapiem",,,22,,8,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+4ae7ef82-3bc0-4a44-aa0b-fe097699bda8,"Philip",Male,"Ashanti","Sekyere South","Nkapiem",,,22,,1,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+f9f77f11-7828-4b79-9359-0d2f42bfb28b,"Elizabeth",Female,"Ashanti","Sekyere South","Nkapiem",,,22,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+e3aab408-a160-4fe9-8a04-f6f4a0ffdb87,"Richard",Male,"Ashanti","Sekyere South","Nkapiem",,,22,,8,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+cb337efb-fd43-492b-8519-a5877417113f,"Janet",Female,"Ashanti","Sekyere South","Nkapiem",,,22,,5,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+c3dd09bf-dc4a-4418-b2be-5bb8fb21c6c1,"Mary",Female,"Ashanti","Sekyere South","Nkapiem",,,22,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+302f9c79-7af1-4f0e-bbad-74151af9bc86,"Thomas",Male,"Ashanti","Sekyere South","Nkapiem",,,22,,7,[],Active,2026-02-21T21:43:26.309Z,false,2026-02-21T21:43:26.309Z,2026-02-21T21:43:26.309Z
+f178e9b9-1eeb-44da-842f-099d0e899e5e,"Mary",Female,"Ashanti","Sekyere South","Nkapiem",,,22,,8,[],Active,2026-02-21T21:43:26.310Z,false,2026-02-21T21:43:26.310Z,2026-02-21T21:43:26.310Z
+5a29450d-a368-4019-9db4-cf32a14544a1,"Issiaka",Male,"Ashanti","Sekyere South","Nkapiem",,,22,,9,[],Active,2026-02-21T21:43:26.310Z,false,2026-02-21T21:43:26.310Z,2026-02-21T21:43:26.310Z
+55e3cebc-a30d-465e-8539-f859d92b87ad,"Vicent Buabeng",Male,"Ashanti","Sekyere South","Nkapiem",,,22,,8,[],Active,2026-02-21T21:43:26.310Z,false,2026-02-21T21:43:26.310Z,2026-02-21T21:43:26.310Z
+a28d2da0-62ef-4db2-a9d2-ed8a5c51dd24,"George",Male,"Ashanti","Sekyere South","Nkapiem",,,22,,5,[],Active,2026-02-21T21:43:26.310Z,false,2026-02-21T21:43:26.310Z,2026-02-21T21:43:26.310Z
+ba565602-9d32-4767-b6e9-c7eaa8e1ec5d,"Emmanuel",Male,"Ashanti","Sekyere South","Nkapiem",,,22,,2,[],Active,2026-02-21T21:43:26.310Z,false,2026-02-21T21:43:26.310Z,2026-02-21T21:43:26.310Z
+21b196f0-db97-4623-b12c-ab6f97cc98f4,"Silas",Male,"Ashanti","Sekyere South","Nkapiem",,,22,,4,[],Active,2026-02-21T21:43:26.310Z,false,2026-02-21T21:43:26.310Z,2026-02-21T21:43:26.310Z
+e527997c-9ad5-46e3-bea1-9635d5caea33,"Abena",Female,"Ashanti","Sekyere South","Nkapiem",,,22,,8,[],Active,2026-02-21T21:43:26.310Z,false,2026-02-21T21:43:26.310Z,2026-02-21T21:43:26.310Z
+9f26f6f1-035f-4c8a-b2eb-e3cf185bb867,"Ernest",Male,"Ashanti","Sekyere South","Nkapiem",,,22,,7,[],Active,2026-02-21T21:43:26.310Z,false,2026-02-21T21:43:26.310Z,2026-02-21T21:43:26.310Z
+c41119f4-afe9-433e-aa92-2d3c33949935,"Solomon",Male,"Ashanti","Sekyere South","Nkapiem",,,22,,4,[],Active,2026-02-21T21:43:26.310Z,false,2026-02-21T21:43:26.310Z,2026-02-21T21:43:26.310Z
+e32b72bf-2d84-4dec-a239-d77ee2db4cf0,"Enoch",Male,"Ashanti","Sekyere South","Nkapiem",,,22,,7,[],Active,2026-02-21T21:43:26.310Z,false,2026-02-21T21:43:26.310Z,2026-02-21T21:43:26.310Z
+dd228e3f-3ca8-4c9c-89d9-61843efdabfa,"Rebecca",Male,"Ashanti","Sekyere South","Nkapiem",,,22,,8,[],Active,2026-02-21T21:43:26.310Z,false,2026-02-21T21:43:26.310Z,2026-02-21T21:43:26.310Z
+508a0fea-ddfe-48a4-8120-9846f1f27ac3,"Victor",Male,"Ashanti","Sekyere South","Nkapiem",,,22,,6,[],Active,2026-02-21T21:43:26.310Z,false,2026-02-21T21:43:26.310Z,2026-02-21T21:43:26.310Z
+cd348a37-1dad-4890-8aa5-3099ec587907,"Francis",Male,"Ashanti","Sekyere South","Nkapiem",,,22,,9,[],Active,2026-02-21T21:43:26.310Z,false,2026-02-21T21:43:26.310Z,2026-02-21T21:43:26.310Z
+1d9aff78-bee6-435b-9c92-2d84fa3fd54a,"Eric",Male,"Ashanti","Sekyere South","Nkapiem",,,22,,3,[],Active,2026-02-21T21:43:26.310Z,false,2026-02-21T21:43:26.310Z,2026-02-21T21:43:26.310Z
+336ee3fe-d22d-414c-a4bf-2c3f26d1c42a,"Rosemary",Male,"Ashanti","Sekyere South","Nkapiem",,,22,,8,[],Active,2026-02-21T21:43:26.310Z,false,2026-02-21T21:43:26.310Z,2026-02-21T21:43:26.310Z
+4bea4ee9-9110-4532-aaeb-b8bb43ae6b5d,"Gideon",Male,"Ashanti","Sekyere South","Nkapiem",,,22,,5,[],Active,2026-02-21T21:43:26.310Z,false,2026-02-21T21:43:26.310Z,2026-02-21T21:43:26.310Z
+4ad095aa-6315-4547-a6c7-84ff0dd49f04,"Paul",Male,"Ashanti","Sekyere South","Nkapiem",,,22,,7,[],Active,2026-02-21T21:43:26.310Z,false,2026-02-21T21:43:26.310Z,2026-02-21T21:43:26.310Z
+cd2be43d-1542-4586-b2e2-b6401b2b14f6,"Joseph",Male,"Ashanti","Sekyere South","Nkapiem",,,22,,2,[],Active,2026-02-21T21:43:26.310Z,false,2026-02-21T21:43:26.310Z,2026-02-21T21:43:26.310Z
+4278e274-b91f-4911-a139-ebeabc077d0c,"Stephen",Male,"Ashanti","Sekyere South","Nkapiem",,,22,,5,[],Active,2026-02-21T21:43:26.310Z,false,2026-02-21T21:43:26.310Z,2026-02-21T21:43:26.310Z
+c4d8f2de-2f58-4b33-9a1d-1525856c96f4,"Stephen",Male,"Ashanti","Sekyere South","Nkapiem",,,22,,5,[],Active,2026-02-21T21:43:26.310Z,false,2026-02-21T21:43:26.310Z,2026-02-21T21:43:26.310Z
+0828a4a3-d6f3-4575-9bd1-fb090787796d,"Janet Ami",Male,"Ashanti","Sekyere South","Nkapiem",,,22,,8,[],Active,2026-02-21T21:43:26.310Z,false,2026-02-21T21:43:26.310Z,2026-02-21T21:43:26.310Z
+3f3ce4fb-7033-480f-a926-dfe31d565b5f,"Leticia",Female,"Ashanti","Sekyere South","Nkapiem",,,22,,4,[],Active,2026-02-21T21:43:26.310Z,false,2026-02-21T21:43:26.310Z,2026-02-21T21:43:26.310Z
+9ecb82cb-3ca0-49e1-93f5-60f3537fc549,"Judith",Female,"Ashanti","Sekyere South","Nkapiem",,,22,,6,[],Active,2026-02-21T21:43:26.310Z,false,2026-02-21T21:43:26.310Z,2026-02-21T21:43:26.310Z
+6fe9158f-68bb-424b-b7ca-68ba4d73adf2,"Rosemary",Female,"Ashanti","Sekyere South","Nkapiem",,,22,,5,[],Active,2026-02-21T21:43:26.310Z,false,2026-02-21T21:43:26.310Z,2026-02-21T21:43:26.310Z
+3e31ad25-fced-4cbd-96e3-01f6dd29fefc,"Comfort",Female,"Ashanti","Sekyere South","Nkapiem",,,22,,3,[],Active,2026-02-21T21:43:26.310Z,false,2026-02-21T21:43:26.310Z,2026-02-21T21:43:26.310Z
+f5bf4ad9-7450-4795-97e9-2b1b2b6c90ae,"Stephen",Male,"Ashanti","Sekyere South","Nkapiem",,,22,,5,[],Active,2026-02-21T21:43:26.310Z,false,2026-02-21T21:43:26.310Z,2026-02-21T21:43:26.310Z
+142e32c2-c02a-40a5-9c1a-6ed8f8c8748b,"Comfort",Female,"Ashanti","Sekyere South","Nkapiem",,,22,,6,[],Active,2026-02-21T21:43:26.310Z,false,2026-02-21T21:43:26.310Z,2026-02-21T21:43:26.310Z
+ce2ee9e2-3cb4-44a4-a3d1-c40522399d71,"Rose",Female,"Ashanti","Sekyere South","Nkapiem",,,22,,5,[],Active,2026-02-21T21:43:26.310Z,false,2026-02-21T21:43:26.310Z,2026-02-21T21:43:26.310Z
+ba6ef18d-94f5-4a00-a13c-b4f4b0d8e4df,"Francis",Male,"Ashanti","Sekyere South","Nkapiem",,,22,,4,[],Active,2026-02-21T21:43:26.310Z,false,2026-02-21T21:43:26.310Z,2026-02-21T21:43:26.310Z
+65b010b1-8ed1-47ef-978f-1aca022aed05,"Faustina",Female,"Ashanti","Sekyere South","Nkapiem",,,22,,7,[],Active,2026-02-21T21:43:26.310Z,false,2026-02-21T21:43:26.310Z,2026-02-21T21:43:26.310Z
+86c1b6b7-927e-4bdc-b818-b9b4f34c0347,"Moris",Male,"Ashanti","Sekyere South","Nkapiem",,,22,,9,[],Active,2026-02-21T21:43:26.310Z,false,2026-02-21T21:43:26.310Z,2026-02-21T21:43:26.310Z
+6fb5b335-820e-4412-a45a-cfa636b1504a,"Victoria Ama",Female,"Ashanti","Sekyere South","Nkapiem",,,22,,7,[],Active,2026-02-21T21:43:26.310Z,false,2026-02-21T21:43:26.310Z,2026-02-21T21:43:26.310Z
+a3ac996f-ecd9-4343-8035-d1b2fe9254a5,"Godfred",Male,"Ashanti","Sekyere South","Nkapiem",,,22,,5,[],Active,2026-02-21T21:43:26.310Z,false,2026-02-21T21:43:26.310Z,2026-02-21T21:43:26.310Z

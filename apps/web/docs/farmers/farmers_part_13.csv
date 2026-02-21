@@ -1,0 +1,1001 @@
+id,name,gender,region,district,society,community,contact,age,education_level,farm_size,crops_grown,status,join_date,deleted,created_at,updated_at
+a16715b7-9535-4960-96b4-57b31447c653,"Mercy Duruwa",Female,"Ahafo","Asunafo South","Anwianfutu",,,23,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+711919b3-267b-4a6a-a729-85ee62817b40,"Ossom Teye",Male,"Ahafo","Asunafo South","Anwianfutu",,,21,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+71ef9e34-6da6-41b1-b934-2cdd9d15b8d4,"Ofosu Asare",Male,"Ahafo","Asunafo South","Anwianfutu",,,35,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+1baa2f52-f3d1-4c14-a1d3-ab78cbdb24fb,"Samuel Amoah",Male,"Ahafo","Asunafo South","Anwianfutu",,,21,,3,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+1d0a1ade-9e2a-4744-84de-d3cd06f5b450,"Issac Doku",Male,"Ahafo","Asunafo South","Anwianfutu",,,21,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+537a24f7-661c-476c-bc49-b90a56b00612,"Hudu Yaya",Male,"Ahafo","Asunafo South","Anwianfutu",,,23,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+de13ba19-a395-43d8-b34e-db117f1004fa,"Partey Christiana",Male,"Ahafo","Asunafo South","Anwianfutu",,,24,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+b23f2882-44a5-47a6-b72e-dfa7dcf5ddd5,"Mary Partey",Female,"Ahafo","Asunafo South","Anwianfutu",,,21,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+93ab2cbd-d844-4f0a-b019-dc320709be6c,"Alhassan Amadu",Male,"Ahafo","Asunafo South","Anwianfutu",,,23,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+abb6730f-fee4-45fc-b033-97ec1686b2d1,"Kofi Hinneh",Male,"Ahafo","Asunafo South","Anwianfutu",,,23,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+46924bd4-b797-4403-844c-8622c3e3d9d7,"Anne Daniel",Male,"Ahafo","Asunafo South","Pillar 38",,,31,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+48421752-f558-4521-ad91-665fad66361c,"Isaac Oduro",Male,"Ahafo","Asunafo South","Pillar 39",,,34,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+3249268a-9aba-43f4-9888-d04d9efece69,"Stephen Nyunum",Male,"Ahafo","Asunafo South","Pillar 40",,,34,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+bfef729f-d85c-4ec7-bd34-03fcdc4d1097,"Kwame Gifty Doe",Female,"Ahafo","Asunafo South","Pillar 41",,,39,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+7565b96f-9e39-4756-9c78-d09932c9e9aa,"Abraham Tetteh",Male,"Ahafo","Asunafo South","Pillar 42",,,33,,3,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+aa2082ad-d822-4242-8bee-18cc4a1c7c0a,"Benard Kojo Doku",Male,"Ahafo","Asunafo South","Pillar 43",,,34,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+f958047e-7e0b-4c11-ac0a-7e35f130f2e7,"Johnson Agbenorvi",Male,"Ahafo","Asunafo South","Pillar 44",,,30,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+78ea42b2-c19f-4517-a5f4-205f256339eb,"Philip Agbenorvi",Male,"Ahafo","Asunafo South","Pillar 45",,,30,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+78ff09ea-14a9-4024-860e-a6eb049d12d4,"Daina Atikor",Female,"Ahafo","Asunafo South","Pillar 46",,,32,,8,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+6f6757fd-3457-4b5a-b98e-fd51af95adf4,"Kwaku Agbenorvi",Male,"Ahafo","Asunafo South","Pillar 47",,,31,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+349208c4-6d2c-4925-b806-dd3224e59e9e,"Martey Boadji",Male,"Ahafo","Asunafo South","Pillar 48",,,21,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+1369a526-cab4-486a-ae9e-5108e5a53378,"Kalime Abugele",Male,"Ahafo","Asunafo South","Pillar 49",,,20,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+ca7cc822-e067-409f-a257-868265030835,"Martey Moses",Male,"Ahafo","Asunafo South","Pillar 50",,,24,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+7a941f6c-28d6-4dfc-a61f-e5760327b123,"Osman Issaka",Male,"Ahafo","Asunafo South","Pillar 51",,,21,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+b12dcaa3-b6e5-4579-8df4-a0e853446153,"Salifu Abugri",Male,"Ahafo","Asunafo South","Pillar 52",,,23,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+2996094b-92fb-4308-89e7-5687710cf934,"Issifu Issah",Male,"Ahafo","Asunafo South","Pillar 53",,,20,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+93c01c72-63c5-4bf4-8b6f-09578295963f,"Nana Zakari",Male,"Ahafo","Asunafo South","Pillar 54",,,21,,7,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+62a4ac4a-fa43-4250-b93b-821bf5d49788,"Grace Obeng",Female,"Ahafo","Asunafo South","Pillar 55",,,20,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+ea04960e-8653-4423-8356-a837a02abad0,"Issah Ali",Male,"Ahafo","Asunafo South","Pillar 56",,,23,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+9c8b8b3b-29ad-48f3-b1a2-fb4a96e25b56,"Kofi Asare",Male,"Ahafo","Asunafo South","Pillar 57",,,31,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+a1d0acac-994c-45a2-9186-71c4d3a60cae,"Abudul Razak",Male,"Ahafo","Asunafo South","Pillar 58",,,20,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+d82210e8-d834-4d26-b1fe-e44c96e49399,"Dominie Yaro",Male,"Ahafo","Asunafo South","Pillar 59",,,23,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+e1497dd5-a49c-4e4d-b6bc-243c203dd95a,"Daniel Yaro",Male,"Ahafo","Asunafo South","Pillar 60",,,29,,7,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+bd0721b8-ca67-4039-a792-c3f457cf495f,"Osman Abanga",Male,"Ahafo","Asunafo South","Pillar 61",,,21,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+058529b1-6996-4bcc-a2ed-250e97faf548,"Issah Nobody",Male,"Ahafo","Asunafo South","Pillar 62",,,23,,3,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+e4467644-9f5f-481f-b10a-b4debf9c8d72,"Adama Hamidu",Male,"Ahafo","Asunafo South","Pillar 63",,,24,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+7b2e8bfe-fb1b-4b15-a6d4-8a9592866d08,"Kwabena Asare",Male,"Ahafo","Asunafo South","Pillar 64",,,29,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+aa35c3f7-adde-46b0-8c8f-4e7963fbe714,"Kojo Daniel",Male,"Ahafo","Asunafo South","Pillar 65",,,23,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+8a48f945-1ac3-4978-90b7-a19c199debcf,"Nana Adabo",Male,"Ahafo","Asunafo South","Pillar 66",,,28,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+717881b8-c143-46e9-8269-ad469ff669c6,"Joyce Agbosu",Female,"Ahafo","Asunafo South","Pillar 67",,,34,,3,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+61a4b428-8c66-40f8-bca2-16ed8e628dfd,"Godwin Galley",Male,"Ahafo","Asunafo South","Pillar 68",,,26,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+7cef5b4c-3d18-4680-906f-098424f94287,"Shaibu",Male,"Ahafo","Asunafo South","Pillar 69",,,29,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+d03ca95b-3243-4851-914a-b095c4c3668c,"Issah Anabah",Male,"Ahafo","Asunafo South","Pillar 70",,,28,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+2c2d6929-b509-4575-9ebf-fb35c4c9cd1b,"Baba",Male,"Ahafo","Asunafo South","Pillar 71",,,26,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+b04b30a9-36a6-4250-8038-c1d3835ba432,"Joseph Joel",Male,"Ahafo","Asunafo South","Pillar 72",,,23,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+15b9134b-616f-49b9-a789-5b1ff283c364,"Ousmanu Issaka",Male,"Ahafo","Asunafo South","Pillar 73",,,23,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+8a1dd142-1088-4c66-95e5-d802d4160702,"Mumuni Alamboum",Male,"Ahafo","Asunafo South","Pillar 74",,,32,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+6f475280-d08f-4831-9a1d-6d16a533f1e0,"Mary Obeng",Male,"Ahafo","Asunafo South","Pillar 75",,,35,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+1a3d0af2-bd3b-440e-a65a-25e891a97850,"Samuel Ahen",Male,"Ahafo","Asunafo South","Pillar 76",,,24,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+eb01c6ca-0cd0-4b68-b9b2-461df27d731e,"Frank Atiadevi",Male,"Ahafo","Asunafo South","Pillar 77",,,23,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+20e724ca-593a-43a9-bb50-379ad161da4e,"Juliana Duvor",Female,"Ahafo","Asunafo South","Pillar 78",,,23,,7,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+eceaa91a-52da-47c6-a165-0b443bc57025,"Gyimah Kofi",Male,"Ahafo","Asunafo South","Pillar 79",,,34,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+3428065a-ab46-4698-83fc-7d3ba59adaef,"Bright Asare",Male,"Ahafo","Asunafo South","Pillar 80",,,23,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+36dbf00e-5af8-44db-ac74-e226e045acf2,"Maame Adam",Male,"Ahafo","Asunafo South","Pillar 81",,,23,,7,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+f976342c-7f06-4235-91e5-4fa6ea1602ab,"James Kusi",Male,"Ahafo","Asunafo South","Pillar 82",,,23,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+664e9851-8573-4cee-afed-e12d831d54d9,"Kojo Kwarfo",Male,"Ahafo","Asunafo South","Pillar 83",,,34,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+b02e3e6a-6a28-46c5-89fc-ff3cd704e71c,"Charlies Kofi Danso",Male,"Ahafo","Asunafo South","Pillar 84",,,23,,3,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+272bcc6a-2d17-4ae7-921a-7ef970d66cdb,"Salam Dramani",Male,"Ahafo","Asunafo South","Pillar 85",,,32,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+2964ae19-c25e-44b9-8151-a1cea04147ed,"Abudu Idrisu",Male,"Ahafo","Asunafo South","Pillar 86",,,24,,3,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+7381d291-9f30-4e5f-9dbd-6ad85c93e4e1,"Seidu Salifu",Male,"Ahafo","Asunafo South","Pillar 87",,,23,,7,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+08fd7328-9aec-4743-a9fb-5dd0b6f54e81,"Osman Issah",Male,"Ahafo","Asunafo South","Pillar 88",,,29,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+edeb3552-c665-4a84-a160-85c23aa48ba9,"Yeboah Williams",Male,"Ahafo","Asunafo South","Pillar 89",,,28,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+a8d5caf5-dd8b-45b9-912e-be09eea653f0,"Abudu Yakubu",Male,"Ahafo","Asunafo South","Pillar 90",,,28,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+03799c37-d8e9-4c6f-8199-b9a5ab890954,"Yakubu Mohammed",Male,"Ahafo","Asunafo South","Pillar 91",,,25,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+b3fa79ba-ef4a-4c79-92d3-6bc37b9523db,"Sule Musah",Male,"Ahafo","Asunafo South","Pillar 92",,,21,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+16cdbd8e-8a5d-462e-a79f-84bfbcc65fc2,"James H. Amenyo",Male,"Ahafo","Asunafo South","Pillar 93",,,23,,7,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+5d959ab0-76dc-4923-b1ae-62c7ac213cd4,"Kuzap Abudu",Male,"Ahafo","Asunafo South","Pillar 94",,,35,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+b7b6abf9-9350-4ee5-898c-8e9464b14445,"Mamudu Bukari",Male,"Ahafo","Asunafo South","Pillar 95",,,23,,3,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+a81dc4c7-6068-4d6b-99bf-b63192c3d7c1,"Kwabena Kombart",Male,"Ahafo","Asunafo South","Pillar 96",,,23,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+25909f36-faf1-4bd1-b54a-f6044120dd47,"Ibrahim Baba",Male,"Ahafo","Asunafo South","Pillar 97",,,24,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+d9c42a37-b22c-4c06-ac3a-92c7bf16315c,"Musa Kojo",Male,"Ahafo","Asunafo South","Pillar 98",,,20,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+703833b5-5c45-4bc0-9d6d-a25cf0ff17ff,"Gareba Dorumah",Male,"Ahafo","Asunafo South","Pillar 99",,,21,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+485e0ef7-47d5-4d53-8915-7c0a7f5b3e9e,"Dorima Saagbene",Female,"Ahafo","Asunafo South","Pillar 100",,,18,,3,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+34dad8c3-6982-40bc-98db-23ebdfe199d9,"Victiria Addo",Female,"Ahafo","Asunafo South","Pillar 101",,,18,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+39f4cfad-48cf-4300-b0ba-91d1f37559bd,"Amedu Alogah",Male,"Ahafo","Asunafo South","Pillar 102",,,21,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+668442a7-98e9-4f8e-a4d0-8a7774d6504f,"Tetteh Yohane",Male,"Ahafo","Asunafo South","Pillar 103",,,32,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+3a32a101-574f-4bab-9e7e-7ae24ea8b432,"Sarlo Sume",Male,"Ahafo","Asunafo South","Pillar 104",,,33,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+bb687176-b128-4b2b-80a0-8f50d969fbfc,"Tuobaa Dari",Male,"Ahafo","Asunafo South","Pillar 105",,,23,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+eff57525-7861-4ba2-8363-a409599d47a7,"Sule Karim",Male,"Ahafo","Asunafo South","Pillar 106",,,32,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+7c40d7db-9142-4fa9-9483-023b7ffd9ec0,"Bukari Asibidi",Male,"Ahafo","Asunafo South","Pillar 107",,,32,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+7d4d1ea4-d7c7-4e42-91d2-0878f464f3d6,"Kpovi Doris",Female,"Ahafo","Asunafo South","Pillar 108",,,35,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+15b44b31-a4c3-4a27-8872-63b275169e49,"Mumuni Ayare",Male,"Ahafo","Asunafo South","Pillar 109",,,31,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+bf0527d9-e0d3-4813-b8fb-2068f649ab28,"Saanee Soatoata",Male,"Ahafo","Asunafo South","Pillar 110",,,23,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+ddc66e5f-dad7-40ab-a517-154a16c78f62,"Teye Kwame",Male,"Ahafo","Asunafo South","Pillar 111",,,21,,3,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+9161c0e8-4749-4d0c-8060-4b19ac66fd64,"Anmortey Abraham",Male,"Ahafo","Asunafo South","Pillar 112",,,20,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+920ec0c1-922a-4446-8b53-efdb50233517,"Seidu Alhassan",Male,"Ahafo","Asunafo South","Pillar 113",,,25,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+9762f259-a9fa-43e2-8162-971b1fb554f9,"Kuow Williams",Male,"Ahafo","Asunafo South","Pillar 114",,,23,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+f5b171b5-2dd4-4aa4-b2a0-2bc8a5d5bad4,"Francis Adjei",Male,"Ahafo","Asunafo South","Pillar 115",,,24,,8,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+33cc3f02-07d2-4f03-9676-b0a8eb4e7e58,"Yaw Musa",Male,"Ahafo","Asunafo South","Pillar 116",,,21,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+93937e96-a7f6-4a08-88c6-11c5482fb4cf,"Anusi Samuel Martey",Male,"Ahafo","Asunafo South","Pillar 117",,,23,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+63e64bcb-18cf-47a0-9322-54219a28f3a8,"Anmortey Joseph",Male,"Ahafo","Asunafo South","Pillar 118",,,22,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+e6bf5930-4d2d-4447-8b82-7bf7decc70e1,"Tahiru Musa",Male,"Ahafo","Asunafo South","Pillar 119",,,21,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+60cb8500-783b-4a7f-9d63-555b1325323d,"Salamatu Moro",Female,"Ahafo","Asunafo South","Pillar 120",,,21,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+76e4f8f8-1adf-4d55-b463-9865dffbb2bf,"Oson Mary",Female,"Ahafo","Asunafo South","Pillar 121",,,23,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+bb7b79b8-b6bd-4aa7-8ff4-223baa0a803f,"Aziatey Mary",Female,"Ahafo","Asunafo South","Pillar 122",,,21,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+18b636c2-2730-4c8e-a34c-5ff047108f49,"Kwao Benard",Male,"Ahafo","Asunafo South","Pillar 123",,,24,,7,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+eb5bfaef-e1ed-4936-9f76-90cc36302893,"Kingsley Amo Yaw",Male,"Ahafo","Asunafo South","Pillar 124",,,29,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+454a8a81-a216-4856-b18c-d8937bf235d7,"Kwao Francis",Male,"Ahafo","Asunafo South","Pillar 125",,,28,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+b4c22e3f-7fa0-4766-9408-d6b6c2bac345,"Unice Tettey",Female,"Ahafo","Asunafo South","Pillar 126",,,27,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+8f2dd4f4-8475-48b5-b49b-7324006e978b,"Tetteh Francis",Male,"Ahafo","Asunafo South","Pillar 127",,,24,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+0058bf80-32b5-4ff3-ab56-e62054c75c7e,"Odum Mamie",Female,"Ahafo","Asunafo South","Pillar 128",,,27,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+e4b87b9b-e29b-4185-9c37-226de4072c44,"Akaama Ndang",Male,"Ahafo","Asunafo South","Pillar 129",,,25,,7,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+29c668a1-dcf6-4095-a61d-15b93b18c64a,"Tetteh Mary",Female,"Ahafo","Asunafo South","Pillar 130",,,35,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+a334c013-d818-4ed4-82b5-a33022b25fe4,"Anthony Tettey",Male,"Ahafo","Asunafo South","Pillar 131",,,23,,3,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+d6042690-001c-4e7d-afe1-8a30c605fd1e,"Michael Lawer",Male,"Ahafo","Asunafo South","Pillar 132",,,32,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+5da760a1-0b1b-4b7b-94f5-6b1b23df49bd,"Ali Ibrahim",Male,"Ahafo","Asunafo South","Pillar 133",,,21,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+cf22ad88-3fd2-492c-b8fa-999c8a8bf988,"Eliaso Musah",Male,"Ahafo","Asunafo South","Pillar 134",,,21,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+c519f2f3-6a4f-4df8-80e5-7fd51dffdd43,"Emmanuel Kwaku Sarfo",Male,"Ahafo","Asunafo South","Pillar 135",,,26,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+c1201365-83b4-4cae-b55f-70f1df8bf371,"Hamidu Asetu",Female,"Ahafo","Asunafo South","Pillar 136",,,24,,3,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+6ede4ca5-b05e-4633-8109-90a77621c872,"Chan Daniel",Male,"Ahafo","Asunafo South","Pillar 137",,,23,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+3d6520b2-8936-4ae0-a999-365c9ce27804,"Asamoa Daniel",Male,"Ahafo","Asunafo South","Pillar 138",,,24,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+f933cf70-5456-4a65-8a3d-bd66816da76f,"Seidu Mariama",Female,"Ahafo","Asunafo South","Pillar 139",,,23,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+e236de63-8f42-400f-9c59-e9e05b8a330a,"Fredic Kpovi",Male,"Ahafo","Asunafo South","Pillar 140",,,23,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+f0f77c34-94dc-4330-9d24-5185d504eba9,"Asumang Augustine",Male,"Ahafo","Asunafo South","Pillar 141",,,21,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+7c98a9d5-70da-4da3-bef2-245a8d526c92,"Solomon Adjei",Male,"Ahafo","Asunafo South","Pillar 142",,,32,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+dc45a704-223d-4016-898d-cc4883bb134c,"Dramani Alabse",Female,"Ahafo","Asunafo South","Pillar 143",,,35,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+4f61200c-e0bb-47bf-aca0-a27931b49e63,"Tahiru Amina",Female,"Ahafo","Asunafo South","Pillar 144",,,31,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+6600854c-99a9-4185-860b-56b7490884b7,"Malic Abange",Male,"Ahafo","Asunafo South","Pillar 145",,,32,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+36e6e781-c7e4-4610-ada1-3e4e0d78bf84,"Adomako James",Male,"Ahafo","Asunafo South","Pillar 146",,,21,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+47d0af85-bd30-41e5-b53e-727ec14b627e,"Rebecca Teye",Female,"Ahafo","Asunafo South","Pillar 147",,,23,,7,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+de2edbbc-e305-411a-b05a-86cc5bff91b3,"Tetteh Agness",Female,"Ahafo","Asunafo South","Pillar 148",,,21,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+23c04023-895c-4c0b-996b-afb586104f19,"Atampi Kofi",Male,"Ahafo","Asunafo South","Pillar 149",,,32,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+ad45b90c-a1b4-4430-88c5-efde06f91dd8,"Mustapha Abediba",Male,"Ahafo","Asunafo South","Pillar 150",,,21,,7,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+330ab0c3-d480-4a87-9a1f-72e34f1b6d98,"Daniel Nkuabia",Male,"Ahafo","Asunafo South","Pillar 151",,,23,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+c4876066-8a96-45ce-8571-826c0dc71f26,"Esi Mariama",Female,"Ahafo","Asunafo South","Pillar 152",,,21,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+6b1c0e1c-953f-48d9-bd6b-80bb70f4c690,"Comfort Agyapong",Female,"Ahafo","Asunafo South","Pillar 153",,,32,,3,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+0e42a7f0-0d1b-4764-96a8-ad8a6d6db75f,"Matthew Osei",Male,"Ahafo","Asunafo South","Oseikrom",,,24,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+9bcb3d61-6ef9-460e-a6db-e72e2bd7c3dc,"Anthony Mensah",Male,"Ahafo","Asunafo South","Oseikrom",,,23,,3,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+a78cb450-6dc3-4981-bd21-cc68ef6b53b0,"Nana Obour",Male,"Ahafo","Asunafo South","Oseikrom",,,21,,7,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+1ca27cf3-432d-4d48-b258-959fa8789815,"Mr Boadu",Male,"Ahafo","Asunafo South","Oseikrom",,,23,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+17cb5b19-3099-43b8-977b-27fb6621a8fc,"Mawusi Victor",Male,"Ahafo","Asunafo South","Oseikrom",,,21,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+473c7580-bccf-40a3-8cde-7eb9fca2c422,"Sulley Akoka",Male,"Ahafo","Asunafo South","Oseikrom",,,32,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+102dbcfc-6fba-4e4e-b54d-4a049b89025c,"Ama Ntoa",Female,"Ahafo","Asunafo South","Oseikrom",,,23,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+14581240-c057-4662-bb8a-faff2cd46fc7,"James Yeboah",Male,"Ahafo","Asunafo South","Oseikrom",,,34,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+b15b390c-92e3-47ba-a760-0413c007589c,"Ama Lucy",Female,"Ahafo","Asunafo South","Oseikrom",,,34,,7,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+f4c7a2a5-70f3-4691-8c40-3a5e1d9e4e6f,"Kwaku Yeboah",Male,"Ahafo","Asunafo South","Oseikrom",,,31,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+fc249b22-87d5-4a2d-9d02-fd999fed520b,"Joseph Donkor",Male,"Ahafo","Asunafo South","Oseikrom",,,27,,3,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+49b39994-37b9-474d-99d4-9fc4a4a7b1dd,"Oba Mathin",Male,"Ahafo","Asunafo South","Oseikrom",,,22,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+e32b965c-7433-45cb-8288-7f1d283f86c2,"Kwasi Mathin",Male,"Ahafo","Asunafo South","Oseikrom",,,26,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+42c4f9bd-0a47-4b55-8c1e-89ec6a9faf4b,"Gyene Isaac",Male,"Ahafo","Asunafo South","Oseikrom",,,24,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+b9a69489-a58d-4f15-9e1b-619110565ac4,"Paul Agbavitor",Male,"Ahafo","Asunafo South","Oseikrom",,,27,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+fa558e8f-a640-494b-b576-8d6740982d8a,"Benjamen Agbavitor",Male,"Ahafo","Asunafo South","Oseikrom",,,21,,3,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+494df186-fed6-4d30-8949-0fe3c067f82c,"Nana Anagbah",Male,"Ahafo","Asunafo South","Oseikrom",,,21,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+c7ef7b89-46a8-4683-b1ed-32b30c02e3b6,"Kofi Emmanuel",Male,"Ahafo","Asunafo South","Oseikrom",,,31,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+25fc27a0-3d4c-4836-a386-9567217aed4d,"Yaa Anagbah",Female,"Ahafo","Asunafo South","Oseikrom",,,32,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+982bd7a7-f088-4596-8394-e0cde02179b0,"Teye Solomon",Male,"Ahafo","Asunafo South","Oseikrom",,,28,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+0a0fafd6-d739-49d1-bca0-810a2e5f9476,"Kwasi Jacob",Male,"Ahafo","Asunafo South","Oseikrom",,,27,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+62cfcdf2-90dd-41c7-a469-75942b4c89d9,"Johnson Gyan",Male,"Ahafo","Asunafo South","Oseikrom",,,26,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+89c3567c-b41e-4736-9656-6a69fbdb8852,"Nana Akwasi Manu",Male,"Ahafo","Asunafo South","Oseikrom",,,32,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+fcdc871b-8af1-4f7d-b8a7-3f55e207397a,"Nana Duapanin",Female,"Ahafo","Asunafo South","Oseikrom",,,20,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+c1cfa46d-9cc9-47e1-8884-a0f5af16e8c5,"Kwame Chisontey",Male,"Ahafo","Asunafo South","Oseikrom",,,21,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+9e0f551c-e9ee-4e01-a2b3-9760ab4c0ce2,"Elizabeth Ayarba",Female,"Ahafo","Asunafo South","Oseikrom",,,21,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+876a2d16-028e-404f-8aaa-80c9b7f29bff,"Paul Manu",Male,"Ahafo","Asunafo South","Oseikrom",,,20,,3,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+482004a1-fb3b-45f3-b454-a793814a603a,"Augustine Okrah",Male,"Ahafo","Asunafo South","Oseikrom",,,21,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+d0ec13f2-b0f9-472d-b497-d70b16c1d216,"Kofi Anagbah",Male,"Ahafo","Asunafo South","Oseikrom",,,21,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+063f07b2-f22c-47eb-b646-1f4957ad84de,"Kofi Daniel",Male,"Ahafo","Asunafo South","Oseikrom",,,23,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+e82cfbc0-4534-470b-9e80-94a8844b271a,"Akwasi Addei",Male,"Ahafo","Asunafo South","Oseikrom",,,21,,8,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+7d11f73f-023f-4acc-915c-619a3be97903,"Fuseni Ayarba",Male,"Ahafo","Asunafo South","Oseikrom",,,29,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+455a7005-0da5-4634-8fdc-f165ad2ee6a8,"Elias Agyeman",Male,"Ahafo","Asunafo South","Oseikrom",,,21,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+e6df7290-6a6d-4493-a52d-964fa4efbd2a,"Allah Daniel",Male,"Ahafo","Asunafo South","Akwasi Aha",,,23,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+2bab9610-c09c-4b0f-9872-ad0dad36a422,"Osei Dineal",Male,"Ahafo","Asunafo South","Akwasi Aha",,,23,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+95b996aa-fab6-47e6-8c0a-1f042e8682a0,"Andrews Obour",Male,"Ahafo","Asunafo South","Akwasi Aha",,,25,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+42a80d69-f094-4ecf-989a-afb088218142,"Atta Yaw",Male,"Ahafo","Asunafo South","Akwasi Aha",,,25,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+133de5cf-8e48-4057-bd18-6ce43da7286a,"Antwi K. Peter",Male,"Ahafo","Asunafo South","Akwasi Aha",,,23,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+3df2e1bf-12fa-43c6-a452-74e8c92dffa2,"Koranteng Emmanuel",Male,"Ahafo","Asunafo South","Akwasi Aha",,,22,,7,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+3ed88c45-1a84-4c8e-8023-5e29941739f5,"Oburoni Johnson",Male,"Ahafo","Asunafo South","Akwasi Aha",,,21,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+4a863d70-b38f-48a4-b182-9e53a5098cc0,"Kwaku Fokuo",Male,"Ahafo","Asunafo South","Akwasi Aha",,,20,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+02aa0cd1-9e44-4c6c-9fe0-b2b84c2b52ce,"Amoako Boamah",Male,"Ahafo","Asunafo South","Akwasi Aha",,,24,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+c8de4bc9-d054-4326-b6b4-1192fd5d538c,"Kwabena Sunkwa",Male,"Ahafo","Asunafo South","Akwasi Aha",,,23,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+28efdf7a-a367-401f-88cb-e412eba4d606,"Anane Peter",Male,"Ahafo","Asunafo South","Akwasi Aha",,,25,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+128d4857-70ec-4dd3-b840-7a3c6f22ba99,"Amoh Adane",Male,"Ahafo","Asunafo South","Akwasi Aha",,,23,,7,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+c03655df-0a2e-4b6d-b4a6-12d0a586ef9c,"Isaac Mfull",Male,"Ahafo","Asunafo South","Akwasi Aha",,,25,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+898994cc-2df7-4d71-9b22-f8edeebd6663,"Isaac Nkoroma",Male,"Ahafo","Asunafo South","Akwasi Aha",,,23,,3,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+3702a203-8383-42be-9a48-a211f0f4da06,"James Rikye",Male,"Ahafo","Asunafo South","Akwasi Aha",,,24,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+857cef8c-eed1-4bb3-8d88-a5847cdd806d,"Nana K. Buma Ankoma",Male,"Ahafo","Asunafo South","Akwasi Aha",,,26,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+18fcdd3f-4306-4cac-a32e-e91a8b2a66ec,"Kwabena Kyere",Male,"Ahafo","Asunafo South","Akwasi Aha",,,24,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+39e96184-ff6e-47df-b383-3ba70c443f3e,"Armah Peter",Male,"Ahafo","Asunafo South","Akwasi Aha",,,21,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+4fd29841-927d-4cc5-a3cc-e236b773b6e9,"Dickson Awuah",Male,"Ahafo","Asunafo South","Akwasi Aha",,,32,,3,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+9fdc538a-699e-4093-b562-f40789617a0c,"Kwaben Nkoa",Male,"Ahafo","Asunafo South","Akwasi Aha",,,31,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+1370c8a5-2f4a-4e5d-b861-9272f7e2416a,"Alex Yeboah",Male,"Ahafo","Asunafo South","Akwasi Aha",,,21,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+6869a0a5-1ede-4ee7-851b-1ffd9ff10ae4,"Bukari Apiia",Male,"Ahafo","Asunafo South","Akwasi Aha",,,23,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+9b3420a9-b578-4be9-abc9-c865548095c5,"Bae George",Male,"Ahafo","Asunafo South","Akwasi Aha",,,21,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+8aea9114-6351-48cf-9203-960489fb3fec,"Freremaa Faustina",Female,"Ahafo","Asunafo South","Akwasi Aha",,,23,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+db5cd29d-015c-46d6-972d-b188e1f7a600,"Pomah Janet",Female,"Ahafo","Asunafo South","Akwasi Aha",,,22,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+0609b8c8-58f2-413d-a8eb-802f90234406,"Akosua Serwaa Ala",Female,"Ahafo","Asunafo South","Akwasi Aha",,,32,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+8577fd0b-33e5-44f6-84dd-d885c56c8ce9,"Fekaa Faustina",Female,"Ahafo","Asunafo South","Akwasi Aha",,,35,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+1d876c9e-7ee3-42b3-911e-57c9307a10e6,"Beniwaah Bether",Female,"Ahafo","Asunafo South","Akwasi Aha",,,31,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+5c16c649-2c85-4a55-86cc-14cdf04e0a33,"Sakyiwa Paulina",Female,"Ahafo","Asunafo South","Akwasi Aha",,,31,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+b14e5d04-6282-4521-96da-c76987207574,"Agartha Afra",Female,"Ahafo","Asunafo South","Akwasi Aha",,,31,,7,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+478d0773-b9d9-4d89-805a-c2107f176581,"Augaetina Mansah",Female,"Ahafo","Asunafo South","Akwasi Aha",,,31,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+8cd7a2cc-7c94-4edf-8d32-202095897ed1,"Asra Janet",Female,"Ahafo","Asunafo South","Akwasi Aha",,,31,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+0d4c8f4d-e240-4a20-90f0-a1e0ac059874,"Lidia Mensah",Female,"Ahafo","Asunafo South","Akwasi Aha",,,31,,7,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+d5ced1d2-3ce6-4374-b34f-a7dc24bf1c69,"Giddi Ben",Male,"Ahafo","Asunafo South","Akwasi Aha",,,31,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+18ac7f31-e403-4134-ac54-9a7659e3cc56,"Isaac Osei",Male,"Ahafo","Asunafo South","Akwasi Aha",,,31,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+0e8f7459-a888-47f7-ac90-5add59343245,"Kwadwo Nkoroma",Male,"Ahafo","Asunafo South","Akwasi Aha",,,31,,3,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+dcfcf9f0-76d9-410e-8a9b-421089d73e58,"Faustina Nkatia",Female,"Ahafo","Asunafo South","Akwasi Aha",,,31,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+efc60407-9b58-4a99-a024-ea0864943871,"Sekyere Emmanuel",Male,"Ahafo","Asunafo South","Akwasi Aha",,,31,,3,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+649b165d-58c4-490c-afc4-95f830b89d89,"Kofi Asiedu",Male,"Ahafo","Asunafo South","Akwasi Aha",,,31,,7,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+aa927127-b5ae-4f2b-8996-da0d32ad2db7,"Atta Kyeremeh",Male,"Ahafo","Asunafo South","Akwasi Aha",,,31,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+2b5c40de-7ae7-4e13-976d-9ddc1bf4e2ad,"Kwasi Senyaglo",Male,"Ahafo","Asunafo South","Yegbekrom",,,31,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+ce088e39-d7fb-4c09-91b6-644f906ab7c8,"Masumtey Kwadwo",Male,"Ahafo","Asunafo South","Yegbekrom",,,32,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+7367764f-c019-4af4-b6d6-e5314a343cec,"Ben Doku",Male,"Ahafo","Asunafo South","Yegbekrom",,,35,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+86da3064-7400-45f1-ba0b-b863e978eb9b,"Awudu Bukari",Male,"Ahafo","Asunafo South","Yegbekrom",,,32,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+ad6e8890-588e-4347-8529-7734015ec1c6,"Mabel Awumeey",Female,"Ahafo","Asunafo South","Yegbekrom",,,32,,7,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+31176ff2-53e4-47b3-b0e5-a302d93f52d5,"Mary Awumeey",Female,"Ahafo","Asunafo South","Yegbekrom",,,34,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+6e919907-8a34-4fa7-a113-597879dbf7c4,"Kwame Addo",Male,"Ahafo","Asunafo South","Yegbekrom",,,33,,3,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+159e0918-2ac7-49a3-b0fe-c8c922504e94,"Agblevor Julius",Male,"Ahafo","Asunafo South","Yegbekrom",,,32,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+0faef591-e9fb-4c3d-9cbe-db9eada9a6ef,"Mary Nyantekyiwaa",Female,"Ahafo","Asunafo South","Yegbekrom",,,23,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+4945fa03-4317-4a58-b403-bb2a337139ad,"Jacob Senyaglo",Male,"Ahafo","Asunafo South","Yegbekrom",,,34,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+79ad6c07-0d8e-46f6-a6c3-9730158dc1ae,"Joseph Odiahene",Male,"Ahafo","Asunafo South","Yegbekrom",,,23,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+148f6ab5-99cc-4689-98ee-708a735d8a8c,"Ibrahim Abugere",Male,"Ahafo","Asunafo South","Yegbekrom",,,21,,3,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+aab5b419-333e-49e7-b777-f3841f122f00,"Joseph Oppong",Male,"Ahafo","Asunafo South","Yegbekrom",,,23,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+c9da0038-951d-4ec5-a36b-fddcbb0cf5ca,"Eklu Senyaglo",Male,"Ahafo","Asunafo South","Yegbekrom",,,23,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+da0d8c37-47b4-4c59-bc35-c477f9100b89,"Ama Arko",Female,"Ahafo","Asunafo South","Yegbekrom",,,25,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+ee27b088-21b9-46b9-b956-0562de21241b,"Yacobo Agan",Male,"Ahafo","Asunafo South","Yegbekrom",,,24,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+59103109-b931-4688-828e-56abd64b7114,"Mohammed Amaadu",Male,"Ahafo","Asunafo South","Yegbekrom",,,23,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+1879be18-d3a7-4217-be5e-435c50b53ecc,"Adwoa Adormaa",Female,"Ahafo","Asunafo South","Yegbekrom",,,22,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+5a280f4f-06e7-4789-baef-5f3258fe8525,"Hayford Nsia",Male,"Ahafo","Asunafo South","Yegbekrom",,,21,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+d29369d3-53db-48bc-b47c-1d07267bd069,"Baby Awulu",Female,"Ahafo","Asunafo South","Yegbekrom",,,23,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+08b05bc1-2f78-4ab6-b739-d2d3e6ff1b33,"Doris Awumeey",Female,"Ahafo","Asunafo South","Yegbekrom",,,21,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+5a080581-285f-487e-8aa1-75890db9869e,"Owusu Agyemang",Male,"Ahafo","Asunafo South","Yegbekrom",,,23,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+0251b16a-4dd2-4c80-9f74-10d6e3a589d4,"Akua Rose",Female,"Ahafo","Asunafo South","Yegbekrom",,,27,,3,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+e3516c66-a20a-4a91-87dc-a19290176578,"Fero Yegbey",Male,"Ahafo","Asunafo South","Yegbekrom",,,25,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+134b2c5f-e233-476a-8286-eadb6e1cbda7,"Balikisu Sarlifu",Female,"Ahafo","Asunafo South","Yegbekrom",,,24,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+f15dd344-e154-4a2e-b797-b295b9d2745e,"Mosese Agblevor",Male,"Ahafo","Asunafo South","Yegbekrom",,,23,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+aecfb3be-660d-4887-88e3-4ebb820a6430,"Solomon Addaie",Male,"Ahafo","Asunafo South","Yegbekrom",,,21,,8,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+3b4b8a74-8ea4-472b-8ee0-cfd6e5f2766a,"Yaw Yeboah",Male,"Ahafo","Asunafo South","Yegbekrom",,,21,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+328604ac-c8a0-4311-a941-0a33fba7dcca,"Mawusi Agblevor",Female,"Ahafo","Asunafo South","Yegbekrom",,,23,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+21dcb1c3-0bca-42b7-8494-fa4bad1ae139,"Kpogn Agblenyo",Male,"Ahafo","Asunafo South","Yegbekrom",,,25,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+9b476135-e040-4e34-ae09-da3a827ee783,"Afua Kumah",Female,"Ahafo","Asunafo South","Yegbekrom",,,24,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+44f38109-b472-4537-9c33-2f1664f5f3ea,"Mercy Anang",Female,"Ahafo","Asunafo South","Adahokrom",,,21,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+ab5f223c-f96a-4de7-8cc4-0740e6d15ccc,"Nartey Micheal",Male,"Ahafo","Asunafo South","Adahokrom",,,21,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+2bca848c-f539-4280-bf92-4b2e87594397,"Tetteh Abraham",Male,"Ahafo","Asunafo South","Adahokrom",,,23,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+7076e252-2350-4c41-9c04-d36c6ed262b7,"Tetteh Janet",Female,"Ahafo","Asunafo South","Adahokrom",,,34,,7,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+dcdc8fe3-051a-4683-a0d8-6e9abb2a2b4b,"Ankama Stephen",Male,"Ahafo","Asunafo South","Adahokrom",,,34,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+c6515156-69bc-41eb-8b4b-bef41717dc11,"Kwabena Sariah",Male,"Ahafo","Asunafo South","Adahokrom",,,31,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+d0a8f86b-b5b7-4cf0-bfb8-f185b4a3cb96,"Sekyiwaa Rose",Female,"Ahafo","Asunafo South","Adahokrom",,,21,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+bfc5103c-96af-4a8e-94d5-e18e073ab999,"Teye Kwaku",Male,"Ahafo","Asunafo South","Adahokrom",,,32,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+41cc1641-4583-4ea4-a804-49eb49ea3c1e,"Narkotey Alfred",Male,"Ahafo","Asunafo South","Adahokrom",,,21,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+5b8e248f-5f16-4579-bedc-188607c98558,"Beatrice Korkor",Female,"Ahafo","Asunafo South","Adahokrom",,,32,,7,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+f8f22e7e-6fbb-48eb-bd32-105f09e6b361,"Kofi Larbi",Male,"Ahafo","Asunafo South","Adahokrom",,,32,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+9db0d017-c476-4601-a860-cc7d92082233,"Asubonteng Alice",Female,"Ahafo","Asunafo South","Adahokrom",,,32,,3,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+a8fd7ea4-4ef2-4f74-9db0-ca1c7bf7dda2,"Ishatu Yaa",Female,"Ahafo","Asunafo South","Adahokrom",,,24,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+4e9856c8-ec5f-4bb7-ae12-dfdca22fc58c,"Amambuuo Mpoka",Female,"Ahafo","Asunafo South","Adahokrom",,,24,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+9cab5811-108e-4e60-aaa7-95bd5738a0df,"Bediako Micheal",Male,"Ahafo","Asunafo South","Adahokrom",,,25,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+03fc9563-0f8a-45a0-91a9-463059f4fa77,"Amina .i. Bukari",Female,"Ahafo","Asunafo South","Adahokrom",,,23,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+74406332-c445-4ae7-9e91-f84416d0256c,"Abuba Issifu",Male,"Ahafo","Asunafo South","Adahokrom",,,24,,3,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+a7e53a4e-c772-46e8-be82-6fbfc4244288,"Nadisah Issah",Female,"Ahafo","Asunafo South","Adahokrom",,,25,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+7a76225e-3bf8-4132-99e1-faefd49e83ba,"Nbama Kwaku",Male,"Ahafo","Asunafo South","Adahokrom",,,26,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+25026393-b698-45f3-835b-40a7a1f3a754,"Kate Adomah",Female,"Ahafo","Asunafo South","Adahokrom",,,27,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+07bdb923-1e34-4fde-b79c-fe7fe8cfd516,"Dawda Bukari",Male,"Ahafo","Asunafo South","Adahokrom",,,21,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+b438fdf0-0eec-42c5-8c2d-43bd0b5edb3e,"Abdulah Iddrisu",Male,"Ahafo","Asunafo South","Adahokrom",,,31,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+b552cf2b-6309-4d34-bac6-ddfd52d1459f,"Zakaria Mahamadu",Male,"Ahafo","Asunafo South","Adahokrom",,,21,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+cdb5f2b9-3fdc-46ba-8136-2077a995f790,"Feiza Sumaila",Female,"Ahafo","Asunafo South","Adahokrom",,,32,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+4d83a9a7-6afc-436d-9e6c-57e43236e5a1,"Karim Tahidu",Male,"Ahafo","Asunafo South","Adahokrom",,,23,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+bad83063-88f1-4a7c-b5c1-cd88a6589f5a,"Obah George",Male,"Ahafo","Asunafo South","Adahokrom",,,34,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+555f1e77-92b0-4f95-9634-e558bfc6fa6c,"Sie Kwaku Frimpong",Male,"Ahafo","Asunafo South","Adahokrom",,,23,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+0194791e-bf51-4d98-9121-dd3b86522c98,"Lamtu Issah",Male,"Ahafo","Asunafo South","Adahokrom",,,23,,7,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+dc008096-febb-4eef-bb35-5c4c971ba3b8,"Zariah Nbaawini",Male,"Ahafo","Asunafo South","Adahokrom",,,32,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+e19ce1ed-d411-4130-88d4-7fafc41b07cc,"Stephen Nyinaku",Male,"Ahafo","Asunafo South","Adahokrom",,,21,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+161f469d-f0c6-4cbd-b6fd-6aa2817011de,"Kofi Paul",Male,"Ahafo","Asunafo South","Adahokrom",,,23,,7,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+038e7593-7202-48dd-916f-5dc6c1441c20,"Zakaria Abudu",Male,"Ahafo","Asunafo South","Adahokrom",,,34,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+ecc1c1ed-714d-48cc-976a-d773ad49cb16,"Abena Anobia",Female,"Ahafo","Asunafo South","Adahokrom",,,18,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+c4fc8401-431e-4530-b413-24477f5cdd44,"Arko Isaac",Male,"Ahafo","Asunafo South","Adahokrom",,,29,,3,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+d6646455-3f4f-4477-8754-1b7b06bee709,"Nli Isaac",Male,"Ahafo","Asunafo South","Adahokrom",,,28,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+17b2cc86-fc44-4d0a-8c43-fd19d90d2046,"Yaw Acheampong",Male,"Ahafo","Asunafo South","Adahokrom",,,23,,3,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+e2c1b610-bfc6-4957-af64-1d2c842483dc,"Zem Nayibo",Male,"Ahafo","Asunafo South","Adahokrom",,,21,,7,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+678fc4dd-1c2a-4444-8af4-84d1855eee05,"Benyina Kwabena",Male,"Ahafo","Asunafo South","Adahokrom",,,32,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+3ae45abc-e349-474a-b827-37239b64e814,"Abudul Karim",Male,"Ahafo","Asunafo South","Adahokrom",,,21,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+e5d7540c-fe84-492d-95e5-ff55e53efc7c,"Salamatu Ibrahim",Female,"Ahafo","Asunafo South","Adahokrom",,,23,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+0b37352b-bb5c-4195-a587-7b8c4b3264f5,"Feka Gideon",Male,"Ahafo","Asunafo South","Adahokrom",,,34,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+360a8081-5ea1-472c-beb6-d6451832f5f6,"Togbe Kwabena",Male,"Ahafo","Asunafo South","Adahokrom",,,21,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+954f51bd-eb63-4627-8f72-0358ace7ed58,"Agnes Gyamfuawaa",Male,"Ahafo","Asunafo South","Adahokrom",,,32,,7,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+5ff646d4-dab5-4678-a5a3-bb36964b136b,"Gyebiri Yaw",Male,"Ahafo","Asunafo South","Adahokrom",,,35,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+49aad20a-5c1f-4992-b237-decf88300e76,"Kwadwo Ofosu",Male,"Ahafo","Asunafo South","Adahokrom",,,31,,3,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+a157b4dc-af13-4c8a-bcc4-07fd2c81639e,"Sobo Biedo",Male,"Ahafo","Asunafo South","Adahokrom",,,32,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+43f3212f-115a-4914-9d3a-b4a46df7cec0,"Manbiri Debe",Male,"Ahafo","Asunafo South","Adahokrom",,,21,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+f1c24471-8325-4f80-a98c-d268f0931f64,"Nyaditey Emmanuel",Male,"Ahafo","Asunafo South","Adahokrom",,,23,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+5a6bc8bd-0555-46ff-9a23-22208643fee3,"Kofi Nketiah",Male,"Ahafo","Asunafo South","Adahokrom",,,21,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+368ac290-2e16-4283-b4e7-4f5460223356,"Ampofo Emmanuel",Male,"Ahafo","Asunafo South","Adahokrom",,,31,,3,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+e92e7ad5-b3f8-42e1-b909-b39c74fa79f4,"Augustine Acheampong",Male,"Ahafo","Asunafo South","Adahokrom",,,31,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+07c4f25e-87aa-424f-b53c-23a5fc76ec53,"Afua Dosoro",Female,"Ahafo","Asunafo South","Adahokrom",,,36,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+c9d042f8-0744-4fec-a3e6-b0e2ab05455a,"Kwabena Febiri",Male,"Ahafo","Asunafo South","Adahokrom",,,35,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+9d51393c-5761-4100-87b1-9616ba817bd8,"Kofi Nyame",Male,"Ahafo","Asunafo South","Adahokrom",,,32,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+88a6a04f-9798-4a05-9b04-a7f27bb2a69e,"Abudulai Ibrahim",Male,"Ahafo","Asunafo South","Adahokrom",,,35,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+08b0530a-7875-4ef4-96a0-6aeaccd515bb,"Robert Abuu",Male,"Ahafo","Asunafo South","Adahokrom",,,32,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+c5dbb5f4-d511-47ff-86de-b964a770e80b,"Zakari Chobitey",Male,"Ahafo","Asunafo South","Adahokrom",,,35,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+92c69e3a-3d51-4868-a4bc-2d41a73f8701,"Dede Hanna",Female,"Ahafo","Asunafo South","Adahokrom",,,31,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+63fdcafc-eec0-4b40-aacd-e88646a2c37f,"Yusif Chikatiger",Male,"Ahafo","Asunafo South","Adahokrom",,,21,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+88fd7247-b352-4f15-a1c6-036fdf2f0799,"Opoku A. Selina",Female,"Ahafo","Asunafo South","Adahokrom",,,24,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+3608e43a-69a5-430c-8094-7c119b38f11d,"Adama Daniel",Male,"Ahafo","Asunafo South","Adahokrom",,,23,,3,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+c1671552-db4a-4fc4-893f-61836e0116c5,"Atta Henne",Male,"Ahafo","Asunafo South","Adahokrom",,,35,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+fd5532ad-8c29-48f5-ab61-c600f03e61ab,"Sule Haruna",Male,"Ahafo","Asunafo South","Bepoayase",,,26,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+49953c2c-06e4-4987-a976-1bd42bdadd4b,"Kwame Kussase",Male,"Ahafo","Asunafo South","Bepoayase",,,31,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+ad7a89e7-1b02-4818-82e9-9962cd9f2ae0,"Kwabena Atakora",Male,"Ahafo","Asunafo South","Bepoayase",,,31,,8,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+fa8922bb-2b61-4b79-a94f-9655e017f9e9,"Thomas Kwamina",Male,"Ahafo","Asunafo South","Bepoayase",,,32,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+645218de-fb96-4e69-a569-e690270e0d71,"Sam David",Male,"Ahafo","Asunafo South","Bepoayase",,,35,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+a72b199b-0526-4a10-8726-bee989d0034c,"Joseph Kwadwo",Male,"Ahafo","Asunafo South","Bepoayase",,,32,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+55be9c18-3491-47b0-bd8d-e805d2afd5a9,"John Gyaase",Male,"Ahafo","Asunafo South","Bepoayase",,,32,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+6a0774d2-33ee-4aeb-a593-0cea1acd3679,"Ali Atobga",Male,"Ahafo","Asunafo South","Bepoayase",,,34,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+44f92da7-2737-44d3-a1ac-1bd89920c679,"Joseph Nketiah",Male,"Ahafo","Asunafo South","Bepoayase",,,33,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+e7e0289e-15c6-4fe2-8878-27fc40bbf05c,"Elizaberth Nsia",Female,"Ahafo","Asunafo South","Bepoayase",,,32,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+ae313c89-7165-4a87-ac16-8e33dab3240b,"Janet Serwaah",Female,"Ahafo","Asunafo South","Bepoayase",,,23,,7,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+74e4cfc4-c11f-4883-8542-58cab85a6b96,"Potuo Cecilia",Male,"Ahafo","Asunafo South","Bepoayase",,,34,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+6a043437-2487-490d-a31d-1dc14d1fcc2b,"Kofi Adams",Male,"Ahafo","Asunafo South","Bepoayase",,,31,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+f5796ef5-0f4d-499b-a40e-f93119f7d706,"Hanina Donnor",Male,"Ahafo","Asunafo South","Bepoayase",,,27,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+da8b97b2-b0ce-4724-868a-5ac4f18bf152,"Lamptey Kwabena",Male,"Ahafo","Asunafo South","Bepoayase",,,22,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+bba3ce86-8cda-4fc0-80aa-7f258f7c9f60,"Alfres Kwac",Male,"Ahafo","Asunafo South","Bepoayase",,,26,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+010869dd-5ce4-4f15-abc6-f3fa809a3c06,"Mary Abena Adowa",Female,"Ahafo","Asunafo South","Bepoayase",,,24,,7,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+90627842-a48e-4cec-9fe7-ff029428fbb2,"Jackline Yeboah",Male,"Ahafo","Asunafo South","Bepoayase",,,27,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+0956a0b1-445f-430c-8771-69d0afae9666,"Isaac Kofi Agyemang",Male,"Ahafo","Asunafo South","Bepoayase",,,21,,3,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+13783312-1ca3-472c-8e0c-ec4f05d2be8d,"Abena Amoakowaa",Female,"Ahafo","Asunafo South","Bepoayase",,,21,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+d1d1e35e-94e7-402f-b581-c1dba653c885,"Tette Kwabena",Male,"Ahafo","Asunafo South","Bepoayase",,,31,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+51bb6ca3-c591-4f7c-8f8f-3ae807b5d6f2,"Anthony Osei",Male,"Ahafo","Asunafo South","Bepoayase",,,32,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+9ae00b17-bf17-49f6-b47d-aba88e46de2c,"Michael Gyan",Male,"Ahafo","Asunafo South","Bepoayase",,,28,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+f136ae39-df07-4ed4-882e-22322e426837,"Tamatey Richard",Male,"Ahafo","Asunafo South","Bepoayase",,,27,,3,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+b2a14327-2d72-441e-93bd-9a62eed8123c,"Damoa Christopher",Male,"Ahafo","Asunafo South","Bepoayase",,,26,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+0a43c532-35c6-43dd-abb4-1487769015c6,"Dora Korkor",Female,"Ahafo","Asunafo South","Bepoayase",,,32,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+cc9d4ecb-0b23-45bb-a4c3-f90e2e7abfe6,"Afua Nsowaa",Male,"Ahafo","Asunafo South","Bepoayase",,,20,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+6793d0de-5993-4293-be05-ca155ebf1a37,"Owusu Appiah",Male,"Ahafo","Asunafo South","Bepoayase",,,21,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+d2776a35-ecff-42ae-89d6-abd84b7c1fac,"Adam Abanga",Male,"Ahafo","Asunafo South","Bepoayase",,,21,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+22baaa8c-f705-4ab2-907b-c7311c53456d,"Kofi Ayoka",Male,"Ahafo","Asunafo South","Bepoayase",,,20,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+cdd10a76-bea0-47b4-8100-6a4d5c402a58,"Adjei Francis",Male,"Ahafo","Asunafo South","Betinko",,,21,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+9b951311-e1ba-4a2b-a6cb-683ecfae7e1d,"Adjei Isaac",Male,"Ahafo","Asunafo South","Betinko",,,21,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+ac666688-7bf7-4e67-82df-fd7aa886d202,"Afiah Serwaa",Female,"Ahafo","Asunafo South","Betinko",,,23,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+13ae154e-c138-4326-b676-f097fad0cb5d,"Agatha Serwaa",Female,"Ahafo","Asunafo South","Betinko",,,21,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+fb32da92-aadf-4079-bc2a-fe4373c8886f,"Ali Seidu Brefo",Male,"Ahafo","Asunafo South","Betinko",,,29,,7,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+3683a2b0-c7fa-4b40-83ac-c4e05041dcf4,"Ama Agyeiwaa",Female,"Ahafo","Asunafo South","Betinko",,,19,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+e0860161-cbf7-42d9-89d6-7cec14f7d322,"Ampofo Agyapong",Male,"Ahafo","Asunafo South","Betinko",,,23,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+d99259ae-d65e-4387-91e5-cff541ba1836,"Appiah Kyei",Male,"Ahafo","Asunafo South","Betinko",,,23,,7,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+48c0f5ff-6884-49bf-a8de-c5b03a89f110,"Asamoah Godfred",Male,"Ahafo","Asunafo South","Betinko",,,25,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+7f06047e-1b5e-4553-a07d-096ac0e299be,"Awuah Paul",Male,"Ahafo","Asunafo South","Betinko",,,25,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+57eabca9-ee4f-40da-ad99-fef5fa1d0f00,"Badu Kofi",Male,"Ahafo","Asunafo South","Betinko",,,23,,3,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+d110959f-f0b4-4de9-9642-a678ac6920f1,"Badu Nicholas",Male,"Ahafo","Asunafo South","Betinko",,,22,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+b5312329-4be4-4ac0-a8e3-e85d72d9cd5d,"Barwua Antwi Kwabena",Male,"Ahafo","Asunafo South","Betinko",,,21,,3,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+80f830e5-7d87-484d-b463-8d5ed2d0a399,"Bawua Sarpong",Male,"Ahafo","Asunafo South","Betinko",,,20,,7,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+4045ff5a-b0bb-40b0-a671-7700988fa02e,"Boateng Kofi",Male,"Ahafo","Asunafo South","Betinko",,,24,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+49c33367-bdf1-46c9-9fae-dbe8451a5192,"Brago Cecilia",Female,"Ahafo","Asunafo South","Betinko",,,23,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+44734197-2390-47c4-8d86-0f4905e15fae,"Brefo Yaw",Male,"Ahafo","Asunafo South","Betinko",,,25,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+843cde02-3a47-483a-a548-2ae1da7b7af7,"Edward Forkuo",Male,"Ahafo","Asunafo South","Betinko",,,23,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+72445ba3-da8d-41df-be08-f9f169cff43c,"Elizabeth Baidoo",Female,"Ahafo","Asunafo South","Betinko",,,25,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+fa957124-ecfc-47ea-9284-f5b083b12975,"Emma Atingani",Female,"Ahafo","Asunafo South","Betinko",,,23,,7,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+5c20f914-d2a3-49cf-9070-8c9b6003498c,"Fred Adabata",Male,"Ahafo","Asunafo South","Betinko",,,24,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+7154a216-2e34-466a-a7f7-e822de346eea,"Gberty Isaac",Male,"Ahafo","Asunafo South","Betinko",,,26,,3,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+ecf55cfe-0574-47d8-b0cb-30ebf8c53e6d,"Georgina Serwaa",Female,"Ahafo","Asunafo South","Betinko",,,24,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+094fd432-f228-4122-a1be-178ff1a5d1a3,"Joyce Kankam",Female,"Ahafo","Asunafo South","Betinko",,,21,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+a43bbef4-d9b1-4ba0-95ef-661589a9a395,"Konadu Esther",Female,"Ahafo","Asunafo South","Betinko",,,32,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+85af3360-65e6-4a9c-8ba0-45866401706f,"Kuffour Osei",Male,"Ahafo","Asunafo South","Betinko",,,31,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+6f2cabbe-1479-4d57-8979-d97be57b6470,"Kwabena Anane",Male,"Ahafo","Asunafo South","Betinko",,,21,,3,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+8dcf380b-8f97-49b5-a4cb-f3a5167003f6,"Kwarteng Charles",Male,"Ahafo","Asunafo South","Betinko",,,23,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+0d005f2a-c6e9-44a1-8de2-4ab544eae1ef,"Malam Musah Gyasi",Male,"Ahafo","Asunafo South","Betinko",,,21,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+26c494be-d349-4cc6-b6cd-1252983ab8d2,"Morro Sekyere",Male,"Ahafo","Asunafo South","Betinko",,,23,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+78f209ca-af65-46b2-a1f7-ab7ce16777f1,"Ofori Emmanuel",Male,"Ahafo","Asunafo South","Betinko",,,22,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+d37ddfa0-c552-4aa4-aabd-404fe9797064,"Ofori Kwabena",Male,"Ahafo","Asunafo South","Betinko",,,32,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+888e930b-c79d-45ea-a191-5ee17b3594ee,"Ofori Sampson",Male,"Ahafo","Asunafo South","Betinko",,,35,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+d0617945-e63b-4311-ad81-49fdf86ac6fb,"Opoku Kwabena",Male,"Ahafo","Asunafo South","Betinko",,,31,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+39a3497b-29db-46a7-9145-0b2a0ad48562,"Opoku Yeboah",Male,"Ahafo","Asunafo South","Betinko",,,31,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+8f4c970f-f4d3-4cc6-8afd-8d7437f23d62,"Osei Emmanuel",Male,"Ahafo","Asunafo South","Betinko",,,31,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+18664825-3d2c-430a-a2a3-3c65cc4bcb65,"Osei Richard",Male,"Ahafo","Asunafo South","Betinko",,,31,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+fe13667c-ca6c-4605-829a-70354b4aa880,"Adams Yakubu",Male,"Ahafo","Asunafo South","Betinko",,,34,,3,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+9c7242e5-8e08-4e56-baee-3e824cf09e99,"Obeng Akwasi",Male,"Ahafo","Asunafo South","Betinko - Nsakasu",,,31,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+605c54ca-10a6-4395-9561-50372f4a09e1,"Owusu Ansah K. Roger",Male,"Ahafo","Asunafo South","Betinko- Nsakasu",,,27,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+cb7fdb31-918b-4ab8-9704-606fb942ac7c,"Badu Esther",Female,"Ahafo","Asunafo South","Betinko",,,22,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+cf5d303a-0d53-456c-8688-f16359eb2a0f,"Yeboah Kwame",Male,"Ahafo","Asunafo South","Betinko",,,26,,8,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+898dd62d-644e-4564-9998-f233b3049e54,"Anane Kwabena",Male,"Ahafo","Asunafo South","Betinko",,,24,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+191b7b41-62be-4860-bec9-f4646f8b6c1a,"Boatemaa Janet",Female,"Ahafo","Asunafo South","Betinko",,,27,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+bb047026-f533-425f-a938-ec2890e8f649,"Gberty Mercy",Female,"Ahafo","Asunafo South","Betinko",,,21,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+3cf94b58-e33a-440b-9fc0-3a020777bcc9,"Brago Cecelia",Female,"Ahafo","Asunafo South","Betinko",,,21,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+81d26820-f8df-477c-87f2-01f155940985,"Brefo Eric",Male,"Ahafo","Asunafo South","Betinko",,,31,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+e6e4dd1b-5b9d-4d1e-8399-1700bfcf60ad,"Asabe Kwadwo",Male,"Ahafo","Asunafo South","Betinko",,,32,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+f9e66a43-71a7-413a-89b8-d6a82604763e,"Opoku Razack",Male,"Ahafo","Asunafo South","Betinko",,,28,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+90123859-f856-4503-a959-918731373f1c,"Abena Narkoa",Female,"Ahafo","Asunafo South","Betinko",,,27,,7,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+ad8e7eac-9101-41f4-b4d4-e96b3b2356fd,"Owusu Christina",Female,"Ahafo","Asunafo South","Betinko",,,26,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+13764461-0837-420a-970b-6f4ec6c95f62,"Agnes Addai",Female,"Ahafo","Asunafo South","Betinko",,,32,,6,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+f73c9336-73ed-414f-9319-ae16d25aaa61,"Acheampong Rexford",Male,"Ahafo","Asunafo South","Boagyaa 1",,,20,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+97de2f3c-15ee-4095-b3bf-ac9e62bf9626,"Addai Andrews",Male,"Ahafo","Asunafo South","Boagyaa 1",,,21,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+76b85345-95ba-4671-a65e-cf526d096839,"Addai Simon",Male,"Ahafo","Asunafo South","Boagyaa 1",,,21,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+8cebc7f1-430b-46c9-a56b-ac6b79a1ff88,"Agyeiwaa Cecilia",Female,"Ahafo","Asunafo South","Boagyaa 1",,,20,,7,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+b854f047-c64e-4f53-a8ed-1695dc0ddb06,"Akotsu Sika James",Male,"Ahafo","Asunafo South","Boagyaa 1",,,21,,5,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+360f06f5-aaad-438e-a0b3-7fb7ae428911,"Ankra Thomas",Male,"Ahafo","Asunafo South","Boagyaa 1",,,21,,3,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.200Z,2026-02-21T21:43:26.200Z
+777cd2c0-c2b0-4e07-a39d-c3bce43130c6,"Anning Philip",Male,"Ahafo","Asunafo South","Boagyaa 1",,,23,,4,[],Active,2026-02-21T21:43:26.200Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+f29e1b51-91d1-4c60-a68c-0cb96a39abb6,"Awimbila Constance",Female,"Ahafo","Asunafo South","Boagyaa 1",,,21,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+e75448af-81e7-4462-a81c-9ce2018d1d9c,"Badu Egale Peter",Male,"Ahafo","Asunafo South","Boagyaa 1",,,29,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+1e47d4f4-d365-426f-b917-1568d60706bc,"Bafowaa Christiana",Female,"Ahafo","Asunafo South","Boagyaa 1",,,19,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+5750bfef-3b40-45ea-b627-db0a0234ed81,"Bugyei Gabriel",Male,"Ahafo","Asunafo South","Boagyaa 1",,,23,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+9c8578da-f79b-443b-a50e-393b502b532a,"Bukari Sako",Male,"Ahafo","Asunafo South","Boagyaa 1",,,23,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+0afc0d40-725a-4a62-9e50-09b313791b6e,"Dankwaa Akua",Female,"Ahafo","Asunafo South","Boagyaa 1",,,25,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+b882d13e-f5a9-4c58-8176-54c41fe4b34e,"Duah Kwaku",Male,"Ahafo","Asunafo South","Boagyaa 1",,,25,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+35d7f77f-0f8b-4bd2-8df4-43e57f3de27f,"Frimpong Martin",Male,"Ahafo","Asunafo South","Boagyaa 1",,,23,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+93442d4f-4987-49a9-bb04-b481f6524ca3,"Jato Issaka",Male,"Ahafo","Asunafo South","Boagyaa 1",,,22,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+4c6e96b6-58b1-4879-80c1-039ebadbd8b8,"Kofi Adutwum Emmanuel",Male,"Ahafo","Asunafo South","Boagyaa 1",,,21,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+c56b1125-4138-4b4d-b9ed-8fd15240082f,"Kusi Isaac",Male,"Ahafo","Asunafo South","Boagyaa 1",,,20,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+e5d7b729-6aaa-4a2f-aa05-af1288dfcb5b,"Kwabena Karikari",Male,"Ahafo","Asunafo South","Boagyaa 1",,,24,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+ac184b72-7e51-4ed9-8bfe-7d86eda7a279,"Kwartemaa Margeret",Female,"Ahafo","Asunafo South","Boagyaa 1",,,23,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+5732714f-09f6-4caf-9ff4-5df3a7ec5978,"Mama Akorli",Female,"Ahafo","Asunafo South","Boagyaa 1",,,25,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+2c96d65f-a465-4e7c-a35e-de56a75070e0,"Nyame Rose",Female,"Ahafo","Asunafo South","Boagyaa 1",,,23,,7,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+e3f55baa-2181-4ba1-b6f7-9b9f92eba8de,"Nyarko Paul",Male,"Ahafo","Asunafo South","Boagyaa 1",,,25,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+52ab961f-afc0-43ab-b44b-e200cbf54104,"Osei Adjei Anthony",Male,"Ahafo","Asunafo South","Boagyaa 1",,,23,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+4221e7e5-a6d8-4cf1-b153-afa2cd6ad599,"Osei Collins",Male,"Ahafo","Asunafo South","Boagyaa 1",,,24,,7,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+88db083c-a1b5-4e8e-bac3-93bc7593552b,"Sarpong Susana",Female,"Ahafo","Asunafo South","Boagyaa 1",,,26,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+2cd4cfc8-3131-4d00-af0b-21c4ae6f3abd,"Serwaa Felicia",Female,"Ahafo","Asunafo South","Boagyaa 1",,,24,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+f90c7bdc-2104-4856-be91-bd2e565844af,"Yaw Stephen",Male,"Ahafo","Asunafo South","Boagyaa 1",,,21,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+9981baee-864a-4173-9142-93b682d9caed,"Nyamekye Samuel",Male,"Ahafo","Asunafo South","Boagyaa 1",,,32,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+699c20b6-9513-4d93-b8c9-f617fe85238c,"Frimpong Sara",Female,"Ahafo","Asunafo South","Boagyaa 1",,,31,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+419a130d-11b6-45d2-9c82-8e3e7812efca,"Achiamaa Felicia",Female,"Ahafo","Asunafo South","Boagyaa 1",,,21,,7,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+384709d0-c12b-43fc-8f7c-7abc42be97fb,"Owusu Ebenezer",Male,"Ahafo","Asunafo South","Boagyaa 1",,,23,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+2e775f11-f331-4b79-9e35-e5750308121a,"Kwame Acheampong",Male,"Ahafo","Asunafo South","Boagyaa 1",,,21,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+0dda5908-57da-43af-8302-db466709e4ae,"Opoku Anthony",Male,"Ahafo","Asunafo South","Boagyaa Sefa-krom",,,23,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+9a6a5134-62f1-49bd-8f09-495846f1cfdc,"Serwaa Akua",Female,"Ahafo","Asunafo South","Boagyaa 1",,,22,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+dc577b71-42c1-480d-9c6b-5878ee40b951,"Frimpong Mary",Female,"Ahafo","Asunafo South",,,,32,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+3600bbd8-0ff1-4827-b26b-6c44a7d572ee,"Osei Paul",Male,"Ahafo","Asunafo South","Elderkrom – Boagyaa",,,35,,7,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+ac6041fa-44ca-4a63-9e42-94de90fa39a6,"Okyere Isaac",Male,"Ahafo","Asunafo South","Boagyaa 1",,,31,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+121f7614-8aef-4071-9fec-eef0436d3bf4,"Okai Joseph",Male,"Ahafo","Asunafo South","Boagyaa 1",,,31,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+16f35795-361e-4498-bb75-24b551128c15,"Owusu Kwadwo",Male,"Ahafo","Asunafo South","Boagyaa 1",,,31,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+bd1bc028-8e57-44e6-8b2b-513018eab186,"Kwabena Acheampong",Male,"Ahafo","Asunafo South","Boagyaa 1",,,31,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+13c2e351-76a2-4ff9-8257-ed2d9d3ee1d2,"Stephen Badu",Male,"Ahafo","Asunafo South","Boagyaa 1",,,31,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+dd86275b-83e9-4a10-b963-35109369c541,"Nana Gyamfi",Male,"Ahafo","Asunafo South","Boagyaa 1",,,21,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+bf8bdf1a-f330-4435-8199-36e654573cc9,"Akwasi Adie",Male,"Ahafo","Asunafo South","Boagyaa 1",,,21,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+a71dfc49-0578-46ea-8e87-3e96d2b36a1d,"Osei Bonsu",Male,"Ahafo","Asunafo South","Boagyaa 1",,,23,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+4884a05a-b70a-4f45-ad45-1135dd0308a4,"Kwadwo Mensah",Male,"Ahafo","Asunafo South","Boagyaa 1",,,24,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+9a4ebce3-94ce-4526-85f1-b1e55493b44e,"Awuni Issaaka",Male,"Ahafo","Asunafo South","Boagyaa 1",,,20,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+ed1011fe-c754-48a5-8bd8-11b782d720bc,"Yaw Afriyie",Male,"Ahafo","Asunafo South","Boagyaa 1",,,29,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+2ef8b8d8-aa7b-49ae-a059-f045c7f5a9cc,"Anthory Oppong",Male,"Ahafo","Asunafo South","Boagyaa 1",,,24,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+299ccace-018a-46fa-b6f5-cd053c4da971,"Boachie Ansah",Male,"Ahafo","Asunafo South","Boagyaa 1",,,31,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+3bb65cba-5b05-4404-a1b7-7b7fb1aa0b97,"Theresah Akoriamah",Male,"Ahafo","Asunafo South","Boagyaa 1",,,31,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+45d4083a-043e-4d0b-bc73-acebf4e5810d,"Kwadwo Osei",Male,"Ahafo","Asunafo South","Boagyaa 1",,,32,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+46d07acc-5cbe-411c-a887-a4c67bbd30f6,"Ama Nyarko",Female,"Ahafo","Asunafo South","Boagyaa 1",,,35,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+66a19103-4ded-4262-8479-6603167c1073,"Brenyeh Comfort",Female,"Ahafo","Asunafo South","Boagyaa 1",,,32,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+90ac3a90-f37d-4ea7-bc8d-0d4f50f5c224,"Brother Kwadwo",Male,"Ahafo","Asunafo South","Boagyaa 1",,,32,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+2e501423-4b0d-4f6c-92da-2dfb985f6aed,"Ata Clement",Male,"Ahafo","Asunafo South","Boagyaa 1",,,34,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+4b48a452-5293-4b45-811a-3a0e428c59b3,"Yaw Aboagye",Male,"Ahafo","Asunafo South","Boagyaa 1",,,33,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+1444943f-9594-4a91-8d7b-66b4b18ed79b,"Kwaku Badu",Male,"Ahafo","Asunafo South","Boagyaa 1",,,32,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+081c2f3a-ac44-45df-bbdd-b1fba9067377,"Alex Frimpong",Male,"Ahafo","Asunafo South","Boagyaa 1",,,23,,8,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+bd681e05-3ef2-4435-96c0-0adf7dd089c2,"Appiah Stephen",Male,"Ahafo","Asunafo South","Boagyaa 1",,,34,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+91c7f065-8107-4f14-afad-aec76e0e98b3,"Adwoa Fremah",Female,"Ahafo","Asunafo South","Boagyaa 1",,,23,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+c5f0ded1-ea4a-483a-8bee-08ceb0a8d693,"Kwabena Anto",Male,"Ahafo","Asunafo South","Boagyaa 1",,,21,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+ed97408a-abf1-4f8e-9ee0-992a9e0d8b3a,"Bukari Mossi",Male,"Ahafo","Asunafo South","Boagyaa 1",,,23,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+d6d2aadc-d251-47e4-9643-66986d9c4e56,"Kwabena Stephen",Male,"Ahafo","Asunafo South","Boagyaa 1",,,23,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+c6583a7f-496f-4419-89eb-94f8656d7e5d,"Aga Abugrie",Male,"Ahafo","Asunafo South","Boagyaa 1",,,25,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+9a646bfe-ec77-4c19-a981-150c6cff7d54,"Abelia Issaaka",Male,"Ahafo","Asunafo South","Boagyaa 1",,,24,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+ce6ab75b-ca8b-4f42-b26c-ba75b0a16161,"Kwaku Nyarko",Male,"Ahafo","Asunafo South","Boagyaa 1",,,23,,7,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+693501eb-f57a-4b01-aa72-60c7aed460d2,"Garbriah Kusi",Male,"Ahafo","Asunafo South","Boagyaa 1",,,22,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+7d432ff6-322c-4309-8b12-5bd2a7c87f8c,"Adjei Bediako Augustine",Male,"Ahafo","Asunafo South","Katapei",,,21,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+5e6ba1b7-e0f5-4658-a8f5-49afe9df91e5,"Adoma Docars",Female,"Ahafo","Asunafo South","Katapei",,,23,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+1744895b-1320-4dd7-a912-28424e301c6e,"Adomako Matilda",Female,"Ahafo","Asunafo South","Katapei",,,21,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+8220800d-b6c8-4ee3-88ae-b5e3f9fa995e,"Adomako Tieku",Male,"Ahafo","Asunafo South","Katapei",,,23,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+d5944f38-ef02-4d2c-bcf7-10f3b3a8fc60,"Agyei Thomas",Male,"Ahafo","Asunafo South","Katapei",,,27,,7,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+c86ff199-d489-4b89-a566-56591136f6c3,"Agyeiwaa Agartha",Female,"Ahafo","Asunafo South","Katapei",,,25,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+910a55e9-90ba-425e-a27a-6386a10305c2,"Akre Christiana",Female,"Ahafo","Asunafo South","Katapei",,,24,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+931ad7bb-bae0-4aea-9db1-d2926db09bf8,"Akua Afra",Female,"Ahafo","Asunafo South","Katapei",,,23,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+7311631d-1913-4977-bcfa-4f44da6d102f,"Alhassan Musah",Male,"Ahafo","Asunafo South","Katapei",,,21,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+9f510608-c4b0-4617-a7d4-125a1c2ab248,"Ama Atenka",Female,"Ahafo","Asunafo South","Katapei",,,21,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+e96f588a-3e69-4e4e-90b1-10687ad2dbbb,"Ampomah Agnes",Female,"Ahafo","Asunafo South","Katapei",,,23,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+6df70962-c48e-495b-a44f-44244174be99,"Antwi Yaw Andrews",Male,"Ahafo","Asunafo South","Katapei",,,25,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+1f318e5b-8568-4704-951b-164945f944f6,"Antwi-boasiako Martin",Male,"Ahafo","Asunafo South","Katapei",,,24,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+d4637d83-eb93-4597-903e-8ccba950010c,"Awuah Sampson",Male,"Ahafo","Asunafo South","Katapei",,,21,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+6c30385f-eac1-48c0-8b61-25a9ee359f3a,"Dankwaaah Adowa",Female,"Ahafo","Asunafo South","Katapei",,,21,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+e94c998e-06e2-42e9-891d-9f16ebd65deb,"Darkwa Yaw Francis",Male,"Ahafo","Asunafo South","Katapei",,,23,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+7062a71d-5d64-43c1-afe3-8f7721ddf853,"Darkwah Rose",Female,"Ahafo","Asunafo South","Katapei",,,34,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+3ac3e3fe-a5f4-4c3b-9eac-8c169449c928,"Douglas Osei",Male,"Ahafo","Asunafo South","Katapei",,,34,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+a46af83f-bf4a-43b6-a231-0d79350b7365,"Fofie Gabriel Kingsford",Female,"Ahafo","Asunafo South","Katapei",,,31,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+28e44fe8-2104-4adb-81c4-ec6ac34ae741,"Gyamah Vivian",Female,"Ahafo","Asunafo South","Katapei",,,21,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+c9ea5b76-a005-47cc-a65b-d4d9433ea7e3,"John Kojo Oduro",Male,"Ahafo","Asunafo South","Katapei",,,32,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+b9bb4cfe-0add-4ba1-808f-0e91424af57c,"Kwadwo Asare",Male,"Ahafo","Asunafo South","Katapei",,,21,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+c1abf2f6-1224-4755-9188-bebcdb0ea278,"Kwaku Addo Paul",Male,"Ahafo","Asunafo South","Katapei",,,32,,7,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+2f2e3a23-9471-47bc-bae2-77a3a29286bb,"Kwame Opoku",Male,"Ahafo","Asunafo South","Katapei",,,32,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+5873b007-e516-4cb5-b65f-5ae194afc3fa,"Kwasi Asare",Male,"Ahafo","Asunafo South","Katapei",,,32,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+bc446a41-1dbf-42ff-af6a-ad6d7ab25b21,"Musah Adiza",Female,"Ahafo","Asunafo South","Katapei",,,24,,7,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+bfba5381-698e-4cbe-9bb4-80e231ebe3a0,"Nana Darkwa Samuel",Male,"Ahafo","Asunafo South","Katapei",,,24,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+33a783ae-3767-44d5-96e5-aaf41f2734c0,"Nkramo Akosua",Female,"Ahafo","Asunafo South","Katapei",,,25,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+eaa98c65-3053-476a-993c-2a6e4cf6e252,"Op. Konto Philip",Male,"Ahafo","Asunafo South","Katapei",,,23,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+a3f9661d-4760-434a-bd4c-05383a4c7b7a,"Oppong Beatrice",Female,"Ahafo","Asunafo South","Katapei",,,24,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+7b9df516-0d83-48d4-8381-691307c6f50b,"Serwaa Elizabeth",Female,"Ahafo","Asunafo South","Katapei",,,25,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+0cf9fd1f-32aa-4d76-8e66-30bcc0538d4d,"Tenee Comfort",Female,"Ahafo","Asunafo South","Katapei",,,26,,7,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+dd5b2e36-7b2e-4226-b623-0689475fb109,"Joseph Addai",Male,"Ahafo","Asunafo South","Katapei",,,27,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+db12a6e9-77d6-4a58-9abe-01f689587886,"Adu Gyamfi Gorden",Male,"Ahafo","Asunafo South","Katapei",,,21,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+c34718e1-66bd-4872-a27b-5388c5aca7cb,"Joseph Amankwah",Male,"Ahafo","Asunafo South","Katapei",,,31,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+bdb22c7a-f9ad-4e65-983a-285950037eff,"Kwasi Adusei",Male,"Ahafo","Asunafo South","Katapei",,,21,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+fc50f950-eadc-4f8b-81f8-2a8df89d1f21,"Appiah Mercy",Female,"Ahafo","Asunafo South","Katapei",,,32,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+ff2163dd-a267-4b27-b0de-39e1e32d3e3c,"Kwame Dankwa",Male,"Ahafo","Asunafo South","Katapei",,,23,,7,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+c8ff2051-b58a-4d47-a6a3-61b65dec3465,"Amankwaa Richard",Male,"Ahafo","Asunafo South","Katapei",,,34,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+a95fe2e1-7617-41f4-9968-99ec1f3b7d06,"Comfort Nsia",Female,"Ahafo","Asunafo South","Katapei",,,23,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+9021727e-7612-4eb6-9d1e-9ac5cd4b6e0e,"Abudu Rahimu",Male,"Ahafo","Asunafo South","Mantukwa",,,23,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+7f58567e-bd0d-4d30-af20-34917aa91b41,"Akwasi Anane",Male,"Ahafo","Asunafo South","Mantukwa",,,32,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+ccd2afb4-4d94-48ee-9ce3-b7a5521e9a7c,"Akwasi Ano",Male,"Ahafo","Asunafo South","Mantukwa",,,21,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+7374f47b-b56f-47db-9ae9-e84ba01d85cd,"Akwasi Kuma",Male,"Ahafo","Asunafo South","Mmofra",,,23,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+53368599-0cda-48c4-a40f-4a091cffceb9,"Boateng Dawoda",Male,"Ahafo","Asunafo South","Mantukwa",,,34,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+163a2bd2-dc53-439c-a5c7-fb6d537df17f,"Felicia Nyarko",Female,"Ahafo","Asunafo South","Mantukwa",,,18,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+4237177b-00b9-461f-b93e-cfd9c3b45efb,"Gregory Kpizena",Male,"Ahafo","Asunafo South","Mantukwa",,,29,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+1b15a16c-c5b2-4710-8431-a066eddb7ac8,"Hon. James Menkah",Male,"Ahafo","Asunafo South","Mantukwa",,,28,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+2e1b8881-65d2-4d64-aa9d-5dac53126c01,"Isaac Fordjour",Male,"Ahafo","Asunafo South","Mantukwa",,,23,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+d14549f9-2c47-46c1-bbe3-2f5d3a6126d1,"Kwadwo Agyapong",Male,"Ahafo","Asunafo South","Mantukwa",,,21,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+7d285dd0-e2a2-4834-b0b1-016fc9509a1a,"Kwadwo Boadu",Male,"Ahafo","Asunafo South","Mantukwa",,,32,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+1816ea79-192a-4ec8-b512-a09f64e7b472,"Mariama Seidu",Female,"Ahafo","Asunafo South","Mantukwa",,,21,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+a7a1be99-c706-492b-85e8-da2ae8d3b6a0,"Osei Mensah Bonsu",Male,"Ahafo","Asunafo South","Mantukwa",,,23,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+92813491-026b-45fd-be86-65c09bfb6c7c,"Tahiru Mohammed",Male,"Ahafo","Asunafo South","Mantukwa",,,34,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+e89a0909-5f6d-48f2-a165-c23d3c8f61fc,"Yaw Mumuni",Male,"Ahafo","Asunafo South","Mantukwa",,,21,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+8c228679-83d7-4b8b-a523-3225c0cb441c,"Zakale Salifu",Male,"Ahafo","Asunafo South","Mantukwa",,,32,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+10965ce0-019b-4048-8964-d039d6b90ccd,"Bawkum Ernest",Male,"Ahafo","Asunafo South","Mantukwa",,,35,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+3ee2ba37-3bec-44c6-83dd-638942e0cdf0,"Zosu Kwabena",Male,"Ahafo","Asunafo South","Mantukwa",,,31,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+a3dab115-5f57-425b-ad4e-8a28ce62a848,"Kwame Agyapong",Male,"Ahafo","Asunafo South","Mantukwa",,,32,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+8efecd10-fa83-4242-bb80-3094acd024fa,"Osmanu Sasomba",Male,"Ahafo","Asunafo South","Mantukwa",,,21,,8,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+745640a1-dbe6-4996-a111-e82410f11055,"Charles Dareh",Male,"Ahafo","Asunafo South","Mantukwa",,,23,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+fe35067e-34c5-46c0-a686-11633afd5a75,"Isifu Sulemana",Male,"Ahafo","Asunafo South","Mantukwa",,,21,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+6d199dbe-7a19-4f47-b978-36a43547347a,"Hudu Yahaya",Male,"Ahafo","Asunafo South","Mantukwa",,,31,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+f95bc573-32ea-4b0a-9a20-67cacacba4ca,"Comfort Boaduaa",Female,"Ahafo","Asunafo South","Mantukwa",,,31,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+f0c276f2-ee91-46a8-b640-fca449122985,"Somalia Yakubu",Male,"Ahafo","Asunafo South","Mantukwa",,,23,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+b12a444b-dcec-4ead-a9b5-df548ee61c38,"Salifu Mustafa",Male,"Ahafo","Asunafo South","M/mantukwa",,,35,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+34b90f73-de07-46eb-99ee-90935c38541a,"Amale Yakubu",Male,"Ahafo","Asunafo South","M/mantukwa",,,32,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+ebe984b4-dd6b-4fd1-9feb-b97226410f1f,"Fordjour Kwadwo",Male,"Ahafo","Asunafo South","Mantukwa",,,35,,7,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+096b25d6-ead6-4ca6-a6ca-240c5e747b04,"Apam Peter",Male,"Ahafo","Asunafo South","Mantukwa",,,32,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+2d5978a7-cad3-4718-9c73-b24bf5644761,"Asare Robert",Male,"Ahafo","Asunafo South","Mantukwa",,,35,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+fb61f3ed-7133-42ef-9d53-a5ac6ee565c5,"Nimo Yaw",Male,"Ahafo","Asunafo South","Mantukwa",,,31,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+2d54969c-a568-4029-ac53-60f8956adace,"Benwuna Albert",Male,"Ahafo","Asunafo South","Nyameadom",,,21,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+88811013-9ec8-4d1f-8253-fedabd8c8869,"Hudu Yahaya",Male,"Ahafo","Asunafo South","M/mantukwa",,,24,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+82be4112-8147-4b91-ba5a-fb1734d303fe,"Kumah Kwabena",Male,"Ahafo","Asunafo South","Mantukwa",,,23,,7,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+a6f78421-f77a-4046-bff7-507c49856b28,"Osumani Anaba",Male,"Ahafo","Asunafo South","Mantukwa",,,35,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+020eede7-809c-4c2e-9a66-37a135b26147,"Paul Quaye",Male,"Ahafo","Asunafo South","Mantukwa",,,26,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+ab4d3b5d-91ab-49fb-9642-576df24d04de,"Musa Abogele",Male,"Ahafo","Asunafo South","Mantukwa",,,21,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+8b5e37e4-3a2c-40de-9f60-dfc55bd6c2a5,"Vurama Balwob",Male,"Ahafo","Asunafo South","Mantukwa",,,23,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+2f58f42d-4e1a-4428-ac3e-739ca0274152,"Boadu Kwadwo",Male,"Ahafo","Asunafo South","Mantukwa",,,24,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+04e266d9-2747-49a4-bdc8-1747ae6e81bc,"Awuah Sussana",Female,"Ahafo","Asunafo South","Mantukwa",,,20,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+afa79c2c-c5d8-4f7b-809b-70917fb3309d,"Daarko Mary",Female,"Ahafo","Asunafo South","Mantukwa",,,29,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+d29ccf8a-15b5-4f69-bbe9-d7926e51b430,"Abiba Abuu",Female,"Ahafo","Asunafo South","Mantukwa",,,24,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+2c790cb6-856d-4e50-813c-1e24a1fd2bba,"Atta Gabriel",Male,"Ahafo","Asunafo South","Mantukwa",,,31,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+ea1dc8ad-8fdd-4b96-bb8f-138b09e28295,"Alahasani Musah",Male,"Ahafo","Asunafo South","Mantukwa",,,31,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+5d6fdfa7-5f5b-40b8-bf8d-02ec3b9aa81f,"Issah Kwaku",Male,"Ahafo","Asunafo South","Mantukwa",,,32,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+56598cca-2274-4ba4-b30a-d616f5b08644,"Ayaba Alli",Male,"Ahafo","Asunafo South","Mantukwa",,,35,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+9ae23f47-52be-46ec-9f29-aa90cb6c8a15,"Ykubu Kulubila",Male,"Ahafo","Asunafo South","Mantukwa",,,32,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+23a23861-292b-4389-9b74-f5b8b6425bf2,"Idilisu Assana",Male,"Ahafo","Asunafo South","Mantukwa",,,32,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+6b585255-eb39-4f90-b729-9d1d5da54e35,"Kalim Osmano",Male,"Ahafo","Asunafo South","Mantukwa",,,34,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+07aea40f-253c-4abc-b4d5-b5e9df9c4081,"Ibiram Naba",Male,"Ahafo","Asunafo South","Mantukwa",,,33,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+feb27f07-5e03-4f6b-9cd3-cb344383aec7,"Dalamani Nyamwego",Male,"Ahafo","Asunafo South","Mantukwa",,,32,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+1e786bc9-5d10-4c86-a487-4b8d1ca11b34,"Abudu Rahimu",Male,"Ahafo","Asunafo South","Mantukwa",,,23,,7,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+d87b2f2c-7172-4a9c-9df5-79865b4eafe1,"Ibrahim Salifu",Male,"Ahafo","Asunafo South","Mantukwa",,,34,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+4c39a017-890b-4108-8cf9-f20f46472096,"Oppong Simon",Male,"Ahafo","Asunafo South","Mantukwa",,,23,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+a8dbeb29-5b67-4de5-8cfc-36b4694793c8,"Ayambila Akugili",Male,"Ahafo","Asunafo South","Mantukwa",,,21,,7,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+93bae739-57e6-42bd-88b3-361805e255aa,"Sulemana Awini",Male,"Ahafo","Asunafo South","Mantukwa",,,23,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+7108a620-7b89-43c0-9dce-34044104c3fc,"Ibrahim Awini",Male,"Ahafo","Asunafo South","Mantukwa",,,30,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+db79e85a-f21e-41f4-87b8-20054d49c468,"Gumba Anane",Male,"Ahafo","Asunafo South","Mantukwa",,,21,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+ffd8e522-5537-42d1-93d8-b40b6ce231c0,"Addai Emmanuel",Male,"Ahafo","Asunafo South","Mantukwa",,,23,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+7df31846-7393-461f-a5c5-0a4ac2d0bdf1,"Darh Kwadwo Kakyire",Male,"Ahafo","Asunafo South","Mantukwa",,,24,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+05187ba8-879b-4014-89c8-0145cbc07257,"Kwabena Ofori",Male,"Ahafo","Asunafo South","Mantukwa",,,20,,7,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+3303de6b-5ec8-41f8-8661-131d483c03f8,"Amma Serwaa",Female,"Ahafo","Asunafo South","Mantukwa",,,29,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+3b3dfb46-e8fa-405e-85c4-619976d4c4b9,"Peter Kalifa",Male,"Ahafo","Asunafo South","Mantukwa",,,24,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+c9ed2305-db2c-411c-a7bd-31948be255b0,"Kwaku Emmanuel",Male,"Ahafo","Asunafo South","Mantukwa",,,31,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+ce78c34d-45bf-42b1-9ea8-e4a036d7f2b6,"Abubakali Sadick",Male,"Ahafo","Asunafo South","Amoakokrom",,,31,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+e46c7a8e-8613-486e-a68d-94f8b87c1977,"Adar Kowaah Ama",Female,"Ahafo","Asunafo South","Amoakokrom",,,32,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+e0680c80-f3d1-4984-82fe-6ebeeda8ba99,"Addea Samuel",Male,"Ahafo","Asunafo South","Amoakokrom",,,35,,7,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+4896b32d-7d31-4d17-ad5b-f44e5c06b7e6,"Adogo Moses",Male,"Ahafo","Asunafo South","Amoakokrom",,,32,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+85746d4f-3198-4f3b-9778-40ba3a14b6f9,"Ali Ishaka",Male,"Ahafo","Asunafo South","Amoakokrom",,,32,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+939dd131-59c0-43e2-bb9a-1f5682dbbe76,"Amina Sadick",Female,"Ahafo","Asunafo South","Amoakokrom",,,34,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+171b218a-6652-4a93-906d-a3271da8e01e,"Apomah Kwaku Sr.",Male,"Ahafo","Asunafo South","Amoakokrom",,,33,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+71b8f949-366e-4547-b0ab-108dfb23cb2c,"Bosompem Yaw Joseph",Male,"Ahafo","Asunafo South","Amoakokrom",,,32,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+4864d285-e125-4ae5-b84f-0029d2ad0cff,"Debra Solomon",Male,"Ahafo","Asunafo South","Amoakokrom",,,21,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+079e97e6-0f82-4fc0-a827-4faa99acd943,"Harunah Mohammed",Male,"Ahafo","Asunafo South","Amoakokrom",,,23,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+02605b28-09ec-4e7e-8548-528d7b5486bf,"Isaka Ibrahim",Male,"Ahafo","Asunafo South","Amoakokrom",,,24,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+9eb4c53f-de11-403b-8f82-60c53f78f468,"Isaka Musah",Male,"Ahafo","Asunafo South","Amoakokrom",,,20,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+fceeaaf2-6661-4cff-95aa-131eb4f6e3a5,"Konadu Christine",Female,"Ahafo","Asunafo South","Amoakokrom",,,29,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+ddf96db9-d6b0-4d3a-afa3-3b32f0d2c0dd,"Kwame Peter",Male,"Ahafo","Asunafo South","Amoakokrom",,,24,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+b49da9fe-0f72-43f5-b1db-371eb3fc6b24,"Mohammedu Alufah",Male,"Ahafo","Asunafo South","Amoakokrom",,,31,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+0104b747-ff48-497f-aeb1-1424b363dccf,"Mohammedu Musah",Male,"Ahafo","Asunafo South","Amoakokrom",,,31,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+0ed969e7-8520-4285-93ad-d8ab765398e4,"Musah Morro",Male,"Ahafo","Asunafo South","Amoakokrom",,,32,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+3fc2e0ec-bdc6-49e1-bb4c-a38ec18a2bfb,"Oduira Akosua",Female,"Ahafo","Asunafo South","Amoakokrom",,,35,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+33984469-d7d4-48a8-a484-b6a1b731f441,"Okyere Kwadwo",Male,"Ahafo","Asunafo South","Amoakokrom",,,21,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+fba4f25f-3b31-4021-9126-bc28837cc625,"Osei Yaw",Male,"Ahafo","Asunafo South","Amoakokrom",,,23,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+d0c3a110-1677-411c-b078-f6a70c7d9c22,"Owusu Kwabena",Male,"Ahafo","Asunafo South","Amoakokrom",,,24,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+db5f3384-6f29-43ee-8e48-37ec35ea241e,"Tawiah Margaret",Female,"Ahafo","Asunafo South","Amoakokrom",,,20,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+aec69843-8d2a-4e9c-8f5b-d2615fef2af3,"Yeboah Obeng",Male,"Ahafo","Asunafo South","Amoakokrom",,,29,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+b11b4487-bcac-4603-aa49-dd5280c10f5c,"Nana Appiah Kwabena Kubi",Male,"Ahafo","Asunafo South","Amoakokrom",,,24,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+4c704fd8-43e9-4dfd-8a28-b6fc3fa0c641,"Apomah Kwaku Junior",Male,"Ahafo","Asunafo South","Amoakokrom",,,31,,8,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+5dd2870c-9b6a-424e-9f03-b7cd2acf240e,"Asumah Paul",Male,"Ahafo","Asunafo South","Apomakrom",,,31,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+45398c3d-ff58-4e6b-99ea-aa59162edd02,"Ahenekrah Wiafi Charles",Male,"Ahafo","Asunafo South","Apomakrom",,,32,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+4cf5f4d2-555b-45fa-af61-27f5dcab8cf0,"Isifu Dramani",Male,"Ahafo","Asunafo South","Apomakrom",,,35,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+b17cca1f-21e0-41cf-a9ad-00e9048bf91e,"Abankwa Kofi",Male,"Ahafo","Asunafo South","Apomakrom",,,32,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+a7213bfd-c2e0-4f0c-8b50-5842660e424f,"Abena Bassare",Female,"Ahafo","Asunafo South","Asempanaye",,,32,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+7cbe9b72-4095-4ab0-99d4-af1007d0bb62,"Abuu Kramo",Male,"Ahafo","Asunafo South","Asempanaye",,,34,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+77e57055-d052-4f14-89fa-fdb9dafe6c83,"Abuu Kwaku",Male,"Ahafo","Asunafo South","Asempanaye",,,33,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+3f6949df-03a1-4381-a603-be747342d3b2,"Adowa Fordjour",Female,"Ahafo","Asunafo South","Asempanaye",,,32,,7,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+db4a464c-5dec-4152-bc74-26268d25a1c1,"Afua Kwartemaa",Female,"Ahafo","Asunafo South","Asempanaye",,,23,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+fc2aca00-651c-409b-9ca1-b2e1921ca2ce,"Agyei Boame",Male,"Ahafo","Asunafo South","Asempanaye",,,34,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+65384c61-e3b5-4ccd-8344-c707068f58db,"Akuah Druwaa",Female,"Ahafo","Asunafo South","Asempanaye",,,23,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+c70448f1-5c0c-4e69-a312-2ab998b9bfb4,"Asamoah Anthony",Male,"Ahafo","Asunafo South","Asempanaye",,,21,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+41167e28-5021-4aeb-b539-325ef28e7231,"Ayaba Daniel",Male,"Ahafo","Asunafo South","Asempanaye",,,23,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+3d629c92-2f2f-4ffb-b5d5-c0b2b7bebc15,"Boakye Agyemang Lucy",Female,"Ahafo","Asunafo South","Asempanaye",,,30,,7,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+0e5e5395-ec0d-470f-aeb1-e88ea5793c47,"Bosomtwe William",Male,"Ahafo","Asunafo South","Asempanaye",,,23,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+efb5598c-ec49-4ad4-b866-6f5ec4c8a8aa,"Darko Beatrice",Female,"Ahafo","Asunafo South","Asempanaye",,,18,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+ea63d03e-3ce5-444d-ac88-66e373378b94,"Darko Cecilia",Female,"Ahafo","Asunafo South","Asempanaye",,,19,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+644ec42a-22e5-4229-9f65-447a27a6ca8b,"Kofi Appiah James",Male,"Ahafo","Asunafo South","Asempanaye",,,20,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+194abc6f-344e-4332-9e12-454878c131bd,"Kwabena Adu",Male,"Ahafo","Asunafo South","Asempanaye",,,24,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+e8c35ddd-f3a0-4824-af5d-276439cb1e2a,"Kwabena Adumata",Male,"Ahafo","Asunafo South","Asempanaye",,,32,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+40dcbbf1-58c6-45a6-bcb2-faf747368bef,"Kwabena Victor",Male,"Ahafo","Asunafo South","Asempanaye",,,21,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+c320b41f-9f20-430d-b358-9b5e4bf70317,"Kwame Ntim",Male,"Ahafo","Asunafo South","Asempanaye",,,23,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+be6dc273-ea0d-4801-a18d-3d03466c6ad7,"Kwame Poku Joseph",Male,"Ahafo","Asunafo South","Asempanaye",,,24,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+66c80610-34a3-4b48-bda8-7e80310ddb0f,"Mensah Margaret",Female,"Ahafo","Asunafo South","Asempanaye",,,20,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+bbbcfe58-df54-4777-85b8-818fdd9e3a75,"Philip Opoku Mensah",Male,"Ahafo","Asunafo South","Asempanaye",,,29,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+bb6bdd95-bee2-4fd4-a7a8-540bbd6522e3,"Mohammed Alhassan",Male,"Ahafo","Asunafo South","Asempanaye",,,24,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+8126a9ca-7a6e-409a-964e-f902e802fc64,"Nana Kwadwo Manu",Male,"Ahafo","Asunafo South","Asempanaye",,,31,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+7a3bdb21-5a02-4080-aedd-290e7e21a3b9,"Nana Tweneboa Kodua",Male,"Ahafo","Asunafo South","Asempanaye",,,31,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+0bc82502-fca5-4684-bbe9-fe361f3fc401,"Opoku Garmo",Male,"Ahafo","Asunafo South","Asempanaye",,,32,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+6cb4b722-1a38-48c3-8fa2-d23d6af679c9,"Paul Sarkodie",Male,"Ahafo","Asunafo South","Asempanaye",,,35,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+3e3e0499-ef41-4126-bbf5-42e01b81d978,"Sarpong Mary",Female,"Ahafo","Asunafo South","Asempanaye",,,21,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+f32c35ae-e83f-4bf7-9587-6c8e2cb5bb17,"Yaa Pokua",Female,"Ahafo","Asunafo South","Asempanaye",,,23,,7,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+49b63254-0020-4e40-886c-6ef2095f3fce,"Yaw Addo",Male,"Ahafo","Asunafo South","Asempanaye",,,24,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+f0ba29a0-ddfa-4f5f-aa82-1196509ec91d,"Achaia Rose",Female,"Ahafo","Asunafo South","Biemso No. I",,,20,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+7c62b9e2-f989-4139-b5ab-5476146f08d1,"Addei Agyapong",Male,"Ahafo","Asunafo South","Biemso No. I",,,29,,7,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+78019a01-eaac-45d0-9121-81053f639920,"Addo Yaw",Male,"Ahafo","Asunafo South","Biemso No. I",,,24,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+3b1f4309-6c8f-408e-8d27-70c980c88596,"Afiriyie Charles",Male,"Ahafo","Asunafo South","Biemso No. I",,,31,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+a567d55a-84bc-45d8-9966-babe54cb14db,"Afriyie James",Male,"Ahafo","Asunafo South","Biemso No. I",,,31,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+7841d581-4c93-4489-b68b-1ae8dfdac980,"Amma Pomaah",Female,"Ahafo","Asunafo South","Biemso No. I",,,32,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+b7e789bb-e3ca-4f43-a502-8fd9e63f9a08,"Antwi Niome",Female,"Ahafo","Asunafo South","Biemso No. I",,,35,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+d37f2919-0fb2-4df4-a2a3-4b53e26b85bf,"Asante Poku John",Male,"Ahafo","Asunafo South","Biemso No. I",,,32,,7,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+66bfb082-1031-4ba7-b017-fbad362ab14d,"Asante Yirenkyi",Male,"Ahafo","Asunafo South","Biemso No. I",,,32,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+82a61527-52db-4d67-9f21-555e73694172,"Ayaba Sera",Female,"Ahafo","Asunafo South","Biemso No. I",,,34,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+a269f72e-977f-4c4d-98ca-0f7d4269b9ff,"Ayalo Samuel",Male,"Ahafo","Asunafo South","Biemso No. I",,,33,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+d0c7d8bb-c77e-4bf8-9e49-7278e3e70be8,"Fosu Cosmos",Male,"Ahafo","Asunafo South","Biemso No. I",,,32,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+371e9bef-94ac-4aa7-88f1-2ad7efca3e15,"Fosua Afia",Female,"Ahafo","Asunafo South","Biemso No. I",,,23,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+4f6d8655-9516-4aa3-b705-1ff288d5ae83,"Kowo Kwabena",Male,"Ahafo","Asunafo South","Biemso No. I",,,34,,7,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+2f40ef8c-742d-49fc-a35e-078f3a405603,"Kyemateng Kofi",Male,"Ahafo","Asunafo South","Biemso No. I",,,23,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+90bf52a8-c2b1-4b61-965e-925c588e807d,"Maame Amoaa",Female,"Ahafo","Asunafo South","Biemso No. I",,,21,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+2f2ff2a8-3b0d-4ddd-9655-c0accd8554bf,"Mensah Osei Andrew",Male,"Ahafo","Asunafo South","Biemso No. I",,,23,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+df065306-17b1-4e4e-8e19-2847b4264a49,"Micheal Ntori",Male,"Ahafo","Asunafo South","Biemso No. I",,,30,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+f6078dd8-9081-4eb7-9900-22f8032d0365,"Nana Amma Dufie",Female,"Ahafo","Asunafo South","Biemso No. I",,,23,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+0a0627e0-6493-4437-b951-9cc2eca2b8d7,"Nketian Joseph",Male,"Ahafo","Asunafo South","Biemso No. I",,,20,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+a6006b6f-c6fe-4ce7-b1de-4834666d169a,"Nyamekye Stephen",Male,"Ahafo","Asunafo South","Biemso No. I",,,20,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+9d007377-90aa-42ac-aa58-f3e3379931e6,"Nyarko Adowa",Female,"Ahafo","Asunafo South","Biemso No. I",,,19,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+9fc38aaf-5c21-40b2-9e28-204a51c3cb46,"Obri-yeboah Joseph",Male,"Ahafo","Asunafo South","Biemso No. I",,,24,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+388ef468-a6eb-4f32-bb03-2915d95d6aad,"Opoku Fofie",Male,"Ahafo","Asunafo South","Biemso No. I",,,30,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+7306eb73-2d9c-400b-884d-38ca1caa918c,"Osei Stephen",Male,"Ahafo","Asunafo South","Biemso No. I",,,23,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+d41863ec-eee6-4a38-a5ee-15918d4a14b7,"Owusu Ansah Yaw",Male,"Ahafo","Asunafo South","Biemso No. I",,,20,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+78f5248b-cb9e-4a53-aabc-9c4eb51c7a78,"Pokuaa Esther",Female,"Ahafo","Asunafo South","Biemso No. I",,,19,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+afdb3d45-a2ba-4aeb-8fa8-1a0c47b0ec51,"Sarpong Afua",Female,"Ahafo","Asunafo South","Biemso No. I",,,19,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+6b277d15-2ba9-4862-b98f-b8419b10d4ee,"Serwaa Abena",Female,"Ahafo","Asunafo South","Biemso No. I",,,24,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+54a715a3-6f6d-4096-87f4-fe241ddeecec,"Serwaa Beatrice",Female,"Ahafo","Asunafo South","Biemso No. I",,,32,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+824b1935-c4a3-4e54-b398-9ac31e805eab,"Kwarteng Kwasi",Male,"Ahafo","Asunafo South","Aponaponso",,,21,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+8526ae69-6bb0-4e87-b913-62951d6a2572,"Achaia Abena",Female,"Ahafo","Asunafo South","Aponaponso",,,23,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+5558af30-86d7-4319-b93e-b9e3211887ea,"Adjei Paul",Male,"Ahafo","Asunafo South","Aponaponso",,,24,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+19f61b24-c9b7-4f43-8c82-0190a8fcb399,"Adjubi Ama",Female,"Ahafo","Asunafo South","Aponaponso",,,20,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+128b54b3-338d-49f0-8df6-033ad75a8511,"Afrane Kwame",Male,"Ahafo","Asunafo South","Aponaponso",,,29,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+62aa717e-5a6d-4a15-932a-6b674f2a3fb4,"Agyemang Cecilia",Female,"Ahafo","Asunafo South","Aponaponso",,,24,,8,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+92c34356-e1c9-4bc3-b8ef-d08ceed1335c,"Ali Grushi",Male,"Ahafo","Asunafo South","Aponaponso",,,31,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+bcba16ed-9920-4703-8da8-418606475090,"Ali Mohammed",Male,"Ahafo","Asunafo South","Aponaponso",,,31,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+c86b6b7a-61ee-44a5-be55-fc8cd33fa602,"Amankwah Adowa",Female,"Ahafo","Asunafo South","Aponaponso",,,32,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+754735f7-f501-4116-b3fe-dc7f0b03ef1e,"Ampong Ama",Female,"Ahafo","Asunafo South","Aponaponso",,,35,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+2611e371-ddd0-41e7-a689-be9446ab1f03,"Appua Prince",Male,"Ahafo","Asunafo South","Aponaponso",,,21,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+d8b93c5c-2ffb-4826-8b19-7fc2bb8d4e34,"Asomani Kwaku",Male,"Ahafo","Asunafo South","Aponaponso",,,23,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+9296debe-1a01-467c-b39c-7e9d59752425,"Taa Amma",Female,"Ahafo","Asunafo South","Aponaponso",,,24,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+8acb4757-9168-4fd6-8a93-6236d9dfb168,"Badu Abena",Female,"Ahafo","Asunafo South","Aponaponso",,,20,,7,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+81fbaecb-b4a5-476d-9ad5-9b894b955f0f,"Badu Joseph",Male,"Ahafo","Asunafo South","Aponaponso",,,29,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+467705bb-2e69-4de4-84c4-531ee67a815a,"Bediako Yaw",Male,"Ahafo","Asunafo South","Aponaponso",,,24,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+a9559998-199e-46d9-bf5a-fda379298a1f,"Bediako Yaw No. I",Male,"Ahafo","Asunafo South","Aponaponso",,,31,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+8168e9f5-d904-4748-b66a-7dbcfe50ef81,"Benefo Akwasi",Male,"Ahafo","Asunafo South","Aponaponso",,,31,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+d0a67544-c2dd-43af-8319-6dde3a8099e8,"Benewaa Ama",Female,"Ahafo","Asunafo South","Aponaponso",,,32,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+e34f7349-20ed-498c-8451-f17363838b9b,"Boah Kwaku",Male,"Ahafo","Asunafo South","Aponaponso",,,35,,7,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+75b228e1-9f09-4c37-aebc-25f76db64a4f,"Boakye Kwame",Male,"Ahafo","Asunafo South","Aponaponso",,,32,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+3d2b5435-1ba1-40b0-bb2d-7a1708b29ac8,"Boakye Yaw",Male,"Ahafo","Asunafo South","Aponaponso",,,32,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+ce553bf7-7d5e-4076-a823-bf4810647824,"Boateng Kwabena",Male,"Ahafo","Asunafo South","Aponaponso",,,34,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+513ebc54-9710-4c2d-9d25-098021145138,"Darkwa Samuel",Male,"Ahafo","Asunafo South","Aponaponso",,,33,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+0edcae50-b455-4328-b6e6-c716cd04c8f3,"Donkor Abena",Female,"Ahafo","Asunafo South","Aponaponso",,,32,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+3e2b3061-e58e-45b3-8b2f-01936ce8f51f,"Fordjour Kwadwo",Male,"Ahafo","Asunafo South","Aponaponso",,,23,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+a22fa92f-c0de-4f5f-9a0b-490c89888724,"Fordjour Adowa",Female,"Ahafo","Asunafo South","Aponaponso",,,34,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+547b2606-c437-4b51-a566-ec61ccb18cd6,"Forkuo Kwaku",Male,"Ahafo","Asunafo South","Aponaponso",,,23,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+7808d56d-a69e-4058-abd3-881df059302d,"Fosuaa Abena",Male,"Ahafo","Asunafo South","Aponaponso",,,21,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+a35bf9fd-7b2b-4322-88a5-1ad9e111eded,"Frimpong James",Male,"Ahafo","Asunafo South","Aponaponso",,,23,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+ac1950c8-e5fc-425c-861e-970a6e2b2733,"Fusani Fudu",Male,"Ahafo","Asunafo South","Aponaponso",,,30,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+df7ca7c4-60ce-47e1-a4f1-0ce9c26f51f3,"Ibrahim Mohamed",Male,"Ahafo","Asunafo South","Aponaponso",,,23,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+95824d2d-2757-42f0-93a4-2e0ce8201ad0,"Kassium Mohammed",Male,"Ahafo","Asunafo South","Aponaponso",,,20,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+539ca2b4-1d03-449f-8693-c42fefb10913,"Konadu Afia",Female,"Ahafo","Asunafo South","Aponaponso",,,30,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+b776b5c4-6d90-420c-82bf-b6106e2f99c6,"Konadu Afua",Female,"Ahafo","Asunafo South","Aponaponso",,,23,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+95eaafd6-bab5-481d-a6d5-4c70ed10ec7b,"Konadu Kwame",Male,"Ahafo","Asunafo South","Aponaponso",,,20,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+5d5aa9d4-40de-4f94-9745-7acd93f237b6,"Kusi Appiah",Female,"Ahafo","Asunafo South","Aponaponso",,,19,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+6e77b454-dca9-46e5-ac06-da3796fd5dbe,"Kwabena Abena",Female,"Ahafo","Asunafo South","Aponaponso",,,19,,7,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+ccf5b14f-6a5f-48e7-94c0-b8ece4ada089,"Kwarkye Kwabena",Male,"Ahafo","Asunafo South","Aponaponso",,,24,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+25f2e424-5abc-4744-9717-06d56117f944,"Kwarteng Kofi",Male,"Ahafo","Asunafo South","Aponaponso",,,32,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+0a65cde6-7b1f-4100-8b05-ae5b22765ca0,"Kyei Kofi",Male,"Ahafo","Asunafo South","Aponaponso",,,21,,7,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+5239f4ef-f2cf-40a1-810f-ceb89daac4e7,"Mensah Kwadwo",Male,"Ahafo","Asunafo South","Aponaponso",,,23,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+80654dfe-f1ab-4628-a066-939f8e87c7de,"Musah Kwazali",Male,"Ahafo","Asunafo South","Aponaponso",,,24,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+9132bbb6-4352-4ad8-ab58-c3f0156622cb,"Ofori Schandorf",Male,"Ahafo","Asunafo South","Aponaponso",,,20,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+6219d462-cf24-4cf3-a3db-7036923dc184,"Opoku John",Male,"Ahafo","Asunafo South","Aponaponso",,,29,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+c9502363-c5b7-4754-bc9d-6647879efeed,"Osei Kofi",Male,"Ahafo","Asunafo South","Aponaponso",,,24,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+316159d6-fd9e-4bb6-b4ca-d4a4f6eed21a,"Osei Tutu",Male,"Ahafo","Asunafo South","Aponaponso",,,31,,7,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+1d1bb257-392c-40fe-9bcf-f6fe04bb08cf,"Otwum Paul",Male,"Ahafo","Asunafo South","Aponaponso",,,31,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+616b7599-320c-40ff-ace7-4b5d91e4b9ff,"Owusu Kojo",Male,"Ahafo","Asunafo South","Aponaponso",,,32,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+cd383000-3079-43fb-bbb2-83e373801022,"Sarpong Akwasi",Male,"Ahafo","Asunafo South","Aponaponso",,,35,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+af988c93-910a-4a63-8807-90b9041c3ce1,"Werekowaa Amma",Female,"Ahafo","Asunafo South","Aponaponso",,,21,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+9ef90f74-5f7a-40ce-85a4-e7f46bf7a55d,"Yeboah Kofi Emmanuel",Male,"Ahafo","Asunafo South","Aponaponso",,,23,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+b27e53a8-5c23-404d-8165-c2809008a10d,"Tweneboah Yaw",Male,"Ahafo","Asunafo South","Aponaponso",,,24,,7,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+74db4a5c-4d2c-409f-b687-a024160c4a19,"Boatemaa Akosua",Female,"Ahafo","Asunafo South","Aponaponso",,,20,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+307404d4-b37c-4fb7-942a-6416728a9baf,"Kutugo Moses",Male,"Ahafo","Asunafo South","Aponaponso",,,29,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+6e971a7b-d274-4190-97d3-4e66fb185be5,"Frimpong James",Male,"Ahafo","Asunafo South","Aponaponso",,,24,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+ccdaceeb-6ca8-4926-a67f-152d9d60250e,"Ali Beatrice",Female,"Ahafo","Asunafo South","Aponaponso",,,31,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+934cffc2-0813-4381-9308-118456efccbe,"Nkatia Abena",Female,"Ahafo","Asunafo South","Aponaponso",,,31,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+1297eeec-8b97-4f13-a5b7-bdc07bb5f256,"Fokuo James",Male,"Ahafo","Asunafo South","Aponaponso",,,32,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+ff5b40fd-952f-486c-a4f2-7d478bd1bc8b,"Dapaah Ama",Female,"Ahafo","Asunafo South","Aponaponso",,,35,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+4ef4494f-8af5-4876-8c9d-5f2fe65a45ea,"Yeboah David",Male,"Ahafo","Asunafo South","Aponaponso",,,32,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+5585b1b0-8497-44ce-8456-7c0e3b920a84,"Ababio Kwadwo",Male,"Ahafo","Asunafo South","Aponaponso",,,32,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+6de3b7f2-c272-41b1-968f-537c390a6151,"Badu Felicia",Female,"Ahafo","Asunafo South","Aponaponso",,,34,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+6379a2e2-6280-42f7-a07e-6b62f0f0fb8d,"Asoma Kojo",Male,"Ahafo","Asunafo South","Aponaponso",,,33,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+dc0e4d59-4157-4ccb-948b-8096f25f1478,"Agyei Adu Alexander",Male,"Ahafo","Asunafo South","Aponaponso",,,32,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+90166ae3-0c8e-4e8a-b4f5-420a32585f70,"Serwaa Ama",Female,"Ahafo","Asunafo South","Aponaponso",,,23,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+769ef25b-423b-4c81-bc16-105b7657745b,"Gurshie Yaw",Male,"Ahafo","Asunafo South","Aponaponso",,,34,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+3f9e239f-e669-4fae-bca5-7279075f986b,"Okae Kofi",Male,"Ahafo","Asunafo South","Aponaponso",,,23,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+f1d6e165-8100-4606-98b6-c6605952dfb8,"Baafi Abraham",Male,"Ahafo","Asunafo South","Abodease",,,21,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+a95618e8-2304-4be0-9c12-de987e2ef80d,"Issahack Ibrahim Adams",Male,"Ahafo","Asunafo South","Abodease",,,23,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+dfc43565-af2f-4e59-94c5-6f92d3dd641f,"Haruna Kussase",Male,"Ahafo","Asunafo South","Abodease",,,30,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+bfae1754-cc35-4e41-80a0-4c301eb0f9de,"Hannah Botwe",Female,"Ahafo","Asunafo South","Abodease",,,23,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+9ef53741-4a8d-4287-8fde-478f3189e84b,"Charles Antwi",Male,"Ahafo","Asunafo South","Abodease",,,20,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+8a5ddeb7-320a-4607-8949-6f3f5158575e,"Kwadwo Poku",Male,"Ahafo","Asunafo South","Abodease",,,21,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+f378256e-08a6-408b-abe2-c8dfbcc7aeb8,"Nimo Kwaku",Male,"Ahafo","Asunafo South","Abodease",,,32,,8,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+419cc79f-45bd-457a-803b-7917328bdc4e,"Amoako Thomas",Male,"Ahafo","Asunafo South","Abodease",,,21,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+0f2f8545-2c56-4157-a007-3fe7289d857e,"Antwi Samuel",Male,"Ahafo","Asunafo South","Abodease",,,27,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+e37f02c2-225c-4533-9b4c-b2c4395ddb0f,"Frimpomaa Gladys",Female,"Ahafo","Asunafo South","Abodease",,,21,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+c1db9938-08bb-4872-89b7-199bfc216b2b,"Atia Solomon",Male,"Ahafo","Asunafo South","Abodease",,,21,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+fa910121-d68e-4559-963c-eae22652d30a,"Kwadwo Abekah",Male,"Ahafo","Asunafo South","Abodease",,,31,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+97bc93cd-3315-49ef-ac7c-631d74a5132a,"Boakye Francis",Male,"Ahafo","Asunafo South","Abodease",,,32,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+89e2d64e-e902-4265-8887-6fb9e50e5107,"Daniel Botwe",Male,"Ahafo","Asunafo South","Abodease",,,28,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+b2c41333-f120-4d09-9d8e-954de08c6d1d,"Ntansah Amma",Female,"Ahafo","Asunafo South","Abodease",,,27,,7,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+6b258109-c61c-4e7d-8623-f3f7f71c273e,"Akwasi Kyere",Male,"Ahafo","Asunafo South","Abodease",,,26,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+285e3224-13bd-4a7a-98f2-a0fcdce009ee,"Kofi Owusu",Male,"Ahafo","Asunafo South","Abodease",,,34,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+228cc8f5-7db5-48bc-b54e-229c70532e7d,"Yeboah Benjamin",Male,"Ahafo","Asunafo South","Abodease",,,33,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+b2448c22-5570-4deb-9451-2a1913932982,"Edward K. Banaso",Male,"Ahafo","Asunafo South","Abodease",,,34,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+7b65a91d-f957-419f-a09b-4acb447aded2,"Takyi Joseph",Male,"Ahafo","Asunafo South","Abodease",,,33,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+5763eec7-8f8a-42f5-8c4f-45d50fe3247b,"Narh Jacob",Male,"Ahafo","Asunafo South","Abodease",,,33,,7,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+9951dc3f-e4f3-4ef3-bfea-3816e6a34364,"Musah Adams",Male,"Ahafo","Asunafo South","Abodease",,,32,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+c1e9b396-f0be-41d2-b26c-eda9870045d1,"Assibil Solomon",Male,"Ahafo","Asunafo South","Abodease",,,21,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+24746586-53f3-4670-ba8b-c70104e21f8c,"Kwame Twumasi",Male,"Ahafo","Asunafo South","Abodease",,,21,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+2775ff2b-e5a7-44c8-a5e5-403004e5fb8c,"Kwaku Laweh",Male,"Ahafo","Asunafo South","Abodease",,,31,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+bdb3c5af-85b0-45a1-83e7-24cc4964ae31,"Ashong Edward",Male,"Ahafo","Asunafo South","Abodease",,,23,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+07ff5c35-8ff7-4a06-9f5c-32166f131a9e,"Badu Samuel",Male,"Ahafo","Asunafo South","Abodease",,,21,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+52c48920-1525-4887-99b9-8da1de869bac,"Amma Korankyewaa",Female,"Ahafo","Asunafo South","Abodease",,,31,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+67a13804-f281-49ad-b66b-b6b69bd92761,"Badu Samuel",Male,"Ahafo","Asunafo South","Abodease",,,23,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+a297f2d1-0447-4bfe-9c43-e6fc9c31e309,"Akwasi Adu Daniel",Male,"Ahafo","Asunafo South","Abodease",,,21,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+6f6bce06-93b7-4dc9-a755-7d18b9b697c6,"Benjamin Addo",Male,"Ahafo","Asunafo South","Abodease",,,35,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+af6c1bb7-7b38-4312-b31f-43b8e5f2555a,"Botwe James",Male,"Ahafo","Asunafo South","Abodease",,,21,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+d208a64d-e569-414e-8568-92c91ecc0534,"Akwasi Barnie",Male,"Ahafo","Asunafo South","Abodease",,,21,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+5d9b9d69-fe9f-4679-b7fa-5bf93ccbc07e,"Boakye Amoa Joseph",Male,"Ahafo","Asunafo South","Abodease",,,23,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+e1d44463-819f-4648-b28c-9f2ae8127f2b,"Akwasi Amankwa",Male,"Ahafo","Asunafo South","Abodease",,,24,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+36333173-300c-4b92-9ac8-0175697d006b,"Nii Kyeiku Botwe",Male,"Ahafo","Asunafo South","Abodease",,,21,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+2a7af70c-4458-4047-a7bc-1e8165f37600,"Ndarh Musa",Male,"Ahafo","Asunafo South","Abodease",,,23,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+1c67f7ad-384d-4f77-b1fc-5b1b71f14213,"Dwoka Paul",Male,"Ahafo","Asunafo South","Abodease",,,23,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+17fdf6bf-cabf-4ec4-a958-075eb432d43b,"Samuel Adom",Male,"Ahafo","Asunafo South","Abodease",,,31,,7,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+c454f5bc-4ae6-4ec6-a6e6-50f7e85b3a6f,"Alfaa Kusase",Male,"Ahafo","Asunafo South","Abodease",,,34,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+ca6b4fa8-3e20-4b8a-98fe-33e8db37d295,"Takyiwaa Vida",Female,"Ahafo","Asunafo South","Abodease",,,34,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+c692a804-4a12-422a-ad26-4a5246f41f3e,"Owusu Sefa Francis",Male,"Ahafo","Asunafo South","Abodease",,,23,,7,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+8f44458b-d429-407d-a38c-bd027965ba4b,"Boateng Patrick",Male,"Ahafo","Asunafo South","Abodease",,,33,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+ed7a627d-f4a6-4100-a833-69c22a84d80f,"Nimomary",Female,"Ahafo","Asunafo South","Abodease",,,34,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+b657a397-7b58-42c9-9677-db9c09570517,"Akua Afriyie",Female,"Ahafo","Asunafo South","Abodease",,,30,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+52ac46fd-4fb0-4924-894a-dde6f7d849b5,"Aniwaa Mary",Female,"Ahafo","Asunafo South","Abodease",,,30,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+f8e95538-f28d-432a-9ac4-20fb730d2f3e,"Opoku Alice",Female,"Ahafo","Asunafo South","Abodease",,,32,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+27d2af70-cc11-4acd-b726-b54168e2c619,"Gyamfuaa Akua",Female,"Ahafo","Asunafo South","Pokuase",,,31,,7,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+97ba9f05-5b9f-40eb-b265-f80a28bcd189,"Adjapong Hagar",Female,"Ahafo","Asunafo South","Pokuase",,,21,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+39bbdec5-6384-4f87-92d7-2ccf8079be4f,"Oppong Kwadwo",Male,"Ahafo","Asunafo South","Pokuase",,,20,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+700bedd3-bb29-4273-bc10-17e23dd67af4,"Wiafe Kofi",Male,"Ahafo","Asunafo South","Pokuase",,,24,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+cfbe1263-509f-4af6-b47b-318503e39351,"Kumah Kwasi",Male,"Ahafo","Asunafo South","Pokuase",,,21,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+99093f54-7e8f-4e06-94f7-22b679da512b,"Asare Bediako",Male,"Ahafo","Asunafo South","Pokuase",,,23,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+5a975631-d976-4858-9c9a-30204fd40b16,"Kwabena Agyei",Male,"Ahafo","Asunafo South","Pokuase",,,20,,7,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+2ba1952b-ef1f-4ec7-b1bd-8a105cd263d8,"Misiamenu B. Kwadwo",Male,"Ahafo","Asunafo South","Pokuase",,,21,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+f20efb21-c59c-4aeb-a41e-de01648e8a15,"Forkuo Evelyn",Female,"Ahafo","Asunafo South","Pokuase",,,20,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+46eedbcc-c021-4fd0-b14a-d116d3240bf8,"Agyen Emmanuel Kwasi",Male,"Ahafo","Asunafo South","Pokuase",,,23,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+f4116134-aa81-4cc5-9a6d-c551e97e4a95,"Yeboah Stephen",Male,"Ahafo","Asunafo South","Pokuase",,,31,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+f8efce73-54d4-49f9-a940-f2e595b7205a,"Armah Kojo",Male,"Ahafo","Asunafo South","Pokuase",,,20,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+4bea1771-2c0a-4344-acc8-621fe1455e41,"Boakye Gilbert",Male,"Ahafo","Asunafo South","Pokuase",,,23,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+1f535bb6-3f51-4b10-b73d-45bb3aa5e774,"Abankwa Kofi",Male,"Ahafo","Asunafo South","Pokuase",,,29,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+bbc71e66-6443-4f32-9fac-3d6c0e6dfde9,"Issifu Seidu",Male,"Ahafo","Asunafo South","Pokuase",,,21,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+33d32926-1bad-4a5c-af43-bb6585efd6d1,"Nantwi Kwame",Male,"Ahafo","Asunafo South","Pokuase",,,23,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+5e08409e-78fd-4085-ad60-578a37b9d04a,"Adabo Kwaku",Male,"Ahafo","Asunafo South","Pokuase",,,24,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+d5b30c43-ae13-42fa-981e-11859c2683ce,"Osei Kwaku",Male,"Ahafo","Asunafo South","Pokuase",,,29,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+f38551a1-5ccd-42ee-8e39-353c347c4e67,"Alhassan Isaka",Male,"Ahafo","Asunafo South","Pokuase",,,23,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+f87dba11-6a6f-4544-98ed-e849482a7951,"Barimah Yaw",Male,"Ahafo","Asunafo South","Pokuase",,,28,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+eb68b591-84ce-4e06-a28b-d04f58ecdfce,"Birago Adwoa",Female,"Ahafo","Asunafo South","Pokuase",,,34,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+4e60fc5c-37fa-421f-a380-60126029daf1,"Kwarteng Kwabena",Male,"Ahafo","Asunafo South","Pokuase",,,26,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+c879f3f4-cf93-46b4-abfc-819998eaeeb3,"Sarfo Kwadwo Thomas",Male,"Ahafo","Asunafo South","Pokuase",,,29,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+8639871d-fbcf-4c82-9e56-2fdf9b3eea89,"Agyeiwaa Afua",Male,"Ahafo","Asunafo South","Pokuase",,,28,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+1a54e99d-a9ab-4590-8edb-f7ad05fd8114,"Nsiah Kwame",Male,"Ahafo","Asunafo South","Pokuase",,,26,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+53f4f272-ab50-4d8a-9b30-601714605230,"Adu Paul",Male,"Ahafo","Asunafo South","Pokuase",,,23,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+db984676-a0a0-4c25-9556-5b5f2e70f223,"Boateng Kofi",Male,"Ahafo","Asunafo South","Pokuase",,,23,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+e7ec21f5-08b6-4c19-8d5c-c59a22c8d290,"Opoku Boakye David",Male,"Ahafo","Asunafo South","Pokuase",,,32,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+3a8f9ac0-fcef-438d-b10f-a69428007a85,"Hene Kofi",Male,"Ahafo","Asunafo South","Pokuase",,,35,,8,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+ac1d6e14-f583-4e3e-9ed1-55e73ccbbb4f,"Bosompem John",Male,"Ahafo","Asunafo South","Pokuase",,,24,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+f184a7fc-11a6-4f2b-8fd2-29c0cefde7cd,"Acheampong Kwaku",Male,"Ahafo","Asunafo South","Pokuase",,,23,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+c14b2f47-3249-4e73-a7aa-d03f958918bd,"Nyame Beatrice",Female,"Ahafo","Asunafo South","Pokuase",,,23,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+3af0af6e-0f19-4ffd-a979-8ffd8d339485,"Owusu Alfred",Male,"Ahafo","Asunafo South","Pokuase",,,34,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+f6bfe2a7-1240-4d24-a454-353b0355e58c,"Dwumfoo Yaw",Male,"Ahafo","Asunafo South","Pokuase",,,23,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+372d8fa4-d362-4810-b286-0415e1ea9ed5,"Okoh Serbeh Edward",Male,"Ahafo","Asunafo South","Pokuase",,,23,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+40fd7cad-744f-405a-9b39-5bc28faaf42d,"Amaning Kwasi",Male,"Ahafo","Asunafo South","Pokuase",,,23,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+78a45059-1c1f-4dc5-8c09-9447d79db5c1,"Nti Kwabena",Male,"Ahafo","Asunafo South","Pokuase",,,34,,7,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+0c11ed33-ddcf-4378-8cef-a02d1d13e4b2,"Asamoah Kwabena Omonoh",Male,"Ahafo","Asunafo South","Pokuase",,,23,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+ab2c5ac8-4a97-4e71-bd3f-501737842734,"Tawiah Kofi",Male,"Ahafo","Asunafo South","Pokuase",,,32,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+2c53c72f-054c-4b4a-a9d2-0cbafff86c31,"Yadeaya Ama",Female,"Ahafo","Asunafo South","Pokuase",,,24,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+9d597a0e-1fae-47c0-a30a-970ee0088330,"Amonua Abena",Female,"Ahafo","Asunafo South","Pokuase",,,23,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+f673d435-e93e-46ca-b3b2-7dfacca260bf,"Owusu Kwabena",Male,"Ahafo","Asunafo South","Pokuase",,,29,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+64a06c48-b0ba-4b9a-b75d-15cd6ffefd09,"Boakye Yaw",Male,"Ahafo","Asunafo South","Pokuase",,,28,,7,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+74a6c40f-e2d0-4f2b-a604-6c6f7539334f,"Yaw Badu Bright",Male,"Ahafo","Asunafo South","Pokuase",,,28,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+9c97878a-37bc-4bd3-8689-15e539320f3a,"Nyarko Priscilla",Female,"Ahafo","Asunafo South","Kaedabi/pokuase",,,25,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+1f7c0a82-5727-46ce-834d-425d3c2a8467,"Kwartng Leticia",Female,"Ahafo","Asunafo South","Kaedabi/pokuase",,,21,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+802e43ff-cb62-417d-bc57-4ad57bb4d78c,"Mensah Vida",Female,"Ahafo","Asunafo South","Kaedabi/pokuase",,,23,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+755c921a-2c30-4966-8b4b-3d00e4eb1d02,"Boakye Esther",Female,"Ahafo","Asunafo South","Kaedabi/pokuase",,,35,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+e5637322-1f87-443e-a0a3-f0eabeb4f05e,"Akosua Badu",Female,"Ahafo","Asunafo South","Kaedabi/pokuase",,,23,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+005be1bb-2772-44c3-a5a3-1638b42b6330,"Kwarteng Frank",Female,"Ahafo","Asunafo South","Kaedabi/pokuase",,,23,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+374f3236-1947-490f-971a-2cbd34934457,"Kwarteng Jones",Male,"Ahafo","Asunafo South","Kaedabi/pokuase",,,24,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+796cd4a2-16e4-4086-bcd8-4a4c2823c17c,"Osei Asibey Mercy",Female,"Ahafo","Asunafo South","Kaedabi/pokuase",,,20,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+0d41a9c2-b26f-4f82-971b-5effb43f11f4,"Osei Asibey Francis",Male,"Ahafo","Asunafo South","Kaedabi/pokuase",,,20,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+bee9a060-32e0-4005-96f2-27b03e021e93,"Osei Asibey Emmanuel",Male,"Ahafo","Asunafo South","Kaedabi/pokuase",,,20,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+74b38376-9fff-480e-95c2-affe26424e64,"Amonua Fransica",Female,"Ahafo","Asunafo South","Kaedabi/pokuase",,,18,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+a75e288a-6799-4e21-80a9-0930eaa4c5ef,"Obeng Janet",Female,"Ahafo","Asunafo South","Kaedabi/pokuase",,,19,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+6dcdc67c-cd7a-4255-beec-8e14d18653e4,"Adabor Martin",Male,"Ahafo","Asunafo South","Kaedabi/pokuase",,,32,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+1bab8bcd-e736-432f-8309-f8af6870dbb4,"Amidu Sulemana",Male,"Ahafo","Asunafo South","Boatengkrom",,,33,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+80a0d787-aa16-4103-be90-148f394a8ac6,"Nkrumah Thomas",Male,"Ahafo","Asunafo South","Boatengkrom",,,23,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+6d371cda-52f0-46eb-9039-7e505f9a66f7,"Mary Korkor",Female,"Ahafo","Asunafo South","Boatengkrom",,,32,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+d960d19e-8bd9-4593-9e47-5c818faa1da2,"Paul Adasi",Male,"Ahafo","Asunafo South","Boatengkrom",,,32,,7,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+a297be9f-5fbe-4957-8f5c-d3db3d481748,"Paul Duut",Male,"Ahafo","Asunafo South","Boatengkrom",,,35,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+3e495d22-5657-4408-ab2c-47d084ae61a0,"Maya Alhassan",Male,"Ahafo","Asunafo South","Boatengkrom",,,31,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+291dac24-8cc2-4c9f-a70e-8d09179c8900,"Mensah Simon",Male,"Ahafo","Asunafo South","Boatengkrom",,,23,,7,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+48a15fea-59f7-45f3-bc45-dea4d939b0ff,"Ataa Anto",Female,"Ahafo","Asunafo South","Boatengkrom",,,21,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+8b95f489-63b0-4855-96c5-c2060b74cd3a,"Thomas Anto",Male,"Ahafo","Asunafo South","Boatengkrom",,,20,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+0d8e205e-22bf-4565-be35-468d2954cc8a,"Fuseini Haruna",Male,"Ahafo","Asunafo South","Boatengkrom",,,25,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+76710080-6126-41c4-b5fe-542888737d3a,"John Bawa",Male,"Ahafo","Asunafo South","Boatengkrom",,,23,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+38e59569-a064-4184-812a-b885155a60e2,"Kwadwo Acheampong",Male,"Ahafo","Asunafo South","Boatengkrom",,,24,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+ffdd19bb-e8b0-4c52-828e-854fe107f952,"Issif Abdulai",Male,"Ahafo","Asunafo South","Boatengkrom",,,21,,7,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+0fbb09ee-957a-4d00-8ed2-20df94bab9d1,"Kofi Mensah",Male,"Ahafo","Asunafo South","Boatengkrom",,,23,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+85f97be4-e6f6-42df-a0bc-8fe3c6fcb906,"Kwame Kuma",Male,"Ahafo","Asunafo South","Boatengkrom",,,22,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+51b6cd91-1b3a-45ca-a8c5-42d64808a382,"Abdulai Morro",Male,"Ahafo","Asunafo South","Boatengkrom",,,21,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+d0851396-1f36-4f87-806a-91ff0c484040,"Ajaratu Abramani",Female,"Ahafo","Asunafo South","Boatengkrom",,,21,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+09d9e7fb-86c3-46c5-bbaa-2ebb4229dd1b,"Magiret Adoma",Female,"Ahafo","Asunafo South","Boatengkrom",,,23,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+2f9b02ee-e5a8-4b04-93e7-b9141a342573,"Assomah Kingsley",Male,"Ahafo","Asunafo South","Boatengkrom",,,21,,7,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+98b215a3-dece-4f48-be16-3d59a85245c6,"Thomas Boe",Male,"Ahafo","Asunafo South","Boatengkrom",,,24,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+62f8cb3a-32b5-45a4-abef-7463f9adf4d9,"Sulemana Seidu",Male,"Ahafo","Asunafo South","Boatengkrom",,,29,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+12c3ad14-8f76-47c0-a0e1-4cc8e701ab22,"Haruna Sulemana",Male,"Ahafo","Asunafo South","Boatengkrom",,,28,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+1f5bccaa-cda4-4632-a77c-226aba3a0847,"Paul Gyamfi",Male,"Ahafo","Asunafo South","Boatengkrom",,,27,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+15137d05-8e08-4fb2-a579-7fc3d2faa874,"Boye Michael",Male,"Ahafo","Asunafo South","Boatengkrom",,,24,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+b1224c5c-5730-456b-ac89-4513ba267c7f,"Issah Kwasi",Male,"Ahafo","Asunafo South","Boatengkrom",,,27,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+58cbaf5f-5bff-4827-ac72-fbb7b3024d15,"Abranani Zamana",Male,"Ahafo","Asunafo South","Boatengkrom",,,25,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+2d30252f-e9c0-4ade-b4cf-29c08dc303c3,"Asoma Anthony",Male,"Ahafo","Asunafo South","Boatengkrom",,,35,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+851a5fe5-56c1-4fc4-80f0-decf7b9ce30e,"Mamudu Mohammed",Male,"Ahafo","Asunafo South","Boatengkrom",,,23,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+d4798845-87ee-4ae8-884d-bad85f07516a,"Kwaku Frank",Male,"Ahafo","Asunafo South","Boatengkrom",,,32,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+20637395-bbe1-4e69-8ef5-75ac2ea38cf4,"Paul Adu Gyamfi",Male,"Ahafo","Asunafo South","Boatengkrom",,,21,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+63fd956f-26c4-45c4-946c-4e6c8a973d49,"Tawiah Besah",Male,"Ahafo","Asunafo South","Boatengkrom",,,21,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+2ffb7c53-ee15-42ab-8fbb-287c21e4b709,"Issaka Yakubu",Male,"Ahafo","Asunafo South","Boatengkrom",,,26,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+8a41c7b8-525c-4745-81b4-111913d4ae5d,"Kwadwo Adjei",Male,"Ahafo","Asunafo South","Boatengkrom",,,24,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+5c6f3c1f-c5f9-4b19-b799-4b5bd4f51473,"Alhassan Fuseini",Male,"Ahafo","Asunafo South","Boatengkrom",,,23,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+f7ac14ca-bcf1-4143-a7ab-1fde7ca0a8cb,"E.k. Adu",Male,"Ahafo","Asunafo South","Boatengkrom",,,24,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+7a7e3280-9510-41cd-8fe4-0418c1efb4f2,"Owusu Samuel",Male,"Ahafo","Asunafo South","Boatengkrom",,,23,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+7709d341-84cf-417b-bcc2-3120f230b880,"Akua Nimo",Female,"Ahafo","Asunafo South","Boatengkrom",,,23,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+6fd9222e-14d6-4b6b-a437-7e2ce8739908,"Kakari Mohammed Kofi",Male,"Ahafo","Asunafo South","Boatengkrom",,,21,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+cb587ab4-3eb1-46f1-be0c-9371510bce6c,"Azuma Alhassan",Male,"Ahafo","Asunafo South","Boatengkrom",,,32,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+316a06c2-b798-4835-a4ae-4c7d40ae6e86,"Abukari Abene",Male,"Ahafo","Asunafo South","Boatengkrom",,,35,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+1e22e3eb-a7da-44b4-afaa-ea2a460f027c,"Sumaila Ayama",Male,"Ahafo","Asunafo South","Boatengkrom",,,31,,8,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+de1fadb0-943b-4ede-81cf-0c85e10b6560,"Kofi Nyame",Male,"Ahafo","Asunafo South","Boatengkrom",,,32,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+3b51f5b6-4f68-4580-94ca-4b5b81d3b8a3,"Issifu Mahama",Male,"Ahafo","Asunafo South","Boatengkrom",,,21,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+4e306534-be50-45c1-920a-3dcf7b6feb05,"Tamimu Abubakari",Male,"Ahafo","Asunafo South","Boatengkrom",,,23,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+d4a6acaf-7ff3-497e-b0d9-94ec9181145b,"Abdul Ganiun",Male,"Ahafo","Asunafo South","Boatengkrom",,,21,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+ee867605-2a7e-4e9e-9c27-acdba9d684bc,"Martha Sefa",Female,"Ahafo","Asunafo South","Boatengkrom",,,32,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+2ea44cd3-7a7a-4f86-8053-46ad369551a2,"Yaa Serwaa",Female,"Ahafo","Asunafo South","Boatengkrom",,,21,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+74a76d36-d9c8-498a-9552-1dbc5a56fb3f,"Alice Azuma",Female,"Ahafo","Asunafo South","Boatengkrom",,,23,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+f00036f0-363e-4c58-abd5-680782bb173d,"Alhassan Sulemana",Male,"Ahafo","Asunafo South","Boatengkrom",,,21,,7,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+5f6b8d99-349e-4998-8457-55b2e72de370,"Ibrahim Sulemana",Male,"Ahafo","Asunafo South","Boatengkrom",,,32,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+b619e538-b2ae-4140-b3ad-72b9abea0b6e,"Ibrahim Zamana",Male,"Ahafo","Asunafo South","Boatengkrom",,,24,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+2ce98a32-4240-45d1-bfa6-5cbdaade77ca,"Soti Robert",Male,"Ahafo","Asunafo South","Boatengkrom",,,23,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+d6d6c418-3d2f-498f-8d74-101164f6ca81,"Nartey Samuel",Male,"Ahafo","Asunafo South","Boatengkrom",,,21,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+91ca4a53-42bb-4545-9dd8-36cddd26f0f3,"Teye Peter",Male,"Ahafo","Asunafo South","Boatengkrom",,,23,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+127d3e83-300a-4e56-9568-5fd3dce8d5ff,"Sefa Samuel",Male,"Ahafo","Asunafo South","Boatengkrom",,,21,,7,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+f309d3f0-ff5d-46d0-8c2e-8eb5d98d5199,"Kwaku Frank",Male,"Ahafo","Asunafo South","Boatengkrom",,,32,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+d68ca146-b795-4d0a-b67a-d7844ae4bd45,"Owusu Peter",Male,"Ahafo","Asunafo South","Boatengkrom",,,23,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+ed0390e2-12ee-4621-b83c-e0a9b6a7d537,"Donkor Rose",Female,"Ahafo","Asunafo South","Boatengkrom",,,34,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+c45f5f9a-d466-4358-8160-5ccaf3156b72,"Akosua Afra",Female,"Ahafo","Asunafo South","Boatengkrom",,,34,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+031841f2-cdc3-404b-8279-de5fd4b4053a,"Abena Ode",Female,"Ahafo","Asunafo South","Boatengkrom",,,31,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+0a736a6f-631b-4327-8e5d-987cdf8ccd8d,"Ibrahim",Male,"Ahafo","Asunafo South","Boatengkrom",,,27,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+63258756-326b-4cba-ade8-6ed400bd3d97,"Aboagye Agather",Female,"Ahafo","Asunafo South","Boatengkrom",,,22,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+0e0abc07-c1cb-4dc1-a7e8-def20ea1aef7,"Kofi Asare",Male,"Ahafo","Asunafo South","Boatengkrom",,,26,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+410101d2-058b-40be-bdbb-014977fe741d,"Adwoa Gyamfuwaa",Female,"Ahafo","Asunafo South","Boatengkrom",,,24,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+f8daf45f-f491-4aeb-9084-2830ea5bcf37,"Adwoa Magaret",Female,"Ahafo","Asunafo South","Boatengkrom",,,27,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+60dec3c3-8346-4275-8912-3f55d8c183ca,"Adesi Paul",Male,"Ahafo","Asunafo South","Boatengkrom",,,21,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+a94de565-4376-4c2e-9396-2ca4c93fcfcf,"Kwaku Albert",Male,"Ahafo","Asunafo South","Boatengkrom",,,21,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+d81c5433-e396-4e2a-a7da-932e03f65ec3,"John Okyere",Male,"Ahafo","Asunafo South","N/nyamebekyere",,,31,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+4d3b2e71-6d5b-4ada-b222-6a1c87232b7a,"Kofi Owusu",Male,"Ahafo","Asunafo South","N/nyamebekyere",,,32,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+cac9e816-b06b-4208-bf28-86d425fad895,"Afia Fosuaa",Female,"Ahafo","Asunafo South","N/nyamebekyere",,,28,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+16e11d4a-d686-4675-8ba0-b0195653fdfe,"Malam Salifu Mohammed",Male,"Ahafo","Asunafo South","N/nyamebekyere",,,27,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+eec3b9a8-45dd-4ae3-9a59-b3c76cfa42af,"Anthony Manu",Male,"Ahafo","Asunafo South","N/nyamebekyere",,,26,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+0750fdc9-1427-42e0-be57-2a428e07372d,"Mensah Anthony",Male,"Ahafo","Asunafo South","N/nyamebekyere",,,32,,7,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+890bd319-4c34-42ca-bb61-828410faacf1,"Boadu Bright",Male,"Ahafo","Asunafo South","N/nyamebekyere",,,20,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+8b9bb50b-2ded-4e17-8bed-4f7afd856cbb,"Kwarteng Kwame",Male,"Ahafo","Asunafo South","N/nyamebekyere",,,21,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+7eaeb962-650a-4812-a200-402b68b0ce5e,"Owusu Simon",Male,"Ahafo","Asunafo South","N/nyamebekyere",,,21,,7,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+f335f3e5-1c05-4d46-8b1d-0e3cf0616f56,"Acheampong Kwaku Joseph",Male,"Ahafo","Asunafo South","N/nyamebekyere",,,20,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+3615d55d-b373-41a5-906f-0e13660d4ea0,"Mensah Kojo",Male,"Ahafo","Asunafo South","N/nyamebekyere",,,21,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+dbff9b4f-4301-4b14-89cf-f0eba998f40b,"Kwasi Owusu",Male,"Ahafo","Asunafo South","N/nyamebekyere",,,21,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+bac163c8-b283-43aa-908b-4a8d15a857e1,"Iddirisu Ibrahim",Male,"Ahafo","Asunafo South","N/nyamebekyere",,,23,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+8a503882-6e91-4bdc-aa8b-1eb7a16d742b,"Kwarteng Isaac",Male,"Ahafo","Asunafo South","N/nyamebekyere",,,21,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+1182c157-897e-4c49-ab37-d545a7728e65,"Kojo Adu",Male,"Ahafo","Asunafo South","N/nyamebekyere",,,29,,7,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+e2485d03-1073-4db9-ace7-adc463e9f58f,"Malam Yakubu Mohammed",Male,"Ahafo","Asunafo South","N/nyamebekyere",,,20,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+deebfe34-e8bf-4e53-a2b6-df7e9bb96f1a,"Akua Afriyie",Female,"Ahafo","Asunafo South","N/nyamebekyere",,,23,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+0421d3ef-ab95-477d-a7b5-b1d28ca7b50b,"Mary Serwaah",Female,"Ahafo","Asunafo South","N/nyamebekyere",,,23,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+9e46c24e-c10c-4fb9-9405-6d81caffea85,"Bronya Kwaku",Male,"Ahafo","Asunafo South","N/nyamebekyere",,,25,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+8e0af11a-ed13-4d71-8124-4bd990bc5e11,"Bonsu Osei",Male,"Ahafo","Asunafo South","N/nyamebekyere",,,25,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+5cf2b7b4-0188-467b-bfe4-e4029af652a8,"Afua Serwaah",Female,"Ahafo","Asunafo South","N/nyamebekyere",,,23,,7,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+808a2ada-44c5-4030-8e5d-ac5494b19294,"Kwaku Owusu",Male,"Ahafo","Asunafo South","N/nyamebekyere",,,22,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+0f6c3e12-3b20-4720-b27b-47bbf89d994f,"Kyereme Hayford",Male,"Ahafo","Asunafo South","N/nyamebekyere",,,21,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+44c34b7c-bd17-41f1-9ce3-2a1394b6a35a,"Abenaa Fakyiwaa",Female,"Ahafo","Asunafo South","N/nyamebekyere",,,20,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+87cdfd00-7d33-4986-8949-a407a996f7fc,"Adjoa Donkor",Female,"Ahafo","Asunafo South","N/nyamebekyere",,,24,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+63eb89ff-3483-4e1f-b611-f60b317dc0a0,"Acheampong Francis",Male,"Ahafo","Asunafo South","N/nyamebekyere",,,23,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+0cef6935-45b3-4153-b6a9-5a12cdad6ee8,"Akua Fokuo",Female,"Ahafo","Asunafo South","N/nyamebekyere",,,25,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+1bb395b8-98fa-4d3c-8465-3c20db626128,"Atta Kwasi",Male,"Ahafo","Asunafo South","N/nyamebekyere",,,23,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+e2dfef08-82ae-4a61-be62-be142d681cfb,"Osei Kwabena",Male,"Ahafo","Asunafo South","N/nyamebekyere",,,25,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+f2b825c9-9e37-42cd-9a4b-034a31269b0a,"Kwasi Addai",Male,"Ahafo","Asunafo South","N/nyamebekyere",,,23,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+876cec6b-14a7-49cd-b037-a7321ffc81fc,"Appiah Kwaku David",Male,"Ahafo","Asunafo South","N/nyamebekyere",,,24,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+a7ec1a3a-60d7-44b8-b2ce-7438fa25c3c9,"Akua Foaah",Female,"Ahafo","Asunafo South","N/nyamebekyere",,,26,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+0a6acdc8-92e1-48cc-b8b2-7d86af73f6f3,"Akwasi Ampong Francis",Male,"Ahafo","Asunafo South","N/nyamebekyere",,,24,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+891772a7-98b1-4b6d-a099-3ffdb73ba52d,"Francis Yeboah",Male,"Ahafo","Asunafo South","Gyaukrom",,,21,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+ec0f1f19-9b58-4d80-aace-93dddb4f7331,"Alex Kyere",Male,"Ahafo","Asunafo South","Gyaukrom",,,32,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+c30ea7dd-a410-4145-b919-e395a5988e04,"I.k. Obeng",Male,"Ahafo","Asunafo South","Gyaukrom",,,31,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+dd84352e-2d0d-4447-910a-e4c33316defc,"Nketia Peter",Male,"Ahafo","Asunafo South","Gyaukrom",,,21,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+8d113a35-6704-4ca7-9b80-7a5021fd1905,"Abena Ajubi",Female,"Ahafo","Asunafo South","Gyaukrom",,,23,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+e98c984c-4d37-4acb-ab85-64ac20e6038c,"Agyeiwaa Adwoa",Female,"Ahafo","Asunafo South","Gyaukrom",,,21,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+0ff6c7ee-9fcc-4d35-a258-8e6283e1c17a,"Debora Amponsah",Female,"Ahafo","Asunafo South","Gyaukrom",,,23,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+c8ffbf57-eb38-4391-95dd-b12bfa2d8ab1,"Obeng Manu Gyamfi",Male,"Ahafo","Asunafo South","Gyaukrom",,,22,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+2b724a37-d063-4c59-96ba-fd6dc1c4c28d,"Sieh Kwasi Peter",Male,"Ahafo","Asunafo South","Gyaukrom",,,32,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+7a39fe6a-eb3c-41d1-8194-b16306e8307f,"Darko Emmanuel",Male,"Ahafo","Asunafo South","Gyaukrom",,,35,,8,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+fa9ea215-46d7-45ea-9205-2cc12d8e2245,"Yaa Nkrumah",Female,"Ahafo","Asunafo South","Gyaukrom",,,31,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+1f3a4f15-b817-482d-a08d-fc78a38495bf,"Philip Aboagre",Male,"Ahafo","Asunafo South","Gyaukrom",,,31,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+04fb09b8-43e3-4a3c-a884-8b2460e2ada9,"Kwasi Wuroh",Male,"Ahafo","Asunafo South","Gyaukrom",,,31,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+f8951e1b-d36f-4202-9658-f78ee63fcf64,"Master Donkor",Male,"Ahafo","Asunafo South","Gyaukrom",,,31,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+572cf2f6-6be7-4010-8072-edba216417af,"Nana Okyere",Male,"Ahafo","Asunafo South","Gyaukrom",,,31,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+10d505e3-b7a5-4054-9724-8c2d6ca710e2,"Anasi Nsoh",Male,"Ahafo","Asunafo South","Gyaukrom",,,31,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+675e0a30-5ddd-4e7a-941e-36397b86bf90,"Yaw Amponsah",Male,"Ahafo","Asunafo South","Gyaukrom",,,31,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+8d1ebdb7-ec7a-4816-8e10-1f5f666022c0,"Kofi Yeboah",Male,"Ahafo","Asunafo South","Gyaukrom",,,31,,7,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+7162306e-0a8a-42fe-96d4-420f92262d84,"Abuu Yeboah",Male,"Ahafo","Asunafo South","Gyaukrom",,,31,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+5229c3b6-a206-4403-ba19-8acdea423a82,"Yaw Mensah",Male,"Ahafo","Asunafo South","Gyaukrom",,,31,,6,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+605078ea-8a3e-41b4-8a7b-12358925e2ee,"Nana Mensah",Male,"Ahafo","Asunafo South","Gyaukrom",,,31,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+b648931a-1584-4c6f-a41a-02198ed9b931,"Abena Kwabena",Female,"Ahafo","Asunafo South","Gyaukrom",,,31,,4,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+b593ea1d-1223-4817-b58b-07b685d333a9,"Anthony Kwaku",Male,"Ahafo","Asunafo South","Gyaukrom",,,31,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+05f59a56-2bbc-41c5-a6a9-3f63b2a2b007,"Obeng Samuel",Male,"Ahafo","Asunafo South","Gyaukrom",,,31,,7,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+a9aadf6f-8ccd-498d-8adf-8b4d5757171e,"Kwasi Adieh",Male,"Ahafo","Asunafo South","Gyaukrom",,,32,,5,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.201Z
+196b8996-5a35-4fa5-89e4-7443660e482f,"Amma Serwaah",Female,"Ahafo","Asunafo South","Gyaukrom",,,35,,3,[],Active,2026-02-21T21:43:26.201Z,false,2026-02-21T21:43:26.201Z,2026-02-21T21:43:26.202Z
+0cdb2b73-ba08-4109-8433-88ee42d651b7,"Kwadwo Odwaah",Male,"Ahafo","Asunafo South","Gyaukrom",,,32,,4,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+c848d927-742b-41f1-bcc9-91ec15c4f1be,"Ruth Awinah",Female,"Ahafo","Asunafo South","Gyaukrom",,,32,,4,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+c2cafa71-4595-4db3-a37e-abf641a0939d,"Kwabena Siakah",Male,"Ahafo","Asunafo South","Gyaukrom",,,34,,5,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+ee1237ae-80a0-4ec3-9bd9-a76b7dfdbd82,"Kwaku Boateng",Male,"Ahafo","Asunafo South","Gyaukrom",,,33,,6,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+902b3fbd-cde4-4ac8-b305-5410353eddaf,"Kwasi Dumaah",Male,"Ahafo","Asunafo South","Gyaukrom",,,32,,3,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+c10bbac8-6365-4909-aa15-d2e42636abb9,"Sampson Kulibila",Male,"Ahafo","Asunafo South","Gyaukrom",,,23,,4,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+53b9f2b3-c0b9-4b79-abc9-5449877ef1db,"Adwoa Anane",Female,"Ahafo","Asunafo South","Gyaukrom",,,34,,5,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+08dbe333-fa9b-49c8-bee0-52870ba91699,"Esther Abena",Female,"Ahafo","Asunafo South","Gyaukrom",,,23,,5,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+d9f98e1b-86f5-460b-9f61-60c224164373,"Mercy Tueeh",Female,"Ahafo","Asunafo South","Gyaukrom",,,21,,6,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+185c4733-6dcb-4787-a490-3785c88319bd,"Stephen Abina",Male,"Ahafo","Asunafo South","Gyaukrom",,,23,,5,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+fe4b44f6-e00e-4d55-ba7f-6ac3ec1dc890,"Yaa Serwaa",Female,"Ahafo","Asunafo South","Gyaukrom",,,23,,5,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+5781c4aa-6ed3-4658-be4b-ee014e8fd378,"Paul Ayaba",Male,"Ahafo","Asunafo South","Gyaukrom",,,25,,5,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+0db24746-ecbb-4862-a177-80b70872472c,"Issah Alale",Male,"Ahafo","Asunafo South","Gyaukrom",,,24,,6,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+c2bfd59a-f2b2-4934-baec-c111db55d7ce,"Amma Benne",Female,"Ahafo","Asunafo South","Gyaukrom",,,23,,4,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+377bc4e4-7e32-411d-90f2-f582e349f688,"Mary Afriyie",Female,"Ahafo","Asunafo South","Gyaukrom",,,22,,4,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+368d9995-7557-4169-acde-dee51218f13c,"Kwasi Omaah",Male,"Ahafo","Asunafo South","Gyaukrom",,,21,,7,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+885fe9b7-9fb9-4176-9299-babcd4cca9cb,"Malam Tahidu",Male,"Ahafo","Asunafo South","Gyaukrom",,,23,,6,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+49729d57-0894-48ba-9791-46f292254956,"Kwabena Nkrumah",Male,"Ahafo","Asunafo South","Gyaukrom",,,21,,6,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+17209a77-f01f-4cf2-b35c-d8141d3b1c0b,"Eric Adombila",Male,"Ahafo","Asunafo South","Gyaukrom",,,23,,7,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+b1b6cf0e-e293-45aa-9f38-d83332ce571d,"Afua Nsiah",Female,"Ahafo","Asunafo South","Gyaukrom",,,27,,6,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+eccb9027-9105-40ae-a88c-8d9c166b1136,"Taich Issac",Male,"Ahafo","Asunafo South","Gyaukrom",,,25,,4,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+9e1bc077-9d03-4de8-9d96-6298a839720f,"Alex Yeriyap",Male,"Ahafo","Asunafo South","Gyaukrom",,,24,,3,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+9a4cbcf7-fd11-49b7-9a8b-c299aba44f2d,"Mohammed Salifu",Male,"Ahafo","Asunafo South","Gyaukrom",,,23,,4,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+5832da6e-35a7-415b-9e8c-66684b1a8b0f,"Kwame Sulley",Male,"Ahafo","Asunafo South","Gyaukrom",,,21,,3,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+d690be53-4f8d-4cba-bfdc-d27ed319254b,"Francis Awinih",Male,"Ahafo","Asunafo South","Gyaukrom",,,21,,7,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+7525cf66-a68d-40f0-bfc4-aaf2bc311fb2,"Dramani Hiliduh",Male,"Ahafo","Asunafo South","Gyaukrom",,,23,,4,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+c9f6caf9-5b2a-4ca3-8060-014139e70a14,"Zakaih Abugree",Male,"Ahafo","Asunafo South","Gyaukrom",,,25,,6,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+c214e87a-b3ad-4fd1-82f0-5d2544e84b14,"Abedi Salifu",Male,"Ahafo","Asunafo South","Gyaukrom",,,24,,5,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+785834b0-ba91-44ff-8c43-f316705b523e,"Paul Fokuo",Male,"Ahafo","Asunafo South","Gyaukrom",,,21,,4,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+2b28c128-c2f7-4cea-843c-3acd8551b10c,"Francics Anih",Male,"Ahafo","Asunafo South","Gyaukrom",,,21,,5,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+228e8517-0b90-4e27-9de0-fd74b78ff442,"Okrah Kwame",Male,"Ahafo","Asunafo South","Gyaukrom",,,23,,7,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+06672a6e-d563-4a26-a952-ec5c8ef195c2,"Mayamah Asumah",Male,"Ahafo","Asunafo South","Gyaukrom",,,34,,5,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+77e3941b-63c7-44c4-a221-43610c235ddb,"Kwasi Adomah",Male,"Ahafo","Asunafo South","Gyaukrom",,,34,,3,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+4414ffca-2fba-472c-8c64-4d326c975650,"Abuu Kwame",Male,"Ahafo","Asunafo South","Gyaukrom",,,31,,4,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+ac4638cd-841c-4143-b0e4-39f60c4287ba,"Razak Agune",Male,"Ahafo","Asunafo South","Gyaukrom",,,21,,4,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+d6673a94-6e94-4130-aee6-0b7b55c8b513,"Kofi Amponsah",Male,"Ahafo","Asunafo South","Gyaukrom",,,32,,5,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+c2162a70-ce50-4d70-af76-06329a7958de,"Issaka Abugbila",Male,"Ahafo","Asunafo South","Gyaukrom",,,21,,6,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+0924f903-c1fc-480d-8966-876ee3064139,"Dawuda Bukari",Male,"Ahafo","Asunafo South","Gyaukrom",,,32,,3,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+4580dc2a-2df2-477b-96a7-38ff321be93b,"Ayieni Adombila",Male,"Ahafo","Asunafo South","Gyaukrom",,,32,,4,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+41936822-3070-48e9-9a62-f9486eee3fe0,"Mamme Adaei",Female,"Ahafo","Asunafo South","Gyaukrom",,,32,,5,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+4a51e69c-d2b6-4154-b65a-97a2f1a8664b,"Kwaku Mensah",Male,"Ahafo","Asunafo South","Gyaukrom",,,24,,5,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+194f2b24-8c59-4961-9708-f2e11ceb2253,"Nana Kwame",Male,"Ahafo","Asunafo South","Gyaukrom",,,24,,6,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+738a95d3-458c-4689-961f-f376e81b5efb,"Yaw Okyere",Male,"Ahafo","Asunafo South","Gyaukrom",,,25,,5,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+bb9b72d6-a5cb-4b5e-8f93-494f96c300f6,"Kwabena Krobo",Male,"Ahafo","Asunafo South","Gyaukrom",,,23,,5,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+654ab847-b95a-4ea7-90ee-72241fcdcad7,"Oppong Kwasi Michael",Male,"Ahafo","Asunafo South","Dormaa",,,24,,5,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+cf161331-1303-436e-a33e-f5379cee8b3b,"Asamoah Solomon",Male,"Ahafo","Asunafo South","Dormaa",,,25,,4,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+2c7973a4-10c1-455f-8b18-a422f5cb0692,"Tutu Fosu Bismark",Male,"Ahafo","Asunafo South","Dormaa",,,26,,5,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+8e67f17a-d38c-4a68-a107-13a262a8f37a,"Ata Kwadwo",Male,"Ahafo","Asunafo South","Dormaa",,,27,,5,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+1666f7ba-59be-4eda-bbb8-1eee95319aa6,"Alhaji Baba",Male,"Ahafo","Asunafo South","Dormaa",,,21,,3,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+53750265-a6bf-4134-a806-eb1a21edcc1a,"Apedo James Stephenson",Male,"Ahafo","Asunafo South","Dormaa",,,31,,4,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+b61d4efe-425d-48c6-90c2-1e6f21cfa9ab,"Musah Ahmed Vasco",Male,"Ahafo","Asunafo South","Dormaa",,,21,,5,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+aee9a4ee-c1fa-4ae3-9b80-3808da4c247b,"Nyakoworwor Vincent",Male,"Ahafo","Asunafo South","Dormaa",,,32,,4,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+d4df758c-59a8-4d4b-aa8a-9076e0bd74c5,"Fosu David",Male,"Ahafo","Asunafo South","Dormaa",,,23,,8,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+3cbb4de3-8487-4620-9a1f-d30af268f657,"Afedo Richard",Male,"Ahafo","Asunafo South","Dormaa",,,34,,5,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+da1c25c2-981d-458d-8b36-1992fa699213,"Kyei John",Male,"Ahafo","Asunafo South","Dormaa",,,23,,4,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+2732412e-32fa-4b45-817d-835913528262,"Salifu Bukari",Male,"Ahafo","Asunafo South","Dormaa",,,23,,4,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+9b0b7879-42f4-441f-bf34-d28d10a8bd00,"Badzi Enoch",Male,"Ahafo","Asunafo South","Dormaa",,,32,,5,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+e150645d-c9fd-4c1f-8f31-36bc667cdbaa,"Akwasi Siaw",Male,"Ahafo","Asunafo South","Dormaa",,,21,,4,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+74da29da-b93b-4caa-a9d1-4cd604e0982e,"Anokye Paul",Male,"Ahafo","Asunafo South","Dormaa",,,23,,5,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+0a021337-c8d1-46de-88be-c52ea62db68d,"Kwaku Agyei",Male,"Ahafo","Asunafo South","Dormaa",,,34,,6,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+aede74f0-2808-4330-a7c9-b717a2778f84,"Quashie Philip",Male,"Ahafo","Asunafo South","Dormaa",,,20,,7,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+8a359dd0-a78a-4087-90f0-73d1ec0211e1,"Badzi Mercy",Female,"Ahafo","Asunafo South","Dormaa",,,29,,4,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+6e3d67fb-4d13-4792-a6c1-2ffb8188f65f,"Ogolo Yaw",Male,"Ahafo","Asunafo South","Dormaa",,,28,,6,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+31bcc952-6928-4fb6-b3b2-7c13b8c7ca28,"Afedo John",Male,"Ahafo","Asunafo South","Dormaa",,,23,,5,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+4dacc28d-947e-4e86-bd11-4d3dc9f774b0,"Owusu Thomas",Male,"Ahafo","Asunafo South","Dormaa",,,21,,4,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+d3d09685-a617-40de-bf8a-6dbd8c650779,"Afedo Benjamin",Male,"Ahafo","Asunafo South","Dormaa",,,32,,5,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+199289d7-4a75-4f9e-b993-599d2b92acc5,"Kwadwo Sekyere",Male,"Ahafo","Asunafo South","Dormaa",,,21,,7,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z
+d4f966db-c9be-4a44-b57a-8e71254c7161,"Apedo Benjamin",Male,"Ahafo","Asunafo South","Dormaa",,,23,,5,[],Active,2026-02-21T21:43:26.202Z,false,2026-02-21T21:43:26.202Z,2026-02-21T21:43:26.202Z

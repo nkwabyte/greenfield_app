@@ -3,7 +3,7 @@
 import { AppShell } from '@/components/app-shell';
 import { PageHeader } from '@/components/page-header';
 import Link from 'next/link';
-import { Users, Map, UsersRound, MapPin } from 'lucide-react';
+import { Users, Map, UsersRound, MapPin, Wrench } from 'lucide-react';
 import { KpiCard } from '@/components/dashboard/kpi-card';
 import { useFarmersCount, useUniqueRegions, useFarmerGroups } from '@/hooks/useData';
 
@@ -38,6 +38,14 @@ export default function FarmersHubPage() {
             href: '/farmers/regions',
             color: 'text-blue-500',
             bgColor: 'bg-blue-500/10',
+        },
+        {
+            title: 'Data Fixes',
+            description: 'Align and fix incorrectly imported regions, districts, societies, and communities in bulk.',
+            icon: Wrench,
+            href: '/farmers/bulk-fixes',
+            color: 'text-amber-500',
+            bgColor: 'bg-amber-500/10',
         }
     ];
 
