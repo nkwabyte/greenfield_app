@@ -515,14 +515,7 @@ export async function updateFarmersCache(): Promise<void> {
  */
 export async function getFarmersByRegion(): Promise<Record<string, number>> {
     const stats = await db.statistics.get('farmer_counts');
-    if (stats && stats.byRegion) {
-        return stats.byRegion;
-    }
-
-    // Fallback if cache isn't built yet
-    await updateFarmersCache();
-    const newStats = await db.statistics.get('farmer_counts');
-    return newStats?.byRegion || {};
+    return stats?.byRegion ?? {};
 }
 
 /**
@@ -530,14 +523,7 @@ export async function getFarmersByRegion(): Promise<Record<string, number>> {
  */
 export async function getFarmersByGender(): Promise<Record<string, number>> {
     const stats = await db.statistics.get('farmer_counts');
-    if (stats && stats.byGender) {
-        return stats.byGender;
-    }
-
-    // Fallback if cache isn't built yet
-    await updateFarmersCache();
-    const newStats = await db.statistics.get('farmer_counts');
-    return newStats?.byGender || {};
+    return stats?.byGender ?? {};
 }
 
 /**
@@ -545,14 +531,7 @@ export async function getFarmersByGender(): Promise<Record<string, number>> {
  */
 export async function getFarmersByFarmSize(): Promise<Record<string, number>> {
     const stats = await db.statistics.get('farmer_counts');
-    if (stats && stats.byFarmSize) {
-        return stats.byFarmSize;
-    }
-
-    // Fallback if cache isn't built yet
-    await updateFarmersCache();
-    const newStats = await db.statistics.get('farmer_counts');
-    return newStats?.byFarmSize || {};
+    return stats?.byFarmSize ?? {};
 }
 
 /**
@@ -560,14 +539,7 @@ export async function getFarmersByFarmSize(): Promise<Record<string, number>> {
  */
 export async function getFarmersByAge(): Promise<Record<string, number>> {
     const stats = await db.statistics.get('farmer_counts');
-    if (stats && stats.byAge) {
-        return stats.byAge;
-    }
-
-    // Fallback if cache isn't built yet
-    await updateFarmersCache();
-    const newStats = await db.statistics.get('farmer_counts');
-    return newStats?.byAge || {};
+    return stats?.byAge ?? {};
 }
 
 /**
@@ -575,14 +547,7 @@ export async function getFarmersByAge(): Promise<Record<string, number>> {
  */
 export async function getFarmersByRegionAndGender(): Promise<Record<string, Record<string, number>>> {
     const stats = await db.statistics.get('farmer_counts');
-    if (stats && stats.byRegionAndGender) {
-        return stats.byRegionAndGender;
-    }
-
-    // Fallback if cache isn't built yet
-    await updateFarmersCache();
-    const newStats = await db.statistics.get('farmer_counts');
-    return newStats?.byRegionAndGender || {};
+    return stats?.byRegionAndGender ?? {};
 }
 
 /**
