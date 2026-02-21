@@ -8,7 +8,7 @@
 
 'use client';
 
-import { useLiveQuery } from 'dexie-react-hooks';
+import { useLiveQuery } from '@/hooks/useLiveQuery';
 import { db } from '@/lib/db/schema';
 import { GHANA_REGIONS, type GhanaRegion } from '@/lib/utils/region-normalizer';
 

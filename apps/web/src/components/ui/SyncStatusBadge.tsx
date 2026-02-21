@@ -9,7 +9,7 @@
 import { useSelector } from 'react-redux';
 import type { RootState } from '@/lib/store/store';
 import { Button } from '@/components/ui/button';
-import { useLiveQuery } from 'dexie-react-hooks';
+import { useLiveQuery } from '@/hooks/useLiveQuery';
 import { db } from '@/lib/db/schema';
 import {
     Tooltip,

@@ -43,7 +43,7 @@ import {
 // NEW: Import filtered hooks
 import { useRegionCounts, useFarmSizeStats, useAgeStats, useRegionGenderStats } from '@/hooks/useData';
 import { db } from '@/lib/db/schema';
-import { useLiveQuery } from 'dexie-react-hooks';
+import { useLiveQuery } from '@/hooks/useLiveQuery';
 import Link from 'next/link';
 
 export default function DashboardPage() {

@@ -4,7 +4,7 @@ import { AppShell } from '@/components/app-shell';
 import { PageHeader } from '@/components/page-header';
 import { ArrowLeft, MapPin, UsersRound, Calendar, Edit, Plus } from 'lucide-react';
 import Link from 'next/link';
-import { useLiveQuery } from 'dexie-react-hooks';
+import { useLiveQuery } from '@/hooks/useLiveQuery';
 import { db } from '@/lib/db/schema';
 import { Button } from '@/components/ui/button';
 import { useParams, useRouter } from 'next/navigation';
