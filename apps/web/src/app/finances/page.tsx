@@ -48,7 +48,7 @@ export default function FinancesPage() {
   // Pagination State
   const [pagination, setPagination] = React.useState({
     pageIndex: 0,
-    pageSize: 10,
+    pageSize: 100,
   });
 
   // Dexie Hook

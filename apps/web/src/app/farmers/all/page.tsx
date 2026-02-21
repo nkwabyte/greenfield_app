@@ -43,7 +43,7 @@ function FarmersContent() {
   // Pagination & Filter State
   const [pagination, setPagination] = React.useState({
     pageIndex: 0, // TanStack table is 0-indexed
-    pageSize: 10,
+    pageSize: 100,
   });
   const [searchQuery, setSearchQuery] = React.useState("");
 
