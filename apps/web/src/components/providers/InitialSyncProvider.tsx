@@ -19,6 +19,7 @@ import {
     syncTransactionsFromSupabase,
 } from '@/lib/db';
 import { db } from '@/lib/db/schema';
+import { updateFarmersCache } from '@/lib/db/services/farmers';
 import { syncService } from '@/lib/db/sync';
 import { connectivityService } from '@/lib/db/connectivity';
 
@@ -104,6 +105,10 @@ export function InitialSyncProvider({ children }: { children: React.ReactNode })
                         // Transactions don't need a header indicator but still sync
                         syncTransactionsFromSupabase().catch(console.error),
                     ]);
+
+                    // Rebuild the aggregated statistics cache now that farmers are synced.
+                    // This must run OUTSIDE of any liveQuery context (here is safe).
+                    updateFarmersCache().catch(console.error);
 
                     localStorage.setItem('lastInitialSync', now.toString());
                 } else {
