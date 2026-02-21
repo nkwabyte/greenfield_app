@@ -100,8 +100,10 @@ export async function getFarmersPaginatedAndFiltered(
 ): Promise<{ data: Farmer[], total: number }> {
     let collection: any = db.farmers.toCollection();
 
-    // 1. Index Selection
-    if (filters.region && filters.region !== 'all') {
+    // 1. Index Selection (Prioritize highly restrictive search)
+    if (filters.search) {
+        collection = db.farmers.where('name').startsWithIgnoreCase(filters.search);
+    } else if (filters.region && filters.region !== 'all') {
         if (filters.district && filters.society) {
             collection = db.farmers.where('[region+district+society]').equals([filters.region, filters.district, filters.society]);
         } else if (filters.district) {
@@ -148,12 +150,8 @@ export async function getFarmersPaginatedAndFiltered(
 
         if (!match) return false;
 
-        if (filters.search) {
-            const searchLower = filters.search.toLowerCase();
-            return f.name.toLowerCase().includes(searchLower) ||
-                (f.contact?.includes(searchLower) ?? false) ||
-                (f.community?.toLowerCase().includes(searchLower) ?? false);
-        }
+        // If search is active, the Dexie index `startsWithIgnoreCase` already filtered the collection by name.
+        // We do not need to do further string matching here, just return true since the name matched.
         return true;
     });
 

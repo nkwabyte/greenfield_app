@@ -14,6 +14,7 @@ import { isAuthenticated } from '@/lib/auth-utils';
 import { purgeSupabaseFarmers } from '@/lib/supabase/services/farmers';
 import { supabase } from '@/lib/supabase/client';
 import { startRealtimeSync, stopRealtimeSync } from './realtime';
+import { syncPendingMedia } from './media-sync';
 
 
 const MAX_RETRY_COUNT = 3;
@@ -152,70 +153,93 @@ class SyncService {
                 await db.syncQueue.where('id').anyOf(chunkIds).modify({ status: 'syncing' });
 
                 try {
+                    const successfulIds: number[] = [];
+                    const failedItems: { item: SyncQueueItem, error: Error }[] = [];
+
                     for (const item of chunk) {
-                        // Handle special purge operation
-                        if (item.operation === 'purge' && item.entityType === 'farmer') {
-                            await purgeSupabaseFarmers();
-                            continue;
-                        }
+                        try {
+                            // Handle special purge operation
+                            if (item.operation === 'purge' && item.entityType === 'farmer') {
+                                await purgeSupabaseFarmers();
+                                successfulIds.push(item.id as number);
+                                continue;
+                            }
 
-                        const tableName = getTableName(item.entityType);
+                            const tableName = getTableName(item.entityType);
 
-                        if (item.operation === 'delete') {
-                            // Soft-delete
-                            const { error } = await supabase
-                                .from(tableName)
-                                .update({ deleted: true })
-                                .eq('id', item.entityId);
-                            if (error) throw error;
+                            if (item.operation === 'delete') {
+                                // Soft-delete
+                                const { error } = await supabase
+                                    .from(tableName)
+                                    .update({ deleted: true })
+                                    .eq('id', item.entityId);
+                                if (error) throw error;
 
-                        } else if (item.operation === 'create') {
-                            const dataToSave = toSnakeCase({ ...item.data });
-                            // Remove undefined values
-                            Object.keys(dataToSave).forEach(k => dataToSave[k] === undefined && delete dataToSave[k]);
-                            // Remove camelCase timestamp fields (Postgres auto-manages these)
-                            delete dataToSave.created_at;
-                            delete dataToSave.updated_at;
+                            } else if (item.operation === 'create') {
+                                const dataToSave = toSnakeCase({ ...item.data });
+                                // Remove undefined values
+                                Object.keys(dataToSave).forEach(k => dataToSave[k] === undefined && delete dataToSave[k]);
+                                // Remove camelCase timestamp fields (Postgres auto-manages these)
+                                delete dataToSave.created_at;
+                                delete dataToSave.updated_at;
 
-                            const { error } = await supabase
-                                .from(tableName)
-                                .upsert({ id: item.entityId, ...dataToSave }, { onConflict: 'id' });
-                            if (error) throw error;
+                                const { error } = await supabase
+                                    .from(tableName)
+                                    .upsert({ id: item.entityId, ...dataToSave }, { onConflict: 'id' });
+                                if (error) throw error;
 
-                        } else if (item.operation === 'update') {
-                            const dataToSave = toSnakeCase({ ...item.data });
-                            Object.keys(dataToSave).forEach(k => dataToSave[k] === undefined && delete dataToSave[k]);
-                            // Don't overwrite server timestamps
-                            delete dataToSave.created_at;
-                            delete dataToSave.updated_at;
+                            } else if (item.operation === 'update') {
+                                const dataToSave = toSnakeCase({ ...item.data });
+                                Object.keys(dataToSave).forEach(k => dataToSave[k] === undefined && delete dataToSave[k]);
+                                // Don't overwrite server timestamps
+                                delete dataToSave.created_at;
+                                delete dataToSave.updated_at;
 
-                            const { error } = await supabase
-                                .from(tableName)
-                                .update(dataToSave)
-                                .eq('id', item.entityId);
-                            if (error) throw error;
+                                const { error } = await supabase
+                                    .from(tableName)
+                                    .update(dataToSave)
+                                    .eq('id', item.entityId);
+                                if (error) throw error;
+                            }
+
+                            successfulIds.push(item.id as number);
+                        } catch (err: any) {
+                            failedItems.push({ item, error: err });
                         }
                     }
 
-                    await db.syncQueue.where('id').anyOf(chunkIds).modify({
-                        synced: 1,
-                        status: 'synced',
-                    });
-
-                    result.itemsProcessed += chunk.length;
-                } catch (error) {
-                    result.itemsFailed += chunk.length;
-
-                    // Increment retry counts for failed batch
-                    for (const item of chunk) {
-                        const newRetryCount = (item.retryCount || 0) + 1;
-                        await db.syncQueue.update(item.id!, {
-                            status: newRetryCount >= MAX_RETRY_COUNT ? 'failed' : 'pending',
-                            retryCount: newRetryCount,
-                            lastError: error instanceof Error ? error.message : 'Unknown error',
+                    // Mark successful items
+                    if (successfulIds.length > 0) {
+                        await db.syncQueue.where('id').anyOf(successfulIds).modify({
+                            synced: 1,
+                            status: 'synced',
                         });
-                        result.errors.push({ item, error: error instanceof Error ? error.message : 'Batch error' });
+                        result.itemsProcessed += successfulIds.length;
                     }
+
+                    // Mark failed items individually
+                    if (failedItems.length > 0) {
+                        result.itemsFailed += failedItems.length;
+
+                        for (const { item, error } of failedItems) {
+                            const newRetryCount = (item.retryCount || 0) + 1;
+                            const isPermanentError = error.message?.includes('violates foreign key constraint') || error.message?.includes('row-level security');
+
+                            // If it's a permanent DB error, don't keep retrying
+                            const status = isPermanentError || newRetryCount >= MAX_RETRY_COUNT ? 'failed' : 'pending';
+
+                            await db.syncQueue.update(item.id!, {
+                                status,
+                                retryCount: isPermanentError ? MAX_RETRY_COUNT : newRetryCount,
+                                lastError: error.message || 'Unknown error',
+                            });
+                            result.errors.push({ item, error: error.message || 'Batch error' });
+                        }
+                    }
+
+                } catch (error) {
+                    // This catch block only triggers if something catastrophic happens to Dexie or IndexedDB
+                    console.error("Catastrophic chunk sync error:", error);
                 }
             }
         } catch (error) {
@@ -241,22 +265,25 @@ class SyncService {
         connectivityService.subscribe((isOnline) => {
             if (isOnline) {
                 this.syncAll().catch(console.error);
+                syncPendingMedia().catch(console.error);
                 startRealtimeSync();
             } else {
                 stopRealtimeSync();
             }
         });
 
-        // Periodic sync
+        // Periodic sync — also flush any pending media
         this.syncInterval = setInterval(() => {
             if (connectivityService.isOnline() && isAuthenticated()) {
                 this.syncAll().catch(console.error);
+                syncPendingMedia().catch(console.error);
             }
         }, SYNC_INTERVAL);
 
         // Initial sync
         if (connectivityService.isOnline()) {
             this.syncAll().catch(console.error);
+            syncPendingMedia().catch(console.error);
         }
     }
 

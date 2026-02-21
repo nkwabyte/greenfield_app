@@ -9,6 +9,8 @@
 import { useSelector } from 'react-redux';
 import type { RootState } from '@/lib/store/store';
 import { Button } from '@/components/ui/button';
+import { useLiveQuery } from 'dexie-react-hooks';
+import { db } from '@/lib/db/schema';
 import {
     Tooltip,
     TooltipContent,
@@ -31,6 +33,9 @@ export function SyncStatusBadge() {
         (state: RootState) => state.data.sync
     );
     const [isManualSyncing, setIsManualSyncing] = useState(false);
+
+    // Track DLQ (Dead-Letter Queue) count for failed outbound syncs
+    const errorCount = useLiveQuery(() => db.syncQueue.where('status').equals('failed').count(), []) || 0;
 
     // Compute aggregate entity sync state
     const entityEntries = Object.entries(entitySync) as [
@@ -134,6 +139,18 @@ export function SyncStatusBadge() {
                             {tooltipContent}
                         </TooltipContent>
                     </Tooltip>
+                )}
+
+                {/* ── DLQ (Dead-Letter) error count ── */}
+                {errorCount > 0 && (
+                    <span
+                        className="inline-flex items-center rounded-full bg-red-100 text-red-800 dark:bg-red-500/20 dark:text-red-400 px-2.5 py-0.5 text-xs font-medium cursor-help"
+                        title="Some changes failed to sync and require manual attention."
+                    >
+                        <AlertTriangle className="mr-1 h-3 w-3" />
+                        <span className="hidden sm:inline">{errorCount.toLocaleString()} failed</span>
+                        <span className="sm:hidden">{errorCount}</span>
+                    </span>
                 )}
 
                 {/* ── Outbound queue pending count ── */}

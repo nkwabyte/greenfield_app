@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import { UploadCloud, FileSpreadsheet, CheckCircle2, AlertCircle, Loader2 } from 'lucide-react';
-import { parseFarmerGroupsExcel, ParseStats } from '@/lib/excel-parser';
+import { ParseStats } from '@/workers/excel.worker';
 import {
     Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogFooter
 } from '@/components/ui/dialog';
@@ -25,18 +25,42 @@ export function BulkUploadGroups({ onSuccess }: BulkUploadGroupsProps) {
         setIsUploading(true);
         setError(null);
         setStats(null);
-        setProgressMsg('Reading file...');
+        setProgressMsg('Initializing Web Worker...');
 
         try {
-            const result = await parseFarmerGroupsExcel(file, (msg) => {
-                setProgressMsg(msg);
-            });
-            setStats(result);
-            if (onSuccess) onSuccess();
+            const arrayBuffer = await file.arrayBuffer();
+
+            // Instantiate worker
+            const worker = new Worker(new URL('../../workers/excel.worker.ts', import.meta.url));
+
+            worker.onmessage = (event) => {
+                const { type, message, payload } = event.data;
+                if (type === 'progress') {
+                    setProgressMsg(message);
+                } else if (type === 'complete') {
+                    setStats(payload);
+                    setIsUploading(false);
+                    if (onSuccess) onSuccess();
+                    worker.terminate();
+                } else if (type === 'error') {
+                    setError(message);
+                    setIsUploading(false);
+                    worker.terminate();
+                }
+            };
+
+            worker.onerror = (err) => {
+                setError(err.message || 'Worker failed to execute.');
+                setIsUploading(false);
+                worker.terminate();
+            };
+
+            worker.postMessage(arrayBuffer);
+
         } catch (err: any) {
-            setError(err.message || 'Failed to parse Excel file');
-        } finally {
+            setError(err.message || 'Failed to read file buffer before parsing.');
             setIsUploading(false);
+        } finally {
             if (fileInputRef.current) {
                 fileInputRef.current.value = ''; // Reset input
             }
@@ -61,13 +85,19 @@ export function BulkUploadGroups({ onSuccess }: BulkUploadGroupsProps) {
                 variant="outline"
                 onClick={() => fileInputRef.current?.click()}
                 disabled={isUploading}
+                className="relative"
             >
                 {isUploading ? (
-                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    <>
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        <span className="truncate max-w-[120px]">{progressMsg}</span>
+                    </>
                 ) : (
-                    <UploadCloud className="mr-2 h-4 w-4" />
+                    <>
+                        <UploadCloud className="mr-2 h-4 w-4" />
+                        Import from Excel
+                    </>
                 )}
-                {isUploading ? 'Importing...' : 'Import from Excel'}
             </Button>
 
             <Dialog open={!!stats || !!error} onOpenChange={handleClose}>
