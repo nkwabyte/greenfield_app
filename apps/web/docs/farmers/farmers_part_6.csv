@@ -1,0 +1,1001 @@
+id,name,gender,region,district,society,community,contact,age,education_level,farm_size,crops_grown,status,join_date,deleted,created_at,updated_at
+23a10e4b-c969-41aa-8ac1-684dfe16e499,"Alaaba Issifu",Male,"Western","Prestea Huni Valley","Naabakrom",,,35,,,[],Active,2026-02-21T21:43:26.179Z,false,2026-02-21T21:43:26.179Z,2026-02-21T21:43:26.179Z
+b6fece94-d12e-455f-a02e-fcf89e92f786,"Nana Nkrumah",Male,"Western","Prestea Huni Valley","Naabakrom",,,54,,,[],Active,2026-02-21T21:43:26.179Z,false,2026-02-21T21:43:26.179Z,2026-02-21T21:43:26.179Z
+5bc632ae-850e-4e5d-b5ab-fd8f8b3ad072,"Donkor Red",Male,"Western","Prestea Huni Valley","Naabakrom",,,37,,,[],Active,2026-02-21T21:43:26.179Z,false,2026-02-21T21:43:26.179Z,2026-02-21T21:43:26.179Z
+21730035-db3b-4771-886a-f72ee09c4248,"Mamadi Mohammed",Male,"Western","Prestea Huni Valley","Naabakrom",,,34,,,[],Active,2026-02-21T21:43:26.179Z,false,2026-02-21T21:43:26.179Z,2026-02-21T21:43:26.179Z
+429da909-82f2-4c30-b342-f8f360dd657e,"Akudago Fuseini",Male,"Western","Prestea Huni Valley","Naabakrom",,,31,,,[],Active,2026-02-21T21:43:26.179Z,false,2026-02-21T21:43:26.179Z,2026-02-21T21:43:26.179Z
+0d2f172e-b71e-43c8-9677-fc025e90ff7b,"Wanaba Fuseini",Male,"Western","Prestea Huni Valley","Naabakrom",,,38,,,[],Active,2026-02-21T21:43:26.179Z,false,2026-02-21T21:43:26.179Z,2026-02-21T21:43:26.179Z
+2358006e-c9cc-42f6-b21f-459dfaaaf371,"Azungru Kwame",Male,"Western","Prestea Huni Valley","Naabakrom",,,31,,,[],Active,2026-02-21T21:43:26.179Z,false,2026-02-21T21:43:26.179Z,2026-02-21T21:43:26.179Z
+b9760cbd-2db3-48cb-bd06-9f3dc120673b,"Abunkudungo Kojo",Male,"Western","Prestea Huni Valley","Naabakrom",,,31,,,[],Active,2026-02-21T21:43:26.179Z,false,2026-02-21T21:43:26.179Z,2026-02-21T21:43:26.179Z
+db613fa5-f583-4584-87d0-db69fe8b5e20,"Dramani Yakubu",Male,"Western","Prestea Huni Valley","Naabakrom",,,31,,,[],Active,2026-02-21T21:43:26.179Z,false,2026-02-21T21:43:26.179Z,2026-02-21T21:43:26.179Z
+00119e6e-2b45-44c1-b908-2592d1762f54,"Kwame Donkor",Male,"Western","Prestea Huni Valley","Naabakrom",,,31,,,[],Active,2026-02-21T21:43:26.179Z,false,2026-02-21T21:43:26.179Z,2026-02-21T21:43:26.179Z
+a8e2e6b0-db7c-42f9-aa6a-d08ae3b065da,"Mensah Kofi",Male,"Western","Prestea Huni Valley","Naabakrom",,,31,,,[],Active,2026-02-21T21:43:26.179Z,false,2026-02-21T21:43:26.179Z,2026-02-21T21:43:26.179Z
+7a638153-249b-4880-8762-3e7fce96ad1b,"Mbawini Isaac",Male,"Western","Prestea Huni Valley","Naabakrom",,,31,,,[],Active,2026-02-21T21:43:26.179Z,false,2026-02-21T21:43:26.179Z,2026-02-21T21:43:26.179Z
+5b144b71-c19c-4984-8b2b-323ef1482204,"Azumah Kussase",Male,"Western","Prestea Huni Valley","Naabakrom",,,31,,,[],Active,2026-02-21T21:43:26.179Z,false,2026-02-21T21:43:26.179Z,2026-02-21T21:43:26.179Z
+8d1f8cec-ce49-42cc-bf5e-d3b73b4e5646,"Lydia Abunduri",Female,"Western","Prestea Huni Valley","Naabakrom",,,31,,,[],Active,2026-02-21T21:43:26.179Z,false,2026-02-21T21:43:26.179Z,2026-02-21T21:43:26.179Z
+0ba10360-2b93-48fa-814f-975f3cd5f625,"Anas Bawuni",Male,"Western","Prestea Huni Valley","Naabakrom",,,31,,,[],Active,2026-02-21T21:43:26.179Z,false,2026-02-21T21:43:26.179Z,2026-02-21T21:43:26.179Z
+afa7904c-1025-4b5b-8fcc-1cba13a7ee12,"Stephen Opoku",Male,"Western","Prestea Huni Valley","Tabakrom",,,32,,,[],Active,2026-02-21T21:43:26.179Z,false,2026-02-21T21:43:26.179Z,2026-02-21T21:43:26.179Z
+057d6b1e-ed1f-473c-b834-708349b0f8a9,"Kwaku Benneth",Male,"Western","Prestea Huni Valley","Tabakrom",,,35,,,[],Active,2026-02-21T21:43:26.179Z,false,2026-02-21T21:43:26.179Z,2026-02-21T21:43:26.179Z
+926892a4-e2a4-4795-9baf-a80aab2f908a,"George Opoku Koduah",Male,"Western","Prestea Huni Valley","Tabakrom",,,32,,,[],Active,2026-02-21T21:43:26.179Z,false,2026-02-21T21:43:26.179Z,2026-02-21T21:43:26.179Z
+e44ad9ae-ebb6-40b4-93cf-f4b4e38c5eaa,"Adwoa Mensa",Female,"Western","Prestea Huni Valley","Tabakrom",,,32,,,[],Active,2026-02-21T21:43:26.179Z,false,2026-02-21T21:43:26.179Z,2026-02-21T21:43:26.179Z
+7fe1c6f7-31f3-4f63-8484-8db590d354a0,"Atenee Adayel",Male,"Western","Prestea Huni Valley","Tabakrom",,,34,,,[],Active,2026-02-21T21:43:26.179Z,false,2026-02-21T21:43:26.179Z,2026-02-21T21:43:26.179Z
+a808d2bf-0b13-4132-82e3-9e82a4f56f02,"Eliasu Zanu",Male,"Western","Prestea Huni Valley","Tabakrom",,,33,,,[],Active,2026-02-21T21:43:26.179Z,false,2026-02-21T21:43:26.179Z,2026-02-21T21:43:26.179Z
+11113ca1-ca5a-4bc1-b3e6-61a0ac195421,"Asetu Basiru",Female,"Western","Prestea Huni Valley","Tabakrom",,,32,,,[],Active,2026-02-21T21:43:26.179Z,false,2026-02-21T21:43:26.179Z,2026-02-21T21:43:26.179Z
+73a845b7-e0e7-4543-ac6a-3335851f5336,"Akwasi Billa",Male,"Western","Prestea Huni Valley","Tabakrom",,,23,,,[],Active,2026-02-21T21:43:26.179Z,false,2026-02-21T21:43:26.179Z,2026-02-21T21:43:26.179Z
+fcf54db6-904f-40ad-865a-bbb4a61380c5,"Agines Opoku",Female,"Western","Prestea Huni Valley","Tabakrom",,,34,,,[],Active,2026-02-21T21:43:26.179Z,false,2026-02-21T21:43:26.179Z,2026-02-21T21:43:26.179Z
+016f52f4-54b8-4ab1-af16-9e728e9fd869,"Apo Tieneh",Male,"Western","Prestea Huni Valley","Tabakrom",,,23,,,[],Active,2026-02-21T21:43:26.179Z,false,2026-02-21T21:43:26.179Z,2026-02-21T21:43:26.179Z
+86b9c3a8-265f-4ce4-ba2b-db68efa3345c,"Kwame Boamah",Male,"Western","Prestea Huni Valley","Tabakrom",,,21,,,[],Active,2026-02-21T21:43:26.179Z,false,2026-02-21T21:43:26.179Z,2026-02-21T21:43:26.179Z
+66120877-30a2-4a74-a4b6-291a2c697158,"Agya Brimah",Male,"Western","Prestea Huni Valley","Tabakrom",,,23,,,[],Active,2026-02-21T21:43:26.179Z,false,2026-02-21T21:43:26.179Z,2026-02-21T21:43:26.179Z
+aee246f3-d4f0-437c-a5a8-d12a01207403,"Yaw Kwankora",Male,"Western","Prestea Huni Valley","Tabakrom",,,23,,,[],Active,2026-02-21T21:43:26.179Z,false,2026-02-21T21:43:26.179Z,2026-02-21T21:43:26.179Z
+0c661142-6868-4cec-aa7d-a84d893279f4,"Alex Alanga",Male,"Western","Prestea Huni Valley","Tabakrom",,,25,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+8e4edde4-b562-4012-b7ea-12787ec95459,"Nathaniel Atanga",Male,"Western","Prestea Huni Valley","Tabakrom",,,24,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+d2d8a45b-3877-4af7-a5b6-c64ee4b3e7bb,"Joseph Kperenko",Male,"Western","Prestea Huni Valley","Tabakrom",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+03079500-f247-485b-81b9-a49b6eda308f,"Ali Mahamedu",Male,"Western","Prestea Huni Valley","Tabakrom",,,22,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+8bf6fb31-4f96-4a11-9f02-ea051c09ddf7,"Abiba Isifu",Female,"Western","Prestea Huni Valley","Tabakrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+f1a2dc32-8028-443a-9b11-d818ced83049,"Issah Mohammed",Male,"Western","Prestea Huni Valley","Tabakrom",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+4fb24265-0072-4435-926c-99ad20aed2db,"Azara Abudu",Male,"Western","Prestea Huni Valley","Tabakrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+8dc774bb-c732-446b-a518-1ea6e381ae3d,"Abudu Nanga",Male,"Western","Prestea Huni Valley","Tabakrom",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+54ba2499-0054-4f14-93bb-b7fae1a6e589,"Ayuba Adams",Male,"Western","Prestea Huni Valley","Tabakrom",,,27,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+a6c6835a-793f-4942-998d-0812dc10ca8f,"Thomas Opoku",Male,"Western","Prestea Huni Valley","Tabakrom",,,25,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+9881fcce-b614-4ddb-9eb5-7e34a01e1a22,"Morrow Mohammed",Male,"Western","Prestea Huni Valley","Tabakrom",,,24,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+22739bff-d01f-4423-b239-554b4c9bf498,"Halidu Mohammed",Male,"Western","Prestea Huni Valley","Tabakrom",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+55b75cac-5857-442f-91e5-515610edd491,"Isaka Amadu",Male,"Western","Prestea Huni Valley","Tabakrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+946af007-438d-4a54-8bcb-b6cbbe469906,"Isaac Kojo",Male,"Western","Prestea Huni Valley","Tabakrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+06f064dc-52fc-43cf-8082-8f18ada6afdf,"Bashiru Adama",Male,"Western","Prestea Huni Valley","Tabakrom",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+05bcfc56-e27f-471e-936e-5bc6844ffd43,"Kwame Mensah",Male,"Western","Prestea Huni Valley","Tabakrom",,,25,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+147325ca-2898-45cb-948e-da6dc6bb1c1d,"Uncle Kwame",Male,"Western","Prestea Huni Valley","Tabakrom",,,24,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+9de45f04-b5ba-431a-9e5c-ee1738335743,"Daavi Kwaku",Female,"Western","Prestea Huni Valley","Tabakrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+4b9571f3-42d8-4caa-94bc-a0b97be0fd75,"Haruna Bawah",Male,"Western","Prestea Huni Valley","Tabakrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+c52b91b9-5b46-41b5-82dd-bdb9c2026b86,"Haruna Issifu",Male,"Western","Prestea Huni Valley","Tabakrom",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+18a00c4b-3350-402b-a0b3-4b4933726a93,"John Bawah",Male,"Western","Prestea Huni Valley","Tabakrom",,,34,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+e5078612-65e1-473b-a7fa-96c7915b3800,"Bashiru Adama",Male,"Western","Prestea Huni Valley","Tabakrom",,,34,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+49e024a1-eb7d-49e6-99fe-5feb53ecaec3,"Adamah Kombat",Male,"Western","Prestea Huni Valley","Tabakrom",,,31,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+c0b1c9d4-7fa7-4408-8b9e-ab8e6617ad29,"Sumaila Seidu",Male,"Western","Prestea Huni Valley","Tabakrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+fe129304-53bb-4e07-bc8b-915b1f68ed97,"Oluman Yaw",Male,"Western","Prestea Huni Valley","Tabakrom",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+9592d15f-be02-4808-8432-523e2f64baa7,"Sam Emmanuel",Male,"Western","Prestea Huni Valley","Tabakrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+9cf98459-4752-44a8-b01c-1d1fc12dae5a,"Idrisu Kwame",Male,"Western","Prestea Huni Valley","Tabakrom",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+4d1fbc3b-2246-4921-beb7-48d1d199fd67,"Adjei Francis",Male,"Western","Prestea Huni Valley","Tabakrom",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+bf92a1ce-d66e-4861-a133-676e4658ae84,"Mohammed Adam",Male,"Western","Prestea Huni Valley","Tabakrom",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+8279d7c4-ed5b-4ab0-9ae3-5b0b47a894d1,"Edward Asare",Male,"Western","Prestea Huni Valley","Tabakrom",,,24,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+a422002d-26c5-44cc-9224-c07b9af8938d,"Godfred Yeboah",Male,"Western","Prestea Huni Valley","Mahamkrom",,,24,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+5fb40f1a-a17a-4152-a5d8-dbe526fb2aef,"John Yeboah",Male,"Western","Prestea Huni Valley","Mahamkrom",,,25,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+3d695374-3e38-4e44-a899-b4a31e5b0f3a,"Isaac Awua",Male,"Western","Prestea Huni Valley","Mahamkrom",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+4bf03fdc-9533-4596-a0d8-c9e8eb9c4abc,"Sampson Torto",Male,"Western","Prestea Huni Valley","Mahamkrom",,,24,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+c646eba5-b93d-4db8-bbdc-384d50d31416,"Ruth Dankwah",Female,"Western","Prestea Huni Valley","Mahamkrom",,,25,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+296ad2f2-0cad-4b75-ae2f-dca3da7d2d0f,"Alamisi Asoor",Male,"Western","Prestea Huni Valley","Mahamkrom",,,26,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+7100bb47-a903-498b-99ae-cf1aebdf3b92,"Alex Asare",Male,"Western","Prestea Huni Valley","Mahamkrom",,,27,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+609fdc91-cebe-48d1-a5b2-120b7ac7b1a2,"Seth Kofie",Male,"Western","Prestea Huni Valley","Mahamkrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+aa57b4e5-ec70-4493-8944-c12080c6d53b,"Mary Awindago",Female,"Western","Prestea Huni Valley","Mahamkrom",,,31,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+12c017c0-49c3-4531-9d0a-487b2deb0cb6,"Asare Kwame",Male,"Western","Prestea Huni Valley","Mahamkrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+81b2b877-c650-43fc-bc2c-0f819246340d,"Samuel Asare",Male,"Western","Prestea Huni Valley","Mahamkrom",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+4b393c38-9eb4-422f-94a6-8f3ac273e7e0,"Ofori Mante",Male,"Western","Prestea Huni Valley","Mahamkrom",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+630f7684-b814-48e8-8fda-bc7e69f8a80a,"Gyamde Sanne",Male,"Western","Prestea Huni Valley","Mahamkrom",,,34,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+856a8275-91c6-446f-a6ed-2b4d66eab7f6,"Kennedy Apaw",Male,"Western","Prestea Huni Valley","Mahamkrom",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+302b1c6b-67dc-4d09-8d09-de3a54a157db,"Kenneth Yeboah",Male,"Western","Prestea Huni Valley","Mahamkrom",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+63512e35-08cc-487b-999a-da0d282393e2,"Daniel Klutse",Male,"Western","Prestea Huni Valley","Mahamkrom",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+beb5cfa3-df61-4918-a251-44f83481bf92,"Ibrahim Barika",Male,"Western","Prestea Huni Valley","Mahamkrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+9b1c1158-ddf7-4e37-9aa5-8b4609230d02,"Samuel Gyasi",Male,"Western","Prestea Huni Valley","Mahamkrom",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+4cfea2ef-9d10-40c3-a0e5-b93e45b1fd24,"Kwaku Amankwaa",Male,"Western","Prestea Huni Valley","Mahamkrom",,,34,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+8b73a223-6f54-45e7-b49c-d07663b13cf5,"Samuel Oppong",Male,"Western","Prestea Huni Valley","Mahamkrom",,,18,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+51e8f6e8-872f-4212-b71b-8c40d46a6497,"Agya C. K",Male,"Western","Prestea Huni Valley","Mahamkrom",,,29,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+ab95bbb1-88bf-4bfc-9709-d83613eb12de,"Peter Winfe",Male,"Western","Prestea Huni Valley","Mahamkrom",,,28,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+79d800dc-a935-436a-b941-d3878daf9010,"Mary Acheampomaa",Female,"Western","Prestea Huni Valley","Mahamkrom",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+4bbbeccb-13d0-4c0d-a9e2-e123e423357e,"Adwoa Dufie",Female,"Western","Prestea Huni Valley","Mahamkrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+dacbff72-ea70-4210-870d-ba25c54d03d4,"Kofi Emmanuel",Male,"Western","Prestea Huni Valley","Mahamkrom",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+cf399185-1347-4640-9d18-40c46fc0b3a8,"Eliasu Mohammed",Male,"Western","Prestea Huni Valley","Mahamkrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+586190cb-643d-49de-9b8e-af67c4b56dc1,"Kwaku Asante",Male,"Western","Prestea Huni Valley","Mahamkrom",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+79ea68f0-237d-4c15-a89d-0e667e91e960,"Kwaku Afriyie",Male,"Western","Prestea Huni Valley","Mahamkrom",,,34,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+2e0d453c-0de5-4843-a4a1-5d2bdf518a99,"Gabra Dankati",Male,"Western","Prestea Huni Valley","Mahamkrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+ef087f10-20de-4f8f-a15d-775a28749e76,"Kwaku David",Male,"Western","Prestea Huni Valley","Mahamkrom",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+18f5e021-2844-450f-ac82-ec316b9b508e,"Musah Naaba",Male,"Western","Prestea Huni Valley","Mahamkrom",,,35,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+9b538a47-752f-47a3-932b-f97a34df83f3,"Morrow Kusaase",Male,"Western","Prestea Huni Valley","Mahamkrom",,,31,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+dec4c2f3-04a5-41c6-8cd3-0d34080b4c4a,"Kwame Appiah",Male,"Western","Prestea Huni Valley","Mahamkrom",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+44f632ee-6d69-4d2c-8c64-d17fad4a8004,"Owusu Yeboah",Male,"Western","Prestea Huni Valley","Mahamkrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+e047d88a-c6f3-46e8-b187-6492d756aef8,"Agya Adongo",Male,"Western","Prestea Huni Valley","Mahamkrom",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+33a189cc-c974-4f56-b328-cd61f2a32b71,"Akwasi Akwaboa",Male,"Western","Prestea Huni Valley","Mahamkrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+72676078-e004-4c2d-971e-64353d935f84,"Akua Akyaa",Female,"Western","Prestea Huni Valley","Mahamkrom",,,31,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+fec8bccc-1887-44cf-bbbf-25abed47b80a,"Seidu Abuu",Male,"Western","Prestea Huni Valley","Mahamkrom",,,31,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+6355ef17-1180-428b-ac78-4c7190bf133d,"Amadu Abuu",Male,"Western","Prestea Huni Valley","Mahamkrom",,,31,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+f7c9205f-aa21-4423-b12b-dc9c677b91a5,"Agya Efa",Male,"Western","Prestea Huni Valley","Mahamkrom",,,35,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+454aae7e-a642-4ccc-ac95-b11f39f129fe,"Akua Afra",Female,"Western","Prestea Huni Valley","Mahamkrom",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+5d53c70b-809c-4e82-acbf-8710a18b32ee,"Abena Boakyewaa",Female,"Western","Prestea Huni Valley","Mahamkrom",,,35,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+8594225a-6e54-46a8-80d1-640d58be7535,"Comfort Frimpong",Female,"Western","Prestea Huni Valley","Mahamkrom",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+db851121-858d-48a2-a51a-8083a6b9ee7a,"Yaa Beatrice",Female,"Western","Prestea Huni Valley","Mahamkrom",,,35,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+bbcefc99-e94b-4593-8a7a-da6496301db9,"Akwasi Frank",Male,"Western","Prestea Huni Valley","Mahamkrom",,,31,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+45279b7b-1102-4b14-ac3d-2c508b7a9f6a,"Kwame Boakye",Male,"Western","Prestea Huni Valley","Mahamkrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+a5809f13-dadf-4ce5-ada5-639649cad881,"Kwadwo Brebo",Male,"Western","Prestea Huni Valley","Mahamkrom",,,24,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+ba662f6d-6427-4193-a12b-2a74094c546e,"Asum Emmanuel",Male,"Western","Prestea Huni Valley","Mahamkrom",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+9c79b495-4927-4e0e-8090-0f181e0e4e0b,"Anenbo Kwasi",Male,"Western","Prestea Huni Valley","Koo-kyeikrom",,,35,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+d9693cc4-7e84-4613-af24-30dd9057a957,"Awinzuri Abubakari",Male,"Western","Prestea Huni Valley","Koo-kyeikrom",,,26,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+e48dde03-b7cf-4d9f-989a-7e741504c296,"Mbawin Monhameh",Male,"Western","Prestea Huni Valley","Koo-kyeikrom",,,35,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+2c89f6f7-a764-4b2c-952b-8caeb26f558f,"Simon Anenbo",Male,"Western","Prestea Huni Valley","Koo-kyeikrom",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+98f7f71b-1b08-4c61-ab9b-b5d434765d18,"Azure Sulemani",Male,"Western","Prestea Huni Valley","Koo-kyeikrom",,,35,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+23eaf633-9a84-494c-961b-0bee5bfa6010,"Asaan Abubila",Male,"Western","Prestea Huni Valley","Koo-kyeikrom",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+6edd1017-b57a-436d-96c5-3af06fcc4409,"Kofi John",Male,"Western","Prestea Huni Valley","Koo-kyeikrom",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+058e0d4a-0935-4959-8af1-c6a2d577ec8a,"Ageman Nawumie",Male,"Western","Prestea Huni Valley","Koo-kyeikrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+819a1936-1eff-496c-8da6-3dc418b5bb3d,"Alabila Paribu",Male,"Western","Prestea Huni Valley","Koo-kyeikrom",,,34,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+775c15da-737b-4671-b629-e26746f00f8c,"Lydia Anenbo",Female,"Western","Prestea Huni Valley","Koo-kyeikrom",,,33,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+083cdb82-98a4-415a-96e1-b24656a65ceb,"Been Ayumah",Male,"Western","Prestea Huni Valley","Koo-kyeikrom",,,24,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+020a203c-f234-4b58-b4b3-e55a983dc642,"Kwame Osei",Male,"Western","Prestea Huni Valley","Koo-kyeikrom",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+11a9cbe3-43b2-40ea-a4b6-d716804535cf,"Boudi Ama",Female,"Western","Prestea Huni Valley","Koo-kyeikrom",,,26,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+3b2bb770-6192-4aaa-b7e8-1ec772556d22,"Akua Ossah",Female,"Western","Prestea Huni Valley","Koo-kyeikrom",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+8ea23d13-1334-4859-a50b-f75afc862fb9,"Mame Tiweah",Female,"Western","Prestea Huni Valley","Koo-kyeikrom",,,24,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+f409caa1-e323-4e19-b572-239e506264d6,"Mame Sera",Female,"Western","Prestea Huni Valley","Koo-kyeikrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+08a640e7-db62-421b-b498-244126b2bb9b,"Hamidu Issakah",Male,"Western","Prestea Huni Valley","Koo-kyeikrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+dd5b9ef3-807c-492f-94bc-a0fb71f987de,"Maliki Seidu",Male,"Western","Prestea Huni Valley","Koo-kyeikrom",,,27,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+d3d3d72b-e677-4fec-b2a0-a297f1f54707,"Abudu Salifu",Male,"Western","Prestea Huni Valley","Koo-kyeikrom",,,34,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+c5cc01dd-c4a0-4582-b3f1-ffacb3f4eaf8,"James Ankama",Male,"Western","Prestea Huni Valley","Koo-kyeikrom",,,26,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+68f28e97-1645-4478-a0fe-3f684b00ffea,"Meme Merin",Female,"Western","Prestea Huni Valley","Koo-kyeikrom",,,29,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+e53c1a34-1712-4e7b-96fd-c2b4d776e115,"Afia Ataa",Female,"Western","Prestea Huni Valley","Koo-kyeikrom",,,34,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+8e87bb4d-34c9-4ec2-b085-537d8229a233,"James Ayibo",Male,"Western","Prestea Huni Valley","Koo-kyeikrom",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+9ca4a4ca-7ca8-4d32-9d84-7c4cd5a5ffcf,"Eliasu Abugiri",Male,"Western","Prestea Huni Valley","Koo-kyeikrom",,,35,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+22263df7-c8fa-44cc-86e5-35fc6b073ca3,"Abuguragu Meri",Male,"Western","Prestea Huni Valley","Koo-kyeikrom",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+373c4974-297b-4dbd-b79b-281a34853ee7,"Bendemen Kofi",Male,"Western","Prestea Huni Valley","Koo-kyeikrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+fdf319b9-1743-4e5d-9a39-9974ad1180c6,"Kwadwo Samuel",Male,"Western","Prestea Huni Valley","Koo-kyeikrom",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+22045f08-2f4a-44a0-9cf4-6d851ad88f82,"Peiya Simon",Male,"Western","Prestea Huni Valley","Koo-kyeikrom",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+ef7f1c13-00e7-434a-a940-53781a41950e,"Kwasi Samwel",Male,"Western","Prestea Huni Valley","Koo-kyeikrom",,,27,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+4aedc7d3-6268-4783-8301-dc503d5bdd54,"Paul Simiragu",Male,"Western","Prestea Huni Valley","Koo-kyeikrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+9b68aa27-fef5-4ade-99e9-659f9304209c,"Karim Ayeriga",Male,"Western","Prestea Huni Valley","Koo-kyeikrom",,,30,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+321d5aed-1d68-489b-94cc-8877bdb7a5f1,"Mariya Karim",Male,"Western","Prestea Huni Valley","Koo-kyeikrom",,,30,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+2fa0f091-ecd9-41f2-8fb4-0f65b53f7279,"George Yawa",Male,"Western","Prestea Huni Valley","Koo-kyeikrom",,,30,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+cd2859d7-3e6b-42a0-b691-3c0738ded5fc,"Bramah Jurusie",Male,"Western","Prestea Huni Valley","Koo-kyeikrom",,,24,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+22d28960-7f73-4401-8859-76907637b951,"Appiah A. Simon",Male,"Western","Prestea Huni Valley","Koo-kyeikrom",,,26,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+2f25b400-6afa-400f-b274-1c3effa32627,"Nsone Emmah",Male,"Western","Prestea Huni Valley","Koo-kyeikrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+8cf762e6-5398-4d0b-9887-274ef11f0a78,"Issifu Azogo",Male,"Western","Prestea Huni Valley","Koo-kyeikrom",,,27,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+12892a1d-f8c0-4b6b-8989-25d707c0c73c,"Awini Enasa",Male,"Western","Prestea Huni Valley","Koo-kyeikrom",,,26,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+28aba94e-ab4f-475d-8d2a-07fda6eb73fe,"Hamidu Abunkudugu",Male,"Western","Prestea Huni Valley","Wadusie",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+e05671a6-fc00-4158-a9d0-8372b3c1d243,"Iddrisu Adam",Male,"Western","Prestea Huni Valley","Wadusie",,,27,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+9bc5d811-6f50-4df6-9708-13ec994937e7,"Moro Anaba",Male,"Western","Prestea Huni Valley","Wadusie",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+11438ad8-24ce-42d8-99da-9829496ea495,"Issah Salifu",Male,"Western","Prestea Huni Valley","Wadusie",,,35,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+ae337938-9fff-43ec-b15f-8199b0589562,"Kwasi Awinbil",Male,"Western","Prestea Huni Valley","Wadusie",,,27,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+fd593253-c6a9-4e2d-b5ff-098af7cb3ca5,"Asampa Anaba",Male,"Western","Prestea Huni Valley","Wadusie",,,24,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+4ddf7fc3-6cff-48aa-af1d-3295a6902445,"Salifu Isssahka",Male,"Western","Prestea Huni Valley","Wadusie",,,24,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+4389ca8a-301b-4ec8-b68f-a679c31aa1fd,"Damani Salifu",Male,"Western","Prestea Huni Valley","Wadusie",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+562da51f-d30e-44d8-b6d7-5dea7da3a8a1,"Mamudu Salifu",Male,"Western","Prestea Huni Valley","Wadusie",,,26,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+ee1a5df0-ca51-4ded-beb8-6cffce281782,"Joe Awine",Male,"Western","Prestea Huni Valley","Wadusie",,,29,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+5c514e5a-562f-48fa-8208-5fa5cb289730,"Abudu Adam",Male,"Western","Prestea Huni Valley","Wadusie",,,28,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+d8ae099f-66aa-4197-94b2-8bf8b9ec20fe,"Issifu Yakubu",Male,"Western","Prestea Huni Valley","Wadusie",,,24,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+0d978bb1-d5bc-4eb5-a039-abc3b49d4152,"Haruna Salifu",Male,"Western","Prestea Huni Valley","Wadusie",,,27,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+fe486f12-447e-4e69-b0b8-357710f4a938,"Malik Bugri",Male,"Western","Prestea Huni Valley","Wadusie",,,26,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+9512b9ca-cfe5-47c6-9954-f1f72b0ef5f5,"Issaka Salifu",Male,"Western","Prestea Huni Valley","Wadusie",,,25,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+3a877de5-5a24-45f5-b9d8-b42b7a3f8c91,"Sule Salifu",Male,"Western","Prestea Huni Valley","Wadusie",,,24,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+aee60d36-4f25-4e32-84f0-241a7124f0b7,"Nana Kuga",Male,"Western","Prestea Huni Valley","Wadusie",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+8cbbdfdc-531e-4e4f-a270-53ccdd2ee430,"Fram Kuga",Male,"Western","Prestea Huni Valley","Wadusie",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+fff5174a-13b9-4faa-8666-8d3f5d144211,"Eliasu Issifu",Male,"Western","Prestea Huni Valley","Wadusie",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+ba89760d-1a9c-441f-86bf-01f7b5ca6fe8,"Awinbil Abugiri",Male,"Western","Prestea Huni Valley","Wadusie",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+bcbebd6f-a00d-4bee-abdf-0894b5388c20,"Fuseine Nuhu",Male,"Western","Prestea Huni Valley","Wadusie",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+ba1e4912-3166-42fd-904c-e5f4560d46da,"Ibrahim Salifu",Male,"Western","Prestea Huni Valley","Wadusie",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+be91a4a6-b95a-475d-807d-c773bf7ab1af,"Nyamekye Daniel",Male,"Western","Prestea Huni Valley","Ankamakrom",,,34,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+ebc2af03-7896-49bb-9e09-2f8f24d94dd9,"Opoku Samuel",Male,"Western","Prestea Huni Valley","Ankamakrom",,,33,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+21e8cdfc-5150-4dd7-b502-fe4110e278e1,"Gyau Augustine",Male,"Western","Prestea Huni Valley","Ankamakrom",,,34,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+83e2ab96-d6ab-4c62-b5fe-61b462c45150,"Mahama Mohammed",Male,"Western","Prestea Huni Valley","Ankamakrom",,,33,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+12033fc4-5f02-4e2b-8f9b-cfffe9ef3cb4,"Adu Cynthia",Female,"Western","Prestea Huni Valley","Ankamakrom",,,33,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+1e91cb86-6d66-47d9-a91d-5b72e741709c,"Mensah Samuel",Male,"Western","Prestea Huni Valley","Ankamakrom",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+f0a84dc5-c770-465e-bb26-a3706bd3a314,"Korantemaa Grace",Female,"Western","Prestea Huni Valley","Ankamakrom",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+11dd233c-6c37-4f9b-9818-0712545dabbb,"Kwasi Krah",Male,"Western","Prestea Huni Valley","Ankamakrom",,,30,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+1ddb88cf-188e-4550-8d37-c3d7117572c7,"Woli Jude Keasi",Male,"Western","Prestea Huni Valley","Ankamakrom",,,31,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+de8baf2e-6d36-447e-ac9d-47ff1b30d7dd,"Willim Ajesi",Male,"Western","Prestea Huni Valley","Ankamakrom",,,28,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+0e40c9bd-605b-4945-aba4-e902190b206b,"Yakubu Mohammed",Male,"Western","Prestea Huni Valley","Ankamakrom",,,25,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+863c8674-63c1-4dcd-b715-be2a5b7445e1,"Solomon Gyapong",Male,"Western","Prestea Huni Valley","Ankamakrom",,,24,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+17f79192-d711-41c6-9b6a-899ed35c6554,"Patrick Gyapong",Male,"Western","Prestea Huni Valley","Ankamakrom",,,24,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+201fa45c-72de-491c-9f89-5c7e3321df58,"Joseph Gyapong",Male,"Western","Prestea Huni Valley","Ankamakrom",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+778e9212-d7ce-4860-be82-95e92402231e,"Obour Andrews",Male,"Western","Prestea Huni Valley","Ankamakrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+40a01e89-d7cc-4426-92e4-b6a365e09a78,"Yaa Gyetua",Female,"Western","Prestea Huni Valley","Ankamakrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+232c41c5-26bf-439c-b7a4-ca3b37c0ec9c,"Offul Stephen",Male,"Western","Prestea Huni Valley","Ankamakrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+2d5bdfb7-79fd-4218-a824-c995e469abfc,"Martine Gyapong",Male,"Western","Prestea Huni Valley","Ankamakrom",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+f1c09301-9f54-4125-adc8-3de487c3fa58,"Lucy Gyapong",Female,"Western","Prestea Huni Valley","Ankamakrom",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+54173441-3bc0-4a6b-8c4a-4c999473ecf8,"Samuel Kofi",Male,"Western","Prestea Huni Valley","Ankamakrom",,,34,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+5dc48527-6a2b-4ae6-98e8-3d1e17f5f6f3,"Kyere Thomas",Male,"Western","Prestea Huni Valley","Ankamakrom",,,25,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+f6efc2b7-3056-4386-ba1b-a4eaaf8dfb3c,"Sarah Fouaah",Female,"Western","Prestea Huni Valley","Ankamakrom",,,26,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+5ab7f85d-cf55-40b1-9d10-f88f774b26a3,"Joseph Korakye",Male,"Western","Prestea Huni Valley","Ankamakrom",,,31,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+6524d36b-65b5-4325-a4b3-7de0fbe2ce66,"Kwasi Apaah",Male,"Western","Prestea Huni Valley","Ankamakrom",,,34,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+5ca2dd53-3ad6-4669-8d22-8b2e0c9d2717,"Pokuaa Angelina",Female,"Western","Prestea Huni Valley","Ankamakrom",,,34,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+b0da90d9-3743-4221-b098-05ea5cd220a6,"Philip Ansah",Male,"Western","Prestea Huni Valley","Dibolase",,,35,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+d71db4b6-f218-4792-9285-b6a1ce80ff93,"Kwaku Figitey",Male,"Western","Prestea Huni Valley","Dibolase",,,26,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+5ed53340-a438-4361-b875-b1eaeb9b9f58,"Donkor Dare",Male,"Western","Prestea Huni Valley","Dibolase",,,35,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+cca568a6-d658-4f7a-947b-53efff670427,"Mr. Achampong",Male,"Western","Prestea Huni Valley","Dibolase",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+e21bf35a-780c-43b4-b335-63a07be9b4b5,"Emmanuel Addo",Male,"Western","Prestea Huni Valley","Dibolase",,,35,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+6ea87fb7-8f1c-40a4-96c2-ad0a8521b217,"Juliana Abena",Female,"Western","Prestea Huni Valley","Dibolase",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+e8282c11-b5a4-47b6-a379-9d6f91490852,"Manu Johnson",Male,"Western","Prestea Huni Valley","Dibolase",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+902f4ede-d131-4d4c-8e69-bcf69af3f21f,"Robert Aiddo",Male,"Western","Prestea Huni Valley","Dibolase",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+1f91ed53-31af-43ab-89ab-3e76db5b4dfd,"Agya Amoah",Male,"Western","Prestea Huni Valley","Dibolase",,,28,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+dab14198-ccc4-42f6-9c47-1ff3258a9bf3,"Filishia Dazy",Male,"Western","Prestea Huni Valley","Dibolase",,,33,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+b4ac9deb-b248-468c-9caf-47d584638591,"Mahamedu Isah",Male,"Western","Prestea Huni Valley","Dibolase",,,29,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+51e7b14d-db18-4908-907a-3df337f3320a,"Tewia Zuttah",Male,"Western","Prestea Huni Valley","Dibolase",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+8ef6ba5c-7e77-4d67-be13-0de4044652e1,"Paul Lemdemtey",Male,"Western","Prestea Huni Valley","Dibolase",,,26,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+54b68457-15b7-4e7e-9733-91f8bdd8b039,"Alhasan Awuni",Male,"Western","Prestea Huni Valley","Dibolase",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+20f5e1b9-3c0b-4f7f-9866-06f7dd56b74f,"Sarfuka Awuin",Male,"Western","Prestea Huni Valley","Dibolase",,,24,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+1b0daf20-72d3-44f7-88bb-1e67fa1a26f5,"Rebecca Tetteh",Female,"Western","Prestea Huni Valley","Dibolase",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+5bd78096-6886-4712-a53e-73b49244de1d,"Korkor Mary",Male,"Western","Prestea Huni Valley","Dibolase",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+e87eef58-3f20-4a58-827b-48acdfe26ab6,"Kofi Nyamekye",Male,"Western","Prestea Huni Valley","Dibolase",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+baf272cd-6ad6-4e9f-8955-a602fdba00f8,"Abokyi Kahan",Male,"Western","Prestea Huni Valley","Dibolase",,,34,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+9252b63f-92a7-43a6-9596-05c0a4873bc0,"Yaa Gemfua",Female,"Western","Prestea Huni Valley","Dibolase",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+b05fb8fd-93e8-4472-93b7-fda7780ec9c5,"Atta Ningo 1",Male,"Western","Prestea Huni Valley","Dibolase",,,29,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+9cb896f3-ec29-4b39-8d00-b262845af76d,"Simon Adjei",Male,"Western","Prestea Huni Valley","Dibolase",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+03c310a0-911f-40f3-9090-7a6e0305fd89,"Kwasi Ayebi",Male,"Western","Prestea Huni Valley","Dibolase",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+3c721a2e-70cb-4daa-972b-fa923cf2ef61,"Kwame Ofori",Male,"Western","Prestea Huni Valley","Dibolase",,,35,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+28096838-f50b-4f1a-8c85-cc62e88cbb23,"Kwaku Tepiliye",Male,"Western","Prestea Huni Valley","Dibolase",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+a0adecd2-03ae-440d-a7b0-81ea149e2c60,"Annex Boateng",Male,"Western","Prestea Huni Valley","Dibolase",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+c78e0bb6-c1f1-437c-9988-ed1a6605306f,"Velonica Aidoo",Male,"Western","Prestea Huni Valley","Dibolase",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+e312d082-5ee3-4bed-b4db-dfaaf325baeb,"Yeboah Tinkpe",Male,"Western","Prestea Huni Valley","Dibolase",,,25,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+9baffbef-752a-456a-8523-3bd805a7728b,"Opoku Michael",Male,"Western","Prestea Huni Valley","Dibolase",,,27,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+e6112190-a3f7-4cb8-8a27-5436274a7a41,"Gladys Fofie",Female,"Western","Prestea Huni Valley","Dibolase",,,24,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+6c20770b-101e-4526-96d8-ef0a36716ee9,"Joseph Manu",Male,"Western","Prestea Huni Valley","Dibolase",,,30,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+d6f03669-7e87-47f2-9c6f-f9fe28cc8b24,"Takumah Enock",Male,"Western","Prestea Huni Valley","Dibolase",,,30,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+e6acb1bc-1768-470a-9465-ab7d7e9462b2,"Kofi Gaana",Male,"Western","Prestea Huni Valley","Dibolase",,,30,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+5e72cc55-b46d-4335-9648-966f2d9d7cb0,"Isaac Aidoo",Male,"Western","Prestea Huni Valley","Dibolase",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+7fae0c73-131e-42b2-bf3a-3a75b13ec8c3,"Kwame Dare",Male,"Western","Prestea Huni Valley","Dibolase",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+005ed9e0-b3b7-49be-8e1d-f048d1eda05f,"Domo Kaarama",Male,"Western","Prestea Huni Valley","Dibolase",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+14289bf3-8749-46d2-bad7-a08dbe4fffaa,"Kwaku Kuku",Male,"Western","Prestea Huni Valley","Dibolase",,,19,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+7c78fe24-e291-4d31-acfe-33983e8eb9c7,"Kaakyere Dare",Male,"Western","Prestea Huni Valley","Dibolase",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+91ba19d4-f00f-45c7-8e92-9c6861b0cc4f,"Yaw Manu",Male,"Western","Prestea Huni Valley","Dibolase",,,33,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+2f570d57-6e3e-4f19-9ea4-bb00cfdc3e70,"Kwame Gyan",Female,"Western","Prestea Huni Valley","Dibolase",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+5e2f6dde-e889-427d-8b4a-bfdd245c268e,"Ama Shortia",Female,"Western","Prestea Huni Valley","Dibolase",,,25,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+5c612756-476b-4039-b33e-065d1932ee0a,"Yakubu Dari",Male,"Western","Prestea Huni Valley","Bibi Nti",,,27,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+72573994-b0fc-4e90-aef1-6831a71e0b18,"Kojo Dodomokuma",Male,"Western","Prestea Huni Valley","Bibi Nti",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+33a47a55-1145-48e5-bb31-56eccfe0840c,"Manu Kwaku",Male,"Western","Prestea Huni Valley","Bibi Nti",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+73a3084d-e0f8-4a43-8dcb-a3d7e48b85a4,"Amanumo Kwame",Male,"Western","Prestea Huni Valley","Bibi Nti",,,31,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+f59d0303-65c6-492b-bc8b-7c8bfca9ee9c,"Kwabena Kpirka",Male,"Western","Prestea Huni Valley","Bibi Nti",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+e6833ef5-fe8a-4d37-befe-b5c806994fe9,"Oames Kofi",Male,"Western","Prestea Huni Valley","Bibi Nti",,,28,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+1b1eb344-70d8-40a6-8fde-5bd6f5cd0a6c,"Nana Kwaw Nkrumah",Male,"Western","Prestea Huni Valley","Bibi Nti",,,27,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+2f283a51-99a1-4d9b-884d-25486f010b0e,"Nkrumah Kwasi",Male,"Western","Prestea Huni Valley","Bibi Nti",,,26,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+255eb264-b740-42bb-bf61-ecc12e78383f,"Bowbow Kwame",Male,"Western","Prestea Huni Valley","Bibi Nti",,,34,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+9908856a-4f9d-4ce7-85dc-514f8608fc28,"Benyine Kojo",Male,"Western","Prestea Huni Valley","Bibi Nti",,,33,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+fa111798-eb40-4e10-bedf-d8f111cb4827,"John Kpalgo",Male,"Western","Prestea Huni Valley","Bibi Nti",,,34,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+d254d0c3-61ee-4d8f-b518-4a44e78a0922,"Jacob Kwadwo",Male,"Western","Prestea Huni Valley","Bibi Nti",,,33,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+fb1b5769-4b63-4f59-8987-0cf2a41a8a05,"Manu Kwame",Male,"Western","Prestea Huni Valley","Bibi Nti",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+a6eee8ce-7094-43ca-bd8f-3cbbc508a8d1,"Mr. Simple",Male,"Western","Prestea Huni Valley","Bibi Nti",,,24,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+68a6737a-515b-4559-b474-12c583fbc890,"Alarbo Kofi",Male,"Western","Prestea Huni Valley","Bibi Nti",,,24,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+534eaa6f-cd91-4a5c-b7f4-84bba946993a,"Dii Kumah",Male,"Western","Prestea Huni Valley","Bibi Nti",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+534d5a44-032c-4ce6-8e6a-a1bbc917e173,"Abingo Yaw",Male,"Western","Prestea Huni Valley","Bibi Nti",,,25,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+ef48046e-21b6-4eef-be87-365eba0c2e17,"Bra Kojo",Male,"Western","Prestea Huni Valley","Bibi Nti",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+1a6afd4d-460d-45d0-82cc-a1a0a866c6ff,"Kwaku Adu",Male,"Western","Prestea Huni Valley","Bibi Nti",,,26,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+ad6a46eb-9137-4176-a0de-fdaf69e65f93,"Kwabena Dagati",Male,"Western","Prestea Huni Valley","Bibi Nti",,,27,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+19c25095-22b5-4aeb-9161-2953822b7d27,"James Gyampire",Male,"Western","Prestea Huni Valley","Bibi Nti",,,28,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+488a5297-ef51-43fc-8af8-f1e40268a4c2,"Kofi Ensia",Male,"Western","Prestea Huni Valley","Bibi Nti",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+a26c6ce2-43a9-444f-b987-c008664dad9e,"Kwame Awuni",Male,"Western","Prestea Huni Valley","Bibi Nti",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+d4dfb72e-a936-4b67-a8e2-011a0e1356ed,"Mr. Owusu",Male,"Western","Prestea Huni Valley","Bibi Nti",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+a2a14b60-86bd-4255-b402-09cab0f2fee1,"Kwaku Baboe",Male,"Western","Prestea Huni Valley","Bibi Nti",,,34,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+b4e7f7eb-42f7-4e67-8f77-76f9bb861469,"Kofi Modemi",Male,"Western","Prestea Huni Valley","Bibi Nti",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+471a61ed-e05d-4131-bd14-4645bf11243a,"Atta Kofi",Male,"Western","Prestea Huni Valley","Bibi Nti",,,22,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+73b136e8-094d-4938-bf2d-49cfd2b0f6d7,"Kwabena Sasoh",Male,"Western","Prestea Huni Valley","Bibi Nti",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+32e88a5f-4830-4e10-ae13-7b1199d9f53e,"John Akperibo",Male,"Western","Prestea Huni Valley","Bibi Nti",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+937cc054-f08a-48f0-9230-4912da940379,"Seidu Sule",Male,"Western","Prestea Huni Valley","Bibi Nti",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+27c8ec7d-80fa-4283-9d44-d9fa1eaba4be,"Mantare Nsondo",Male,"Western","Prestea Huni Valley","Bibi Nti",,,31,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+76e8819b-19aa-4bfc-b12a-6002b5bd889f,"Abubia Kambo",Male,"Western","Prestea Huni Valley","Bibi Nti",,,34,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+7cb05e54-3817-41a5-a447-70468b4c1c0b,"Ibrahim Alhassan",Male,"Western","Prestea Huni Valley","Bibi Nti",,,34,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+d5292d49-8311-4f91-a94b-3315ebaa9788,"Kwaku Beboe",Male,"Western","Prestea Huni Valley","Bibi Nti",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+28ce22f3-8909-49d4-97d4-8bf52517bed7,"Odede Akaru",Male,"Western","Prestea Huni Valley","Bibi Nti",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+87f3718b-863d-46db-8714-8ad3a2cb6916,"Simon Debogu",Male,"Western","Prestea Huni Valley","Bibi Nti",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+68f9826d-f50a-4731-9530-eeb3cc1d9476,"Kwasi Kowrela",Male,"Western","Prestea Huni Valley","Bibi Nti",,,30,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+707cc594-226a-4362-910f-2cf9279b225a,"Ama Nemo",Female,"Western","Prestea Huni Valley","Bibi Nti",,,30,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+73e0834b-6853-43dc-948c-7f4b388b81f7,"John Badu",Male,"Western","Prestea Huni Valley","Bibi Nti",,,30,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+bb08967d-124f-43ca-a6c4-7ebe115e8403,"Massle Kambo",Male,"Western","Prestea Huni Valley","Bibi Nti",,,30,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+5157c599-6a53-4ae1-b15f-c699c33f4b42,"Duku Dafho",Male,"Western","Prestea Huni Valley","Bibi Nti",,,30,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+a13c8375-4ecf-4ee6-b028-e62de417198e,"Nicholas Avoka",Male,"Western","Prestea Huni Valley","Bibi Nti",,,30,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+e5ce23e9-3286-433e-b038-3de08ab40e67,"Yakubu Alanba",Male,"Western","Prestea Huni Valley","Bibi Nti",,,30,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+285aec9a-a40f-49c4-b08c-9641fd0d625a,"Maame Amakra",Female,"Western","Prestea Huni Valley","Bibi Nti",,,30,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+880538f6-59de-4a96-b050-4cc13c8caed2,"Isaac Kujo",Male,"Western","Prestea Huni Valley","Bibi Nti",,,30,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+895f241c-638d-411d-8f02-3c4457a0c4fd,"Emmanuel Kujo",Male,"Western","Prestea Huni Valley","Bibi Nti",,,33,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+aea95999-5a8f-476b-a0ab-f4c409012065,"Simon Mba",Male,"Western","Prestea Huni Valley","Bibi Nti",,,34,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+6978975b-1695-4052-9404-80c5459357c3,"Kofi Solomon",Male,"Western","Prestea Huni Valley","Bibi Nti",,,34,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+b815d1e7-2356-4206-ac24-3b03d120a87d,"Isaac Avoka",Male,"Western","Prestea Huni Valley","Bibi Nti",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+ef0c4a04-bf07-47ae-86af-20bfb6e8bd55,"Sama Akuruku",Male,"Western","Prestea Huni Valley","Bibi Nti",,,31,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+db8158a2-6f96-447b-81a3-bd574a18d217,"Yaw Sama",Male,"Western","Prestea Huni Valley","Bibi Nti",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+01bffd34-85c2-4577-bc75-82554daa3012,"Joseph Apewini",Male,"Western","Prestea Huni Valley","Bibi Nti",,,31,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+9807f212-b0b3-4886-b0bd-cb861a2a8661,"Matha Avoka",Male,"Western","Prestea Huni Valley","Bibi Nti",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+12ac916f-40f5-47fc-9671-49368dab9963,"Yakubu Atubilago",Male,"Western","Prestea Huni Valley","Bibi Nti",,,34,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+fe5cd821-526e-4ae0-a628-3093ee854de4,"Daniel Avoka",Male,"Western","Prestea Huni Valley","Bibi Nti",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+da377d2b-35cb-4782-a814-0db282b951f6,"Elizabeth Abarsile",Female,"Western","Prestea Huni Valley","Bibi Nti",,,34,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+42c42969-c492-45e3-86d1-b240b6de7984,"Elehwet Azure",Male,"Western","Prestea Huni Valley","Bibi Nti",,,22,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+85421c1a-89d5-4ef2-a6d4-404d71088bf7,"James Abubila",Male,"Western","Prestea Huni Valley","Bibi Nti",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+29c8ab72-6b1d-4827-95b8-cf1fae29637e,"Daniel Apum",Male,"Western","Prestea Huni Valley","Bibi Nti",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+19f71acd-758e-4ada-90db-3616e862026a,"Osumani Mohammed",Male,"Western","Prestea Huni Valley","Nwansema",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+4d5715b7-6ae2-4123-886e-542914e4032c,"Ramani Abugri",Male,"Western","Prestea Huni Valley","Nwansema",,,35,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+34ba33cb-1750-48f2-bdc2-2b8ff499449b,"Akamaah Mohammed",Male,"Western","Prestea Huni Valley","Nwansema",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+46e8e8a4-630e-4909-8337-86a5d07969c6,"Halidu Akologo",Male,"Western","Prestea Huni Valley","Nwansema",,,25,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+d684e3e2-6f06-4d20-af0d-9274f49ac05c,"Bashiru Abugri",Male,"Western","Prestea Huni Valley","Nwansema",,,34,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+7ad89580-1230-4bae-9dbc-5e8231d43d13,"Abraham Alebid",Male,"Western","Prestea Huni Valley","Nwansema",,,33,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+c226a821-ce07-45ac-9469-0bf62813a9d3,"Seiba Alhassan",Male,"Western","Prestea Huni Valley","Nwansema",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+dcca1fdc-ec1f-41aa-9203-59ef3980edfa,"Moriama Osumani",Male,"Western","Prestea Huni Valley","Nwansema",,,24,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+3bdc5b5d-95a8-4093-bd78-72a06a958277,"Sherifah Ramani",Male,"Western","Prestea Huni Valley","Nwansema",,,34,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+3e51af8b-c366-4685-b49a-1e3a50713941,"Mamunatu Osumani",Female,"Western","Prestea Huni Valley","Nwansema",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+f7eba1ae-fd35-4f02-bbb6-06292ce40094,"Adisah Zakaria",Female,"Western","Prestea Huni Valley","Nwansema",,,24,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+8a35622b-63df-4fe2-90b1-9d3bb0534341,"Safia Sule",Female,"Western","Prestea Huni Valley","Nwansema",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+abe15e24-86ed-4a9a-ba4b-063f21efd1fa,"Kwasi Owusu",Male,"Western","Prestea Huni Valley","Nwansema",,,34,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+7f7f976c-ee61-4261-8e8a-623d710743cf,"Seidu Abgango",Male,"Western","Prestea Huni Valley","Nwansema",,,25,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+98cb3c40-d150-48fa-a141-ad325b56600f,"Sali Avoka",Male,"Western","Prestea Huni Valley","Nwansema",,,24,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+ccafdca8-1760-4f1d-8c82-5e5adeffa738,"Kwaku Benii",Male,"Western","Prestea Huni Valley","Nwansema",,,25,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+5b05d543-95e8-4fe1-91a4-2c864a0200be,"Adamu Akologo",Male,"Western","Prestea Huni Valley","Nwansema",,,22,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+049219f2-c857-45f9-b69a-e80a245fe4a6,"Buremah Issah",Male,"Western","Prestea Huni Valley","Nwansema",,,20,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+5a264a1f-cdb9-4f3b-ad7f-115fffacfab4,"Kojo Williams",Male,"Western","Prestea Huni Valley","Nwansema",,,28,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+b4bbcbfb-478f-47d5-8f88-32b74289f445,"Tahiru Akudugu",Male,"Western","Prestea Huni Valley","Nwansema",,,26,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+59d845c1-a74e-46c0-b3e3-2d659510616e,"Osumani Seidu",Male,"Western","Prestea Huni Valley","Nwansema",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+6496a22a-b986-4936-9714-0d081ef398c4,"Comfort Amoah",Female,"Western","Prestea Huni Valley","Nwansema",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+42efa2d7-8cac-4297-817e-478807a0cf16,"Salifu Asongin",Male,"Western","Prestea Huni Valley","Nwansema",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+6e9b6613-29ea-4a8a-89d3-0564f2b08c51,"James Awaafo",Male,"Western","Prestea Huni Valley","Nwansema",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+2e7daebf-0ab6-484c-be6e-8a685b9d9335,"Ammed Bukari",Male,"Western","Prestea Huni Valley","Nwansema",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+206f5dc9-63b4-456b-9eac-4a498994f67a,"Simon Abugri",Male,"Western","Prestea Huni Valley","Nwansema",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+505cf8a2-aeec-4b55-98f2-fa15491a3e19,"Sumaila Anaba",Male,"Western","Prestea Huni Valley","Nwansema",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+a2360f75-8901-494b-b236-d8cc741994a0,"Samuel Korang",Male,"Western","Prestea Huni Valley","Nwansema",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+80a5999a-5fe7-4448-97b7-71fbcc03ce9f,"Fatima Seidu",Female,"Western","Prestea Huni Valley","Nwansema",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+cf40a12e-33a0-4319-a44c-413944745418,"Rahman Sule",Male,"Western","Prestea Huni Valley","Nwansema",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+e7131372-61f6-4d8e-be56-01f0396e588c,"Ibrahim Busia",Male,"Western","Prestea Huni Valley","Nwansema",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+8f9d3102-ac96-4288-a9fe-6e083343ac9b,"Adam Ayaaba",Male,"Western","Prestea Huni Valley","Nwansema",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+79d6f941-6417-4d01-8cb0-3930db65a8f1,"Kofi Ayaaba",Male,"Western","Prestea Huni Valley","Nwansema",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+218d3ba7-1333-43e4-9694-2bbd40008fcc,"Kofi Ayendaugo",Male,"Western","Prestea Huni Valley","Nwansema",,,34,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+317da534-97f3-4a79-ade0-4fe7e48b060a,"Wanaa Dagati",Male,"Western","Prestea Huni Valley","Nwansema",,,34,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+710497ad-b260-46c7-bbe9-a285363078b0,"Thomas Abat",Male,"Western","Prestea Huni Valley","Nwansema",,,31,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+42c4225c-42df-4c7f-aae5-65b2bbc67cc4,"Martha Abat",Male,"Western","Prestea Huni Valley","Nwansema",,,25,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+771a6ed5-5685-4474-9458-092ea934c8dc,"Seidu Abugri",Male,"Western","Prestea Huni Valley","Nwansema",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+fbd984dc-4108-4a78-a281-b18a365879dd,"Safia Asibi",Male,"Western","Prestea Huni Valley","Nwansema",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+af195f9e-32af-47ac-9aa3-58b27850fde5,"Issah Achiriga",Male,"Western","Prestea Huni Valley","Nwansema",,,34,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+69adf02c-207b-486e-9b57-284755936dca,"Haruma Issif",Male,"Western","Prestea Huni Valley","Nwansema",,,27,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+7bdf4760-681f-4bf8-8067-74af209dc00d,"Issah Harun",Male,"Western","Prestea Huni Valley","Nwansema",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+daf8c700-ce4f-47ef-8942-21a3ba167808,"Osmani Abendau",Male,"Western","Prestea Huni Valley","Nwansema",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+6aa58c89-73e1-4918-93d6-e1bd8c395dca,"Azumah Anifu",Male,"Western","Prestea Huni Valley","Nwansema",,,31,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+1567bf63-6b2a-431b-a948-6c3ac592dfb9,"Kwagena Seidu",Male,"Western","Prestea Huni Valley","Nwansema",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+802902c9-c795-46ae-a3ea-4189b313e390,"Kwasi Grussi",Male,"Western","Prestea Huni Valley","Nwansema",,,28,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+62ff49c8-1da8-4c24-afad-f85f21ebd728,"Jacob Owusu",Male,"Western","Prestea Huni Valley","Nwansema",,,27,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+94868298-b26f-46f4-9af7-ee5a855fd8d2,"Mr. Big",Male,"Western","Prestea Huni Valley","Nwansema",,,26,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+ff06c26a-d0d8-48c0-bdb9-96c11d10ee49,"Yaw Nyameboa",Male,"Western","Prestea Huni Valley","Nwansema",,,34,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+f13d1088-35a0-4a3d-9dde-553f248cb6fb,"Simon Duti",Male,"Western","Prestea Huni Valley","Nwansema",,,33,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+300b44e2-b60b-491b-8881-0ff935f9d382,"Sumaila Issifu",Male,"Western","Prestea Huni Valley","Nwansema",,,34,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+29dcfcd7-188e-432e-b6ba-36e7ff0eb0bc,"Fua Konadu",Male,"Western","Prestea Huni Valley","Nwansema",,,33,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+6e8af219-e927-4dee-a060-1dd998937608,"Kwaku Kunperi",Male,"Western","Prestea Huni Valley","Nwansema",,,33,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+458bb468-875c-4f14-b359-50cfca7e6702,"Kojo Kunweri",Male,"Western","Prestea Huni Valley","Nwansema",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+d7e736fe-fc58-4ac6-9952-30b7294762ef,"Damani Mossi",Male,"Western","Prestea Huni Valley","Nwansema",,,19,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+171a7ebd-a378-42bb-acad-3db8495aaefe,"Osmani Awini",Male,"Western","Prestea Huni Valley","Nwansema",,,19,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+a6367583-691e-49d1-9660-91ec16857bd7,"Ibrahima Mohammed",Male,"Western","Prestea Huni Valley","Nwansema",,,31,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+40af6270-154d-4094-b3aa-d495e2b86f7f,"Adisah Issifu",Female,"Western","Prestea Huni Valley","Nwansema",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+94e722eb-c024-49f3-bf31-66fab6cd4cb2,"Seiba Salam",Male,"Western","Prestea Huni Valley","Nwansema",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+3ae501c0-4342-46b6-bb74-ffd37be366d0,"Mamudu Mahama",Male,"Western","Prestea Huni Valley","Nwansema",,,34,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+139e5ce4-b4c2-476e-b193-0ef4af9d4778,"David Obour",Male,"Western","Prestea Huni Valley","Nwansema",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+5c26c957-1283-4357-b522-34827567c62a,"Kwame Joesephe",Male,"Western","Prestea Huni Valley","Nwansema",,,24,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+04294c76-1515-4847-a43d-d75cac23e013,"Ebenezer Kofi Manty",Male,"Western","Prestea Huni Valley","Nwansema",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+b4f0f24f-47c3-4d4c-b423-afbe6bbf52ae,"Seidu Kennedy",Male,"Western","Prestea Huni Valley","Nwansema",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+c4a1c113-cb26-4d3e-b702-20e1d1a4055b,"Kwaku Anobil",Male,"Western","Prestea Huni Valley","Kutukrom",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+065c5ac8-e758-4978-a6e1-6cf961ce12f9,"Kwaku Yalley",Male,"Western","Prestea Huni Valley","Kutukrom",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+37a6dcfe-8e19-4bcc-a8d3-56039dec95af,"Kwame Wusuu",Male,"Western","Prestea Huni Valley","Kutukrom",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+318d2ea6-b15b-4e89-859b-439d747cd7fc,"Adu Adua",Male,"Western","Prestea Huni Valley","Kutukrom",,,31,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+1b340886-3eb3-428c-b188-e29542a723c9,"Sumuel Buadie",Male,"Western","Prestea Huni Valley","Kutukrom",,,34,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+b54a5cb2-31c3-4e0e-a664-ab88165babe2,"Eric Cobbinah",Male,"Western","Prestea Huni Valley","Kutukrom",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+a8bf01c7-d81d-4f0f-ae8d-b692c49a5491,"Nopoleon Cobbinah",Male,"Western","Prestea Huni Valley","Kutukrom",,,31,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+b268bb77-cf7c-4ec1-b6c2-276a27008eb2,"Francis Baidoo",Male,"Western","Prestea Huni Valley","Kutukrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+740dfd4a-c256-45fe-98ac-dc1b2ab07e36,"Theresa Amoah",Female,"Western","Prestea Huni Valley","Kutukrom",,,34,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+67195f8a-2b1f-4600-b449-39efe67402cd,"Nana Buadie",Male,"Western","Prestea Huni Valley","Kutukrom",,,30,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+7d92894f-b653-4787-8270-357ccdb3ec85,"Abena Gyaa",Female,"Western","Prestea Huni Valley","Kutukrom",,,30,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+12e24e79-a9b7-41aa-915c-86d0afb99e05,"Alex Oduro",Male,"Western","Prestea Huni Valley","Kutukrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+82ef07be-0e9d-4d49-aa8f-faa6f8fe5f66,"Addae Buadie",Male,"Western","Prestea Huni Valley","Kutukrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+64300dc0-8c46-448a-b1ed-cfc53c618ff8,"Joana Nketsiah",Female,"Western","Prestea Huni Valley","Kutukrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+02b61bfb-c49e-4379-9f6c-e390f07ef96c,"Hanna Nketsiah",Female,"Western","Prestea Huni Valley","Kutukrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+9ec3c760-0cc9-4450-a169-b9402944a01b,"Ebenezer Gyan",Male,"Western","Prestea Huni Valley","Kutukrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+55d92cdb-d187-4d63-8d40-51a08c2e00a1,"Christiana Nyamoe",Female,"Western","Prestea Huni Valley","Kutukrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+b933981c-b88f-4ad7-a08d-0640f852b7a6,"Isaac Amoah Cudjoe",Male,"Western","Prestea Huni Valley","Kutukrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+ac983a4c-68ce-4a09-9b9e-f7d5a8a04189,"Kwame Kutu",Male,"Western","Prestea Huni Valley","Kutukrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+2d1c4506-0efe-475b-a039-724809a87b5e,"Nana Asua",Male,"Western","Prestea Huni Valley","Kutukrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+35837762-ea7c-46bf-9423-162de4c11cdc,"Grace Kwofie",Female,"Western","Prestea Huni Valley","Kutukrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+d6a52dbf-fda8-4c85-8917-90c5bac8b593,"Isaac Baah",Male,"Western","Prestea Huni Valley","Kutukrom",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+72e1d667-438f-43a4-a1d0-c7b0713386ad,"Kojo Yannmna",Male,"Western","Prestea Huni Valley","Kutukrom",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+59db5343-578f-40a0-ab3f-3a4b63f5cff1,"Effah Francis",Male,"Western","Prestea Huni Valley","Asaaman",,,24,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+3029c4bb-3840-431e-b6a9-8707e75b39cd,"Charlea Appiah Kwaku",Male,"Western","Prestea Huni Valley","Asaaman",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+7709553d-3f9d-4797-bd81-bd5f285b81e1,"Able Akolo",Male,"Western","Prestea Huni Valley","Asaaman",,,22,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+ed52f6bc-eb3e-4688-a3a4-30c51689b525,"Adams Solomon",Male,"Western","Prestea Huni Valley","Asaaman",,,25,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+0f839add-1277-4595-82b1-1f118f5b561c,"Stampuri Azaad",Male,"Western","Prestea Huni Valley","Asaaman",,,26,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+80ac2958-79d2-4d40-844d-019ee9c88f29,"Adams Powll",Male,"Western","Prestea Huni Valley","Asaaman",,,27,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+d71db111-ed92-4a50-a18a-304a735f22c7,"Haruna Asanaba",Male,"Western","Prestea Huni Valley","Asaaman",,,28,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+a444d031-9d1d-42f9-8062-24678bb78c3e,"Francis Alali",Male,"Western","Prestea Huni Valley","Asaaman",,,29,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+11b02381-0d53-422a-91fe-e5f4a4dcd517,"Samuel Lampty",Male,"Western","Prestea Huni Valley","Asaaman",,,30,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+bc0af9bd-728b-4e5e-90d7-8aa5dddc5364,"Emmanuel Nmpie",Male,"Western","Prestea Huni Valley","Asaaman",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+f1baeb8a-9751-4097-9e5c-4d4b2f76f55f,"Isaac Sanba",Male,"Western","Prestea Huni Valley","Asaaman",,,27,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+f8cddf56-83e3-4af0-b343-6089907d0246,"John Yolopoms",Male,"Western","Prestea Huni Valley","Asaaman",,,25,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+417880fe-381e-426c-a96c-32d365033481,"Stampuri Azaad",Male,"Western","Prestea Huni Valley","Asaaman",,,24,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+af33fff1-0fa0-440e-8fde-2ce0dd4f3fc8,"Stephen Appiah",Male,"Western","Prestea Huni Valley","Asaaman",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+a70c568e-8886-4940-b5c2-c0e893748a1b,"Awuni Atampur",Male,"Western","Prestea Huni Valley","Asaaman",,,22,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+ab6996af-3551-4418-9b99-65edfa2bce69,"Yohane Adams",Male,"Western","Prestea Huni Valley","Asaaman",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+43cb7b01-b9ee-4bfc-b188-868464d49ac3,"Isaac Narh",Male,"Western","Prestea Huni Valley","Asaaman",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+0564358b-a615-4f68-b153-4ee1059e6bfc,"Atta Naah",Male,"Western","Prestea Huni Valley","Asaaman",,,31,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+9f84cb31-ac24-4ea4-aec3-6d1ef0a6d3b6,"Apandaago Akrugu",Male,"Western","Prestea Huni Valley","Asaaman",,,34,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+3de710a2-442d-469d-ae21-a84e41dc4c51,"Thomas Abugri",Male,"Western","Prestea Huni Valley","Asaaman",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+2dc17cff-9c80-43ae-82dc-3f9716e12170,"Gladys Fofie",Female,"Western","Prestea Huni Valley","Manukrom",,,34,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+d8d0b0bb-e1e7-4c82-9863-762186fe36ea,"Mensah Kwaku",Male,"Western","Prestea Huni Valley","Manukrom",,,34,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+abb7f028-facb-475f-b889-56949dd5d6ce,"Kpexor Rigina",Male,"Western","Prestea Huni Valley","Manukrom",,,35,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+80b82004-6ae7-4586-813a-0523ad51cdb8,"Yaw Manu",Male,"Western","Prestea Huni Valley","Manukrom",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+5a30ae27-05b1-43b6-a6c8-40e9ba76eabb,"Isaac Odom",Male,"Western","Prestea Huni Valley","Manukrom",,,22,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+f146065d-d7ec-4441-9c4e-736fc848c8d0,"Charles Opoku",Male,"Western","Prestea Huni Valley","Manukrom",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+c4369430-c337-4cbb-bfd4-eeb5dddf4c74,"Thomas Pepra",Male,"Western","Prestea Huni Valley","Manukrom",,,24,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+2e4a5ce3-aeb1-4e56-867a-10804734d879,"Kwasi Boadi",Male,"Western","Prestea Huni Valley","Manukrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+6e5dd429-04c6-4757-8eb7-7085f6bcb570,"Saho Peter",Male,"Western","Prestea Huni Valley","Manukrom",,,27,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+c87483b2-0ccd-4db8-a453-1c94e5368c5c,"Yaw P. Boadu",Male,"Western","Prestea Huni Valley","Manukrom",,,26,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+20105504-fae3-4262-a00d-d384c1b0f7a5,"Charles Ayensu",Male,"Western","Prestea Huni Valley","Manukrom",,,24,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+4f535d03-20ca-4fef-98b9-99017a9f8916,"Nana Appiah",Male,"Western","Prestea Huni Valley","Manukrom",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+ed4f8309-f3f3-43cd-8f68-14cdba3df61e,"Nana Koudy",Male,"Western","Prestea Huni Valley","Manukrom",,,35,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+d6042ea0-a1af-4bbf-b639-a0e2dcc8b164,"Kyekuma Kojo",Male,"Western","Prestea Huni Valley","Manukrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+2f3b4d06-c89b-4e63-b51f-7e48eed4b327,"Kwaku Dontoro",Male,"Western","Prestea Huni Valley","Manukrom",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+f2ac98dc-973b-4712-8d8a-162b15e535b8,"Kwasi Donnea",Male,"Western","Prestea Huni Valley","Manukrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+56f52786-7662-4e1c-b4fc-052b5d65b3dc,"Yaw Berbaar",Male,"Western","Prestea Huni Valley","Manukrom",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+c135b14c-f11b-4747-8ff8-8aaf984e6d70,"Stephen Diver",Male,"Western","Prestea Huni Valley","Manukrom",,,29,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+3c66ff0a-585e-4014-9dc5-e7712908c462,"Emmanuel Lobi",Male,"Western","Prestea Huni Valley","Manukrom",,,29,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+ece390c0-e5c0-4658-aded-38c23e5ecc5b,"Kofi Anborokun",Male,"Western","Prestea Huni Valley","Manukrom",,,28,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+3597c8ee-0f0e-493c-8d7e-e10752ab532a,"Boodol Eni",Male,"Western","Prestea Huni Valley","Manukrom",,,26,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+a5699e08-5ebb-4321-8151-551923b6c64d,"Kosere Kwaku Azumah",Male,"Western","Prestea Huni Valley","Manukrom",,,25,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+6da9eaf3-96f3-4e76-9ac7-2d5b3c0cc0a0,"Emmanuel Baltaah",Male,"Western","Prestea Huni Valley","Manukrom",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+4ffd5176-0ec2-4569-b803-8903d15dcc4f,"Mohammed Deka",Male,"Western","Prestea Huni Valley","Manukrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+f9515fef-7114-4c5b-bbd3-78a32248f00b,"Kaakyire Lontaah",Male,"Western","Prestea Huni Valley","Manukrom",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+82f6a646-f4f3-43cd-8beb-10299a470e24,"Emmanuel Beltaah",Male,"Western","Prestea Huni Valley","Manukrom",,,35,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+dbd97460-417b-43f9-a495-e3f2b13906b1,"Isaac Kondu",Male,"Western","Prestea Huni Valley","Manukrom",,,31,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+72339841-9fb5-4dc9-87e0-fe63aac91b87,"Opoku Osie",Male,"Western","Prestea Huni Valley","Manukrom",,,27,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+7b862fc0-0efc-4cf8-8aee-96fc7900b4ff,"Abiba Mohammed",Female,"Western","Prestea Huni Valley","Manukrom",,,26,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+2e1c0612-717c-4947-98e9-9b3bcd1d8d67,"Joeboye Nuotar",Male,"Western","Prestea Huni Valley","Manukrom",,,24,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+a1c7b81f-215d-4452-873c-eaa21ee180f8,"Mensah Bonkale",Male,"Western","Prestea Huni Valley","Manukrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+85c07dc8-df1a-4129-881b-00f729be422e,"Kwabena Detuoh",Male,"Western","Prestea Huni Valley","Manukrom",,,24,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+864d9f51-a505-42fc-8405-36b623106fcd,"Emmanuel Vivah",Male,"Western","Prestea Huni Valley","Manukrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+1ce54dec-7a3a-4746-9e16-b7e0577812f4,"Efuo Kojo",Male,"Western","Prestea Huni Valley","Manukrom",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+ed4bf453-2fd5-40fa-83c0-cff89f1566a4,"Kobaar Enson",Male,"Western","Prestea Huni Valley","Manukrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+c8d38980-1d82-4ae9-8b58-75a94b19689c,"Abochi Kahan Kojo",Male,"Western","Prestea Huni Valley","Manukrom",,,24,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+29075382-e396-48ae-a236-3774e735adbe,"John Domokaama",Male,"Western","Prestea Huni Valley","Manukrom",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+0999c94b-c50c-4b96-bb16-660e39bac048,"Kwame Dari",Male,"Western","Prestea Huni Valley","Manukrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+e78ca4ec-8635-4f18-aab0-7627a28f15af,"David Dari Kaakyire",Male,"Western","Prestea Huni Valley","Manukrom",,,24,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+56484b00-5624-4b41-ac4a-ca0d73c0e1dc,"Emmanuel Saah",Male,"Western","Prestea Huni Valley","Manukrom",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+f977e1b2-4f3b-43a5-ac33-271e04bc9250,"Kofi Bayere",Male,"Western","Prestea Huni Valley","Manukrom",,,22,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+0772c3ba-af2a-48cc-940f-33f84793cf1b,"Monica Salowa",Female,"Western","Prestea Huni Valley","Manukrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+037d1b7d-8cac-409d-a057-e137de5bef29,"Donkor Tuu Dari",Male,"Western","Prestea Huni Valley","Manukrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+f6f5e7bc-7f3d-4bf3-81cb-28b9b91eeb6f,"Enock Takumah",Male,"Western","Prestea Huni Valley","Manukrom",,,18,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+bafe4ad2-1821-47bc-a2e1-b3861739f561,"Adwoa Tekyiwaa",Female,"Western","Prestea Huni Valley","Manukrom",,,19,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+4c977bab-f2aa-419b-bf7d-1b21eaf7f7c1,"Abena Malwine",Female,"Western","Prestea Huni Valley","Manukrom",,,20,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+b7311b45-c2b6-48c2-b0b0-0af0c2bc9cba,"Kofi Eretew",Male,"Western","Prestea Huni Valley","Manukrom",,,22,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+7788ded6-1d1c-4516-b61b-20172a993343,"Abraham Benson",Male,"Western","Prestea Huni Valley","Manukrom",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+f6b8ab93-dd2f-41f8-b71d-c774648fff9e,"Benson Ondor",Male,"Western","Prestea Huni Valley","Manukrom",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+6f0c29e5-8a52-4c23-83c4-4b1a8b3e075c,"Naah Babuoh",Male,"Western","Prestea Huni Valley","Manukrom",,,20,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+349be216-75d0-4eee-8b62-9668afb5286c,"James Sondep",Male,"Western","Prestea Huni Valley","Manukrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+4627c637-fc52-46a1-9dec-2d378f986347,"Yaw Kpeyie",Male,"Western","Prestea Huni Valley","Manukrom",,,31,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+c0a8871a-5307-49a6-836b-c4c73391205e,"Kwasi Emos",Male,"Western","Prestea Huni Valley","Manukrom",,,30,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+f7df7e74-0b7d-4262-a113-84d286f331d1,"James Sopiitey",Male,"Western","Prestea Huni Valley","Manukrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+a6a70eb0-2a3f-4956-b151-274d0f426d93,"James Tawiah",Male,"Western","Prestea Huni Valley","Amprow",,,22,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+c78f93e9-bcd8-4389-b77d-1acee3587423,"J. K Tawiah",Male,"Western","Prestea Huni Valley","Amprow",,,24,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+f1492732-b52a-4347-b28d-03160f0804e2,"Vida Katu",Male,"Western","Prestea Huni Valley","Amprow",,,25,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+7864ca1a-2c11-4011-8a8f-a36aa5197f69,"Methodist Church",Male,"Western","Prestea Huni Valley","Amprow",,,25,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+70b72caf-a0a1-42e8-8000-c1aa9b5467ce,"Banbar Tuozo",Male,"Western","Prestea Huni Valley","Amprow",,,24,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+a3b7b92d-1182-4ae1-9f8c-3b05b89a026a,"Peter Acquah",Male,"Western","Prestea Huni Valley","Amprow",,,24,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+5fd33a08-8e3a-4c07-80fb-2af004d7dd9d,"Ama Gyaaba",Male,"Western","Prestea Huni Valley","Amprow",,,25,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+4604d1ab-d363-4556-8007-7b0123487973,"Mary Antwi",Male,"Western","Prestea Huni Valley","Amprow",,,24,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+aa92929e-f75e-415a-891e-1c7fe1086495,"Yaw Apaah",Male,"Western","Prestea Huni Valley","Amprow",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+e9ae0ac0-cfb0-4512-92ee-514ce61096b1,"Samuel Agyemang",Male,"Western","Prestea Huni Valley","Amprow",,,22,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+3a4fd046-63cd-4bc2-aa1b-187592bcfa4d,"Domo Turo",Male,"Western","Prestea Huni Valley","Amprow",,,24,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+9543f156-6726-4fb3-b8f6-c9def4d7dc44,"Boakye Simon",Male,"Western","Prestea Huni Valley","Amprow",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+5ef23495-ac59-401a-b6d6-3e2afd754967,"Kwame Niem",Male,"Western","Prestea Huni Valley","Amprow",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+6614005a-4d53-4893-8b36-b7f8607acbe1,"Kwaku Bonkuu",Male,"Western","Prestea Huni Valley","Amprow",,,22,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+b7af5316-ae74-424b-9938-02ba34846dee,"Kwame Anagbah",Male,"Western","Prestea Huni Valley","Amprow",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+e5237be3-87d8-4239-8be5-6085e5f2812e,"Amoyaw Ndam",Male,"Western","Prestea Huni Valley","Amprow",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+96457e18-1312-4ec7-a284-21f24db8e51c,"Amoah Beng",Male,"Western","Prestea Huni Valley","Amprow",,,20,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+1902eee1-e37b-4d6d-a728-3f6c16ea2cf1,"Josephen Abugire",Male,"Western","Prestea Huni Valley","Amprow",,,22,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+9ad98fac-224a-4557-9397-f8a3a460b9cc,"Yaw Mathin",Male,"Western","Prestea Huni Valley","Amprow",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+4dc607a7-2b3f-423d-bb1b-e0f9b423e320,"Kwabena Mahmah",Male,"Western","Prestea Huni Valley","Amprow",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+9f9f618d-df7c-4693-967f-5550b1f7939b,"Kwasi Yikuety",Male,"Western","Prestea Huni Valley","Amprow",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+f1bf2652-8e32-40bd-9550-72b2494a5e59,"Yaw Bombar",Male,"Western","Prestea Huni Valley","Amprow",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+43a9f41e-619d-4bd7-8c90-98c19fd07697,"Chrisphua Ndam",Male,"Western","Prestea Huni Valley","Amprow",,,35,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+9239a8fb-ca82-4243-a867-eafdad8d94cd,"Josephen Arthur",Male,"Western","Prestea Huni Valley","Amprow",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+f2bd01a2-fd3d-43a3-be6c-70e2e73566a8,"Mosis Acquah",Male,"Western","Prestea Huni Valley","Amprow",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+738cb13b-f962-46d0-83e1-94b361a94f5a,"Maanu Kapireh",Male,"Western","Prestea Huni Valley","Amprow",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+dc3c0752-0740-4407-8692-1ae14a7088a6,"Seidu Alhaasan",Male,"Western","Prestea Huni Valley","Amprow",,,34,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+b60fef0d-d8ed-498c-86c0-b9fc2d8c3576,"Frank Kennyah",Male,"Western","Prestea Huni Valley","Amprow",,,34,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+4613e3e4-65b0-4a81-b511-a9be5301b9bf,"Awuku Emmanuel",Male,"Western","Prestea Huni Valley","Amprow",,,31,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+53971b04-7b58-4e1f-b175-3a895e7ca7f4,"Akosua Kumor",Male,"Western","Prestea Huni Valley","Amprow",,,25,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+02a1a7f6-63b1-45ca-8c9c-53995f6c341e,"Samuel Baidoo",Male,"Western","Prestea Huni Valley","Amprow",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+0bc9f66e-ab43-4ac5-b14b-3c228087bfd8,"Kwame Mensah",Male,"Western","Prestea Huni Valley","Amprow",,,24,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+88312fa6-9111-4a49-9a16-3b79126d3516,"Francis Tawiah",Male,"Western","Prestea Huni Valley","Amprow",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+4147ab28-495d-40bf-874d-73cf4f9c22f0,"Kumi Dahie",Male,"Western","Prestea Huni Valley","Amprow",,,27,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+180f68f4-0485-483d-84d8-3f9623cc199a,"Fuastina Tawiah",Male,"Western","Prestea Huni Valley","Amprow",,,20,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+5cb0beab-c8c5-4d65-9c0e-9675ac7fdcb2,"Adamu Ibrahim",Male,"Western","Prestea Huni Valley","Amprow",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+20f0d02c-40c1-488b-961d-cdf98f77649e,"Kojo Zerdire",Male,"Western","Prestea Huni Valley","Amprow",,,31,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+72ef51ab-c057-41ec-b70a-3f37911875cf,"Joseph Annor",Male,"Western","Prestea Huni Valley","Amprow",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+8d15ef33-41b1-4ad7-86f7-d6f36b4d4799,"Kwasi Okwasi",Male,"Western","Prestea Huni Valley","Amprow",,,28,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+2b2788ac-38a0-42d9-a298-5386b215129a,"Felix Manso",Male,"Western","Prestea Huni Valley","Amprow",,,27,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+cb09d16b-3ad7-4eac-9b14-39b74e879986,"Manu Michael",Male,"Western","Prestea Huni Valley","Amprow",,,26,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+b52b15f5-8370-4575-a7ff-ad4e48f3f494,"Kwasi Mathew",Male,"Western","Prestea Huni Valley","Amprow",,,34,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+8d9c75f5-e7b9-43b6-a0e2-9089d0f2ee1f,"Kwasi Victor",Male,"Western","Prestea Huni Valley","Amprow",,,33,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+ad4ea413-1b41-4f4c-b09f-9308c1a2a8be,"Lawey Kwasi",Male,"Western","Prestea Huni Valley","Amprow",,,34,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+53aaf0b1-dd75-493e-91f4-0ed30183ba73,"Nimbatara Mathew",Male,"Western","Prestea Huni Valley","Tetekrom",,,27,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+e3db35cc-856e-44eb-872b-57138833659a,"Dari Dorbinne",Male,"Western","Prestea Huni Valley","Tetekrom",,,25,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+83aa0da2-86d1-4a3d-b918-5104ece7392a,"Quaye Kwasi",Male,"Western","Prestea Huni Valley","Tetekrom",,,24,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+d5b459e9-8fc4-4cb5-86ff-289f3f430325,"Joroyi David",Male,"Western","Prestea Huni Valley","Tetekrom",,,24,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+011eb284-67c5-4ffe-8634-e3ccdbde8179,"Waah Evans",Male,"Western","Prestea Huni Valley","Tetekrom",,,25,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+a03c452b-0aa4-4d5a-8090-223cdf1b4f0a,"Kundo Bodgu",Male,"Western","Prestea Huni Valley","Tetekrom",,,24,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+93c51239-36a8-4715-a07a-f7a005a24f4d,"Bonkum Kwaku",Male,"Western","Prestea Huni Valley","Tetekrom",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+7bde028d-6ebf-49c8-8192-e581d9073434,"Mensah Attah",Male,"Western","Prestea Huni Valley","Tetekrom",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+c49a4d05-ad89-446f-96e8-eb2c6781ebd7,"Kwesi George",Male,"Western","Prestea Huni Valley","Tetekrom",,,35,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+bcd3ad53-6308-40c1-8175-fb910cff00fe,"Sokobo Kpiin",Male,"Western","Prestea Huni Valley","Tetekrom",,,20,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+4773561e-b7b2-486d-b6c4-1cfb1d29b209,"Brebreyi Kwaku",Male,"Western","Prestea Huni Valley","Insu",,,34,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+9f271d24-e3ca-45cb-9a08-6aedf96fabb4,"Bella Martin",Male,"Western","Prestea Huni Valley","Insu",,,28,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+3ad4e7b1-7083-4cce-ba68-6574185ace52,"Biilala Moses",Male,"Western","Prestea Huni Valley","Insu",,,29,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+0a5ebd18-2e8e-4e63-bd1c-4f365b6c7678,"Imuefuju Yaw",Male,"Western","Prestea Huni Valley","Insu",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+b2958933-0749-43f4-86ed-b9bbc07cee1c,"Lebaar Mathew",Male,"Western","Prestea Huni Valley","Insu",,,28,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+72af59f5-0df0-43e8-8784-29ed9c0e5f36,"Alidu Haruna",Male,"Western","Prestea Huni Valley","Insu",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+0c9b299a-84ce-495e-a33a-6c11784761d2,"Naba Alhassan",Male,"Western","Prestea Huni Valley","Insu",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+6dbf583f-08ae-4a56-8550-c208a10ef598,"Abubakar Mohammed",Male,"Western","Prestea Huni Valley","Insu",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+510938d6-0135-4ca2-acd9-2a0f5f704451,"Atiiga Abudul",Male,"Western","Prestea Huni Valley","Insu",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+198b0e09-394a-4c54-ae93-4dfd88a50c38,"Appiah Solomon",Male,"Western","Prestea Huni Valley","Insu",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+8914e268-074e-4095-a608-313093ae15f6,"Akologo Paul",Male,"Western","Prestea Huni Valley","Insu",,,35,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+dffd245c-e01e-4691-9b4f-274c6ea90707,"Atitande Inusah",Male,"Western","Prestea Huni Valley","Insu",,,26,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+7fd27505-388a-417d-a1a2-2952aa2bfbb9,"Osman Madi",Male,"Western","Prestea Huni Valley","Insu",,,35,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+dc596e88-233a-481c-9b6a-981dd6584a9b,"Awuni Fuseni",Male,"Western","Prestea Huni Valley","Insu",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+faf5ec44-e236-49d6-884e-02085226871c,"Atongo Osman",Male,"Western","Prestea Huni Valley","Insu",,,35,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+12c154ca-08f0-4b62-a65d-872e7e98a366,"Mbaah Ali",Male,"Western","Prestea Huni Valley","Insu",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+28e6ef96-1ba3-44c6-b869-8b709a2b1aa0,"Yakubu Mohammed",Male,"Western","Prestea Huni Valley","Insu",,,30,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+a2db6616-15cd-4484-87ec-b685b511a51a,"Abila Musa",Male,"Western","Prestea Huni Valley","Insu",,,31,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+b4f4b667-3991-4f6d-9840-d0e082ab143d,"Abubakari Mamunatu",Male,"Western","Prestea Huni Valley","Insu",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+600f0da3-f1cb-4a7d-8ec6-9769a97fd421,"Osmanu Amadu",Male,"Western","Prestea Huni Valley","Insu",,,33,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+a45462ea-be18-4cdb-9b84-adb1734b03ed,"Ayabillah Mohamudu",Male,"Western","Prestea Huni Valley","Insu",,,34,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+98a06a07-105e-47cd-a5af-828f7413792a,"Bukari Hamidu",Male,"Western","Prestea Huni Valley","Insu",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+b14fe71e-6ba0-43f2-b3c3-988bf7cac40d,"Thiru Yakubu",Male,"Western","Prestea Huni Valley","Insu",,,26,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+f72a0fb3-cc9f-4ebe-91e3-a5337ce9c1f9,"Yakub Mohammed",Male,"Western","Prestea Huni Valley","Insu",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+1b5f0eb0-6128-4221-9e5b-0f5a6b20328a,"Rahamani Abilla",Male,"Western","Prestea Huni Valley","Insu",,,24,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+325703ed-3dcb-4e36-9633-a538aeb5099b,"Rahinatu Ishak",Female,"Western","Prestea Huni Valley","Insu",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+c2e45010-bc3b-49c5-abe3-4672943219a3,"Azure Issah",Male,"Western","Prestea Huni Valley","Insu",,,24,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+8da9c7f8-93a7-45ff-9989-e8596dc68ea9,"Assibi Usmani",Female,"Western","Prestea Huni Valley","Insu",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+7c4001fe-63df-4911-9d3b-f1d8f7577b40,"Abdul Malik",Male,"Western","Prestea Huni Valley","Insu",,,34,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+fb1c0e93-861a-46f3-b2b0-9adbe122351c,"Dangomba Alhassan",Male,"Western","Prestea Huni Valley","Insu",,,31,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+452a8252-ae83-4e54-8dc9-3590e49beeca,"Awuni Paul",Male,"Western","Prestea Huni Valley","Insu",,,29,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+f1270f43-0e4a-4db5-b802-1b67275f99eb,"Hamidu Mohammed",Male,"Western","Prestea Huni Valley","Insu",,,24,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+0dd356a4-c185-446c-985c-12749a420324,"Ayanbele Emmanuel",Male,"Western","Prestea Huni Valley","Insu",,,32,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+f0ef18a2-ef63-4fb8-9b95-38b700503dd4,"Apambila Alhassan",Male,"Western","Prestea Huni Valley","Insu",,,35,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+bcda6bfa-f41c-412c-aa74-608226be6bcb,"Mba Peter",Male,"Western","Prestea Huni Valley","Insu",,,35,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+1912d4e0-b805-4105-8e16-9740204ea19e,"Shaibu Abugri Adam",Male,"Western","Prestea Huni Valley","Insu",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+f223fcd2-4739-4af6-baf6-dc1ee26bb55a,"Yiporo John",Male,"Western","Prestea Huni Valley","Insu",,,26,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+86072640-3714-4164-925f-291a1064bbb8,"Ndaago Hamidu",Male,"Western","Prestea Huni Valley","Insu",,,24,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+e355407c-2e22-46d8-972f-da0926042a03,"Hamza Mohammed",Male,"Western","Prestea Huni Valley","Insu",,,27,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+013a1350-7532-404d-a9ca-cde3a9af8236,"Issaka Bandah",Male,"Western","Prestea Huni Valley","Insu",,,24,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+56937a6b-beb7-4291-9edb-9004caf39e78,"Alukre Apambe",Male,"Western","Prestea Huni Valley","Insu",,,30,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+778e7c7a-d48d-46a1-a912-7fc92bedd7d5,"Salifu Salam",Male,"Western","Prestea Huni Valley","Insu",,,26,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+eb1c317d-0137-48f7-9f00-2bcc18688282,"Anaba Joshua",Male,"Western","Prestea Huni Valley","Insu",,,30,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+bcdba987-0b3c-4927-a9c5-48c3d81a0b64,"Gyasi Kwame",Male,"Western","Prestea Huni Valley","Insu",,,29,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+1e6b02b1-a482-4599-ac77-1c0cd0259b53,"Abdul Abass",Male,"Western","Prestea Huni Valley","Insu",,,24,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+40044ba3-4b3b-4850-9f64-4bf216f440c5,"Collins Barnor",Male,"Western","Prestea Huni Valley","Abenabena",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+3234cfbc-fa54-452e-b885-bb11442386d5,"Gladys Otchere",Female,"Western","Prestea Huni Valley","Abenabena",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+a981e63a-17fc-412d-aca8-3e01d73e90d6,"Seth K. Arthur",Male,"Western","Prestea Huni Valley","Abenabena",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+13b49052-eb94-4e95-90fc-c2d8fa2b04f3,"Margret Amponsah",Female,"Western","Prestea Huni Valley","Abenabena",,,27,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+9ea5842d-2d59-4c6a-9cf0-2ce5eb4fc80f,"Love A. Amoakoah",Female,"Western","Prestea Huni Valley","Abenabena",,,26,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+fd62a7b3-62f8-42cb-a52d-608ec24855ed,"Isaac Appia",Male,"Western","Prestea Huni Valley","Abenabena",,,25,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+21191848-8df4-4992-9d8a-1fb59a17531a,"Galley K. Gabrel",Male,"Western","Prestea Huni Valley","Abenabena",,,24,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+173a2788-c807-49fa-9c4c-fdfe6ad39928,"Alex Boateng",Male,"Western","Prestea Huni Valley","Abenabena",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+72fd11a0-93e2-4cc0-82ca-f233708e9119,"Quashi Gabrel",Male,"Western","Prestea Huni Valley","Abenabena",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+e0093aa2-0d0f-4f38-ace0-3d1b9138532c,"Kwame Appiah",Male,"Western","Prestea Huni Valley","Abenabena",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+727d2847-8168-4a0e-b269-24b8e0fd918d,"Peter Ndum",Male,"Western","Prestea Huni Valley","Abenabena",,,20,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+5c2141d7-94af-4916-9e6c-831624e29903,"Comfort Asantewaa",Female,"Western","Prestea Huni Valley","Abenabena",,,25,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+b5b0f7d3-b92b-4cce-953e-ed1f8fe5835b,"Akosua Nyamekye",Female,"Western","Prestea Huni Valley","Abenabena",,,25,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+d0b4217e-9eb5-4bc3-9733-f3218a0142b9,"Christiana Owusu",Female,"Western","Prestea Huni Valley","Abenabena",,,24,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+2034eab0-71d6-4b99-bd8b-4e2c4b8a7176,"Ebenezer Aseidu",Male,"Western","Prestea Huni Valley","Abenabena",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+6ed28399-1297-4b95-b18d-53f662e7ee57,"Pullina Darkoah",Female,"Western","Prestea Huni Valley","Abenabena",,,22,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+d0b415f4-30c4-446f-914a-0a7d15716bda,"Abu Malanga",Male,"Western","Prestea Huni Valley","Abenabena",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+383ff04f-5db7-4be9-966e-97c77523d855,"John Armaah Laryea",Male,"Western","Prestea Huni Valley","Abenabena",,,20,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+f866734a-0602-45fb-b823-c2a83d26b3a1,"Phillex Gyamirah",Female,"Western","Prestea Huni Valley","Abenabena",,,25,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+9a5e042b-675c-48e2-b6b3-3433880979a1,"Dede Iyco",Female,"Western","Prestea Huni Valley","Abenabena",,,27,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+39adc802-b1de-4fa3-9d4d-979c31b87114,"Lamptey Emmanuel",Male,"Western","Prestea Huni Valley","Abenabena",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+cec32caa-967c-444c-b536-45465fefeb50,"K. G. Jocob",Male,"Western","Prestea Huni Valley","Abenabena",,,18,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+f6af7cba-56e3-4474-bfab-99e60912f1a9,"M. K. Aseidu",Male,"Western","Prestea Huni Valley","Abenabena",,,25,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+dba7da00-3077-41d7-8536-eca910347f71,"Tetteh Samual",Male,"Western","Prestea Huni Valley","Abenabena",,,20,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+3e805d6f-0cb5-4d3e-a804-84991e118c96,"Margret Opoku",Female,"Western","Prestea Huni Valley","Abenabena",,,34,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+bb45b0d9-8c56-44ea-bdf8-a81ce5e8d55a,"Biama Beateice",Female,"Western","Prestea Huni Valley","Abenabena",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+0a6a3014-edef-4605-9e86-8881c14befce,"Comfort Acheampomaa",Female,"Western","Prestea Huni Valley","Abenabena",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+ca094ff2-9d5e-41a2-aa39-10b8424d79f6,"Stephen K. Galley",Male,"Western","Prestea Huni Valley","Abenabena",,,23,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+52ad852a-45cd-4476-959a-262fc354d394,"Kojo Etuah",Male,"Western","Prestea Huni Valley","Abenabena",,,21,,,[],Active,2026-02-21T21:43:26.180Z,false,2026-02-21T21:43:26.180Z,2026-02-21T21:43:26.180Z
+cc1e21e0-a6e4-438e-a9c7-716e7f427f5e,"Nicholas Amoah",Male,"Western","Prestea Huni Valley","Abenabena",,,25,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+3bcf7243-8d94-469a-aa40-980e8af42d30,"John K. Otchere",Male,"Western","Prestea Huni Valley","Abenabena",,,24,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+99a4104c-4437-46e9-80fd-b8e0eb4cc843,"John A. Viccent",Male,"Western","Prestea Huni Valley","Abenabena",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+e9ea6f1d-829e-4e44-8e6b-05d9f61efd8c,"Mary Opopku",Female,"Western","Prestea Huni Valley","Abenabena",,,22,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+69d6d2f0-d56e-406f-89c0-93673d18f0be,"Godred Opoku",Male,"Western","Prestea Huni Valley","Abenabena",,,24,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+e50bf93a-80a3-4acc-9cd2-635da53b092c,"Margret Adomako",Female,"Western","Prestea Huni Valley","Abenabena",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+be2fbc8f-725b-4db8-ac14-38c51d3756a1,"John Addo",Male,"Western","Prestea Huni Valley","Abenabena",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+ca44b81f-a4ad-4d98-8e9b-6af6be8deb5d,"Emmanuel Djaba",Male,"Western","Prestea Huni Valley","Abenabena",,,25,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+9c60c003-1f4f-4026-bce6-1c9355d3607c,"Margret Amonsah",Female,"Western","Prestea Huni Valley","Abenabena",,,24,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+9d813f7a-15ce-49ee-9fc9-0fa2a5368e1d,"Joseph Kwao Jacinto",Male,"Western","Prestea Huni Valley","Abenabena",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+cd94fe41-ec9e-443d-ad29-a3becb01bc93,"Daniel Otchere",Male,"Western","Prestea Huni Valley","Abenabena",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+7c7951dd-d46b-4cf1-b49b-986d239c2866,"Tetteh Isaac",Male,"Western","Prestea Huni Valley","Abenabena",,,24,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+565dad41-1a46-4574-8f07-8f7dfab48c98,"Chipsah K. George",Male,"Western","Prestea Huni Valley","Abenabena",,,25,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+be2c1559-fb7d-4986-b3bc-44ec03a64abd,"Fridrick Acheampong",Male,"Western","Prestea Huni Valley","Abenabena",,,31,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+e6fd82f0-1dff-4326-86e9-c30102e62f93,"Comfort Twum",Female,"Western","Prestea Huni Valley","Abenabena",,,32,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+85af7e42-5e4b-4ab7-93fc-4bbf20abddbc,"Oye Christiana",Female,"Western","Prestea Huni Valley","Abenabena",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+2b3bacb8-b177-47ce-8085-d90f68084152,"Agnes Bekoe",Female,"Western","Prestea Huni Valley","Abenabena",,,24,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+ac62d165-131d-452c-b8e6-9402e1b5a77d,"Samuel Y. Darko",Male,"Western","Prestea Huni Valley","Abenabena",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+1d85c692-b23c-4ad4-a81c-5ca0b2870f92,"Esther Larbi",Female,"Western","Prestea Huni Valley","Abenabena",,,32,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+bf364d6e-f5b9-4faa-939f-2e48fd54734a,"Solomon Ahuaman",Male,"Western","Prestea Huni Valley","Abenabena",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+89c91c9b-c8ca-469b-9a4f-1644dd448110,"Ebenezer T. Kwasi",Male,"Western","Prestea Huni Valley","Abenabena",,,34,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+9221fff4-686d-493c-8603-309be1056373,"Emmanuel Larbi",Male,"Western","Prestea Huni Valley","Abenabena",,,34,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+c398c48a-cb3a-40d6-abd2-f8c3df17cbce,"Comfort Antwiaah",Female,"Western","Prestea Huni Valley","Abenabena",,,31,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+aed71e21-381a-457a-a950-4075024c19d4,"Opoku S. Boahen",Male,"Western","Prestea Huni Valley","Abenabena",,,27,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+c8081bbc-f302-4c0e-a712-ddf9129f84db,"George Larbi",Male,"Western","Prestea Huni Valley","Abenabena",,,18,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+aa08d178-1967-42f2-93f4-670ce3679cde,"Akosua Benewaah",Female,"Western","Prestea Huni Valley","Abenabena",,,18,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+786ffe5b-7603-4fdb-9e7d-d24f6d7d82bf,"Afiriyei Gyamirah",Male,"Western","Prestea Huni Valley","Abenabena",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+0bd089fb-04f7-4569-a59b-63baf1a26f34,"Justice Ankomah",Male,"Western","Prestea Huni Valley","Abenabena",,,27,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+fdc47e1d-c1ee-4246-a86e-8fe76fab02b3,"Mary Tekyiwaah",Female,"Western","Prestea Huni Valley","Abenabena",,,26,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+81b6dd48-555b-4f50-9352-2364a82d3dff,"Aku Nyamade",Female,"Western","Prestea Huni Valley","Abenabena",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+6f5a026a-eaff-4317-a4dd-b2a4de5d1a71,"Dzato Galley",Male,"Western","Prestea Huni Valley","Abenabena",,,31,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+22a5ce7b-38b7-42c5-a2b6-329dc87ff9de,"Kwabena Odoi",Male,"Western","Prestea Huni Valley","Abenabena",,,32,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+54f10df7-8591-4221-af8e-4ceca9a3899d,"Isaac Larbi",Male,"Western","Prestea Huni Valley","Abenabena",,,28,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+4d8619d6-5934-491e-9313-3dadfdf76f7d,"Issifu Amoda",Male,"Western","Prestea Huni Valley","Abenabena",,,27,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+faaec3b0-e2f7-4f18-8d17-587cdb85e328,"Maaman Bashiru",Male,"Western","Prestea Huni Valley","Abenabena",,,26,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+699c1644-221e-4c81-8c0c-86f97325ac0d,"Rose Ayebea",Female,"Western","Prestea Huni Valley","Abenabena",,,34,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+d51994ee-8065-4b00-abd8-9c4c88081027,"Salomey Darkwah",Female,"Western","Prestea Huni Valley","Abenabena",,,33,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+fccc30f5-cc95-440e-8c5c-7c418ea17406,"Joyce Asare",Female,"Western","Prestea Huni Valley","Abenabena",,,34,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+0012a479-d747-4ed2-abaa-71b1b51cf609,"Janet Appiah",Female,"Western","Prestea Huni Valley","Abenabena",,,27,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+9558326f-481f-4213-8abb-790add218f79,"S.o. Peasah",Male,"Western","Prestea Huni Valley","Abenabena",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+d2f0513b-42e9-4c3e-8ad5-c80e40df6c64,"Ebenezer K. Afoakwah",Male,"Western","Prestea Huni Valley","Abenabena",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+cb0e2099-4f7e-4111-814a-893ffa2066e0,"Addo Minah",Male,"Western","Prestea Huni Valley","Abenabena",,,24,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+6ee62ed8-05d0-491b-ae76-2ce9cee031f4,"Vida Achempong",Female,"Western","Prestea Huni Valley","Abenabena",,,25,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+203796ed-b0e7-45c5-8030-7a5c76f8cacf,"Amega Vuh",Male,"Western","Prestea Huni Valley","Abenabena",,,25,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+f072796a-c63d-4880-b808-9e792d3f661f,"Korkor Mary",Female,"Western","Prestea Huni Valley","Abenabena",,,34,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+5acecc7a-e6cb-435c-a811-2c8b8384a541,"Johnson Y. Yeboah",Male,"Western","Prestea Huni Valley","Abenabena",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+c0f5e928-54de-4bb5-8818-540cecb1d1b7,"Amponsah Richard",Male,"Western","Prestea Huni Valley","Abenabena",,,35,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+b16f32c2-ed2a-464d-abba-d93e2bb282f1,"Andrews Ayisi",Male,"Western","Prestea Huni Valley","Abenabena",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+96fcd5f5-c83a-433f-ae3f-4549b0983a76,"Mr. Samuel T. Korboe",Male,"Western","Prestea Huni Valley","Abenabena",,,34,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+f1a0ae37-eb59-4bd4-a011-5096f4a87706,"Garden Yeboah",Male,"Western","Prestea Huni Valley","Abenabena",,,28,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+313dbd72-9669-4707-aac7-49b27b106b2d,"Lamptey Francis",Male,"Western","Prestea Huni Valley","Abenabena",,,29,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+d034da65-dbc9-4673-9834-0e689e196096,"Victoria Keme",Female,"Western","Prestea Huni Valley","Abenabena",,,32,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+50075d58-f87a-44bc-85c9-230ca018f959,"Vida Safoah",Female,"Western","Prestea Huni Valley","Abenabena",,,28,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+e4e9ebb3-5d9c-4377-859b-029dcd148eaa,"Simon Yeboah",Male,"Western","Prestea Huni Valley","Abenabena",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+7acac8b8-d33e-422f-b9fd-6cbfef2050be,"Micheal Ayivi",Male,"Western","Prestea Huni Valley","Abenabena",,,35,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+b0d9f1ab-d9f1-4011-ac71-6fd8e82a8d2a,"Kwasi Grubah",Male,"Western","Prestea Huni Valley","Abenabena",,,32,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+0ef8ac6f-dd72-4894-8fe0-696519cc5a6b,"Konortey Narh Richard",Male,"Western","Prestea Huni Valley","Abenabena",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+9f4de638-a191-4dd4-9486-c7ee6dfafed9,"Korli Margret",Female,"Western","Prestea Huni Valley","Abenabena",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+4cf91643-e0f4-4294-b97b-4c2246f09794,"Ohenewaah Janet",Female,"Western","Prestea Huni Valley","Abenabena",,,35,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+3bd3cde1-2009-4b0c-8cd0-d30a123a6a25,"Comfort Okyere",Female,"Western","Prestea Huni Valley","Abenabena",,,26,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+33fd9c98-284a-4ffe-933e-3b54fc7afa59,"N.s. Okyere",Male,"Western","Prestea Huni Valley","Abenabena",,,35,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+0635c825-bce8-488b-ad06-c081abab9c57,"Teye Ebenezer",Male,"Western","Prestea Huni Valley","Abenabena",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+58d24585-216f-42b6-85ac-b2f35d5a346a,"Daniel Bortey",Male,"Western","Prestea Huni Valley","Abenabena",,,35,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+74950d2b-e719-4297-ba42-549a5e127190,"Noah T. Adinany",Male,"Western","Prestea Huni Valley","Abenabena",,,32,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+2d042e0b-4035-4051-9818-9a78430fbb33,"Kwame Rockson",Male,"Western","Prestea Huni Valley","Abenabena",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+6592a82b-2d30-412b-a5f9-e40b29aee0ee,"Samphson Amponfi",Male,"Western","Prestea Huni Valley","Abenabena",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+d1166dea-68ed-437e-a4f8-aa8ea75ceba7,"Kwame Daniel",Male,"Western","Prestea Huni Valley","Abenabena",,,31,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+7fec91aa-a846-4b99-be4e-7e1e3bb8b9a4,"Kwaku Abotsi",Male,"Western","Prestea Huni Valley","Abenabena",,,33,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+8d6b4099-e7b4-4019-9493-00f675568305,"Akrated Kofi",Male,"Western","Prestea Huni Valley","Abenabena",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+d655605f-2dd0-48a2-8230-18160808e78c,"Emmanuel Akrateh",Male,"Western","Prestea Huni Valley","Abenabena",,,32,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+520b9ab1-0387-4f0e-83b7-458dff6579dd,"Esther Abgefo",Female,"Western","Prestea Huni Valley","Abenabena",,,26,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+03935845-6dae-4afa-8537-df039ed692c5,"Gladys Nartey",Female,"Western","Prestea Huni Valley","Abenabena",,,33,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+f3af0bea-9841-43a2-a429-53c6097c6494,"Mercy Dede",Female,"Western","Prestea Huni Valley","Abenabena",,,24,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+4a86c781-f316-42b8-9ea6-da0c1afe2a07,"Gifty Ohipeni",Female,"Western","Prestea Huni Valley","Abenabena",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+429b338e-7d5f-4819-9730-e30337cb44ad,"Danso Simmon",Male,"Western","Prestea Huni Valley","Abenabena",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+4dbf7c3b-10b5-42bd-92f2-00acfdff500a,"Julliana Marmley",Female,"Western","Prestea Huni Valley","Abenabena",,,32,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+e2a34449-d59c-49cd-b8ab-33499e57b511,"Kenney Bortey",Male,"Western","Prestea Huni Valley","Abenabena",,,34,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+7f8b670c-fc1a-4ba2-a4c4-3dbfda952ef6,"Giftey Osabutey",Female,"Western","Prestea Huni Valley","Abenabena",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+cf754264-2cb5-4fed-afe4-13a64125a5f6,"T. K. Narh",Male,"Western","Prestea Huni Valley","Abenabena",,,29,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+21109cb3-c05c-490f-baee-7ea1c6dab675,"Tetteh Waryo",Male,"Western","Prestea Huni Valley","Abenabena",,,24,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+0f4cffd8-c050-4c5f-8ffd-7f3e9568bad5,"Fridrick Natey",Male,"Western","Prestea Huni Valley","Abenabena",,,32,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+476944e2-8b78-4564-a78f-41ee37046223,"Nuetey Daniel",Male,"Western","Prestea Huni Valley","Abenabena",,,35,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+ecc1524b-5d6b-40d0-89ee-02b271f86660,"Comfort Lartey",Female,"Western","Prestea Huni Valley","Abenabena",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+712fbca1-63ff-4b60-ab26-f741eb16ea95,"Joseph Narh",Male,"Western","Prestea Huni Valley","Abenabena",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+7058d1d5-5de7-4eb4-bc3f-682a41f2436f,"Agens Korkor",Female,"Western","Prestea Huni Valley","Abenabena",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+d2d98286-4eb3-4662-9429-3129ddbbb8de,"Tetteh Sammuel",Male,"Western","Prestea Huni Valley","Abenabena",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+56256b00-0189-4736-98cb-9458ac883827,"Kwame Agua",Male,"Western","Prestea Huni Valley","Abenabena",,,27,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+132e30c2-2717-49ca-b21d-df7e0229e2c3,"Kwame Daniel",Male,"Western","Prestea Huni Valley","Abenabena",,,32,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+77257558-e90c-4fe9-974e-e09d91f62ff8,"Aseidua Lydia",Male,"Western","Prestea Huni Valley","Abenabena",,,30,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+01a6a4da-19dc-4cb9-8a33-dd3a89340c4b,"Ernest K. Larbi",Male,"Western","Prestea Huni Valley","Abenabena",,,29,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+9fb054bf-9f5a-40b8-8c12-0ebff3263b10,"Idrsu Seidu",Male,"Western","Prestea Huni Valley","Abenabena",,,30,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+d615cda9-a1bb-4764-8391-d07d5a9bace1,"Janet Boatemah",Female,"Western","Prestea Huni Valley","Abenabena",,,29,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+66f40c29-e429-426c-9c52-6fd8c1645a4c,"Grace Amoakoah",Female,"Western","Prestea Huni Valley","Abenabena",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+7d823a3c-4fae-403b-a131-aa992c0aff99,"Kwadjo Mensah",Male,"Western","Prestea Huni Valley","Abenabena",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+59a708d7-4a9e-415c-9d36-a5f9f9c41dec,"A. A. Awuku",Male,"Western","Prestea Huni Valley","Abenabena",,,24,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+d4677519-0eea-4941-b8e5-56f3cf896a35,"Addo Martha",Male,"Western","Prestea Huni Valley","Abenabena",,,25,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+e5dc5315-b570-441d-a419-381b9d07b308,"Isaac Larbi",Male,"Western","Prestea Huni Valley","Abenabena",,,29,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+9cdd8740-492a-428b-aab0-2128e4265c9b,"Diana Nanor",Female,"Western","Prestea Huni Valley","Abenabena",,,28,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+a5f4cf2f-ec7c-45f7-9db5-f63d2855a47f,"Nana Amma Awi",Male,"Western","Prestea Huni Valley","Bonsaso",,,28,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+0dfdf76c-b730-4ad4-844d-3ebb4b52378b,"Maame Akosua Serwaa",Female,"Western","Prestea Huni Valley","Bonsaso",,,28,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+ae8fa910-f2f0-4dbe-90ed-3d72e02f83d7,"Comfort Omane",Male,"Western","Prestea Huni Valley","Bonsaso",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+9c1a60fa-5183-48c9-9ec2-8a984a631063,"Akua Boatemaa",Male,"Western","Prestea Huni Valley","Bonsaso",,,24,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+40cae827-9c15-4f02-94f1-429a297ab61a,"Kwaku Amanor",Male,"Western","Prestea Huni Valley","Bonsaso",,,29,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+740ce561-ac09-4621-977b-001671c490f9,"Yaw Danso",Male,"Western","Prestea Huni Valley","Bonsaso",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+0b51ccc1-9bdf-4ea5-9d04-eb684a979889,"Cephas Tetteh",Male,"Western","Prestea Huni Valley","Bonsaso",,,24,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+317dd009-4ff3-4bd4-ba01-84b0a730a361,"Madam Yaa Operebea",Female,"Western","Prestea Huni Valley","Bonsaso",,,20,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+3014633d-25ce-49bb-8a27-a8d0b2953f77,"Francis Koramoah",Female,"Western","Prestea Huni Valley","Bonsaso",,,18,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+95855f4e-3264-4014-ab07-54dba00ed8e6,"John Tettey",Male,"Western","Prestea Huni Valley","Bonsaso",,,19,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+2ed754c8-efbb-45b5-9a6c-1a8c528635aa,"Daniel Sefah Boampong",Female,"Western","Prestea Huni Valley","Bonsaso",,,22,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+9b2624fd-8da7-4d37-8d54-a95ccf258233,"Ibrahim Gariba",Male,"Western","Prestea Huni Valley","Bonsaso",,,24,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+08e325cc-84d2-4cf9-bb72-1b0aa14c4ec5,"Abubakari Mohammed",Male,"Western","Prestea Huni Valley","Bonsaso",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+70dcfdd7-d6c6-4a12-8442-a52d5fb17b97,"Op. Tuba Wirdu",Male,"Western","Prestea Huni Valley","Bonsaso",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+e9d289bb-edeb-4433-915c-d9eb27ec608a,"Yaw Boakye",Female,"Western","Prestea Huni Valley","Bonsaso",,,25,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+78631cc2-5c3e-4310-bd86-8aa7261ed300,"Mary Amankwah",Female,"Western","Prestea Huni Valley","Bonsaso",,,24,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+7096e852-808f-4f26-a151-4a8dddf7f4d4,"Chapman Agyei",Male,"Western","Prestea Huni Valley","Akuse",,,29,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+2b4103ad-c98e-408f-8c71-6553962fc4ce,"Kwame Charles",Male,"Western","Prestea Huni Valley","Akuse",,,27,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+520f6620-5646-4a38-872b-a44289686340,"Samuel Qarcoo",Male,"Western","Prestea Huni Valley","Akuse",,,26,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+3c3a6c01-a177-4bdb-9684-f1a940c552aa,"Abena Omenawa",Female,"Western","Prestea Huni Valley","Akuse",,,24,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+80e2f084-40e4-4f1f-a764-d75484979aec,"Yaw Agarko Larbi",Male,"Western","Prestea Huni Valley","Akuse",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+bbf2b845-4377-4fec-9960-3192b9c8d92c,"Comfort Amponsah",Female,"Western","Prestea Huni Valley","Akuse",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+0ed0b0d6-0ea7-434a-93d7-c428602c9af9,"Francis Ofosu",Male,"Western","Prestea Huni Valley","Akuse",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+97ad9442-9f58-4999-9afc-08e3d987d191,"Kwaku Addae",Male,"Western","Prestea Huni Valley","Akuse",,,32,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+f311ba20-a044-46f5-82ba-8ad2454a7680,"Alice Boahene",Male,"Western","Prestea Huni Valley","Akuse",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+b086fffb-dbd5-4e76-8384-aecf3325933f,"Rabui Mohammed",Male,"Western","Prestea Huni Valley","Akuse",,,34,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+837d1654-ee55-4d2b-b2fc-974a07978f0f,"Christian Aseidu Gyedu",Female,"Western","Prestea Huni Valley","Akuse",,,34,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+d8114275-ad8c-4bb2-a908-ed434073fe9f,"Kofi Boatng",Male,"Western","Prestea Huni Valley","Akuse",,,31,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+4ccec8a2-8635-45e4-9c57-d04ff9319bc4,"Adwoa Keyewaa",Female,"Western","Prestea Huni Valley","Akuse",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+e40dddbd-a960-4156-8e38-396a67e7067e,"Francis Ngobu",Male,"Western","Prestea Huni Valley","Akuse",,,26,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+5a91fd68-cc01-44e8-a3f6-14d2ae42ef99,"Mercy Gyamera",Female,"Western","Prestea Huni Valley","Akuse",,,24,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+51bbb18a-f1f5-4b11-8991-88b94f851ac8,"Okyeame Amoako",Male,"Western","Prestea Huni Valley","Akuse",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+db89444e-86fa-4dcd-a3c0-c3e98cfc15ce,"Bismark Koranteng",Male,"Western","Prestea Huni Valley","Akuse",,,27,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+2d63ebc6-9685-4b82-b703-570ecd589758,"Rex Aboagye",Male,"Western","Prestea Huni Valley","Akuse",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+7b4b9ad9-3c86-442b-960a-57d39da5e36a,"Alex K. Aboagye",Male,"Western","Prestea Huni Valley","Akuse",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+1126de85-4a80-4e22-9e3e-ee5939e90bf2,"Owusu Darko",Male,"Western","Prestea Huni Valley","Akuse",,,31,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+38202a48-1ae6-4226-b0b8-73ccf4b21b6d,"Nana K. Asare",Male,"Western","Prestea Huni Valley","Akuse",,,32,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+bfe2ada5-e7ed-4784-8a19-41d9119ce3a0,"Felicia Adubea",Female,"Western","Prestea Huni Valley","Akuse",,,28,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+27d917cf-02ca-4ebb-a9cc-3019773d7ea2,"Kofi Amenyor",Male,"Western","Prestea Huni Valley","Akuse",,,27,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+de49f4c5-7dbd-4e38-88ab-b5998674fe48,"S. K. Darko",Male,"Western","Prestea Huni Valley","Akuse",,,26,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+a870aace-4675-46e9-ae85-89124cfb04d5,"Gilbert Larnor",Male,"Western","Prestea Huni Valley","Akuse",,,34,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+48960d20-002f-46c6-b76f-f0fa66a4c363,"Felicia Korkor",Female,"Western","Prestea Huni Valley","Akuse",,,33,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+635b30a3-962e-4010-a891-d61d434addf2,"Kwaku Yeboah",Male,"Western","Prestea Huni Valley","Akuse",,,34,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+68fa1383-1ac6-41da-9d67-fcd4dc6ba8e4,"Yaw Temang",Male,"Western","Prestea Huni Valley","Akuse",,,27,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+aaaee9a2-e2a0-4db9-87c5-618f47c6106d,"Esther Adade",Female,"Western","Prestea Huni Valley","Akuse",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+903a0d3d-4462-4f41-abf6-8d0e6c09a7e3,"Gyekyi Appiah",Male,"Western","Prestea Huni Valley","Akuse",,,34,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+f4b66c66-a1ad-4184-84d3-644d0a88c950,"Hanna Adu",Female,"Western","Prestea Huni Valley","Akuse",,,32,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+846d1cfc-7e31-4533-bf86-f9e3468c8eb3,"Patrick Opare",Male,"Western","Prestea Huni Valley","Akuse",,,25,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+8d80dc35-c8f6-44b6-92c9-7308fa9fa78e,"Owuraku Bosompo",Male,"Western","Prestea Huni Valley","Akuse",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+9691ae70-6e79-468a-ae06-c1c3e11d206e,"Freeman Nartey",Male,"Western","Prestea Huni Valley","Akuse",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+5fa376d2-8e6c-4561-86d1-341dd74dabb6,"Aboagey Yirenkyi",Male,"Western","Prestea Huni Valley","Akuse",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+8d5ef4e9-35ac-4ce5-8323-f70e358e2c11,"Kwabena Amoafo",Male,"Western","Prestea Huni Valley","Akuse",,,35,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+724c094f-a608-4e19-8096-3f53a0e43f52,"Samuel Sarfo",Male,"Western","Prestea Huni Valley","Akuse",,,26,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+1b44cef6-64b9-4387-892c-d62023d451a2,"Akosua Sarpomaa",Female,"Western","Prestea Huni Valley","Akuse",,,34,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+4c9a64ce-2dda-487e-aabd-3ea85922689b,"Adu Asare",Male,"Western","Prestea Huni Valley","Akuse",,,28,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+e50d97f1-ae8a-4d4c-b4b9-d31292843402,"H.k Nketia",Male,"Western","Prestea Huni Valley","Akuse",,,29,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+02c94ad3-793a-40fc-aa3d-264bbcdf8463,"Felicia Korkor",Female,"Western","Prestea Huni Valley","Akuse",,,32,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+64231150-a0eb-4ec0-bc31-410dfe02f130,"Philip Ofuso Darko",Male,"Western","Prestea Huni Valley","Winso",,,28,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+3e54720b-88fe-44e9-a59a-353ff55dca8c,"Yaa Zega",Female,"Western","Prestea Huni Valley","Winso",,,22,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+4f1b20ae-aa05-4de0-9a34-bbc8eb77daea,"Wiliam Boateng",Male,"Western","Prestea Huni Valley","Winso",,,35,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+89baf14e-f23d-4343-a5a0-8bca0e33c3b2,"Okyere Larbi",Male,"Western","Prestea Huni Valley","Winso",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+ca90775c-f4bf-40b6-af56-88b665ff7a1a,"Awusi Joyce",Female,"Western","Prestea Huni Valley","Winso",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+a6de5524-ab19-403b-9f0d-188a725e2a9a,"Anim Adinkrah",Male,"Western","Prestea Huni Valley","Winso",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+20f293ea-a02e-4150-993a-d5b44e690c62,"Lydia Odoi",Female,"Western","Prestea Huni Valley","Winso",,,35,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+7a5f548e-163d-4fe5-947c-ea1d5fee7603,"Aboage Asare",Male,"Western","Prestea Huni Valley","Winso",,,26,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+558f75a1-51ba-4c2c-bddf-4cc31b158879,"Amos Tawiah",Male,"Western","Prestea Huni Valley","Winso",,,35,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+48ceeb90-98f6-4c77-8b99-6c79b579d9d8,"Yaw Nkrumah",Male,"Western","Prestea Huni Valley","Winso",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+a4cf8aa4-ceb2-4c5c-a435-1eaced24eb0b,"Charles Amoako",Male,"Western","Prestea Huni Valley","Winso",,,35,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+c1f2c79b-14d5-4c61-9821-dee5bd97a50d,"Nana Darkwa",Male,"Western","Prestea Huni Valley","Winso",,,32,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+d09dd695-d4d1-4e53-b22b-92151bad3a35,"Ebenezer Ampadu",Male,"Western","Prestea Huni Valley","Winso",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+76b1641c-c8e1-4ccc-89b5-e2997d32b66b,"Mawuko Ngobu",Male,"Western","Prestea Huni Valley","Winso",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+260fe0a0-3ae6-4f77-951f-4eb6598bf727,"Hanna Adu",Female,"Western","Prestea Huni Valley","Winso",,,32,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+435eb28b-2c1a-4c31-9837-7c989e06a28a,"Tamatey Stephen",Male,"Western","Prestea Huni Valley","Winso",,,33,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+7cd0d5a1-7b60-4679-96a6-ea04ad85eddb,"Florence Akwekye",Female,"Western","Prestea Huni Valley","Winso",,,32,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+3d996b13-0584-4b5e-a83c-7d9d6e476ef7,"Seth Antwi",Male,"Western","Prestea Huni Valley","Winso",,,32,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+41ab8a19-18b5-4e4d-bd1b-9469b04cd275,"Paul Agyei",Male,"Western","Prestea Huni Valley","Winso",,,26,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+a08efdd4-6b2d-4167-8481-73d8d2ab6bdc,"Akosua Koragn",Female,"Western","Prestea Huni Valley","Winso",,,34,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+856ed847-3c04-4062-a254-163c5c6a214c,"Asirifi Boateng",Male,"Western","Prestea Huni Valley","Winso",,,24,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+3adf54ad-90ec-4fb9-8b58-ad6e66194fce,"Paulina Asante",Female,"Western","Prestea Huni Valley","Winso",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+fab79e64-6fd4-476c-bc3c-e0ef2f320c74,"Mavis Danso",Female,"Western","Prestea Huni Valley","Winso",,,32,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+5ce306bb-f36d-462c-94ba-15d7cb88ac45,"R.d. Osei",Male,"Western","Prestea Huni Valley","Winso",,,29,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+4d8589e0-1907-4168-9661-e4cbd30aa7da,"Tetteh Samuel",Male,"Western","Prestea Huni Valley","Winso",,,34,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+d385b70b-6b1d-4142-a8b3-724252bea739,"Yaw Owusu",Male,"Western","Prestea Huni Valley","Winso",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+315f60a8-0b3c-46a3-9400-f85980909589,"Adwoa Nkrumah",Female,"Western","Prestea Huni Valley","Winso",,,29,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+3100703c-a623-4975-b186-d568e6309e97,"Enerstina Anim",Female,"Western","Prestea Huni Valley","Winso",,,32,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+b8d139fe-0b3f-4dad-a8c6-fac335bb2b7f,"Ama Kesewa",Female,"Western","Prestea Huni Valley","Winso",,,32,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+b49c9866-2eb3-4baf-afec-726d41212ae4,"Grace Daoko",Female,"Western","Prestea Huni Valley","Winso",,,35,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+04e64449-c582-4289-82c6-6974520d2f50,"Oforiwaa Esther",Female,"Western","Prestea Huni Valley","Winso",,,34,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+0758a9d0-416f-40c3-9a16-f99e28799bd7,"Gasu Samuel",Male,"Western","Prestea Huni Valley","Winso",,,31,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+09d6af2d-e6bb-4e2b-b838-27ea69c25bf9,"Kwaku Asabre",Male,"Western","Prestea Huni Valley","Winso",,,34,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+b4fc10b0-3db7-40d5-9a5d-d5fa6900d0c2,"Aboagye Yerenkyi",Male,"Western","Prestea Huni Valley","Winso",,,33,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+b4055af5-b24f-452e-b5b9-87c5a156391d,"Kwabena Young",Male,"Western","Prestea Huni Valley","Winso",,,27,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+7de7ec09-af0f-4605-a5fc-9898defb1caf,"Joseph Owusu",Male,"Western","Prestea Huni Valley","Winso",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+98439017-50d8-402e-819a-78411121dac5,"Akua Bosompemaa",Female,"Western","Prestea Huni Valley","Winso",,,30,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+ec5b8ac9-d127-4904-b274-cdf98df3cc73,"H. G. Koranteng",Male,"Western","Prestea Huni Valley","Winso",,,28,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+89080c58-8ef6-4e7e-a7c1-2adce99b5ecc,"Teacher Asor",Female,"Western","Prestea Huni Valley","Winso",,,20,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+12de7737-9efb-4e30-a732-b1fc75fffc9e,"S. K. Obroni",Male,"Western","Prestea Huni Valley","Winso",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+364baa9c-d4ad-4616-ab62-3240ac3496e1,"Afua Ntiamoah",Female,"Western","Prestea Huni Valley","Winso",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+21d4b5f4-52dd-43aa-9c12-420cb1a5a71c,"Amponsah Antwi",Male,"Western","Prestea Huni Valley","Winso",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+5935ec1c-d061-47a7-879c-83d5d52aaa6a,"Kofi Gyasi",Male,"Western","Prestea Huni Valley","Winso",,,24,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+b30fd9d2-5241-4850-97e5-665525c778b1,"Kwadwo Aseidu",Male,"Western","Prestea Huni Valley","Winso",,,19,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+0e1c0219-c2d9-40b5-a704-fd459d61cf26,"Kwadwo Gally",Male,"Western","Prestea Huni Valley","Winso",,,29,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+957df269-18c2-440d-9ffb-fc133ccac14b,"S. S. Aduama",Male,"Western","Prestea Huni Valley","Winso",,,25,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+8c4a8dda-91ac-4f38-bbff-aa0c619a96aa,"Selina Okai",Female,"Western","Prestea Huni Valley","Winso",,,26,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+b2236d39-92d9-41c4-8660-f96b15a18e13,"Dokua T. Danso",Male,"Western","Prestea Huni Valley","Winso",,,20,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+09ef2ba6-8602-418f-9fbb-69fd2f5848e8,"Dickson Cudjoe",Male,"Western","Prestea Huni Valley","Winso",,,25,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+1149e804-c719-44f0-9153-c5739630e5f7,"Ama Nyamekye",Female,"Western","Prestea Huni Valley","Winso",,,34,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+047d7e57-7011-4c9f-9ed7-157c367151ac,"Alex Sarpong",Male,"Western","Prestea Huni Valley","Winso",,,24,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+5cbde85b-deda-4756-a0a5-2f2392eb29ec,"Ebenezer Adade",Male,"Western","Prestea Huni Valley","Winso",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+4ee1e39e-3358-4337-8fb1-8c015414d3cc,"Kwame Asare",Male,"Western","Prestea Huni Valley","Winso",,,25,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+86d35cdf-ab50-4cf4-8afe-53bdffdc7f49,"Mohammed Sarfo",Male,"Western","Prestea Huni Valley","Winso",,,28,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+7261bf21-f885-4675-9161-242ebe78d8e9,"Kwadwo Ngobu",Male,"Western","Prestea Huni Valley","Winso",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+9c13301d-ff41-4e65-a917-98a615a24a6b,"Atta Kissiedu",Male,"Western","Prestea Huni Valley","Winso",,,27,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+322e50f9-decf-46cc-a3c7-00b3c47247a5,"Teacher Owreko",Male,"Western","Prestea Huni Valley","Winso",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+172280e8-8fbd-4a5b-be1c-874097cf8583,"Amos Tawiah",Male,"Western","Prestea Huni Valley","Winso",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+6c5faf7c-27f5-49f2-8d9c-6057125cc572,"Tetteh Daniel",Male,"Western","Prestea Huni Valley","Winso",,,24,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+5389efcc-2ec9-4ef8-b81b-dafff31a94b6,"Isaac Tetteh",Male,"Western","Prestea Huni Valley","Winso",,,25,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+a4babb4c-b8bd-496f-911d-b170536b30f4,"Emmanuel Adade",Male,"Western","Prestea Huni Valley","Winso",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+d755a8ee-4cd8-4b96-b593-a3ba6d4b7679,"E. K. Nuetey",Male,"Western","Prestea Huni Valley","Winso",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+e388adaf-c47a-443b-a953-74fd7b6334e7,"Kwao Richard",Male,"Western","Prestea Huni Valley","Winso",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+5fcc3f83-c26a-4b18-a96a-bd34dc141e23,"Henry Tetteh",Male,"Western","Prestea Huni Valley","Winso",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+2415e055-fe14-4598-aa25-ff85557b258a,"Daniel Tei Kwasi",Male,"Western","Prestea Huni Valley","Winso",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+7144daff-6695-41d9-8971-b1b546f39fcf,"George Ansah",Male,"Western","Prestea Huni Valley","Winso",,,34,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+88dce377-b6f6-4f8b-9945-3b870ba5c021,"Adu Kwaku",Male,"Western","Prestea Huni Valley","Winso",,,28,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+310b0ed8-a80b-4ffd-b074-f985cdaca1c0,"Anim Aboagye",Male,"Western","Prestea Huni Valley","Winso",,,26,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+5d46f787-3e0d-4dad-a9ef-17d3236a5969,"Ernestina Ansah",Female,"Western","Prestea Huni Valley","Winso",,,25,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+7dfb001a-5e3e-43bd-8a98-0261e4e5a228,"Nana Adjeihene Acheapong",Male,"Western","Prestea Huni Valley","Kusase",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+a2411c01-20bc-4295-838c-d84b8a97fe32,"Nana Oti Frempong",Male,"Western","Prestea Huni Valley","Kusase",,,25,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+ff24d9a8-841a-42ec-ac2c-e9584947b09d,"James Owusu",Male,"Western","Prestea Huni Valley","Kusase",,,24,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+43d2e754-1f7d-4130-ad87-f0702c267b5d,"Raynolds Asumadu",Male,"Western","Prestea Huni Valley","Kusase",,,28,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+b980b9d2-a394-46b2-a5f4-dcb0e257bca9,"Boakye Mensah",Male,"Western","Prestea Huni Valley","Kusase",,,22,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+3e7fe861-acd6-488f-9da5-59ce06a6153d,"Eric Acheampong",Male,"Western","Prestea Huni Valley","Kusase",,,26,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+ef5bbb67-5bd8-4473-9c1b-d82c16ecbc41,"Adjoa Owusua",Female,"Western","Prestea Huni Valley","Kusase",,,28,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+0158baac-02b2-4ebf-8648-3c87fa7cdbe9,"Akua Serwah",Female,"Western","Prestea Huni Valley","Kusase",,,25,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+2fe1c8a3-f97a-43dc-b975-e3075ec35a5d,"Osei Kwaku",Male,"Western","Prestea Huni Valley","Kusase",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+6adf1791-8ed7-4ddb-b270-48e458aef4ea,"Esther Kwateng",Female,"Western","Prestea Huni Valley","Kusase",,,26,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+1bc3353b-009f-4950-975c-ade3fb7c3b48,"Osafo Abebrese",Male,"Western","Prestea Huni Valley","Kusase",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+8898f9ac-d537-4aec-a791-3dc63cbfaa57,"Osei Bonsu",Male,"Western","Prestea Huni Valley","Kusase",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+423fd869-53cd-41bf-a009-86ec391375a7,"Duah Badu",Male,"Western","Prestea Huni Valley","Kusase",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+a3fccc4f-5179-4b76-8dcd-46e6da285665,"Amma Ofia",Female,"Western","Prestea Huni Valley","Kusase",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+b01f9b4e-d8f5-474c-96c9-e690bcfbdc26,"Frank Oduro",Male,"Western","Prestea Huni Valley","Kusase",,,24,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+9b4290bf-36cc-408f-bf51-d0a101b0c649,"Kwame Atta",Male,"Western","Prestea Huni Valley","Kusase",,,25,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+8ebcd67a-d2e2-44b5-a281-983fe1f74c38,"Grace Asare",Female,"Western","Prestea Huni Valley","Kusase",,,26,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+5ab279c6-99eb-42dd-8df1-e0a52bc26ad6,"Samuel Kwarteng",Male,"Western","Prestea Huni Valley","Kusase",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+d7da3219-2f59-4149-a746-8386280b2aec,"Akua Donkor",Female,"Western","Prestea Huni Valley","Kusase",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+7b72c412-c1a3-4319-98bd-d85ce7669f7b,"Richard Alex Boateng",Male,"Western","Prestea Huni Valley","Kusase",,,32,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+967b0797-2439-4bb0-af2c-7dcdaedcb0a5,"Oteng Kofi",Male,"Western","Prestea Huni Valley","Kusase",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+0ad01c76-184d-41b3-9287-8a42136e289a,"Oduro Hayford",Male,"Western","Prestea Huni Valley","Kusase",,,34,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+0f02ed66-0029-4f07-9acd-e9a2edef1068,"Agnes Addu Mensah",Female,"Western","Prestea Huni Valley","Kusase",,,34,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+468a2f6f-95e1-47ac-b033-1b649d224000,"E.k. Amadu",Male,"Western","Prestea Huni Valley","Kusase",,,31,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+03aa48b7-5af4-4b32-88df-cba9aaa845f6,"Kofi Frempong",Male,"Western","Prestea Huni Valley","Kusase",,,32,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+3e4574d9-84af-40b9-b2e8-74722ad820e6,"Amma Serwah",Female,"Western","Prestea Huni Valley","Kusase",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+c9deb03c-9e8d-4aa7-a09a-004969cf4e94,"Kwabena Frempong",Male,"Western","Prestea Huni Valley","Kusase",,,26,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+17ddd726-4e54-4679-8a07-3638db6920a7,"Leticia Akouko",Female,"Western","Prestea Huni Valley","Kusase",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+8595b461-14f0-43ff-a89e-d2c32504c13b,"Kwesi Adusei Johnson",Male,"Western","Prestea Huni Valley","Kusase",,,27,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+a40ab636-b2d4-4ead-bbcc-af97b88a15f6,"Akua Nkrumah",Female,"Western","Prestea Huni Valley","Kusase",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+755aa6fd-5f20-48bb-9d00-786083d45b74,"Amma Serwah Ii",Female,"Western","Prestea Huni Valley","Kusase",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+9933393a-8fe3-4f7b-b783-b04b86a16952,"Nana Kodua Kessee",Male,"Western","Prestea Huni Valley","Kusase",,,31,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+86f9f5ed-e019-4fb5-886d-3ecd477ad02f,"Sadik Annor",Male,"Western","Prestea Huni Valley","Kusase",,,32,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+410bedab-6cfc-41f2-b10b-e7124217eccb,"Kwesi Mensah Debrah",Male,"Western","Prestea Huni Valley","Kusase",,,28,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+079951a1-393a-4300-9492-9a1c8f668c15,"Amma Kune",Female,"Western","Prestea Huni Valley","Kusase",,,27,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+f2701cb2-4596-4001-bf4b-51efb90eed58,"Eric Nii Ankrah",Male,"Western","Prestea Huni Valley","Kusase",,,26,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+bc302bb7-95c2-45e4-9082-c9fbe7927e83,"Kwame Duah",Male,"Western","Prestea Huni Valley","Kusase",,,34,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+bb6982f1-2c56-4e8c-849d-8bb2c6a87823,"Adjoa Serwah",Female,"Western","Prestea Huni Valley","Kusase",,,33,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+2582c769-6be7-4dd3-8f22-11abbd5ce5c6,"Kwabena Appiah",Male,"Western","Prestea Huni Valley","Kusase",,,34,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+db819987-c37f-4120-aa5a-ba0d32b5b6ab,"Kate Buabeng",Female,"Western","Prestea Huni Valley","Kusase",,,27,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+9ecd06fe-a479-4bee-99d4-1117e86e1ae4,"Stephen Frempong",Male,"Western","Prestea Huni Valley","Kusase",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+c1d23ae7-1329-4882-91d4-b48c1093c02a,"Beatrice Kessewah",Female,"Western","Prestea Huni Valley","Kusase",,,24,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+e000a6b3-eef5-40be-b9b4-b4f2a26349c7,"Gladys Kwarteng",Female,"Western","Prestea Huni Valley","Kusase",,,24,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+4e12eba6-03a1-4f44-9e6f-01072945161a,"Kwadwo Yeboah",Male,"Western","Prestea Huni Valley","Kusase",,,25,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+c56c5cea-1547-47b2-a4a8-937909a1e023,"E.o. Tawiah",Male,"Western","Prestea Huni Valley","Kusase",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+4f6dcb4e-29ac-4c6a-9bba-2d2770193a64,"Emmanuel Asamoah",Male,"Western","Prestea Huni Valley","Kusase",,,27,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+d3598967-d5b7-4703-af02-806a1907014d,"Adwoa Ntiriwah",Female,"Western","Prestea Huni Valley","Kusase",,,28,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+4a4e275a-d821-4269-a680-6a28be6933e6,"Akosua Manu",Female,"Western","Prestea Huni Valley","Kusase",,,29,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+f8e4520e-63d9-428f-893a-826f37511c7a,"Owusu Agyeman",Male,"Western","Prestea Huni Valley","Kusase",,,30,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+90b2fbad-71c6-4605-88b4-94cca4dbdc71,"Akosua Fosuah",Female,"Western","Prestea Huni Valley","Kusase",,,34,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+04c9e784-4e39-48c6-9b26-623309ca1a51,"Owusu Boahene Kodro",Male,"Western","Prestea Huni Valley","Kusase",,,28,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+ffce5bd8-276d-4790-86e5-bb93e54ab140,"Emmanuel Boni",Male,"Western","Prestea Huni Valley","Kusase",,,29,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+793264ea-25a4-4ade-8db0-ba579dfaf8d0,"Nana Kwame Kumah",Male,"Western","Prestea Huni Valley","Kusase",,,32,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+93e76a37-8009-49ee-a807-43557f4b0f56,"Amma Konadu",Female,"Western","Prestea Huni Valley","Kusase",,,28,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+22b1730e-8645-4ee2-ae38-50311a9556e0,"Kwame Osafo",Male,"Western","Prestea Huni Valley","Kusase",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+3e0324e7-6f1c-4e17-b084-8808bd175849,"Kwabena Aikins Freeman",Male,"Western","Prestea Huni Valley","Kusase",,,35,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+ad2296f0-47a8-4ee2-ae58-75ceafae051a,"Yaw Boamah",Male,"Western","Prestea Huni Valley","Kusase",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+17f07c75-a4b8-4a70-b4da-e299bec974dc,"Samuel Amoako",Male,"Western","Prestea Huni Valley","Kusase",,,30,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+c4378c1b-93f4-41e7-8b74-c577d6e0d4ce,"E.k.oppong",Male,"Western","Prestea Huni Valley","Kusase",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+e9e584a3-03e2-4122-967b-27f3a47f5458,"Afua Konadu",Female,"Western","Prestea Huni Valley","Kusase",,,35,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+4ae01f76-d3fa-44fd-8f98-d1d25eca2d73,"Cecilia Kessewah",Female,"Western","Prestea Huni Valley","Kusase",,,26,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+a915aceb-1f35-410e-8a15-2900448c6a0f,"Afua Christiana",Female,"Western","Prestea Huni Valley","Kusase",,,35,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+c6a55d00-aaf7-4ff8-8b7b-80b3be8e9537,"Akosua Mensah",Female,"Western","Prestea Huni Valley","Kusase",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+d547dcea-7157-4fc7-81b6-2969b4117adf,"Kwame Afram",Male,"Western","Prestea Huni Valley","Kusase",,,35,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+f3b5c667-7841-442a-9751-097e23ddfc19,"Abena Apontua",Female,"Western","Prestea Huni Valley","Kusase",,,32,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+a5379348-2257-464a-aa3b-41354f380164,"Florence Mensah",Female,"Western","Prestea Huni Valley","Ansua",,,24,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+faf9ad71-751d-43a3-ac50-4cb405f1b64c,"Awuku Philip",Male,"Western","Prestea Huni Valley","Ansua",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+b8a543c2-e5bf-4ce7-8d6e-f9ba9b5179b8,"Seth Armadi Asare",Male,"Western","Prestea Huni Valley","Ansua",,,26,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+8050b49c-dac4-4162-81b2-6fa2d2f00fd8,"Andeye Richard",Male,"Western","Prestea Huni Valley","Ansua",,,24,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+97e1afad-bff2-4a63-9e22-e7f12f2037d4,"J.k. Asifo",Male,"Western","Prestea Huni Valley","Ansua",,,31,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+18a312ef-6c58-4a15-b102-ef2498461115,"William Wegba",Male,"Western","Prestea Huni Valley","Ansua",,,32,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+913c642f-3856-4508-965d-45796a68d877,"Eric Osei",Male,"Western","Prestea Huni Valley","Ansua",,,26,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+8d341621-841d-466a-afee-ae0576ae5bd7,"Agbezuvor",Male,"Western","Prestea Huni Valley","Ansua",,,26,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+f3fa570c-4b42-42ce-b59b-183bae0aea7b,"Foster Wegba",Male,"Western","Prestea Huni Valley","Ansua",,,24,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+518fcb29-2ae5-40a2-addd-b4ed1d37871a,"Samuel Tetteh",Male,"Western","Prestea Huni Valley","Ansua",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+e265c67c-e398-4147-8ea0-d75c230ce1fe,"Emmanuel Osei",Male,"Western","Prestea Huni Valley","Ansua",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+9a52620c-4049-4deb-b690-79dd4c8ada74,"Kwamena Medordzi",Male,"Western","Prestea Huni Valley","Ansua",,,22,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+d7f3844e-32bb-423a-8f5a-f2192f08e652,"Kwame Hogba",Male,"Western","Prestea Huni Valley","Ansua",,,34,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+babda499-7059-4b8b-aa14-2e732b1771f9,"Forster Aziavor",Male,"Western","Prestea Huni Valley","Ansua",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+43dc4ebc-199a-4294-a2bb-7be4be634b74,"Odikro Obeng",Male,"Western","Prestea Huni Valley","Ansua",,,29,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+76015e5a-3778-4fd5-ab4b-d3f2d3d4f026,"Tsaac Addo",Male,"Western","Prestea Huni Valley","Ansua",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+6ab789f2-412e-4297-908e-2c886415449a,"Edna Agboh",Female,"Western","Prestea Huni Valley","Ansua",,,32,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+f3876bf3-8549-4556-8dfc-bc3230adc71e,"Charles Nartey",Male,"Western","Prestea Huni Valley","Adweneye",,,35,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+6cd558ee-26a2-4bc6-b13e-56e1b5e80958,"Mercy Manu",Female,"Western","Prestea Huni Valley","Adweneye",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+2dcf9550-2493-47c1-8b7d-c6b0e44f0c9b,"Asante Agyei",Male,"Western","Prestea Huni Valley","Adweneye",,,32,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+b34f55b9-5ab3-4f58-bf75-797642915254,"Kwame Twumasi",Male,"Western","Prestea Huni Valley","Adweneye",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+607aad89-0eaa-4ea7-9e37-19625a428c76,"Abdul Rahin Abubakar",Male,"Western","Prestea Huni Valley","Adweneye",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+2f4abb90-0d96-44bb-b825-365e5b6eaac1,"Lord Listowell Asogba",Male,"Western","Prestea Huni Valley","Adweneye",,,27,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+14a1f236-70bd-4ef8-82b6-e5363fae4262,"Abubakari Alhassan",Male,"Western","Prestea Huni Valley","Adweneye",,,25,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+70e40f35-6f03-4687-b090-cf477cc4c056,"Aghei Mante",Male,"Western","Prestea Huni Valley","Adweneye",,,30,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+c0e55d23-467c-4175-8a38-3fa2e38ba58c,"J.a Fianko",Male,"Western","Prestea Huni Valley","Adweneye",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+68e55785-0721-4c79-a8f8-8b9487a2abc5,"Kwaku Martey",Male,"Western","Prestea Huni Valley","Adweneye",,,30,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+9868fd62-dc9f-4032-b5f9-6ec5e5997642,"Addo Francis",Male,"Western","Prestea Huni Valley","Adweneye",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+a17c0b63-14f5-4e7b-b45d-0cfc715b7617,"S.j. Assah",Male,"Western","Prestea Huni Valley","Adweneye",,,25,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+f1c15c4f-bee8-4ea8-9f01-6bace4ac3eb4,"E.a. Akuffo",Male,"Western","Prestea Huni Valley","Adweneye",,,24,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+2d06f127-e5aa-476e-b11f-d753bd359ff7,"Ernestina Amposah",Female,"Western","Prestea Huni Valley","Adweneye",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+809e413d-7f06-4a40-a0b6-7e2fa0fd4b11,"Wiafe Ansong",Male,"Western","Prestea Huni Valley","Adweneye",,,26,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+58dd973d-325a-4151-ac24-6f5246ead3f8,"Mallam Tijani",Male,"Western","Prestea Huni Valley","Adweneye",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+b628d52e-f08d-4993-9786-bbd796b5cbe1,"Helina Tawiah",Female,"Western","Prestea Huni Valley","Adweneye",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+e10cab13-18c0-4703-970f-56816f78bf8c,"Felicia Obeng",Female,"Western","Prestea Huni Valley","Adweneye",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+efb7e7d0-8234-4a83-ae2c-e0a0a2424ba6,"Obeng Addo",Male,"Western","Prestea Huni Valley","Adweneye",,,24,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+cdc4dada-cf37-4b7f-923c-bd8414d51e40,"Claudia Offei",Female,"Western","Prestea Huni Valley","Adweneye",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+cb05c1c3-6054-45ba-88e4-faede7d26eaf,"M.a Ayettey",Male,"Western","Prestea Huni Valley","Adweneye",,,32,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+d2d5864c-aed6-45c3-9be2-116acb2ac020,"Ankrah Emmanuel",Male,"Western","Prestea Huni Valley","Adweneye",,,20,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+28d250f6-1b56-44fd-88f7-7661c5a6d9dd,"Tumasi Ankrah",Male,"Western","Prestea Huni Valley","Adweneye",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+7059b3ae-e224-4edd-bef1-d61ee238740b,"Opare Brothers",Male,"Western","Prestea Huni Valley","Adweneye",,,20,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+f7825005-0817-4bd7-a2c6-baecca1fe128,"Lawyer Ampofo Bekoe",Male,"Western","Prestea Huni Valley","Adweneye",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+690c0758-6d82-4355-9ff0-ddaab6cefac3,"D.t Charmer",Male,"Western","Prestea Huni Valley","Adweneye",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+af49f704-7e30-4166-a726-95afdb5e28d8,"Kudjo Wanyo",Male,"Western","Prestea Huni Valley","Adweneye",,,28,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+7c424f5b-c772-4018-b2d2-c9f9dc4253ba,"Abukari Zibo",Male,"Western","Prestea Huni Valley","Adweneye",,,20,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+797e702a-408f-4725-acd3-146e3be0d8e6,"Grace Awusi Martey",Female,"Western","Prestea Huni Valley","Adweneye",,,24,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+7e5bec7f-88fc-4b0c-801c-46aef0dc2eb9,"Opaku Opare",Male,"Western","Prestea Huni Valley","Adweneye",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+f267274c-2abe-480f-bbd8-c6573ac77a17,"Jacob Larweh",Male,"Western","Prestea Huni Valley","Adweneye",,,24,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+abdc576d-820d-4fad-923e-6bc329d132f0,"D.k. Darko",Male,"Western","Prestea Huni Valley","Adweneye",,,25,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+9db8f047-7688-49d4-aec9-7e072042e648,"Vida Offei",Female,"Western","Prestea Huni Valley","Adweneye",,,20,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+4a47cdb3-14a5-4ea2-86aa-df85f0d11894,"Godson Martey",Male,"Western","Prestea Huni Valley","Adweneye",,,27,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+7e133ee7-036e-450b-97ab-058dcfa8bf0a,"Eric Aseidu",Male,"Western","Prestea Huni Valley","Adweneye",,,20,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+286aec00-8df3-4a89-8297-6245f894f608,"Ebenezer Adu Marte",Male,"Western","Prestea Huni Valley","Adweneye",,,31,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+bcc54576-9344-4b58-a7e2-17def8b82c37,"Samuel Okyere",Male,"Western","Prestea Huni Valley","Adweneye",,,34,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+ede51072-1f89-43a7-ac38-b2313ddf965a,"Martey Lekpe",Male,"Western","Prestea Huni Valley","Adweneye",,,25,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+50d84da2-5735-46d5-955c-6d6c45d784cb,"Peter Mensah",Male,"Western","Prestea Huni Valley","Adweneye",,,30,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+2474d5a5-1c4f-4b68-b5fc-d7b3967cf652,"Alhassan Mumuni",Male,"Western","Prestea Huni Valley","Adweneye",,,29,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+1fce2c8c-613f-4957-a853-29304e4fb95f,"Kwaku Ahoa",Male,"Western","Prestea Huni Valley","Adweneye",,,28,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+1f1f0579-7226-47c0-a9d5-a97e3e64b684,"Daniel Anakwah",Male,"Western","Prestea Huni Valley","Adweneye",,,25,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+c781778b-4b97-4575-bd83-b6c4f966f01c,"Tettey David",Male,"Western","Prestea Huni Valley","Adweneye",,,24,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+4349ab23-c0e5-4952-bb68-267c1cdf615a,"Kwaku Asamoah",Male,"Western","Prestea Huni Valley","Adweneye",,,27,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+12addc84-891f-465e-9191-5571bf885e05,"Theophilus A Twumasi",Male,"Western","Prestea Huni Valley","Adweneye",,,22,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+c19e432a-66a9-4157-971f-2b670ef773d1,"Twumasi Maxwell",Male,"Western","Prestea Huni Valley","Adweneye",,,24,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+906d7657-d56f-4862-bc31-64d2330d6235,"E.k Manukure",Male,"Western","Prestea Huni Valley","Adweneye",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+e4276d65-4f04-436b-aaef-29d8f4044be3,"Emmanuel Bekoe",Male,"Western","Prestea Huni Valley","Adweneye",,,20,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+3e86a807-29a8-4c24-9dca-f86d06fd7628,"F.o. Owusu",Male,"Western","Prestea Huni Valley","Adweneye",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+c2a2b83b-3b3e-4b50-8995-b276f52ec82d,"Kwasi Asante",Male,"Western","Prestea Huni Valley","Adweneye",,,29,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+5e00bb0a-8166-4171-81bb-6be03d809cb1,"Peter Asante",Male,"Western","Prestea Huni Valley","Adweneye",,,28,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+cc4ebafd-a996-451e-9b22-d32ce26c5a03,"Tei Boduwa",Male,"Western","Prestea Huni Valley","Adweneye",,,27,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+91b5e3bf-18a8-4135-80c2-040f563966c9,"Kenney Felix",Male,"Western","Prestea Huni Valley","Adweneye",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+277b2b4d-a176-4685-bcb7-dee26b8ff002,"Eric Addo",Male,"Western","Prestea Huni Valley","Adweneye",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+e2a07115-2e13-46b7-b24a-4442125e4c87,"Agyei Mante & Co",Male,"Western","Prestea Huni Valley","Adweneye",,,28,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+80a22eb1-fdc2-4cc4-9a92-a6a1e624cddd,"Kofi Fianko",Male,"Western","Prestea Huni Valley","Adweneye",,,27,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+7101c6bb-9aff-4a4a-9fe9-4ebe3acf869d,"Mohammed Zakari",Male,"Western","Prestea Huni Valley","Adweneye",,,31,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+0ce5944a-8a5f-452c-953a-9549ce1565cf,"Ackan Emmanuel",Male,"Western","Prestea Huni Valley","Adweneye",,,32,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+778bc4e6-7e58-446c-8185-9b3a4575daad,"Ofosu Awuku",Male,"Western","Prestea Huni Valley","Adweneye",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+646307e8-2ae4-4cd5-a29a-a8b7052bdd20,"Godfred Ntow",Male,"Western","Prestea Huni Valley","Adweneye",,,32,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+97b2e1d6-a7c5-4eeb-a1fa-a9e106180b19,"Eric Ayenor",Male,"Western","Prestea Huni Valley","Adweneye",,,25,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+d00b66b9-1401-4f03-8f0a-0203c2a90bee,"K. A Laryea",Male,"Western","Prestea Huni Valley","Adweneye",,,34,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+2a5f3d4a-995d-435e-85ae-b4373a281c78,"Agya Asare",Male,"Western","Prestea Huni Valley","Adweneye",,,34,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+9a104dbb-ae8f-46aa-967a-e9dcf7c4408b,"E N Adjanor",Male,"Western","Prestea Huni Valley","Adweneye",,,31,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+3e32fbe6-c7d0-4ae1-8b32-a3b5ecd35248,"Afedi Kwaku",Male,"Western","Prestea Huni Valley","Mempeasem",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+bdd7b350-a229-4251-8e10-98dee3eb3870,"Akosua Serwaa",Female,"Western","Prestea Huni Valley","Mempeasem",,,34,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+cf8ccb3c-e27e-4d56-977a-0045d9a0a8aa,"John Tettey Kodii",Male,"Western","Prestea Huni Valley","Mempeasem",,,31,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+59e058d9-d63a-42b1-bbb1-d576d349c724,"Adua Kesewaa",Female,"Western","Prestea Huni Valley","Mempeasem",,,35,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+44383c67-a0f2-4486-b893-9a035e32500e,"Hannah Ababio",Female,"Western","Prestea Huni Valley","Mempeasem",,,27,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+37d906c2-866e-4108-8f0f-8d3204b0a49b,"Adu Agyakwah",Male,"Western","Prestea Huni Valley","Mempeasem",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+5b7ded80-0961-4898-9374-92e0d1b9876a,"Esther Ohene",Female,"Western","Prestea Huni Valley","Mempeasem",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+79471e0a-0efe-4d34-a0f5-3031e0c1b4c4,"Hawa Dauda",Female,"Western","Prestea Huni Valley","Mempeasem",,,31,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+89625cf9-e495-47f4-a169-156f883a2a7b,"Stephen K. Amponsah",Male,"Western","Prestea Huni Valley","Mempeasem",,,32,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+aad94be0-38f3-4ccd-815d-f9934f5048a3,"Cecilia Asare",Female,"Western","Prestea Huni Valley","Mempeasem",,,28,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+a390ce7e-571e-45a0-8656-59d15033b0f1,"Oduro Kwarteng",Male,"Western","Prestea Huni Valley","Mempeasem",,,27,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+4a21aab8-8ff7-4bf2-b4c4-6e8ff6fcde65,"Opoku John",Male,"Western","Prestea Huni Valley","Mempeasem",,,26,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+44abd89f-4ef7-4b3f-9472-1eff390be965,"Maku Adjannah",Female,"Western","Prestea Huni Valley","Mempeasem",,,34,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+8c8c96eb-dae2-4eb2-b18b-53949af616c5,"Joe Boateng",Male,"Western","Prestea Huni Valley","Mempeasem",,,33,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+90ba2ef9-efeb-4e51-95a4-ca5bc68e89bb,"Adoakwah Agyeman Dua",Male,"Western","Prestea Huni Valley","Mempeasem",,,34,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+f328619c-4078-4d17-9c44-09fef1427fdd,"Joshua Adjanor",Male,"Western","Prestea Huni Valley","Mempeasem",,,27,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+56fe7880-c9f6-4f95-b47b-51f121ef8c1f,"Larweh Emmanuel",Male,"Western","Prestea Huni Valley","Mempeasem",,,26,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+4ac0f0e8-54c8-44c0-a237-3b718470d0a9,"David Tettey",Male,"Western","Prestea Huni Valley","Mempeasem",,,26,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+6aef4e6b-10ba-452c-9bed-4a13eff35603,"Kwasi Nframah",Male,"Western","Prestea Huni Valley","Mempeasem",,,29,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+e57d9681-a7d3-465a-94c6-f8de3ca27a33,"Akua Lartebea",Female,"Western","Prestea Huni Valley","Mempeasem",,,25,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+b20ee3be-413d-4509-bac1-7c071070dca6,"Kwaku Anyan",Male,"Western","Prestea Huni Valley","Mempeasem",,,27,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+bab07341-bf5f-48cc-9327-bc3b81ca5800,"Victoria Aseidua",Female,"Western","Prestea Huni Valley","Mempeasem",,,24,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+0f94c39f-4abe-47a6-9dbd-9cbedc55e96d,"Theresa Adu",Female,"Western","Prestea Huni Valley","Mempeasem",,,32,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+4775d0b0-33fe-4457-96bf-186c8d31171f,"A.n.o Lamptey",Male,"Western","Prestea Huni Valley","Mempeasem",,,35,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+65e0ee87-df32-45ed-ab52-e6af8d063d94,"Jackson Peter",Male,"Western","Prestea Huni Valley","Mempeasem",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+9a2b8856-b113-4f01-b055-395b10a030c8,"Akua Yeboah",Female,"Western","Prestea Huni Valley","Mempeasem",,,34,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+749b9107-8815-422c-93ed-bc8dd530ba8e,"John Antwi",Male,"Western","Prestea Huni Valley","Mempeasem",,,28,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+cdf45c58-65e9-477b-9cd6-7250b52c6c07,"Hanna Okyere",Female,"Western","Prestea Huni Valley","Mempeasem",,,29,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+85ce6868-c6c3-4581-a071-285473834473,"Annor Ayen",Male,"Western","Prestea Huni Valley","Mempeasem",,,32,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+f4801ec7-4dee-4bef-9201-cd66b1c23738,"Cecilia Oppong",Female,"Western","Prestea Huni Valley","Mempeasem",,,28,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+0d507d12-500b-4153-bd28-46d6af1f7127,"Kwaku Dekpe",Male,"Western","Prestea Huni Valley","Mempeasem",,,26,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+b9652d17-c5ee-4da0-b93e-259e81fba22c,"E.o.opoku",Male,"Western","Prestea Huni Valley","Mempeasem",,,21,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+59c38561-aca4-4d80-9f84-2bc0c2f25f99,"Nana Ayisi",Male,"Western","Prestea Huni Valley","Mempeasem",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+9923d9c6-83bc-4a28-8ac7-8f96c001d5ae,"Rose Dede",Female,"Western","Prestea Huni Valley","Mempeasem",,,25,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+c4b92304-303f-4d06-934f-c059f88a1758,"Afua Manko",Female,"Western","Prestea Huni Valley","Mempeasem",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+4ceb5d65-066c-4b87-9a92-a5fe8fe9c2c8,"Kofi Timothy Pertey",Male,"Western","Prestea Huni Valley","Mempeasem",,,35,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+31e9ac30-f9d0-4481-a482-8abf2e46802b,"Kwasi Ahoa",Male,"Western","Prestea Huni Valley","Mempeasem",,,26,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+dbf6fcfc-a6f5-4578-bfc6-399748aea8f1,"Kwasi Agyei",Male,"Western","Prestea Huni Valley","Mempeasem",,,35,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+b84324fe-f988-4ece-8d02-59ddda1e4962,"Afua Akyamaa",Female,"Western","Prestea Huni Valley","Mempeasem",,,33,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+272b83c7-acb7-4888-acd8-43ed171fb038,"Tei Benjamin",Male,"Western","Prestea Huni Valley","Mempeasem",,,35,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+dcd3b002-845f-416b-bfd4-fceb91ccf99b,"R. A Okpodja",Male,"Western","Prestea Huni Valley","Mempeasem",,,32,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+bbef5134-c7f0-47a0-9124-fb98ac9b281e,"Yaa Antwiwaa",Female,"Western","Prestea Huni Valley","Mempeasem",,,26,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+63a4a8f5-06e8-4fb5-83bc-12d117eb90ee,"Oheneba Nyarko",Male,"Western","Prestea Huni Valley","Mempeasem",,,23,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+de1625b3-acb2-4e89-9c37-ee54c5345853,"Akua Obenewaa",Female,"Western","Prestea Huni Valley","Mempeasem",,,25,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+2e9051bf-4530-42ab-a3bd-10254ae84af7,"Ebenezer T. Koranteng",Male,"Western","Prestea Huni Valley","Mempeasem",,,33,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+147875e9-187c-4ccd-a968-6e6f608039ea,"Margeret Koranteng",Female,"Western","Prestea Huni Valley","Mempeasem",,,32,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+1def21d2-2779-42a4-8338-17f2cda1e480,"Faustina Acheampong",Female,"Western","Prestea Huni Valley","Mempeasem",,,32,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+79f932bd-f36a-4cdf-b466-72f4ed33789b,"Torku Kinsley",Male,"Western","Prestea Huni Valley","Mempeasem",,,26,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+a46dd783-b10f-4474-99d4-07e22f947665,"Beatrice Narkour",Female,"Western","Prestea Huni Valley","Mempeasem",,,34,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z
+3fa1acb2-d01b-4f81-89e2-5a5767491b96,"Tetteh Sogah",Male,"Western","Prestea Huni Valley","Mempeasem",,,24,,,[],Active,2026-02-21T21:43:26.181Z,false,2026-02-21T21:43:26.181Z,2026-02-21T21:43:26.181Z

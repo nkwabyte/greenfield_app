@@ -105,6 +105,8 @@ type AddEditFarmerDialogProps = {
 };
 
 export function AddEditFarmerDialog({ open, onOpenChange, farmer, onSave }: AddEditFarmerDialogProps) {
+  const [activeTab, setActiveTab] = React.useState('personal');
+
   const form = useForm<FarmerFormValues>({
     // @ts-ignore - Ignore type mismatch between react-hook-form and zodResolver versions
     resolver: zodResolver(farmerSchema),
@@ -147,6 +149,9 @@ export function AddEditFarmerDialog({ open, onOpenChange, farmer, onSave }: AddE
   });
 
   React.useEffect(() => {
+    if (open) {
+      setActiveTab('personal');
+    }
     if (open && farmer) {
       form.reset({
         ...farmer,
@@ -215,7 +220,7 @@ export function AddEditFarmerDialog({ open, onOpenChange, farmer, onSave }: AddE
         <Form {...form}>
           <form onSubmit={form.handleSubmit(handleSubmit as any)} className="py-4">
 
-            <Tabs defaultValue="personal" className="w-full">
+            <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
               <TabsList className="grid w-full grid-cols-3 mb-6">
                 <TabsTrigger value="personal">1. Personal Details</TabsTrigger>
                 <TabsTrigger value="residence">2. Residence & Contacts</TabsTrigger>
@@ -430,7 +435,14 @@ export function AddEditFarmerDialog({ open, onOpenChange, farmer, onSave }: AddE
               <DialogClose asChild>
                 <Button type="button" variant="outline">Cancel</Button>
               </DialogClose>
-              <Button type="submit">Save Farmer Record</Button>
+              {activeTab === 'farm' ? (
+                <Button type="submit">Save Farmer Record</Button>
+              ) : (
+                <Button type="button" onClick={() => {
+                  if (activeTab === 'personal') setActiveTab('residence');
+                  else if (activeTab === 'residence') setActiveTab('farm');
+                }}>Continue</Button>
+              )}
             </DialogFooter>
           </form>
         </Form>

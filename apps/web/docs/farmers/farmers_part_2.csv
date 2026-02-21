@@ -1,0 +1,1001 @@
+id,name,gender,region,district,society,community,contact,age,education_level,farm_size,crops_grown,status,join_date,deleted,created_at,updated_at
+839c51f0-2313-46c3-a56b-023e46d906ff,"Josiah Annor",Male,"Central","Assin Central","Kropor",,,32,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+e072cb71-a130-46bf-9f07-5ea8eca1d676,"Joyce Ama Nutakor",Male,"Central","Assin Central","Kropor",,,21,,4,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+2efe1f6f-7aee-4446-98f1-7e9b8b0a3db2,"Joyce Olonboaso",Male,"Central","Assin Central","Kropor",,,24,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+38adaa35-143f-46b5-a07e-a48fb9455353,"Julius Acheampong",Male,"Central","Assin Central","Kropor",,,34,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+1a2211b0-f7ad-4b0b-bf7a-30ac51d6c679,"Justice Abraham Dadzie",Male,"Central","Assin Central","Kropor",,,28,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+49195e4e-2260-46f8-8adc-48ff72936f4a,"Justice Azumah",Male,"Central","Assin Central","Kropor",,,29,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+a03395f9-cb5f-459e-bc1a-739ebf61fe17,"Justice Benibe",Male,"Central","Assin Central","Kropor",,,29,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+0cad444c-59c0-4925-a1ee-5cfbb4b68de4,"Justice Bonney",Male,"Central","Assin Central","Kropor",,,29,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+7106980b-6ec0-4b7f-8977-da90b2207092,"Justice Mensah",Male,"Central","Assin Central","Kropor",,,28,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+dc7ef8a0-2de3-4624-83a1-4009398901f1,"Justice Nii Armah Armartey",Male,"Central","Assin Central","Kropor",,,27,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+8c5c5950-0f15-4ae5-aedc-30d496be835d,"Justice Nii Kofi Koney",Male,"Central","Assin Central","Kropor",,,26,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+f37441d9-3674-4040-934e-eb1a9521ec95,"Kamaludeen Abdulai",Male,"Central","Assin Central","Kropor",,,26,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+378f95a6-96c7-4d5b-ac0a-bd6c9407d7e0,"Kate Oppong Paturing",Male,"Central","Assin Central","Kropor",,,31,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+fa9f4a68-4528-495a-9a6a-a06d1c51b130,"Kelvin Owusu",Male,"Central","Assin Central","Kropor",,,21,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+42997e79-f736-4252-a507-ec7d8b2ad6bf,"Kennedy Amoah",Male,"Central","Assin Central","Kropor",,,32,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+1b726158-7775-4c32-8162-2f39c5619736,"Kennedy Gesu",Male,"Central","Assin Central","Kropor",,,21,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+d86cb558-1f6a-419f-9f6d-64bac7ca15ff,"Kenneth Tetteh Nettey",Male,"Central","Assin Central","Kropor",,,23,,5,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+26a11825-6277-46d1-bcba-6352e06e473c,"Kingsley Agyenim Boateng",Male,"Central","Assin Central","Kropor",,,35,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+49abd98a-b5c4-474e-8c87-e5f517943b9c,"Kissiedu Angela",Male,"Central","Assin Central","Kropor",,,23,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+2ac61866-b780-4c57-bfe7-d2bca28e22c5,"Klugah Cynthia Fafali",Male,"Central","Assin Central","Kropor",,,23,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+2edcec95-c5ef-4c34-a9a2-8cf0b02b1080,"Kofigah Victus Kofi",Male,"Central","Assin Central","Kropor",,,24,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+54389915-8c9c-4538-bb70-9f46225291ac,"Konja Timothy",Male,"Central","Assin Central","Kropor",,,20,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+e9148f5f-a839-4121-aeaa-de097c73baf6,"Koomson Kyei Emmanuel",Male,"Central","Assin Central","Kropor",,,21,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+f73ae909-3166-4741-9029-715d6f15fb5f,"Koramah Esther",Male,"Central","Assin Central","Kropor",,,21,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+be0defb8-d649-400c-b382-bc1716f1102d,"Korley Joanna Naa-akushika Morkor",Male,"Central","Assin Central","Kropor",,,21,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+b3d1e82a-a6bd-44bc-b19a-b680568b7c07,"Kpodexa Ebenezar",Male,"Central","Assin Central","Kropor",,,21,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+c1fe52bf-85da-4532-b6fa-37e67d6c4cb3,"Kudahor Godwin",Male,"Central","Assin Central","Kropor",,,32,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+7758df5c-c6b1-4101-98a2-3e602989756c,"Kuleke Selorm",Male,"Central","Assin Central","Kropor",,,33,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+c565c485-14e5-4d17-9656-306015b50c91,"Kumanyenu Dela Yao",Male,"Central","Assin Central","Kropor",,,23,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+946382e6-4378-432a-8e16-dc56cbb87fc9,"Kumasi Isaiah",Male,"Central","Assin Central","Kropor",,,32,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+d9787254-7889-4fcb-84b4-8cc374fbb9a6,"Kumi Maxwell",Male,"Central","Assin Central","Kropor",,,32,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+23784343-f6f9-4d22-9c27-087341c80c7f,"Kusagah Desmond",Male,"Central","Assin Central","Kropor",,,35,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+5e2e61eb-e31d-4791-b5da-480b83b88252,"Kuvahe Ernestina Sheka",Male,"Central","Assin Central","Kropor",,,31,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+433bf25f-7d11-47b3-8504-3bf39fcc8225,"Kwabena Afriyie",Male,"Central","Assin Central","Kropor",,,23,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+2087a2ec-985e-4e6c-9d38-ad0ddedcc40c,"Kwable Theresa Maku",Male,"Central","Assin Central","Kropor",,,21,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+ad1fb7fa-a9c8-42ae-bdaa-5ba50b36f9f7,"Langlah Francis",Male,"Central","Assin Central","Kropor",,,20,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+75aecdad-e6f8-4f6b-b0fa-a86b155c69ae,"Liberty Yentumi",Male,"Central","Assin Central","Kropor",,,25,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+fc71e1b7-b637-4d29-b8f2-f18652ca0219,"Lord Essien",Male,"Central","Assin Central","Kropor",,,23,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+5eec50d0-103e-4f2c-a3f2-fb5f20b5a50c,"Lydia Afriyie Gyanwaa",Male,"Central","Assin Central","Kropor",,,24,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+5c58fe47-ab2f-4505-a687-692d1364c148,"Lydia Botchway",Male,"Central","Assin Central","Kropor",,,21,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+e5485524-b5ec-46ff-acb1-cbfe3f240a94,"Mabel Owusua",Male,"Central","Assin Central","Kropor",,,23,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+9fa1ba47-fb13-4610-98d1-5de3e61db640,"Magyah Kwabena Isaiah",Male,"Central","Assin Central","Kropor",,,22,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+d37b8eb5-1417-4e5f-be56-28fbed22a01f,"Mahmud Mutawakilu",Male,"Central","Assin Central","Kropor",,,21,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+93dd418c-6e46-40da-8d20-a72c4fa20714,"Makafui Agbeke",Male,"Central","Assin Central","Kropor",,,21,,2,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+2b10a77a-8bc9-466d-98a4-6af5945a9d50,"Marclord Pieterson",Male,"Central","Assin Central","Kropor",,,23,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+7a9b8ea6-2a48-44eb-b364-aec92b38d4cd,"Mariam Nartey",Male,"Central","Assin Central","Kropor",,,21,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+de61f1a2-e4a0-4352-b352-88cc50288e05,"Marian Ennin",Male,"Central","Assin Central","Kropor",,,24,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+65f49fb2-f816-46fe-867c-f5c8f503734c,"Marigold Pappoe",Male,"Central","Assin Central","Kropor",,,29,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+929d410f-237c-4725-8f6e-01961e37b7f8,"Mark Appiah Asamoah",Male,"Central","Assin Central","Kropor",,,28,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+69470067-7829-4084-ba9d-89275b179c40,"Mark Boakye Darku",Male,"Central","Assin Central","Kropor",,,27,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+8b61a0af-9c2b-437e-b218-17243cff7660,"Martin Sewornu",Male,"Central","Assin Central","Kropor",,,24,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+df3de1e0-4b97-4d4e-84d4-8f45751f172f,"Mary Acheampong",Male,"Central","Assin Central","Kropor",,,27,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+a6481df6-e985-4b1c-906e-f32401ff0a16,"Mary Adjokatse",Male,"Central","Assin Central","Ayansu",,,25,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+6b9930e3-00a5-4887-bd7f-e405c4354e5d,"Mary Agyemang",Male,"Central","Assin Central","Ayansu",,,35,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+9c2a77e1-941e-402b-a26f-ee23690c0803,"Mary Kumbeyisan",Male,"Central","Assin Central","Ayansu",,,23,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+da194835-e005-4ff3-b8b9-6a51dad63292,"Mary Kwoffie",Male,"Central","Assin Central","Ayansu",,,32,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+bb5ccbec-76d8-4f36-b2ac-660b59a62d0d,"Mary Narh",Male,"Central","Assin Central","Ayansu",,,21,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+093a2b58-6922-4626-a26a-8896bd646abc,"Mary Prah",Male,"Central","Assin Central","Ayansu",,,21,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+b49e302d-95d9-4c96-b6d8-d8cdb80c278f,"Mary Twumwaa",Male,"Central","Assin Central","Ayansu",,,26,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+719a0730-259a-4ddb-8c1b-46d59da43b27,"Mavis Salima Mohammed",Male,"Central","Assin Central","Ayansu",,,24,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+400a768f-4d5a-44f9-8e67-d579c5af4f80,"Mavis Yaa Tutua Agyenfra",Male,"Central","Assin Central","Ayansu",,,23,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+5a314ce1-0f72-4af9-939a-e4e9ef8aec10,"Mawuena Kwaku Akaho",Male,"Central","Assin Central","Ayansu",,,24,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+fe8ac7cf-63e5-4f7c-b638-fc9955d9bdd7,"Maxwell Dzidenu",Male,"Central","Assin Central","Ayansu",,,23,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+0a8358a3-afc5-4ee3-b9fd-040d9582466d,"Maxwell Senyo",Male,"Central","Assin Central","Ayansu",,,23,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+e504ccda-3e8f-4681-884e-91ab51802a5d,"Mensah Elikplim",Male,"Central","Assin Central","Ayansu",,,21,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+50263272-5b3a-48dd-90bc-d648541e038a,"Mensah Issabella Atswei",Male,"Central","Assin Central","Ayansu",,,32,,5,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+00b9ffb5-8253-4e00-9d82-17ce7aa9c846,"Mensah Jerry",Male,"Central","Assin Central","Ayansu",,,35,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+8e140884-f752-499d-a458-1d8707777125,"Grace Botwe",Male,"Central","Assin Central","Ayansu",,,31,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+b5b77213-cff1-4151-ad0e-08e52854dbfb,"Michael Anamvor",Male,"Central","Assin Central","Ayansu",,,32,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+8487bbb5-7cf3-4faf-a333-4500ef72e349,"Jerry Kotey",Male,"Central","Assin Central","Ayansu",,,21,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+369e9e7e-c945-4385-b807-0e9776e9e86b,"Rita Dzamefe",Male,"Central","Assin Central","Ayansu",,,23,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+9cadb75d-e12c-4290-9768-e14618d20012,"Kofi Amadu Serekye",Male,"Central","Assin Central","Ayansu",,,23,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+afd187fe-b3c4-47d4-84e0-4c22665e70bf,"Messiah Martey Funya",Male,"Central","Assin Central","Ayansu",,,32,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+0fb085a8-2851-43fb-b34d-63e3091cb7cf,"Iddrisu Zaharahu",Male,"Central","Assin Central","Ayansu",,,21,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+26ddb3e6-c406-43a7-bcd0-19510dce012f,"David Cudjo",Male,"Central","Assin Central","Ayansu",,,23,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+b82eb0e6-99c6-47ea-8bf7-b44ef0a98421,"Oko Sowah Jerry",Male,"Central","Assin Central","Ayansu",,,34,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+fb3d2eba-ff01-45bb-a01b-6b02586c4d4d,"Atambire Sampson",Male,"Central","Assin Central","Ayansu",,,21,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+a3e20194-61c2-48dd-8770-bf42e2a907cf,"Quayson Victoria",Male,"Central","Assin Central","Ayansu",,,29,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+10c687ea-be7c-42e7-bcde-7b5a83f1a661,"Ernestina Otu",Male,"Central","Assin Central","Ayansu",,,28,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+7e8566de-a8f9-42ac-99c2-e79e7d34d4c2,"Michael Darkwa Amoako",Male,"Central","Assin Central","Ayansu",,,23,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+aa50f6e6-fbc9-4c27-a3eb-cce48088c076,"Abdul Salam Barikisu",Male,"Central","Assin Central","Ayansu",,,21,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+c68f0f36-a9e7-4db0-a59d-3f7bda6e5677,"Felba Amponsah",Male,"Central","Assin Central","Ayansu",,,32,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+54eb7ae4-2c6d-4fdb-bada-7034d398515f,"Rosina Dede Danso",Male,"Central","Assin Central","Ayansu",,,21,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+f5edcaae-f3d6-4dbc-ae53-54fa7e05c1a8,"Portia Yeboah Ansomaa",Male,"Central","Assin Central","Ayansu",,,23,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+a0b90041-13fb-49e2-9e72-36537076dcc1,"Eric Mensah",Male,"Central","Assin Central","Ayansu",,,34,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+f9748d30-00bc-4ded-9299-01b3805a2872,"David Otoo Kojo",Male,"Central","Assin Central","Ayansu",,,21,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+34487000-c28c-410d-859a-bef565aecb7b,"Matilda Afi Atsemeh",Male,"Central","Assin Central","Ayansu",,,32,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+464933b4-e298-4773-8132-2c4ffac5289e,"Sarah Odoi",Male,"Central","Assin Central","Ayansu",,,35,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+b28fdf43-9276-41b3-9483-7bbbf05f8137,"Felix Baffoe",Male,"Central","Assin Central","Ayansu",,,31,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+a2e417d3-fc06-402d-92be-ed82d9e312f6,"Issahaku Ilham",Male,"Central","Assin Central","Ayansu",,,32,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+1f79253f-9097-480e-b2f0-1729fa75c54e,"Alphonsus Eshun",Male,"Central","Assin Central","Ayansu",,,21,,5,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+9ac13d66-70ce-4425-b5ab-8a3ea04010c3,"Salamatu Musa",Male,"Central","Assin Central","Ayansu",,,23,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+fd54eb7f-e0ba-49ab-8bbc-3dfc4ae2e17b,"Abdul Jebreel",Male,"Central","Assin Central","Ayansu",,,21,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+45ac8063-2ab4-45ed-8725-3a0c8651f053,"Abigail Asare",Male,"Central","Assin Central","Ayansu",,,31,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+534481e8-8858-4edc-bac4-892eef76449d,"Abigail Marfo",Male,"Central","Assin Central","Ayansu",,,31,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+62a88602-20a3-4118-ba7d-de23175552b4,"Abigail Yayra Ansah",Male,"Central","Assin Central","Ayansu",,,32,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+bae8df52-cd0d-44d6-afe1-82baf6a7492b,"Abukari Tindana Jamaldeen",Male,"Central","Assin Central","Ayansu",,,35,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+404b77dd-181e-49c9-a7c6-e8ab96c64edb,"Adams Zulifawu",Male,"Central","Assin Central","Ayansu",,,32,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+8376fbb1-61e4-4af6-b287-115980d80112,"Adu Gyamfi Richard",Male,"Central","Assin Central","Ayansu",,,35,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+fcd608a3-8e45-48b8-9fbd-29ca813d3b24,"Agyemang Clement",Male,"Central","Assin Central","Ayansu",,,32,,5,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+01e7a7d4-8e42-49ec-aa44-28b5b112cf88,"Akos Sukah",Male,"Central","Assin Central","Ayansu",,,35,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+f0bc5db0-f562-4bd3-b5e3-063e531440ce,"Akwasi Adam",Male,"Central","Assin Central","Ayansu",,,31,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+44a30a33-2ac9-4ac3-b297-051ed013b72f,"Alidu Yakubu Maltiti",Male,"Central","Assin Central","Ayansu",,,21,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+94b38acf-c787-4e68-8471-030857e883be,"Anabire Elijah",Male,"Central","Assin Central","Ayansu",,,24,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+c93a4ebd-d0b9-437f-8b4b-6b1f89582f19,"Andrew Adjekum",Male,"Central","Assin Central","Ayansu",,,23,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+25f1a1c4-0cca-4f21-bf9e-feaf7f37f65b,"Angelina Akankyalabey",Male,"Central","Assin Central","Ayansu",,,35,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+8f772e04-a609-47a5-88aa-0ac0c5e52e88,"Antoinette Klu",Male,"Central","Assin Central","Ayansu",,,26,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+62d3879e-3512-4eeb-acc8-d4a5e2e782ee,"Appiah Kubi",Male,"Central","Assin Central","Ayansu",,,21,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+334befa3-9cb6-4157-a323-730dd5247c98,"Argum Ferdinand Ngmenemane",Male,"Central","Assin Central","Ayansu",,,30,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+416c6069-f8a6-4681-871b-8b0607d845ce,"Atia Esther",Male,"Central","Assin Central","Ayansu",,,23,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+df5df48d-da02-4787-94fa-360e9b733374,"Atiah John Adugbire",Male,"Central","Assin Central","Ayansu",,,21,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+849b7d3a-eab0-44ff-9599-03fcce9699c7,"Atta Owusu Erica",Male,"Central","Assin Central","Ayansu",,,23,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+015c5632-8fca-41c3-b487-d0367a320ee0,"Augustine Amoah Sekyi",Male,"Central","Assin Central","Ayansu",,,21,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+97905737-2371-41f7-b27c-09cd269ed177,"Augustine Owusu",Male,"Central","Assin Central","Ayansu",,,21,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+741993fe-22ef-4909-b3df-37e937976a57,"Baba Ibrahim",Male,"Central","Assin Central","Abandenden",,,21,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+b0ea1f11-60c1-4657-b19a-c091edb80af1,"Bavia Yahaya Nashira",Male,"Central","Assin Central","Abandenden",,,21,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+4bbbaab8-86f2-4d43-a4c3-7f9e650afaca,"Benjamin Afenyi",Male,"Central","Assin Central","Abandenden",,,23,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+e3f1f5c4-4c93-4ec4-87a0-7258e3b2c64e,"Bernard Nyarko",Male,"Central","Assin Central","Abandenden",,,26,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+7ff402a4-6f6c-48bf-a7f7-87a17bb9db1e,"Bernice Hagan",Male,"Central","Assin Central","Abandenden",,,27,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+7e853fb3-ee6c-47ac-bae4-90580a1f1527,"Bingalbia Kwabena Teenin",Male,"Central","Assin Central","Abandenden",,,21,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+02a281b9-9081-47e3-977a-6a39ca7983dd,"Bondobie Kwame",Male,"Central","Assin Central","Abandenden",,,20,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+a56a1e54-553b-4569-83fc-dd4f06ed0140,"Bright Rindoful Lincoln",Male,"Central","Assin Central","Abandenden",,,25,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+1cc3f1fc-f74f-4935-9fd6-8c1a57d83693,"Daniel Dogbe",Male,"Central","Assin Central","Abandenden",,,31,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+3bc606e6-cc2a-4a5a-b9a8-7f58a25c2e15,"Daniel Sintim",Male,"Central","Assin Central","Abandenden",,,33,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+b226d66c-3ffe-4f71-a3dd-2fd2484f5191,"Dapaah Stephen",Male,"Central","Assin Central","Abandenden",,,28,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+53bd8e24-1b12-42fd-8220-65d67b90141a,"David Dasi Njuti",Male,"Central","Assin Central","Abandenden",,,30,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+28d1c75b-fd56-4381-b074-9d436d32cd0b,"David Omani",Male,"Central","Assin Central","Abandenden",,,32,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+504d78b4-5568-46b1-8f3b-e1b9b7a73db9,"Davina Atsunorvi Agbadze",Male,"Central","Assin Central","Abandenden",,,33,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+f9f359dc-2a42-41b8-b4d9-13b7e19bd9dc,"Dennis Opoku",Male,"Central","Assin Central","Abandenden",,,33,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+1a963db4-1e09-457f-a1fe-26898fed5415,"Desmond Acheampong",Male,"Central","Assin Central","Abandenden",,,34,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+a171274a-3ba3-415b-95b7-602d3c572ff5,"Doris Bonde",Male,"Central","Assin Central","Abandenden",,,20,,5,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+129aac0d-2b64-4f0e-9fcd-97107d4d6aef,"Dorothy Eshun",Male,"Central","Assin Central","Abandenden",,,27,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+9dffd3ec-0fb6-44ba-9444-32f840d43843,"Ebenezer Agboni",Male,"Central","Assin Central","Abandenden",,,28,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+14268018-da5b-43d6-993c-7545167516c1,"Emmanuel Addai",Male,"Central","Assin Central","Abandenden",,,33,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+c1c78f5c-572f-420a-8f63-025d0db4f52d,"Emmanuel Enoku",Male,"Central","Assin Central","Abandenden",,,32,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+9103196b-d4cb-4f65-ac26-a1580b01a8cb,"Emmanuel Opare",Male,"Central","Assin Central","Abandenden",,,32,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+af3facbe-dc39-479b-99d6-8bcc059fb80e,"Emmanuella Quarm",Male,"Central","Assin Central","Abandenden",,,30,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+6f81254d-4b4c-4743-a816-ad5b25b1db5d,"Enyan Doris",Male,"Central","Assin Central","Abandenden",,,21,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+ab66c040-5b61-4819-a8a0-49ff0d704c76,"Eric Awudi",Male,"Central","Assin Central","Abandenden",,,30,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+c814952c-c953-43bc-a0f2-607faf21cbea,"Erica Antwi",Male,"Central","Assin Central","Abandenden",,,32,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+ef3802ca-d867-4a21-850a-7a7c05c0f6ab,"Ernest Owusu",Male,"Central","Assin Central","Abandenden",,,21,,4,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+bcd24559-87a5-4c28-a66b-b2eb17ff1013,"Eunice Ntiamoah",Male,"Central","Assin Central","Abandenden",,,24,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+c1fafa2f-82c2-4d4f-b8b4-7858662d12de,"Evan Togeh",Male,"Central","Assin Central","Abandenden",,,34,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+f20bdf65-2b55-43d9-8c7b-08fda6134211,"Evelyn Afua Awroh",Male,"Central","Assin Central","Abandenden",,,28,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+4fbdc88f-eecd-452e-869b-4df0424387cb,"Fayose Priscilla",Male,"Central","Assin Central","Abandenden",,,29,,12,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+d5c9864c-119e-4dee-8272-04cb882574e5,"Florence Dugblor",Male,"Central","Assin Central","Abandenden",,,29,,15,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+defc5f25-d9bf-401b-b3f0-8dcad47d0d77,"Florence Gyebi",Male,"Central","Assin Central","Abandenden",,,29,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+2865b8bd-8d66-4562-94ae-40e8d76c5b1d,"Godfred Alexander Walker",Male,"Central","Assin Central","Abandenden",,,28,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+45ccd8a5-e46a-49d2-ac99-8283739c8352,"Hellen Kpoupour",Male,"Central","Assin Central","Abandenden",,,27,,5,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+ad18db69-daa6-442b-b9e1-e58762e84707,"Henrieta Annan",Male,"Central","Assin Central","Abandenden",,,26,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+6bbf589e-0930-4826-902c-18279d1f5531,"Henry Oteng Peprah",Male,"Central","Assin Central","Abandenden",,,26,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+41ae0d00-58d0-4849-8a30-9295dda5f752,"Innocent Kusi Dzradoh",Male,"Central","Assin Central","Abandenden",,,31,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+f6b95c2d-2e62-4eda-9392-85835d4d11bd,"Isaac Amoah",Male,"Central","Assin Central","Abandenden",,,21,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+4daa1268-3e12-4b7d-870c-a17274df2724,"Isaac Owusu",Male,"Central","Assin Central","Abandenden",,,32,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+0498af47-6936-46ff-8199-9c488ee4b551,"Jebrila Umar",Male,"Central","Assin Central","Abandenden",,,21,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+0d7fddc1-6e2c-432e-b23b-84b58492e037,"Jennifer Agyekum",Male,"Central","Assin Central","Abandenden",,,23,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+e0037338-11c5-4c8b-8409-2fdaad796aaf,"Jesse Webu Asiwome",Male,"Central","Assin Central","Abandenden",,,29,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+912b02cb-be1b-4aa0-9f26-ad2bddad37f5,"Joseph Boadu Amaning",Male,"Central","Assin Central","Abandenden",,,20,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+92827b91-7be9-46c7-9910-4f16fe5ef070,"Joseph Kusi",Male,"Central","Assin Central","Abandenden",,,23,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+f8a44e44-2214-4d87-a724-4f65c779e897,"Joseph Nortey Owusu",Male,"Central","Assin Central","Abandenden",,,35,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+14314b3c-c98c-4505-a18e-c889bb7f38f6,"Josephine Boiahene",Male,"Central","Assin Central","Abandenden",,,23,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+2f2075bf-3907-4655-9325-c9369f9195a4,"Joyce Afful",Male,"Central","Assin Central","Abandenden",,,23,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+f3e27d04-6c69-46cc-aa0d-2b8bad0b80b7,"Julius Nindong",Male,"Central","Assin Central","Abandenden",,,24,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+608c4a8d-1f3b-44dc-b7ec-0a0bff3316d8,"Kate Kwesi",Male,"Central","Assin Central","Abandenden",,,20,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+c3f2aa2e-698d-42fa-910e-98b4142ed7b7,"Kenneth Okai",Male,"Central","Assin Central","Abandenden",,,21,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+892bc0ea-7278-4c7f-ab0d-2663e94b99c1,"Kinight Adu",Male,"Central","Assin Central","Abandenden",,,21,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+af721eba-20ae-4e36-9930-7a3bcb65b67d,"Leticia Laryea",Male,"Central","Assin Central","Abandenden",,,21,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+f87da193-cf4e-4c3b-80a9-2c708b0c2d95,"Loreta Owusu",Male,"Central","Assin Central","Abandenden",,,21,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+8f7da841-5a3f-42aa-865d-655ca87826ee,"Lucy Amoako",Male,"Central","Assin Central","Abandenden",,,32,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+63dbe282-4ba0-4f64-a100-a046a37286f7,"Mandela Ayiaba",Male,"Central","Assin Central","Abandenden",,,33,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+45a4ee8c-3fe0-465c-b2cc-83d61de7d80a,"Mary Afriyie",Male,"Central","Assin Central","Abandenden",,,23,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+bf581693-858f-4f13-9cb2-0c5f4a80f521,"Mary Semedor",Male,"Central","Assin Central","Abandenden",,,32,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+a22b301a-c216-4cfa-8db6-f8abf6ad1d15,"Maud Naa Aku Adotey",Male,"Central","Assin Central","Abandenden",,,32,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+9ae0af50-7723-495f-9d3b-205fe7baa4dc,"Melchizedek Ankrah",Male,"Central","Assin Central","Abandenden",,,35,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+bb78d4db-ce9e-498f-8c03-1ddcc671740b,"Michael Appiah",Male,"Central","Assin Central","Abandenden",,,31,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+43f11d5f-94da-4274-bb54-2d9d869186f2,"Michael Cudjoe",Male,"Central","Assin Central","Abandenden",,,23,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+b4c1f7a5-88e0-4e47-9c34-8303b2442492,"Michael Kofi Narh",Male,"Central","Assin Central","Abandenden",,,21,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+c2bebd4e-cfa7-4afc-93b1-0b5165b0a4cc,"Micheal Amo",Male,"Central","Assin Central","Abandenden",,,20,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+c0e86957-78fd-4917-a3dd-bfc538db610f,"Millicent Akye Kwasi",Male,"Central","Assin Central","Abandenden",,,25,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+d2804fd8-5da7-4b98-b125-ca6b994d6923,"Mireku Opoku",Male,"Central","Assin Central","Abandenden",,,23,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+628f13ac-2b99-4eae-845b-83311e6a4f3e,"Mohammed Ibrahim",Male,"Central","Assin Central","Abandenden",,,24,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+512617fd-c4a4-4f99-bb96-1cc9ad82f191,"Mustabshira Fuseini",Male,"Central","Assin Central","Abandenden",,,21,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+6c2dabab-4cc0-4815-8ddf-0a8d2d5caf2f,"Nancy Oppong",Male,"Central","Assin Central","Abandenden",,,23,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+90ee7a6c-04f6-4746-9965-4a99bac9ab32,"Nopoe Isreala",Male,"Central","Assin Central","Abandenden",,,22,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+621ba6c1-538a-43bc-803c-b77ab829b46c,"Norgbedzie Lebene Christabel",Male,"Central","Assin Central","Abandenden",,,21,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+ff6f155a-1065-4e46-abf1-e8e1c53a8a9c,"Ntinor Daniel",Male,"Central","Assin Central","Abandenden",,,21,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+e81380ad-4e05-4c5a-b27d-3105644742f3,"Ntole Yussif",Male,"Central","Assin Central","Abandenden",,,23,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+5eceea58-b02e-4bcf-a307-b20252de94cc,"Nyarko Benedicta Akua",Male,"Central","Assin Central","Abandenden",,,21,,5,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+8f58da33-259a-48d7-b049-8446e79f0e2e,"Ofoli Judith Akua",Male,"Central","Assin Central","Abandenden",,,24,,4,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+85210ddd-9424-431b-9945-e9e80bd04ecf,"Opoku-adom Graceson Immanuel",Male,"Central","Assin Central","Abandenden",,,29,,5,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+c17b33db-6591-436b-9ca7-db6ebb883ae7,"Osei Gyamfua Blessing",Male,"Central","Assin Central","Abandenden",,,28,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+8986253e-cc13-43a3-ac6a-069bc4b8d12e,"Osei Rose Ama",Male,"Central","Assin Central","Abandenden",,,27,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+7243e054-ad8a-4eb3-bcf5-1039c810234a,"Patricia Fremah",Male,"Central","Assin Central","Abandenden",,,24,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+e62446e6-58d9-4e77-a6bb-e60120ded958,"Perry Fiifi",Male,"Central","Assin Central","Abandenden",,,27,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+9e1eb807-5aac-481f-882a-50ac6d5b9d51,"Peter Coffie",Male,"Central","Assin Central","Abandenden",,,25,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+604043ff-bae6-40bb-8150-70ed1e44e511,"Peter Nartey",Male,"Central","Assin Central","Abandenden",,,35,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+c1b394e6-3586-4b7f-9713-213c92402bb0,"Prince Boah",Male,"Central","Assin Central","Abandenden",,,23,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+8f90d6c5-95f6-49e0-80df-f954eee2c58b,"Prince Boateng",Male,"Central","Assin Central","Abandenden",,,32,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+8c3d60bf-67d7-4210-945a-0476bb18e0cf,"Prince Coffie",Male,"Central","Assin Central","Abandenden",,,21,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+9902e5d4-00c9-4705-8298-be2e3f0f7f9b,"Prince Nana Addo",Male,"Central","Assin Central","Abandenden",,,21,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+6aa1e9c3-d2f0-4916-a379-c3e6b5de9e41,"Richard Banie",Male,"Central","Assin Central","Abandenden",,,26,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+59fca353-1b55-4b70-b299-7cd802929f6d,"Richard Boadi",Male,"Central","Assin Central","Abandenden",,,24,,5,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+d4d065a8-f908-4395-885f-14267a4b94ce,"Samuel Adams",Male,"Central","Assin Central","Abandenden",,,23,,4,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+ba0c443d-bddf-42e5-a9c2-eec68f3fc7f5,"Samuel Ogoe",Male,"Central","Assin Central","Abandenden",,,24,,4,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+4ff9c04b-13a9-4c55-823d-2f08a18d781e,"Sena Joyce",Male,"Central","Assin Central","Abandenden",,,23,,5,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+69658c03-d2da-4a7a-81d5-96f25194a451,"Shadrack Ghartey",Male,"Central","Assin Central","Abandenden",,,31,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+06330533-7d8d-4c2b-9d26-d8636e64b73a,"Sheila Mensah",Male,"Central","Assin Central","Abandenden",,,23,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+248291f9-01d5-4eb9-8331-5fca34cae390,"Sheilla Adu Yeboah",Male,"Central","Assin Central","Abandenden",,,21,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+6ad27ac0-9b14-4dd1-a92f-deed0cde39f3,"Sobie Der Linus",Male,"Central","Assin Central","Abandenden",,,20,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+9ce29cdb-e738-4431-aab6-69d2e7babf2d,"Stella Gyampoh",Male,"Central","Assin Central","Abandenden",,,25,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+23ca6850-c77e-411b-ac31-7568953d3a51,"Stephen Cobbinah",Male,"Central","Assin Central","Abandenden",,,23,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+acb124e1-1a72-4dd4-8aed-663ad5ab169e,"Sulley Abdul",Male,"Central","Assin Central","Abandenden",,,24,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+194cb46e-8e71-46e4-bcb7-74d5ec791640,"Tano Bright",Male,"Central","Assin Central","Abandenden",,,21,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+c97b072a-2281-42c3-a02d-df9b132482cf,"Terry Nii Odartey Lamptey",Male,"Central","Assin Central","Abandenden",,,23,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+b86aa5b2-0514-4d1f-9318-fc22915d1716,"Tetteh Sampson",Male,"Central","Assin Central","Adwumam",,,22,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+7c35e43f-ef0f-42dd-922f-c4e5d910cb27,"Tettey Rebecca",Male,"Central","Assin Central","Adwumam",,,21,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+8d2ee550-f93d-42a6-90f1-46b4089dddc9,"William Nartey",Male,"Central","Assin Central","Adwumam",,,21,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+e540350a-8c0e-4441-836e-c278d2e4c9a4,"Yannick Wilson",Male,"Central","Assin Central","Adwumam",,,23,,4,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+c8fccccc-f688-4973-9514-cfafaabc3346,"Zakaria Abdul-wadudu",Male,"Central","Assin Central","Adwumam",,,21,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+c54ab7a7-2428-4850-8001-2208859a0d16,"Alhassan Yakubu",Male,"Central","Assin Central","Adwumam",,,24,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+f0804fb1-5320-4880-aa91-b9c022836632,"Ofori Elizarbeth Clara",Male,"Central","Assin Central","Adwumam",,,29,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+05c22f97-7da6-4d9c-9d67-2eb77f4925f2,"Alexander Amoah Boateng",Male,"Central","Assin Central","Adwumam",,,28,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+7848e869-8b71-4618-b776-31178c170341,"Frederick Osei Korankyi",Male,"Central","Assin Central","Adwumam",,,27,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+ae4703e8-0e4c-4951-979e-ea3735bafe97,"Sarah Lartey",Male,"Central","Assin Central","Adwumam",,,24,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+7f7e31d5-fc4b-43ff-81f1-511c29d69819,"Hannah Quainoo",Male,"Central","Assin Central","Adwumam",,,27,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+fc1759f5-12a0-4b63-903d-05dfb2af21fb,"Linda Bimpong",Male,"Central","Assin Central","Adwumam",,,25,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+8ebbfb56-03a9-412f-9cfe-24a4fb5e222e,"Azuure Hilda",Male,"Central","Assin Central","Adwumam",,,35,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+d6fedce3-fcca-4fb1-ac30-de6e25f18e6c,"Theophilus Owusu Brako",Male,"Central","Assin Central","Adwumam",,,23,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+359acedc-1690-416c-80f2-d74a6a16efc5,"Bonney Emmanuel Kweku",Male,"Central","Assin Central","Adwumam",,,32,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+90b2a930-4c2b-43c3-90ce-9faa6a0cd007,"Charlse Charlse",Male,"Central","Assin Central","Adwumam",,,21,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+7ef8115a-f4fa-4b26-bbf2-c8397977f635,"Yusif Adamu",Male,"Central","Assin Central","Adwumam",,,21,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+bc06e330-f3b0-431a-9db8-fd6015a2b61b,"Samuel Nii Tagoe",Male,"Central","Assin Central","Adwumam",,,26,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+f5826d22-94ee-4efe-9f5b-7618335ec218,"Djanzon Marie Chancelle",Male,"Central","Assin Central","Adwumam",,,24,,5,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+909d6d90-f796-416a-8323-c3ab1fd055ba,"Lordina Blay",Male,"Central","Assin Central","Adwumam",,,23,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+6480570f-cdf0-45b2-b444-18a3bc89f9dc,"Mavis Namateng",Male,"Central","Assin Central","Adwumam",,,24,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+7acea8de-bad7-4f58-a8a6-4ca65265e81d,"Akubia Jonas",Male,"Central","Assin Central","Adwumam",,,23,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+e179522d-b971-4b64-978d-3814e4c7055d,"Barfi Gabriel",Male,"Central","Assin Central","Adwumam",,,23,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+077a8862-43e8-4680-86a4-9c0a7c56f39e,"Khadija Abdullah Ishaq",Male,"Central","Assin Central","Adwumam",,,21,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+1da9e5ad-0e90-4698-92d5-ab2d733e3cb8,"Osei Bonsu Francis",Male,"Central","Assin Central","Adwumam",,,32,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+9b9e6991-b687-4760-8825-eb732908f233,"Ramson Peter",Male,"Central","Assin Central","Adwumam",,,35,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+8363d72d-21ac-4c71-b990-f86fafb78e56,"Salim Alhassan",Male,"Central","Assin Central","Adwumam",,,31,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+474ebe97-ebb5-48e8-960e-a64dfb8225ee,"Agbeti Kaame Mensah",Male,"Central","Assin Central","Adwumam",,,32,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+ad161546-1f23-4763-8c6f-37468dc820aa,"Mavis Talata Aborney",Male,"Central","Assin Central","Adwumam",,,21,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+1da5d851-8b07-4d4d-ac9f-122db86a955f,"Philomena Morgan Mensah",Male,"Central","Assin Central","Adwumam",,,23,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+796aa717-3467-428e-956b-9638b4dfa1c1,"Adu Solomon",Male,"Central","Assin Central","Adwumam",,,23,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+10c86aa0-af66-4c81-9f75-eb1b104eb717,"Wedenku Gifty",Male,"Central","Assin Central","Adwumam",,,32,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+fa3ee9ec-4ac9-4b15-b4c5-9e1587d6c6b0,"Asabea Gloria",Male,"Central","Assin Central","Adwumam",,,21,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+b5efde0e-9a7f-4f47-b68c-df17cfad2e59,"Afful Rita",Male,"Central","Assin Central","Adwumam",,,23,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+32c2e675-72d9-44ad-86f8-d6beae20e107,"Derrick Karikari",Male,"Central","Assin Central","Adwumam",,,34,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+17328307-155c-459c-a817-08e3b83a180c,"Madina Kassim",Male,"Central","Assin Central","Adwumam",,,21,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+6c5489f4-8307-4d08-beb1-ee35db57847e,"Obiri Yeboah Samuel",Male,"Central","Assin Central","Adwumam",,,29,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+88997d35-3ad0-47fb-a07e-8374b93895d3,"Reindorf Opoku",Male,"Central","Assin Central","Adwumam",,,28,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+bd90efe6-d3ce-46e0-8e3e-5922bf1e18fc,"Christopher Kofi Kumacha",Male,"Central","Assin Central","Adwumam",,,23,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+c01e70c5-fc40-4626-88f3-79cc161a2f86,"Ransford Tutu Donkor",Male,"Central","Assin Central","Adwumam",,,21,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+5cb6f986-c642-4076-a43f-d2a8a85eead5,"Micheal Selorm Botri",Male,"Central","Assin Central","Adwumam",,,32,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+7a8df8ac-ab90-477f-9985-7d265b79c714,"Solomon Atitso Mensah",Male,"Central","Assin Central","Adwumam",,,21,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+5c358db8-6f75-4a01-8119-513bd60b383b,"Samuel Tetteh Djamgba",Male,"Central","Assin Central","Adwumam",,,23,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+89360dd9-71db-4c11-b34b-4536b5c051dc,"Micheal Mensah Cofie",Male,"Central","Assin Central","Adwumam",,,34,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+a1acdf40-383d-4888-8180-88cf18628577,"Godwin Amesawu",Male,"Central","Assin Central","Adwumam",,,21,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+76ed6dc6-b343-481f-bad9-eaadcfc40c20,"Isaac Blowordzo",Male,"Central","Assin Central","Adwumam",,,32,,2,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+7b5b0661-8545-4bd6-88a1-2a900b658529,"Juliana Teteba Awuku",Male,"Central","Assin Central","Adwumam",,,35,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+12cbefd3-2c4b-4f4f-b571-eafc18c4d83e,"Adarkwah Doris",Male,"Central","Assin Central","Adwumam",,,31,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+aa62524a-8d83-4565-9e94-13eafb738919,"Laari Kantaan",Male,"Central","Assin Central","Adwumam",,,32,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+82b83a59-f0d3-44e7-b684-50a8acecd9e0,"Judith Nana Abena Pokua",Male,"Central","Assin Central","Adwumam",,,21,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+d701bef2-88b2-4f8a-8785-ad42b6a38926,"Gifty Grant Atakro",Male,"Central","Assin Central","Adwumam",,,23,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+bc7f78a7-8ad3-4ab2-8346-6c213b151c0a,"Mohammed Nasara Sakina",Male,"Central","Assin Central","Adwumam",,,21,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+1d764127-41ff-4216-9d6d-8571fa5fd6c2,"Osman Sayibu",Male,"Central","Assin Central","Adwumam",,,31,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+46e345af-194b-4f03-974d-f8faff57e7cd,"Burihani Asana",Male,"Central","Assin Central","Adwumam",,,31,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+7b49bda9-e3d7-4ced-8ee6-cdc73539f7bf,"Priscilla Ntiful",Male,"Central","Assin Central","Adwumam",,,32,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+ae3c6ec8-bfa5-45cf-9bab-31656ecd8cb0,"Helena Adubea Darko",Male,"Central","Assin Central","Adwumam",,,35,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+de6dbb90-8f71-4aad-9ad9-4d8e4dad49ea,"Abubakari Waliu",Male,"Central","Assin Central","Adwumam",,,32,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+678e7025-075a-43c5-8a98-642b0080624f,"Mohammed Ahmed Ridwan",Male,"Central","Assin Central","Adwumam",,,35,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+06a05efb-66d8-40eb-b30c-da550044f4ad,"Wuni Haidatu",Male,"Central","Assin Central","Adwumam",,,32,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+142dca1d-b295-4a17-b2e4-cf39f7a343c7,"Nangyabit Johnson Jadaan",Male,"Central","Assin Central","Adwumam",,,35,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+06a7675c-058d-4700-8a14-c12987c67147,"Sulemana Fatimatu",Male,"Central","Assin Central","Adwumam",,,31,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+d23030fe-4bdd-4d91-9d80-cb136ac24793,"Suklemana Haadi",Male,"Central","Assin Central","Adwumam",,,21,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+baa453ca-0dc0-406b-b523-bc250f6c9b61,"Ibrahim Nafiu",Male,"Central","Assin Central","Adwumam",,,24,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+4083cdba-137e-4e13-abc4-640c8d463d56,"Mesuna Amina",Male,"Central","Assin Central","Adwumam",,,23,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+a6a76c17-c46c-48a3-ada5-299d4550f788,"Alhassan Hikimatu",Male,"Central","Assin Central","Adwumam",,,35,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+53936acf-1a57-4b84-99db-145c078e2399,"Gertrude Siamah Emefa",Male,"Central","Assin Central","Adwumam",,,26,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+a6e8dd44-63a8-4ce3-b50c-232ca25e6ee0,"Gideon Ebo Asmah",Male,"Central","Assin Central","Adwumam",,,21,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+711da217-2c65-441f-ba9d-db6dd4e3c563,"Hannah Quainoo",Male,"Central","Assin Central","Adwumam",,,30,,5,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+a3e62faa-054e-4f40-a45a-3fc34fe5df31,"Linda Bimpong",Male,"Central","Assin Central","Adwumam",,,23,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+75d11b3b-ec43-465d-bc51-8cc99084e2b7,"Louis Boakye",Male,"Central","Assin Central","Adwumam",,,21,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+c1868e51-1866-49ff-a98e-87a921481830,"Patience Kuubepengne Aadoggrnaa",Male,"Central","Assin Central","Adwumam",,,23,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+387c067c-69f4-47b5-aab6-7165475ee568,"Rita Brenya",Male,"Central","Assin Central","Adwumam",,,21,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+24aadb6c-2633-4097-8fd9-190e9c118362,"Dominic Kwabena Kyereh",Male,"Central","Assin Central","Adwumam",,,21,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+a9c613d6-29fe-4eb1-a4ed-f38d5dbabe14,"Esther Biipak Dinwaak",Male,"Central","Assin Central","Adwumam",,,21,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+dd2ef457-35b8-45c9-9887-5d785f60a3e9,"Stephen Boateng",Male,"Central","Assin Central","Adwumam",,,21,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+bf67558c-4ad1-4bae-9104-22064dd8d937,"Willans Hinneh Nyamekye",Male,"Central","Assin Central","Adwumam",,,23,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+26a1fbab-b577-4efe-be96-d39496ba5c98,"Acquah Ernestina",Male,"Central","Assin Central","Adwumam",,,26,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+85360390-d36a-46fe-b6b3-c439655cf77a,"Azuure Hilda",Male,"Central","Assin Central","Adwumam",,,27,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+29039069-ad27-41ac-8100-e3f87a15e2a1,"Gladys Acquah",Male,"Central","Assin Central","Mfuom",,,21,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+13542a9f-5dbf-43b4-a810-7041d2f25029,"Nketsiah Sheila",Male,"Central","Assin Central","Mfuom",,,20,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+14794c82-4e03-45b6-88cf-58a05b34e9c4,"Theophilus Owusu Brako",Male,"Central","Assin Central","Mfuom",,,25,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+f52a6da3-0c63-4918-8564-150b9e528b39,"Amu Daniel",Male,"Central","Assin Central","Mfuom",,,31,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+682fb5d0-ad3f-45e7-982a-eacb99daf066,"Brobbey Peter Ivan",Male,"Central","Assin Central","Mfuom",,,33,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+e4720c92-7ee9-46ac-bcce-286a67375b56,"Daniel Yeboah",Male,"Central","Assin Central","Mfuom",,,28,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+b707a6ee-f822-4d9b-a82f-14915f919ef1,"Derrick Asare",Male,"Central","Assin Central","Mfuom",,,30,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+f160b698-a450-43db-96eb-da54d0a2397e,"Jessica Asante",Male,"Central","Assin Central","Mfuom",,,32,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+c4c6d88b-9f64-43cf-ae94-6c42d459f595,"Korley Joanna Naa-akushika Morkor",Male,"Central","Assin Central","Mfuom",,,33,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+d58c166d-0e79-42a5-bf05-4adcc77ed2d0,"Lord Essien",Male,"Central","Assin Central","Mfuom",,,33,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+cdefc0d4-6a22-4809-afa3-9bf312093020,"Mary Kwoffie",Male,"Central","Assin Central","Mfuom",,,34,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+26451ae3-b5b5-4876-b45e-7f35507f92e5,"Richard Eshun",Male,"Central","Assin Central","Mfuom",,,20,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+fe4bc000-2d48-4efc-9b24-5f06a350c774,"Timothy Kuadegbeku",Male,"Central","Assin Central","Mfuom",,,27,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+fba17c1c-3022-4267-b2d0-606c220594df,"Boakye Abednego Yaidom",Male,"Central","Assin Central","Mfuom",,,28,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+ff55f859-8a3d-4c21-8a11-1046ba9b3b81,"Mariam Nartey",Male,"Central","Assin Central","Mfuom",,,33,,5,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+04d0c889-0b99-4dc9-827c-374c957729df,"Ebenezer Yeboah",Male,"Central","Assin Central","Mfuom",,,32,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+a34f0ac6-a95a-451e-ad70-dce89370c6e4,"Benjamin Twum",Male,"Central","Assin Central","Mfuom",,,32,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+ce7603ab-c033-4c8c-a2b6-7f35bbace11e,"Adjei Daniel",Male,"Central","Assin Central","Mfuom",,,30,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+272810aa-19b6-423e-8871-ac083600e2ca,"Appiah-mensah Bernard",Male,"Central","Assin Central","Mfuom",,,21,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+be528697-ec49-4dd7-ba54-33460b2dc26d,"Asante Elia",Male,"Central","Assin Central","Mfuom",,,30,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+bc813b53-db1e-4b52-b21d-87f458471c79,"Bonney Emmanuel Kweku",Male,"Central","Assin Central","Mfuom",,,32,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+93361c81-1314-4173-9063-c2b00b2e261f,"Charlse Charlse",Male,"Central","Assin Central","Mfuom",,,21,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+404200b4-2abc-4ed8-9530-30bed21a98cd,"Dadzie Gloria",Male,"Central","Assin Central","Mfuom",,,24,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+05fed88c-3a8b-4dfa-a401-c1113d6374d9,"Doku Jacob",Male,"Central","Assin Central","Mfuom",,,34,,5,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+a7d8a74b-0313-42e7-ad7c-ce1cb9f9ae8a,"Duah Mary Ankomah",Male,"Central","Assin Central","Mfuom",,,28,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+41df229c-4e4f-4db8-b63f-7715c9cccc77,"Elem Emmanuel",Male,"Central","Assin Central","Mfuom",,,29,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+e3563dec-1f15-4627-9253-88d267fae729,"Essien Emmanuel",Male,"Central","Assin Central","Mfuom",,,29,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+c47fb6cf-d34c-4457-ac61-3d891c694d8f,"Jackson Joycelyn",Male,"Central","Assin Central","Mfuom",,,29,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+b405e149-754e-4060-8218-5d3ac02ec6ee,"Korsah Francis",Male,"Central","Assin Central","Mfuom",,,28,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+e8231bcc-a3fd-4a4a-8350-9e17b26d729c,"Otsen Leticia",Male,"Central","Assin Central","Mfuom",,,27,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+2117d9c3-5774-4797-99ad-ba2750ffc5e6,"Quansah Precious Grace",Male,"Central","Assin Central","Mfuom",,,26,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+23205708-cdc9-4eb5-955f-10b09d14aa65,"Yankson Christabel",Male,"Central","Assin Central","Mfuom",,,26,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+fc74ac08-7ef9-4449-a0f0-00db916dc464,"Yusif Adamu",Male,"Central","Assin Central","Mfuom",,,31,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+c25ab9f7-e6e9-4e66-8a05-6825542556ed,"Acquah Josephine",Male,"Central","Assin Central","Mfuom",,,23,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+fc18e3d3-e169-48ce-a95d-c121338cddb8,"Arko Linda",Male,"Central","Assin Central","Mfuom",,,35,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+5f7e6e81-b09d-4670-912b-049e5628a0a7,"Brew Monica",Male,"Central","Assin Central","Mfuom",,,23,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+51edf404-daea-4716-a3be-c7e693e57fc5,"Dade Christian Ametsitre",Male,"Central","Assin Central","Mfuom",,,23,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+8fbb6b11-1578-4ad8-95d4-ca73da8b3dd5,"Lagah Shivani",Male,"Central","Assin Central","Mfuom",,,24,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+d5263b11-18f1-44a2-8356-3ae2298ce06c,"Abdul Majeed Khalik",Male,"Central","Assin Central","Mfuom",,,20,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+93fa59a5-3fc4-4721-a508-cc2825606cdf,"David Ollennu",Male,"Central","Assin Central","Mfuom",,,21,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+49ae6ad0-ab99-46c5-b4d0-e46c64982681,"Emmauel Nuobare Asumah",Male,"Central","Assin Central","Mfuom",,,21,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+90382f1b-f797-4ddc-bab8-7f3bc8aa9b93,"Johnson Gyasi",Male,"Central","Assin Central","Mfuom",,,21,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+14b5c8c4-e4f3-414d-9cfb-8c67e3db6234,"Angelina Esi Adzaklu",Male,"Central","Assin Central","Mfuom",,,21,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+69a4c06c-ced3-4d48-afef-62007a95f969,"Gifty Aliumi",Male,"Central","Assin Central","Mfuom",,,32,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+b6df2fed-3574-4d3e-81b1-4380d0f6e14c,"Jennifer Boadi",Male,"Central","Assin Central","Mfuom",,,33,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+b3fc9ea9-a763-4ac7-a9be-0f0f9ce68251,"Prince Armah Amankwah",Male,"Central","Assin Central","Mfuom",,,23,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+fca1269c-40d1-41e3-bbe9-a61853f7ce6e,"Priscilla Naa Tagoe",Male,"Central","Assin Central","Mfuom",,,32,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+f615e713-0e3b-4cad-b15b-2a43e73884cc,"Samuel Nii Tagoe",Male,"Central","Assin Central","Mfuom",,,32,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+1d917855-3c1d-4bb9-8c00-9023869c1562,"Sallam Kassim",Male,"Central","Assin Central","Mfuom",,,35,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+55d578eb-36dd-455b-8048-ff17ad51d23e,"Ampiah Graham",Male,"Central","Assin Central","Mfuom",,,31,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+987897a3-a784-4438-8070-c7619d8837e3,"Charity Arthur",Male,"Central","Assin Central","Mfuom",,,23,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+8ea4405a-9287-45f4-8edf-e322a15b9679,"Ebenezer Assumani",Male,"Central","Assin Central","Mfuom",,,21,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+e4a62c0e-ca6a-430b-b62a-2a6b0a455be8,"Ebenezer Forson",Male,"Central","Assin Central","Mfuom",,,20,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+0e389448-06d9-4189-9127-f828dabbb482,"Egyir Solomon",Male,"Central","Assin Central","Mfuom",,,25,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+14751fee-868f-421a-8b62-b1f223cc45ca,"Eunice Abbam Sagoe",Male,"Central","Assin Central","Mfuom",,,23,,5,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+35419ddd-29f3-49b3-9070-c71558879213,"Isaac Ewusie",Male,"Central","Assin Central","Mfuom",,,24,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+0309077c-4cfc-44cf-968a-93c4ccf43f54,"John Buabeng",Male,"Central","Assin Central","Mfuom",,,21,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+9e54e9f4-e9d2-4838-8d01-8e69cbf5a6db,"Mary Abakah",Male,"Central","Assin Central","Mfuom",,,23,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+f1b54c07-47a6-4835-b2ea-432a1d4565d5,"Osman Ibrahim",Male,"Central","Assin Central","Mfuom",,,22,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+ffc243a1-83fa-4997-9ad7-f136c445bef8,"Sarah Dadzie",Male,"Central","Assin Central","Mfuom",,,21,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+a170140c-a08a-417b-8382-cd3c17a32474,"Kakaklolo Godfred",Male,"Central","Assin Central","Mfuom",,,21,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+7ff4306a-1275-4f74-9b7c-058c104385f3,"Djanzon Marie Chancelle",Male,"Central","Assin Central","Mfuom",,,23,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+f4106af5-5344-452c-b76a-a87e36367a4f,"Lordina Blay",Male,"Central","Assin Central","Mfuom",,,21,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+025b0980-f2e1-48cc-a035-3c378de247c3,"Mavis Namateng",Male,"Central","Assin Central","Mfuom",,,24,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+33c2dfe7-ab70-4265-8546-123d9f0cb4cd,"Acquah Benard",Male,"Central","Assin Central","Mfuom",,,29,,4,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+67e32441-93d6-4a33-a964-1ec1b48fdb96,"Addo Divine Opoku Boateng",Male,"Central","Assin Central","Mfuom",,,28,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+a8be7f82-3e9a-4c2d-bcfe-b480c978e993,"Afrane Brainsford Gyamfi",Male,"Central","Assin Central","Mfuom",,,27,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+85655192-a2d5-4cc1-a9f0-db7b327b3f58,"Agyapomaa Margaret",Male,"Central","Assin Central","Mfuom",,,24,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+8402d848-f861-4930-80af-c1e33c60c876,"Akubia Jonas",Male,"Central","Assin Central","Mfuom",,,27,,12,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+ec8f90c6-322a-4286-9427-4e6d3d0aaf41,"Amoakohene Theresah",Male,"Central","Assin Central","Mfuom",,,25,,15,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+cd7e3ac2-afc7-4d1c-8de1-006bbd1bd183,"Amoh Daniel Kofi",Male,"Central","Assin Central","Mfuom",,,35,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+43ccde60-687d-439a-baea-413a9fb77d1b,"Ampofo Shadrack",Male,"Central","Assin Central","Mfuom",,,23,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+7f6f4594-0920-47a4-9d55-b49587676083,"Ankyere Augustine",Male,"Central","Assin Central","Mfuom",,,32,,5,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+6365ab99-6429-4bb7-85ba-e76fa2d42cbc,"Ansah Augustine Akwasi",Male,"Central","Assin Central","Mfuom",,,21,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+c2f51564-cc33-4568-bbbb-07fb542df503,"Appiah Isaac",Male,"Central","Assin Central","Mfuom",,,21,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+49ce2b39-b416-4310-a739-9d6fa9ff7624,"Asare Richard",Male,"Central","Assin Central","Mfuom",,,26,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+2ea18285-7b3d-4176-b99f-a503c83d8c54,"Baffour Bismark",Male,"Central","Assin Central","Mfuom",,,24,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+aa989692-28b4-49ec-b036-85c96df61569,"Barfi Gabriel",Male,"Central","Assin Central","Mfuom",,,23,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+0701110a-9d63-4411-88e5-32329c123997,"Bienni Bernard",Male,"Central","Assin Central","Mfuom",,,24,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+66f9c02f-7afa-42c4-ac80-d21c9bf49c47,"Blessing Opoku Brobbey",Male,"Central","Assin Central","Mfuom",,,23,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+147b50bf-aefe-41f5-8c50-149205499aa9,"Boadi David",Male,"Central","Assin Central","Mfuom",,,23,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+2d7b71e1-2415-4cc5-a83f-74fee300fda7,"Boahemaah Abigail",Male,"Central","Assin Central","Mfuom",,,21,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+3b2398b6-6af3-44e5-9760-7094f478256d,"Boakye Sandra",Male,"Central","Assin Central","Mfuom",,,32,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+924516e1-f1b3-4c9b-a657-75e34ddb2bb3,"Dakorah Kelvin",Male,"Central","Assin Central","Mfuom",,,35,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+cedd4ba0-417a-4f23-b047-e8fa262186cd,"Darkowaah Regina",Male,"Central","Assin Central","Mfuom",,,31,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+dbfbad5f-652e-4e65-b2fe-dc2cbfea62ef,"Duah Kofi",Male,"Central","Assin Central","Mfuom",,,32,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+f4b95423-a86c-4408-af90-307ebdd8198e,"Enoch Boateng",Male,"Central","Assin Central","Mfuom",,,21,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+1fec7612-9412-49da-a1d0-9a7ac9ed121b,"Enoch Osei Appiah",Male,"Central","Assin Central","Mfuom",,,23,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+7cafb691-99b0-4971-a168-ff5089f42d1b,"Gabriel Ankyiere",Male,"Central","Assin Central","Mfuom",,,23,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+a107b4bc-1ada-462c-93fa-7bbd8ea5c5a4,"Issah Mohammed Toffic",Male,"Central","Assin Central","Mfuom",,,32,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+c5e654f8-22a7-434b-bde8-0f9cf1b0763d,"Khadija Abdullah Ishaq",Male,"Central","Assin Central","Mfuom",,,21,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+df0c22ae-9757-43ab-b108-008616a65cd7,"Kissiwaa Doris",Male,"Central","Assin Central","Mfuom",,,23,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+8828faf5-d647-402c-ad92-ff5197892a10,"Kyei Erica",Male,"Central","Assin Central","Mfuom",,,34,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+3f3853a2-9cd9-48f3-9d62-54d083ee6974,"Magaret Kwarteng",Male,"Central","Assin Central","Mfuom",,,21,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+c49c58ab-77ad-4169-afcb-053d31800bde,"Manu Joshua Amankwah",Male,"Central","Assin Central","Ackaakrom",,,29,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+50235baf-134e-4d58-8edc-8608393b1f0c,"Mensah Richard",Male,"Central","Assin Central","Ackaakrom",,,28,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+3cdb37b3-f4a8-4852-989f-832adce0bbe1,"Ndenaba Madina Seidu",Male,"Central","Assin Central","Ackaakrom",,,23,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+48da9087-b729-4dc6-aed7-dc082f1d0e1f,"Ntim Jacob Appau",Male,"Central","Assin Central","Ackaakrom",,,21,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+a1059a01-e7ba-426b-9faa-d9fa79ebafad,"Nyamaah Kwaku Abraham",Male,"Central","Assin Central","Ackaakrom",,,32,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+6dca0d26-00cc-4205-ad45-c72151aa17b6,"Oduro Martin",Male,"Central","Assin Central","Ackaakrom",,,21,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+d61da5d1-2f8a-4961-83c3-d1e9b165555d,"Oscar Waddah",Male,"Central","Assin Central","Ackaakrom",,,23,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+154b9453-fd26-45b4-b620-f4d6acfbaa59,"Osei Bonsu Francis",Male,"Central","Assin Central","Ackaakrom",,,34,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+48a8ab6b-66e8-443f-ac90-e82c4b28b4e0,"Osei Poku Godfred",Male,"Central","Assin Central","Ackaakrom",,,21,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+3be6be00-b541-4594-bd3e-2d3c861d1706,"Osei-bonsu Christopher",Male,"Central","Assin Central","Ackaakrom",,,32,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+2d9581f4-1ce3-4b46-b080-912f27320629,"Owusu Emmanuel",Male,"Central","Assin Central","Ackaakrom",,,35,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+bb8e7938-aa42-4973-b176-f81f03079cad,"Owusu-ansah Nanies",Male,"Central","Assin Central","Ackaakrom",,,31,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+692eb8bc-5672-43fd-baa4-4dcf6c416a7d,"Peprah Christiana Oforiwaa",Male,"Central","Assin Central","Ackaakrom",,,32,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+4432676f-2122-41a1-8213-908f395fe306,"Peprah Richard",Male,"Central","Assin Central","Ackaakrom",,,21,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+e0b2a5fd-f596-4c85-bb98-39eeeb2d5fde,"Ramson Peter",Male,"Central","Assin Central","Ackaakrom",,,23,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+9a85bc16-e929-484a-8b58-57fc6ef3f031,"Salim Alhassan",Male,"Central","Assin Central","Ackaakrom",,,21,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+5202a1f5-173b-4e09-ad6d-0cb2e19a6bae,"Sarpong Derrick Adom Bonsu",Male,"Central","Assin Central","Ackaakrom",,,31,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+d23559e6-c8e2-456f-9452-1594136e6c15,"Wiafe Akenten Cecilia",Male,"Central","Assin Central","Ackaakrom",,,31,,5,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+7203defd-186a-4bf4-8beb-eb32f762bbf7,"Wiafe Bright Akenten",Male,"Central","Assin Central","Ackaakrom",,,32,,4,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+7f5c74fc-da6b-4298-8dd6-8233f93a6392,"Agortimevor Charlotte",Male,"Central","Assin Central","Ackaakrom",,,35,,5,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+12a54b64-c6b1-4c19-8eea-054783197d2c,"Bediako Faustina",Male,"Central","Assin Central","Ackaakrom",,,32,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+e4a8889b-3f7b-488e-96c7-425dab2312fb,"Bright Dankyi",Male,"Central","Assin Central","Ackaakrom",,,35,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+1003c62e-8741-4b56-b44e-908736e2e707,"Dennis Twum",Male,"Central","Assin Central","Ackaakrom",,,32,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+445f11d8-5ea8-45db-8a5a-142aa5253c15,"Precious Mensah",Male,"Central","Assin Central","Ackaakrom",,,35,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+1c9c96a9-aced-47ec-add6-14e845fad159,"Joyce Ama Nutakor",Male,"Central","Assin Central","Ackaakrom",,,31,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+a66d6f97-f851-47bd-ad37-17f32a4f8f5c,"Ahator Celestine",Male,"Central","Assin Central","Ackaakrom",,,21,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+dd8f2ad3-8a00-485d-9e4d-2250a807b6c1,"Aboagye Paul Jr",Male,"Central","Assin Central","Ackaakrom",,,24,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+69a5451a-5cc2-4a3b-bf73-1113ad3b20c3,"Adongo Douglas",Male,"Central","Assin Central","Ackaakrom",,,23,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+c08892e6-5216-4eea-ae15-093875304c10,"Afedziwole Abraham",Male,"Central","Assin Central","Ackaakrom",,,35,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+a1aac8f0-c01f-4581-a7b8-0513d7bc4652,"Antwiwaa Shilla",Male,"Central","Assin Central","Ackaakrom",,,26,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+101c5018-d30b-4440-bd4a-9f7be8654e6e,"Boni Norbert Etse",Male,"Central","Assin Central","Ackaakrom",,,21,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+adda426a-8a46-4b62-bfe2-51c148cf4a94,"Effah Emmanuel Kwame Wahyee",Male,"Central","Assin Central","Ackaakrom",,,30,,5,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+c354c6ba-6031-44f1-a09a-531e0ceb46ba,"Emmanuel Agyei",Male,"Central","Assin Central","Ackaakrom",,,23,,4,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+b6f21e89-a9d1-4043-92b0-4d2018891bd7,"Freeman Abah",Male,"Central","Assin Central","Ackaakrom",,,21,,4,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+b3e49c93-7cf4-49ab-9805-92e3b20eae46,"Yaadjuo Joseph",Male,"Central","Assin Central","Ackaakrom",,,23,,5,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+c45f6ade-445a-4977-bf19-222109f4c898,"Adam Zuwera",Male,"Central","Assin Central","Ackaakrom",,,21,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+94041e6e-bf03-4450-b905-bccce7726dec,"Fuseini Abdul Latif",Male,"Central","Assin Central","Ackaakrom",,,21,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+c67573b9-671e-4aba-b211-47190c7006cc,"Kumartey Martha",Male,"Central","Assin Central","Ackaakrom",,,21,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+d584eb18-a2e5-4db3-aac1-4631a30dad02,"Tumchoge Rosemary",Male,"Central","Assin Central","Ackaakrom",,,21,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+e1b2e502-4ad1-42e2-8081-84186f447602,"Wedam Samuel",Male,"Central","Assin Central","Ackaakrom",,,23,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+bffaf25c-4c80-4953-8459-beb2fdf36aab,"Amos Acheampong",Male,"Central","Assin Central","Ackaakrom",,,26,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+ec18fe28-b0f3-4267-a5cf-2035dc8400b3,"Jawzel Prempeh",Male,"Central","Assin Central","Ackaakrom",,,27,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+7f5407d8-c0ec-4504-97ea-329b0278ba8b,"Josephine Osei Tutu",Male,"Central","Assin Central","Ackaakrom",,,21,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+a29d16a8-8b84-4705-bd33-49afc0546790,"Louis Appiah",Male,"Central","Assin Central","Ackaakrom",,,20,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+79cb427b-a028-4be4-a4fb-bf595b63f9b8,"Meshack Asamoah",Male,"Central","Assin Central","Ackaakrom",,,25,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+4b492063-60aa-48ad-bd0c-41e3ec4a63b4,"Michael Osei Yeboah",Male,"Central","Assin Central","Ackaakrom",,,31,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+0eedbae0-a415-4bd6-ba0a-3b5bcf2d4850,"Mike Kojo Copper",Male,"Central","Assin Central","Ackaakrom",,,33,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+86e491ec-40f1-4f81-9b1f-41888ba103d0,"Osman Mahama",Male,"Central","Assin Central","Ackaakrom",,,28,,4,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+213f2ad6-286f-4a16-8a0f-6576e966d52b,"Ramatu Mahama",Male,"Central","Assin Central","Ackaakrom",,,30,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+28071713-fb82-479a-8067-506a168c41d6,"Animdife Judith",Male,"Central","Assin Central","Ackaakrom",,,32,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+8820c153-6a1c-42d7-9e2a-09ed13b13996,"Buabin Emmanuel Junior",Male,"Central","Assin Central","Ackaakrom",,,33,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+e87af7ff-0450-4c66-b45e-07934c892d3e,"Hagan Grace",Male,"Central","Assin Central","Ackaakrom",,,33,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+b6c7b597-9e8a-4348-bf08-71f6f497579a,"Quartey Cynthia",Male,"Central","Assin Central","Ackaakrom",,,34,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+43193b79-5420-4cf1-850e-510dc198acbc,"Sabutey Joseph",Male,"Central","Assin Central","Ackaakrom",,,20,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+75b554c8-3fd4-4d2a-9ad1-1f4e4338609c,"Agbeti Kaame Mensah",Male,"Central","Assin Central","Ackaakrom",,,27,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+dbf8c2de-758f-4663-b65d-435a8561e72f,"Rebecca Ganyo Ama",Male,"Central","Assin Central","Ackaakrom",,,28,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+c9b436eb-26b6-41de-b319-ebbdb03d5469,"Angelina Wotor Gidiglo",Male,"Central","Assin Central","Ackaakrom",,,33,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+9305afda-c2e9-4f9e-ad5a-3b1dff71bb3b,"Mavis Talata Aborney",Male,"Central","Assin Central","Ackaakrom",,,32,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+580d7422-90ba-4914-bffe-23bde91362dd,"Patience Kanchenipor",Male,"Central","Assin Central","Ackaakrom",,,32,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+5a24255f-3279-402f-8092-2b16ec698a36,"Philomena Morgan Mensah",Male,"Central","Assin Central","Ackaakrom",,,30,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+cab909fd-34a3-4255-8af2-48a571b9b745,"Reason Momo Quaye",Male,"Central","Assin Central","Ackaakrom",,,21,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+a453ab9a-333d-4cef-b864-11fad8babe12,"Arthur John Baptist",Male,"Central","Assin Central","Ackaakrom",,,30,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+15df9a11-fe6c-4613-a1f4-13f414a4cde9,"Opoku Asamoah Joyce",Male,"Central","Assin Central","Ackaakrom",,,32,,5,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+a0aa8947-7572-432f-b2e2-38af5e933782,"Quaye Harrison",Male,"Central","Assin Central","Ackaakrom",,,21,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+b4d0a1da-3b84-4282-8d1a-5314d6a210fb,"Koweitey Albert",Male,"Central","Assin Central","Ackaakrom",,,24,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+28c99332-4f5c-4122-a830-a4dc291d672c,"Adu Solomon",Male,"Central","Assin Central","Ackaakrom",,,34,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+298006c2-6681-498a-8d84-9d41b877fde0,"Egan-mensah Nana Kwesi",Male,"Central","Assin Central","Ackaakrom",,,28,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+21b6d665-e657-4ecc-9d1f-b01e0fbf6d75,"Essel Richard",Male,"Central","Assin Central","Ackaakrom",,,29,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+64b2a656-71a7-41bd-85c3-b545b44dbd9e,"Assiamah Kingsford",Male,"Central","Assin Central","Ackaakrom",,,29,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+7dd81f8c-4676-4d2f-a599-8ba52930c164,"Koufie Alex Junior",Male,"Central","Assin Central","Ackaakrom",,,29,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+5524ade1-2fa5-4b24-b402-aebf5a051dea,"Asomaning Emmanuel",Male,"Central","Assin Central","Ackaakrom",,,28,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+c715110e-7c1e-4a87-b030-6a03c36312f8,"Antwi Samuel Sarfo",Male,"Central","Assin Central","Ackaakrom",,,27,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+17dbee2b-29d7-4f2a-8a46-e8d9411375b1,"Andoh Eric",Male,"Central","Assin Central","Ackaakrom",,,26,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+65d2e4e0-6fe2-484a-845e-218706a49319,"Wedenku Gifty",Male,"Central","Assin Central","Ackaakrom",,,26,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+4e96de13-00e7-48e7-a1be-baeacab75a60,"Prince Asare",Male,"Central","Assin Central","Ackaakrom",,,31,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+c89a5f6a-6619-4f92-a65a-3c9c17b0eea2,"Zogla Clifford Dotse",Male,"Central","Assin Central","Ackaakrom",,,21,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+be7e0564-276d-4363-bfa4-8681c9fc7775,"Baaning Peter Evans",Male,"Central","Assin Central","Ackaakrom",,,32,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+21d121e5-cdcc-4fb4-979b-07a5e0af2ca7,"Kumi Hayford",Male,"Central","Assin Central","Ackaakrom",,,21,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+426c3658-c01e-437b-a76c-b770eedbcac6,"Asabea Gloria",Male,"Central","Assin Central","Ackaakrom",,,23,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+2ae59084-4997-4e82-98f0-0385cfb68fed,"Afful Rita",Male,"Central","Assin Central","Ackaakrom",,,35,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+16d03cd8-46e0-4666-9123-b1423db00feb,"Derrick Karikari",Male,"Central","Assin Central","Ackaakrom",,,23,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+a31dbac2-46e0-4f4f-b7e1-0699ff348770,"Lambon Barnabas Tiyab",Male,"Central","Assin Central","Ackaakrom",,,23,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+e3ea6b02-12bc-436c-b4df-01fb9c58d91f,"Madina Kassim",Male,"Central","Assin Central","Ackaakrom",,,24,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+8af2d956-9cfa-4a9a-bbd7-f5794febfcb7,"Obiri Yeboah Samuel",Male,"Central","Assin Central","Ackaakrom",,,20,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+20cc7293-2928-492e-8d32-b14d1a8e6d8c,"Reindorf Opoku",Male,"Central","Assin Central","Ackaakrom",,,21,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+58acba14-0ea6-4624-859d-9862a643e5a7,"Sylvester Afful",Male,"Central","Assin Central","Ackaakrom",,,21,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+42dcd4eb-22a0-4bf7-9f3b-df4bbf1f76f2,"Iddrisu Ali",Male,"Central","Assin Central","Ackaakrom",,,21,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+d9c7b53e-d0d5-415d-b340-bbd655456b75,"Abrefa Stephen",Male,"Central","Assin Central","Ackaakrom",,,21,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+61420966-b20c-46c6-8da9-86c0a9dec702,"Sarfo Samuel",Male,"Central","Assin Central","Ackaakrom",,,32,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+f44e54c2-7103-456e-95c8-eb210eabc94c,"Pomah Mary",Male,"Central","Assin Central","Ackaakrom",,,33,,2,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+2ee3805e-e63e-4898-96f2-2638e5c3e0f2,"Yirbom Eugene Nwinmeyir",Male,"Central","Assin Central","Nuamakrom C",,,23,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+87a39d99-cac6-4dd8-8741-73d57a033010,"Foster Nketia Yeboah",Male,"Central","Assin Central","Nuamakrom C",,,32,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+827ddda5-b6b8-46b2-906b-9743984fd65e,"Richard Yaw Seade",Male,"Central","Assin Central","Nuamakrom C",,,32,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+13d68c0f-f2f3-4113-a589-de8701fedec0,"Migyikra Philip Manyakobuarenya",Male,"Central","Assin Central","Nuamakrom C",,,35,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+d1563fbc-6ff3-4766-a9dd-a1c32ad45e5c,"Francis Kofi Amonsah",Male,"Central","Assin Central","Nuamakrom C",,,31,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+bf499daa-f13d-4fc3-a1a8-216f775a9a35,"Mary Prah",Male,"Central","Assin Central","Nuamakrom C",,,23,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+c600e793-66e9-4bd9-8748-60a879a4005d,"Emmanuel Buabin",Male,"Central","Assin Central","Nuamakrom C",,,21,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+6884a85f-af01-404e-b86e-4528cbf1ae64,"Isaac Tamanja",Male,"Central","Assin Central","Nuamakrom C",,,20,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+3b597848-74e0-4b5d-b9fc-4fe11559f8c4,"Mark Appiah Asamoah",Male,"Central","Assin Central","Nuamakrom C",,,25,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+7b891421-4568-40ad-bd45-e39ee74dc1e0,"Christopher Kofi Kumacha",Male,"Central","Assin Central","Nuamakrom C",,,23,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+7d07236f-4b7f-4a0d-8c3c-dda80d5da1d7,"Ransford Tutu Donkor",Male,"Central","Assin Central","Nuamakrom C",,,24,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+05adf7e7-9dc0-4f80-875d-c7efd93ea259,"Micheal Selorm Botri",Male,"Central","Assin Central","Nuamakrom C",,,21,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+b6f26c95-550c-46d3-b6bd-3dc2f51e5aad,"Solomon Atitso Mensah",Male,"Central","Assin Central","Nuamakrom C",,,23,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+e24c7241-7550-4fa3-8ce9-035734d0cf5a,"Samuel Tetteh Djamgba",Male,"Central","Assin Central","Nuamakrom C",,,22,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+7ea8c52a-1866-4157-b3df-d8df2c0d63b5,"Nancy Bamfo",Male,"Central","Assin Central","Nuamakrom C",,,21,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+e8303dfc-ef67-4162-882c-1e08b36a8d9a,"Samuel Julius Yeboah",Male,"Central","Assin Central","Nuamakrom C",,,21,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+55e97390-c5d3-4c16-a233-f89280bfea53,"Clement Kwao",Male,"Central","Assin Central","Nuamakrom C",,,23,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+97c81437-3634-4ee6-93a2-f073ed6f38b0,"Micheal Mensah Cofie",Male,"Central","Assin Central","Nuamakrom C",,,21,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+1b1160c8-03c9-40c4-9f84-527795ae3e1a,"Godwin Amesawu",Male,"Central","Assin Central","Nuamakrom C",,,24,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+17188099-6b12-48eb-a0e1-e0d238de43cf,"Isaac Blowordzo",Male,"Central","Assin Central","Nuamakrom C",,,29,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+365f40d1-d12b-47ac-8c59-793647fa09a2,"Juliana Teteba Awuku",Male,"Central","Assin Central","Nuamakrom C",,,28,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+d44cdb9b-1a6e-4f48-9128-81db9c7c18f0,"Adarkwah Doris",Male,"Central","Assin Central","Nuamakrom C",,,27,,5,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+cc4a6a92-e7ac-4dba-a891-c2eafe68001d,"Laari Kantaan",Male,"Central","Assin Central","Nuamakrom C",,,24,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+6c3823fa-db18-4b51-92d9-116aabb335aa,"Judith Nana Abena Pokua",Male,"Central","Assin Central","Nuamakrom C",,,27,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+741421ad-0406-4a5e-be0c-644c350f5be1,"Gifty Grant Atakro",Male,"Central","Assin Central","Nuamakrom C",,,25,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+b0341d45-f8d4-4f4f-8494-5b49def8622f,"Sadia Musa",Male,"Central","Assin Central","Nuamakrom C",,,35,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+b467bc3e-fd27-4cd3-b460-b021fdeac1c4,"Prince Yeboah",Male,"Central","Assin Central","Nuamakrom C",,,23,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+dc1301b8-9cc9-4baa-aecf-d3476e9a4dc4,"Koranteng Edward",Male,"Central","Assin Central","Nuamakrom C",,,32,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+7fc4710e-cc63-4ef9-812a-372da3618ad4,"Owusu Achiaw Raymond",Male,"Central","Assin Central","Nuamakrom C",,,21,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+a370a402-74f4-443b-965b-0f9bd661d62a,"Boakye Williams",Male,"Central","Assin Central","Nuamakrom C",,,21,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+798e5748-e43c-4298-b7bf-059cdf97c9d3,"Opoku-agyemang Stephen",Male,"Central","Assin Central","Nuamakrom C",,,26,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+87d15e43-9e20-4c37-9aa4-186fa645d49e,"Frimpong Adutwumwaa Linda",Male,"Central","Assin Central","Nuamakrom C",,,24,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+df8877a5-fdc0-4bbf-a147-9eddd138bd84,"Zakli Nelson Mandela Winzo",Male,"Central","Assin Central","Nuamakrom C",,,23,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+9df4d661-5c96-4cc3-b19c-d7b172c393eb,"Sapi Daniel",Male,"Central","Assin Central","Nuamakrom C",,,24,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+d9a5d637-c19e-4468-aadb-9ceebc314c36,"Joshua Quatey Worae",Male,"Central","Assin Central","Nuamakrom C",,,23,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+42b35b94-5e6b-4742-be42-e36e86d73dd0,"Buckman John",Male,"Central","Assin Central","Nuamakrom C",,,23,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+89424e05-6bbf-4351-aaed-dbce384308a0,"Thorpe Perry Fiifi",Male,"Central","Assin Central","Nuamakrom C",,,21,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+b13dddec-f865-42f9-85eb-adf43fbf25b2,"Yakubu Nuhu",Male,"Central","Assin Central","Nuamakrom C",,,32,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+b2a49e1d-66df-4cbc-81f6-3233dcccac2d,"Mensah Gorden Oti Boateng",Male,"Central","Assin Central","Nuamakrom C",,,35,,5,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+e92dc07d-1fd7-4b14-9a1a-7c7c763e94c9,"Yoobe Collins",Male,"Central","Assin Central","Nuamakrom C",,,31,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+844e1ee1-653e-4520-bdd4-695db8c3557d,"Ansah Owusu Isaac",Male,"Central","Assin Central","Nuamakrom C",,,32,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+e30645bb-46dc-44b1-ac59-71f59e41272b,"Agyei Boateng Mensborn",Male,"Central","Assin Central","Nuamakrom C",,,21,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+cebb866a-78dd-41c6-bc3d-cfc42feec1b4,"Amponsah Rockson",Male,"Central","Assin Central","Nuamakrom C",,,23,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+5ae3e274-b29a-4843-939f-e7b69ef10a11,"Oduro Emmanuel",Male,"Central","Assin Central","Nuamakrom C",,,23,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+1e93e005-7719-420b-bc27-603cad860b0a,"Siaka Alidu",Male,"Central","Assin Central","Nuamakrom C",,,32,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+2172aa77-c712-4781-abc6-c228db7898ee,"Idan Francis",Male,"Central","Assin Central","Nuamakrom C",,,21,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+fcab0645-1274-4f4a-971d-8f5987163563,"Oppong Boamah Samuel",Male,"Central","Assin Central","Nuamakrom C",,,23,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+b788721c-6bf1-43b5-91ad-994332c20528,"Ayisi Emmanuel",Male,"Central","Assin Central","Nuamakrom C",,,21,,5,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+7647837f-0622-4b7f-bcbf-c5f29cffc1cc,"Addai-owusu Sylvester",Male,"Central","Assin Central","Nuamakrom C",,,30,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+9ffa2b70-6538-4006-ba24-86be447b7131,"Oppong Benjamin",Male,"Central","Assin Central","Nuamakrom C",,,23,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+33952036-f493-470d-9e75-d77d52c66fa2,"Asaanah Anthony",Male,"Central","Assin Central","Nuamakrom C",,,21,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+118968ab-b704-4efb-9742-3cd915b2a7b9,"Kwayabe Rabbi",Male,"Central","Assin Central","Nuamakrom C",,,32,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+0e7152ad-324a-447d-b679-06737d5c409c,"Avagah Emmanuel",Male,"Central","Assin Central","Nuamakrom C",,,35,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+cc18a52b-a7a3-419d-a24d-5b7b7c0f50ca,"Gyamfi Rodulf",Male,"Central","Assin Central","Nuamakrom C",,,31,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+9182d89c-ae2e-4598-ac08-81e7245af756,"Dwumfour Francis",Male,"Central","Assin Central","Nuamakrom C",,,32,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+806f2ca3-1927-4ef2-9464-0666579c7f8a,"Boakye Agnes",Male,"Central","Assin Central","Nuamakrom C",,,21,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+6d6decf2-e229-4ed1-8109-d5ac57db0723,"Ngonebe Paulina",Male,"Central","Assin Central","Nuamakrom C",,,23,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+3ad0210d-7094-4d2e-8765-511d1b37582a,"Ntsugah Peace",Male,"Central","Assin Central","Nuamakrom C",,,23,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+070bccd9-36aa-4df2-a080-40c8335a64b3,"Duah Barbara",Male,"Central","Assin Central","Nuamakrom C",,,32,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+f18209e8-49f7-4790-9176-bcd0222ac368,"Amankwaa Evans",Male,"Central","Assin Central","Nuamakrom C",,,21,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+e2a6cc4c-ede6-45cf-b06d-9e38036bf2c0,"Owusu Felicity",Male,"Central","Assin Central","Nuamakrom C",,,23,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+c6a434ff-1add-49d5-b07f-995132f12258,"Nkansah Richmond",Male,"Central","Assin Central","Nuamakrom C",,,34,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+2a775678-7836-402f-a04b-d428f11a89a7,"Fosu Margaret",Male,"Central","Assin Central","Nuamakrom C",,,21,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+e6fae81d-8f20-41a7-aa1a-57d2a4e55d5d,"Palmaak Paul",Male,"Central","Assin Central","Nuamakrom C",,,29,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+79980d21-19c7-49d3-bec7-019b0119a612,"Attakorah Kofi Kingsley",Male,"Central","Assin Central","Nuamakrom C",,,28,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+f0d0da5e-8c11-4528-89eb-add099dbfbbc,"Adjei Daniel",Male,"Central","Assin Central","Nuamakrom C",,,23,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+301ae3bf-6d05-4061-9859-1a982e8291b7,"Owusu Mary",Male,"Central","Assin Central","Nuamakrom C",,,21,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+b8785167-3d6a-4d1d-9225-8743e44cc61f,"Nayram Kwaku Gbeve",Male,"Central","Assin Central","Nuamakrom C",,,32,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+36652c51-70c0-42b9-98b0-43a67928ab5f,"Marfo Douglas",Male,"Central","Assin Central","Nuamakrom C",,,21,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+40ec9a15-6eac-45a6-954e-1af5f3ec2cfa,"Zakaria Faruck",Male,"Central","Assin Central","Nuamakrom C",,,23,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+125eb914-916d-42c2-aafb-b717614493ca,"Amesimeku-doe Rapheal",Male,"Central","Assin Central","Nuamakrom C",,,34,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+4c466f27-fecf-492f-b838-3373504891df,"Agyapomaah Christiana",Male,"Central","Assin Central","Nuamakrom C",,,21,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+558e09a9-acd6-4635-9b74-b96f4163fabd,"Abdul Karim Abdulla",Male,"Central","Assin Central","Nuamakrom C",,,32,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+3beb0368-5b8b-42a1-a632-38556f1455ff,"Cudjoe Samuel Asamoah",Male,"Central","Assin Central","Nuamakrom C",,,35,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+ec2f75ac-7002-4be7-bdca-cd59ba77a697,"Dankwah Martha Opoku",Male,"Central","Assin Central","Nuamakrom C",,,31,,8,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+abf5bc25-3169-4b46-a62a-2a905366d28b,"Adu Bernard",Male,"Central","Assin Central","Nuamakrom C",,,32,,9,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+1cb5f310-9475-4556-8048-9a2823dd0882,"Ibrahim Zidane",Male,"Central","Assin Central","Nuamakrom C",,,21,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+cef39766-cd97-4f4f-94be-fffd3d1eb32e,"Asare Princebell",Male,"Central","Assin Central","Nuamakrom C",,,23,,7,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+e953cc31-9927-4e45-b984-1dff4691d7ba,"Bempomaa Elizabeth",Male,"Central","Assin Central","Nuamakrom C",,,21,,5,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.169Z,2026-02-21T21:43:26.169Z
+615dc1e7-958b-4a51-9e06-7b0391401a17,"Apikiya Emmanuel Wesley",Male,"Central","Assin Central","Nuamakrom C",,,31,,6,[],Active,2026-02-21T21:43:26.169Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+72cf1745-068c-43f4-b408-cad23805b790,"Karim Musah Abdul",Male,"Central","Assin Central","Nuamakrom C",,,31,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+e3b3d065-b2fc-48b3-96aa-f54a74602e9f,"Mohammed Rabiu",Male,"Central","Assin Central","Nuamakrom C",,,32,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+f3eac82f-8804-4ccc-abeb-35d59ee98ece,"Amoah Evelyn",Male,"Central","Assin Central","Nuamakrom C",,,35,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+072a043a-753d-4d88-acc9-60ca5dd730c3,"Opoku Ebenezer",Male,"Central","Assin Central","Nuamakrom C",,,32,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+e2415e55-d24f-41ad-b0c9-f2332660b4bd,"Ackah Collins Junior",Male,"Central","Assin Central","Nuamakrom C",,,35,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+93a56521-45e7-442e-a850-fbc50d1831c7,"Abdullai Abdul-nasir",Male,"Central","Assin Central","Nuamakrom C",,,32,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+75c3a915-85be-4028-8849-fab821f3b0e8,"Kankam Enoch Boadu",Male,"Central","Assin Central","Nuamakrom C",,,35,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+ab61acbe-cc7f-4a20-8c59-bfed39dc3683,"Marfoah Anna",Male,"Central","Assin Central","Adiembra A",,,31,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+a6f33e12-89c7-4f61-818c-f3cc50d971b5,"Adu-sarfo Samuel",Male,"Central","Assin Central","Adiembra A",,,21,,4,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+9d81e558-aace-41a4-b9e1-ab203d247938,"Aboagye Mizack",Male,"Central","Assin Central","Adiembra A",,,24,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+d2b3ad6a-f199-4ca3-966e-f836a238717d,"Gyamfi Stephen",Male,"Central","Assin Central","Adiembra A",,,23,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+d06c68d8-ccd9-4b98-b67d-7a13ed98837e,"Dwumah Francis",Male,"Central","Assin Central","Adiembra A",,,35,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+cd5cf7ed-d9df-49e5-8601-66432d9cb0f9,"Asante Oteng Michael",Male,"Central","Assin Central","Adiembra A",,,26,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+189ea333-8814-4235-8f99-4bf90d8679e5,"Fuseini Mamunatu",Male,"Central","Assin Central","Adiembra A",,,21,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+a5feef8f-71aa-4b64-bd2f-36d845dd66f0,"Mensah Christopher",Male,"Central","Assin Central","Adiembra A",,,30,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+30c2a85d-6ccc-4343-899f-f6f1b1e794ce,"Sarfo Elizabeth",Male,"Central","Assin Central","Adiembra A",,,23,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+bcb543f7-649c-4158-ac81-61603c996fe2,"Owusu Prince Amankwaah",Male,"Central","Assin Central","Adiembra A",,,21,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+9ce3bd0c-d9be-4e1c-b6d6-b36af4d00b9a,"Akuatiwina Erica",Male,"Central","Assin Central","Adiembra A",,,23,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+6af790a3-bd1a-476a-b48b-82616290f0ad,"Acheampong Charles",Male,"Central","Assin Central","Adiembra A",,,30,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+12351048-5bea-4544-8172-1116cffc8504,"Dapaah Susana",Male,"Central","Assin Central","Adiembra A",,,30,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+157e1c10-4cba-4670-9559-4265357c4463,"Oppong Tabi Joshua",Male,"Central","Assin Central","Adiembra A",,,30,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+ab44efb1-50c6-411e-a0d1-2285b17eae44,"Amoah Emmanuel",Male,"Central","Assin Central","Adiembra A",,,21,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+4447b5e3-31c8-4acd-b26b-f22e0966d99a,"Kusi Caleb Afiriyie",Male,"Central","Assin Central","Adiembra A",,,23,,5,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+940bc3aa-b100-4a41-bb32-47e50f769807,"Gyagri Charles",Male,"Central","Assin Central","Adiembra A",,,26,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+1423064d-9c2c-48f9-819d-c53635871c5a,"Mensah Johnson",Male,"Central","Assin Central","Adiembra A",,,27,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+deb56a2f-820c-4d47-9b34-a1d14d37bb5e,"Mensah Serwaa Davina",Male,"Central","Assin Central","Adiembra A",,,21,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+d6f56d24-f9aa-4ef5-be9d-2f527b5d9fae,"Musah Rahinatu",Male,"Central","Assin Central","Adiembra A",,,20,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+edfd2022-531e-4e0f-bd9c-dcea90068973,"Amoako Sandra",Male,"Central","Assin Central","Adiembra A",,,25,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+a43cdfe6-b615-4367-a55b-d36415d6c0e8,"Konadu Tiwaa Constance",Male,"Central","Assin Central","Adiembra A",,,31,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+5889ee32-2188-4d58-a20d-fee885e63993,"Combet Christopher",Male,"Central","Assin Central","Adiembra A",,,33,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+39c7b56d-4fa4-48e7-a3c6-312532e9b2de,"Akanlowke Lawrencia Abena",Male,"Central","Assin Central","Adiembra A",,,28,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+fa2f899e-ab48-450a-93ce-4dbfafd9af55,"Mensah Herbert",Male,"Central","Assin Central","Adiembra A",,,30,,5,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+4e6c7e27-0657-4aee-94ec-ffe0d2fc8529,"Nada Smith",Male,"Central","Assin Central","Adiembra A",,,32,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+544e9167-f264-4f4e-be2c-00a88a17218c,"Fuseini Mustabshira",Male,"Central","Assin Central","Adiembra A",,,33,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+8a78b158-df69-4743-bff8-20f97bfc023d,"Awroh Evelyn Afua",Male,"Central","Assin Central","Adiembra A",,,33,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+806d4b06-0b9f-455d-9d23-d8d498f2c1b6,"Ampofo Samuel",Male,"Central","Assin Central","Adiembra A",,,34,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+c6346026-a425-49cf-bdfa-35a4b14b885b,"Otu Prince Henry",Male,"Central","Assin Central","Adiembra A",,,20,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+1deac64b-5e60-4e48-a15c-3c01f281316d,"Afedzie Mercy Ama",Male,"Central","Assin Central","Adiembra A",,,27,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+ab6c67db-e0bf-45f5-a3c0-25bb226e503d,"Larbi Evans",Male,"Central","Assin Central","Adiembra A",,,28,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+6f5f2981-c634-412e-b0a0-e3f26405b57f,"Fiakporm Courage",Male,"Central","Assin Central","Adiembra A",,,33,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+2d0b3faf-6714-4163-943a-97a938ffbe96,"Aliu Abdul Rakib",Male,"Central","Assin Central","Adiembra A",,,32,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+e2429068-e79e-4b1d-93d5-a9a4925bb1df,"Lartey Perez",Male,"Central","Assin Central","Adiembra A",,,32,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+f7add393-4be0-40ed-9207-9963c769d68f,"Kotey Yusif Apuma",Male,"Central","Assin Central","Adiembra A",,,30,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+f472431a-5579-4656-a59b-814d5c56873e,"Djevanor Abdul Malik",Male,"Central","Assin Central","Adiembra A",,,21,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+302e8c18-c846-4663-9513-4c83cf8280e7,"Danso Emmanuel",Male,"Central","Assin Central","Adiembra A",,,30,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+643f34f3-fd39-47af-81ee-a45ff723ad39,"Asamoah Ruth Enyonam Ama",Male,"Central","Assin Central","Adiembra A",,,32,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+b8ef3b33-ca85-45e3-8dde-42b6e9ed5ce4,"Otoo Emmanuel",Male,"Central","Assin Central","Adiembra A",,,21,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+6f77b4dc-59d0-4ca1-a7d0-d70ddcc9d458,"Oppong Joyce",Male,"Central","Assin Central","Adiembra A",,,24,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+f07418ff-9c3a-4d79-aebc-ccfcbbc875d1,"Okine Mariama",Male,"Central","Assin Central","Adiembra A",,,34,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+53f9f2cc-e35f-456f-9b98-2a4e60a27ce1,"Jomah Philemon",Male,"Central","Assin Central","Adiembra A",,,28,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+ca8398e1-888c-4b96-951b-a9e3273ece33,"Nartey Francis",Male,"Central","Assin Central","Adiembra A",,,29,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+f047178c-d473-467d-b25c-8e08f4f91f02,"Abubakar Yussif",Male,"Central","Assin Central","Adiembra A",,,29,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+65a9f4a1-3076-4075-87fe-3bc5fcf857b7,"Okine Yeboah",Male,"Central","Assin Central","Adiembra A",,,29,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+2fcd252e-50cc-4a4a-9760-df5c36eb4a9a,"Nyanyo Israel",Male,"Central","Assin Central","Adiembra A",,,28,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+85e320f5-38d3-44b5-a964-0dc12676cd1c,"Nkumsah Otoo William Kwamina",Male,"Central","Assin Central","Adiembra A",,,27,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+dfca2fe9-02c1-4dc7-a877-ca80f930f123,"Asante Ebenezer",Male,"Central","Assin Central","Adiembra A",,,26,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+a9ddcfe5-35a9-43a6-ae44-3e72d08843c9,"Coffie Emmanuel",Male,"Central","Assin Central","Adiembra A",,,26,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+53175a4d-c52d-4c86-9445-4e140a5e4ea8,"Ayivi Evelyn",Male,"Central","Assin Central","Adiembra A",,,31,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+ca997fe2-f524-4a32-870c-7c2b188ec736,"Ennin Marian",Male,"Central","Assin Central","Adiembra A",,,21,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+fba20dea-cf6f-410d-af1e-05750986c8a9,"Mensah Eric",Male,"Central","Assin Central","Adiembra A",,,32,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+6edc5ae6-2fa7-4114-8b93-c5e60eb9e8a5,"Akpoto Wisdom Mensah",Male,"Central","Assin Central","Adiembra A",,,21,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+7d6218a3-9e05-4dc0-be1b-b1d9ec3e07e7,"Appiah Gideon",Male,"Central","Assin Central","Adiembra A",,,23,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+60bd64e6-b84d-4da8-8f11-cdb51cb9a294,"Wilson Yannick",Male,"Central","Assin Central","Adiembra A",,,29,,5,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+7d19496c-e31b-40a7-8478-75aea9291cfb,"Nartey Debora",Male,"Central","Assin Central","Adiembra A",,,20,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+f10226e0-0ced-47ce-a40c-e0bc96eeff5a,"Awuku Isaac",Male,"Central","Assin Central","Adiembra A",,,21,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+4f068475-5a36-4ca8-b894-0a04b3a48f04,"Quayson Francis",Male,"Central","Assin Central","Adiembra A",,,27,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+ad914504-85db-4fe7-828a-957adf859b8b,"Aryee Israel",Male,"Central","Assin Central","Adiembra B",,,25,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+8f681b53-d614-4af9-826e-265d2d81c7d4,"Isaac Tabiri",Male,"Central","Assin Central","Adiembra B",,,24,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+87988c74-7ae3-498c-86bf-6fcc5a7db14c,"Nyarko Rhoda",Male,"Central","Assin Central","Adiembra B",,,23,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+bc254622-2aa6-40c6-be9d-01a42065ad33,"Abroh Ruth Gillian Esenam",Male,"Central","Assin Central","Adiembra B",,,21,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+3a7644ec-6ec8-4b41-b991-126dcf9e058c,"Aryeetey Elvis Aryee",Male,"Central","Assin Central","Adiembra B",,,21,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+9906dad4-b15a-40fe-bcba-80cff6517244,"Koduah Benjamin Peprah",Male,"Central","Assin Central","Adiembra B",,,23,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+cb9dcb9c-950a-4668-b6a8-1f9608155500,"Baidoo Alhassan Yaw",Male,"Central","Assin Central","Adiembra B",,,32,,4,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+f552a9e7-c157-45aa-9089-606d5f3e27d1,"Nyarko Emmanuel",Male,"Central","Assin Central","Adiembra B",,,32,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+ed0c1aca-fda9-41ad-ba99-9931b73102ec,"Allotey Priscilla Pearl",Male,"Central","Assin Central","Adiembra B",,,35,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+d8af3b3f-4024-4023-8e73-6ca6e65b04b1,"Ansah-hill Winston Juan",Male,"Central","Assin Central","Adiembra B",,,31,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+d5ea24c7-9e9a-411a-8c7c-2e4d9689da51,"Darko Sandra",Male,"Central","Assin Central","Adiembra B",,,21,,12,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+c0329c1b-98e3-4205-844f-c4daad07a6e8,"Laryea Matilda Amerley",Male,"Central","Assin Central","Adiembra B",,,23,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+0e835803-ffb3-417c-8305-4ae26e82cd9b,"Boahen Emmanuel",Male,"Central","Assin Central","Adiembra B",,,24,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+47849ab8-4a9f-4561-bad7-62fc7de16dc2,"Quaicoo Emmanuel Yaw Appiah",Male,"Central","Assin Central","Adiembra B",,,23,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+f0a00a54-7bf7-4054-bbf5-c92b775e7fe1,"Ayertey-apau Michael",Male,"Central","Assin Central","Adiembra B",,,32,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+f08a5094-63c3-42e7-ba11-13dadc844347,"Gyimah Eric Owusu",Male,"Central","Assin Central","Adiembra B",,,24,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+361cf0e0-e3da-4571-abf0-8834a2b35f2e,"Bruce Felix Nii Lantei",Male,"Central","Assin Central","Adiembra B",,,23,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+a3de95b3-ceb1-4451-ad48-7088f662159d,"Boateng Charlotte Boatemaa",Male,"Central","Assin Central","Adiembra B",,,35,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+7a2c96b3-37c5-49c0-b9f9-8c524219500e,"Agyeman Pamela Naomi Obenewaa",Male,"Central","Assin Central","Adiembra B",,,23,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+f3f09025-e362-4edf-bd86-8c23cccc6839,"Aryee Michael",Male,"Central","Assin Central","Adiembra B",,,23,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+31d6ee00-fcde-4545-a3aa-9c330b091e59,"Ali-ismail Yussif",Male,"Central","Assin Central","Adiembra B",,,32,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+ef9d37db-8e70-4f83-89e8-f2e3806cc344,"Shaibu Kausar",Male,"Central","Assin Central","Adiembra B",,,35,,5,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+821d4f99-4baa-4d80-ad66-06624ed3c46f,"Marclord Pieterson",Male,"Central","Assin Central","Adiembra B",,,32,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+481c7804-ec20-4b85-bbac-a3f3c31ed38e,"Eric Agyei",Male,"Central","Assin Central","Adiembra B",,,23,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+45af6fde-f846-4b35-adf2-f04e7d39e2df,"Frank Pieterson",Male,"Central","Assin Central","Adiembra B",,,34,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+3ec07be5-f0ef-40c8-b8c1-643077bfd2b5,"Justice Abraham Dadzie",Male,"Central","Assin Central","Adiembra B",,,33,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+f8fe771a-b0db-4c64-a1fe-d54ecdb1560d,"Newton Assunkey",Male,"Central","Assin Central","Adiembra B",,,32,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+e53a01da-59a0-4c88-abbf-20040c310362,"Esther Yeboah",Male,"Central","Assin Central","Adiembra B",,,32,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+c1b0988e-680b-4f85-8cda-66e7db58baed,"Owusu Prince",Male,"Central","Assin Central","Adiembra B",,,34,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+3a4f03fa-a66f-46c3-88d7-c3d12da19e06,"Bright Kwofie",Male,"Central","Assin Central","Adiembra B",,,21,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+cbb398d4-1934-4c39-ba78-6bd1684fccde,"Kumbyisan Mary",Male,"Central","Assin Central","Adiembra B",,,24,,5,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+1730aca9-b624-424a-929e-56d30c8c8c96,"Forson Benedict",Male,"Central","Assin Central","Adiembra B",,,21,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+2ae51102-0237-4c3d-8ed2-65e19e35397b,"Kwakye Isaac",Male,"Central","Assin Central","Adiembra B",,,21,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+c44ba5f8-7c0a-4919-b360-d6d31da02acf,"Bonde Doris Akosua",Male,"Central","Assin Central","Adiembra B",,,25,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+d2c5ddcb-fa98-40b8-bd65-d5a3c71c5836,"Abubakar Fati",Male,"Central","Assin Central","Adiembra B",,,24,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+438a1729-13ef-4893-a84b-9d62df232dd3,"Acheampong Emmanuel",Male,"Central","Assin Central","Adiembra B",,,23,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+0ad428f6-a085-4d71-a3c1-cb3a8423150d,"Zumeke Ernest",Male,"Central","Assin Central","Adiembra B",,,22,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+393128f0-bfc6-4867-a86f-013a9c3d4182,"Twum Emmanuel",Male,"Central","Assin Central","Adiembra B",,,21,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+9835def8-2467-4b14-be66-abd9508031d6,"Appiah Kubi Emmanuel",Male,"Central","Assin Central","Adiembra B",,,24,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+1922f451-6c41-4643-8090-afc1454f9f51,"Kamal Razak",Male,"Central","Assin Central","Adiembra B",,,21,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+b0d65d30-b756-467f-a566-168156554da1,"Adamah Gideon",Male,"Central","Assin Central","Adiembra B",,,23,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+235bb578-e99f-4e47-94e2-220417271ab4,"Hadzi Abraham",Male,"Central","Assin Central","Adiembra B",,,24,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+71399ab8-9833-4843-b16d-4892f8c4923b,"Appiah Emmanuel Adu",Male,"Central","Assin Central","Adiembra B",,,21,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+733061f5-2280-48d9-add3-4f7c24940e23,"Aryetey Gifty Oforiwaa",Male,"Central","Assin Central","Adiembra B",,,23,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+731c28b0-06e6-49e7-a169-32997cafbc04,"Adofo Samuel",Male,"Central","Assin Central","Adiembra B",,,21,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+7e9e340d-25eb-4ff7-a9ed-b654fa265d79,"Agyei Solomon Amponsah",Male,"Central","Assin Central","Adiembra B",,,23,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+f16d77a4-48cd-4dd8-864e-4f0026dccb63,"Walker Godfred Alexander",Male,"Central","Assin Central","Adiembra B",,,24,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+dcac5c05-22dd-48ee-8a44-bdeb0be086ac,"Darko Bertha",Male,"Central","Assin Central","Adiembra B",,,20,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+73092cee-4a5b-4756-a7dd-397ef4c7cf7a,"Mawaah Emmanuel Nborsah",Male,"Central","Assin Central","Adiembra B",,,21,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+2bbe6735-4780-4821-b6ae-6165d27946d8,"Asamoah Dacosta Ofosu",Male,"Central","Assin Central","Adiembra B",,,23,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+79152cb8-5be5-4b3d-ab24-299312b62e95,"Dacosta Ofosu Asamoah",Male,"Central","Assin Central","Adiembra B",,,21,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+c55ed1bd-05a0-48ab-a5c8-01b5b4130416,"Njala Joshua",Male,"Central","Assin Central","Adiembra B",,,32,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+0d1f214e-f9ba-4b3a-ba30-8af7e1aafdea,"Lartey Catherine",Male,"Central","Assin Central","Adiembra B",,,32,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+495f20ac-fdab-4700-a1fc-2f8168e53e41,"Agyare Doris Mensah",Male,"Central","Assin Central","Adiembra B",,,34,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+e260024a-9f4f-4df4-98a4-a384f08a1a2d,"Raymond Shina Ola",Male,"Central","Assin Central","Adiembra B",,,34,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+7db05dc0-f0c4-4204-8fb5-57a10c13407c,"Akwetey Godwin Foli",Male,"Central","Assin Central","Adiembra B",,,31,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+3c04c323-fda4-4869-9185-8725dae69655,"Eshun Stephen",Male,"Central","Assin Central","Adiembra B",,,25,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+5fa49252-adaa-4f09-b7d9-c22b8b503d0c,"Emmanuel Karl Lokko",Male,"Central","Assin Central","Adiembra B",,,21,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+56b04a1b-281b-4bdd-be74-d8b9751aa66e,"Amponsah Lydia",Male,"Central","Assin Central","Adiembra B",,,32,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+58367324-af54-403f-8242-0858496daddf,"Kassim Abdul Sallam",Male,"Central","Assin Central","Adiembra B",,,21,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+4a721315-39b8-4f1c-9aaa-7ac9e4cbd644,"Mungo Justice",Male,"Central","Assin Central","Adiembra B",,,27,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+733743d9-268b-45bd-9d75-4eabe13059b8,"Amankwa Kojo",Male,"Central","Assin Central","Adiembra B",,,21,,5,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+43d60a98-dca3-455f-ad97-afab38413644,"Abdul-karim Rakib Mashood",Male,"Central","Assin Central","Adiembra B",,,21,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+384f767e-ca87-49a7-bc75-416cfb85a95a,"Njali Jonathan",Male,"Central","Assin Central","Adiembra B",,,31,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+02d3316f-4ff2-49ad-99c7-4b9d7c5e30b2,"Akoto Kofi Benjamin",Male,"Central","Assin Central","Adiembra B",,,32,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+62dff5bb-7b39-47f0-9b17-e601c199f889,"Caesar Benjamin Ofoe",Male,"Central","Assin Central","Adiembra B",,,28,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+bbdddf42-aa85-45bf-9c4d-9949d58cebfb,"Mensah Bright",Male,"Central","Assin Central","Adiembra B",,,27,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+7faee1e2-e81c-48ef-9411-0c22fbf2147a,"Nti Deborah",Male,"Central","Assin Central","Adiembra B",,,26,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+3d624638-4d29-4e43-a94c-a22492975b0a,"Kumassah Dominic Delali",Male,"Central","Assin Central","Adiembra B",,,34,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+498a3cc7-45c0-470f-8a46-8c4ef6031783,"Essiw Emmanuel",Male,"Central","Assin Central","Adiembra B",,,33,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+d5c45bba-232f-4456-a1af-ffac13d532ef,"Eyiah Mensah Kwame Richmond",Male,"Central","Assin Central","Adiembra B",,,34,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+71a4cd07-cef7-4f55-aaca-911cd9a87480,"Mensah Joshua",Male,"Central","Assin Central","Adiembra B",,,33,,4,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+5c325678-70e2-4063-a7fb-d472f1ffe042,"Okyere Osei Bright",Male,"Central","Assin Central","Adiembra B",,,33,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+a28754e2-5d25-40d0-a930-93a189e11747,"Nettey Tetteh Kenneth",Male,"Central","Assin Central","Adiembra B",,,32,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+748c8277-faf9-4889-8586-d3a1c2c44a72,"Mensah Sandra",Male,"Central","Assin Central","Adiembra B",,,21,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+d2fe30a3-ee7d-425b-9955-2da8db357e21,"Abaidoo Mavis",Male,"Central","Assin Central","Adiembra B",,,21,,12,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+ba05e066-25d3-4068-a6ef-2b01d650c679,"Asante Joseph",Male,"Central","Assin Central","Adiembra B",,,31,,15,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+c049b0c5-2b84-40df-b328-e5e80a4a118d,"Kwofie Diana",Male,"Central","Assin Central","Adiembra B",,,21,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+15216dee-6f39-4d79-8add-90798e9423cd,"Nkrumah Gloria",Male,"Central","Assin Central","Adiembra B",,,32,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+42ca8e55-a919-452b-bd46-2c87aa2a6361,"Owusu Danso Kelvin",Male,"Central","Assin Central","Adiembra B",,,21,,5,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+9304fe51-6d49-4622-929f-059bb6062dcd,"Amankwa Dede Patience",Male,"Central","Assin Central","Adiembra B",,,27,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+d67ca46d-34cc-4171-83a1-d8d247843c48,"Nartey Deborah",Male,"Central","Assin Central","Adiembra B",,,21,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+ed2b480a-f600-4d99-98dc-4a287292e85e,"Nipah Francisca",Male,"Central","Assin Central","Adiembra B",,,21,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+8cba7237-6811-4d38-ab72-db3d3bbeaa5f,"Owusua Loretta",Male,"Central","Assin Central","Adiembra B",,,31,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+45547c72-367c-4971-ac49-3ed5cb268496,"Saanah Arisa",Male,"Central","Assin Central","Adiembra B",,,32,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+695dd1c9-d2c4-4929-bef6-b5dab5b4643e,"Edward Dasi Njuti",Male,"Central","Assin Central","Adiembra B",,,28,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+d845b755-b017-4c8f-9499-7bce00b0f557,"Pieterson Frank",Male,"Central","Assin Central","Adiembra B",,,27,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+e8f340a8-f405-4b33-9f01-2f0022bbcfc1,"Eric Bonsu Gyasi",Male,"Central","Assin Central","Camp A",,,26,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+6997a4b5-bde4-4b57-8b89-b77fc52adac2,"Mensah Sheila",Male,"Central","Assin Central","Camp A",,,34,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+a795a53e-15c4-40b0-ab8f-ec35a1c8943d,"Sam Charlotte",Male,"Central","Assin Central","Camp A",,,33,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+42f35135-7a63-46f1-a537-b6ddf121a295,"Quaye Benedicta",Male,"Central","Assin Central","Camp A",,,34,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+2467efd5-dc9b-4105-be06-f9f2883195cb,"Sarfo Frank",Male,"Central","Assin Central","Camp A",,,33,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+25c13bc0-c23c-4a82-821c-7a628041835d,"Asuman Isaac",Male,"Central","Assin Central","Camp A",,,33,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+dd61b27c-6c0b-4500-b121-ea184f108f29,"Bainin Samuel Akwaa",Male,"Central","Assin Central","Camp A",,,32,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+1517c8e5-3734-465f-9a3e-ce46616e38e2,"Amadi-ohene Dennis",Male,"Central","Assin Central","Camp A",,,21,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+190ed813-c854-4020-87ed-f5056e9f8750,"Shaibu Abdul Majid",Male,"Central","Assin Central","Camp A",,,21,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+b60ea6c6-28e1-41ca-ad66-6808c22e3682,"Boduwah Stella Ama",Male,"Central","Assin Central","Camp A",,,31,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+86a16bd7-1af0-4589-bdf3-d771c67e2420,"Annan Felix Adjei",Male,"Central","Assin Central","Camp A",,,30,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+7d63e4d8-9fdb-4844-bf37-90e0ae1ae64d,"Kumi Maxwell",Male,"Central","Assin Central","Camp A",,,30,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+5c6eff73-d9c9-4547-8bd8-fe83b4c0852a,"Ansah Richmond",Male,"Central","Assin Central","Camp A",,,23,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+c1a2085c-22ea-40e6-8c06-87709d9b2df4,"Akanbong Godfred",Male,"Central","Assin Central","Camp A",,,21,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+1c981dbb-90c5-4aca-a46b-8652a33650cf,"Bondobie Kwame",Male,"Central","Assin Central","Camp A",,,32,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+625aea48-dac5-4ef0-ae4d-88b11815f1c7,"Arhin Bright",Male,"Central","Assin Central","Camp A",,,35,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+55dc1d32-95e6-47f2-a1c5-06a965f4b327,"Owusu Augustine",Male,"Central","Assin Central","Camp A",,,31,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+a94b9859-b0d8-4e58-9e4c-7d808239a88a,"Anane Priscilla",Male,"Central","Assin Central","Camp A",,,32,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+ddc5e095-eb65-4e4c-b547-b809993bc34d,"Mireku Opoku",Male,"Central","Assin Central","Camp A",,,21,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+00b6b4e3-2377-46c1-9d6d-3f464ae9d538,"Darku Mark Boakye",Male,"Central","Assin Central","Camp A",,,23,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+e1fd50cc-5003-4e5a-8678-ee6a6b6c94bf,"Frimpong Anspranel Akosua",Male,"Central","Assin Central","Camp A",,,23,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+2720598a-973f-4876-b225-11e06ae06d74,"Nartey Peter",Male,"Central","Assin Central","Camp A",,,32,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+d045222e-e504-4eeb-a292-b6bad51a4008,"Dadzie Stephen",Male,"Central","Assin Central","Camp A",,,21,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+35ee8680-33a7-4f5e-ac23-486db99ccb34,"Armatey Justice Nii Armah",Male,"Central","Assin Central","Camp A",,,23,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+1cadd0c2-ddd7-445c-9f02-2b24bfdc3907,"Omari David",Male,"Central","Assin Central","Camp A",,,34,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+3f85355d-f1b9-4d99-bfeb-811f6558a886,"Coffie Peter",Male,"Central","Assin Central","Camp A",,,30,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+18933eb1-6052-4b6f-a81f-db7d719d6fb8,"Ametorwo Trinity",Male,"Central","Assin Central","Camp A",,,29,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+9e610221-224d-455f-95cf-78a6071ad916,"Amevor Evangeli",Male,"Central","Assin Central","Camp A",,,28,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+7431df56-3e6c-4a4d-b8f8-4dbdd8483d76,"Nyarkoh Christabel",Male,"Central","Assin Central","Camp A",,,23,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+eb5467e9-3fa3-44da-be00-7ff6e3ea081f,"Aboagye Gideon Osafo",Male,"Central","Assin Central","Camp A",,,21,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+58dfe806-07f8-4e36-b3ad-2378ffda0f7e,"Arhin Kwesi Christian",Male,"Central","Assin Central","Camp A",,,32,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+cfcb3cd7-2791-49d9-9af6-8df8ee4b4489,"Faiza Damba",Male,"Central","Assin Central","Camp A",,,21,,5,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+d00b6a86-8166-4d96-ae5b-2e7224536870,"Darko Fredrick Kofi",Male,"Central","Assin Central","Camp A",,,23,,4,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+8e3b517b-97db-40fe-8298-16e73d750c50,"Daniel Akrong",Male,"Central","Assin Central","Camp A",,,34,,5,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+44574821-ac6e-47ed-a401-76f9244e2d33,"Emmanuel Ashiagbor",Male,"Central","Assin Central","Camp A",,,21,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+73419f27-85d8-473e-98b5-0e7ed669b0c3,"Basiru Jamil",Male,"Central","Assin Central","Camp A",,,32,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+79d59750-eed0-4824-9abf-7dc5bb6a52ce,"Angabeny Castro",Male,"Central","Assin Central","Camp A",,,35,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+6e6b3a9d-c522-48c7-b8aa-27cff95c18f6,"Asiedu Prince Bright",Male,"Central","Assin Central","Camp A",,,31,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+c9b9040d-3511-4a43-a5e6-14df5e48b6eb,"Gasu Edem",Male,"Central","Assin Central","Camp A",,,32,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+e3183ba2-5a0b-4381-8853-cfce7ee65b91,"Hini Wisdom Mawuko",Male,"Central","Assin Central","Camp A",,,21,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+0bc36ce0-266f-452a-861e-bc5d83800d0b,"Hoedienukpor Eyram Wisdom",Male,"Central","Assin Central","Camp A",,,23,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+f786de9f-901d-4e56-a701-1cb34d466771,"Bonney Justice",Male,"Central","Assin Central","Camp A",,,21,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+4f148fa0-820f-4193-877d-2aec658b78e8,"Agenda Francis",Male,"Central","Assin Central","Camp A",,,31,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+857a1ef5-cb08-44d3-8bbb-b74dc07053e4,"Kyibe-imuo Beatrice",Male,"Central","Assin Central","Camp A",,,31,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+d99ef14b-494c-4adc-bdb2-ac7216e16919,"Nobui Elizabeth",Male,"Central","Assin Central","Camp A",,,32,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+4e2684b8-44ee-485d-98ee-1d9ae5991238,"Oklu William",Male,"Central","Assin Central","Camp A",,,35,,5,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+872cabab-8001-4615-ad7e-b132dac46188,"Otoo Davia Kojo",Male,"Central","Assin Central","Camp A",,,32,,4,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+22fa4f28-5755-4e94-9f17-03a71cbe7eac,"Maloku Sarah Fafali",Male,"Central","Assin Central","Camp A",,,35,,4,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+0bc9bbd9-3168-4d3e-a394-481835b22682,"Ampadu Richard Nana Kweku",Male,"Central","Assin Central","Camp A",,,32,,5,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+8b01fe97-8975-4b4f-af5b-c0a8480334dc,"Kajase Frank",Male,"Central","Assin Central","Camp A",,,35,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+9abb16a2-db8d-45db-9724-c9c48313eab4,"Afriyie Kwabena",Male,"Central","Assin Central","Camp A",,,31,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+0b10ec67-44bd-4cbc-9c49-0dd27b720f53,"Ansah Hanson Asante",Male,"Central","Assin Central","Camp A",,,30,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+6102133b-befc-4bb9-b7d2-f713feddf609,"Osei Peter",Male,"Central","Assin Central","Camp A",,,30,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+6293d6e9-7cec-420b-988d-703bbeadc3fe,"Abdul Karim Baqi Akondor",Male,"Central","Assin Central","Camp A",,,23,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+6c71de35-2fc7-420b-bbf5-3ab68869a3e4,"Asante Nancy",Male,"Central","Assin Central","Camp A",,,21,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+56322685-81f8-40e5-8796-549da5da4332,"Gyasi Nadia Nana Adoma",Male,"Central","Assin Central","Camp A",,,32,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+7ca8f9af-f3ec-4e3b-93be-f6dfd8e41176,"Mabel Atoklo",Male,"Central","Assin Central","Camp A",,,35,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+06e37a5a-c828-463e-b4ca-5aaa5381dea9,"Agyei Stephen",Male,"Central","Assin Central","Camp A",,,31,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+8262ead8-2615-473f-88a6-a79b3aae0d9b,"Batsa Dora",Male,"Central","Assin Central","Camp A",,,32,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+59f4d913-5cc4-44d8-afa8-74104d8d5540,"Adongo Douglas",Male,"Central","Assin Central","Camp A",,,21,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+9a48d649-29c3-4cf5-9feb-81890c30d544,"Ashong Lydia Makafui Akosua",Male,"Central","Assin Central","Camp A",,,23,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+d07e7796-580f-4039-9f5d-99dc2b865631,"Prince Amankwa",Male,"Central","Assin Central","Camp A",,,23,,4,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+a2b43604-1d38-43c3-a867-28d853c588da,"Ibrahim Sekina",Male,"Central","Assin Central","Camp A",,,32,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+ffd16fee-aa61-4fd9-9c95-db47fc498d03,"Abah Freeman",Male,"Central","Assin Central","Camp A",,,21,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+ab2f64b7-3d70-467e-9e9b-5e18205fe2c6,"Jennifer Afako Agbenyo",Male,"Central","Assin Central","Camp A",,,23,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+5b8d4a17-11b6-4e1f-b41c-f79e203c91c4,"Philip Baah",Male,"Central","Assin Central","Camp A",,,34,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+7839c8aa-3674-4c8a-898b-ac51e83b02e4,"David Yaajuo",Male,"Central","Assin Central","Camp A",,,30,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+e96ee034-a3bf-4682-9724-6a9e1144e662,"Grace Kyiyaga",Male,"Central","Assin Central","Camp A",,,29,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+81a42f7c-93d0-420f-a6af-8636945f4342,"Gyamerah Ernest",Male,"Central","Assin Central","Camp A",,,28,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+37c5397a-fe6b-4a33-b2cc-ac1be5ae1583,"Omari Michael Asante",Male,"Central","Assin Central","Camp A",,,23,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+0d5079c9-6a1e-4e9d-9d46-8d93d329e9c2,"Francis Bubu",Male,"Central","Assin Central","Camp A",,,21,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+e9ebe787-5738-4925-9bc7-f35d1d4b8978,"Darko Faustina Gyawaa",Male,"Central","Assin Central","Camp A",,,32,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+95a0dbdf-c15c-494e-b91d-b964f8a867fd,"Nubuasah Kofi Ronald",Male,"Central","Assin Central","Camp A",,,21,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+c31f430a-d11e-48b6-b254-660c4d63de96,"Ntow Prince",Male,"Central","Assin Central","Camp A",,,23,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+e71785fe-a9af-4310-82c4-95b551ba7976,"Dankyi Bright",Male,"Central","Assin Central","Camp A",,,34,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+83e22eae-c6c7-4558-8874-e1b689438da1,"Afedziwole Abraham",Male,"Central","Assin Central","Camp A",,,21,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+f54ca4ba-6e9a-42f9-afd1-277839e4c7de,"Effah Emmanuel Kwame Wahyee",Male,"Central","Assin Central","Camp A",,,32,,5,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+8167d4df-4a60-4b42-8d08-e609c2483484,"Ofori Emmanuel Amoafo",Male,"Central","Assin Central","Camp A",,,35,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+6b26104a-ffd7-453b-82bf-b3c1b976d99b,"Sebbie Benjamin",Male,"Central","Assin Central","Camp A",,,31,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+f69b249e-fb75-4d74-a7d3-75c7e66e0cdb,"Senyo Maxwell",Male,"Central","Assin Central","Camp A",,,32,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+afa0dc69-81ec-4d1e-8db3-44a70b3dc4f7,"Abah Freeman",Male,"Central","Assin Central","Camp A",,,21,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+3c0feb80-5bc9-4dde-91e8-ec26bca92b29,"Boni Norbert Etse",Male,"Central","Assin Central","Camp A",,,23,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+f7fdd7d5-e8d7-4604-a760-102a4102e531,"Ampadu Eugene Seth",Male,"Central","Assin Central","Camp A",,,21,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+97cc250d-3f01-40db-a2b3-c4887a5b55c6,"Agyei Emmanuel",Male,"Central","Assin Central","Camp A",,,31,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+2953bc2d-ca04-421e-9d03-3bc2973b3704,"Yaadjuo Joseph",Male,"Central","Assin Central","Jakain A",,,31,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+6284c7bc-2ef8-4ffa-a334-7b7d6abd9024,"Aboagye Paul Junior",Male,"Central","Assin Central","Jakain A",,,32,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+8b11961b-e285-4fef-bbbc-f96725bab4c8,"Joseph Forson",Male,"Central","Assin Central","Jakain A",,,35,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+35f3e132-b35c-4cb0-94dd-a2c25921205d,"Ebenezer Lartey",Male,"Central","Assin Central","Jakain A",,,32,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+91ceabf2-ad1e-4822-a8c8-8986ecbafd8f,"Emmanuel Sakyi",Male,"Central","Assin Central","Jakain A",,,35,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+575679df-ac52-4c9f-b3c7-a569631f7de3,"Kennedy Dushie",Male,"Central","Assin Central","Jakain A",,,32,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+9dc728c8-0d10-41a7-bb9f-22223514bfac,"Grace Quainoo",Male,"Central","Assin Central","Jakain A",,,35,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+8766b283-d8da-4e74-ba2d-751221b6f879,"Ebenezer Mensah",Male,"Central","Assin Central","Jakain A",,,31,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+963a6b32-7437-4258-b6bf-ceb74a555f87,"John Mawuli Gozah",Male,"Central","Assin Central","Jakain A",,,21,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+32f82d4c-117a-4fa8-b31c-1347d7e59bc9,"Yvonne Yamoah",Male,"Central","Assin Central","Jakain A",,,24,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+2ed2f0e2-86c7-4536-92bc-eed3ca45b006,"Enoch Arthur",Male,"Central","Assin Central","Jakain A",,,31,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+a0bfa63a-9d1f-41ee-9406-8d694dda4048,"Rebecca Mensah",Male,"Central","Assin Central","Jakain A",,,23,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+649fbce6-d32e-45a3-a39a-8a5ebf90a018,"Joseph Incoom",Male,"Central","Assin Central","Jakain A",,,21,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+8c04c57d-fff7-4c06-8b78-640591e54b15,"Ernest Atsagli Bokoh",Male,"Central","Assin Central","Jakain A",,,20,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+43c76d89-10c8-4575-84b5-9aaf59af22bc,"Abigail Mensah Acquah",Male,"Central","Assin Central","Jakain A",,,25,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+1704b1d1-f65a-4652-b7f1-af951bff8ce8,"Nora Decent Mensah",Male,"Central","Assin Central","Jakain A",,,23,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+4fc2e797-432c-4e00-97c7-46515f88944a,"Sakyi Samuel",Male,"Central","Assin Central","Jakain A",,,24,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+d215b7f7-968b-4152-a7ed-0d861fc08a1e,"Tonyviagye Richmond",Male,"Central","Assin Central","Jakain A",,,21,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+28d836d8-05ec-4286-b435-b96e63d956f9,"Gamor Sila",Male,"Central","Assin Central","Jakain A",,,23,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+ee1f6138-75f9-4c32-beae-9e5d841a7fea,"Dogah Leticia",Male,"Central","Assin Central","Jakain A",,,22,,2,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+e38e7863-6585-4eec-9906-a9847f1f9639,"Tonyviagye Richmond",Male,"Central","Assin Central","Jakain A",,,21,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+a3bc9cd0-e728-4caa-8e4e-6ca5865426d7,"Boadi Richard",Male,"Central","Assin Central","Jakain A",,,21,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+fd1d424b-a18a-49c0-9213-76dde4e72fb8,"Anning Ishmael",Male,"Central","Assin Central","Jakain A",,,23,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+82feae4d-5a5e-40e9-a062-a5abaeaf37cf,"Dushie Deborah",Male,"Central","Assin Central","Jakain A",,,21,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+fa66fa7d-c94a-49ca-8fdc-45ac4137a015,"Norgbedzie Lebene Christabel",Male,"Central","Assin Central","Jakain A",,,24,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+dd5b6c55-93f6-4894-a64d-66babe76a307,"Nyarko Bright",Male,"Central","Assin Central","Jakain A",,,29,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+39757c17-31b4-4a4a-8222-ff9b49308e07,"Okyere Emmanuel",Male,"Central","Assin Central","Jakain A",,,28,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+2fb6bf0c-9916-44a4-a084-ffd94de1d164,"Ekuban Sussana",Male,"Central","Assin Central","Jakain A",,,27,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+aca85866-c2d5-4865-b2ae-2ae7a96a2fe7,"Ayesu Prince",Male,"Central","Assin Central","Jakain A",,,24,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+3169b2e4-0556-4fdd-b6ed-e6847aa69bdb,"Akyerem Emmanuel",Male,"Central","Assin Central","Jakain A",,,27,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+0d1df956-50c9-4825-bbbc-9059708a2367,"Nartey Ishmael Tetteh",Male,"Central","Assin Central","Jakain A",,,25,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+cd8154f2-6eec-4d85-8b5d-51e23050789c,"Duletem Victoria Bisa",Male,"Central","Assin Central","Jakain A",,,35,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+528faec5-6bfd-4bfa-998e-cda948bc35a0,"Ocran Vida",Male,"Central","Assin Central","Jakain A",,,23,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+9aa95ad8-dfa3-4570-afd8-1d18141729b0,"Debrah Ruth",Male,"Central","Assin Central","Jakain A",,,32,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+ea1be079-d1d9-42c4-b870-d09f904d1aff,"Diaka Allan Johnson",Male,"Central","Assin Central","Jakain A",,,21,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+33f5c003-4aa2-4fed-a0ef-57ba6131aee8,"Puorideme Maxwell",Male,"Central","Assin Central","Jakain A",,,21,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+56e03a69-ab0b-46a0-a7cd-cc8b87182e16,"Allan Johnson Diaka",Male,"Central","Assin Central","Jakain A",,,26,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+449ca112-b3ca-4657-bfa0-ea4f3dafd4d5,"Maxwell Puorideme",Male,"Central","Assin Central","Jakain A",,,24,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+7adf7f06-7ce1-46ae-85ca-7a90990fefac,"Bajemyeim Mavis Kudana",Male,"Central","Assin Central","Jakain A",,,23,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+79c1e44e-d28a-4a6a-b456-bde9689ee6b6,"Mawuli Stephen",Male,"Central","Assin Central","Jakain A",,,24,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+b81844ed-24c3-49d0-90eb-6450c557ea3e,"Adjei Lydia",Male,"Central","Assin Central","Jakain A",,,23,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+b58acde9-cd68-4f09-b26a-ded9fbf3beb7,"Abdul Salam Kasim",Male,"Central","Assin Central","Jakain A",,,23,,5,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+5434d1a0-5d7f-4f9a-abcf-b1cc36415ea6,"Boadi Philip Suadwa",Male,"Central","Assin Central","Jakain A",,,21,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+f3344cc1-3ad6-4ffd-b627-b14f3cec634b,"Pomaa Ellen",Male,"Central","Assin Central","Jakain A",,,32,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+2f4ab4fd-8c2e-484d-9dbc-b3133232f36c,"Kabere Joshua",Male,"Central","Assin Central","Jakain A",,,35,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+49fde078-b424-44e7-a026-6fed0edaff61,"Addai Gertrude Appiah",Male,"Central","Assin Central","Jakain A",,,31,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+be523c8a-d2aa-423d-a385-48e6ee048c93,"Ofosuhene Rabbi",Male,"Central","Assin Central","Jakain A",,,32,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+8326f277-e68f-42b5-84d0-e858535eefb8,"Appiah Hannah",Male,"Central","Assin Central","Jakain A",,,21,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+74857958-95b2-492f-a002-c7383df62911,"Boakyewaa Charlotte",Male,"Central","Assin Central","Jakain A",,,23,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+57c4a717-e550-454e-8c38-c88c41954bc3,"Marfo Emmanuel",Male,"Central","Assin Central","Jakain A",,,23,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+df447aad-8442-4e35-98a7-f45b25f4bbb2,"Nyarko Adu Agnes",Male,"Central","Assin Central","Jakain A",,,32,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+18825fc0-8a2c-4247-b7a6-db0fe263776d,"Donkor Charles Kofi",Male,"Central","Assin Central","Jakain A",,,21,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+9735aed7-281d-4e94-b9a1-96ba443f3d1f,"Atambire Dora",Male,"Central","Assin Central","Jakain A",,,23,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+9cb59bc3-0145-4246-b792-fac29f7280f7,"Mensah Dara Serwah",Male,"Central","Assin Central","Jakain A",,,34,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+ff6887b6-3b61-452c-9fe1-0d22ad85e42b,"Ameyaw Stephen",Male,"Central","Assin Central","Jakain A",,,30,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+54463547-58aa-420b-83da-35148e03b843,"Amankwaa Abigail",Male,"Central","Assin Central","Jakain A",,,29,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+5b640f5a-e8f9-4372-9823-ad41114cb901,"Kwarteng Gloria Fosua",Male,"Central","Assin Central","Jakain A",,,28,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+da6f74bb-6be7-4b98-8f40-3e227a621e17,"Aworo Foster",Male,"Central","Assin Central","Jakain A",,,23,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+b3cd4b8f-0ff6-46a3-b91d-3c4d5c4c9eb1,"Quayson Ebenezer",Male,"Central","Assin Central","Jakain A",,,21,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+2f6e88c2-bfd5-40f2-b1cb-a0669930b2b5,"Appiah Harry Kenneth Yaw",Male,"Central","Assin Central","Jakain A",,,32,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+272a3212-5ec2-4b98-b40d-fe55ae645058,"Memunatu Salifu",Male,"Central","Assin Central","Jakain A",,,21,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+30b7b4e2-05af-4782-90dd-84bba957f928,"Ansere Debora",Male,"Central","Assin Central","Jakain A",,,23,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+efc6c97f-ffe1-4b0f-920d-155c3b1b67ef,"Amponsah Philomina",Male,"Central","Assin Central","Jakain A",,,34,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+d4e810a6-46fe-4a01-a8d7-ba5b43fb57a3,"Zumavor Nicholas",Male,"Central","Assin Central","Jakain A",,,21,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+db565d58-51f1-4936-8ce1-9eebf5253d12,"Justice Baawuah",Male,"Central","Assin Central","Jakain A",,,32,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+c995feb2-bccf-42ac-9c86-6301bfff3b80,"Oppong Rexford",Male,"Central","Assin Central","Jakain A",,,35,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+754492b3-c63f-4ebf-9507-c0b19ac0e032,"Afrane Vincent Kofi",Male,"Central","Assin Central","Jakain A",,,31,,5,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+cf42ca7b-f79c-44e9-a764-e2334bf80d1a,"Kpaabo Johnson",Male,"Central","Assin Central","Jakain A",,,32,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+feccbc48-b41a-4a20-b87c-7c377e14177d,"Brobbey Margaret",Male,"Central","Assin Central","Jakain A",,,21,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+9c364af2-f491-4c24-8b7f-f96ee166a9fc,"Bitiabo Rita",Male,"Central","Assin Central","Jakain A",,,23,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+24009238-216f-49dc-9eb6-39b15926dba8,"Karikari Derrick",Male,"Central","Assin Central","Jakain A",,,21,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+ebeb2657-4b9e-4bb4-b346-f3c1b60e1363,"Abubakar Wahab",Male,"Central","Assin Central","Jakain A",,,31,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+6a5d6e31-5d67-4e3e-9821-88ed4a36972c,"Agyei Amos",Male,"Central","Assin Central","Jakain A",,,31,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+3681dc0f-6eb1-40e5-9e2b-cfeea254d7e2,"Bediako Asare Kwame",Male,"Central","Assin Central","Jakain A",,,32,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+37772dde-94f9-431a-8555-3c35c6f3b4b1,"Boateng Morgan",Male,"Central","Assin Central","Jakain A",,,35,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+d1cf9ce8-4a08-4696-bd81-4c7f7ca1dd63,"Ofori Justice",Male,"Central","Assin Central","Jakain A",,,32,,5,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+61c0db75-a81f-40a7-b701-2cd80afd8463,"Addo Sophia",Male,"Central","Assin Central","Jakain A",,,35,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+2f479fec-97b9-4165-9e5b-242d6bb92709,"Dartey Raphael Okoffo",Male,"Central","Assin Central","Jakain A",,,32,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+47d0dab9-7822-4fb5-8a6c-a4f89d9371dd,"Ameyaw Evans",Male,"Central","Assin Central","Jakain A",,,35,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+11b08d0b-5dfa-43a0-a05e-eed119eaeee3,"Cudjoe David",Male,"Central","Assin Central","Jakain A",,,31,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+cddf0234-6318-4404-a85a-f597b4791bf2,"Danso Emmanuel",Male,"Central","Assin Central","Jakain A",,,21,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+8aad5cf7-4c38-4546-a5ac-5933e169b755,"Abdul Zakaria",Male,"Central","Assin Central","Jakain A",,,24,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+5478d38d-726d-459f-be8b-2199ccc1fd2b,"Oppong Mathias",Male,"Central","Assin Central","Jakain A",,,23,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+82268979-1bf6-42be-9f4e-67aa0c693399,"Lambon Barnabas Tiyab",Male,"Central","Assin Central","Jakain A",,,35,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+9ca386c1-de07-442e-9692-f4228f2c3a61,"Kassim Madina",Male,"Central","Assin Central","Jakain A",,,26,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+cdbbbc5c-bbab-4e6d-924b-beb198ddbe7e,"Afful Sylvester",Male,"Central","Assin Central","Jakain A",,,21,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+0801e7f4-2aed-4548-a65b-2e1862cdf6c7,"Edward Tetteh",Male,"Central","Assin Central","Jakain A",,,30,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+e34bb426-1108-4c0a-8bf7-616564234d9d,"Richard Lamptey",Male,"Central","Assin Central","Jakain A",,,23,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+017b703e-ffdc-4484-aa4a-9a7276a8a422,"Michael Fynn",Male,"Central","Assin Central","Jakain B",,,21,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+4f7b0b57-5371-44f0-8828-750290ef5861,"Ofori Saviour",Male,"Central","Assin Central","Jakain B",,,23,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+eb65e50a-f021-4bd7-af7b-9c0ffab1d6ea,"Gospels Paul Martin",Male,"Central","Assin Central","Jakain B",,,30,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+ebfa3d5a-5d49-473c-8a6d-a098c60f01c6,"Dogbey Daniel",Male,"Central","Assin Central","Jakain B",,,30,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+518c4af8-bc9b-42b4-a3b2-e037b288e264,"Barnie Akwasi",Male,"Central","Assin Central","Jakain B",,,30,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+a3eba8b7-6eda-4738-b3e4-9aeb9df40fd2,"Oppong Safo",Male,"Central","Assin Central","Jakain B",,,21,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+b9a910e3-0731-40df-ad39-2ee63662c5cb,"Saforo Machael Anim",Male,"Central","Assin Central","Jakain B",,,23,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+69061f1f-a13d-4367-a913-948d83dd3e07,"Yalley Helena Efuwa",Male,"Central","Assin Central","Jakain B",,,26,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+4fac442b-5f8c-47a8-853d-9935c3400c8a,"Wiafe Sabina",Male,"Central","Assin Central","Jakain B",,,27,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+54fd35e3-0086-44d9-b717-0970ac5053ab,"Ocran Enoch",Male,"Central","Assin Central","Jakain B",,,21,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+7e3bfb83-2f73-475c-b5bd-251d0c1ddf47,"Mensah Prince",Male,"Central","Assin Central","Jakain B",,,20,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+2aa8756c-a193-44e6-80bb-ac8a93a3fc1b,"Cudjoe James",Male,"Central","Assin Central","Jakain B",,,25,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+9e1d5f00-d832-4fab-96f7-d56d7cba3511,"Asmah Felix",Male,"Central","Assin Central","Jakain B",,,31,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+2f5c9e7d-c195-4b19-986d-b154831a208d,"Essien Emmanuel",Male,"Central","Assin Central","Jakain B",,,33,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+f02ade4b-c8dc-4bad-acaf-ccf541f5baa3,"Antwi Matthew",Male,"Central","Assin Central","Jakain B",,,28,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+3437eda7-a58c-405e-be0c-fc66efef2fc3,"Frederick Fobi",Male,"Central","Assin Central","Jakain B",,,30,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+9034b7fb-2ad9-4f31-8a63-6848aa86807a,"Francis Adzor",Male,"Central","Assin Central","Jakain B",,,32,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+020ddd7e-4990-4d57-850d-7804cb8c6975,"Diana Selorm Abram",Male,"Central","Assin Central","Jakain B",,,33,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+698e9e3f-411d-4674-8a16-9b7de86b886d,"Emmanuel Acquah Fynn",Male,"Central","Assin Central","Jakain B",,,33,,5,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+1e5a0547-b7c4-4674-9460-fd8f23263a61,"Samuel Yeboah",Male,"Central","Assin Central","Jakain B",,,34,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+63d320cc-60d8-4d8e-8a64-bcd48dee8fc7,"Afenyo Paul",Male,"Central","Assin Central","Jakain B",,,20,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+8ecaac22-5f12-4e8c-9e9c-c10ae3d6cd89,"Joseph Appiah",Male,"Central","Assin Central","Jakain B",,,27,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+8a98e520-779d-4f20-963f-ce6138582fa9,"Budu Paulina Afua",Male,"Central","Assin Central","Jakain B",,,28,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+c89d971f-4631-4025-867c-96d0c27f1997,"Rita Afonyor Dede",Male,"Central","Assin Central","Jakain B",,,33,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+8e01b79d-c906-445b-983f-aeb785ec91b7,"Daniel Asah Kwapong",Male,"Central","Assin Central","Jakain B",,,32,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+28e23b47-9aac-45e8-ba09-249c4ac32657,"Dugblor Florence Akosua",Male,"Central","Assin Central","Jakain B",,,32,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+87e4cbde-3913-47aa-af0f-42b31345f97e,"Makafui Agbeke",Male,"Central","Assin Central","Jakain B",,,30,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+ad48af0c-452d-4bf9-9df8-a92812350087,"Frank Ofosu Anim",Male,"Central","Assin Central","Jakain B",,,21,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+d7c6707f-a0c1-4775-bc5a-c04790271e28,"Lawer Elijah",Male,"Central","Assin Central","Jakain B",,,30,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+40e22888-e018-4864-9241-23ad9edb6304,"Joshua Kwaani",Male,"Central","Assin Central","Jakain B",,,32,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+3ab47ce6-d832-42ff-b73d-a4a30c02d3c9,"Akoi Angela",Female,"Central","Assin Central","Jakain B",,,21,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+a70ecf4f-ed96-4005-9657-19b767dfef4e,"Asantewaa Mercy",Female,"Central","Assin Central","Jakain B",,,24,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+e95c1685-26f2-4490-be58-224132ec0c13,"Misiso Vida",Male,"Central","Assin Central","Jakain B",,,34,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+ffbc7d4c-9e52-4f94-b90d-67e35a8c750e,"Narh Michael Kofi",Male,"Central","Assin Central","Jakain B",,,28,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+8ac41809-de64-4aac-9670-9d0c783d269f,"Affum Vera Adwoa",Female,"Central","Assin Central","Jakain B",,,29,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+33fed5c4-52e4-4800-af9f-c4e203896d82,"Amoah Grace Brago",Female,"Central","Assin Central","Jakain B",,,29,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+a29a7a07-ac10-4074-9222-3acab1dd6c53,"Kwak Gabriel",Male,"Central","Assin Central","Jakain B",,,29,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+ed4fb005-cd8e-4932-8ef4-3e3a13b92560,"Darko Jessica Oye",Female,"Central","Assin Central","Jakain B",,,28,,5,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+8523f54b-e136-4281-94f7-57cf43c1a2fb,"Alemah John Tetteh",Female,"Central","Assin Central","Jakain B",,,27,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+59f7f1ed-7428-4c2a-a9d3-525a6d0bd62b,"Debrah Priscilla",Female,"Central","Assin Central","Jakain B",,,26,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+9a7cf68b-f37e-4444-94f9-959b1c2fa59a,"Acheampong Desmond",Male,"Central","Assin Central","Jakain B",,,26,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+ecd430b4-cc70-45aa-9015-489bd8705a42,"Apeletey Joseph Asare",Male,"Central","Assin Central","Jakain B",,,31,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+4187ceda-ad12-4210-ad14-f6bd3bc88f3d,"Oduro Jean Misaah",Male,"Central","Assin Central","Jakain B",,,23,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+7cf18e25-32e6-4046-af43-9433b94eaf65,"Koranteng Bright",Male,"Central","Assin Central","Jakain B",,,35,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+c2eb4254-0dc0-41d8-a719-eedc66599320,"Owusu Nyarkoh Peter",Male,"Central","Assin Central","Jakain B",,,23,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+765f1df8-b7e6-4be9-9198-287e886a8e11,"Williams Boamah Kesse Sarfo",Male,"Central","Assin Central","Jakain B",,,23,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+cacda719-ced6-4872-aeb4-97537bc35253,"Nti Jacob",Male,"Central","Assin Central","Jakain B",,,24,,5,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+7c397120-d1aa-4217-9362-046e08c638fb,"Lawrence Kwafo Okyere",Male,"Central","Assin Central","Jakain B",,,20,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+5c3b0d77-31a9-4e26-8c2e-aba690c68361,"Gyamfi Clement",Male,"Central","Assin Central","Jakain B",,,30,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+f47278c6-af8e-4e73-bd3d-76cbc4d7ad52,"Twumasi Kofi Abraham",Male,"Central","Assin Central","Jakain B",,,30,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+2e9e0d44-b2c0-49be-a9a1-ae0f575049a6,"Adu-gyamfi Richard",Male,"Central","Assin Central","Jakain B",,,30,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+e14178d9-8680-4a22-acef-48336eb0ff05,"Owusu Michael",Male,"Central","Assin Central","Jakain B",,,30,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+c11c788f-eb68-40bc-8b57-1d64f70604ca,"Owusa Ansah Obed",Male,"Central","Assin Central","Jakain B",,,32,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+8cc8ea4b-9398-4249-81b7-23e8c903636d,"Nii Attey Kelvin",Male,"Central","Assin Central","Jakain B",,,33,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+5014eef0-938e-4ec2-93f9-6aa1ad9080de,"Amoako Rexford",Male,"Central","Assin Central","Jakain B",,,23,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+a1e894a5-8559-4711-88ef-f3c4959e03f4,"Kankam Yaw",Male,"Central","Assin Central","Jakain B",,,32,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+614726ab-c235-4554-90a8-6ad3e950ce12,"Asare Manu Stephen",Male,"Central","Assin Central","Jakain B",,,32,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+7ffa1f1c-1930-4098-a876-bf80c9702666,"Arthur Samuel",Male,"Central","Assin Central","Jakain B",,,35,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+78c900c4-8b44-46d4-96dd-79f549858976,"Opoku Serwaa Grace",Male,"Central","Assin Central","Jakain B",,,31,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+75870719-9a54-4766-88a2-7d6516fed0b8,"Amoaning Kelvin",Male,"Central","Assin Central","Jakain B",,,23,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+333a8e28-ec31-4675-9566-a9c5e0562d75,"Dwumfour Joseph",Male,"Central","Assin Central","Jakain B",,,21,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+180972fb-536b-4583-a4c5-ed1864aec244,"Asamoah Jones",Male,"Central","Assin Central","Jakain B",,,20,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+716e0707-ba7d-4034-a788-39f49e9ff26d,"Kwakye Obed",Male,"Central","Assin Central","Jakain B",,,25,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+4f371245-5ef4-4b10-94b1-770b20556f2f,"Opoku Danis",Male,"Central","Assin Central","Jakain B",,,23,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+112e7644-6ae7-4965-85e1-0cfc5e478938,"Osei Gabriel Adu",Male,"Central","Assin Central","Jakain B",,,24,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+5892b4cb-8323-4afc-b133-ac85398fdaf0,"Animah Sarfo Patricia",Female,"Central","Assin Central","Jakain B",,,21,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+c5dd92b5-5679-41bd-88c1-64f7278af77f,"Mohammed Awudu",Male,"Central","Assin Central","Jakain B",,,23,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+5d7bc9f3-24c1-4494-9bfa-ba11e953da67,"Adu Richard",Male,"Central","Assin Central","Jakain B",,,22,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+4f5401db-70c8-41ee-984e-33c0b888ef73,"Sarpong Elvis",Male,"Central","Assin Central","Jakain B",,,21,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+06601765-db8d-49ef-89d3-bb67c67769b8,"Owusu Sarfowaa Mary",Female,"Central","Assin Central","Jakain B",,,21,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+22319a16-dd5d-4dbc-a084-d5ca078414bf,"Amponsah Christiana",Female,"Central","Assin Central","Jakain B",,,23,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+d7b6f7d2-0a41-43a4-85bf-49dfd9013210,"Osei-bonsu Isaac",Male,"Central","Assin Central","Jakain B",,,21,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+5360bfd8-53f9-4efc-b536-cfca8cc89332,"Badu Solomon Ken",Male,"Central","Assin Central","Jakain B",,,24,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+f44b1ad9-ffde-4519-a777-f61708413c73,"Blankson Isaac",Male,"Central","Assin Central","Jakain B",,,29,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+123b1fe6-51b6-4a97-8e4d-55afded7bb74,"Adu Douglas",Male,"Central","Assin Central","Jakain B",,,28,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+f975d4c0-280a-4926-a8cb-a8a7e2904c9c,"Adjei Ernest",Male,"Central","Assin Central","Jakain B",,,27,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+3a2530f7-1e79-4ad5-ac6f-e62c2099461c,"Ackan Millicent",Female,"Central","Assin Central","Jakain B",,,24,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+795a1468-e080-481f-9b9a-e09616e7072e,"Blankson Shadrack",Male,"Central","Assin Central","Jakain B",,,27,,5,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+1dd4e684-679d-43a9-8791-3221f0d464bd,"Boahene Annabel",Male,"Central","Assin Central","Jakain B",,,25,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+14365d34-4aab-4206-93ea-ebf5ab4d90a9,"Botwe Grace",Female,"Central","Assin Central","Jakain B",,,35,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+0185a591-b089-477e-bd58-0ad8e934468a,"Kwaw Victor",Male,"Central","Assin Central","Jakain B",,,23,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+7974c22a-5331-4004-87ce-09350a704d94,"Brentu Josephine",Male,"Central","Assin Central","Jakain B",,,32,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+6fcb03ec-3463-4dc2-9700-4ecb1b1643a0,"Abang Yakubu Nashiru",Male,"Central","Assin Central","Jakain B",,,21,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+cef433a0-aaf4-470c-bcda-b5e07f2b7316,"Kwesi Kate",Male,"Central","Assin Central","Jakain B",,,21,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+0e673c11-9c45-414a-8d22-5164bfb520e2,"Tulasi Charles",Male,"Central","Assin Central","Jakain B",,,26,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+b22a16a6-7305-4c1b-8d10-ada62129294f,"Quarm David",Male,"Central","Assin Central","Jakain B",,,24,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+18458693-5785-42ed-9ca2-9521fd90ddd6,"Gyan Isaac",Male,"Central","Assin Central","Jakain B",,,23,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+1668eaef-44a8-4e49-a4f0-59de267a68cb,"Amofah Jeffrey",Male,"Central","Assin Central","Jakain B",,,24,,4,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+6f4c38d3-11e4-4c32-a9be-0110d1cd9734,"Meisu Enock",Male,"Central","Assin Central","Jakain B",,,23,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+e1a88404-8211-4594-9c07-3435f4edd91f,"Bulu Machael",Male,"Central","Assin Central","Jakain B",,,23,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+bccb291e-515b-4cce-9b24-84f1f5d9ae26,"Owusu Patrick",Male,"Central","Assin Central","Jakain B",,,21,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+64465f28-ee20-4cdd-8181-cb0acb9416bd,"Arthur Hayford",Male,"Central","Assin Central","Jakain B",,,32,,12,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+3401166a-f956-4fef-b701-cdb32e158bb0,"Duku Alexander Predi",Male,"Central","Assin Central","Jakain B",,,35,,15,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+5c8a9865-0410-4985-ad23-f1b9be254673,"Aidoo Ruth",Female,"Central","Assin Central","Jakain B",,,31,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+1ca73824-d905-4c30-96de-4cc834db32d6,"Antwi Samuel",Male,"Central","Assin Central","Jakain B",,,32,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+f1318cae-d2a2-4276-8734-60c3b60b303f,"Boateng Ernestina",Female,"Central","Assin Central","Jakain B",,,21,,5,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+d4fa6281-4887-4c04-b3fe-da08c968576f,"Angoh Frank",Male,"Central","Assin Central","Jakain B",,,23,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+34b2c88c-a809-422e-9da6-43fe89a45b76,"Halidu Issah",Male,"Central","Assin Central","Jakain B",,,23,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+41cd0f54-beaa-4889-9f65-65b38f3a8cae,"Enoch Baah Andoh",Male,"Central","Assin Central","Akuse",,,32,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+b33fa08b-1ff2-421d-9cdc-2cf53fde442d,"Richard Yovo",Male,"Central","Assin Central","Akuse",,,21,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+88345752-1313-4bc2-a231-d397f5c8a129,"Boadu Joseph Amaning",Male,"Central","Assin Central","Akuse",,,23,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+3de68f2d-763e-4ad1-9a02-e72fa616976c,"Donkor Enoch",Male,"Central","Assin Central","Akuse",,,34,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+59bb795e-c4ce-4312-8217-5ec130e0d24c,"Abubakar Omar",Male,"Central","Assin Central","Akuse",,,30,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+045710bb-be44-49d2-95ed-c06efeed2d59,"Dei Benjamine",Male,"Central","Assin Central","Akuse",,,29,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+52d22625-2fa3-46d3-a635-6000fd968381,"Otoo Frederick",Male,"Central","Assin Central","Akuse",,,28,,9,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+cb524f72-42c8-41aa-961c-505c7c98bd3c,"Amoah Isaac",Male,"Central","Assin Central","Akuse",,,23,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+c548ac5f-19c2-4f23-b96e-6cb2469770ee,"Kwaning Aikins",Male,"Central","Assin Central","Akuse",,,21,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+3ee9ea0e-6494-4eb2-800f-0214a18ef96b,"Kurankyi Frederick Osei",Male,"Central","Assin Central","Akuse",,,32,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+86c0d4ec-921d-4df8-bd45-ad44eb574a43,"Osei Rebecca Ayerakwa",Female,"Central","Assin Central","Akuse",,,21,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+af58a336-425b-4020-af30-9bf3a842a975,"Alordzievor Stephen",Male,"Central","Assin Central","Akuse",,,23,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+99df2341-29c3-41f6-bff6-77c69409abf8,"Azubilla Paul",Male,"Central","Assin Central","Akuse",,,34,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+9f6d60a9-bf8d-42fc-be00-f8c1e1604f5e,"Ntiamoah Precious Ridge Owusu",Female,"Central","Assin Central","Akuse",,,21,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+0810c70f-734c-4b38-b4d3-b24e2278166e,"Senyo Emmanuel",Male,"Central","Assin Central","Akuse",,,32,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+ee407ff8-ac04-452a-820b-35eb92314d1f,"Baah Joseph Adu",Male,"Central","Assin Central","Akuse",,,35,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+712b018c-f470-4788-a922-ecc7c2765593,"Ayi Emmanuella Ayeley",Female,"Central","Assin Central","Akuse",,,31,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+22a5632f-d428-4b1f-90e7-d9e2a39c7758,"Ofosua Barbara",Female,"Central","Assin Central","Akuse",,,32,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+53494cae-7dc9-492c-a38d-85600a348424,"Antwiwaa Phillis",Female,"Central","Assin Central","Akuse",,,21,,7,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+aa31f220-1226-40ca-afec-a8c0582ddea3,"Dadzie Vincent",Male,"Central","Assin Central","Akuse",,,23,,6,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z
+108386d6-6afd-4766-a95e-f896a59999ea,"Lawer David",Male,"Central","Assin Central","Akuse",,,21,,8,[],Active,2026-02-21T21:43:26.170Z,false,2026-02-21T21:43:26.170Z,2026-02-21T21:43:26.170Z

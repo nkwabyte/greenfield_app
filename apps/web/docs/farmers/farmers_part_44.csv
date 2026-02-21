@@ -1,0 +1,1001 @@
+id,name,gender,region,district,society,community,contact,age,education_level,farm_size,crops_grown,status,join_date,deleted,created_at,updated_at
+1463f3e1-6ab4-4601-953c-99ca36ab2584,"Abenaa Yeboaa",Male,"Bono","Berekum East","Dormaa Ahenkro",,,47,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+56a162a4-d25e-43a4-8a5d-28309e2b80b6,"Kwadwo Kyere",Male,"Bono","Berekum East","Dormaa Ahenkro",,,44,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+7b340a33-6952-494e-9482-a06b41331bbf,"Stephen Kyereme",Male,"Bono","Berekum East","Dormaa Ahenkro",,,28,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+4b82ce38-e6f8-41d7-99b3-94ec7eaf2cc2,"Kwame Donkor",Male,"Bono","Berekum East","Dormaa Ahenkro",,,47,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+2416d844-7619-422f-8223-b35afe711b49,"Comfort Koosono",Female,"Bono","Berekum East","Dormaa Ahenkro",,,61,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+4e3e6086-49c2-4fcf-984d-ac6a04a2337d,"Kofi Mensah",Male,"Bono","Berekum East","Dormaa Ahenkro",,,46,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+7d868e2c-11f3-4b31-9ef0-1ded4ad8afdf,"Isaka Ansu",Male,"Bono","Berekum East","Dormaa Ahenkro",,,37,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+c379b0af-68c1-4fd0-9d95-ed03997f6d73,"Kofi Peprah",Male,"Bono","Berekum East","Dormaa Ahenkro",,,58,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+e81e16d7-f1e0-4477-b733-6841300948d0,"Yaa Adinkra",Male,"Bono","Berekum East","Dormaa Ahenkro",,,33,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+f19d59cb-019a-48a2-b093-55c669d56878,"Effah Augustine",Male,"Bono","Berekum East","Dormaa Ahenkro",,,43,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+7f2a98cb-4c04-439b-ba25-6e805ad3be6b,"Margaret Peprah",Male,"Bono","Berekum East","Dormaa Ahenkro",,,40,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+58ed85ce-bdf3-47bd-a0d0-cb13c1a82b5a,"Muhammed Kussasi Issah",Male,"Bono","Berekum East","Dormaa Ahenkro",,,44,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+c1492b9a-ab36-43b1-a5e0-f542094315cf,"Kwabena Asante No 1",Male,"Bono","Berekum East","Dormaa Ahenkro",,,47,,9,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+b89bab91-5fbd-424c-83bd-2e1580dfaca5,"Kwabena Sikaenna",Male,"Bono","Berekum East","Dormaa Ahenkro",,,44,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+767d7fff-98ed-496f-a9b8-cbb97c23b298,"Kwadwo Gyamfi",Male,"Bono","Berekum East","Dormaa Ahenkro",,,28,,8,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+e88e26f3-bc8c-445b-8bc4-42046cb1e3c4,"Kwadwo Korkuo",Male,"Bono","Berekum East","Dormaa Ahenkro",,,47,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+df3400f4-5ae7-4463-9b2f-8bac813aa61a,"Kwasi Badu",Male,"Bono","Berekum East","Dormaa Ahenkro",,,61,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+b84cd901-d0ce-4e79-bdf6-b3c3e7a56a7d,"Robert Sarfo",Male,"Bono","Berekum East","Dormaa Ahenkro",,,46,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+48f917a3-b4cb-421d-8be2-a242fb92c7d9,"Shadrack Yeboah",Male,"Bono","Berekum East","Dormaa Ahenkro",,,37,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+bbb6bf85-e3cd-4bb7-83a8-adb7b69d09a8,"George Diawuo",Male,"Bono","Berekum East","Dormaa Ahenkro",,,58,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+d477bc37-4054-45b9-b637-dbacd2a39e92,"Saraphina Boye",Male,"Bono","Berekum East","Dormaa Ahenkro",,,33,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+c07a4a40-9fbb-47e9-a8ef-7565d963e19c,"Kwartin Isaac",Male,"Bono","Berekum East","Dormaa Ahenkro",,,43,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+d1b1bdf7-7484-4fc3-b54f-0ba532ab1a59,"Osei Peprah",Male,"Bono","Berekum East","Dormaa Ahenkro",,,40,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+b1fe41a6-48a8-4529-9768-c41a443b6e2f,"Sure Kramo",Male,"Bono","Berekum East","Dormaa Ahenkro",,,44,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+da577f30-41c2-4540-bad6-03215931aa91,"Owusu Seth",Male,"Bono","Berekum East","Dormaa Ahenkro",,,47,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+8b9851be-b269-4bed-968e-6177ddf07fb9,"Augustine Yeboah",Male,"Bono","Berekum East","Dormaa Ahenkro",,,44,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+ca0cdcf4-ccde-4955-80ca-bdb053d6d539,"Abulai Kramo",Male,"Bono","Berekum East","Dormaa Ahenkro",,,28,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+529bbe38-f137-43ef-8649-1133fd67d614,"Badu Daniel No 1",Male,"Bono","Berekum East","Dormaa Ahenkro",,,47,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+55eb0118-d668-4653-aa85-7c4bc71e48c4,"Badu Daniel No 2",Male,"Bono","Berekum East","Dormaa Ahenkro",,,61,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+73f04d69-ef20-4e3d-9405-a88666612775,"Abuu Watra",Male,"Bono","Berekum East","Dormaa Ahenkro",,,46,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+ee977502-2b53-44a1-b920-188b795eb89d,"Kwaku Anane",Male,"Bono","Berekum East","Dormaa Ahenkro",,,37,,9,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+d502011e-c2b5-4baf-94d2-a37dc3ba1cc5,"Kwadwo Fordjor No 1",Male,"Bono","Berekum East","Dormaa Ahenkro",,,58,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+4c01ca35-49d6-4545-87b2-4c5c54ddf41e,"Kwasi Gyabaah",Male,"Bono","Berekum East","Dormaa Ahenkro",,,33,,8,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+f47b56da-6850-4bf4-8d73-ec5e24aec94e,"Kwasi Kumi",Male,"Bono","Berekum East","Dormaa Ahenkro",,,43,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+5df309bb-235e-473a-a15f-1f216acea22d,"Amma Nyarko",Male,"Bono","Berekum East","Dormaa Ahenkro",,,40,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+48b4062c-3170-41a6-872f-ff256822fc6f,"Yaw Amankonah",Male,"Bono","Berekum East","Dormaa Ahenkro",,,44,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+ec9e1b28-78a9-44e5-b1c3-98bbb407b814,"Adoma John",Male,"Bono","Berekum East","Dormaa Ahenkro",,,47,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+ae14399b-d095-4a81-b44f-beffa3b2eb51,"Addia Janet",Female,"Bono","Berekum East","Dormaa Ahenkro",,,44,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+1d87e10c-65e7-4bdf-ae38-266e0945e477,"Kwame George",Male,"Bono","Berekum East","Dormaa Ahenkro",,,28,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+b598ebfe-3bed-4238-bf93-2a7ad4b3083e,"J. K. Kumi",Male,"Bono","Berekum East","Dormaa Ahenkro",,,47,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+1a9ce616-9eb1-431a-acb7-cd66471e3ebe,"Andrew K. Ansu",Male,"Bono","Berekum East","Dormaa Ahenkro",,,61,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+92dd52e1-65d7-46dd-bafa-cc3b688b07f0,"Yaw Koosono",Male,"Bono","Berekum East","Dormaa Ahenkro",,,46,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+3c91bfc9-bf63-4136-8058-17ab9fc7ab55,"Kofi Gyan",Male,"Bono","Berekum East","Dormaa Ahenkro",,,37,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+74397abd-0ab7-4287-9450-eb4edd0cba5c,"Aminata Forkuo",Male,"Bono","Berekum East","Dormaa Ahenkro",,,58,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+412f4c49-711f-4c6a-9402-c3211838f2ec,"Kwadwo Fordjor No 2",Male,"Bono","Berekum East","Dormaa Ahenkro",,,33,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+cef7a4ef-4ee3-4870-b032-42b745117edc,"Yeboah Johnson",Male,"Bono","Berekum East","Dormaa Ahenkro",,,43,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+e9895ee6-21b2-4ae7-ad02-ff91f5ccab9c,"Margaret Forkuo",Male,"Bono","Berekum East","Dormaa Ahenkro",,,40,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+23e45f52-89bd-47fe-92cd-434baf5a4596,"Charles Kyere",Male,"Bono","Berekum East","Dormaa Ahenkro",,,44,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+20a15580-bb7e-4d7c-bc0c-eed23a32ab94,"Addai Johnson",Male,"Bono","Berekum East","Dormaa Ahenkro",,,47,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+9e3aaefd-4575-4414-8f3a-cd2a36589164,"Eric Mensah",Male,"Bono","Berekum East","Dormaa Ahenkro",,,44,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+c02362aa-69c5-4375-9d39-5c3a23aca01d,"Kwasi Kyeremeh",Male,"Bono","Berekum East","Dormaa Ahenkro",,,35,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+122ac8c8-fdab-40fb-a79e-e6df38ca68a6,"Kwame Asomah",Male,"Bono","Berekum East","Dormaa Ahenkro",,,21,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+bdce9f0c-32b2-4f09-8ca7-de9526ec43d1,"Owusu Amanfo",Male,"Bono","Berekum East","Dormaa Ahenkro",,,32,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+d68788fa-ce07-4874-b205-1a38ec9d966e,"Ansu George",Male,"Bono","Berekum East","Dormaa Ahenkro",,,43,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+1b5a3c30-7e33-4566-a93b-116261244807,"Asomah Yaw",Male,"Bono","Berekum East","Dormaa Ahenkro",,,40,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+30b93d18-8b22-4fda-ad91-ca4f3cf8c11a,"Kwaku Twum",Male,"Bono","Berekum East","Dormaa Ahenkro",,,44,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+7748d26c-24af-4b14-9344-70bdd449e62f,"Kyeremeh Gabriel",Male,"Bono","Berekum East","Dormaa Ahenkro",,,47,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+d38737a1-e1bc-4816-8d63-c4ac34191990,"Kyeremeh Anthony",Male,"Bono","Berekum East","Dormaa Ahenkro",,,44,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+f581631d-970f-46bb-b9f6-07df2f28ce05,"Tamea Theresa",Female,"Bono","Berekum East","Dormaa Ahenkro",,,28,,9,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+cd54ae48-8fec-4b8c-b214-aba8389fca8d,"Kwadwo Yeboah",Male,"Bono","Berekum East","Dormaa Ahenkro",,,47,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+c554913f-6054-4b00-9926-59b2714ee0af,"Kofi Mensah",Male,"Bono","Berekum East","Dormaa Ahenkro",,,61,,8,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+ab82466d-e208-4200-be04-8dabe06d78e4,"Annor Solomon",Male,"Bono","Berekum East","Dormaa Ahenkro",,,46,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+a1d5a096-4745-4499-8d9c-6490bf2eff09,"Nketia Joseph",Male,"Bono","Berekum East","Dormaa Ahenkro",,,37,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+06321f9b-580c-42ad-8744-826902b44e4c,"Francis Kuma",Male,"Bono","Berekum East","Dormaa Ahenkro",,,58,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+b35ffb0d-c635-4b6e-a613-860442044add,"Afia Kraa",Female,"Bono","Berekum East","Dormaa Ahenkro",,,33,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+066ff172-e3a4-46f4-952d-0ef5aace5716,"Kwabena Anane",Male,"Bono","Berekum East","Dormaa Ahenkro",,,43,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+a9603714-49ac-46d4-aa18-69e4138cd74d,"Kyeremaa Monica",Female,"Bono","Berekum East","Dormaa Ahenkro",,,40,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+c27591d6-9519-4405-96d8-ade5cb38882e,"Peter Yeboah",Male,"Bono","Berekum East","Dormaa Ahenkro",,,44,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+52b1781c-6f4e-4a71-83dc-6e21db1ee53f,"Rebecc Tutuwaa",Female,"Bono","Berekum East","Dormaa Ahenkro",,,47,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+c4ce338b-612b-4f2f-adf4-b27ed6ece2b5,"M. K. Kusi",Male,"Bono","Berekum East","Dormaa Ahenkro",,,44,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+0ffc426a-8302-4d51-b3a1-bd4c6264ad5a,"Janet Darkwaa",Female,"Bono","Berekum East","Dormaa Ahenkro",,,28,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+065227f5-a8ce-4ff0-8f71-9403f6a73201,"Kyere Adams",Male,"Bono","Berekum East","Dormaa Ahenkro",,,47,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+d2771f51-8d31-4ab2-837c-0b6bfefc2ea9,"Alex Obeng",Male,"Bono","Berekum East","Dormaa Ahenkro",,,61,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+e7d31930-db32-4c34-a82f-a8c4640c2ce5,"Sabi Evans",Male,"Bono","Berekum East","Dormaa Ahenkro",,,46,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+f9f3aa8d-4bdb-4b00-8769-2c5f67922d75,"Baaffour Sakyi",Male,"Bono","Berekum East","Dormaa Ahenkro",,,37,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+210cb6ec-43a4-40c0-bb42-62cd927634b6,"Siaw Stephen",Male,"Bono","Berekum East","Dormaa Ahenkro",,,58,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+19d8651a-41d9-4645-ba32-12e9d9ef03e9,"Afia Manu",Female,"Bono","Berekum East","Dormaa Ahenkro",,,33,,9,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+448b1135-cd63-45e4-b9fd-e4ca93774ecb,"Agyeman John",Male,"Bono","Berekum East","Dormaa Ahenkro",,,43,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+da7f3719-6df8-4484-b41e-7457a8dd1bf8,"Alex Kumih",Male,"Bono","Berekum East","Dormaa Ahenkro",,,40,,8,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+94bcee9f-7ed0-40b4-a254-ac684427016a,"Kwasi Asamoa",Male,"Bono","Berekum East","Dormaa Ahenkro",,,44,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+3ba0ff8a-2142-4f6b-9719-7d628d3323ff,"Afia Pomaa",Female,"Bono","Berekum East","Dormaa Ahenkro",,,47,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+383ede7b-e2f9-47dd-981a-6b899d3cbe68,"Yaa Manu Therisa",Female,"Bono","Berekum East","Dormaa Ahenkro",,,44,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+03b7d3e6-5e54-473a-b246-3eef88c9dc88,"Yaa Pomaa",Female,"Bono","Berekum East","Dormaa Ahenkro",,,28,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+df7bcb1b-e12e-40bf-a453-b8ad0febf23f,"Mary Adwoa Siata",Female,"Bono","Berekum East","Dormaa Ahenkro",,,47,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+6d28db4d-3ead-4ced-bd9a-0e428a4fe7e2,"Mercy Addai",Female,"Bono","Berekum East","Dormaa Ahenkro",,,61,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+ccb3b20e-064a-4ebc-a736-6a632e7cf73f,"Kyere Prince",Male,"Bono","Berekum East","Dormaa Ahenkro",,,46,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+bc187b5d-7538-4045-ad4b-90a56c1955a2,"Bakaki Shardick",Male,"Bono","Berekum East","Dormaa Ahenkro",,,37,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+eb1753f3-bfae-4de2-a547-280d5adffc89,"Yaw Adinkra",Male,"Bono","Berekum East","Dormaa Ahenkro",,,58,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+f761b079-08ce-437a-8117-04f5c7d7996a,"Issa Muhammed",Male,"Bono","Berekum East","Dormaa Ahenkro",,,33,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+bbc268de-7224-4da7-b533-43bb0400c2ff,"Musa Muhammed",Male,"Bono","Berekum East","Dormaa Ahenkro",,,43,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+de634e91-8cca-4b1a-b7d6-9af3c07bfce4,"Michael Kyereme",Male,"Bono","Berekum East","Dormaa Ahenkro",,,40,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+eb387cf4-cbc4-4cd5-b41c-cf15fd8332d9,"Abenaa Darkowaa",Female,"Bono","Berekum East","Dormaa Ahenkro",,,44,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+a10c0ed8-9ca0-4577-9386-3cb830b5cef1,"Adu Kwadwo",Male,"Bono","Berekum East","Dormaa Ahenkro",,,47,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+edb5ddfb-51bc-4412-b2c0-f51cfd7d3648,"Srikyi Watra",Male,"Bono","Berekum East","Dormaa Ahenkro",,,44,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+c9a30c45-8a0d-4bf4-b263-d849e7109c93,"Abudulim Kramo",Male,"Bono","Berekum East","Dormaa Ahenkro",,,35,,9,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+baaf3fca-b507-4c70-add5-cea9a4ffc522,"Addai Samuel",Male,"Bono","Berekum East","Dormaa Ahenkro",,,21,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+77e6d618-7750-4916-b07f-bed9766c9550,"Oduro Clement",Male,"Bono","Berekum East","Dormaa Ahenkro",,,32,,8,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+98b307ef-f70e-4799-b4be-88c53e705a78,"Afia Tewia",Female,"Bono","Berekum East","Dormaa Ahenkro",,,43,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+3d8c1325-1527-4ce8-a82c-9c2722969d52,"Adu Charles",Male,"Bono","Berekum East","Dormaa Ahenkro",,,40,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+cf063b7a-85d4-4d33-9010-4282712196fa,"Yeboa Asuama",Male,"Bono","Berekum East","Dormaa Ahenkro",,,44,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+452b5fd6-d1d7-45f8-9da0-524b3ba45375,"Akua Adomah",Female,"Bono","Berekum East","Dormaa Ahenkro",,,47,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+bdfe34d2-2239-4a7e-b11f-4189c02d98c0,"Ama Fosuaa",Female,"Bono","Berekum East","Dormaa Ahenkro",,,44,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+84921cf9-dd26-4527-b0a6-24464c5c849e,"Kyeremaa Theresa",Female,"Bono","Berekum East","Dormaa Ahenkro",,,28,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+d341deb3-d25d-4fb9-8d00-2d70a36647ba,"Joseph Kwame Kusi",Male,"Bono","Berekum East","Dormaa Ahenkro",,,47,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+67bd6680-fd6d-40d9-a70e-1abbd48851ee,"Kwadwo Sampson",Male,"Bono","Berekum East","Dormaa Ahenkro",,,61,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+79574ef9-28ec-4b3b-965c-3c3ba661c73b,"Kwabena Badu",Male,"Bono","Berekum East","Dormaa Ahenkro",,,46,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+25d7cef6-144f-4417-a41d-d93f16ccd351,"Kwame Peprah",Male,"Bono","Berekum East","Dormaa Ahenkro",,,37,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+67442962-ce06-408c-976c-65375cd53f7c,"Kyere Simon",Male,"Bono","Berekum East","Dormaa Ahenkro",,,58,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+43301286-2d61-4cd7-9fd7-e1a48575e08f,"Amoa James",Male,"Bono","Berekum East","Dormaa Ahenkro",,,33,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+56c44d83-a87f-4731-87de-c6ec6e5a8049,"Nyame Francis",Male,"Bono","Berekum East","Dormaa Ahenkro",,,43,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+d531fd62-4615-4842-98a8-42b2b529a6da,"Asare Emmanuel",Male,"Bono","Berekum East","Dormaa Ahenkro",,,40,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+a78890ca-eecc-4f17-b234-2a7664276fb7,"Nyame Kyei Ibrahim",Male,"Bono","Berekum East","Dormaa Ahenkro",,,44,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+da8a0897-6b70-4c8d-b110-e389d91fac47,"Yaw Kyeremeh",Male,"Bono","Berekum East","Dormaa Ahenkro",,,47,,9,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+8c1e5688-85aa-41a7-851c-1ef3e3c2822f,"Esther Kyeremaa",Female,"Bono","Berekum East","Dormaa Ahenkro",,,44,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+72c37168-fdc1-421b-824a-53fd813e5353,"Kwaku Kyeremeh",Male,"Bono","Berekum East","Dormaa Ahenkro",,,28,,8,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+9d9eaeeb-1632-46fb-b49f-f1e6377b1fc7,"Kwasi Kyere",Male,"Bono","Berekum East","Dormaa Ahenkro",,,47,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+07b3b4f7-d06e-47e3-8470-65419df53049,"Kwaku Yeboah",Male,"Bono","Berekum East","Dormaa Ahenkro",,,61,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+b2e9ede0-c8b3-42bf-84c1-2c15ccb19a1e,"Yeboah Stephen",Male,"Bono","Berekum East","Dormaa Ahenkro",,,46,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+2b4c571d-0532-475c-a75f-fd3043c4efa7,"Yaw Gyabaa",Male,"Bono","Berekum East","Dormaa Ahenkro",,,37,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+1d2ef352-3f5d-47c8-b81f-01c5d81b80a8,"Amoateng Martin",Male,"Bono","Berekum East","Dormaa Ahenkro",,,58,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+9f149eb0-e6b6-4eae-a9e7-0025f0539b8f,"James Evans Kyere",Male,"Bono","Berekum East","Dormaa Ahenkro",,,33,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+abc880c3-07ea-404d-a0ef-b45b7a74dd7d,"Cecilia Konama",Female,"Bono","Berekum East","Dormaa Ahenkro",,,43,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+f21a0572-f114-4a31-ae37-81050b2acedd,"Adwoa Kissiwaa",Female,"Bono","Berekum East","Dormaa Ahenkro",,,40,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+db01b30a-0295-469f-bd1f-9fdd01349f44,"Veronica Afrowaa",Female,"Bono","Berekum East","Dormaa Ahenkro",,,44,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+591d5dc0-49f0-4c78-a813-1735d583c8ec,"Adwoa Manu",Female,"Bono","Berekum East","Dormaa Ahenkro",,,47,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+42faf5f6-01af-4bc2-af31-770d03801908,"Samuel K. Dei",Male,"Bono","Berekum East","Dormaa Ahenkro",,,44,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+f66daad8-1683-4615-908d-70525e6c0481,"Amponsa Saamoa",Male,"Bono","Berekum East","Dormaa Ahenkro",,,28,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+6de2bb51-0da0-44d0-a779-af650f8b0d90,"Adu Kingsford",Male,"Bono","Berekum East","Dormaa Ahenkro",,,47,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+25f5ebfb-fd65-4c9e-8bcf-674c7eed8b41,"Kwabena Yeboah",Male,"Bono","Berekum East","Dormaa Ahenkro",,,61,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+94873534-6835-4e3d-8b9e-9e64803e233b,"Kwadwo Amankwaa",Male,"Bono","Berekum East","Dormaa Ahenkro",,,23,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+a826a88e-d4ed-44ff-bc5b-f5c4a545589f,"Asomana Kramo",Male,"Bono","Berekum East","Dormaa Ahenkro",,,27,,9,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+6d930dc6-4467-44b8-9572-cab7b25a5caf,"Takyi Benjamin",Male,"Bono","Berekum East","Dormaa Ahenkro",,,27,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+fb4a91a7-2d4c-4e6d-abc5-24b581544d65,"James Owusu",Male,"Bono","Berekum East","Dormaa Ahenkro",,,30,,8,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+768cfd53-10de-4d50-b329-f620e1f2b326,"Abuu Watra",Male,"Bono","Berekum East","Dormaa Ahenkro",,,31,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+35358b42-358e-464a-836e-2b90376e8fc4,"Kwabena Yeboah",Male,"Bono","Berekum East","Dormaa Ahenkro",,,32,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+27d95d62-2886-45f9-9e76-c9816d916200,"John Kwadwo Donkor",Male,"Bono","Berekum East","Dormaa Ahenkro",,,34,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+6b632991-184d-4819-82ec-11d0f99339c5,"Mensah Bonsu",Male,"Bono","Berekum East","Dormaa Ahenkro",,,31,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+8ecb3081-f4ee-486b-b417-dddab26a0b90,"Kwasi Baffoe",Male,"Bono","Berekum East","Dormaa Ahenkro",,,21,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+c78f1d84-df78-4fa5-ad5a-8db52f66bd8b,"Kwame Aduma Paul",Male,"Bono","Berekum East","Dormaa Ahenkro",,,32,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+fe521452-f9f3-4c65-9d64-0781f4d47dc8,"Yaw Ameyaw",Male,"Bono","Berekum East","Dormaa Ahenkro",,,24,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+1ef0c754-64b3-449e-ac43-37ab7cb13207,"Badu Daniel",Male,"Bono","Berekum East","Dormaa Ahenkro",,,23,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+bfb03d95-8469-487c-a2a1-8c860d26622f,"Martin B. Asomah",Male,"Bono","Berekum East","Dormaa Ahenkro",,,25,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+6efc0a17-d8f5-4da7-9134-3be4a539acb2,"Adda Janet",Female,"Bono","Berekum East","Dormaa Ahenkro",,,29,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+7590632f-b001-4bf3-b521-17d0eec6406e,"Kwaku Owusu Bright",Male,"Bono","Berekum East","Dormaa Ahenkro",,,21,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+6cf603e1-1dec-48ee-a5ec-713b6ea896c9,"Kissiwaa Agnes",Female,"Bono","Berekum East","Dormaa Ahenkro",,,22,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+bc9dad4a-a149-42fc-84ed-85c2bde573e8,"Rose Amponsah",Female,"Bono","Berekum East","Dormaa Ahenkro",,,32,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+3178c972-e2c1-412e-a4b5-ded6a750d1a0,"E. K. Asare",Male,"Bono","Berekum East","Dormaa Ahenkro",,,21,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+33ef45dd-b017-4521-b234-d7e7d222facb,"Tomas K. Boateng",Male,"Bono","Berekum East","Dormaa Ahenkro",,,23,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+b67d1c14-1b59-4d5a-9bc3-38220bc9601d,"Atta Kwasi",Male,"Bono","Berekum East","Dormaa Ahenkro",,,31,,9,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+84e1ea5b-2afe-45fe-8f70-eb757a7b1440,"Gyamfi Tawiah",Male,"Bono","Berekum East","Dormaa Ahenkro",,,24,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+dc2dd758-f48e-4b3c-8009-3205745650cd,"P. K. Asante",Male,"Bono","Berekum East","Dormaa Ahenkro",,,34,,8,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+72a70f47-4c4e-40a7-9646-0774ac7fe8d7,"Mary Adoma Siata",Female,"Bono","Berekum East","Dormaa Ahenkro",,,21,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+759c7968-d558-41d9-9a3f-be1dfc75c598,"Kumah Francis",Male,"Bono","Berekum East","Dormaa Ahenkro",,,21,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+f8af368e-ea7b-44a9-ae25-01482d7731d8,"J. K. Sabi",Male,"Bono","Berekum East","Dormaa Ahenkro",,,32,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+8f6fda74-b88b-465b-a30b-c3f202e17524,"Adoma Musa",Female,"Bono","Berekum East","Dormaa Ahenkro",,,26,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+94136440-8cab-4e13-8387-bf2959998584,"Kwasi Manu",Male,"Bono","Berekum East","Dormaa Ahenkro",,,21,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+5d0fefd8-0a4b-43a0-883b-0d411e20f8aa,"Jackson Yeboah Kwaku",Male,"Bono","Berekum East","Dormaa Ahenkro",,,33,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+362a76ec-23e8-4093-bc45-02769f5a5368,"Kwasi Agyei",Male,"Bono","Berekum East","Dormaa Ahenkro",,,32,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+578711bf-de3d-4843-a662-14c3f76c9db4,"Anane Christopher",Male,"Bono","Berekum East","Dormaa Ahenkro",,,41,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+488f6fdb-69a0-432b-98d7-1a3e7cc3e2ab,"George Antwi",Male,"Bono","Berekum East","Dormaa Ahenkro",,,20,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+2934efc6-9cdf-40ef-af60-185ceaa75d53,"Yaw Owusu",Male,"Bono","Berekum East","Dormaa Ahenkro",,,19,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+ac664bee-6831-477b-98b1-c81137e2576a,"Akua Korkor",Female,"Bono","Berekum East","Dormaa Ahenkro",,,19,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+669b641d-9eab-495e-ab50-e0d9d6dcb203,"Kwasi Gyau",Male,"Bono","Berekum East","Dormaa Ahenkro",,,18,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+9a38bc56-e0db-4d45-a8ab-bd1be6ecea27,"Yaw Kuma",Male,"Bono","Berekum East","Dormaa Ahenkro",,,21,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+d971d0f8-7ca0-4058-8f26-08503b3544d7,"Nana Brafo Ababio",Male,"Bono","Berekum East","Dormaa Ahenkro",,,33,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+4115d76b-d59d-46e4-8f1b-99cfba64e5e7,"Kwadwo Nsia",Male,"Bono","Berekum East","Dormaa Ahenkro",,,23,,9,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+0b5ff0fd-908c-4d4d-8006-0c881ec610a7,"Anthony Asante",Male,"Bono","Berekum East","Dormaa Ahenkro",,,23,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+1b9a0c6a-bf7a-49b3-b218-6e39b3b3eacc,"Kofi Isifu",Male,"Bono","Berekum East","Dormaa Ahenkro",,,28,,8,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+f91cdd0e-2722-4242-ac62-cc5688612ece,"Kofi Boagye",Male,"Bono","Berekum East","Dormaa Ahenkro",,,25,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+2cc71e91-7fe9-45fd-9a97-9d2a659a5434,"Veronica Yaa Serwaa",Male,"Bono","Berekum East","Dormaa Ahenkro",,,23,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+9cfb1977-c053-4f69-b55f-b6f3aaa93321,"Atta Yaw",Male,"Bono","Berekum East","Dormaa Ahenkro",,,21,,8,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+2cb73b29-cd12-4237-8605-4f5874aa8101,"Twenewaa Mary",Female,"Bono","Berekum East","Dormaa Ahenkro",,,22,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+5df3afe9-3fb8-4513-b367-59dab5624fd7,"Sakina Kyeremaa",Female,"Bono","Berekum East","Dormaa Ahenkro",,,25,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+a5ada95f-99a8-459e-b56c-228cd89697ca,"Acquah Robert",Male,"Bono","Berekum East","Dormaa Ahenkro",,,23,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+be882f8c-fd9a-4bc4-8d03-74cc5766d0c2,"Oppong K. John",Male,"Bono","Berekum East","Dormaa Ahenkro",,,22,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+7c507ea6-6f23-4fc9-b614-5124977f286c,"Paul Kwaku Mensah",Male,"Bono","Berekum East","Dormaa Ahenkro",,,35,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+7db6f2e0-5b1a-4b19-a1da-6d764512a770,"Yeboah Kwadwo",Male,"Bono","Berekum East","Dormaa Ahenkro",,,35,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+1c9bee79-0ccd-4fdc-92b6-363d15a433ab,"Abuu Bakari",Male,"Bono","Berekum East","Dormaa Ahenkro",,,32,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+2ab0ae46-d9c0-47f2-9f54-54fc12ee2de4,"Oppong Johnson",Male,"Bono","Berekum East","Dormaa Ahenkro",,,21,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+72055237-a292-408a-91d3-78c320b9fcb9,"Gyau Hayford",Male,"Bono","Berekum East","Dormaa Ahenkro",,,27,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+dff7a22b-37ac-473e-b0a0-05f6804c3c37,"Awuah James",Male,"Bono","Berekum East","Dormaa Ahenkro",,,25,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+2669bd43-f162-4ed5-b11c-6e53e43ce214,"Asamoah Margaret",Female,"Bono","Berekum East","Dormaa Ahenkro",,,24,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+45144570-4bf0-4780-8721-4d4436784c13,"Kwaku Anini",Male,"Bono","Berekum East","Dormaa Ahenkro",,,23,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+9ccd7eeb-d9a6-4a7e-846e-0ff96015b912,"Owusu George",Male,"Bono","Berekum East","Dormaa Ahenkro",,,21,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+4aeabdfc-b4ff-4c5c-8e3d-5640cf3e7622,"Aniniwaa Rosemary",Female,"Bono","Berekum East","Dormaa Ahenkro",,,21,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+e28be9c6-8fe1-46d6-8c7b-794eefda95b3,"Kwabena Kyeremeh",Male,"Bono","Berekum East","Dormaa Ahenkro",,,23,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+c483a1ef-f26e-4d86-8e49-37a93121b325,"Adu Johnson",Male,"Bono","Berekum East","Dormaa Ahenkro",,,32,,9,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+30c9f37b-1e5a-43e6-833d-6501b566ee0e,"Samuel Acquah",Male,"Bono","Berekum East","Dormaa Ahenkro",,,32,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+55b0fcd3-9701-4181-8d7c-ecf1ef26b5d4,"Dei James",Male,"Bono","Berekum East","Dormaa Ahenkro",,,35,,8,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+81288d17-bcea-471f-9dd4-a307b751e93c,"Asamoah Gabriel",Male,"Bono","Berekum East","Dormaa Ahenkro",,,31,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+5a56dc51-d4a3-4ccb-86ff-19d1a1291cb8,"Kofi Kyeremeh",Male,"Bono","Berekum East","Dormaa Ahenkro",,,21,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+a50d1f42-edb0-45bc-8361-da2a058dfae1,"Ameyaw Augustine",Male,"Bono","Berekum East","Dormaa Ahenkro",,,23,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+b3bbdf51-0760-45cc-b382-4628e1581926,"Kyeremeh Kwabena",Male,"Bono","Berekum East","Dormaa Ahenkro",,,24,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+58975aa3-e755-4f61-8c3c-5c50e8aa197c,"Kwadwo Agyemang",Male,"Bono","Berekum East","Dormaa Ahenkro",,,23,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+f9324fec-ebed-40ab-8fd1-7879fc16b525,"Kwadwo Agyei",Male,"Bono","Berekum East","Dormaa Ahenkro",,,32,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+54d79925-9c62-4a92-9d0e-51233a5df631,"Mary Kyeremaa",Female,"Bono","Berekum East","Dormaa Ahenkro",,,24,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+89f7cbe5-09d9-4f5e-9f23-1d22dfdecb7a,"Martin Gyabaa",Male,"Bono","Berekum East","Dormaa Ahenkro",,,23,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+c52eb0b9-1635-4b62-b650-ef631094adb9,"Alex Aboagye",Male,"Bono","Berekum East","Dormaa Ahenkro",,,35,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+744e6816-a0b5-4975-b0d1-9c25aaed4ff7,"Musa Kramo",Male,"Bono","Berekum East","Dormaa Ahenkro",,,23,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+7c59db24-f9d0-46ea-9382-703a54a6f226,"Pomaa Rebecca",Female,"Bono","Berekum East","Dormaa Ahenkro",,,23,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+3907db08-263b-4b66-9ee1-1b2cd1842247,"Boadi Anthony",Male,"Bono","Berekum East","Dormaa Ahenkro",,,32,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+ba9daa76-1819-4904-938a-6950cd69aa0f,"Amponsah Peter",Male,"Bono","Berekum East","Dormaa Ahenkro",,,35,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+9cc63013-1e95-4707-8049-644247b6eda0,"Kwaku Bronya",Male,"Bono","Berekum East","Dormaa Ahenkro",,,32,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+15fb7b9d-726a-4314-8761-78d610e5d480,"Afia Fofie",Female,"Bono","Berekum East","Dormaa Ahenkro",,,23,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+25254b88-e98d-44d8-a133-6d436c7f7259,"Yeboaa Ernestina",Female,"Bono","Berekum East","Dormaa Ahenkro",,,34,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+f79054af-4f1f-409d-810e-cd695b1c2f0c,"Francis Acheampon",Male,"Bono","Berekum East","Dormaa Ahenkro",,,33,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+c6daf0bc-f316-4496-8af4-92273b319e9e,"Kwasi Broni",Male,"Bono","Berekum East","Dormaa Ahenkro",,,32,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+75f95b1d-90f1-484f-a737-75c43b351b54,"Kwame Poku",Male,"Bono","Berekum East","Dormaa Ahenkro",,,32,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+f7d72beb-6ad5-4253-a438-523395e68d02,"Nufo Moshie",Male,"Bono","Berekum East","Dormaa Ahenkro",,,34,,9,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+97d57650-06e5-4297-9a9d-031634d7c0c3,"Michael Sietepiir",Male,"Bono","Berekum East","Dormaa Ahenkro",,,21,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+53b0ee8c-01b7-4f06-8e78-0275b727e081,"Alhassan Mohammed",Male,"Bono","Berekum East","Drobo",,,24,,8,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+47b1748f-4e26-4ef1-8994-71b11fb8bc70,"Kwadwo Abina",Female,"Bono","Berekum East","Drobo",,,21,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+c094255d-e56c-4a79-9778-a8538b6204b4,"Adjei Simon",Male,"Bono","Berekum East","Drobo",,,21,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+da03c7ca-826a-45de-8534-ea4ee1a412f6,"Yaw Manu",Male,"Bono","Berekum East","Drobo",,,25,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+c88ec646-12b4-4c4f-bffe-c11154153297,"Abina Stephen",Female,"Bono","Berekum East","Drobo",,,24,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+06017056-b977-4328-819a-2298cea6e1ac,"Agyeman Kwame",Male,"Bono","Berekum East","Drobo",,,47,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+fad8cf47-c954-47d9-af5f-a711c49aaa02,"Kwadwo Kwarfo",Male,"Bono","Berekum East","Drobo",,,59,,7,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+9e7959cd-0c1b-474e-b815-4aaa7b137565,"Kwasi Mensah",Male,"Bono","Berekum East","Drobo",,,46,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+b2c14672-d0fc-47ec-b141-cbd25ddf0a6d,"Francis Kofi Boah",Male,"Bono","Berekum East","Drobo",,,37,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+ec9fd2f7-e37a-4f10-84dc-a38bb4b1be82,"Takyi Yaw Peter",Male,"Bono","Berekum East","Drobo",,,58,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+d9d4f4ed-f840-482d-a8f6-3ff2d0065b3a,"Kwadwo Kwayie",Male,"Bono","Berekum East","Drobo",,,33,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+ca6b680e-19e9-41de-a289-28aa42fc32ad,"Rosina Tafoa",Female,"Bono","Berekum East","Drobo",,,43,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+9ab43a65-c331-45f2-9de7-3b83852f0503,"Akosua Fatomah",Female,"Bono","Berekum East","Drobo",,,40,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+254c3f15-ca22-44cf-8808-bd7aee7c6e6c,"Kofi Takyi",Male,"Bono","Berekum East","Drobo",,,44,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+211d8114-cd63-455c-91cc-50bb945f3c0e,"Kofi Serekye",Male,"Bono","Berekum East","Drobo",,,47,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+f2d6ae81-7c29-4c05-858c-5ac92010b439,"Kwasi Nkrumah",Male,"Bono","Berekum East","Drobo",,,44,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+8e148b56-2640-48e3-a5b2-ffce28617134,"Adinkra James",Male,"Bono","Berekum East","Drobo",,,28,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+b95303be-1ea7-4e1b-a3cf-53fe9f51aace,"Yaa Benne Elizabeth",Male,"Bono","Berekum East","Drobo",,,47,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+e921e0f3-369d-495b-86b7-55f7111f6633,"Ferkah Gabriel",Male,"Bono","Berekum East","Drobo",,,60,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+03302a34-9e8e-4470-bba2-63e2acf8c05c,"Yaw Konadu",Male,"Bono","Berekum East","Drobo",,,46,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+7250d48e-ce13-4c82-adb3-4e71532d8abb,"Yaw Korang",Male,"Bono","Berekum East","Drobo",,,37,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+cf38f090-dd34-49a5-bbcf-d8725e29f4b1,"Kofi Badu",Male,"Bono","Berekum East","Drobo",,,58,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+05e94487-c892-46a9-a4b2-8b14d56feed1,"Kwaku Ankamah",Male,"Bono","Berekum East","Drobo",,,33,,9,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+87ee361e-d860-4aa8-9e53-87b672cc96c5,"Gyedu Moses",Male,"Bono","Berekum East","Drobo",,,43,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+b67b03f2-1673-4e67-944e-39d24ec87adb,"Kwasi Amponsa",Male,"Bono","Berekum East","Drobo",,,40,,8,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+d9af5e05-e119-4fe6-9274-588b58edc031,"Bubakari Amadu",Male,"Bono","Berekum East","Drobo",,,44,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+56c35cbb-9245-4f56-8b67-8daf4856a6f6,"Amma Sramatia",Female,"Bono","Berekum East","Drobo",,,47,,9,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+fe8eac56-46d0-4ef4-9c16-b5ef046de902,"Karim Mohammed",Male,"Bono","Berekum East","Drobo",,,44,,8,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+74143297-7ecc-4cc4-a636-2bf6f456d483,"Bukari Ahmed",Male,"Bono","Berekum East","Drobo",,,28,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+fc7e3e40-0737-41a7-acab-6f4b824217fb,"Anzumana Amadu",Male,"Bono","Berekum East","Drobo",,,47,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+0478781e-81e2-469c-a698-b93625068bde,"Sina Watra",Male,"Bono","Berekum East","Drobo",,,49,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+138c3957-4b9c-4552-b725-c06176c7bdd5,"Abena-amonsa Agnes",Female,"Bono","Berekum East","Drobo",,,46,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+4227f891-72a6-4e4b-9fa7-a5f45492e10f,"Adiata Kyeraa",Male,"Bono","Berekum East","Drobo",,,37,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+8b1c623d-f322-4b7a-9c7c-ab905ea48010,"Asuako Kwaku",Male,"Bono","Berekum East","Drobo",,,58,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+7f27ec17-5aa6-4b06-8590-870bbd9f1460,"Sadea Andama",Male,"Bono","Berekum East","Drobo",,,33,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+f749a575-7c36-4d4b-a13e-7e3fa3293d43,"Akua Gyabaa",Female,"Bono","Berekum East","Drobo",,,43,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+ceab6e0f-92b6-4b52-ad74-5eceae5eb4bf,"Kwasi Yeboa",Male,"Bono","Berekum East","Drobo",,,40,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+d7683d48-4523-46bb-9711-e54bd666bd5d,"Tonindia Fuseni",Male,"Bono","Berekum East","Drobo",,,44,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+547cd6fa-db7a-4390-8e4a-57976f8d382f,"John Kwabena Sekkyere",Male,"Bono","Berekum East","Drobo",,,47,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+f8d9775f-cc55-4e24-85e5-98f6188388e0,"Atia Agyeiwaa",Female,"Bono","Berekum East","Drobo",,,44,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+de880499-933e-4844-abdf-e6ddc9618c7f,"Andama Mohammed",Male,"Bono","Berekum East","Drobo",,,28,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+dc826976-8732-4015-8fbe-0b8b5753d2e2,"Annas Bukari",Male,"Bono","Berekum East","Drobo",,,47,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+58956172-4079-4264-9cdd-cc0a746771f6,"Yeboah Kofi Amos",Male,"Bono","Berekum East","Drobo",,,59,,9,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+32a077ff-4861-49c0-9961-3041d364942e,"Yeboah Gyabaa",Male,"Bono","Berekum East","Drobo",,,46,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+28402f59-2cb5-45d2-acf8-128ee85a7ae1,"Siaka Watra",Male,"Bono","Berekum East","Drobo",,,37,,8,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+0cbf06e0-6744-443f-b0f2-80217d2e1d6a,"Kwame Asoma",Male,"Bono","Berekum East","Drobo",,,58,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+f615306a-d873-40af-a6fb-1d14496b8e87,"Akosua Twenewaa",Female,"Bono","Berekum East","Drobo",,,33,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+18610acf-79fc-450a-9ec5-8ce8b4e86cd3,"Kwadwo Yeboa Peter",Male,"Bono","Berekum East","Drobo",,,43,,7,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+5df238ed-b6a0-42ed-a28c-63682949ee63,"Ansu Kwaku Peter",Male,"Bono","Berekum East","Drobo",,,40,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+11991dc5-7f57-4ea5-9945-396c2bce47f1,"Kwaku Siedu",Male,"Bono","Berekum East","Drobo",,,44,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+fcde6059-1050-4da8-bf7a-da5643e26099,"Atta Kwaku",Male,"Bono","Berekum East","Drobo",,,47,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+65e85ae1-8788-42d4-bcc8-3af2745a9291,"Kwadwo Bediako",Male,"Bono","Berekum East","Drobo",,,44,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+df5af90a-5497-4ade-bfb1-6ffc592e49a9,"Sramata Abena Kraa",Female,"Bono","Berekum East","Drobo",,,35,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+6d3dc380-c3c4-43f3-9244-cc15046f679e,"Samuel Kwaku Yeboa",Male,"Bono","Berekum East","Drobo",,,21,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+5db93f98-b4bb-444f-b770-c9e5dc537746,"Amponsa Abena",Female,"Bono","Berekum East","Drobo",,,32,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+a741074c-2b8a-46c5-8929-32c101ecac6c,"Kwaku Tano Apraku",Male,"Bono","Berekum East","Drobo",,,43,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+dfe66960-6923-46e4-a7e2-7516130d0328,"Twenewaa Florence",Male,"Bono","Berekum East","Drobo",,,40,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+a72509b0-8552-43d3-8165-3650ea9b8c9f,"Kyere Emmanuel",Male,"Bono","Berekum East","Drobo",,,44,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+6a238995-4528-4516-9ce5-66d588440656,"Isifu Nkontabuo",Male,"Bono","Berekum East","Drobo",,,47,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+394ebe32-7056-4cd0-a49a-c92e802d2771,"Dibiaa Akua-martha",Female,"Bono","Berekum East","Drobo",,,44,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+e08b763c-207f-4ce4-9e1e-0edd1f722bd9,"Yeu Akua Ruth",Female,"Bono","Berekum East","Drobo",,,28,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+a78d38b8-7a49-4549-a560-b2e4c03006e7,"A. Badu Yeboa",Male,"Bono","Berekum East","Drobo",,,47,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+abbd6474-5d30-4725-9388-a45d6db84103,"Nana Kofi Nsuwaa",Male,"Bono","Berekum East","Drobo",,,58,,9,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+bcd2a0dc-0d79-40c1-8537-f78bdc63311c,"Boabeng Bosea",Male,"Bono","Berekum East","Drobo",,,46,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+0843bfa3-8f5e-4f3c-bd40-a2213316cc55,"Feka Benjamin",Male,"Bono","Berekum East","Drobo",,,37,,8,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+861e9913-1e7d-420d-b5ff-ab830bd3b92d,"James Manyia",Male,"Bono","Berekum East","Drobo",,,58,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+78c4e331-5e50-4d24-8474-fb89c62ca85a,"Takyi George",Male,"Bono","Berekum East","Drobo",,,33,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+c293b0f0-033a-4867-a5a1-0e05e1108f62,"Mark Akologo",Female,"Bono","Berekum East","Drobo",,,43,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+6dba58fc-848e-49c8-a03e-97829c5c76ad,"Abudulae Busanga",Male,"Bono","Berekum East","Drobo",,,40,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+95e54f11-3a0e-4751-ae6d-d8989b311b6a,"Ama Tamea",Female,"Bono","Berekum East","Drobo",,,44,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+63d974b8-8036-4630-8060-99525a2c9508,"Tikute Isurusa",Male,"Bono","Berekum East","Drobo",,,47,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+1bddbca4-0a4b-433d-a60a-c2dcf53ab590,"Gyamea Comfort",Male,"Bono","Berekum East","Drobo",,,44,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+9dcf9237-d01c-4efb-9362-4a982d1ee32d,"Takyiwaa Cecilia",Male,"Bono","Berekum East","Drobo",,,28,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+48313f73-381d-46c1-90db-352742bcf587,"Akosua Nketia",Female,"Bono","Berekum East","Drobo",,,47,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+979f2844-03e8-4dd2-a6e1-15de854eab8a,"Alex Nketia",Male,"Bono","Berekum East","Drobo",,,54,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+b5d6f1b6-7229-47ed-9a98-645cc89eb3a6,"Gyato Issifu",Male,"Bono","Berekum East","Drobo",,,46,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+f0725899-d663-4e12-b76f-86672333b561,"Augustina Febiri",Male,"Bono","Berekum East","Drobo",,,37,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+2abae80d-bf82-4288-9e34-261f103b2396,"Kwame Takyi",Male,"Bono","Berekum East","Drobo",,,58,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+4d71d35d-b3ed-4cb5-91f4-824ad169b774,"Boakye Fella",Male,"Bono","Berekum East","Drobo",,,33,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+d7c9e90a-da45-4b6c-acb9-1a1254c83909,"Abena Aboagyewaa",Female,"Bono","Berekum East","Drobo",,,43,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+54aae1cd-9b52-43e2-bdb7-4f95e01e0b3b,"Ataa Adwoa",Female,"Bono","Berekum East","Drobo",,,40,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+2b4afbbe-368d-44db-983e-6fe9de20e3bd,"Kofi Agyei",Male,"Bono","Berekum East","Drobo",,,44,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+0fec54c9-49ce-4caf-a9b6-3f76fe4ed939,"E. Mansa Fosuaa",Female,"Bono","Berekum East","Drobo",,,47,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+149d40b0-7c64-4f4f-8fed-a3b475d73c19,"Grace Aboagewaa",Female,"Bono","Berekum East","Drobo",,,21,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+98e047c3-0db9-4afb-b4bd-480223074a8b,"Isaac Tan Kwabena",Male,"Bono","Berekum East","Drobo",,,23,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+f82bd4ca-9551-4542-a07b-bfae8fc117b3,"Ansu Kyere Francis",Male,"Bono","Berekum East","Drobo",,,24,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+a17158d2-ef78-410f-b702-6227f2f2053b,"Mary Fosuaa Asumia",Female,"Bono","Berekum East","Drobo",,,29,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+e2fac76e-a9e9-4b72-ba2e-cbb58a8652e6,"Asare Dapaah",Male,"Bono","Berekum East","Drobo",,,23,,9,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+945e0266-8e95-4f5c-a7b4-4bd4aefd2f6c,"Stephen Mensa",Male,"Bono","Berekum East","Drobo",,,28,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+587ad7d6-4c4a-4737-858b-c55efb774f21,"Nana Martin Asa",Male,"Bono","Berekum East","Drobo",,,34,,8,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+4af6960f-31d1-4f76-87d0-35121e9b5066,"Nana Samuel Nketia",Male,"Bono","Berekum East","Drobo",,,26,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+2d2deecb-a9bd-4397-aa3a-4b77fe0b38a6,"Atta Francis",Male,"Bono","Berekum East","Drobo",,,29,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+029e5df7-f395-4735-afc8-6926df6cf0c5,"Daniel Gyabaa",Male,"Bono","Berekum East","Drobo",,,28,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+8dd39c23-a754-47dc-978a-77f344e09aec,"John Kwame Asoma",Male,"Bono","Berekum East","Drobo",,,26,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+4af8d9a5-cdbc-4466-99aa-9cc06f6e1d7e,"Owusu Kwaku",Male,"Bono","Berekum East","Drobo",,,23,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+e02041a6-e6f8-46b8-acba-8fee432efafb,"Mfodwo Martin",Male,"Bono","Berekum East","Drobo",,,23,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+c00a76ba-8ae6-4706-90ae-cc9137b3030d,"Peter Nketia Agyei",Male,"Bono","Berekum East","Drobo",,,32,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+8a46f8d7-b5b6-47a9-994f-8d6279a0910f,"Yaw Boama",Male,"Bono","Berekum East","Drobo",,,35,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+41f61520-8f09-4ca7-89d0-764a4f2dd1f9,"Takyi Abraham",Male,"Bono","Berekum East","Drobo",,,24,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+bbadd840-335b-4b9c-9725-e4a499b4e4e3,"Joseph Asuma",Male,"Bono","Berekum East","Drobo",,,65,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+973fcb93-f9af-4152-83e2-1ceadafa533c,"Salifu Yahaya",Male,"Bono","Berekum East","Drobo",,,47,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+afcb822e-7388-4ba8-b5b3-ab5de7cea610,"Peter Nketia Agyei",Male,"Bono","Berekum East","Drobo",,,59,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+bc572ad0-88fb-4d9f-9c6a-d5b6c7a3a803,"Mfodwo Martin",Male,"Bono","Berekum East","Drobo",,,46,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+5e298a2b-f196-47ff-a5ef-38bf1d6967e7,"Asoma Paul",Male,"Bono","Berekum East","Drobo",,,37,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+64700fc6-5131-4fc9-9fdd-a86287cd352a,"Mr Ofori Nicholas",Male,"Bono","Berekum East","Dwenem",,,58,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+019ea36d-e1a2-45fb-ae1f-c9d89fd30b55,"Nana Yaa Adubea",Male,"Bono","Berekum East","Dwenem",,,33,,9,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+cabdff65-ade7-47bb-adf1-a92bac194bc9,"Kwame Gyabaah",Male,"Bono","Berekum East","Dwenem",,,43,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+c5f04e17-0d8a-4f84-9d42-62f7ca72bb20,"Ofori Charlse",Male,"Bono","Berekum East","Dwenem",,,40,,8,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+9ac918dd-299f-41e5-82cf-992e384a53cc,"Gyamea Felicia",Male,"Bono","Berekum East","Dwenem",,,44,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+8efbca31-f727-47bf-82ac-7d51bd693a51,"Gyan Kwadwo Peter",Male,"Bono","Berekum East","Dwenem",,,47,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+7e1f9359-862a-425f-853b-fe9d34497bd1,"Abena Kyeraa",Female,"Bono","Berekum East","Dwenem",,,44,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+392dbb5a-03aa-4533-acaa-d614d4cd7322,"Kofi Ferka",Male,"Bono","Berekum East","Dwenem",,,28,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+3b5c57aa-cab0-4411-b531-8b236de288fc,"Atta Kofi Joseph",Male,"Bono","Berekum East","Dwenem",,,47,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+a2dc4d57-c620-4228-a642-f88b1cf17d1e,"Asamoah George",Male,"Bono","Berekum East","Dwenem",,,60,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+593dd855-7288-431a-b746-af376a18fc45,"Abenaa Mansah",Female,"Bono","Berekum East","Dwenem",,,46,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+280d8e7c-02b3-4817-8d3c-540e45d096c4,"Gyan Robert",Male,"Bono","Berekum East","Dwenem",,,37,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+5433ef35-924b-4c17-b13c-3cd33f8b4a66,"Comfort Kisiwaa",Female,"Bono","Berekum East","Dwenem",,,58,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+823098ca-80ad-4d63-939f-7550f2b31701,"Kwasi Ansu",Male,"Bono","Berekum East","Dwenem",,,33,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+c1d21ec1-840d-464e-9373-8381d4828be3,"Geoge Darteh",Male,"Bono","Berekum East","Dwenem",,,43,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+66c1cc90-fa0b-480b-8857-3fd04a62c15d,"Bae Kwabena",Male,"Bono","Berekum East","Dwenem",,,40,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+c23be18b-8449-4dac-91dc-ec51afcecfe2,"Adu Gyamfi",Male,"Bono","Berekum East","Dwenem",,,44,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+1f783e98-acc9-4f21-b17d-f489a5b4c231,"Nketiah Samuel",Male,"Bono","Berekum East","Dwenem",,,47,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+884d5b14-5e0a-48db-a6c7-1591820f07a6,"Oppong Samuel",Male,"Bono","Berekum East","Dwenem",,,44,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+4b12ab90-08fa-41b8-aa16-882f4f6b6831,"Frank Okyei Kwame",Male,"Bono","Berekum East","Dwenem",,,28,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+d848afe1-e98d-47a4-a79a-60268afc0870,"Kyeremaa Vida",Female,"Bono","Berekum East","Dwenem",,,47,,9,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+477bbbbc-11f1-4bac-ad21-9e686b9ce60a,"Enock Ansu",Male,"Bono","Berekum East","Dwenem",,,49,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+9c83621c-6b23-4037-aa01-08d871ed3e9f,"Akosua Praah",Female,"Bono","Berekum East","Dwenem",,,46,,8,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+81ce40bf-2ee4-4c2b-b8da-ef626451beac,"Kwasi Amponsah",Male,"Bono","Berekum East","Dwenem",,,37,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+2abc4cbc-f132-4079-9fe0-938ab5e20090,"Grace Nkatiah",Female,"Bono","Berekum East","Dwenem",,,58,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+85277181-669e-49bc-8cc2-52d4b2228a3e,"Kofi Kyereh",Male,"Bono","Berekum East","Dwenem",,,33,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+8c2dd823-70ca-45db-a9a9-92e8744aecaa,"Kofi Takyi",Male,"Bono","Berekum East","Dwenem",,,43,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+62f16094-73df-4790-baa2-d78a28d7453a,"Dominic Yeboah",Male,"Bono","Berekum East","Dwenem",,,40,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+ad46cd82-0278-488e-a27e-c55c8bfba334,"Yeboah Moses",Male,"Bono","Berekum East","Dwenem",,,44,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+94333cb3-9cea-4b60-88bd-b3640083cc8b,"Gordon Gyan",Male,"Bono","Berekum East","Dwenem",,,47,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+6c4e96ec-ff8e-42f4-83de-8f06ee57f2d9,"Nana Yeboah Gyan",Male,"Bono","Berekum East","Dwenem",,,44,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+b650e905-758a-4a2d-a3b2-fcbcdfebf616,"Ansu John",Male,"Bono","Berekum East","Dwenem",,,28,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+5250b929-f71c-4e22-aba4-2f790986f2a2,"Atta Busia",Male,"Bono","Berekum East","Dwenem",,,47,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+f8d633b0-5256-431b-acce-40a943a48484,"James Kwang",Male,"Bono","Berekum East","Dwenem",,,59,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+368db164-d1e1-47b7-bb80-1cdbe4b1eba3,"Sekyere Kwaku",Male,"Bono","Berekum East","Dwenem",,,46,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+a8f4286e-d4b5-4851-b0d8-c194605b91aa,"Ameyaw Joseph",Male,"Bono","Berekum East","Dwenem",,,37,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+f2cd6915-61ad-4c82-8a64-695b42a52e8e,"Kwang Paul",Male,"Bono","Berekum East","Dwenem",,,58,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+d3917c37-3ffb-4db5-85a6-72484763ce89,"Bosea Kofi Ernest",Male,"Bono","Berekum East","Dwenem",,,33,,9,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+637f24ce-4255-49dc-bc14-bd9a7df73faa,"Op. Kofi Nimoh",Male,"Bono","Berekum East","Dwenem",,,43,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+5abc7c89-cd52-4163-b098-ed18a3b2bfe6,"Anane Adinkra",Male,"Bono","Berekum East","Dwenem",,,40,,8,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+cdb390e6-0a3f-4279-a80a-48f15d045885,"Yeboa Elizabeth",Female,"Bono","Berekum East","Dwenem",,,44,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+fa37af7a-63ec-4f0b-bd57-b95f831e02d4,"Kwadwo Kyeremeh",Male,"Bono","Berekum East","Dwenem",,,47,,7,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+f0d770e8-a733-46ab-873e-79422a55a02f,"Nketiah Emmanuel",Male,"Bono","Berekum East","Dwenem",,,44,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+641c2ffd-7a44-442e-83bc-bd1bd358e51a,"Adwoa Foriwaa",Female,"Bono","Berekum East","Dwenem",,,35,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+7ed9f45d-0ea3-454d-b892-9a24357ba769,"Yaa Nkatia",Female,"Bono","Berekum East","Dwenem",,,21,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+5b9ede8b-c5be-4cec-a8c5-b5cfd8ddbc93,"Antwi Martin",Male,"Bono","Berekum East","Dwenem",,,32,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+16c01e53-f5d7-4f06-abd6-484d90985ae5,"Ankamaa Rebecca",Female,"Bono","Berekum East","Dwenem",,,43,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+b1e65969-c562-4bc4-b46b-697f9b8cdd1f,"Kwaku Yeboah",Male,"Bono","Berekum East","Dwenem",,,40,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+7103332f-425c-4fc5-9780-31f61719647b,"Ansu Augustine",Male,"Bono","Berekum East","Dwenem",,,44,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+532e856d-b934-42c1-89e9-fa6903be3dfc,"Bosea Grace",Female,"Bono","Berekum East","Dwenem",,,47,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+824205d4-d008-4627-ac97-e10b40a6ec5d,"Grace Kyemaa",Female,"Bono","Berekum East","Dwenem",,,44,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+1fb04909-615c-41fc-a374-f34a263973f7,"Fousa Grace",Female,"Bono","Berekum East","Dwenem",,,28,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+8adb6bc6-27f5-4125-b8a9-bc23bc60eec3,"Kyemaa Elizabeth",Female,"Bono","Berekum East","Dwenem",,,47,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+f65ee573-213a-417a-9728-a7defc089faf,"Nana Kuffor",Male,"Bono","Berekum East","Dwenem",,,58,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+990a6fa0-6dd6-4693-a054-dcf2ffdd5cb3,"Amma Tafaoh",Male,"Bono","Berekum East","Dwenem",,,46,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+f66bc412-7a3b-44c1-bfc6-61117ff80fea,"Kwasi Gyedu",Male,"Bono","Berekum East","Dwenem",,,37,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+e13db40a-0c57-4193-a458-fceb3a4f46ff,"Yaw Asiedu",Male,"Bono","Berekum East","Dwenem",,,58,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+84d30003-3f9f-47fc-b29d-d796d8d2a6ac,"Kwaku Yeboah Ii",Male,"Bono","Berekum East","Dwenem",,,33,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+d022ffeb-5d8d-4bea-8779-aac2716ae572,"Appraku Stephen",Male,"Bono","Berekum East","Dwenem",,,43,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+cc6c5aa7-7523-4456-83a8-4316ea1e19e1,"Abena Dornkor",Male,"Bono","Berekum East","Dwenem",,,40,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+20da01b0-4ba4-4b0a-a55c-1402b81fa7e1,"Kuruwa Dora",Female,"Bono","Berekum East","Dwenem",,,44,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+c606b0dc-ce20-4196-bdcc-b55bcffc721b,"Asiedu Stephen",Male,"Bono","Berekum East","Dwenem",,,47,,9,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+f2ff5d20-1f13-4440-aa9d-416a8d7145cc,"Ankama Stephen",Male,"Bono","Berekum East","Dwenem",,,44,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+524db496-48ca-4754-b5a4-30123fb3c603,"Christopher Afriyie",Male,"Bono","Berekum East","Faaman",,,28,,8,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+21d79710-32cd-47a0-ae5a-f7c11750d7b0,"C. O. Acheampong",Male,"Bono","Berekum East","Faaman",,,47,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+a95c7539-536d-4966-a1f8-08ca7c913463,"Yaya Watra",Male,"Bono","Berekum East","Faaman",,,54,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+0235e17c-a7b6-4d6d-9150-30b6e185a8b4,"Obeng Kofi",Male,"Bono","Berekum East","Faaman",,,46,,9,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+25edac7a-1626-4b42-8877-dd15e7f3bac8,"Victoria Kuma",Female,"Bono","Berekum East","Faaman",,,37,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+d4db7069-0a55-4f05-81c1-521d16647450,"Issifu Agyei",Male,"Bono","Berekum East","Faaman",,,58,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+526a341c-8d55-4342-b2bb-ea745ce5a29d,"Simon Adu Kwabena",Male,"Bono","Berekum East","Faaman",,,33,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+c6c82e68-643f-40f8-82e5-be1a6ae42289,"Adu Kwame",Male,"Bono","Berekum East","Faaman",,,43,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+918d2902-cddd-4e90-a6cb-c9a7ed79b7e7,"John Mensah",Male,"Bono","Berekum East","Faaman",,,40,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+ba02a4dc-df29-413f-8654-0a14d4b7ddcd,"Benewa Mercy",Female,"Bono","Berekum East","Faaman",,,44,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+a917bd2f-26d7-4903-8a60-919d6cd714cc,"Kwaku Boateng",Male,"Bono","Berekum East","Faaman",,,47,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+871267cf-2c55-4bf7-8bbf-02be78c5cb6a,"Ferka K. Ahenkona",Male,"Bono","Berekum East","Faaman",,,32,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+bb595e68-5de6-4ec4-aaea-ba747ff17891,"Andam Gaboo",Male,"Bono","Berekum East","Faaman",,,34,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+2445feae-9c3e-4857-b9da-6995b090ebee,"Salia Kramo",Male,"Bono","Berekum East","Faaman",,,28,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+36c91cfb-9757-4c5c-8826-c696d3583f5d,"Yaw Yeboah",Male,"Bono","Berekum East","Faaman",,,47,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+08a23fdb-3afc-4d8d-b1b2-4ab17a899325,"Amadu Baba",Male,"Bono","Berekum East","Faaman",,,59,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+d58a7ab4-9608-472d-8d60-c4b488eed6ab,"Buraima Watra",Male,"Bono","Berekum East","Faaman",,,46,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+844d4104-f1e0-453c-bbe2-97ddfa60d328,"Amadu Baba No 2",Male,"Bono","Berekum East","Faaman",,,37,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+8f588668-25b0-4e7e-b8ab-aaf8ca736f60,"Buraima Watra",Male,"Bono","Berekum East","Faaman",,,58,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+67071fd5-da10-498b-9ca6-6af89706805f,"Alhassan Scile",Male,"Bono","Berekum East","Faaman",,,33,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+ab288ee2-2d56-4625-a9b0-ae94286446f2,"Adinkra Kwadwo",Male,"Bono","Berekum East","Faaman",,,43,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+5e19adf2-e657-47df-9b4e-8505a7366842,"Agyepong Benjamin",Male,"Bono","Berekum East","Faaman",,,40,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+b8196f85-9d1b-4b96-924a-3f996dc02e4d,"Obeng Martin",Male,"Bono","Berekum East","Faaman",,,44,,9,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+bc6832aa-95d0-4592-a093-037db2f561de,"Asare Kwasi",Male,"Bono","Berekum East","Faaman",,,47,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+55eba5eb-b3a4-4ce1-b83a-34cd91a6286b,"Op. Kofi Munufie",Male,"Bono","Berekum East","Faaman",,,44,,8,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+75a568b6-8357-42eb-be1d-3fa8c54bcc5d,"Asiedu K. Samuel",Male,"Bono","Berekum East","Faaman",,,28,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+01ccadb0-9fcb-4f76-91f0-dc0ff72bae7d,"Idrisu Ammed Gyan",Male,"Bono","Berekum East","Faaman",,,47,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+1a7e8437-0623-4e7d-981e-04462a50ab41,"Gausu Watra",Male,"Bono","Berekum East","Faaman",,,60,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+bf999e3e-dd30-4e35-ac01-aefa6d50d947,"Osei Andrews",Male,"Bono","Berekum East","Faaman",,,46,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+0cc2293a-6d91-404a-9299-53d664681df3,"John Nketiah",Male,"Bono","Berekum East","Faaman",,,37,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+222b5055-b779-4680-81ba-4dcaea08ae66,"Kofi Drisu",Male,"Bono","Berekum East","Faaman",,,58,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+fbea45d6-3906-4b9e-85c5-fabc5af7d6f5,"Adu George",Male,"Bono","Berekum East","Faaman",,,33,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+322b4f00-900d-43e0-9f06-a75f291c4cb9,"Akua Ahensa",Male,"Bono","Berekum East","Faaman",,,43,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+18be11aa-316f-4b2d-b45e-28f2c9057dae,"Takyi Kwadwo",Male,"Bono","Berekum East","Faaman",,,40,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+313302ff-6292-4e0d-a007-7f3b312ea661,"Appia K. Simon",Male,"Bono","Berekum East","Faaman",,,44,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+52f4b239-f314-4d7f-a974-5c010bc4c05b,"Ama Serwaa Mary",Female,"Bono","Berekum East","Faaman",,,47,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+7d7f046e-b814-4dfd-8145-87e65953171f,"Bosomtwi Charles",Male,"Bono","Berekum East","Faaman",,,44,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+a63a70f4-42ce-462f-b3ba-f7796c94512e,"Anane Joseph Zavi",Male,"Bono","Berekum East","Faaman",,,28,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+ca55c06b-55fd-4a06-9202-817aa86a3dde,"Nana Agyeman Gyau",Male,"Bono","Berekum East","Faaman",,,47,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+b79ee296-fd07-4139-acf9-2a3b0a032c29,"Nketiah Job",Male,"Bono","Berekum East","Faaman",,,49,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+5fa3d56b-9b24-44be-9e7b-c63cbf01692a,"Pomaa Rose",Female,"Bono","Berekum East","Faaman",,,46,,9,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+4b7450bb-9000-4630-bde5-28f5bee2f42f,"Akua Addae",Male,"Bono","Berekum East","Faaman",,,37,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+dbc279bd-a929-4c3c-8b51-d3d17d69e213,"Jacob Asi Kwame",Male,"Bono","Berekum East","Faaman",,,58,,8,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+52d19943-b4df-4c7f-97e4-3d9e47a07241,"Amponsa Badu",Male,"Bono","Berekum East","Faaman",,,33,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+fab32404-fe00-439d-8bb5-0347f53ad233,"Amadu Mohammed",Male,"Bono","Berekum East","Faaman",,,43,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+c6c1f9e7-f44d-47e0-8396-a16e49f11f91,"Albert Agyepong",Male,"Bono","Berekum East","Faaman",,,40,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+9a07d6c2-8163-4bff-8247-4711db18b3e3,"Akyeema Mary",Female,"Bono","Berekum East","Faaman",,,44,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+0fb4231c-b75d-4948-bd53-7a492ea72829,"Baabea Georgina",Female,"Bono","Berekum East","Faaman",,,47,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+b8c07782-3580-47be-9b32-7ba45dc1def9,"Appea James",Male,"Bono","Berekum East","Faaman",,,44,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+c8b9c5a3-c4bb-474c-bb03-23b703845ef7,"Dickson Ochere",Male,"Bono","Berekum East","Faaman",,,28,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+13b6d037-4f5a-466e-b525-8b27e347094a,"Ferka Ankama",Male,"Bono","Berekum East","Faaman",,,47,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+0ae78ee4-8ae7-4c4c-985a-2edf3d6908bc,"Tafoa Margaret",Female,"Bono","Berekum East","Faaman",,,59,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+abce643f-d703-47bf-9ab7-fe62b580afc8,"Boahen Clement",Male,"Bono","Berekum East","Faaman",,,46,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+6b5ed73c-e434-4cd8-985f-af50bcc4208f,"Oppong Asare",Male,"Bono","Berekum East","Faaman",,,37,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+e3e593e3-7b31-4bdf-82f1-dc821097c87d,"Grace Abena Afora",Female,"Bono","Berekum East","Faaman",,,58,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+8b1a1659-78ca-48a6-88f8-22bb76dcb976,"Aha Yeboa",Male,"Bono","Berekum East","Atuna",,,40,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+72454c74-14e2-4332-8c13-c6a8037969f2,"Takyi Janet",Female,"Bono","Berekum East","Atuna",,,44,,9,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+36a15cd2-15b6-48fd-9f37-279b910b5eeb,"Joseph Kyereme",Male,"Bono","Berekum East","Atuna",,,47,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+c999d046-0ca2-441d-8692-1dbcad527227,"Amankwaa Magret",Female,"Bono","Berekum East","Atuna",,,44,,8,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+955f9a1d-e6d1-40d9-9273-2db60e872ea2,"Asiedu Mathew",Male,"Bono","Berekum East","Atuna",,,35,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+fbdb4ae7-7954-4e79-9b0f-e4c8fd5de862,"Yaa Mfordwaa",Female,"Bono","Berekum East","Atuna",,,21,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+3d0992e2-2f75-45c7-b704-38e098aecf26,"Nana Foriwaa",Female,"Bono","Berekum East","Atuna",,,32,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+2755d567-706e-470d-9f16-3069b1af947c,"James Abina",Female,"Bono","Berekum East","Atuna",,,43,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+db0068ab-a3f9-4699-b838-546535eb3777,"Cecilia Boah",Female,"Bono","Berekum East","Atuna",,,40,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+a5e9bf1d-8d0a-43a1-9bf2-bad8c7887e1c,"Veronica Kyemaa",Female,"Bono","Berekum East","Atuna",,,44,,7,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+75d06e06-c016-4371-b07d-129992c819a0,"Veronica Adoma",Female,"Bono","Berekum East","Atuna",,,47,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+6550d3e3-1089-4467-8288-a7bebd69f4cf,"Lucy Tabeah",Female,"Bono","Berekum East","Atuna",,,44,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+9a7a56b5-e239-4c99-a71a-fda08a338577,"Georgina Asuama",Female,"Bono","Berekum East","Atuna",,,28,,7,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+b992f134-fdfe-4b55-b6ed-fadc08144b45,"Afua Amoakowaa",Female,"Bono","Berekum East","Atuna",,,47,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+c6b4b9ef-259f-4533-88f3-ea90b8e23c84,"Ruchiatu Bio",Male,"Bono","Berekum East","Atuna",,,58,,7,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+a618bd86-52a3-4ee2-a06e-9e09722d0514,"Kwabena Afful",Male,"Bono","Berekum East","Atuna",,,46,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+46faa4e3-f3c2-410c-948b-82e284e282f9,"Appiah Nicholas",Male,"Bono","Berekum East","Atuna",,,37,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+dd1ef534-05c5-460a-be48-b0c211704287,"Tano Kwame Paul",Male,"Bono","Berekum East","Atuna",,,58,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+3189c975-fb63-469b-9b4d-b636f0af4b31,"Amankona Charles",Male,"Bono","Berekum East","Atuna",,,33,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+a6f87f08-3e15-4e67-bcb0-07228d340680,"Geogina Adinkra",Female,"Bono","Berekum East","Atuna",,,43,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+431fa07a-5644-4001-95e6-d227db666e44,"Hohn Adinkra",Male,"Bono","Berekum East","Atuna",,,40,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+ab2b9413-7357-4703-a058-5e94df8aa9f8,"John Adinkra",Male,"Bono","Berekum East","Atuna",,,44,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+8ff24e87-725a-4858-92c2-f0042af8fcbb,"Issifu Adams",Male,"Bono","Berekum East","Atuna",,,47,,7,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+2c1ea251-c583-4b2e-8ac7-c6ee590cc373,"Addae Peter",Male,"Bono","Berekum East","Atuna",,,44,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+f6a77862-7695-412a-9e0e-2dc1448d8f14,"Martin Tawah",Male,"Bono","Berekum East","Atuna",,,28,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+5c090e85-0eaa-49ed-99ee-ffb648f5a2de,"Agyina Amaniampong",Male,"Bono","Berekum East","Atuna",,,47,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+30e06702-4998-4be3-a07b-6024b638bd36,"Barikisu Amanimpong",Male,"Bono","Berekum East","Atuna",,,54,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+347aeacc-a952-4fab-8a50-ae785ee05414,"S.y Amaniampong",Male,"Bono","Berekum East","Atuna",,,46,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+bf396fc7-ad02-4279-9a55-ec1e1ea5977e,"Comfort Akosua Fri",Female,"Bono","Berekum East","Atuna",,,37,,8,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+f587c33d-0640-43c0-b105-e355111ae13d,"Ester Ameyaa",Female,"Bono","Berekum East","Atuna",,,58,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+1350b661-d54d-4968-93b1-98a0f4530d23,"Mary Akua Addae",Female,"Bono","Berekum East","Atuna",,,33,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+a8b566fc-9489-4934-9706-d484b355e4ab,"Veronica Konama",Female,"Bono","Berekum East","Atuna",,,43,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+1c7756e4-73ed-43fb-9f1c-476af4dfe938,"Addae Dominic",Male,"Bono","Berekum East","Atuna",,,40,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+3338ff42-9640-416a-8950-8a35efb6b83b,"Abdulia Ibrahim",Male,"Bono","Berekum East","Atuna",,,44,,7,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+a7b0673c-95e7-41fb-baf1-6e921aebcf07,"Kofi Koosunu",Male,"Bono","Berekum East","Atuna",,,47,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+c374718f-0e6b-4486-8d71-3f27e764c8f2,"Rose Asuama",Female,"Bono","Berekum East","Atuna",,,47,,8,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+29548e09-8dde-4a84-8e7c-dbe70f399c8f,"Abiba Bruma",Male,"Bono","Berekum East","Atuna",,,59,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+cee684b1-a940-43aa-b6a5-e879c33a389f,"Dauda Kamo",Male,"Bono","Berekum East","Atuna",,,46,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+2b88a272-d707-4f58-9e3f-0259aedeeb1a,"Joseph Mensah",Male,"Bono","Berekum East","Atuna",,,37,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+70301f99-aece-4294-b35a-21a374e2aa4d,"Ameda Mohamed",Male,"Bono","Berekum East","Atuna",,,58,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+537002c0-fbdc-48b8-baee-7dd624706ddf,"Kingsley Bosomtwe",Male,"Bono","Berekum East","Atuna",,,33,,7,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+80c09a84-131a-4c6e-a35a-4ace67b17549,"Kyadijah Tamea",Male,"Bono","Berekum East","Atuna",,,43,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+5ab77138-49c3-4b20-b1b4-f9055729f03a,"Abuu Takyi",Male,"Bono","Berekum East","Atuna",,,40,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+711a855d-205b-42f9-a464-206e3aa3fb1c,"Asuma Vasco",Male,"Bono","Berekum East","Atuna",,,44,,8,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+bc3e9dcb-76ad-456a-b7f0-aff6f0a9879e,"Adwoa Mariama",Female,"Bono","Berekum East","Atuna",,,47,,7,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+1bb27716-0028-433f-a327-75da9437aa34,"Appia Augustine",Male,"Bono","Berekum East","Atuna",,,44,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+9785f72f-e6fe-4938-9caa-e4692e725788,"Akosua Asuama",Female,"Bono","Berekum East","Atuna",,,28,,8,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+6edf229a-9282-4652-90b7-7d8dd9bbafc9,"Ansumana Abdulia",Male,"Bono","Berekum East","Atuna",,,47,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+4c9811d6-d2c7-4737-87ab-4f192b66b9b4,"Abiba Owusuaa",Female,"Bono","Berekum East","Atuna",,,60,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+02b26b50-941f-4a04-95a7-6040496e1cbb,"Yaw Gyamfi",Male,"Bono","Berekum East","Atuna",,,46,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+0b4ce114-81ac-4231-a609-75328197c3cf,"Akoma Fustina",Female,"Bono","Berekum East","Atuna",,,37,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+841f7506-f9e2-44ed-8fc6-317abbc897ba,"Koosono Patrick",Male,"Bono","Berekum East","Atuna",,,58,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+2ba44b90-30d2-4ede-bc81-e1e6e728c01e,"Lydia Adwoa Kissiwaa",Female,"Bono","Berekum East","Atuna",,,33,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+d81527be-56cb-4dfd-b2e0-f2afb1a7d34c,"Elizabeth Kwabia",Female,"Bono","Berekum East","Atuna",,,43,,8,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+a3dbc1cc-ef1d-4ab0-aa08-d1ec550406e3,"Paul Kofi Omane",Male,"Bono","Berekum East","Atuna",,,40,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+4ede9919-1ae3-41d6-8478-d5001f7d86de,"Kwame Charles",Male,"Bono","Berekum East","Atuna",,,44,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+63fd8ce4-4eed-4dac-b6b1-3d529c7ff788,"Joseph Kyere Yaw",Male,"Bono","Berekum East","Atuna",,,47,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+fb874808-d05a-4fc6-8356-7033ec52f237,"J.d. Amoako",Male,"Bono","Berekum East","Atuna",,,44,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+cb263a4d-088e-4f87-bf81-6181ff435b9b,"Nyarko Elizabeth",Female,"Bono","Berekum East","Atuna",,,28,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+00c0e91f-7a62-499e-973b-2646e4d20872,"Sophia Kyeremaa",Female,"Bono","Berekum East","Atuna",,,47,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+829b75cb-6f5c-41a0-ba01-9562ffe16000,"Ajira Yaa",Female,"Bono","Berekum East","Atuna",,,49,,7,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+1e5fed61-7a82-4398-92f1-0183e02b7310,"Ferkaa Grace",Female,"Bono","Berekum East","Atuna",,,46,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+a5255c32-1554-4d72-908b-7fbafa44c2ca,"Richard Kofi Bama",Male,"Bono","Berekum East","Atuna",,,37,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+9d7db3be-f941-4d22-88db-209c8a8b33c8,"Amisaata Takyiwaa",Male,"Bono","Berekum East","Atuna",,,58,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+4d0f652d-9a9f-49bf-a4fb-924c0aa141c4,"Grace Kromah",Female,"Bono","Berekum East","Atuna",,,33,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+2af56fcf-d297-47bb-bb3d-4e2d47999a8b,"Ana Yeboa",Male,"Bono","Berekum East","Atuna",,,43,,7,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+a31dd764-b9b5-4d41-a0ea-42cb8566f052,"Ana Essa",Male,"Bono","Berekum East","Atuna",,,40,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+d82e6021-673e-4750-a3ac-889f6e12c468,"Afua Henewa",Female,"Bono","Berekum East","Atuna",,,44,,7,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+f30b97dd-3ff6-4cc8-a573-66f2f19abec9,"Nan Brago Abenaa",Female,"Bono","Berekum East","Atuna",,,47,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+dca6fcab-ea33-48ca-88e8-38d78b16960e,"Rose Asuamah",Female,"Bono","Berekum East","Atuna",,,44,,7,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+5f5334ad-5a34-476a-8058-2733102bca2b,"Moro Mohamed",Female,"Bono","Berekum East","Atuna",,,28,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+28816400-afbb-4f7c-94e5-cb35ac3d9bd3,"Ana Sarifo",Female,"Bono","Berekum East","Atuna",,,47,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+5f6ba707-3c3f-45c3-889b-5c52089252c9,"Dramani Gyan",Male,"Bono","Berekum East","Atuna",,,59,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+6d9ae35e-f4d3-4e69-895d-df9f8efe312b,"Mriama Boateemaa",Female,"Bono","Berekum East","Atuna",,,46,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+e5ede731-adea-4028-960f-45db35257dde,"Kumi Agnes",Male,"Bono","Berekum East","Atuna",,,37,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+e93bb17e-d907-4615-a6fd-2248f3279b61,"Monica Adjoa Tawua",Female,"Bono","Berekum East","Atuna",,,58,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+76863fec-9bd5-4015-94d1-38a9296d9141,"Veronica Konadu",Female,"Bono","Berekum East","Atuna",,,33,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+a1fee38a-dde8-4078-9312-51bc185ec684,"Charles Kofi Amankwaa",Male,"Bono","Berekum East","Atuna",,,43,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+f6ebbb7d-75c2-463a-9ca9-f3e25245fd87,"Kwabena Appiah",Male,"Bono","Berekum East","Atuna",,,40,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+832f5c54-3730-4e8e-a329-a862ba68dd53,"Asamoa Justice",Male,"Bono","Berekum East","Atuna",,,44,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+70feb3a1-c7ed-46e7-a171-e568c33e908c,"Adma Mohamed No.2",Male,"Bono","Berekum East","Atuna",,,47,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+aa0cd53b-1e52-43b3-8dec-fa94448eb6b7,"Kofi Ankamah",Male,"Bono","Berekum East","Atuna",,,44,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+aac9e929-57d1-4602-85c4-b3ae6ea0f46d,"Doris Akosua Tamea",Female,"Bono","Berekum East","Atuna",,,35,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+f4cfe3bf-5177-4f2d-9e97-1bda62434507,"Nketia Theresah",Male,"Bono","Berekum East","Atuna",,,21,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+a9341dcc-fd3a-4fc7-b447-30139cb95350,"Yaw Mensah",Male,"Bono","Berekum East","Atuna",,,32,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+458b497f-b7a9-426d-b163-66b0c98fdb5a,"Yaw Bediako",Male,"Bono","Berekum East","Atuna",,,43,,9,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+f45dc32c-fc8f-42d4-8758-5e7928e0d89c,"Adamu Yeboa",Male,"Bono","Berekum East","Atuna",,,40,,8,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+b4e1023a-a811-47f7-b6ee-e8c29d03b839,"Yeboah Kwasi",Male,"Bono","Berekum East","Atuna",,,44,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+419413bc-34e7-4157-9409-148c752516b5,"Kyere George",Male,"Bono","Berekum East","Atuna",,,47,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+1c11b30f-a751-408d-8411-bcd8ab950e18,"Ama Wuo",Male,"Bono","Berekum East","Atuna",,,44,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+bc6945ed-d2f2-41d4-9e8c-bb71532916a0,"Dirisa Baah",Male,"Bono","Berekum East","Atuna",,,28,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+0b73e867-a0ff-4932-89d6-3148f405f18f,"Munifie Francis",Male,"Bono","Berekum East","Atuna",,,47,,9,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+2de94484-1504-4e1c-a9f3-b7b0cf226366,"Yaw Kuba Fale",Male,"Bono","Berekum East","Atuna",,,58,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+356f50c9-1f31-4b47-909e-5f50be775559,"Gyinabu Kramo",Male,"Bono","Berekum East","Atuna",,,46,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+f127fcf4-10ba-4595-b4b1-aeb760f666d1,"Natoma Siata",Male,"Bono","Berekum East","Atuna",,,37,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+340ff3a7-1662-43dd-857b-373feded792f,"Abena Bermaa",Female,"Bono","Berekum East","Atuna",,,58,,2,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+39e64cff-9e9d-4097-be88-d94d5a1c315f,"Kum Stephen",Male,"Bono","Berekum East","Atuna",,,33,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+eda8a724-c1f9-43b2-982a-6a23f139bcb1,"Amankona Kwame",Male,"Bono","Berekum East","Atuna",,,43,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+65fc5b10-9163-4626-8815-a055313e2794,"Peter Kofi Agyemang",Male,"Bono","Berekum East","Atuna",,,40,,8,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+aae14ed2-eb17-4c86-bbd3-21fba90a2214,"Yaa Asuama",Female,"Bono","Berekum East","Atuna",,,44,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+001029da-9c65-4220-bd19-437521d6e6df,"Justice Takyi",Male,"Bono","Berekum East","Atuna",,,47,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+5051b5cb-0047-42f6-8e15-824ba527e02d,"Philip K. Pra",Male,"Bono","Berekum East","Atuna",,,44,,8,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+e7a2c0bf-5ef6-457f-91e1-5f048063dcf5,"Attaa Afia",Male,"Bono","Berekum East","Atuna",,,28,,8,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+68e06d16-596d-4dac-907e-cd59ab4d6a7d,"Asana Yaa",Female,"Bono","Berekum East","Atuna",,,47,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+d716a1af-ea8b-4e2b-adf1-c61869f09f47,"Asuama Theresa",Female,"Bono","Berekum East","Atuna",,,54,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+d184546c-066b-45e2-972c-c92431723fc6,"Grace Yeboaa",Female,"Bono","Berekum East","Atuna",,,46,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+2f580f59-b5ec-41ff-9403-b64225c82b06,"Adjoa Benne Rose",Female,"Bono","Berekum East","Atuna",,,37,,7,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+4bb83dda-e908-4024-97f9-8bf2e9ebe02a,"Nyarko Alice",Female,"Bono","Berekum East","Komfourkrom",,,58,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+e49c5fb5-62d8-43ed-ab2b-31d6ab2e41e1,"Panti Abban",Male,"Bono","Berekum East","Komfourkrom",,,33,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+a80a389b-af7b-4df7-bd0d-00e5f12f120a,"Adubia Georgina",Male,"Bono","Berekum East","Komfourkrom",,,43,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+2ddb1272-ec8b-402e-926a-b63c6b742166,"Saa Stella",Male,"Bono","Berekum East","Komfourkrom",,,40,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+83570d1e-2927-4f63-8dac-f9f29d1aae6d,"Adu Stephen",Male,"Bono","Berekum East","Komfourkrom",,,44,,8,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+06137185-2950-45ea-87be-ed35579c5e0a,"Naomi Nkyibia",Male,"Bono","Berekum East","Komfourkrom",,,47,,7,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+d17e853a-a98d-48ac-85ab-c794f2789c7e,"Tannor Augustine",Male,"Bono","Berekum East","Komfourkrom",,,29,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+5779f9f6-6494-4963-930e-aad444e163e8,"Koosono Joseph",Male,"Bono","Berekum East","Komfourkrom",,,47,,1,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+c0441657-440f-41f2-a579-f50fd869f14f,"Kyereme Stephen",Male,"Bono","Berekum East","Komfourkrom",,,59,,6,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+656f7d74-3750-44b0-b149-f6b9c42aa5d1,"Bae Emmanuel",Male,"Bono","Berekum East","Komfourkrom",,,46,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+2755f96b-d891-4c8c-a266-2173b6452b13,"Yewa Gladys",Male,"Bono","Berekum East","Komfourkrom",,,37,,8,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+dc4073ed-de75-4b3c-808a-84b4a0500501,"Ankama Joseph",Male,"Bono","Berekum East","Komfourkrom",,,58,,8,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+6bc8a2a9-d5fd-40e7-8996-654825515911,"Sakyiwaa Esther",Female,"Bono","Berekum East","Komfourkrom",,,33,,4,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+05643961-202c-485b-94e8-9955e067ba34,"Kyere Simon",Male,"Bono","Berekum East","Komfourkrom",,,43,,5,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+3d32154a-6133-4afd-97f5-1c45d329e1b0,"Twumwaa Veronica",Female,"Bono","Berekum East","Komfourkrom",,,40,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+841c9e19-cdab-4a0a-bf39-9a3f7cef1280,"Sakyi Charles",Male,"Bono","Berekum East","Komfourkrom",,,44,,3,[],Active,2026-02-21T21:43:26.296Z,false,2026-02-21T21:43:26.296Z,2026-02-21T21:43:26.296Z
+c21a3682-f1a7-4c61-9409-883dc030715b,"Kwadwo Agyei",Male,"Bono","Berekum East","Komfourkrom",,,47,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+88438ffa-c78d-4b56-b9bc-e27f062c6c21,"Yeboah Francis",Male,"Bono","Berekum East","Komfourkrom",,,44,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+a7a0fd57-bd08-4e1b-a948-6088f870d836,"Dukuu Joseph",Male,"Bono","Berekum East","Komfourkrom",,,28,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+a50f3d44-b1a5-476b-b3cb-b18b5661799c,"Yeboa Joseph",Male,"Bono","Berekum East","Komfourkrom",,,47,,4,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+0f090a0b-ad85-41c3-9a7e-f5012de01593,"Kwabea Grace",Female,"Bono","Berekum East","Komfourkrom",,,60,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+8f4844c4-1376-4baf-9df5-0e20895f8821,"Adu Richard",Male,"Bono","Berekum East","Komfourkrom",,,46,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+6cfaf7c5-57d4-49b5-93a1-8c4ec6413f02,"Nketia Augustine",Male,"Bono","Berekum East","Komfourkrom",,,37,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+a3e69191-f98f-4b5f-9b02-7b5c6ae91abf,"Agartha Kurwaa",Female,"Bono","Berekum East","Komfourkrom",,,58,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+29d9e26b-5acd-4c25-96d7-a4509541e48b,"Akyeaw Gordon",Male,"Bono","Berekum East","Komfourkrom",,,33,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+391459f5-ac03-4d28-b05c-f3a9b0fe95e3,"Kwabena Bosomtwe",Male,"Bono","Berekum East","Komfourkrom",,,43,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+03f2c794-8b6f-4f94-9438-9fbb4b7d8683,"Ankama Francis",Male,"Bono","Berekum East","Komfourkrom",,,40,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+80cf7497-76b5-4679-931f-fcdf7747f985,"Asuama Agartha",Female,"Bono","Berekum East","Komfourkrom",,,44,,4,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+ccdeed98-3d46-4a5e-873d-ffe0c37e25e7,"Ataa Grace",Female,"Bono","Berekum East","Komfourkrom",,,47,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+dbafd64f-c4e2-45a4-b4bb-19d8068c1dc1,"Boateng Augustine",Male,"Bono","Berekum East","Komfourkrom",,,44,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+2f3ea645-241d-47d2-be1f-95dc5ffa9f9b,"Kraa Paulina",Female,"Bono","Berekum East","Komfourkrom",,,28,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+ff4157cd-64cd-44be-ab28-b2244a6dca67,"Nana Yeboa Asuama",Male,"Bono","Berekum East","Komfourkrom",,,47,,8,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+f931eb6d-79a5-4439-a61c-f321326d4e90,"Cathrina Adei",Female,"Bono","Berekum East","Komfourkrom",,,49,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+5c514f2e-4933-44ef-b6af-783555df3c96,"Nana Kwame Twum",Male,"Bono","Berekum East","Komfourkrom",,,46,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+54ca57bd-ff59-4433-9013-18e2b8ca5794,"Philip K. Firi",Male,"Bono","Berekum East","Komfourkrom",,,37,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+58e5b393-bf93-452d-9953-6e5be3d1c9ab,"Yeboa Charles",Male,"Bono","Berekum East","Komfourkrom",,,58,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+970b4b37-b033-44ab-b00d-fc27f8f70d72,"Antwi Paul",Male,"Bono","Berekum East","Komfourkrom",,,33,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+5526300b-a9ec-4526-bc1c-805452a6407a,"Benmaa Patience",Female,"Bono","Berekum East","Komfourkrom",,,43,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+bc40368b-7ef2-42fe-bcc9-51559b187b99,"Sawiri George",Male,"Bono","Berekum East","Komfourkrom",,,40,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+6514e8a3-e705-4f67-a111-2d8867c4f5b2,"Nana Adjei Kyereh",Male,"Bono","Berekum East","Komfourkrom",,,44,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+aa446139-6b97-4429-b209-010ae6eab113,"Gyabaa James",Male,"Bono","Berekum East","Komfourkrom",,,47,,7,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+61597211-4617-4a89-b821-6d8250511d84,"Yaw Nsiah",Male,"Bono","Berekum East","Komfourkrom",,,44,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+3de62081-fae5-405f-bb69-2a26ac33b878,"Agnes Donkor",Female,"Bono","Berekum East","Komfourkrom",,,28,,7,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+55887820-2c9f-42d5-9fbb-1534f15bf6d6,"Peter Okyere",Male,"Bono","Berekum East","Komfourkrom",,,47,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+10d4c935-e813-46fe-bb07-d64913c898a7,"Ata Jacob",Male,"Bono","Berekum East","Komfourkrom",,,59,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+90e7ada9-b4ed-4493-bf46-9e1e4aac57ae,"Op. Yaw Bediako",Male,"Bono","Berekum East","Komfourkrom",,,46,,4,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+208c90a0-5548-4392-a96b-40224efde643,"Sakyi Slyvester",Male,"Bono","Berekum East","Komfourkrom",,,37,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+e6708b21-ce87-4631-8683-208a91de1228,"Bona Alexander",Male,"Bono","Berekum East","Komfourkrom",,,58,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+3db2ed6e-58b6-4511-aa4d-1d9065e27994,"Op. Kwasi Donkor",Male,"Bono","Berekum East","Komfourkrom",,,33,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+ef79f788-3f34-46c7-90fd-b2c21e4616a4,"Agyeiwaa Christiana",Female,"Bono","Berekum East","Komfourkrom",,,43,,7,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+1e755a97-cd6c-46f1-9c71-43a68aaf76e3,"Kwang Hayford",Male,"Bono","Berekum East","Komfourkrom",,,40,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+ed6e9b29-273b-49a6-a521-f4174239cb5b,"Bosea Albert",Male,"Bono","Berekum East","Komfourkrom",,,44,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+80f43cb0-cd6f-4151-9074-27532277a9ba,"Tetey Nicholas",Male,"Bono","Berekum East","Komfourkrom",,,47,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+8e888784-4adc-44e8-b525-c1a2d15cf9b6,"Kwan Francis",Male,"Bono","Berekum East","Komfourkrom",,,44,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+231c2e17-9ebf-46bc-bf2d-e59408955efa,"A. K. Ata",Male,"Bono","Berekum East","Komfourkrom",,,35,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+f2b349a7-9742-4de7-a6eb-14442a9cf6b4,"Kyereme Charles",Male,"Bono","Berekum East","Komfourkrom",,,21,,4,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+0e0491d4-d477-41c4-a334-0d65278fd0df,"Kuma Michael",Male,"Bono","Berekum East","Komfourkrom",,,32,,4,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+1a6e0291-0aae-4325-a955-2c6d55283ecd,"Op. Atta Kwasi",Male,"Bono","Berekum East","Komfourkrom",,,43,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+044169fe-0086-48e5-927e-10f35a9a3245,"Yaw Nkruma",Male,"Bono","Berekum East","Komfourkrom",,,40,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+e291eaab-a46c-4ca4-96f6-693e9df30679,"Ofori Emmanuel",Male,"Bono","Berekum East","Komfourkrom",,,44,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+cd1a0a30-45ec-4d1e-ae9e-9c56773e19ff,"Awinsome Akurugo",Male,"Bono","Berekum East","Komfourkrom",,,47,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+db872da4-ba17-4d8b-a0b7-32a9e2f2a1a9,"Ansu Isaac",Male,"Bono","Berekum East","Komfourkrom",,,44,,4,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+68b00553-f18b-4c46-b389-5e576c8fa7b2,"Takyiwaa Veronica",Female,"Bono","Berekum East","Komfourkrom",,,28,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+f4e851a1-e7b7-4bb7-9875-0385bfd1f08e,"Konama Gladys",Female,"Bono","Berekum East","Komfourkrom",,,47,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+829e4ce2-3daa-4b06-8045-44eb960f835d,"Kwasi Kwayi",Male,"Bono","Berekum East","Komfourkrom",,,58,,4,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+94ddd406-7968-4bde-8183-164c31533966,"Grace Yaa Ansuaa",Female,"Bono","Berekum East","Komfourkrom",,,46,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+e02b865b-8fa6-4623-aa90-b58f3f5883d0,"Amokona James",Male,"Bono","Berekum East","Komfourkrom",,,37,,4,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+33b164b1-d777-4036-8df6-f8f1037841a8,"Kwadwo Ankama",Male,"Bono","Berekum East","Komfourkrom",,,58,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+d0d5fc73-0455-4c99-b05d-679c5bd8528c,"Kyere Kwaku",Male,"Bono","Berekum East","Komfourkrom",,,33,,4,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+0e201fb4-de51-4116-ad64-c3709442779a,"Boama John",Male,"Bono","Berekum East","Komfourkrom",,,43,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+d4e0c63f-f4ef-4b5b-9fd2-9c4a5695a3c2,"Takyi Joseph",Male,"Bono","Berekum East","Komfourkrom",,,40,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+7dd882ba-df77-4a8d-b7d1-46ddb8f4fbc6,"Rose Yeboaa",Female,"Bono","Berekum East","Komfourkrom",,,44,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+121f4735-6034-4233-a03f-2252a0caa8d7,"Adinkra George",Male,"Bono","Berekum East","Komfourkrom",,,47,,7,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+25a37016-aa10-471f-9e9f-0321e4b7c78d,"Adubia Haga",Male,"Bono","Berekum East","Komfourkrom",,,44,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+358771da-36a3-45a7-8663-d5cd4c9bc3ef,"Esther Yeboaa",Female,"Bono","Berekum East","Komfourkrom",,,28,,4,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+87c725f5-ab34-4290-86dd-94733e62fd91,"Bosa George",Male,"Bono","Berekum East","Komfourkrom",,,47,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+9590ee78-c589-4b94-9252-f07511a782bd,"Stephen Amokonah",Male,"Bono","Berekum East","Komfourkrom",,,54,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+08b493b4-f941-43b4-8291-9603613a5c82,"Kwadwo Takyi",Male,"Bono","Berekum East","Komfourkrom",,,46,,7,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+0c4d97ca-6060-454c-9627-6ac09c79c319,"Janet Bermaa",Female,"Bono","Berekum East","Komfourkrom",,,37,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+0441bea8-dd33-4f71-b430-337190d2d31b,"Adu Peter",Male,"Bono","Berekum East","Komfourkrom",,,58,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+ef6dfb32-c9ac-4d22-97f1-00dc98bdb68d,"Esther Yeboaa",Female,"Bono","Berekum East","Komfourkrom",,,33,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+220cbdea-8417-4f0b-94d1-fcfa755fcb4f,"Afiba Janet",Female,"Bono","Berekum East","Komfourkrom",,,43,,7,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+e491407a-e83e-4bb3-8a66-03a28b8b5a42,"Sina Kwabena",Male,"Bono","Berekum East","Komfourkrom",,,40,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+e4f70163-6a3d-4fe9-a596-df95691bade7,"Adinkra Emmanuel",Male,"Bono","Berekum East","Komfourkrom",,,44,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+f225cbe3-cd50-48fc-b9b7-5d9475c4b932,"Kwame Charles",Male,"Bono","Berekum East","Komfourkrom",,,47,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+cd33815b-869e-45fd-8368-2848fe311d78,"Kwaku Boahen",Male,"Bono","Berekum East","Komfourkrom",,,33,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+3098f6b2-27f9-49a0-9a17-82fc390f93eb,"Felicia Abena Fekaa",Female,"Bono","Berekum East","Komfourkrom",,,32,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+242301e4-7cc9-451a-bdcd-f3c5e9952b09,"Kraa Christiana",Female,"Bono","Berekum East","Komfourkrom",,,41,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+87327ef1-7fae-46cb-854c-f381c32782a9,"Kofi Amokona",Male,"Bono","Berekum East","Komfourkrom",,,47,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+e792dfd8-2591-4559-9609-814467047edd,"Gyan Thomas",Male,"Bono","Berekum East","Komfourkrom",,,59,,4,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+d92fceb3-c46d-40ca-9aa3-2e32933771e6,"Fosu Charles",Male,"Bono","Berekum East","Komfourkrom",,,46,,4,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+f88d1b83-5d56-4fdd-a162-3159c7995906,"Badu Richard",Male,"Bono","Berekum East","Komfourkrom",,,37,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+7b4979e0-9f1f-46bc-95f2-1ed4f7cfc892,"Agyei Kwadwo Charles",Male,"Bono","Berekum East","Komfourkrom",,,58,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+f0104ae5-1572-459a-9614-eff94bc7c5fb,"Bae Yeboa Paul",Male,"Bono","Berekum East","Komfourkrom",,,33,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+4eddd9fb-dbf2-4f60-a6a2-15ddd34ebd5f,"Hwemeso Augustine",Male,"Bono","Berekum East","Komfourkrom",,,43,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+a0e3073a-aae2-479e-9ed6-1cbd65a14016,"Tewia Joseph",Male,"Bono","Berekum East","Komfourkrom",,,40,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+cddf5eeb-af7d-46f7-a5af-8c18483ad54b,"Bosomtwe Isaac",Male,"Bono","Berekum East","Komfourkrom",,,44,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+908c5a78-ba94-48b5-9b90-dfd07bd7a520,"Obeng Janet",Female,"Bono","Berekum East","Komfourkrom",,,47,,9,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+07ce8511-87c2-44b9-8091-d61019bce8b6,"Robert Owusu Ameyaw",Male,"Bono","Berekum East","Kromokrom",,,28,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+c3435bfd-2546-4463-ab85-d79b0ddc178b,"Kyeraa Beatrice",Female,"Bono","Berekum East","Kromokrom",,,47,,4,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+be18fc12-60a1-4410-a8a3-dc34e6b7dc0d,"Janat Yeboaa",Female,"Bono","Berekum East","Kromokrom",,,60,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+e39f725b-cc17-4007-aa04-4242c52cd039,"Amponsa Anthony",Male,"Bono","Berekum East","Kromokrom",,,46,,4,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+493b7994-8e75-406a-8059-56d121b6d0a0,"J. K. Oppong",Male,"Bono","Berekum East","Kromokrom",,,37,,9,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+eb49ecbb-bf3a-4fc8-a4c6-14627d715fd9,"Kwame Asiedu",Male,"Bono","Berekum East","Kromokrom",,,58,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+edbfd597-34f5-4e66-8204-87916cd0e550,"Mariama Sedic",Female,"Bono","Berekum East","Kromokrom",,,33,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+494c654c-d85d-4268-85b3-3fc9d2b82d6b,"Siere Mohammed",Male,"Bono","Berekum East","Kromokrom",,,43,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+a63d4295-58fa-428c-b3e0-3d5e7fa81f90,"Damoa Emmanuel",Male,"Bono","Berekum East","Kromokrom",,,40,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+0bc9887c-7262-418b-bada-91188e013e72,"Augustine Yeboah",Male,"Bono","Berekum East","Kromokrom",,,44,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+d83289c4-81b0-4b94-b7f6-db3507a1f7e6,"Kwasi Agyei No. 2",Male,"Bono","Berekum East","Kromokrom",,,47,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+5c2c0932-8d0f-4c3f-a9fb-d868121f2d76,"Akua Anima",Female,"Bono","Berekum East","Kromokrom",,,44,,8,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+df6bbe52-bb77-4de4-89f2-fbf5b8e666c2,"Jacob Ackmon",Male,"Bono","Berekum East","Kromokrom",,,28,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+fac32d08-a95c-44c2-a50b-d29ceadb00fa,"Enock Kumi",Male,"Bono","Berekum East","Kromokrom",,,47,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+a9865ded-2cf4-4c74-8f68-9abdd55628cb,"Twenewaa Esther",Female,"Bono","Berekum East","Kromokrom",,,49,,8,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+00d6c650-e591-4c31-941f-053f164ec5df,"Oppong Kwabena",Male,"Bono","Berekum East","Kromokrom",,,46,,8,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+3cf46843-95fd-4b6f-900e-bbce469c1c40,"Obeng Mamaahenne",Male,"Bono","Berekum East","Kromokrom",,,37,,4,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+1715a08f-9ba3-498c-8187-f2a91d2100b5,"Comfort Ahen",Female,"Bono","Berekum East","Kromokrom",,,58,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+b90c45b3-473b-40f2-88bf-6b79b0145faf,"Isaac Akom",Male,"Bono","Berekum East","Kromokrom",,,33,,4,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+c1902cc9-7f49-4281-a339-23133e7914be,"Ben O. Kissinger",Male,"Bono","Berekum East","Kromokrom",,,43,,7,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+a61b20a0-d658-40df-9f9f-17f4d9cf9f55,"Ama Gyamfua",Female,"Bono","Berekum East","Kromokrom",,,40,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+ee0bba8b-35e9-4def-ae5f-e96f15d0231f,"Kate Agyeiwaa",Female,"Bono","Berekum East","Kromokrom",,,44,,7,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+009fbc46-b898-4f42-ab3b-aa53abbdb8c4,"Yeboah Job",Male,"Bono","Berekum East","Kromokrom",,,47,,7,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+771ccf63-d524-4e4f-ad0b-ce7291649274,"Kwadwo Bosea",Male,"Bono","Berekum East","Kromokrom",,,44,,4,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+66bd9064-82cd-4eeb-9397-0d8d9528813c,"Atuguse Frafra",Male,"Bono","Berekum East","Kromokrom",,,28,,8,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+24a3dd14-f312-40f1-914d-6d9d0d888254,"Ata Kwasi",Male,"Bono","Berekum East","Kromokrom",,,47,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+1046e082-0945-40dc-8912-b708f1f35a20,"Yaw Owusu",Male,"Bono","Berekum East","Kromokrom",,,59,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+ff6c99bc-d7cd-44a7-876f-da002d0fc68e,"Yaa Fosuaa",Female,"Bono","Berekum East","Kromokrom",,,46,,1,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+4026fd2b-25e6-4ed6-8662-2e96ddc54586,"Meses Kyere",Male,"Bono","Berekum East","Kromokrom",,,37,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+bebe8587-aa7d-47c5-a6d0-14142cdf193f,"Badu Solomen",Male,"Bono","Berekum East","Kromokrom",,,58,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+cd147556-d0cd-4bc0-9ddb-f4eac98c86ea,"Stephen O. Ntim",Male,"Bono","Berekum East","Kromokrom",,,33,,8,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+d0286874-61eb-435a-b0af-6bb62c544b40,"Akua Akoma",Female,"Bono","Berekum East","Kromokrom",,,43,,8,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+fee9061b-1628-4bf7-82db-bcd868acd330,"Cecelia Kyereme",Female,"Bono","Berekum East","Kromokrom",,,40,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+a296316c-e8b8-461e-9426-e5e6909736ba,"Elder Adu Gyamfi",Male,"Bono","Berekum East","Kromokrom",,,44,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+db0bc321-05d4-43bd-8a11-05ecca18e259,"Ibrahim Kofi",Male,"Bono","Berekum East","Kromokrom",,,47,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+51d15445-c4cd-4cfa-825a-f0538661ca59,"Appiah Akufo",Male,"Bono","Berekum East","Kromokrom",,,44,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+f4594917-da4e-472e-9e1e-96e81ec2c4c8,"Kwadwo Akwaboa",Male,"Bono","Berekum East","Kromokrom",,,35,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+ee5647fe-4064-4692-9611-0a3430832234,"Kwaku Kyere",Male,"Bono","Berekum East","Kromokrom",,,21,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+4f81dcbc-5c4a-42e7-a1ef-10c8c0406e96,"Effa Augustine",Female,"Bono","Berekum East","Kromokrom",,,32,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+9b32790a-6af6-4695-b95c-2057dd77f1b3,"Seidu Morrow",Male,"Bono","Berekum East","Kromokrom",,,43,,4,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+c69a4111-925a-4d8b-93b3-8cfb29bf55b6,"Kwaben Gyabaa",Male,"Bono","Berekum East","Kromokrom",,,40,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+6f3291c3-0ae4-4bef-aedc-87aa0cd4beeb,"Kwabena Tabiri",Male,"Bono","Berekum East","Kromokrom",,,44,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+cf9c0eb7-adb7-4c05-b14e-bd46a45e6262,"Grace Koroma",Female,"Bono","Berekum East","Kromokrom",,,47,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+5f93e34d-4f11-4c46-b883-dffd2f9921b3,"Foriwaa Comfort",Female,"Bono","Berekum East","Kromokrom",,,44,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+cc5c2b0b-b27b-4cec-8dfc-9726d3b5e237,"Kosua Pomaa",Female,"Bono","Berekum East","Kromokrom",,,28,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+a2eead18-35dd-4083-b064-498b4611f564,"Thomas Boateng",Male,"Bono","Berekum East","Kromokrom",,,47,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+ddd687fb-f8b3-4385-83ef-f76af0f874d5,"B. B. Barima",Male,"Bono","Berekum East","Kromokrom",,,58,,4,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+5368b8f1-78db-42be-985d-76bbf13fc324,"Agyeiwaa Theresa",Female,"Bono","Berekum East","Kromokrom",,,46,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+732d8db8-8cc6-4ce2-a78c-492aa6a044de,"Asare Bediako",Male,"Bono","Berekum East","Kromokrom",,,37,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+63adba98-aaae-4db1-943b-80ab7869aef6,"Kwadwo Korang",Male,"Bono","Berekum East","Kromokrom",,,58,,4,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+99ff1c1f-a2ca-4904-bde8-db1f5024d7ae,"Oppong Sampson",Male,"Bono","Berekum East","Kromokrom",,,33,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+3ea65432-5c1b-4b36-9f8b-353edcf1f587,"Aponsa Rose",Female,"Bono","Berekum East","Kromokrom",,,43,,8,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+28899252-7773-4570-9c96-db7447a4f5ad,"Lydia Asieduwaa",Female,"Bono","Berekum East","Kromokrom",,,40,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+3a92863e-7b4a-49a5-8625-0b42a6fb737c,"Kyeremaa Constance",Female,"Bono","Berekum East","Kromokrom",,,44,,4,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+db59b2df-dc7c-44f0-8a02-8f9dfd0f45ae,"Kwabena Christian",Male,"Bono","Berekum East","Kromokrom",,,47,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+e34e4bed-f025-48ea-930f-62b46071bda7,"Rev. Joe Anelo",Male,"Bono","Berekum East","Kromokrom",,,44,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+8267f227-b554-41f1-a4f3-ec5f4078c22e,"Isaac Obeng Kyere",Male,"Bono","Berekum East","Kromokrom",,,28,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+306e690a-13c1-4467-a0ec-9d1b556adedb,"Ramond Danso",Male,"Bono","Berekum East","Kromokrom",,,47,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+1e7eb661-4404-4f29-89bc-819f4b5da2dc,"Oppong Jacharia",Male,"Bono","Berekum East","Kromokrom",,,54,,4,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+2c90e77f-ff82-4dcf-8fa2-0b7e502c31f4,"Osei Jones",Male,"Bono","Berekum East","Kromokrom",,,46,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+cd31322e-763d-470c-bbdd-1c6ae80340c8,"J. B. Frimpong",Male,"Bono","Berekum East","Kromokrom",,,37,,7,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+7c712479-56b8-45b8-851e-c299d31d4cd0,"Oppong Marting",Male,"Bono","Berekum East","Kromokrom",,,58,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+71872fde-413f-4b2c-bff3-3f22b6c5db9b,"Isifo Gyamfi",Male,"Bono","Berekum East","Kromokrom",,,33,,7,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+8862be20-f68f-4912-8cfd-5bf6c2a37f1b,"Afia Serwaa",Female,"Bono","Berekum East","Kromokrom",,,43,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+936a5086-69ea-4d34-8f49-8ae5bda571ad,"Kyeremaa Margaret",Female,"Bono","Berekum East","Kromokrom",,,40,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+ed0837cf-2b59-4de9-8c3a-fd25d0ce95dd,"Asamoa Bismark",Male,"Bono","Berekum East","Kromokrom",,,44,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+fbd68a87-d9b1-4618-9618-fc57ac2863f4,"Emilia Saraa",Female,"Bono","Berekum East","Kromokrom",,,47,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+c7b9acf1-9eef-4d00-8af6-d5fe6a910d95,"Prince Tabiri",Male,"Bono","Berekum East","Kromokrom",,,21,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+450ef281-0f31-4c83-aea9-d3f571595096,"Yeboah Charles",Male,"Bono","Berekum East","Kromokrom",,,32,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+be221cbc-6890-48d9-a550-1319652ba40b,"Boateng Collins",Male,"Bono","Berekum East","Kromokrom",,,21,,7,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+846e27e1-4805-452b-a77e-9b81a15578b7,"Mercy Mrboh",Female,"Bono","Berekum East","Kromokrom",,,27,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+a2dd9e7b-1a02-4283-97bd-1ef1019e703e,"Amponsaa Victoria",Female,"Bono","Berekum East","Kromokrom",,,21,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+41635b4e-1fae-4470-870f-e1b52f923a84,"Kwaku Yeboah",Male,"Bono","Berekum East","Kromokrom",,,21,,4,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+4a9690cb-9bcc-4deb-9fb0-e97a9cc870ed,"Kwabena Yeboah Solomon",Male,"Bono","Berekum East","Kromokrom",,,31,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+47cbfcbf-6cf2-4614-af19-9658830119a1,"Yaw Fosu",Male,"Bono","Berekum East","Kromokrom",,,32,,4,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+abbc4480-8429-48d5-8475-c6a775884194,"Kyere Abraham",Male,"Bono","Berekum East","Kromokrom",,,28,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+059c1cac-6ede-49e0-9095-267ab353dbd2,"Margarat Amankwaa",Female,"Bono","Berekum East","Kromokrom",,,27,,4,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+358f05a9-e764-4c18-8dcc-0be20f6ad318,"Afia Mama",Female,"Bono","Berekum East","Kromokrom",,,26,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+b295d3f5-bb68-47e2-a7ae-ca0b037b44e1,"Afra Felecia",Female,"Bono","Berekum East","Kromokrom",,,34,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+70ac07bb-3603-4515-9161-9e976f248936,"I. K. Obeng",Male,"Bono","Berekum East","Kromokrom",,,33,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+1a9b4eb7-10ea-4b5c-b800-f9f7af247c37,"Ded Salome",Male,"Bono","Berekum East","Kromokrom",,,34,,7,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+bb3aeac3-7a34-45c1-a55a-b7a48a718483,"Kwabena Brobo",Male,"Bono","Berekum East","Kromokrom",,,33,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+e16d29a4-d2e5-4404-9ab5-0f3bc61ecc49,"Rose Adarkwa",Female,"Bono","Berekum East","Kromokrom",,,33,,4,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+e76cb136-6451-47ff-8b65-5d3e9a91f6e2,"Kumi Afia Felecia",Female,"Bono","Berekum East","Kromokrom",,,32,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+d87aeb44-7108-4ba6-8ce2-5fba0b77ca58,"Obeng Peter",Male,"Bono","Berekum East","Kromokrom",,,47,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+c59b805c-602b-499f-b474-a6a1877a928d,"Ama Mansa",Female,"Bono","Berekum East","Kromokrom",,,59,,7,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+ccbc76ab-355b-44e1-a991-9b729330f333,"Kwasi Yankyera",Male,"Bono","Berekum East","Kromokrom",,,46,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+f7067f26-06ed-41c1-bcc9-3c64704a79fb,"Kwasi Siaw",Male,"Bono","Berekum East","Kromokrom",,,37,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+6ffc59ec-f78f-48b8-9070-8c83dea69e71,"Ofori Grace",Female,"Bono","Berekum East","Kromokrom",,,58,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+2a3c5f01-823c-49b8-9c93-282585d4c818,"Gyamaa Felecia",Female,"Bono","Berekum East","Kromokrom",,,33,,7,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+a7731d36-fa8f-42f4-b51c-e60f875e3118,"Nana Appiah Hene",Male,"Bono","Berekum East","Kromokrom",,,43,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+3c32b834-3624-424d-ab72-01481c1e4441,"Kwabena Aboagye",Male,"Bono","Berekum East","Kromokrom",,,40,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+e06a8ab4-754d-4bac-86a9-5bb8e1180e9c,"Joseph Amponsah",Male,"Bono","Berekum East","Kromokrom",,,44,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+1e810594-d9be-479b-8cc9-d1b332f635a0,"Ama Ameyaa",Female,"Bono","Berekum East","Kromokrom",,,47,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+a0496c3c-cfa2-473c-a477-ce0e120e0d13,"Kwame Seth",Male,"Bono","Berekum East","Kromokrom",,,44,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+bf38e9e6-ce8a-4b52-b988-9aed5b7d07dc,"Afia Kuma",Female,"Bono","Berekum East","Kromokrom",,,28,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+29404527-6d7c-4a99-b837-e2cd8d64f40d,"Kwaku Francis",Male,"Bono","Berekum East","Kromokrom",,,47,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+f0868cd1-5802-45aa-a17d-a8b2245e0fa1,"Ama Fosuaa",Female,"Bono","Berekum East","Kromokrom",,,60,,4,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+b682145c-f6fc-4a2a-a7f7-660dd68c772d,"Akosua Yeboaa",Female,"Bono","Berekum East","Kromokrom",,,46,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+ed446742-b0d6-4d14-9d5f-ae343ba02550,"Kwadwo Saase",Male,"Bono","Berekum East","Kromokrom",,,37,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+fc470595-6cba-4de0-9086-126a8511e4d5,"Isaka Kramo",Male,"Bono","Berekum East","Kromokrom",,,58,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+1d32e7b6-e3bf-47a1-a830-2fb1f2b92d68,"Kwabena Kumi",Male,"Bono","Berekum East","Kromokrom",,,33,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+6b54c477-e9ff-463b-8eb0-168d8faf1439,"Pomaa Mary",Female,"Bono","Berekum East","Kromokrom",,,43,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+dc0b80ac-c2b5-4c97-b5d0-89e3ac03bcbb,"Bright Issa",Male,"Bono","Berekum East","Kromokrom",,,40,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+56cbab80-a6cc-411e-af51-aa94345b70e4,"Asamoa Martin",Male,"Bono","Berekum East","Kromokrom",,,44,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+777c52bf-83fe-4995-990f-b19946088869,"Kwasi Baah",Male,"Bono","Berekum East","Kromokrom",,,47,,9,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+9c32b8b8-206e-4d04-8e6a-47303f55965d,"Asuama Felecia",Female,"Bono","Berekum East","Kromokrom",,,44,,8,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+8155562d-c928-4aec-b19c-bf53e8b7a9f2,"Siawn Haluna",Male,"Bono","Berekum East","Kromokrom",,,28,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+5000ce5a-a420-48a5-9720-f449c5a5cfcb,"J. K. Korang",Male,"Bono","Berekum East","Kromokrom",,,47,,4,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+7c5c5e27-d890-4aff-9efe-d01b720d284b,"Yaw Wireku Pepra",Male,"Bono","Berekum East","Kromokrom",,,49,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+24399d9d-58dc-408d-97fd-2a1413c2dd76,"Rose Kyeraa",Female,"Bono","Berekum East","Kromokrom",,,46,,4,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+0f9e3c2a-d2db-4934-acf8-3e955ab11831,"Pomaa Grace",Female,"Bono","Berekum East","Kromokrom",,,37,,9,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+550b246f-4e7b-43ac-8972-4ce316398b99,"Yaa Gyamaa",Female,"Bono","Berekum East","Kromokrom",,,58,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+d91579df-560c-4c8e-b8af-7eb93900e6af,"Kosua Ferkaa",Female,"Bono","Berekum East","Kromokrom",,,33,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+c412a260-fef1-4229-938d-5aded7463092,"Afia Serwaa Tawia",Female,"Bono","Berekum East","Kromokrom",,,43,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+c51db7f6-d8ff-4876-b89b-5b5ced025b40,"Gyawu Comfort",Female,"Bono","Berekum East","Kromokrom",,,40,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+5e2752a4-64c4-4805-a073-73b4f4cc5e21,"Esther Kwamma",Female,"Bono","Berekum East","Kromokrom",,,44,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+4cdbb76d-49ab-4aaa-abbf-e65cda4a316b,"Oppong Margaret",Female,"Bono","Berekum East","Kromokrom",,,47,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+0b59a89a-fbea-45fc-b44b-c763f9d16b33,"Afia Sakyiwaa",Female,"Bono","Berekum East","Kromokrom",,,44,,8,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+8994c895-f464-47eb-8f62-78eff2b81a1e,"A. Awua",Male,"Bono","Berekum East","Kromokrom",,,28,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+7d9835d4-0ad1-4257-98ab-ce00e81f094d,"Moses Kyere",Male,"Bono","Berekum East","Kromokrom",,,47,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+d0166027-3b0c-431e-968c-254a08be226f,"Brago Constance",Female,"Bono","Berekum East","Kromokrom",,,59,,8,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+54149dff-93c4-4797-8110-0890705eab43,"Badu Kate",Male,"Bono","Berekum East","Kromokrom",,,46,,8,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+ac63cfb3-846b-4473-b25f-6d23ad5ad799,"Alhaji Baba",Male,"Bono","Berekum East","Kromokrom",,,37,,4,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+9982dcf7-3530-47c7-a034-6b7b62432b4d,"Alhaji Baba 1",Male,"Bono","Berekum East","Kromokrom",,,58,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+eedbc7dc-9121-4603-9210-99ec75e2014f,"Kyeraa Esther",Female,"Bono","Berekum East","Kromokrom",,,33,,4,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+3d41c621-1575-432a-805b-6a8ab25a59d2,"Kisiwaa Helena",Female,"Bono","Berekum East","Kromokrom",,,43,,7,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+58670033-68fa-4414-9197-310c6e7d23c0,"Kwaku Okra",Male,"Bono","Berekum East","Kromokrom",,,40,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+340d803a-7fb8-4cfb-b300-f1b8d3fb3a1f,"Kyeremeh Kwasi",Male,"Bono","Berekum East","Kromokrom",,,44,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+ad45301a-b626-4c7f-9ec4-b12380ac1c3b,"Anthony Febiri",Male,"Bono","Berekum East","Kromokrom",,,47,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+c3012bc7-6a18-4183-be73-4a7a7d2e8df0,"Kwame Kumi",Male,"Bono","Berekum East","Kromokrom",,,44,,4,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+539093f4-a503-4d8f-9a56-7fbb9befda2d,"Kwame Kumi",Male,"Bono","Berekum East","Kromokrom",,,35,,8,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+5f218926-c46a-4d9f-8dad-293d39c2d09b,"Joe Kumi",Male,"Bono","Berekum East","Kromokrom",,,21,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+5e0a1f0f-da21-46ff-afa9-c7558436d9a5,"Akua Nkruma",Female,"Bono","Berekum East","Kromokrom",,,32,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+7fc21a61-0cb6-4ea7-be15-5ce659b2244d,"Kwame Bisiwuo",Male,"Bono","Berekum East","Kromokrom",,,43,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+ab2375f3-9703-463f-b33b-1512bbd91bcd,"Siaw Gladys",Female,"Bono","Berekum East","Kromokrom",,,40,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+d08499c1-6b38-4e61-83b4-97c928d8c2e3,"Ben Ata Poku",Male,"Bono","Berekum East","Kromokrom",,,44,,4,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+ef359479-74cd-440e-b1ba-e588adaefe6b,"John Frimpong",Male,"Bono","Berekum East","Kromokrom",,,47,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+a1ff541a-faa0-47fb-ae50-3d1182c4572d,"Augustine Kumi",Male,"Bono","Berekum East","Kromokrom",,,44,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+f539c26d-8904-4a65-93d1-fe3d4057114c,"Badu Peter",Male,"Bono","Berekum East","Kromokrom",,,28,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+9070c7e9-9917-445e-bdcd-ad7556d8dd7f,"Yeboaa Ernestina",Female,"Bono","Berekum East","Kromokrom",,,47,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+68704487-da57-4303-a628-e9f2e270dfba,"Abena Mansa",Female,"Bono","Berekum East","Kromokrom",,,58,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+4c5a59ae-e286-4f4e-a23e-5fb53c6de118,"Charles K. Kyereme",Male,"Bono","Berekum East","Kromokrom",,,46,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+26acdccc-edba-4090-92fd-932445fb283d,"Oppong Martin",Male,"Bono","Berekum East","Kromokrom",,,37,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+179bd576-3a9b-49c0-90a0-c56df9d1290f,"Yeboa Charles",Male,"Bono","Berekum East","Kromokrom",,,58,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+cbd6eda8-8984-4dc3-9e62-391b947cd873,"Abena Buronya",Male,"Bono","Berekum East","Kromokrom",,,33,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+2f1382a1-ac0f-488f-9f93-3591b6f42759,"Oppong Zakaria",Male,"Bono","Berekum East","Kromokrom",,,43,,9,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+6866f6eb-d011-4b05-82bd-3cf15ab9e712,"Kwabena Christophia",Female,"Bono","Berekum East","Kromokrom",,,40,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+e7934517-ad58-404e-a8d9-975a9edf0e51,"Oppong Susana",Female,"Bono","Berekum East","Kromokrom",,,44,,8,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+bab51218-c29f-4412-83c7-2e31caf361b4,"Enock Kumi",Male,"Bono","Berekum East","Kromokrom",,,47,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+3bd626c2-2aa0-47a0-92a1-536912733296,"Yeboah K. Martin",Male,"Bono","Berekum East","Kromokrom",,,44,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+efdc0fb2-657c-4faf-b06b-490b22a174ad,"Thomas K. Gyabaa",Male,"Bono","Berekum East","Kromokrom",,,28,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+0e170338-c816-47c5-96fe-373c9876badd,"Asamoa Stephen",Male,"Bono","Berekum East","Kromokrom",,,47,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+44b9b5e2-a2b4-4141-849e-bacafb42432b,"Acqua Daniel",Male,"Bono","Berekum East","Kromokrom",,,54,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+5eee9d84-c782-4ed0-99ae-2b60c05131c0,"Asare Simon",Male,"Bono","Berekum East","Kromokrom",,,46,,4,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+cce03e4a-bd33-42cd-ad96-218ce64a9b72,"Abuu Mohammed",Male,"Bono","Berekum East","Kromokrom",,,37,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+7e09a2ca-eb42-4c87-93ac-845588e57d46,"John Aferoyo",Male,"Bono","Berekum East","Kromokrom",,,58,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+11830089-9d8f-4c59-b6f4-df18c365a3b6,"Nan Afriyie Boakye",Male,"Bono","Berekum East","Kromokrom",,,33,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+2cf353da-4057-4242-bb13-8e195fc42841,"Thomas Y. Tawia",Male,"Bono","Berekum East","Kromokrom",,,43,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+4a849b58-76ef-4e12-8deb-0e8ad40aded0,"Yaw Nti",Male,"Bono","Berekum East","Kromokrom",,,40,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+cd8f2611-11b5-45d2-8e9e-ccad254b38f7,"L. K. Pepra",Male,"Bono","Berekum East","Kromokrom",,,44,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+4dc48821-06b4-4ff3-b082-ba5e759eefde,"Ameyaa Theresa",Male,"Bono","Berekum East","Kromokrom",,,47,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+09a1b6f9-7bb6-46d7-8f8b-884ec1d0d1b5,"Isaackyere",Male,"Bono","Berekum East","Kromokrom",,,18,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+e74e510d-ac02-4377-8a0b-2628385deee6,"Kwame Akwa",Male,"Bono","Berekum East","Kromokrom",,,18,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+63f33c28-d488-4256-b881-e168024adc63,"Rev. Alex Pautial",Male,"Bono","Berekum East","Kromokrom",,,19,,9,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+2c707307-523d-49e6-b45e-ea2a091a0f16,"Sophia Kumi",Male,"Bono","Berekum East","Kromokrom",,,32,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+6639e742-74e1-446b-8adb-857ea832d033,"Foriwaa Grace",Female,"Bono","Berekum East","Kromokrom",,,33,,8,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+15af0286-dfe5-455c-a8b4-c55d14b50db2,"Twumwaa Cecelia",Female,"Bono","Berekum East","Kromokrom",,,23,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+7872aae2-a230-4401-9caf-f31913e2b944,"Kwaku Boakye",Male,"Bono","Berekum East","Kromokrom",,,32,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+7b9c280f-ffe2-4ed2-bd18-c807e6a86d28,"Siaw Ansu",Male,"Bono","Berekum East","Kromokrom",,,32,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+23813365-1357-4d08-88ac-1354c84b3ea3,"Kwaku Otaa",Male,"Bono","Berekum East","Kromokrom",,,35,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+d4bd2c71-895b-4978-acd7-a25b7fd3434e,"Elder Thomas Yeboah",Male,"Bono","Berekum East","Kromokrom",,,31,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+f2160fda-8296-4b33-93a6-54363db1a755,"Afia Hawa",Female,"Bono","Berekum East","Kromokrom",,,23,,4,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+eaac15de-2e74-4c4a-9e66-21e012567a9f,"Evans Kumi",Male,"Bono","Berekum East","Kromokrom",,,21,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+1b154619-20d5-435d-ad19-5a0478ce6ecd,"Agyei Patrick",Male,"Bono","Berekum East","Kromokrom",,,20,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+f70a7ee9-1333-41ba-835f-27dc641acbe0,"Poda Roland",Male,"Bono","Berekum East","Kromokrom",,,25,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+fb70d393-291b-4c5e-8254-1ec13e36680e,"Bright Owusu",Male,"Bono","Berekum East","Kromokrom",,,23,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+78ef5110-163d-4a88-b9df-de4ca84d8675,"Yeboah Jerry",Male,"Bono","Berekum East","Kromokrom",,,24,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+39c958b3-dd72-42df-8612-1a9264589898,"A. K. Kumi",Male,"Bono","Berekum East","Kromokrom",,,21,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+44bbbb26-2b56-4ab2-84ac-41dd9ff09208,"Mamuru Krmo",Male,"Bono","Berekum East","Kromokrom",,,23,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+7addbd1f-777b-4ae4-a585-4a10f0b58617,"Owusuaa Sandra",Female,"Bono","Berekum East","Kromokrom",,,25,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+c1b15129-6ef7-4dbc-a436-f4ccaa66175a,"Kwabena Bediako",Male,"Bono","Berekum East","Kromokrom",,,23,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+82587ee4-13be-47cf-8fad-71b8df5cf48b,"Asuama Cecelia",Female,"Bono","Berekum East","Kromokrom",,,30,,9,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+42c11f66-3c59-4496-ba91-2c920fa3403b,"Yaw Kyereme",Male,"Bono","Berekum East","Kromokrom",,,23,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+e21ccb3d-05cb-4aa2-a19c-a5e2f37e92f0,"Mathar Korama",Male,"Bono","Berekum East","Kromokrom",,,21,,8,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+5e29297f-923a-413e-908e-7e3af2ada695,"Amponsah A Theresa",Female,"Bono","Berekum East","Kromokrom",,,34,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+7ea078a4-02b0-4601-9b6a-d645c101f5fe,"Kyere Felix",Male,"Bono","Berekum East","Kromokrom",,,28,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+e69b5d65-a890-4829-9d08-a31bf5540b8e,"Yaw Asamoa",Male,"Bono","Berekum East","K. Bour 2",,,23,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+9dc55b70-0a5e-4a1f-bf21-c2bacf84c737,"Nicholas Asamoa Kwame",Male,"Bono","Berekum East","K. Bour 2",,,21,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+fef7b71f-a52b-4264-9cdc-37f18f478176,"Kwadwo Bosea",Male,"Bono","Berekum East","K. Bour 2",,,31,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+5995e2f4-8a5c-4a6d-9f27-380284816c3a,"Kosua Tawia",Female,"Bono","Berekum East","K. Bour 2",,,21,,4,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+79242619-3cd3-439e-937a-0629e4836333,"Beatrice Kisiwaa",Female,"Bono","Berekum East","K. Bour 2",,,21,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+bae76086-87ae-406c-9559-3614a0c8005f,"Kwadwo Asamoa (asukese)",Male,"Bono","Berekum East","K. Bour 2",,,30,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+7847aa58-54f7-4836-b6ae-f9e555c6499e,"Atta Tabiri",Male,"Bono","Berekum East","K. Bour 2",,,31,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+c1cb9613-4e68-4a36-90c0-c67a1c70818b,"Hellina Nyarko No. 1 (ksu)",Male,"Bono","Berekum East","K. Bour 2",,,21,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+3b6defdf-7cf8-40ac-8605-127e2a205f8e,"Amma Bisiwuo",Female,"Bono","Berekum East","K. Bour 2",,,34,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+887e8c41-ae4e-474e-a743-7767202b5ce5,"Kwasi Aboagye",Male,"Bono","Berekum East","K. Bour 2",,,32,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+02e91c7b-0ef0-4829-b241-cdabf59aa69d,"Kwame Acqua",Male,"Bono","Berekum East","K. Bour 2",,,32,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+0743e8b2-ea25-44f7-a56b-32f1cc654bdc,"Amewine Paul (dinkese)",Male,"Bono","Berekum East","K. Bour 2",,,21,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+23ac9784-cb2b-4c65-8362-e8c1dda6792f,"Kwame Yeboah Joseph",Male,"Bono","Berekum East","K. Bour 2",,,21,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+50086625-7620-4532-b242-5d3ea441ec2f,"Kwame Twum",Male,"Bono","Berekum East","K. Bour 2",,,32,,9,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+7b181ac0-e2b0-45db-b350-1cc8df063ce5,"A. B. M. Yeboah",Male,"Bono","Berekum East","K. Bour 2",,,32,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+40b5e971-c548-4e9e-bbcb-b3982454c642,"Seidu Moshi",Male,"Bono","Berekum East","K. Bour 2",,,28,,8,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+e559bd52-d201-422a-877b-728181fc3ccf,"Kwadwo Adjei Gordon",Male,"Bono","Berekum East","K. Bour 2",,,23,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+28456635-bd36-45c1-80f2-dcc326d5e15f,"Kwasi Boanu",Male,"Bono","Berekum East","K. Bour 2",,,24,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+44533eea-ec92-4866-b338-d3292e5ec48f,"Nsia Daniel",Male,"Bono","Berekum East","K. Bour 2",,,33,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+fc55cce6-6540-46a4-a443-6a5cbcd28560,"Agya Benne",Male,"Bono","Berekum East","K. Bour 2",,,29,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+0bd32f78-f9a6-47f6-a393-065522205af5,"Adoh Stephen",Male,"Bono","Berekum East","K. Bour 2",,,21,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+0698cb2b-58d7-4d08-8f38-07a0c8d770ce,"Kwadwo Amponsah",Male,"Bono","Berekum East","K. Bour 2",,,32,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+5e9344cb-d02d-4d85-9f18-430687ecb70e,"Yaa Kwamma",Male,"Bono","Berekum East","K. Bour 2",,,26,,4,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+971ad574-2456-4697-b4cf-218fbdf2746a,"Kofi Kusi",Male,"Bono","Berekum East","K. Bour 2",,,31,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+6f6ea4fa-f12a-46aa-b4d2-3937019005ca,"Kwaku Manu (dugan)",Male,"Bono","Berekum East","K. Bour 2",,,21,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+5be4857f-db0b-4504-8f8e-73bd3dbc67d1,"Adomah Dominic",Male,"Bono","Berekum East","K. Bour 2",,,32,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+e9293aff-5d61-44f6-8602-b1d7867e322b,"Gabriel Yeboah",Male,"Bono","Berekum East","K. Bour 2",,,21,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+040a9634-7afa-414c-8904-c1820c61d216,"Op. Yaw Yeboah (yy)",Male,"Bono","Berekum East","K. Bour 2",,,23,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+01b01c64-8686-4905-9e19-0842a2ae4dd7,"Ibrahim Donkor",Male,"Bono","Berekum East","K. Bour 2",,,24,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+434a8fc9-c6e5-44a9-9873-49004f2f399e,"Kwaku Kyeremeh",Male,"Bono","Berekum East","K. Bour 2",,,31,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+71a6acd6-2ce2-49f8-9a75-70f90b03fb65,"Kofi Amponsah No. 1",Male,"Bono","Berekum East","K. Bour 2",,,35,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+9039dc44-dd02-42c1-a172-1a6567ccb70a,"Atuboe Atanga Gurushi",Male,"Bono","Berekum East","K. Bour 2",,,32,,4,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+58b1a3d7-27af-4218-b746-2958055b03f9,"Yeboah Augutine",Male,"Bono","Berekum East","K. Bour 2",,,34,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+2a32503a-5354-4eef-a52f-30de27a0fb38,"Amma Nketia",Female,"Bono","Berekum East","K. Bour 2",,,28,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+b2742b8b-8e4e-422c-8783-804614be446b,"Thomas Aboagye",Male,"Bono","Berekum East","K. Bour 2",,,24,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+0ebb6fec-3360-4ac1-86b9-6521bbe8e280,"K. Oppong Anthony",Male,"Bono","Berekum East","K. Bour 2",,,34,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+e58ed0f6-6dd5-4b98-99f1-c590dd2ac076,"Adwoa Yeboaa",Male,"Bono","Berekum East","K. Bour 2",,,32,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+ab1c6d3a-b16a-4275-a37c-317bfdeccc30,"Kojo Ampofo",Male,"Bono","Berekum East","K. Bour 2",,,32,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+700c0d8c-625c-4617-9faf-a83da8f63d23,"Atta Yeboah",Male,"Bono","Berekum East","K. Bour 2",,,21,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+51a72be2-477e-422f-ba9a-5046573bf4c2,"Abena Asamoa",Female,"Bono","Berekum East","K. Bour 2",,,22,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+8204382d-0a09-41bf-a17c-f4d29fa92066,"Kyeraa Janet",Female,"Bono","Berekum East","K. Bour 2",,,21,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+a8dd36c4-adcc-46f4-a20d-f7a9bef3a6d1,"Amma Vida",Female,"Bono","Berekum East","K. Bour 2",,,27,,9,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+90a1833f-1a3b-4867-85a0-0b691d4653ee,"Kwabena Agyei Yeboah",Male,"Bono","Berekum East","K. Bour 2",,,31,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+4c05c6b2-7bf2-433c-8091-f96938cd45c4,"Badu Johnson",Male,"Bono","Berekum East","K. Bour 2",,,21,,8,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+b7f52222-f330-4fed-91d3-ecfce2160a34,"Amma Badu",Female,"Bono","Berekum East","K. Bour 2",,,31,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+421e5c98-ec30-407d-9a78-307a114afa28,"Philip Amankona",Male,"Bono","Berekum East","K. Bour 2",,,31,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+74dc41ed-bfc5-4b6c-a460-00e91798edd8,"Adoko Adombire",Male,"Bono","Berekum East","K. Bour 2",,,21,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+86757f17-6378-4cc3-a624-c9fac5c61d3a,"Addo Stephen",Male,"Bono","Berekum East","K. Bour 2",,,23,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+e4e9f6c8-9730-49ca-9666-51ac09a290b7,"Yeboa Augustine",Male,"Bono","Berekum East","K. Bour 2",,,21,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+a0c42041-3b63-4862-a8e4-755b5aaebcd2,"Kwasi Paul",Male,"Bono","Berekum East","K. Bour 2",,,34,,4,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+c8619347-6ccd-4942-bb0a-230636ea9465,"Yaa Agyeiwaa",Female,"Bono","Berekum East","K. Bour 2",,,21,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+2ff6294b-f754-4a35-9564-401b1984e8c5,"Kwaku Martin",Male,"Bono","Berekum East","K. Bour 2",,,31,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+af23b29a-c1af-4bc0-a652-2e6e7b66ff09,"Yaw Appeah (nsuatia)",Male,"Bono","Berekum East","K. Bour 2",,,21,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+53d55fc9-3942-43f9-b548-fd225b63ad59,"Ebenezer Gurushi",Male,"Bono","Berekum East","K. Bour 2",,,21,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+7b995c4d-f54a-45d9-a524-1126563b5bca,"Akane Abdine Matthew",Male,"Bono","Berekum East","K. Bour 2",,,23,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+2d0e43f5-1187-4efc-8f40-1bededbe4b8b,"Adwoa Manu",Male,"Bono","Berekum East","K. Bour 2",,,31,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+9e3200f3-0419-4a20-a970-f204d93fa89a,"Burama Bukari",Male,"Bono","Berekum East","K. Bour 2",,,24,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+10a8e0d2-8db7-4921-ab11-b608526520cf,"Osei Samuel",Male,"Bono","Berekum East","K. Bour 2",,,25,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+b62abcab-2fc2-49a6-b89b-64e17d1904a5,"Kwasi Manu (seth)",Male,"Bono","Berekum East","K. Bour 2",,,32,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+b4bf7f86-5773-43a8-afee-1b121aa49890,"Dinkese Gurushi",Male,"Bono","Berekum East","K. Bour 2",,,31,,9,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+7e925bbf-cb73-4975-baa2-940a0da3ba76,"Abena Nkafia",Female,"Bono","Berekum East","K. Bour 2",,,35,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+f30195df-4270-47bd-8d61-de5b770b9a45,"Kwame Agyei Thomas",Male,"Bono","Berekum East","K. Bour 2",,,34,,8,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+b9888557-02d8-4649-8798-a2c58c28c7fd,"Adoko Gurushi",Male,"Bono","Berekum East","K. Bour 2",,,21,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+2924785a-a75d-47f9-8867-b73709c96b30,"Tabiri Thomas (okro)",Male,"Bono","Berekum East","K. Bour 2",,,21,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+d66cac97-125a-4433-ac9d-384218d54230,"Agartha Kyeremaa",Female,"Bono","Berekum East","K. Bour 2",,,24,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+f5b29061-466d-49c5-a9ed-23e9f42c0b43,"Nana Kwadwo Yeboah",Male,"Bono","Berekum East","K. Bour 2",,,21,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+b4b9c90f-b698-4593-9bb0-9ff27774d876,"Nyaaba Clement",Male,"Bono","Berekum East","K. Bour 2",,,21,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+68f2791d-6a27-4b93-b5f3-2ac5ee0f4d7f,"Comfort Yaa Pomaa",Female,"Bono","Berekum East","K. Bour 2",,,34,,4,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+da48098e-9ae2-451e-8677-23e2e46b3456,"Adjei Kwadwo (dige)",Male,"Bono","Berekum East","K. Bour 2",,,28,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+4a060f9c-350c-412b-8ed6-9c01b12f570a,"Halidu Duah",Male,"Bono","Berekum East","K. Bour 2",,,23,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+69320c62-d854-4995-8f33-5a132d023c74,"Afia Agyeiwaa",Female,"Bono","Berekum East","K. Bour 2",,,2,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+d58d054e-f228-4f71-bf2e-22fec6f12691,"Nana Ampaben Kyereme",Male,"Bono","Berekum East","K. Bour 2",,,23,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+07c9f449-5ac1-44b5-805d-9939990db7b3,"Yaw Asamoa Alex",Male,"Bono","Berekum East","K. Bour 2",,,27,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+8c00fbdf-2217-43f4-b6de-d030f4945c9c,"Adjei Francis",Male,"Bono","Berekum East","K. Bour 2",,,27,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+5914a9c4-42a2-4d71-bc58-14b042eef8db,"Nsoaa Agugustine",Male,"Bono","Berekum East","K. Bour 2",,,30,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+36c11b57-c0cd-42c8-9cd3-be736729e237,"Fanta Kramo",Male,"Bono","Berekum East","K. Bour 2",,,31,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+82051bbe-b0de-43af-b4ea-eff57e4274fa,"Yeboah Michael",Male,"Bono","Berekum East","K. Bour 2",,,32,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+786d4a84-cd7f-4e41-a742-a9b7b1204f3c,"Kofi Kyereme",Male,"Bono","Berekum East","K. Bour 2",,,34,,9,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+23c6dbd0-91e4-4be3-a4a6-749affd46071,"Serekye Krmo",Male,"Bono","Berekum East","K. Bour 2",,,31,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+a3003326-6419-4c66-a001-2ce0dfc5c4de,"Georgina Yeboaa",Female,"Bono","Berekum East","K. Bour 2",,,21,,8,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+78514ae2-6c3c-4317-a6bc-3b4788a13355,"Fatima Benewaa",Female,"Bono","Berekum East","K. Bour 2",,,32,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+a0c01a46-2197-4025-a514-fb0a8a643c72,"Felicia Twumwaa",Female,"Bono","Berekum East","K. Bour 2",,,24,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+1f5de130-51ae-4eaa-b192-1bab0d723851,"Yaa Adoma",Female,"Bono","Berekum East","K. Bour 2",,,23,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+10ba68df-4efe-4ba1-b388-bbbb834003c5,"Yaa Agyeiwaa",Female,"Bono","Berekum East","K. Bour 2",,,25,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+f76c151f-a086-4e25-b5f4-6edab95c9d7d,"Kwasi Tawia",Male,"Bono","Berekum East","K. Bour 2",,,29,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+ca48b0ba-9069-47f9-840f-ca3a9d0779ff,"Kwaku Owusu",Male,"Bono","Berekum East","K. Bour 2",,,21,,4,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+6a143c64-bc78-463b-b53f-f3ee609a42c2,"Pomaa Juliana",Female,"Bono","Berekum East","K. Bour 2",,,22,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+7d87e204-d02b-40fa-aa5f-803b509d75fb,"Kwadwo Michael",Male,"Bono","Berekum East","K. Bour 2",,,32,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+ea6f48ee-3204-43fe-961a-b8d48142ced4,"Tuah Martin",Male,"Bono","Berekum East","K. Bour 2",,,21,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+55508b95-3496-4d51-9671-f05cb57e2777,"Amponsah Simon",Male,"Bono","Berekum East","K. Bour 2",,,23,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+b7a6358c-5499-408e-a10a-3000db817c4a,"Teacher Tuah (tunasuano)",Male,"Bono","Berekum East","K. Bour 2",,,31,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+205b8612-59c4-40ab-ac23-69bee2e76b3c,"Nana Kwadwo Yeboah",Male,"Bono","Berekum East","K. Bour 2",,,24,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+ac65d826-8d13-4b0f-82e7-dceb289c370f,"Abuu Akyemfoo",Male,"Bono","Berekum East","K. Bour 2",,,34,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+b2a37672-d9e7-4c0e-88ea-786dae104d36,"William Asamoah Kwaku",Male,"Bono","Berekum East","K. Bour 2",,,21,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+018167a6-2440-4ce3-9576-f4756cb12dc8,"Kwaku Yeboah",Male,"Bono","Berekum East","K. Bour 2",,,21,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+f53b481c-76a7-4341-aef9-8419e323b5ac,"Yaa Bea",Female,"Bono","Berekum East","K. Bour 2",,,32,,9,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+051e4fa9-0746-4e8d-8c9c-21b066388a90,"Kumi Grace",Female,"Bono","Berekum East","K. Bour 2",,,26,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+379ba307-203d-4982-b4a3-b7b3ebe6c3da,"Kofi Gyamfi",Male,"Bono","Berekum East","K. Bour 2",,,21,,8,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+0d6326fe-d3f3-4169-b9ae-39650f3ae93e,"Aboagyewaa Cecilia",Female,"Bono","Berekum East","K. Bour 2",,,33,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+6a65985f-a49f-4e57-8806-812e6cf12b5e,"Kwadwo Owusu",Male,"Bono","Berekum East","K. Bour 2",,,32,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+a7c3f90e-ea6b-4855-82f4-303623452e91,"Adoma Dominic",Male,"Bono","Berekum East","K. Bour 2",,,41,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+e60366d3-5a6c-40db-8789-8ee1d3cba940,"Yeboah Anthony",Male,"Bono","Berekum East","K. Bour 2",,,20,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+35eb7974-2a3f-4121-8dd2-b4a29ff91075,"Yaw Appea",Male,"Bono","Berekum East","K. Bour 2",,,19,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+f9742193-a2d2-4766-a8e5-6507780eb374,"Amof Martin",Male,"Bono","Berekum East","K. Bour 2",,,19,,4,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+4c02ad2d-061d-4519-9365-1b855eda479a,"Lydia Amoa",Female,"Bono","Berekum East","K. Bour 2",,,18,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+9ef757ac-ee1c-4809-8ee9-dda247f57fc2,"Bad Johnson",Male,"Bono","Berekum East","K. Bour 2",,,21,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+bf292663-a0b6-454a-8d47-9b7b13074ba6,"Michael Yeboah",Male,"Bono","Berekum East","K. Bour 2",,,33,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+fa83304a-00e8-4189-991b-3f7d7280cde5,"Kyeremaa Felicia",Male,"Bono","Berekum East","K. Bour 2",,,23,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+c0a7e7a9-b1ff-4b5d-a034-dabda8428e23,"Agyei Badu Musa",Male,"Bono","Berekum East","K. Bour 2",,,23,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+43c3f46f-5a7d-421d-ae93-688e7736a68d,"Isaka Mohammed",Male,"Bono","Berekum East","K. Bour 2",,,28,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+04377475-7f29-46e4-ae5f-cfcabd657350,"Amponsah Michael",Male,"Bono","Berekum East","K. Bour 2",,,25,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+3e74024d-5878-4143-b9fb-476fb39475e1,"Acqua Peter",Male,"Bono","Berekum East","K. Bour 2",,,23,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+d5170ded-1ee7-4c18-a6b0-0c3b636b3210,"Nyarko Alice",Female,"Bono","Berekum East","Komfourkrom",,,21,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+4293ee3e-2753-41da-9a30-380f9bb77ba0,"Panti Abban",Male,"Bono","Berekum East","Komfourkrom",,,22,,9,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+339dda3f-49e0-4e30-b457-4130db27f106,"Adubia Georgina",Male,"Bono","Berekum East","Komfourkrom",,,25,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+e5a0030b-108f-477a-bca7-a7517066216a,"Saa Stella",Female,"Bono","Berekum East","Komfourkrom",,,23,,8,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+38998465-84bb-4876-b956-0f0e229dfae3,"Adu Stephen",Male,"Bono","Berekum East","Komfourkrom",,,22,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+ea597934-b130-4596-a0ec-cd0d23a73634,"Naomi Nkyibia",Female,"Bono","Berekum East","Komfourkrom",,,35,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+9d921742-2bb7-4077-af63-acd5115b68cb,"Tannor Augustine",Male,"Bono","Berekum East","Komfourkrom",,,35,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+c20203a8-053f-4a16-952b-27939f1ea9a2,"Koosono Joseph",Male,"Bono","Berekum East","Komfourkrom",,,32,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+0d2e10a7-b0c2-4841-9264-857f7c49f073,"Kyereme Stephen",Male,"Bono","Berekum East","Komfourkrom",,,21,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+80dea99f-5ca5-466c-b395-7a78f7cdc944,"Bae Emmanuel",Male,"Bono","Berekum East","Komfourkrom",,,27,,4,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+bd6ee04b-b143-4820-86e6-7ea56a01a72f,"Yewa Gradys",Female,"Bono","Berekum East","Komfourkrom",,,25,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+e2b21e54-55fa-43c7-8e7e-26aedd388f6a,"Ankama Joseph",Male,"Bono","Berekum East","Komfourkrom",,,24,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+885fdc75-7c77-4952-874f-31753b42a3c4,"Sakyiwaa Esther",Female,"Bono","Berekum East","Komfourkrom",,,23,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+f283af17-3800-4199-b879-c4f032939476,"Kyere Simon",Male,"Bono","Berekum East","Komfourkrom",,,21,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+1491d907-35b2-4ba2-9bc4-3b2d070f35a4,"Twumwaa Veronica",Male,"Bono","Berekum East","Komfourkrom",,,21,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+14254946-150c-4a06-954b-605022698f30,"Sakyi Charles",Male,"Bono","Berekum East","Komfourkrom",,,23,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+1bee23fd-8cc3-4f29-b64e-459dd71d2f86,"Kwadwo Agyei",Male,"Bono","Berekum East","Komfourkrom",,,32,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+9a625ccf-e29b-462c-bad8-3a3c146a84e0,"Yeboah Francis",Male,"Bono","Berekum East","Komfourkrom",,,32,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+e48b6633-6cd2-4ffd-a78d-9373ad86a7d9,"Dukuu Joseph",Male,"Bono","Berekum East","Komfourkrom",,,35,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+34487614-7c3b-43e9-a565-137ccf26a09f,"Yeboa Joseph",Male,"Bono","Berekum East","Komfourkrom",,,31,,9,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+13ffd7d3-dffe-4c18-a222-4222f4f32114,"Kwabea Grace",Male,"Bono","Berekum East","Komfourkrom",,,21,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+5e01d769-37db-459d-813f-d63557d18946,"Adu Richard",Male,"Bono","Berekum East","Komfourkrom",,,23,,8,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+d4e61d32-d716-4809-900c-bc748dab7e93,"Nketia Augustine",Male,"Bono","Berekum East","Komfourkrom",,,24,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+37d826f4-62ef-44c7-86f9-67bcf170553f,"Agartha Kurwaa",Male,"Bono","Berekum East","Komfourkrom",,,23,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+147bd3ee-79ef-41a2-9c55-d91470b0a593,"Akyeaw Gordon",Male,"Bono","Berekum East","Komfourkrom",,,32,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+409905a5-b3cb-4248-8e7d-d0cb9b36deb7,"Kwabena Bosomtwe",Male,"Bono","Berekum East","Komfourkrom",,,24,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+3c430672-900e-4880-997e-ed5e1e1b9239,"Ankama Francis",Male,"Bono","Berekum East","Komfourkrom",,,23,,4,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+975898c9-be22-41e9-897a-af0ac634cf59,"Asuama Agartha",Female,"Bono","Berekum East","Komfourkrom",,,35,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+6b0799db-1546-454a-b967-2ebeff2adb1b,"Ataa Grace",Male,"Bono","Berekum East","Komfourkrom",,,23,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+f2f00bc3-f999-46bb-876b-61155156b6cf,"Boateng Augustine",Male,"Bono","Berekum East","Komfourkrom",,,23,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+4d64e2f4-1a69-4bd8-9336-32535c027d57,"Kraa Paulina",Female,"Bono","Berekum East","Komfourkrom",,,32,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+70dc5d47-c40e-4138-af41-c5abfffcc332,"Nana Yeboa Asuama",Male,"Bono","Berekum East","Komfourkrom",,,35,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+fc3002c8-40eb-4c88-bf70-f7c61c6b317b,"Cathrina Adei",Female,"Bono","Berekum East","Komfourkrom",,,32,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+79561d9a-4ef0-4141-8c77-197056880db2,"Nana Kwame Twum",Male,"Bono","Berekum East","Komfourkrom",,,23,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+80a56a32-1d3a-4ded-afac-ee62b35016ca,"Philip K. Firi",Male,"Bono","Berekum East","Komfourkrom",,,34,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+b434f4bb-7a9c-45b4-bb72-4c6aac24f3fc,"Yeboa Charles",Male,"Bono","Berekum East","Komfourkrom",,,33,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+0f752ff7-bc30-4c3e-95aa-1824478ea4d4,"Antwi Paul",Male,"Bono","Berekum East","Komfourkrom",,,32,,9,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+0e631e02-c910-47de-87b4-f3447c6fde97,"Benmaa Patience",Female,"Bono","Berekum East","Komfourkrom",,,32,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+5a74bd96-d6ec-4901-b398-1add7f55cc8a,"Sawiri George",Male,"Bono","Berekum East","Komfourkrom",,,34,,8,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+1d28249c-b370-4424-9837-273b82d40cff,"Nana Adjei Kyereh",Male,"Bono","Berekum East","Komfourkrom",,,21,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+4f4aad39-cf4b-4c32-a0a9-bb389c5a0eda,"Gyabaa James",Male,"Bono","Berekum East","Komfourkrom",,,24,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+f7d99c15-e90d-4cd0-804a-e1f3b5385232,"Yaw Nsiah",Male,"Bono","Berekum East","Komfourkrom",,,21,,8,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+de099d36-466a-49ea-bfae-88862fa76455,"Agnes Donkor",Female,"Bono","Berekum East","Komfourkrom",,,21,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+b3e38847-5d35-4875-973a-23b6b596e180,"Peter Okyere",Male,"Bono","Berekum East","Komfourkrom",,,25,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+aa225bfd-70fd-4c99-9168-c2ca71c37ee2,"Ata Jacob",Male,"Bono","Berekum East","Komfourkrom",,,24,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+bd4fbc50-9055-4c8f-8be6-9b019ede5a7c,"Op. Yaw Bediako",Male,"Bono","Berekum East","Komfourkrom",,,23,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+746e0a46-a407-405d-9c4f-ddd4d9a04785,"Sakyi Slyvester",Male,"Bono","Berekum East","Komfourkrom",,,22,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+3ce08482-490e-4988-8577-68a2493ed9ff,"Bona Alexander",Male,"Bono","Berekum East","Komfourkrom",,,21,,4,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+db32c7aa-70ed-4d5a-9728-f24a2437d02e,"Op. Kwasi Donkor",Male,"Bono","Berekum East","Komfourkrom",,,24,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+1c45f147-1103-406c-b7c1-1fbec56d6c97,"Agyeiwaa Christiana",Male,"Bono","Berekum East","Komfourkrom",,,21,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+44882e5a-7864-4507-8fc6-35fbc13e16c4,"Kwang Hayford",Male,"Bono","Berekum East","Komfourkrom",,,23,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+5f3755e0-e5c3-4231-b709-be7828780f2d,"Bosea Albert",Male,"Bono","Berekum East","Komfourkrom",,,24,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+07ed1c8f-f00c-4e9f-81c2-85e5c8f400c2,"Tetey Nicholas",Male,"Bono","Berekum East","Komfourkrom",,,21,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+aeb19c21-b87e-4fe6-86d0-55c067f0a4d7,"Kwan Francis",Male,"Bono","Berekum East","Komfourkrom",,,23,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+9248c7ed-36e6-4833-aad1-1e18b663cb49,"A. K. Ata",Male,"Bono","Berekum East","Komfourkrom",,,21,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+a2399eb2-5686-4e20-b4e7-f4a7a9479f44,"Kyereme Charles",Male,"Bono","Berekum East","Komfourkrom",,,23,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+153a0699-ab40-42ac-9926-bd61f97350cf,"Kuma Michael",Male,"Bono","Berekum East","Komfourkrom",,,24,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+271487eb-0874-43fb-b203-ff4700cda652,"Op. Atta Kwasi",Male,"Bono","Berekum East","Komfourkrom",,,20,,9,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+93aaba95-1b68-4c87-ad1b-5be780859ab7,"Yaw Nkruma",Male,"Bono","Berekum East","Komfourkrom",,,21,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+36356f14-b12a-468e-ab9a-fbf2bbc30a30,"Ofori Emmanuel",Male,"Bono","Berekum East","Komfourkrom",,,23,,2,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+f9174466-c35c-4511-81ae-3001cdbecb64,"Awinsome Akurugo",Male,"Bono","Berekum East","Komfourkrom",,,21,,5,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+eb8b889d-9104-4c14-b7b8-272ff14a29ef,"Ansu Isaac",Male,"Bono","Berekum East","Komfourkrom",,,32,,3,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+f034772f-3861-45d6-b89a-e7910411b76b,"Takyiwaa Veronica",Female,"Bono","Berekum East","Komfourkrom",,,32,,6,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
+382a4329-76c5-470e-918e-dfde31782535,"Konama Gladys",Female,"Bono","Berekum East","Komfourkrom",,,34,,4,[],Active,2026-02-21T21:43:26.297Z,false,2026-02-21T21:43:26.297Z,2026-02-21T21:43:26.297Z
