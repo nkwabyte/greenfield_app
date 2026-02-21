@@ -22,6 +22,41 @@ export interface MediaItem {
     updatedAt: string;
 }
 
+/** Staging row for bulk-import preview. Written by the worker, read by the preview page. */
+export interface StagingFarmer {
+    _id?: number;       // Auto-incremented by Dexie — used for pagination
+    name: string;
+    gender: string;
+    age: number;
+    region: string;
+    district: string;
+    society: string;
+    community: string;
+    farmSize: number;
+    contact: string;
+    educationLevel: string;
+    cropsGrown: string[];
+    status: string;
+    joinDate: string;
+}
+
+/** Unresolvable row from a bulk import. Stored so the user can fix region/name manually. */
+export interface StagingError {
+    _id?: number;       // Auto-incremented
+    rowIndex: number;   // Original row number in the Excel file (for reference)
+    sheet: string;      // Sheet name (= district hint)
+    reason: string;     // Human-readable error description
+    // Raw field values from the Excel row
+    rawName: string;
+    rawRegion: string;
+    rawAge: string;
+    rawGender: string;
+    rawDistrict: string;
+    rawSociety: string;
+    rawCommunity: string;
+    rawFarmSize: string;
+}
+
 export class GreenfieldDB extends Dexie {
     // Entity tables
     farmers!: Table<Farmer>;
@@ -33,6 +68,8 @@ export class GreenfieldDB extends Dexie {
     farmerRequests!: Table<FarmerRequest>; // NEW: Phase 3 Table
     statistics!: Table<{ id: string; byRegion: Record<string, number>; byGender: Record<string, number>; byFarmSize: Record<string, number>; byAge: Record<string, number>; byRegionAndGender: Record<string, Record<string, number>> }>;
     mediaStore!: Table<MediaItem>;        // Offline image store
+    importStaging!: Table<StagingFarmer>; // Temporary staging table for bulk import preview
+    importErrors!: Table<StagingError>;   // Unresolvable rows needing manual region/name fix
 
     // Sync queue table
     syncQueue!: Table<SyncQueueItem>;
@@ -115,6 +152,16 @@ export class GreenfieldDB extends Dexie {
         // Version 8: Add offline media store for images
         this.version(8).stores({
             mediaStore: 'id, entityType, entityId, fieldName, status, createdAt',
+        });
+
+        // Version 9: Add temporary staging table for bulk-import preview
+        this.version(9).stores({
+            importStaging: '++_id, region, district',
+        });
+
+        // Version 10: Add error table for rows that need manual region/name fix
+        this.version(10).stores({
+            importErrors: '++_id, sheet',
         });
     }
 }
