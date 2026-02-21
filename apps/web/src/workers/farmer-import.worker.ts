@@ -20,6 +20,7 @@ import { db } from '../lib/db/schema';
 import type { StagingFarmer, StagingError } from '../lib/db/schema';
 import { v4 as uuidv4 } from 'uuid';
 import type { Farmer } from '../lib/types';
+import type { SyncQueueItem } from '../lib/db/types';
 import { GHANA_REGIONS_AND_DISTRICTS } from '../lib/data/ghana-regions-districts';
 
 // ── Constants ──────────────────────────────────────────────────────────────
@@ -374,7 +375,22 @@ async function commitPhase() {
             updatedAt: now,
         }));
 
-        await db.farmers.bulkPut(farmers);
+        const syncItems: SyncQueueItem[] = farmers.map(f => ({
+            entityType: 'farmer',
+            entityId: f.id,
+            operation: 'create',
+            data: f,
+            timestamp: Date.now(),
+            synced: 0,
+            retryCount: 0,
+            status: 'pending'
+        }));
+
+        await Promise.all([
+            db.farmers.bulkPut(farmers),
+            db.syncQueue.bulkAdd(syncItems)
+        ]);
+
         committed += stagingChunk.length;
         self.postMessage({ type: 'progress', savedSoFar: committed, sheet: 'committing' } satisfies WorkerMessage);
     }

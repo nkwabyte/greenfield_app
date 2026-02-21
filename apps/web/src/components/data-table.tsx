@@ -84,7 +84,7 @@ export function DataTable<TData, TValue>({
   // Internal state for client-side pagination if server-side is not used
   const [internalPagination, setInternalPagination] = React.useState({
     pageIndex: 0,
-    pageSize: 10,
+    pageSize: 100,
   })
 
   // Use external pagination state if provided, otherwise internal

@@ -3,9 +3,17 @@
 import { AppShell } from '@/components/app-shell';
 import { PageHeader } from '@/components/page-header';
 import Link from 'next/link';
-import { Users, Map, UsersRound } from 'lucide-react';
+import { Users, Map, UsersRound, MapPin } from 'lucide-react';
+import { KpiCard } from '@/components/dashboard/kpi-card';
+import { useFarmersCount, useUniqueRegions, useFarmerGroups } from '@/hooks/useData';
 
 export default function FarmersHubPage() {
+    const totalFarmers = useFarmersCount() ?? 0;
+    const uniqueRegions = useUniqueRegions();
+    const totalRegions = uniqueRegions ? uniqueRegions.length : 0;
+    const groups = useFarmerGroups();
+    const totalGroups = groups ? groups.length : 0;
+
     const hubCards = [
         {
             title: 'All Farmers',
@@ -65,6 +73,15 @@ export default function FarmersHubPage() {
                             </div>
                         </Link>
                     ))}
+                </div>
+
+                <div className="mt-10 max-w-6xl">
+                    <h2 className="text-lg font-semibold mb-4 text-slate-900 dark:text-white">Database Summary</h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                        <KpiCard label="Total Farmers" value={totalFarmers.toLocaleString()} icon={Users} />
+                        <KpiCard label="Farmer Groups" value={totalGroups.toLocaleString()} icon={UsersRound} />
+                        <KpiCard label="Regions Covered" value={totalRegions.toLocaleString()} icon={MapPin} />
+                    </div>
                 </div>
             </div>
         </AppShell>
