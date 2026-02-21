@@ -13,6 +13,7 @@ import { isAuthenticated } from '@/lib/auth-utils';
 // Import Supabase services for syncing
 import { purgeSupabaseFarmers } from '@/lib/supabase/services/farmers';
 import { supabase } from '@/lib/supabase/client';
+import { startRealtimeSync, stopRealtimeSync } from './realtime';
 
 
 const MAX_RETRY_COUNT = 3;
@@ -233,10 +234,16 @@ class SyncService {
             return;
         }
 
+        // Start realtime subscriptions
+        startRealtimeSync();
+
         // Sync on connection restore
         connectivityService.subscribe((isOnline) => {
             if (isOnline) {
                 this.syncAll().catch(console.error);
+                startRealtimeSync();
+            } else {
+                stopRealtimeSync();
             }
         });
 
@@ -257,6 +264,7 @@ class SyncService {
      * Stop background sync
      */
     stopBackgroundSync(): void {
+        stopRealtimeSync();
         if (this.syncInterval) {
             clearInterval(this.syncInterval);
             this.syncInterval = null;

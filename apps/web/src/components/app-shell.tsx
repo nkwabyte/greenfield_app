@@ -57,21 +57,26 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   const user = useSelector((state: RootState) => state.auth.user);
   const isAuthenticated = useSelector((state: RootState) => state.auth.isAuthenticated);
   const isLoading = useSelector((state: RootState) => state.auth.isLoading);
+  const [isMounted, setIsMounted] = React.useState(false);
 
   const handleLogout = useLogout();
 
   React.useEffect(() => {
-    if (!isLoading && !isAuthenticated) {
+    setIsMounted(true);
+  }, []);
+
+  React.useEffect(() => {
+    if (isMounted && !isLoading && !isAuthenticated) {
       router.push('/');
     }
-  }, [isAuthenticated, isLoading, router]);
+  }, [isAuthenticated, isLoading, router, isMounted]);
 
   const navItems = React.useMemo(() => {
     if (!user?.role) return [];
     return allNavItems.filter(item => item.roles.includes(user.role));
   }, [user?.role]);
 
-  if (isLoading || !isAuthenticated || !user) {
+  if (!isMounted || isLoading || !isAuthenticated || !user) {
     return (
       <div className="flex h-screen items-center justify-center">
         <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-primary"></div>
