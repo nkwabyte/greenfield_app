@@ -142,14 +142,16 @@ export function useFarmersByGender() {
  */
 export function useRegionCounts() {
     return useLiveQuery(async () => {
-        const counts: Record<string, number> = {};
-        for (const region of GHANA_REGIONS) {
-            counts[region] = await db.farmers.where('region').equals(region).count();
-        }
+        const stats = await getFarmersByRegion();
+        const counts = { ...stats };
 
-        // Also count farmers with no region or unknown region ('N/A' from normalizer)
-        counts['Unknown'] = await db.farmers.where('region').equals('N/A').count() +
-            await db.farmers.where('region').equals('').count();
+        // Ensure N/A or empty regions are combined as "Unknown" for the UI
+        const naCount = counts['N/A'] || 0;
+        const emptyCount = counts[''] || 0;
+
+        counts['Unknown'] = naCount + emptyCount;
+        delete counts['N/A'];
+        delete counts[''];
 
         return counts;
     }, []);

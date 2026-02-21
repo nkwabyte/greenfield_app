@@ -214,40 +214,35 @@ export async function getTransactionsCount(): Promise<number> {
 }
 
 /**
- * Get total income
+ * Get total income (Memory-Optimized using Cursors)
  */
 export async function getTotalIncome(): Promise<number> {
-    const incomeTransactions = await db.transactions
-        .where('type')
-        .equals('Income')
-        .toArray();
-
-    return incomeTransactions.reduce((total, t) => total + t.amount, 0);
+    let total = 0;
+    await db.transactions.where('type').equals('Income').each(t => {
+        total += t.amount;
+    });
+    return total;
 }
 
 /**
- * Get total expenses
+ * Get total expenses (Memory-Optimized using Cursors)
  */
 export async function getTotalExpenses(): Promise<number> {
-    const expenseTransactions = await db.transactions
-        .where('type')
-        .equals('Expense')
-        .toArray();
-
-    return expenseTransactions.reduce((total, t) => total + t.amount, 0);
+    let total = 0;
+    await db.transactions.where('type').equals('Expense').each(t => {
+        total += t.amount;
+    });
+    return total;
 }
 
 /**
- * Get transactions by category (for analytics)
+ * Get transactions by category (Memory-Optimized using Cursors)
  */
 export async function getTransactionsByCategory(): Promise<Record<string, number>> {
-    const transactions = await db.transactions.toArray();
     const categoryCounts: Record<string, number> = {};
-
-    transactions.forEach(transaction => {
-        categoryCounts[transaction.category] = (categoryCounts[transaction.category] || 0) + 1;
+    await db.transactions.each(t => {
+        categoryCounts[t.category] = (categoryCounts[t.category] || 0) + 1;
     });
-
     return categoryCounts;
 }
 

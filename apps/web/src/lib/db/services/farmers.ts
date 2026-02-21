@@ -179,30 +179,38 @@ export async function getUniqueDistricts(region?: string): Promise<string[]> {
 }
 
 /**
- * Get unique societies
+ * Get unique societies (Memory-Optimized)
  */
 export async function getUniqueSocieties(district?: string): Promise<string[]> {
     if (district) {
-        const farmers = await db.farmers.filter(f => f.district === district).toArray();
-        const societies = new Set(farmers.map(f => f.society).filter(s => s && s.trim().length > 0));
-        return Array.from(societies) as string[];
+        // Can't use uniqueKeys with filter, but we can use cursors instead of .toArray()
+        const societies = new Set<string>();
+        await db.farmers.where('district').equals(district).each(f => {
+            if (f.society && f.society.trim().length > 0) {
+                societies.add(f.society);
+            }
+        });
+        return Array.from(societies).sort();
     }
     const societies = await db.farmers.orderBy('society').uniqueKeys() as string[];
-    return societies.filter(s => s && s.trim().length > 0);
+    return societies.filter(s => s && s.trim().length > 0).sort();
 }
 
 /**
- * Get unique communities
+ * Get unique communities (Memory-Optimized)
  */
 export async function getUniqueCommunities(society?: string): Promise<string[]> {
     if (society) {
-        const farmers = await db.farmers.filter(f => f.society === society).toArray();
-        const communities = new Set(farmers.map(f => f.community).filter(c => c && c.trim().length > 0));
-        return Array.from(communities) as string[];
+        const communities = new Set<string>();
+        await db.farmers.where('society').equals(society).each(f => {
+            if (f.community && f.community.trim().length > 0) {
+                communities.add(f.community);
+            }
+        });
+        return Array.from(communities).sort();
     }
-    const farmers = await db.farmers.toArray();
-    const communities = new Set(farmers.map(f => f.community).filter(c => c && c.trim().length > 0));
-    return Array.from(communities).sort() as string[];
+    const communities = await db.farmers.orderBy('community').uniqueKeys() as string[];
+    return communities.filter(c => c && c.trim().length > 0).sort();
 }
 
 /**
