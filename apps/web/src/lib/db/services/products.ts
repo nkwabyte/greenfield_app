@@ -211,11 +211,11 @@ export async function getProductsPaginatedAndFiltered(
 }
 
 /**
- * Get all unique product categories
+ * Get all unique product categories (Memory-Optimized using DB Indices)
  */
 export async function getUniqueProductCategories(): Promise<string[]> {
-    const products = await db.products.toArray();
-    return [...new Set(products.map(p => p.category).filter(Boolean))].sort();
+    const categories = await db.products.orderBy('category').uniqueKeys() as string[];
+    return categories.filter(c => c && c.trim().length > 0).sort();
 }
 
 /**
@@ -226,16 +226,13 @@ export async function getProductsCount(): Promise<number> {
 }
 
 /**
- * Get products by category (for analytics)
+ * Get products by category (Memory-Optimized using Cursors)
  */
 export async function getProductsByCategory(): Promise<Record<string, number>> {
-    const products = await db.products.toArray();
     const categoryCounts: Record<string, number> = {};
-
-    products.forEach(product => {
+    await db.products.each(product => {
         categoryCounts[product.category] = (categoryCounts[product.category] || 0) + 1;
     });
-
     return categoryCounts;
 }
 
