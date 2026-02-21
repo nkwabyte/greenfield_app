@@ -38,6 +38,7 @@ import {
     ChevronRight,
     AlertTriangle,
     Layers,
+    Loader2,
 } from 'lucide-react';
 import { GHANA_REGION_NAMES, GHANA_REGIONS_AND_DISTRICTS, getDistrictsForRegion } from '@/lib/data/ghana-regions-districts';
 import { db, type StagingError, type StagingFarmer } from '@/lib/db/schema';
@@ -83,7 +84,7 @@ export default function ImportFixErrorsPage() {
     const [pageIndex, setPageIndex] = React.useState(0);
     const [rows, setRows] = React.useState<EditableErrorRow[]>([]);
     const [totalCount, setTotalCount] = React.useState(0);
-    const [accepting, setAccepting] = React.useState<Set<number>>(new Set());
+    const [accepting, setAccepting] = React.useState<Set<number | string>>(new Set());
 
     // Per-sheet bulk region + district selection
     const [sheetRegions, setSheetRegions] = React.useState<Record<string, string>>({});
@@ -191,6 +192,60 @@ export default function ImportFixErrorsPage() {
         toast({ title: `${ready.length} rows accepted`, description: 'They are now in the staging table.' });
     };
 
+    // ── Accept an entire sheet (all rows in DB, bypassing pagination) ───────
+
+    const acceptAllForSheet = async (sheetName: string) => {
+        const region = sheetRegions[sheetName];
+        if (!region) return;
+        const district = sheetDistricts[sheetName] || sheetName;
+
+        setAccepting(prev => new Set(prev).add(`sheet-${sheetName}`));
+
+        try {
+            // Fetch all error rows for this sheet directly from Dexie
+            const sheetRows = await db.importErrors.where('sheet').equals(sheetName).toArray();
+            if (!sheetRows.length) return;
+
+            const stagedRows: StagingFarmer[] = sheetRows.map(row => {
+                const needsName = !row.rawName;
+                const name = needsName ? generatePlaceholderName() : row.rawName;
+
+                const parsedAge = parseInt((row.rawAge ?? '').match(/\d+/)?.[0] ?? '', 10);
+                const ageNum = (isNaN(parsedAge) || parsedAge <= 0) ? 18 : parsedAge;
+                const rawGender = (row.rawGender ?? '').toLowerCase();
+                const gender = rawGender === 'f' || rawGender === 'female' ? 'Female'
+                    : rawGender === 'm' || rawGender === 'male' ? 'Male' : 'Other';
+
+                return {
+                    name: name.toLowerCase().trim(),
+                    gender,
+                    age: ageNum,
+                    region,
+                    district,
+                    society: row.rawSociety || '',
+                    community: row.rawCommunity || '',
+                    farmSize: parseFloat(row.rawFarmSize || '0') || 0,
+                    contact: '',
+                    educationLevel: 'None',
+                    cropsGrown: [],
+                    status: 'Active',
+                    joinDate: new Date().toISOString().split('T')[0],
+                };
+            });
+
+            await db.importStaging.bulkAdd(stagedRows);
+            await db.importErrors.bulkDelete(sheetRows.map(r => r._id!));
+
+            // Remove these from local state
+            setRows(prev => prev.filter(r => r.sheet !== sheetName));
+            setTotalCount(c => c - sheetRows.length);
+
+            toast({ title: `${sheetRows.length} rows fixed!`, description: `All rows from ${sheetName} accepted.` });
+        } finally {
+            setAccepting(prev => { const s = new Set(prev); s.delete(`sheet-${sheetName}`); return s; });
+        }
+    };
+
     // ── Render ───────────────────────────────────────────────────────────────
 
     // Unique sheets on the current page
@@ -265,19 +320,36 @@ export default function ImportFixErrorsPage() {
 
                                         {/* District picker — only shown once a region is selected */}
                                         {selectedRegion && (
-                                            <Select
-                                                value={selectedDistrict}
-                                                onValueChange={v => applyDistrictToSheet(sheet, v)}
-                                            >
-                                                <SelectTrigger className="h-7 text-xs flex-1">
-                                                    <SelectValue placeholder="District…" />
-                                                </SelectTrigger>
-                                                <SelectContent>
-                                                    {districtOpts.map(d => (
-                                                        <SelectItem key={d} value={d} className="text-xs">{d}</SelectItem>
-                                                    ))}
-                                                </SelectContent>
-                                            </Select>
+                                            <>
+                                                <Select
+                                                    value={selectedDistrict}
+                                                    onValueChange={v => applyDistrictToSheet(sheet, v)}
+                                                >
+                                                    <SelectTrigger className="h-7 text-xs flex-1">
+                                                        <SelectValue placeholder="District…" />
+                                                    </SelectTrigger>
+                                                    <SelectContent>
+                                                        {districtOpts.map(d => (
+                                                            <SelectItem key={d} value={d} className="text-xs">{d}</SelectItem>
+                                                        ))}
+                                                    </SelectContent>
+                                                </Select>
+
+                                                {/* Accept ALL rows in this sheet immediately */}
+                                                <Button
+                                                    size="sm"
+                                                    className="h-7 px-2 text-xs bg-green-600 hover:bg-green-700 text-white"
+                                                    disabled={accepting.has(`sheet-${sheet}`)}
+                                                    onClick={() => acceptAllForSheet(sheet)}
+                                                    title="Accept all rows in this sheet"
+                                                >
+                                                    {accepting.has(`sheet-${sheet}`) ? (
+                                                        <Loader2 className="h-3.5 w-3.5 animate-spin" />
+                                                    ) : (
+                                                        <CheckCircle2 className="h-3.5 w-3.5" />
+                                                    )}
+                                                </Button>
+                                            </>
                                         )}
                                     </div>
                                 </div>
