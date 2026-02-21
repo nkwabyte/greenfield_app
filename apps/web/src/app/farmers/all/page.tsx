@@ -34,6 +34,7 @@ import {
 import { v4 as uuidv4 } from 'uuid';
 import { normalizeRegion } from '@/lib/utils/region-normalizer';
 import { useRouter, useSearchParams } from 'next/navigation';
+import { GHANA_REGIONS_AND_DISTRICTS, GHANA_REGION_NAMES } from '@/lib/data/ghana-regions-districts';
 
 function FarmersContent() {
   const router = useRouter();
@@ -297,6 +298,7 @@ function FarmersContent() {
         age: getColumn('age'),
         farmSize: getColumn('farm size'),
         region: getColumn('region'),
+        district: getColumn('district'),
         society: getColumn('society'),
         community: getColumn('community'),
       };
@@ -305,10 +307,43 @@ function FarmersContent() {
       for (let i = 0; i < sheetData.length; i++) {
         const row = sheetData[i];
         const name = (row[columnMap.name] || '').toString().trim();
-        const rawRegion = (row[columnMap.region] || '').toString().trim();
-        const region = normalizeRegion(rawRegion);
 
-        if (name) {
+        // Region processing and validation
+        const rawRegion = (row[columnMap.region] || '').toString().trim();
+        const normalizedRegion = normalizeRegion(rawRegion).replace(/ Region$/i, '').trim();
+
+        // Use normalized region if it perfectly matches a standard name, or do a case-insensitive check
+        const mappedRegion = GHANA_REGION_NAMES.find(r => r.toLowerCase() === normalizedRegion.toLowerCase());
+
+        // District processing and validation (fallback to sheet name)
+        const rawDistrict = (row[columnMap.district] || '').toString().trim();
+        const districtToUse = rawDistrict || sheetName.trim();
+
+        // Age processing - extract only numbers
+        const rawAge = (row[columnMap.age] || '').toString().trim();
+        const ageMatch = rawAge.match(/\d+/);
+        const ageNumber = ageMatch ? parseInt(ageMatch[0], 10) : NaN;
+
+        const errorMessages = [];
+
+        if (!name) errorMessages.push('Missing name');
+        if (!mappedRegion) errorMessages.push(rawRegion ? `Invalid region: ${rawRegion}` : 'Missing region');
+
+        // Validate district against the mapped region if the region is valid
+        let validatedDistrict = '';
+        if (mappedRegion) {
+          const regionDistricts = GHANA_REGIONS_AND_DISTRICTS[mappedRegion] || [];
+          validatedDistrict = regionDistricts.find(d => d.toLowerCase() === districtToUse.toLowerCase()) || '';
+          if (!validatedDistrict) {
+            errorMessages.push(`District "${districtToUse}" not found in region "${mappedRegion}"`);
+          }
+        }
+
+        if (isNaN(ageNumber) || ageNumber <= 0) {
+          errorMessages.push(`Invalid age format: ${rawAge}`);
+        }
+
+        if (errorMessages.length === 0) {
           validFarmers.push({
             name: name.toLowerCase(),
             gender: ((g) => {
@@ -317,12 +352,12 @@ function FarmersContent() {
               if (lower === 'm' || lower === 'male') return 'Male';
               return g; // Fallback to original if not matched
             })((row[columnMap.gender] || '').toString().trim()),
-            region: region,
-            district: sheetName, // Use sheet name as district/zone
+            region: mappedRegion as string,
+            district: validatedDistrict,
             society: (row[columnMap.society] || '').toString().trim(),
             community: (row[columnMap.community] || '').toString().trim(),
             contact: '',
-            age: parseInt(row[columnMap.age]) || 0,
+            age: ageNumber,
             educationLevel: 'None',
             farmSize: parseFloat(row[columnMap.farmSize]) || 0,
             cropsGrown: [],
@@ -332,8 +367,8 @@ function FarmersContent() {
         } else {
           failedRecords.push({
             rowIndex: i + 2,
-            rowData: JSON.stringify(row),
-            error: 'Missing name'
+            rowData: JSON.stringify(row), // Keep the raw data for the CSV export
+            error: errorMessages.join(', ')
           });
         }
       }
