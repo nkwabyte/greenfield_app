@@ -6,7 +6,7 @@ import { UsersRound, ArrowLeft, Search, MapPin, Tent } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { useState } from 'react';
-import { useLiveQuery } from 'dexie-react-hooks';
+import { useLiveQuery } from '@/hooks/useLiveQuery';
 import { db } from '@/lib/db/schema';
 import { Input } from '@/components/ui/input';
 import { BulkUploadGroups } from '@/components/farmers/bulk-upload-groups';
