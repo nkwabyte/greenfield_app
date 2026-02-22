@@ -21,6 +21,35 @@ export async function getSupabaseEmployees(lastSyncTime?: number): Promise<Emplo
     return (data || []).map(mapEmployeeRow);
 }
 
+/**
+ * Paginated delta sync for employees.
+ */
+export async function getSupabaseEmployeesPaginated(
+    lastSyncTime?: number,
+    offset = 0,
+    chunkSize = 500
+): Promise<{ employees: Employee[]; hasMore: boolean }> {
+    let query = supabase
+        .from('employees')
+        .select('*')
+        .order('updated_at', { ascending: false })
+        .range(offset, offset + chunkSize - 1);
+
+    if (lastSyncTime) {
+        const isoDate = new Date(lastSyncTime).toISOString();
+        query = query.gt('updated_at', isoDate);
+    }
+
+    const { data, error } = await query;
+    if (error) throw error;
+
+    const employees = (data || []).map(mapEmployeeRow);
+    return {
+        employees,
+        hasMore: employees.length === chunkSize,
+    };
+}
+
 export async function addSupabaseEmployee(employeeData: EmployeeFormValues, id: string) {
     const { startDate, ...rest } = employeeData;
     const { error } = await supabase.from('employees').insert({

@@ -24,6 +24,17 @@ export async function getSupplier(id: string): Promise<Supplier | undefined> {
 }
 
 /**
+ * Get simple supplier options for dropdowns (Memory Optimized)
+ */
+export async function getSupplierOptions(): Promise<Pick<Supplier, 'id' | 'name'>[]> {
+    return await db.suppliers
+        .toArray(suppliers => suppliers.map(s => ({
+            id: s.id,
+            name: s.name
+        })));
+}
+
+/**
  * Get suppliers with pagination
  */
 export async function getPaginatedSuppliers(page: number, pageSize: number): Promise<{ data: Supplier[], total: number }> {
@@ -129,36 +140,49 @@ export async function syncSuppliersFromSupabase(): Promise<number> {
         // Capture start time BEFORE the query to avoid race conditions
         const syncStartTime = Date.now();
 
-        const supabaseSuppliers = await getSupabaseSuppliers(lastSyncTime);
+        let hasMore = true;
+        let offset = 0;
+        const chunkSize = 1000;
+        let totalSynced = 0;
 
-        if (supabaseSuppliers.length === 0) {
-            localStorage.setItem('lastSync_suppliers', syncStartTime.toString());
-            return 0;
-        }
+        while (hasMore) {
+            const result = await import('@/lib/supabase/services/suppliers').then(m => m.getSupabaseSuppliersPaginated(lastSyncTime, offset, chunkSize));
+            const supabaseSuppliers = result.suppliers;
+            hasMore = result.hasMore;
 
-        const suppliersToPut: Supplier[] = [];
-        const idsToDelete: string[] = [];
+            if (supabaseSuppliers.length > 0) {
+                const suppliersToPut: Supplier[] = [];
+                const idsToDelete: string[] = [];
 
-        for (const supplier of supabaseSuppliers as (Supplier & { deleted?: boolean })[]) {
-            if (supplier.deleted) {
-                idsToDelete.push(supplier.id);
-            } else {
-                delete supplier.deleted;
-                suppliersToPut.push(supplier);
+                for (const supplier of supabaseSuppliers as (Supplier & { deleted?: boolean })[]) {
+                    if (supplier.deleted) {
+                        idsToDelete.push(supplier.id);
+                    } else {
+                        delete supplier.deleted;
+                        suppliersToPut.push(supplier);
+                    }
+                }
+
+                if (suppliersToPut.length > 0) {
+                    await db.suppliers.bulkPut(suppliersToPut);
+                }
+
+                if (idsToDelete.length > 0) {
+                    await db.suppliers.bulkDelete(idsToDelete);
+                }
+
+                totalSynced += supabaseSuppliers.length;
+
+                // Yield to main thread to prevent UI freezing
+                await new Promise(resolve => setTimeout(resolve, 10));
             }
-        }
 
-        if (suppliersToPut.length > 0) {
-            await db.suppliers.bulkPut(suppliersToPut);
-        }
-
-        if (idsToDelete.length > 0) {
-            await db.suppliers.bulkDelete(idsToDelete);
+            offset += chunkSize;
         }
 
         localStorage.setItem('lastSync_suppliers', syncStartTime.toString());
 
-        return supabaseSuppliers.length;
+        return totalSynced;
     } catch (error) {
         console.error('❌ Failed to sync suppliers from Supabase:', error);
         throw error;

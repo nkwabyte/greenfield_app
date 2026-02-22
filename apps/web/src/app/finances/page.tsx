@@ -30,7 +30,7 @@ import {
 } from '@/components/finances/add-edit-transaction-dialog';
 import { useToast } from '@/hooks/use-toast';
 import { Skeleton } from '@/components/ui/skeleton';
-import { useEmployees, useTransactionsPaginated } from '@/hooks/useData';
+import { useEmployeeOptions, useTransactionsPaginated } from '@/hooks/useData';
 import { ConfirmDialog } from '@/components/ui/confirm-dialog';
 import { useRequireRole } from '@/hooks/use-role-guard';
 
@@ -59,7 +59,7 @@ export default function FinancesPage() {
   const isLoading = !result;
 
   // NEW: Use Dexie hook instead of Redux
-  const employees = useEmployees();
+  const employees = useEmployeeOptions();
 
   const [isAddEditDialogOpen, setIsAddEditDialogOpen] = React.useState(false);
   const [editingTransaction, setEditingTransaction] = React.useState<Transaction | null>(null);

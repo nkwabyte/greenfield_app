@@ -24,6 +24,17 @@ export async function getEmployee(id: string): Promise<Employee | undefined> {
 }
 
 /**
+ * Get simple employee options for dropdowns (Memory Optimized)
+ */
+export async function getEmployeeOptions(): Promise<Pick<Employee, 'id' | 'name'>[]> {
+    return await db.employees
+        .toArray(employees => employees.map(e => ({
+            id: e.id,
+            name: e.name
+        })));
+}
+
+/**
  * Get employees with pagination
  */
 export async function getPaginatedEmployees(page: number, pageSize: number): Promise<{ data: Employee[], total: number }> {
@@ -209,36 +220,49 @@ export async function syncEmployeesFromSupabase(): Promise<number> {
         // Capture start time BEFORE the query to avoid race conditions
         const syncStartTime = Date.now();
 
-        const supabaseEmployees = await getSupabaseEmployees(lastSyncTime);
+        let hasMore = true;
+        let offset = 0;
+        const chunkSize = 1000;
+        let totalSynced = 0;
 
-        if (supabaseEmployees.length === 0) {
-            localStorage.setItem('lastSync_employees', syncStartTime.toString());
-            return 0;
-        }
+        while (hasMore) {
+            const result = await import('@/lib/supabase/services/employees').then(m => m.getSupabaseEmployeesPaginated(lastSyncTime, offset, chunkSize));
+            const supabaseEmployees = result.employees;
+            hasMore = result.hasMore;
 
-        const employeesToPut: Employee[] = [];
-        const idsToDelete: string[] = [];
+            if (supabaseEmployees.length > 0) {
+                const employeesToPut: Employee[] = [];
+                const idsToDelete: string[] = [];
 
-        for (const employee of supabaseEmployees as (Employee & { deleted?: boolean })[]) {
-            if (employee.deleted) {
-                idsToDelete.push(employee.id);
-            } else {
-                delete employee.deleted;
-                employeesToPut.push(employee);
+                for (const employee of supabaseEmployees as (Employee & { deleted?: boolean })[]) {
+                    if (employee.deleted) {
+                        idsToDelete.push(employee.id);
+                    } else {
+                        delete employee.deleted;
+                        employeesToPut.push(employee);
+                    }
+                }
+
+                if (employeesToPut.length > 0) {
+                    await db.employees.bulkPut(employeesToPut);
+                }
+
+                if (idsToDelete.length > 0) {
+                    await db.employees.bulkDelete(idsToDelete);
+                }
+
+                totalSynced += supabaseEmployees.length;
+
+                // Yield to main thread to prevent UI freezing
+                await new Promise(resolve => setTimeout(resolve, 10));
             }
-        }
 
-        if (employeesToPut.length > 0) {
-            await db.employees.bulkPut(employeesToPut);
-        }
-
-        if (idsToDelete.length > 0) {
-            await db.employees.bulkDelete(idsToDelete);
+            offset += chunkSize;
         }
 
         localStorage.setItem('lastSync_employees', syncStartTime.toString());
 
-        return supabaseEmployees.length;
+        return totalSynced;
     } catch (error) {
         console.error('❌ Failed to sync employees from Supabase:', error);
         throw error;

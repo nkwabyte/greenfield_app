@@ -170,36 +170,49 @@ export async function syncTransactionsFromSupabase(): Promise<number> {
         // Capture start time BEFORE the query to avoid race conditions
         const syncStartTime = Date.now();
 
-        const supabaseTransactions = await getSupabaseTransactions(lastSyncTime);
+        let hasMore = true;
+        let offset = 0;
+        const chunkSize = 1000;
+        let totalSynced = 0;
 
-        if (supabaseTransactions.length === 0) {
-            localStorage.setItem('lastSync_transactions', syncStartTime.toString());
-            return 0;
-        }
+        while (hasMore) {
+            const result = await import('@/lib/supabase/services/transactions').then(m => m.getSupabaseTransactionsPaginated(lastSyncTime, offset, chunkSize));
+            const supabaseTransactions = result.transactions;
+            hasMore = result.hasMore;
 
-        const transactionsToPut: Transaction[] = [];
-        const idsToDelete: string[] = [];
+            if (supabaseTransactions.length > 0) {
+                const transactionsToPut: Transaction[] = [];
+                const idsToDelete: string[] = [];
 
-        for (const transaction of supabaseTransactions as (Transaction & { deleted?: boolean })[]) {
-            if (transaction.deleted) {
-                idsToDelete.push(transaction.id);
-            } else {
-                delete transaction.deleted;
-                transactionsToPut.push(transaction);
+                for (const transaction of supabaseTransactions as (Transaction & { deleted?: boolean })[]) {
+                    if (transaction.deleted) {
+                        idsToDelete.push(transaction.id);
+                    } else {
+                        delete transaction.deleted;
+                        transactionsToPut.push(transaction);
+                    }
+                }
+
+                if (transactionsToPut.length > 0) {
+                    await db.transactions.bulkPut(transactionsToPut);
+                }
+
+                if (idsToDelete.length > 0) {
+                    await db.transactions.bulkDelete(idsToDelete);
+                }
+
+                totalSynced += supabaseTransactions.length;
+
+                // Yield to main thread to prevent UI freezing
+                await new Promise(resolve => setTimeout(resolve, 10));
             }
-        }
 
-        if (transactionsToPut.length > 0) {
-            await db.transactions.bulkPut(transactionsToPut);
-        }
-
-        if (idsToDelete.length > 0) {
-            await db.transactions.bulkDelete(idsToDelete);
+            offset += chunkSize;
         }
 
         localStorage.setItem('lastSync_transactions', syncStartTime.toString());
 
-        return supabaseTransactions.length;
+        return totalSynced;
     } catch (error) {
         console.error('❌ Failed to sync transactions from Supabase:', error);
         throw error;

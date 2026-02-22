@@ -24,6 +24,21 @@ export async function getProduct(id: string): Promise<Product | undefined> {
 }
 
 /**
+ * Get simple product options for dropdowns and selectors
+ */
+export async function getProductOptions(): Promise<Pick<Product, 'id' | 'name' | 'category' | 'price' | 'quantity'>[]> {
+    return await db.products
+        .filter(p => !p.deleted)
+        .toArray(products => products.map(p => ({
+            id: p.id,
+            name: p.name,
+            category: p.category,
+            price: p.price,
+            quantity: p.quantity,
+        })));
+}
+
+/**
  * Get products with pagination
  */
 export async function getPaginatedProducts(page: number, pageSize: number): Promise<{ data: Product[], total: number }> {
@@ -136,36 +151,49 @@ export async function syncProductsFromSupabase(): Promise<number> {
         // Capture start time BEFORE the query to avoid race conditions
         const syncStartTime = Date.now();
 
-        const supabaseProducts = await getSupabaseProducts(lastSyncTime);
+        let hasMore = true;
+        let offset = 0;
+        const chunkSize = 1000;
+        let totalSynced = 0;
 
-        if (supabaseProducts.length === 0) {
-            localStorage.setItem('lastSync_products', syncStartTime.toString());
-            return 0;
-        }
+        while (hasMore) {
+            const result = await import('@/lib/supabase/services/products').then(m => m.getSupabaseProductsPaginated(lastSyncTime, offset, chunkSize));
+            const supabaseProducts = result.products;
+            hasMore = result.hasMore;
 
-        const productsToPut: Product[] = [];
-        const idsToDelete: string[] = [];
+            if (supabaseProducts.length > 0) {
+                const productsToPut: Product[] = [];
+                const idsToDelete: string[] = [];
 
-        for (const product of supabaseProducts as (Product & { deleted?: boolean })[]) {
-            if (product.deleted) {
-                idsToDelete.push(product.id);
-            } else {
-                delete product.deleted;
-                productsToPut.push(product);
+                for (const product of supabaseProducts as (Product & { deleted?: boolean })[]) {
+                    if (product.deleted) {
+                        idsToDelete.push(product.id);
+                    } else {
+                        delete product.deleted;
+                        productsToPut.push(product);
+                    }
+                }
+
+                if (productsToPut.length > 0) {
+                    await db.products.bulkPut(productsToPut);
+                }
+
+                if (idsToDelete.length > 0) {
+                    await db.products.bulkDelete(idsToDelete);
+                }
+
+                totalSynced += supabaseProducts.length;
+
+                // Yield to main thread to prevent UI freezing
+                await new Promise(resolve => setTimeout(resolve, 10));
             }
-        }
 
-        if (productsToPut.length > 0) {
-            await db.products.bulkPut(productsToPut);
-        }
-
-        if (idsToDelete.length > 0) {
-            await db.products.bulkDelete(idsToDelete);
+            offset += chunkSize;
         }
 
         localStorage.setItem('lastSync_products', syncStartTime.toString());
 
-        return supabaseProducts.length;
+        return totalSynced;
     } catch (error) {
         console.error('❌ Failed to sync products from Supabase:', error);
         throw error;

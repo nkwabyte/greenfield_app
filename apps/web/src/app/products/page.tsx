@@ -13,7 +13,7 @@ import { AddEditProductDialog, type ProductFormValues } from '@/components/produ
 import { KpiCard } from '@/components/dashboard/kpi-card';
 import { Skeleton } from '@/components/ui/skeleton';
 import type { Kpi } from '@/lib/types';
-import { useProductsPaginatedAndFiltered, useSuppliers } from '@/hooks/useData';
+import { useProductsPaginatedAndFiltered, useSupplierOptions } from '@/hooks/useData';
 import { ProductFilters, type ProductFiltersState } from '@/components/products/product-filters';
 import { ConfirmDialog } from '@/components/ui/confirm-dialog';
 
@@ -66,7 +66,7 @@ export default function ProductsPage() {
   const totalPages = Math.ceil(totalCount / pagination.pageSize);
   const isLoading = !result;
 
-  const suppliers = useSuppliers();
+  const suppliers = useSupplierOptions();
   const [isAddEditDialogOpen, setIsAddEditDialogOpen] = React.useState(false);
   const [editingProduct, setEditingProduct] = React.useState<typeof products[0] | null>(null);
   const [productToDelete, setProductToDelete] = React.useState<string | null>(null);

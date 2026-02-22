@@ -42,6 +42,7 @@ import {
     getEmployeesByRole,
     getEmployeesByStatus,
     getEmployeesPaginatedAndFiltered, // NEW
+    getEmployeeOptions,
 } from '@/lib/db/services/employees';
 import {
     getAllProducts,
@@ -53,11 +54,13 @@ import {
     getProductsPaginatedAndFiltered,
     getUniqueProductCategories,
     getProduct,
+    getProductOptions,
 } from '@/lib/db/services/products';
 import {
     getAllSuppliers,
     getPaginatedSuppliers, // NEW
     getSuppliersCount,
+    getSupplierOptions,
 } from '@/lib/db/services/suppliers';
 import {
     getAllTransactions,
@@ -73,6 +76,7 @@ import {
     getAllFarmerGroups,
     getFarmerGroup,
     getFarmerGroupsByYear,
+    getFarmerGroupOptions
 } from '@/lib/db/services/farmer-groups';
 import {
     getAllFarmerRequests,
@@ -280,6 +284,10 @@ export function useRelatedFarmers(farmer: Farmer | undefined | null) {
 // FARMER GROUPS HOOKS
 // ============================================================================
 
+export function useFarmerGroupOptions() {
+    return useLiveQuery(() => getFarmerGroupOptions(), []);
+}
+
 export function useFarmerGroups() {
     return useLiveQuery(() => getAllFarmerGroups(), []);
 }
@@ -374,9 +382,17 @@ export function useEmployee(id: string) {
     return useLiveQuery(() => getEmployee(id), [id]);
 }
 
+export function useEmployeeOptions() {
+    return useLiveQuery(() => getEmployeeOptions(), []);
+}
+
 // ============================================================================
 // PRODUCTS HOOKS
 // ============================================================================
+
+export function useProductOptions() {
+    return useLiveQuery(() => getProductOptions(), []);
+}
 
 export function useProducts() {
     return useLiveQuery(() => getAllProducts(), []);
@@ -452,6 +468,10 @@ export function useSuppliersPaginated(page: number = 1, pageSize: number = 50) {
 
 export function useSuppliersCount() {
     return useLiveQuery(() => getSuppliersCount(), []);
+}
+
+export function useSupplierOptions() {
+    return useLiveQuery(() => getSupplierOptions(), []);
 }
 
 export function useSupplier(id: string) {

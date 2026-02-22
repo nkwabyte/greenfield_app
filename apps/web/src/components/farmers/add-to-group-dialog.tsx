@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
-import { useLiveQuery } from '@/hooks/useLiveQuery';
-import { db } from '@/lib/db/schema';
+import { useFarmerGroupOptions } from '@/hooks/useData';
 import { Search, UsersRound, MapPin, Check } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
@@ -27,7 +26,7 @@ export function AddToGroupDialog({ open, onOpenChange, currentGroupId, onSave }:
         }
     }, [open, currentGroupId]);
 
-    const groups = useLiveQuery(() => db.farmerGroups.toArray());
+    const groups = useFarmerGroupOptions();
 
     const filteredGroups = React.useMemo(() => {
         if (!groups) return [];

@@ -42,38 +42,6 @@ export function InitialSyncProvider({ children }: { children: React.ReactNode })
                 // Request persistent storage to prevent browser from clearing data
                 await requestPersistentStorage();
 
-                // ── One-time salary NaN fix (runs once, then never again) ──
-                const salaryFixed = localStorage.getItem('migration_salary_nan_fix_v1');
-                if (!salaryFixed) {
-                    const all = await db.employees.toArray();
-                    const toFix = all.filter(e => e.salary === null || e.salary === undefined || Number.isNaN(e.salary));
-                    if (toFix.length > 0) {
-                        const now = new Date().toISOString();
-                        await Promise.all(
-                            toFix.map(async (e) => {
-                                await db.employees.update(e.id, { salary: 0, updatedAt: now });
-                                await syncService.addToQueue('employee', 'update', e.id, { salary: 0 });
-                            })
-                        );
-                        console.log(`✅ Salary migration: fixed ${toFix.length} employee(s) with NaN/null salary → 0`);
-                    }
-                    localStorage.setItem('migration_salary_nan_fix_v1', 'done');
-                }
-
-                // ── One-time: clear stale employee sync-queue items ──────────
-                // Employees are now written directly to Supabase by the API route,
-                // so any queued 'employee' operations are redundant.
-                const queueCleared = localStorage.getItem('migration_clear_employee_queue_v1');
-                if (!queueCleared) {
-                    const deleted = await db.syncQueue
-                        .filter(item => item.entityType === 'employee')
-                        .delete();
-                    if (deleted > 0) {
-                        console.log(`✅ Queue migration: removed ${deleted} stale employee sync item(s)`);
-                    }
-                    localStorage.setItem('migration_clear_employee_queue_v1', 'done');
-                }
-
                 // Check if we need to perform initial sync
                 const lastSync = localStorage.getItem('lastInitialSync');
                 const now = Date.now();
