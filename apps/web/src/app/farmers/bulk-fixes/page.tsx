@@ -17,10 +17,12 @@ import { useLiveQuery } from '@/hooks/useLiveQuery';
 import { db } from '@/lib/db/schema';
 import { SyncQueueItem } from '@/lib/db/types';
 import { GHANA_REGION_NAMES, GHANA_REGIONS_AND_DISTRICTS } from '@/lib/data/ghana-regions-districts';
-import { ArrowLeft, CheckCircle2, Save, Undo2, XCircle } from 'lucide-react';
+import { ArrowLeft, CheckCircle2, Save, Undo2, XCircle, Trash2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { Badge } from '@/components/ui/badge';
 import { Checkbox } from '@/components/ui/checkbox';
+import { deleteFarmer } from '@/lib/db/services/farmers';
+import { ConfirmDialog } from '@/components/ui/confirm-dialog';
 
 const PAGE_SIZE = 50;
 
@@ -31,6 +33,8 @@ export default function BulkFixesPage() {
     const [pageIndex, setPageIndex] = React.useState(0);
     const [searchTerm, setSearchTerm] = React.useState('');
     const [bulkRegion, setBulkRegion] = React.useState<string>('all');
+    const [issueFilter, setIssueFilter] = React.useState<string>('all');
+    const [deleteDialogOpen, setDeleteDialogOpen] = React.useState(false);
 
     // This query pulls farmers; we only keep a local editable state for the current page
     const rawFarmers = useLiveQuery(
@@ -57,8 +61,16 @@ export default function BulkFixesPage() {
             filtered = filtered.filter(f => f.region === bulkRegion);
         }
 
+        if (issueFilter === 'missing_region') {
+            filtered = filtered.filter(f => !f.region || f.region.trim() === '');
+        } else if (issueFilter === 'missing_district') {
+            filtered = filtered.filter(f => !f.district || f.district.trim() === '');
+        } else if (issueFilter === 'missing_any') {
+            filtered = filtered.filter(f => !f.region || !f.district || f.region.trim() === '' || f.district.trim() === '');
+        }
+
         return filtered;
-    }, [rawFarmers, searchTerm, bulkRegion]);
+    }, [rawFarmers, searchTerm, bulkRegion, issueFilter]);
 
     const pageCount = Math.ceil(filteredFarmers.length / PAGE_SIZE);
     const currentPageData = React.useMemo(() => {
@@ -205,6 +217,25 @@ export default function BulkFixesPage() {
         }
     };
 
+    const handleDeleteSelected = async () => {
+        if (selectedIds.size === 0) return;
+
+        try {
+            const promises = Array.from(selectedIds).map(id => deleteFarmer(id));
+            await Promise.all(promises);
+
+            // Clear selections and edits for these deleted rows
+            const newEdits = { ...localEdits };
+            selectedIds.forEach(id => delete newEdits[id]);
+            setLocalEdits(newEdits);
+            setSelectedIds(new Set());
+
+            toast({ title: 'Deleted', description: `Successfully queued ${promises.length} records for deletion.` });
+        } catch (e: any) {
+            toast({ title: 'Delete Failed', description: e.message, variant: 'destructive' });
+        }
+    };
+
 
     const massDistrictOptions = massRegion !== 'none'
         ? (GHANA_REGIONS_AND_DISTRICTS[massRegion] ?? []).map(d => ({ value: d, label: d }))
@@ -269,6 +300,10 @@ export default function BulkFixesPage() {
                 <Button variant="secondary" onClick={handleApplyMassEdits} disabled={selectedIds.size === 0} className="font-semibold text-primary hover:text-primary">
                     Apply to {selectedIds.size} Rows
                 </Button>
+                <div className="flex-1"></div>
+                <Button variant="destructive" onClick={() => setDeleteDialogOpen(true)} disabled={selectedIds.size === 0} className="font-semibold">
+                    <Trash2 className="mr-2 h-4 w-4" /> Delete {selectedIds.size > 0 && selectedIds.size}
+                </Button>
             </div>
 
 
@@ -287,6 +322,17 @@ export default function BulkFixesPage() {
                     <SelectContent>
                         <SelectItem value="all">All Regions</SelectItem>
                         {GHANA_REGION_NAMES.map(r => <SelectItem key={r} value={r}>{r}</SelectItem>)}
+                    </SelectContent>
+                </Select>
+                <Select value={issueFilter} onValueChange={v => { setIssueFilter(v); setPageIndex(0); }}>
+                    <SelectTrigger className="w-[180px] bg-background">
+                        <SelectValue placeholder="All Issues" />
+                    </SelectTrigger>
+                    <SelectContent>
+                        <SelectItem value="all">All Records</SelectItem>
+                        <SelectItem value="missing_any">Any Missing Data</SelectItem>
+                        <SelectItem value="missing_region">Missing Region</SelectItem>
+                        <SelectItem value="missing_district">Missing District</SelectItem>
                     </SelectContent>
                 </Select>
                 <div className="ml-auto text-sm text-muted-foreground">
@@ -411,6 +457,14 @@ export default function BulkFixesPage() {
                 </div>
             </div>
 
+            <ConfirmDialog
+                open={deleteDialogOpen}
+                onOpenChange={setDeleteDialogOpen}
+                title="Delete Selected records?"
+                description={`You are about to permanently queue ${selectedIds.size} farmer record(s) for deletion. This action cannot be undone.`}
+                confirmText="Yes, delete"
+                onConfirm={handleDeleteSelected}
+            />
         </AppShell>
     );
 }
