@@ -7,4 +7,6 @@ contextBridge.exposeInMainWorld('electron', {
     // Add any Electron-specific APIs you want to expose to the web app
     platform: process.platform,
     versions: process.versions,
+    getAppVersion: () => ipcRenderer.invoke('get-app-version'),
+    checkForUpdates: () => ipcRenderer.invoke('check-for-updates'),
 });
