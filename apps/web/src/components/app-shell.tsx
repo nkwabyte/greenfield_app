@@ -27,6 +27,7 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { SyncStatusBadge } from '@/components/ui/SyncStatusBadge';
+import { ForceSyncButton } from '@/components/ui/ForceSyncButton';
 import Image from 'next/image';
 import {
   LayoutGrid,
@@ -126,6 +127,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         <div className="flex-1" />
         <div className="flex items-center gap-3">
           <SyncStatusBadge />
+          <ForceSyncButton />
           <ThemeToggle />
           <DropdownMenu>
             <DropdownMenuTrigger asChild>

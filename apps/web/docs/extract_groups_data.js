@@ -3,13 +3,13 @@ import XLSX from 'xlsx';
 import { randomUUID } from 'crypto';
 
 const inputFile = 'FarmerGroups.xlsx';
-const existingFarmersCsv = 'farmers_import.csv';
+const existingFarmersCsv = 'data/farmers_import.csv';
 
-const suppliersCsv = 'suppliers_import.csv';
-const productsCsv = 'products_import.csv';
-const groupsCsv = 'farmer_groups_import.csv';
-const newFarmersCsv = 'new_farmers_import.csv';
-const requestsCsv = 'farmer_requests_import.csv';
+const suppliersCsv = 'data/suppliers_import.csv';
+const productsCsv = 'data/products_import.csv';
+const groupsCsv = 'data/farmer_groups_import.csv';
+const newFarmersCsv = 'data/new_farmers_import.csv';
+const requestsCsv = 'data/farmer_requests_import.csv';
 
 const GHANA_REGIONS_AND_DISTRICTS = {
     'Ahafo': ['Asunafo North', 'Asunafo South', 'Asutifi North', 'Asutifi South', 'Tano North', 'Tano South'],
@@ -278,15 +278,19 @@ workbook.SheetNames.forEach(sheetName => {
     let finalSociety = toTitleCase(sheetSociety);
 
     const groupId = randomUUID();
+    let currentGroupIndex = farmerGroups.length;
     farmerGroups.push({
         id: groupId,
         name: finalSociety, // Use society name as group name
         society: finalSociety,
-        season_year: '',
+        season_year: '2026',
+        farmer_ids: '[]',
         deleted: "false",
         created_at: currentIso,
         updated_at: currentIso
     });
+
+    let groupFarmerIds = [];
 
     // Rows start at index 10 (Row 11) usually in all sheets? Our inspection showed row 9 as "NOV REMN" and row 10 starting farmers
     let startIdx = 9; // Let's guess 9, inspection returned row 9 as data start
@@ -302,6 +306,19 @@ workbook.SheetNames.forEach(sheetName => {
     let nameCol = 2; // Default
     let totalAmtCol = -1;
     let depCol = -1;
+    let monthCols = {}; // Map of colIndex -> month string e.g. "OCT"
+    const monthsSet = new Set(['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC']);
+
+    // Check row 9 for months usually since that's where "OCT" "NOV" are
+    const row9 = data[startIdx - 1] || [];
+    for (let c = 0; c < row9.length; c++) {
+        let v = String(row9[c]).toUpperCase().trim();
+        if (monthsSet.has(v)) {
+            // We only care about the latest ones or just keep them all. Let's map all
+            monthCols[c] = v;
+        }
+    }
+
     for (let c = 0; c < headerRow.length; c++) {
         let v = String(headerRow[c]).toUpperCase();
         if (v.includes('FARMER NAME')) nameCol = c;
@@ -392,8 +409,19 @@ workbook.SheetNames.forEach(sheetName => {
         if (reqItems.length > 0) {
             let gTotal = 0;
             if (totalAmtCol !== -1) gTotal = parseFloat(row[totalAmtCol]) || 0;
-            let dep = 0;
-            if (depCol !== -1) dep = parseFloat(row[depCol]) || 0;
+
+            let paymentsArr = [];
+            for (let c in monthCols) {
+                let amt = parseFloat(row[c]);
+                if (amt && amt > 0) {
+                    paymentsArr.push({
+                        id: randomUUID(),
+                        amount: amt,
+                        date: currentIso,
+                        monthOfPayment: monthCols[c]
+                    });
+                }
+            }
 
             requests.push({
                 id: randomUUID(),
@@ -401,16 +429,24 @@ workbook.SheetNames.forEach(sheetName => {
                 group_id: groupId,
                 items: JSON.stringify(reqItems).replace(/"/g, '""'), // escape for CSV string!
                 grand_total: gTotal,
-                deposit_paid: dep,
                 status: 'Pending',
+                payments: JSON.stringify(paymentsArr).replace(/"/g, '""'),
                 request_date: currentIso,
-                season_year: '',
+                season_year: '2026',
                 deleted: 'false',
                 created_at: currentIso,
                 updated_at: currentIso
             });
         }
+
+        // Add to the group's tracking array if new
+        if (!groupFarmerIds.includes(farmerId)) {
+            groupFarmerIds.push(farmerId);
+        }
     }
+
+    // Once loop finishes, stringify the farmer_ids array into the previously added group entry
+    farmerGroups[currentGroupIndex].farmer_ids = JSON.stringify(groupFarmerIds).replace(/"/g, '""');
 });
 console.log(`Generated ${farmerGroups.length} groups, ${newFarmers.length} new farmers, ${requests.length} requests.`);
 
@@ -445,9 +481,9 @@ let newFarmersCsvContent = newFarmersHeader.join(',') + '\n' + newFarmers.map(f 
 fs.writeFileSync(newFarmersCsv, newFarmersCsvContent, 'utf8');
 
 // Write Requests
-let requestsHeader = ['id', 'farmer_id', 'group_id', 'items', 'grand_total', 'deposit_paid', 'status', 'request_date', 'season_year', 'deleted', 'created_at', 'updated_at'];
+let requestsHeader = ['id', 'farmer_id', 'group_id', 'items', 'grand_total', 'status', 'payments', 'request_date', 'season_year', 'deleted', 'created_at', 'updated_at'];
 let requestsCsvContent = requestsHeader.join(',') + '\n' + requests.map(r => requestsHeader.map(h => {
-    if (h === 'items') return `"${r[h]}"`; // Already double escaped
+    if (h === 'items' || h === 'payments') return `"${r[h]}"`; // Already double escaped
     return toCsvString(r[h]);
 }).join(',')).join('\n');
 fs.writeFileSync(requestsCsv, requestsCsvContent, 'utf8');
