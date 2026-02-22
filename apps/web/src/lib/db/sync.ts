@@ -19,6 +19,25 @@ import { syncPendingMedia } from './media-sync';
 
 const MAX_RETRY_COUNT = 3;
 const SYNC_INTERVAL = 30000; // 30 seconds
+const SYNCED_ITEM_TTL = 24 * 60 * 60 * 1000; // 24 hours — synced items older than this are pruned
+
+/** Minimum wait (ms) before retrying a failed item — exponential backoff per retry count */
+const BACKOFF_DELAYS_MS = [0, 60_000, 5 * 60_000, 30 * 60_000] as const;
+
+/**
+ * Returns the required backoff delay (ms) for the given retry count.
+ * Returns 0 for the first attempt, then exponentially increases.
+ */
+function getBackoffDelay(retryCount: number): number {
+    return BACKOFF_DELAYS_MS[Math.min(retryCount, BACKOFF_DELAYS_MS.length - 1)];
+}
+
+/** Returns true if an item is past its backoff period and eligible to sync. */
+function isEligibleForSync(item: SyncQueueItem, now: number): boolean {
+    if ((item.retryCount ?? 0) >= MAX_RETRY_COUNT) return false;
+    const delay = getBackoffDelay(item.retryCount ?? 0);
+    return delay === 0 || !item.lastAttemptAt || now - item.lastAttemptAt >= delay;
+}
 
 /** Maps entity types to Supabase table names */
 function getTableName(entityType: EntityType): string {
@@ -78,7 +97,9 @@ class SyncService {
     private isPaused = false;
 
     /**
-     * Add an item to the sync queue
+     * Add an item to the sync queue.
+     * For `update` operations, deduplicates by replacing any existing pending update
+     * for the same entity — so only the latest state is synced instead of every intermediate edit.
      */
     async addToQueue(
         entityType: EntityType,
@@ -86,6 +107,28 @@ class SyncService {
         entityId: string,
         data: any
     ): Promise<void> {
+        // Deduplication: collapse multiple pending updates for the same entity into one.
+        // This avoids redundant round-trips when a user edits the same record repeatedly while offline.
+        if (operation === 'update') {
+            const existing = await db.syncQueue
+                .where('entityId').equals(entityId)
+                .filter(item => item.operation === 'update' && item.synced === 0)
+                .first();
+
+            if (existing?.id != null) {
+                await db.syncQueue.update(existing.id, {
+                    data,
+                    timestamp: Date.now(),
+                    status: 'pending',
+                });
+                // Still attempt an immediate sync if online
+                if (connectivityService.isOnline() && !this.isPaused) {
+                    this.syncAll().catch(console.error);
+                }
+                return;
+            }
+        }
+
         await db.syncQueue.add({
             entityType,
             operation,
@@ -115,11 +158,13 @@ class SyncService {
             return { success: false, itemsProcessed: 0, itemsFailed: 0, errors: [] };
         }
 
+        const now = Date.now();
+
         // Quick check before triggering Redux state updates
         const pendingCount = await db.syncQueue
             .where('synced')
             .equals(0)
-            .and(item => (item.retryCount || 0) < MAX_RETRY_COUNT)
+            .and(item => isEligibleForSync(item, now))
             .count();
 
         if (pendingCount === 0) {
@@ -139,7 +184,7 @@ class SyncService {
             const pendingItems = await db.syncQueue
                 .where('synced')
                 .equals(0)
-                .and(item => (item.retryCount || 0) < MAX_RETRY_COUNT)
+                .and(item => isEligibleForSync(item, now))
                 .toArray();
 
             // Process items in chunks
@@ -150,7 +195,7 @@ class SyncService {
                 const chunk = pendingItems.slice(i, i + chunkSize);
                 const chunkIds = chunk.map(item => item.id as number);
 
-                await db.syncQueue.where('id').anyOf(chunkIds).modify({ status: 'syncing' });
+                await db.syncQueue.where('id').anyOf(chunkIds).modify({ status: 'syncing', lastAttemptAt: now });
 
                 try {
                     const successfulIds: number[] = [];
@@ -261,8 +306,13 @@ class SyncService {
         // Start realtime subscriptions
         startRealtimeSync();
 
+        // Propagate initial connectivity state to Redux
+        store.dispatch(setSyncStatus({ isOnline: connectivityService.isOnline() }));
+
         // Sync on connection restore
         connectivityService.subscribe((isOnline) => {
+            // Keep Redux store in sync with actual connectivity
+            store.dispatch(setSyncStatus({ isOnline }));
             if (isOnline) {
                 this.syncAll().catch(console.error);
                 syncPendingMedia().catch(console.error);
@@ -272,11 +322,12 @@ class SyncService {
             }
         });
 
-        // Periodic sync — also flush any pending media
+        // Periodic sync — also flush any pending media and prune stale synced items
         this.syncInterval = setInterval(() => {
             if (connectivityService.isOnline() && isAuthenticated()) {
                 this.syncAll().catch(console.error);
                 syncPendingMedia().catch(console.error);
+                this.pruneStaleItems().catch(console.error);
             }
         }, SYNC_INTERVAL);
 
@@ -315,6 +366,18 @@ class SyncService {
         await db.syncQueue
             .where('synced')
             .equals(1) // 1 = true
+            .delete();
+    }
+
+    /**
+     * Prune synced items older than SYNCED_ITEM_TTL (called automatically during background sync).
+     * This prevents the sync queue from growing unbounded over time.
+     */
+    async pruneStaleItems(): Promise<void> {
+        const cutoff = Date.now() - SYNCED_ITEM_TTL;
+        await db.syncQueue
+            .where('synced').equals(1)
+            .and(item => item.timestamp < cutoff)
             .delete();
     }
 
