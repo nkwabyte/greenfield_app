@@ -1,4 +1,4 @@
-import { app, BrowserWindow, nativeImage, globalShortcut, dialog } from 'electron';
+import { app, BrowserWindow, nativeImage, globalShortcut, dialog, ipcMain } from 'electron';
 import * as path from 'path';
 import { autoUpdater } from 'electron-updater';
 
@@ -88,8 +88,25 @@ function createWindow() {
 app.whenReady().then(() => {
     createWindow();
 
+    // IPC Handlers for Settings page
+    ipcMain.handle('get-app-version', () => app.getVersion());
+    ipcMain.handle('check-for-updates', async () => {
+        if (app.isPackaged) {
+            try {
+                await autoUpdater.checkForUpdates();
+                return true;
+            } catch (err) {
+                console.error(err);
+                return false;
+            }
+        }
+        return false;
+    });
+
     // Auto-update check
     if (app.isPackaged) {
+        autoUpdater.autoDownload = true;
+        autoUpdater.autoInstallOnAppQuit = true;
         autoUpdater.checkForUpdatesAndNotify();
 
         autoUpdater.on('update-available', (info) => {
@@ -109,7 +126,8 @@ app.whenReady().then(() => {
                 buttons: ['Restart Now', 'Later']
             }).then((result) => {
                 if (result.response === 0) {
-                    autoUpdater.quitAndInstall();
+                    // isSilent = false, isForceRunAfter = true
+                    autoUpdater.quitAndInstall(false, true);
                 }
             });
         });
