@@ -3,12 +3,14 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { PurgeConfirmDialog } from '@/components/farmers/purge-confirm-dialog';
+import { ConfirmDialog } from '@/components/ui/confirm-dialog';
 import { toast } from '@/hooks/use-toast';
 import { deleteAllFarmers } from '@/lib/db/services/farmers';
 import { clearAllData } from '@/lib/db/schema';
 
 export function DangerZone() {
     const [isPurgeDialogOpen, setIsPurgeDialogOpen] = useState(false);
+    const [isResetDialogOpen, setIsResetDialogOpen] = useState(false);
     const [isPurging, setIsPurging] = useState(false);
     const [isResetting, setIsResetting] = useState(false);
 
@@ -26,7 +28,6 @@ export function DangerZone() {
     };
 
     const handleResetCache = async () => {
-        if (!confirm('Are you sure you want to clear your local cache? The app will reload and fetch a fresh copy of everything.')) return;
 
         try {
             setIsResetting(true);
@@ -74,7 +75,7 @@ export function DangerZone() {
                     </div>
                     <Button
                         variant="destructive"
-                        onClick={handleResetCache}
+                        onClick={() => setIsResetDialogOpen(true)}
                         disabled={isPurging || isResetting}
                     >
                         {isResetting ? 'Resetting...' : 'Reset Local Cache'}
@@ -86,6 +87,19 @@ export function DangerZone() {
                 open={isPurgeDialogOpen}
                 onOpenChange={setIsPurgeDialogOpen}
                 onConfirm={handlePurgeData}
+            />
+
+            <ConfirmDialog
+                open={isResetDialogOpen}
+                onOpenChange={setIsResetDialogOpen}
+                title="Clear Local Cache?"
+                description="Are you sure you want to clear your local cache? All downloaded data will be removed locally, and the app will reload and fetch a fresh copy of everything from the cloud. This resolves sync issues but may take a moment."
+                confirmText="Yes, clear cache"
+                cancelText="Cancel"
+                onConfirm={() => {
+                    setIsResetDialogOpen(false);
+                    handleResetCache();
+                }}
             />
         </div>
     );
