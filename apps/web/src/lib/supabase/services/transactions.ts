@@ -23,6 +23,33 @@ export async function getSupabaseTransactions(lastSyncTime?: number): Promise<Tr
     return (data || []).map(mapTransactionRow);
 }
 
+/**
+ * Paginated delta sync for transactions.
+ */
+export async function getSupabaseTransactionsPaginated(
+    lastSyncTime?: number,
+    offset = 0,
+    chunkSize = 500
+): Promise<{ transactions: Transaction[]; hasMore: boolean }> {
+    let query = supabase.from('transactions').select('*').range(offset, offset + chunkSize - 1);
+
+    if (lastSyncTime) {
+        const isoDate = new Date(lastSyncTime).toISOString();
+        query = query.gt('updated_at', isoDate).order('updated_at', { ascending: false });
+    } else {
+        query = query.order('date', { ascending: false });
+    }
+
+    const { data, error } = await query;
+    if (error) throw error;
+
+    const transactions = (data || []).map(mapTransactionRow);
+    return {
+        transactions,
+        hasMore: transactions.length === chunkSize,
+    };
+}
+
 export async function addSupabaseTransaction(transactionData: TransactionFormValues, id: string) {
     const { date, employeeName, ...rest } = transactionData as any;
     const { error } = await supabase.from('transactions').insert({

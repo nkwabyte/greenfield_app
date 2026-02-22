@@ -21,6 +21,35 @@ export async function getSupabaseSuppliers(lastSyncTime?: number): Promise<Suppl
     return (data || []).map(mapSupplierRow);
 }
 
+/**
+ * Paginated delta sync for suppliers.
+ */
+export async function getSupabaseSuppliersPaginated(
+    lastSyncTime?: number,
+    offset = 0,
+    chunkSize = 500
+): Promise<{ suppliers: Supplier[]; hasMore: boolean }> {
+    let query = supabase
+        .from('suppliers')
+        .select('*')
+        .order('updated_at', { ascending: false })
+        .range(offset, offset + chunkSize - 1);
+
+    if (lastSyncTime) {
+        const isoDate = new Date(lastSyncTime).toISOString();
+        query = query.gt('updated_at', isoDate);
+    }
+
+    const { data, error } = await query;
+    if (error) throw error;
+
+    const suppliers = (data || []).map(mapSupplierRow);
+    return {
+        suppliers,
+        hasMore: suppliers.length === chunkSize,
+    };
+}
+
 export async function addSupabaseSupplier(supplierData: SupplierFormValues, id: string) {
     const { contactPerson, ...rest } = supplierData as any;
     const { error } = await supabase.from('suppliers').insert({

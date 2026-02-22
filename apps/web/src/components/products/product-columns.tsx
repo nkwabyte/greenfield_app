@@ -28,7 +28,7 @@ const getStockStatus = (quantity: number): { label: string, variant: 'default' |
   return { label: 'In Stock', variant: 'default' };
 };
 
-export const getColumns = ({ onEdit, onDelete, suppliers }: { onEdit: (product: Product) => void, onDelete: (id: string) => void, suppliers: Supplier[] }): ColumnDef<Product>[] => [
+export const getColumns = ({ onEdit, onDelete, suppliers }: { onEdit: (product: Product) => void, onDelete: (id: string) => void, suppliers: Pick<Supplier, 'id' | 'name'>[] }): ColumnDef<Product>[] => [
   {
     id: 'select',
     header: ({ table }) => (

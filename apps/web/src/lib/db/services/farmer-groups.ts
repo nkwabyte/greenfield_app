@@ -11,6 +11,18 @@ export async function getFarmerGroup(id: string): Promise<FarmerGroup | undefine
     return await db.farmerGroups.get(id);
 }
 
+export async function getFarmerGroupOptions(): Promise<Pick<FarmerGroup, 'id' | 'name' | 'region' | 'district' | 'seasonYear'>[]> {
+    return await db.farmerGroups
+        .filter(g => !g.deleted)
+        .toArray(groups => groups.map(g => ({
+            id: g.id,
+            name: g.name,
+            region: g.region,
+            district: g.district,
+            seasonYear: g.seasonYear
+        })));
+}
+
 export async function getFarmerGroupsByYear(seasonYear: string): Promise<FarmerGroup[]> {
     return await db.farmerGroups.where('seasonYear').equals(seasonYear).toArray();
 }

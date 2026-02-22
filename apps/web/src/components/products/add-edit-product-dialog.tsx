@@ -48,7 +48,7 @@ type AddEditProductDialogProps = {
   onOpenChange: (open: boolean) => void;
   product: Product | null;
   onSave: (data: ProductFormValues) => void;
-  suppliers: Supplier[];
+  suppliers: Pick<Supplier, 'id' | 'name'>[];
   defaultSupplierId?: string;
 };
 

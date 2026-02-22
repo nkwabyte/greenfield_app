@@ -37,7 +37,7 @@ import { cn } from '@/lib/utils';
 import { format } from 'date-fns';
 import { useToast } from '@/hooks/use-toast';
 import type { FarmerGroup, Farmer, FarmerRequest } from '@/lib/types';
-import { useProducts } from '@/hooks/useData';
+import { useProductOptions } from '@/hooks/useData';
 import { addFarmerRequest } from '@/lib/db/services/farmer-requests';
 
 const requestItemSchema = z.object({
@@ -79,7 +79,7 @@ type DistributeProductsDialogProps = {
 };
 
 export function DistributeProductsDialog({ open, onOpenChange, group, members }: DistributeProductsDialogProps) {
-    const products = useProducts();
+    const products = useProductOptions();
     const { toast } = useToast();
 
     const form = useForm<DistributeFormValues>({

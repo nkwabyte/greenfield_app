@@ -44,7 +44,7 @@ const transactionSchema = z.object({
   amount: z.coerce.number().positive({ message: 'Amount must be a positive number.' }),
   type: z.enum(['Income', 'Expense']),
   category: z.enum(['Salary', 'Travel', 'Equipment', 'Utilities', 'Marketing', 'Purchase', 'Investment', 'Loan', 'Sales', 'Other']),
-  date: z.date({ required_error: 'Transaction date is required.' }),
+  date: z.date({ message: 'Transaction date is required.' }),
   employeeName: z.string().min(1, { message: 'Employee is required.' }),
 });
 
@@ -55,12 +55,12 @@ type AddEditTransactionDialogProps = {
   onOpenChange: (open: boolean) => void;
   transaction: Transaction | null;
   onSave: (data: TransactionFormValues) => void;
-  employees: Employee[];
+  employees: Pick<Employee, 'id' | 'name'>[];
 };
 
 export function AddEditTransactionDialog({ open, onOpenChange, transaction, onSave, employees }: AddEditTransactionDialogProps) {
   const form = useForm<TransactionFormValues>({
-    resolver: zodResolver(transactionSchema),
+    resolver: zodResolver(transactionSchema) as any,
     defaultValues: {
       description: '',
       amount: undefined,
@@ -183,7 +183,7 @@ export function AddEditTransactionDialog({ open, onOpenChange, transaction, onSa
                 </FormItem>
               )}
             />
-             <FormField
+            <FormField
               control={form.control}
               name="date"
               render={({ field }) => (

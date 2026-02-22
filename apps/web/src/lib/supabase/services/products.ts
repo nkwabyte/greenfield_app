@@ -21,6 +21,35 @@ export async function getSupabaseProducts(lastSyncTime?: number): Promise<Produc
     return (data || []).map(mapProductRow);
 }
 
+/**
+ * Paginated delta sync for products.
+ */
+export async function getSupabaseProductsPaginated(
+    lastSyncTime?: number,
+    offset = 0,
+    chunkSize = 500
+): Promise<{ products: Product[]; hasMore: boolean }> {
+    let query = supabase
+        .from('products')
+        .select('*')
+        .order('updated_at', { ascending: false })
+        .range(offset, offset + chunkSize - 1);
+
+    if (lastSyncTime) {
+        const isoDate = new Date(lastSyncTime).toISOString();
+        query = query.gt('updated_at', isoDate);
+    }
+
+    const { data, error } = await query;
+    if (error) throw error;
+
+    const products = (data || []).map(mapProductRow);
+    return {
+        products,
+        hasMore: products.length === chunkSize,
+    };
+}
+
 export async function addSupabaseProduct(productData: ProductFormValues, id: string) {
     const { supplierId, ...rest } = productData as any;
     const { error } = await supabase.from('products').insert({
