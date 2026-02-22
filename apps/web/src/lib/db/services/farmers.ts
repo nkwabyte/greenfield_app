@@ -402,37 +402,50 @@ export async function syncFarmersFromSupabase(): Promise<number> {
         // be >= syncStartTime, so we'll catch it on the next sync.
         const syncStartTime = Date.now();
 
-        const supabaseFarmers = await getSupabaseFarmers(lastSyncTime);
+        let hasMore = true;
+        let offset = 0;
+        const chunkSize = 1000;
+        let totalSynced = 0;
 
-        if (supabaseFarmers.length === 0) {
-            localStorage.setItem('lastSync_farmers', syncStartTime.toString());
-            return 0;
-        }
+        while (hasMore) {
+            const result = await getSupabaseFarmersPaginated(lastSyncTime, offset, chunkSize);
+            const supabaseFarmers = result.farmers;
+            hasMore = result.hasMore;
 
-        const farmersToPut: Farmer[] = [];
-        const idsToDelete: string[] = [];
+            if (supabaseFarmers.length > 0) {
+                const farmersToPut: Farmer[] = [];
+                const idsToDelete: string[] = [];
 
-        for (const farmer of supabaseFarmers as (Farmer & { deleted?: boolean })[]) {
-            if (farmer.deleted) {
-                idsToDelete.push(farmer.id);
-            } else {
-                delete farmer.deleted;
-                farmersToPut.push(farmer);
+                for (const farmer of supabaseFarmers as (Farmer & { deleted?: boolean })[]) {
+                    if (farmer.deleted) {
+                        idsToDelete.push(farmer.id);
+                    } else {
+                        delete farmer.deleted;
+                        farmersToPut.push(farmer);
+                    }
+                }
+
+                if (farmersToPut.length > 0) {
+                    await db.farmers.bulkPut(farmersToPut);
+                }
+
+                if (idsToDelete.length > 0) {
+                    await db.farmers.bulkDelete(idsToDelete);
+                }
+
+                totalSynced += supabaseFarmers.length;
+
+                // Yield to main thread to prevent UI freezing
+                await new Promise(resolve => setTimeout(resolve, 10));
             }
-        }
 
-        if (farmersToPut.length > 0) {
-            await db.farmers.bulkPut(farmersToPut);
-        }
-
-        if (idsToDelete.length > 0) {
-            await db.farmers.bulkDelete(idsToDelete);
+            offset += chunkSize;
         }
 
         // ✅ Save the start time (not completion time) to localStorage
         localStorage.setItem('lastSync_farmers', syncStartTime.toString());
 
-        return supabaseFarmers.length;
+        return totalSynced;
     } catch (error) {
         console.error('❌ Failed to sync farmers from Supabase:', error);
         throw error;
@@ -462,20 +475,24 @@ export async function updateFarmersCache(): Promise<void> {
         'Estates (> 10 acres)': 0,
     };
     const byAge: Record<string, number> = {
-        '18-25': 0, '26-35': 0, '36-45': 0, '46-60': 0, '60+': 0, 'Unknown': 0
+        '18-25': 0, '26-35': 0, '36-45': 0, '46-60': 0, '60+': 0
     };
     const byRegionAndGender: Record<string, Record<string, number>> = {};
 
     farmers.forEach(farmer => {
         if (!farmer.deleted) {
-            if (farmer.region) {
+            // Only aggregate if region is known
+            if (farmer.region && farmer.region !== 'Unknown' && farmer.region.trim() !== '') {
                 byRegion[farmer.region] = (byRegion[farmer.region] || 0) + 1;
 
                 const r = farmer.region;
-                const g = farmer.gender || 'Unknown';
-                if (!byRegionAndGender[r]) byRegionAndGender[r] = {};
-                byRegionAndGender[r][g] = (byRegionAndGender[r][g] || 0) + 1;
+                if (farmer.gender) {
+                    const g = farmer.gender;
+                    if (!byRegionAndGender[r]) byRegionAndGender[r] = {};
+                    byRegionAndGender[r][g] = (byRegionAndGender[r][g] || 0) + 1;
+                }
             }
+
             if (farmer.gender) {
                 byGender[farmer.gender] = (byGender[farmer.gender] || 0) + 1;
             }
@@ -487,15 +504,12 @@ export async function updateFarmersCache(): Promise<void> {
             else byFarmSize['Estates (> 10 acres)']++;
 
             const age = farmer.age;
-            if (typeof age !== 'number') {
-                byAge['Unknown']++;
-            } else {
+            if (typeof age === 'number') {
                 if (age >= 18 && age <= 25) byAge['18-25']++;
                 else if (age >= 26 && age <= 35) byAge['26-35']++;
                 else if (age >= 36 && age <= 45) byAge['36-45']++;
                 else if (age >= 46 && age <= 60) byAge['46-60']++;
                 else if (age > 60) byAge['60+']++;
-                else byAge['Unknown']++;
             }
         }
     });

@@ -37,7 +37,7 @@ import { Calendar as CalendarIcon, PlusCircle, Trash2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { format } from 'date-fns';
 import type { FarmerRequest, Farmer, FarmerGroup, Product } from '@/lib/types';
-import { useFarmers, useFarmerGroups, useProducts } from '@/hooks/useData';
+import { useFarmerOptions, useFarmerGroupOptions, useProductOptions } from '@/hooks/useData';
 
 const requestItemSchema = z.object({
     productId: z.string().min(1, { message: 'Product is required' }),
@@ -82,9 +82,9 @@ type AddEditRequestDialogProps = {
 };
 
 export function AddEditRequestDialog({ open, onOpenChange, request, onSave, prefillFarmerId, prefillGroupId }: AddEditRequestDialogProps) {
-    const farmers = useFarmers();
-    const groups = useFarmerGroups();
-    const products = useProducts();
+    const farmers = useFarmerOptions();
+    const groups = useFarmerGroupOptions();
+    const products = useProductOptions();
 
     const form = useForm<RequestFormValues>({
         // @ts-ignore

@@ -12,7 +12,7 @@ import { setCounts, setSyncStatus } from '@/lib/store/slices/dataSlice';
 import { syncService } from '@/lib/db';
 import { useDashboardCounts } from '@/hooks/useData';
 import { useConnectivity } from '@/hooks/useConnectivity';
-import { useLiveQuery } from 'dexie-react-hooks';
+import { useLiveQuery } from '@/hooks/useLiveQuery';
 import { db } from '@/lib/db/schema';
 import type { RootState } from '@/lib/store/store';
 

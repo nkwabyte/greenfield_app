@@ -20,7 +20,7 @@ export default function SuppliersPage() {
   // Pagination State
   const [pagination, setPagination] = React.useState({
     pageIndex: 0,
-    pageSize: 10,
+    pageSize: 100,
   });
 
   // Dexie Hook

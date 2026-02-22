@@ -15,7 +15,8 @@
         "start": "electron ."
     },
     "dependencies": {
-        "electron-is-dev": "^3.0.1"
+        "electron-is-dev": "^3.0.1",
+        "electron-updater": "^6.8.3"
     },
     "devDependencies": {
         "@types/node": "^25.2.2",

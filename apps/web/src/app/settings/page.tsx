@@ -10,6 +10,7 @@ import { AppearanceForm } from '@/components/settings/appearance-form';
 import { NotificationsForm } from '@/components/settings/notifications-form';
 import { DangerZone } from '@/components/settings/danger-zone';
 import { LogoutCard } from '@/components/settings/logout-card';
+import { AboutCard } from '@/components/settings/about-card';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Info } from 'lucide-react';
 import { useSelector } from 'react-redux';
@@ -38,12 +39,14 @@ export default function SettingsPage() {
             <TabsTrigger value="security">Security</TabsTrigger>
             <TabsTrigger value="appearance">Appearance</TabsTrigger>
             <TabsTrigger value="notifications">Notifications</TabsTrigger>
+            <TabsTrigger value="about">About</TabsTrigger>
             {isAdmin && (
               <TabsTrigger value="danger" className="text-red-500">Danger Zone</TabsTrigger>
             )}
           </TabsList>
           <TabsContent value="profile" className="space-y-4">
             <ProfileForm />
+            <LogoutCard />
           </TabsContent>
           <TabsContent value="security" className="space-y-4">
             <SecurityForm />
@@ -54,15 +57,15 @@ export default function SettingsPage() {
           <TabsContent value="notifications" className="space-y-4">
             <NotificationsForm />
           </TabsContent>
+          <TabsContent value="about" className="space-y-4">
+            <AboutCard />
+          </TabsContent>
           {isAdmin && (
             <TabsContent value="danger" className="space-y-4">
               <DangerZone />
             </TabsContent>
           )}
         </Tabs>
-
-        {/* Logout — visible to all roles */}
-        <LogoutCard />
       </div>
     </AppShell>
   );
