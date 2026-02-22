@@ -126,8 +126,9 @@ app.whenReady().then(() => {
                 buttons: ['Restart Now', 'Later']
             }).then((result) => {
                 if (result.response === 0) {
-                    // isSilent = false, isForceRunAfter = true
-                    autoUpdater.quitAndInstall(false, true);
+                    // isSilent = true, isForceRunAfter = true
+                    // Ensures smooth restart on both Windows (NSIS silent install) and Mac
+                    autoUpdater.quitAndInstall(true, true);
                 }
             });
         });
