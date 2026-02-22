@@ -24,13 +24,12 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { deleteFarmer } from '@/lib/db/services/farmers';
 import { ConfirmDialog } from '@/components/ui/confirm-dialog';
 
-const PAGE_SIZE = 50;
-
 export default function BulkFixesPage() {
     const router = useRouter();
     const { toast } = useToast();
 
     const [pageIndex, setPageIndex] = React.useState(0);
+    const [pageSize, setPageSize] = React.useState(100);
     const [searchTerm, setSearchTerm] = React.useState('');
     const [bulkRegion, setBulkRegion] = React.useState<string>('all');
     const [issueFilter, setIssueFilter] = React.useState<string>('all');
@@ -99,11 +98,11 @@ export default function BulkFixesPage() {
         return filtered;
     }, [rawFarmers, searchTerm, bulkRegion, issueFilter]);
 
-    const pageCount = Math.ceil(filteredFarmers.length / PAGE_SIZE);
+    const pageCount = Math.ceil(filteredFarmers.length / pageSize);
     const currentPageData = React.useMemo(() => {
-        const start = pageIndex * PAGE_SIZE;
-        return filteredFarmers.slice(start, start + PAGE_SIZE);
-    }, [filteredFarmers, pageIndex]);
+        const start = pageIndex * pageSize;
+        return filteredFarmers.slice(start, start + pageSize);
+    }, [filteredFarmers, pageIndex, pageSize]);
 
     // Track local edits
     const [localEdits, setLocalEdits] = React.useState<Record<string, {
@@ -479,9 +478,30 @@ export default function BulkFixesPage() {
 
             {/* Pagination */}
             <div className="flex items-center justify-between mt-4 text-sm px-2">
-                <span className="text-muted-foreground">
-                    Page {pageIndex + 1} of {Math.max(1, pageCount)} · {filteredFarmers.length.toLocaleString()} rows
-                </span>
+                <div className="flex items-center gap-4 text-muted-foreground">
+                    <span>
+                        Page {pageIndex + 1} of {Math.max(1, pageCount)} · {filteredFarmers.length.toLocaleString()} rows
+                    </span>
+                    <div className="flex items-center gap-2">
+                        <span>Rows per page:</span>
+                        <Select
+                            value={pageSize.toString()}
+                            onValueChange={(val) => {
+                                setPageSize(Number(val));
+                                setPageIndex(0);
+                            }}
+                        >
+                            <SelectTrigger className="h-8 w-[80px]">
+                                <SelectValue />
+                            </SelectTrigger>
+                            <SelectContent>
+                                {[50, 100, 200, 500].map(size => (
+                                    <SelectItem key={size} value={size.toString()}>{size}</SelectItem>
+                                ))}
+                            </SelectContent>
+                        </Select>
+                    </div>
+                </div>
                 <div className="flex gap-1.5">
                     <Button variant="outline" size="sm" onClick={() => setPageIndex(p => Math.max(0, p - 1))} disabled={pageIndex === 0}>
                         Previous
