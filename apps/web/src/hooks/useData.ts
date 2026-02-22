@@ -157,11 +157,6 @@ export function useRegionCounts() {
         const stats = await getFarmersByRegion();
         const counts = { ...stats };
 
-        // Ensure N/A or empty regions are combined as "Unknown" for the UI
-        const naCount = counts['N/A'] || 0;
-        const emptyCount = counts[''] || 0;
-
-        counts['Unknown'] = naCount + emptyCount;
         delete counts['N/A'];
         delete counts[''];
 

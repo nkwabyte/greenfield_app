@@ -37,12 +37,11 @@ export function FarmersByGenderChart({ dataObj }: FarmersByGenderChartProps) {
         Male: genders['Male'] || 0,
         Female: genders['Female'] || 0,
         Other: genders['Other'] || 0,
-        Unknown: genders['Unknown'] || 0,
       }))
       .sort((a, b) => {
         if (a.region === 'N/A') return 1;
         if (b.region === 'N/A') return -1;
-        return (b.Male + b.Female + b.Other + b.Unknown) - (a.Male + a.Female + a.Other + a.Unknown);
+        return (b.Male + b.Female + b.Other) - (a.Male + a.Female + a.Other);
       });
   }, [dataObj]);
 
@@ -82,8 +81,7 @@ export function FarmersByGenderChart({ dataObj }: FarmersByGenderChartProps) {
               />
               <Bar dataKey="Male" stackId="a" fill="#3b82f6" radius={[0, 0, 0, 0]} />
               <Bar dataKey="Female" stackId="a" fill="#ec4899" radius={[0, 0, 0, 0]} />
-              <Bar dataKey="Other" stackId="a" fill="#8b5cf6" radius={[0, 0, 0, 0]} />
-              <Bar dataKey="Unknown" stackId="a" fill="#6b7280" radius={[4, 4, 0, 0]} />
+              <Bar dataKey="Other" stackId="a" fill="#8b5cf6" radius={[4, 4, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>
