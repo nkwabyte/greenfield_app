@@ -160,6 +160,7 @@ CREATE TABLE IF NOT EXISTS farmer_requests (
   items        jsonb       NOT NULL DEFAULT '[]',
   grand_total  numeric     NOT NULL DEFAULT 0,
   status       text        NOT NULL DEFAULT 'Pending' CHECK (status IN ('Pending', 'Approved', 'Rejected', 'Delivered')),
+  payments     jsonb       NOT NULL DEFAULT '[]'::jsonb,
   request_date timestamptz NOT NULL,
   created_at   timestamptz NOT NULL DEFAULT now(),
   updated_at   timestamptz NOT NULL DEFAULT now(),
