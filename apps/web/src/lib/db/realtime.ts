@@ -19,7 +19,6 @@ export function startRealtimeSync() {
             { event: '*', schema: 'public' },
             async (payload) => {
                 const table = payload.table;
-                console.log(`[Realtime] Change detected on: ${table}`, payload.eventType);
 
                 try {
                     switch (table) {
@@ -49,16 +48,14 @@ export function startRealtimeSync() {
                             // Could add a hook here for forced sign-out if disabled.
                             break;
                         default:
-                            console.log(`[Realtime] Unhandled table change: ${table}`);
+                            break;
                     }
                 } catch (error) {
                     console.error(`[Realtime] Failed to sync after change on ${table}:`, error);
                 }
             }
         )
-        .subscribe((status) => {
-            console.log(`[Realtime] Subscription status: ${status}`);
-        });
+        .subscribe();
 }
 
 export function stopRealtimeSync() {

@@ -18,6 +18,9 @@ import {
     syncSuppliersFromSupabase,
     syncTransactionsFromSupabase,
 } from '@/lib/db';
+import { syncFarmerGroupsFromSupabase } from '@/lib/db/services/farmer-groups';
+import { syncFarmerRequestsFromSupabase } from '@/lib/db/services/farmer-requests';
+import { db } from '@/lib/db/schema';
 import { updateFarmersCache } from '@/lib/db/services/farmers';
 import { connectivityService } from '@/lib/db/connectivity';
 import { SyncContext } from '@/lib/context/SyncContext';
