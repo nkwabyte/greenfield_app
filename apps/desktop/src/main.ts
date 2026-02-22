@@ -1,5 +1,6 @@
 import { app, BrowserWindow, nativeImage, globalShortcut, dialog } from 'electron';
 import * as path from 'path';
+import { autoUpdater } from 'electron-updater';
 
 // Set the application name
 app.name = 'GreenField CRM';
@@ -86,6 +87,11 @@ function createWindow() {
 
 app.whenReady().then(() => {
     createWindow();
+
+    // Auto-update check
+    if (app.isPackaged) {
+        autoUpdater.checkForUpdatesAndNotify();
+    }
 
     // Register a shortcut to open DevTools in production for debugging
     const devToolsShortcut = process.platform === 'darwin' ? 'Command+Alt+I' : 'Control+Shift+I';
