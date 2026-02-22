@@ -17,7 +17,7 @@ import { useLiveQuery } from '@/hooks/useLiveQuery';
 import { db } from '@/lib/db/schema';
 import { SyncQueueItem } from '@/lib/db/types';
 import { GHANA_REGION_NAMES, GHANA_REGIONS_AND_DISTRICTS } from '@/lib/data/ghana-regions-districts';
-import { ArrowLeft, CheckCircle2, Save, Undo2, XCircle, Trash2 } from 'lucide-react';
+import { ArrowLeft, Save, Undo2, Trash2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { Badge } from '@/components/ui/badge';
 import { Checkbox } from '@/components/ui/checkbox';
@@ -80,6 +80,7 @@ export default function BulkFixesPage() {
 
     // Track local edits
     const [localEdits, setLocalEdits] = React.useState<Record<string, {
+        name?: string;
         region: string;
         district: string;
         society: string;
@@ -156,11 +157,12 @@ export default function BulkFixesPage() {
         });
     };
 
-    const handleInlineEdit = (id: string, field: 'region' | 'district' | 'society' | 'community', value: string) => {
+    const handleInlineEdit = (id: string, field: 'name' | 'region' | 'district' | 'society' | 'community', value: string) => {
         const farmer = currentPageData.find(f => f.id === id);
         if (!farmer) return;
 
         const currentEdit = localEdits[id] || {
+            name: farmer.name,
             region: farmer.region,
             district: farmer.district,
             society: farmer.society || '',
@@ -367,6 +369,7 @@ export default function BulkFixesPage() {
                             const isEdited = !!editState;
 
                             // active values are either the edited values OR the original DB values
+                            const activeName = editState && editState.name !== undefined ? editState.name : row.name;
                             const activeRegion = editState ? editState.region : (row.region || '');
                             const activeDistrict = editState ? editState.district : (row.district || '');
                             const activeSociety = editState ? editState.society : (row.society || '');
@@ -384,9 +387,13 @@ export default function BulkFixesPage() {
                                         {isEdited && <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary"></div>}
                                         <Checkbox checked={isSelected} onCheckedChange={() => handleToggleOne(row.id)} />
                                     </div>
-                                    <div className="py-2 px-3 text-sm font-medium">
-                                        {row.name}
-                                        {isEdited && <Badge variant="outline" className="ml-2 text-[10px] h-4 py-0 bg-primary/10 text-primary border-primary/20">Staged</Badge>}
+                                    <div className="py-2 px-2 text-sm font-medium flex items-center gap-1">
+                                        <Input
+                                            value={activeName}
+                                            onChange={e => handleInlineEdit(row.id, 'name', e.target.value)}
+                                            className="h-8 px-2 text-xs border-transparent hover:border-input bg-transparent w-full font-medium"
+                                        />
+                                        {isEdited && <Badge variant="outline" className="text-[10px] h-4 py-0 bg-primary/10 text-primary border-primary/20 shrink-0">Staged</Badge>}
                                     </div>
 
                                     <div className="py-1 px-2">
