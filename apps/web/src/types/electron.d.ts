@@ -6,7 +6,7 @@ declare global {
             platform: NodeJS.Platform;
             versions: NodeJS.ProcessVersions;
             getAppVersion: () => Promise<string>;
-            checkForUpdates: () => Promise<boolean>;
+            checkForUpdates: () => Promise<{ success: boolean; error?: string }>;
         };
     }
 }
