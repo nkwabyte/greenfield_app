@@ -25,7 +25,9 @@ CLEAN_VERSION="${VERSION#v}"
 
 # 0. Sync package.json version
 echo "🔄 Updating apps/desktop/package.json to $CLEAN_VERSION..."
-(cd apps/desktop && npm version "$CLEAN_VERSION" --no-git-tag-version)
+# Use sed to update the version directly to bypass EPERM errors from npm
+sed -i.bak -E 's/"version": "[^"]+"/"version": "'"$CLEAN_VERSION"'"/' apps/desktop/package.json
+rm -f apps/desktop/package.json.bak
 
 # 1. Stage changes (assuming user modified package.json version)
 echo "📦 Staging changes..."
