@@ -18,6 +18,8 @@ import {
     syncSuppliersFromSupabase,
     syncTransactionsFromSupabase,
 } from '@/lib/db';
+import { syncFarmerGroupsFromSupabase } from '@/lib/db/services/farmer-groups';
+import { syncFarmerRequestsFromSupabase } from '@/lib/db/services/farmer-requests';
 import { db } from '@/lib/db/schema';
 import { updateFarmersCache } from '@/lib/db/services/farmers';
 import { syncService } from '@/lib/db/sync';
@@ -102,8 +104,10 @@ export function InitialSyncProvider({ children }: { children: React.ReactNode })
                         syncEntity('employees', syncEmployeesFromSupabase),
                         syncEntity('suppliers', syncSuppliersFromSupabase),
                         syncEntity('products', syncProductsFromSupabase),
-                        // Transactions don't need a header indicator but still sync
+                        // Transactions, groups, and requests don't need a header indicator but still sync
                         syncTransactionsFromSupabase().catch(console.error),
+                        syncFarmerGroupsFromSupabase().catch(console.error),
+                        syncFarmerRequestsFromSupabase().catch(console.error),
                     ]);
 
                     // Rebuild the aggregated statistics cache now that farmers are synced.

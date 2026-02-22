@@ -17,6 +17,7 @@ export interface SyncQueueItem {
     timestamp: number;
     synced: number; // 0 = false, 1 = true (Boolean not supported as IDB key)
     retryCount?: number;
+    lastAttemptAt?: number; // Timestamp of last sync attempt (for exponential backoff)
     lastError?: string;
     status: SyncStatus;
 }

@@ -24,6 +24,23 @@ import { v4 as uuidv4 } from 'uuid';
 const MAX_RETRY_COUNT = 3;
 const STORAGE_BUCKET = 'greenfield-media';
 
+/**
+ * Cache of locally-generated ObjectURLs keyed by media item ID.
+ * Storing them here lets us revoke stale URLs before creating new ones,
+ * preventing unbounded memory growth in long-running sessions.
+ */
+const objectUrlCache = new Map<string, string>();
+
+function createCachedObjectUrl(id: string, arrayBuffer: ArrayBuffer, mimeType: string): string {
+    const existing = objectUrlCache.get(id);
+    if (existing) {
+        URL.revokeObjectURL(existing);
+    }
+    const url = URL.createObjectURL(new Blob([arrayBuffer], { type: mimeType }));
+    objectUrlCache.set(id, url);
+    return url;
+}
+
 // ------------------------------------------------------------
 // Public API
 // ------------------------------------------------------------
@@ -58,8 +75,8 @@ export async function saveMediaOffline(
 
     await db.mediaStore.put(mediaItem);
 
-    // ObjectURL lives in-memory for immediate display
-    const localUrl = URL.createObjectURL(new Blob([arrayBuffer], { type: mediaItem.mimeType }));
+    // ObjectURL lives in-memory for immediate display; registered in cache for lifecycle management
+    const localUrl = createCachedObjectUrl(id, arrayBuffer, mediaItem.mimeType);
     return { id, localUrl };
 }
 
@@ -125,7 +142,7 @@ export async function getDisplayUrl(
         .first();
 
     if (localMedia && localMedia.status !== 'uploaded') {
-        return URL.createObjectURL(new Blob([localMedia.data], { type: localMedia.mimeType }));
+        return createCachedObjectUrl(localMedia.id, localMedia.data, localMedia.mimeType);
     }
 
     return localMedia?.remoteUrl ?? fallbackRemoteUrl;
@@ -137,6 +154,13 @@ export async function getDisplayUrl(
 export async function deleteMedia(mediaId: string, deleteRemote = false): Promise<void> {
     const item = await db.mediaStore.get(mediaId);
     if (!item) return;
+
+    // Revoke any cached ObjectURL to free memory
+    const cachedUrl = objectUrlCache.get(mediaId);
+    if (cachedUrl) {
+        URL.revokeObjectURL(cachedUrl);
+        objectUrlCache.delete(mediaId);
+    }
 
     if (deleteRemote && item.remoteUrl) {
         // Extract the storage path from the URL
