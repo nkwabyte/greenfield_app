@@ -29,8 +29,8 @@ export function AboutCard() {
 
         try {
             setIsChecking(true);
-            const started = await window.electron.checkForUpdates();
-            if (started) {
+            const result = await window.electron.checkForUpdates();
+            if (result?.success) {
                 toast({
                     title: "Checking for updates",
                     description: "Please wait while we check for the latest version..."
@@ -38,7 +38,7 @@ export function AboutCard() {
             } else {
                 toast({
                     title: "Update check failed",
-                    description: "Failed to start update check. Please ensure you have internet access.",
+                    description: result?.error ?? "Failed to start update check.",
                     variant: 'destructive'
                 });
             }

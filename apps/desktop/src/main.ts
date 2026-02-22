@@ -94,13 +94,13 @@ app.whenReady().then(() => {
         if (app.isPackaged) {
             try {
                 await autoUpdater.checkForUpdates();
-                return true;
-            } catch (err) {
-                console.error(err);
-                return false;
+                return { success: true };
+            } catch (err: any) {
+                console.error('[AutoUpdater] Manual check failed:', err);
+                return { success: false, error: err?.message ?? 'Update check failed' };
             }
         }
-        return false;
+        return { success: false, error: 'Auto-update is only available in the packaged application.' };
     });
 
     // Auto-update check

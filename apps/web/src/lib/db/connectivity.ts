@@ -5,6 +5,16 @@
 
 import type { ConnectivityState } from './types';
 
+/** Timeout (ms) for the active HTTP connectivity probe */
+const CONNECTIVITY_CHECK_TIMEOUT_MS = 5000;
+
+/**
+ * URL used to probe real internet access.
+ * Uses Google's dedicated connectivity-check endpoint (returns 204 No Content).
+ * Requests are sent with mode:'no-cors' so no CORS headers are required.
+ */
+const CONNECTIVITY_CHECK_URL = 'https://www.google.com';
+
 class ConnectivityService {
     private listeners: Set<(isOnline: boolean) => void> = new Set();
     private state: ConnectivityState = {
@@ -23,6 +33,14 @@ class ConnectivityService {
                 this.state.lastOnlineAt = Date.now();
             } else {
                 this.state.lastOfflineAt = Date.now();
+                // navigator.onLine can be unreliable in desktop (Electron) apps,
+                // particularly during startup. Run a real connectivity check and
+                // update state if we are actually online.
+                this.checkConnection().then((online) => {
+                    if (online) {
+                        this.handleOnline();
+                    }
+                }).catch(() => { /* keep current offline state */ });
             }
         }
     }
@@ -39,6 +57,16 @@ class ConnectivityService {
         this.state.lastOfflineAt = Date.now();
         // console.log('🔴 Connection lost - working offline');
         this.notifyListeners(false);
+
+        // Verify offline status asynchronously. In desktop (Electron) environments
+        // the browser 'offline' event can fire spuriously (e.g. when switching
+        // between network adapters). If we can still reach the internet, restore
+        // the online state immediately so sync is not incorrectly blocked.
+        this.checkConnection().then((actuallyOnline) => {
+            if (actuallyOnline) {
+                this.handleOnline();
+            }
+        }).catch(() => { /* keep offline state on unexpected error */ });
     };
 
     private notifyListeners(isOnline: boolean) {
@@ -75,17 +103,21 @@ class ConnectivityService {
      * Manually check connection (useful for testing)
      */
     async checkConnection(): Promise<boolean> {
-        if (!navigator.onLine) {
-            return false;
-        }
-
         try {
-            // Try to fetch a small resource to verify actual connectivity
-            const response = await fetch('/favicon.ico', {
+            // Use a well-known absolute URL so this works correctly in desktop
+            // (Electron) apps where a relative URL would resolve to the app server
+            // rather than testing real internet access. The request uses no-cors so
+            // CORS headers are not required, and a short timeout prevents long hangs.
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), CONNECTIVITY_CHECK_TIMEOUT_MS);
+            await fetch(CONNECTIVITY_CHECK_URL, {
                 method: 'HEAD',
                 cache: 'no-cache',
+                mode: 'no-cors',
+                signal: controller.signal,
             });
-            return response.ok;
+            clearTimeout(timeoutId);
+            return true;
         } catch {
             return false;
         }
