@@ -67,6 +67,33 @@ export default function BulkFixesPage() {
             filtered = filtered.filter(f => !f.district || f.district.trim() === '');
         } else if (issueFilter === 'missing_any') {
             filtered = filtered.filter(f => !f.region || !f.district || f.region.trim() === '' || f.district.trim() === '');
+        } else if (issueFilter === 'possible_duplicates') {
+            const nameCounts: Record<string, number> = {};
+            rawFarmers.forEach(f => {
+                const norm = f.name.toLowerCase().replace(/[^a-z0-9]/gi, '');
+                if (norm) nameCounts[norm] = (nameCounts[norm] || 0) + 1;
+            });
+
+            const duplicateNames = new Set<string>();
+            Object.entries(nameCounts).forEach(([norm, count]) => {
+                if (count > 1) duplicateNames.add(norm);
+            });
+
+            filtered = filtered.filter(f => {
+                const norm = f.name.toLowerCase().replace(/[^a-z0-9]/gi, '');
+                return duplicateNames.has(norm);
+            });
+
+            // Sort to cluster duplicates together
+            filtered.sort((a, b) => {
+                const normA = a.name.toLowerCase().replace(/[^a-z0-9]/gi, '');
+                const normB = b.name.toLowerCase().replace(/[^a-z0-9]/gi, '');
+                if (normA === normB) {
+                    // Tie-breaker by original name or ID
+                    return a.name.localeCompare(b.name);
+                }
+                return normA.localeCompare(normB);
+            });
         }
 
         return filtered;
@@ -335,6 +362,7 @@ export default function BulkFixesPage() {
                         <SelectItem value="missing_any">Any Missing Data</SelectItem>
                         <SelectItem value="missing_region">Missing Region</SelectItem>
                         <SelectItem value="missing_district">Missing District</SelectItem>
+                        <SelectItem value="possible_duplicates">Possible Duplicates</SelectItem>
                     </SelectContent>
                 </Select>
                 <div className="ml-auto text-sm text-muted-foreground">
