@@ -91,6 +91,33 @@ app.whenReady().then(() => {
     // Auto-update check
     if (app.isPackaged) {
         autoUpdater.checkForUpdatesAndNotify();
+
+        autoUpdater.on('update-available', (info) => {
+            dialog.showMessageBox({
+                type: 'info',
+                title: 'Update Available',
+                message: `Version ${info.version} is available. Downloading now in the background...`,
+                buttons: ['Okay']
+            });
+        });
+
+        autoUpdater.on('update-downloaded', (info) => {
+            dialog.showMessageBox({
+                type: 'info',
+                title: 'Update Ready',
+                message: `Version ${info.version} has been downloaded. The application will restart to install it.`,
+                buttons: ['Restart Now', 'Later']
+            }).then((result) => {
+                if (result.response === 0) {
+                    autoUpdater.quitAndInstall();
+                }
+            });
+        });
+
+        autoUpdater.on('error', (err) => {
+            console.error('[AutoUpdater] Error fetching updates', err);
+            // We do not show an error dialog here to prevent annoying popups if the network is down
+        });
     }
 
     // Register a shortcut to open DevTools in production for debugging
