@@ -42,11 +42,11 @@ export default function FarmerGroupsPage() {
     const handleSaveGroup = async (data: GroupFormValues) => {
         try {
             if (editingGroup) {
-                await updateFarmerGroup(editingGroup.id, data);
+                await updateFarmerGroup(editingGroup.id, data as any);
                 toast({ title: 'Success', description: 'Farmer group updated successfully.' });
             } else {
                 const id = uuidv4();
-                await addFarmerGroup(data, id);
+                await addFarmerGroup(data as any, id);
                 toast({ title: 'Success', description: 'Farmer group created successfully.' });
             }
         } catch (error) {
@@ -60,7 +60,7 @@ export default function FarmerGroupsPage() {
         if (!search) return groups;
         return groups.filter(g =>
             g.name.toLowerCase().includes(search.toLowerCase()) ||
-            g.seasonYear.includes(search)
+            g.seasonYear?.includes(search)
         );
     }, [groups, search]);
 
@@ -117,7 +117,7 @@ export default function FarmerGroupsPage() {
                             <CardFooter className="pt-4 pb-4 border-t bg-muted/20">
                                 <div className="flex items-center text-sm font-medium text-muted-foreground">
                                     <Users className="mr-2 h-4 w-4" />
-                                    {group.farmerIds.length} {group.farmerIds.length === 1 ? 'Farmer' : 'Farmers'} Enrolled
+                                    {group.farmerIds?.length || 0} {(group.farmerIds?.length || 0) === 1 ? 'Farmer' : 'Farmers'} Enrolled
                                 </div>
                             </CardFooter>
                         </Card>

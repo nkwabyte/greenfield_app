@@ -236,7 +236,6 @@ async function stagePhase(buffer: ArrayBuffer) {
             region: col(cols, 'region'),
             district: col(cols, 'district'),
             society: col(cols, 'society'),
-            community: col(cols, 'community'),
         };
 
         let chunk: StagingFarmer[] = [];
@@ -282,7 +281,6 @@ async function stagePhase(buffer: ArrayBuffer) {
                     rawGender: String(row[colMap.gender] ?? '').trim(),
                     rawDistrict: district || String(row[colMap.district] ?? '').trim(),
                     rawSociety: String(row[colMap.society] ?? '').trim(),
-                    rawCommunity: String(row[colMap.community] ?? '').trim(),
                     rawFarmSize: String(row[colMap.farmSize] ?? '').trim(),
                 });
                 totalErrors++;
@@ -305,7 +303,6 @@ async function stagePhase(buffer: ArrayBuffer) {
                 region,
                 district: district || sheetName,
                 society: String(row[colMap.society] ?? '').trim(),
-                community: String(row[colMap.community] ?? '').trim(),
                 farmSize: parseFloat(String(row[colMap.farmSize] ?? '0')) || 0,
                 contact: '',
                 educationLevel: 'None',
@@ -364,7 +361,6 @@ async function commitPhase() {
             region: s.region,
             district: s.district,
             society: s.society,
-            community: s.community,
             farmSize: s.farmSize,
             contact: s.contact,
             educationLevel: s.educationLevel as Farmer['educationLevel'],

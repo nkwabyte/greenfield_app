@@ -197,7 +197,6 @@ export function BulkUploadPreviewDialog({
                                 <div className="py-2 px-2">Region</div>
                                 <div className="py-2 px-2">District</div>
                                 <div className="py-2 px-2">Society</div>
-                                <div className="py-2 px-2">Community</div>
                                 <div className="py-2 px-2">Farm (ac)</div>
                                 <div className="py-2" />
                             </div>
@@ -282,16 +281,6 @@ export function BulkUploadPreviewDialog({
                                                     placeholder="Society"
                                                 />
                                             </div>
-
-                                            {/* Community */}
-                                            <div className="py-1 px-2">
-                                                <EditableText
-                                                    value={row.community ?? ''}
-                                                    onChange={v => updateRow(row._rowKey, { community: v })}
-                                                    placeholder="Community"
-                                                />
-                                            </div>
-
                                             {/* Farm size */}
                                             <div className="py-1 px-2">
                                                 <EditableText
@@ -380,7 +369,7 @@ export function BulkUploadPreviewDialog({
                         </Button>
                     </div>
                 </DialogFooter>
-            </DialogContent>
-        </Dialog>
+            </DialogContent >
+        </Dialog >
     );
 }

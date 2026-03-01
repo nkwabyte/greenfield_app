@@ -16,6 +16,7 @@ import { useToast } from '@/hooks/use-toast';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { FarmerRequestsList } from '@/components/farmers/farmer-requests-list';
+import { FarmerPaymentsTab } from '@/components/farmers/farmer-payments-tab';
 
 export default function FarmerDetailsPage({ params }: { params: Promise<{ id: string }> }) {
     const router = useRouter();
@@ -79,7 +80,7 @@ export default function FarmerDetailsPage({ params }: { params: Promise<{ id: st
                         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">{farmer.name}</h1>
                         <div className="flex items-center text-muted-foreground mt-1">
                             <MapPin className="mr-1 h-4 w-4" />
-                            {farmer.community}, {farmer.district}, {farmer.region}
+                            {farmer.society ? `${farmer.society}, ` : ''}{farmer.district}, {farmer.region}
                         </div>
                     </div>
                     <div className="flex items-center gap-2">
@@ -97,6 +98,7 @@ export default function FarmerDetailsPage({ params }: { params: Promise<{ id: st
                     <TabsList>
                         <TabsTrigger value="overview">Overview</TabsTrigger>
                         <TabsTrigger value="requests">Product Requests</TabsTrigger>
+                        <TabsTrigger value="payments">Payments</TabsTrigger>
                     </TabsList>
 
                     <TabsContent value="overview" className="space-y-6">
@@ -189,6 +191,10 @@ export default function FarmerDetailsPage({ params }: { params: Promise<{ id: st
                             farmerGroupId={farmer.groupId}
                             onRequireGroup={() => setIsGroupDialogOpen(true)}
                         />
+                    </TabsContent>
+
+                    <TabsContent value="payments" className="space-y-6">
+                        <FarmerPaymentsTab farmerId={farmer.id} />
                     </TabsContent>
                 </Tabs>
 

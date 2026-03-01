@@ -78,7 +78,7 @@ export default function FarmerRequestsPage() {
         return requests.filter(req => {
             const farmer = farmerMap.get(req.farmerId);
             const farmerName = farmer ? farmer.name.toLowerCase() : '';
-            return farmerName.includes(search.toLowerCase()) || req.seasonYear.includes(search);
+            return farmerName.includes(search.toLowerCase()) || (req.seasonYear?.includes(search) ?? false);
         });
     }, [requests, search, farmerMap]);
 

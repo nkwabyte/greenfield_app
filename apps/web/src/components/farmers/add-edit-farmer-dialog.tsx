@@ -39,6 +39,7 @@ import { cn } from '@/lib/utils';
 import { format } from 'date-fns';
 import type { Farmer } from '@/lib/types';
 import { Textarea } from '../ui/textarea';
+import { useFarmerGroups } from '@/hooks/useData';
 
 const farmerSchema = z.object({
   name: z.string().min(1, { message: 'Farmer main surname/nickname is required.' }),
@@ -64,7 +65,6 @@ const farmerSchema = z.object({
   region: z.string().optional(),
   district: z.string().optional(),
   society: z.string().optional(),
-  community: z.string().optional(),
   contact: z.string().optional(),
 
   // Next of Kin
@@ -91,6 +91,7 @@ const farmerSchema = z.object({
 
   status: z.enum(['Active', 'Inactive']).optional(),
   joinDate: z.date().optional(),
+  groupId: z.string().optional(),
   createdAt: z.date().optional(),
   updatedAt: z.date().optional(),
 });
@@ -106,6 +107,7 @@ type AddEditFarmerDialogProps = {
 
 export function AddEditFarmerDialog({ open, onOpenChange, farmer, onSave }: AddEditFarmerDialogProps) {
   const [activeTab, setActiveTab] = React.useState('personal');
+  const groups = useFarmerGroups() || [];
 
   const form = useForm<FarmerFormValues>({
     // @ts-ignore - Ignore type mismatch between react-hook-form and zodResolver versions
@@ -129,7 +131,6 @@ export function AddEditFarmerDialog({ open, onOpenChange, farmer, onSave }: AddE
       region: '',
       district: '',
       society: '',
-      community: '',
       contact: '',
       nextOfKin: '',
       nextOfKinContact: '',
@@ -157,6 +158,7 @@ export function AddEditFarmerDialog({ open, onOpenChange, farmer, onSave }: AddE
         ...farmer,
         cropsGrown: farmer.cropsGrown,
         joinDate: farmer.joinDate ? new Date(farmer.joinDate) : undefined,
+        groupId: farmer.groupId,
         createdAt: farmer.createdAt ? new Date(farmer.createdAt) : undefined,
         updatedAt: farmer.updatedAt ? new Date(farmer.updatedAt) : undefined,
       });
@@ -179,7 +181,6 @@ export function AddEditFarmerDialog({ open, onOpenChange, farmer, onSave }: AddE
         region: '',
         district: '',
         society: '',
-        community: '',
         contact: '',
         nextOfKin: '',
         nextOfKinContact: '',
@@ -197,6 +198,7 @@ export function AddEditFarmerDialog({ open, onOpenChange, farmer, onSave }: AddE
         otherBusiness: '',
         status: 'Active',
         joinDate: new Date(),
+        groupId: undefined,
       });
     }
   }, [farmer, form, open]);
@@ -351,11 +353,23 @@ export function AddEditFarmerDialog({ open, onOpenChange, farmer, onSave }: AddE
                   <div className="col-span-2 border-t pt-3 mt-2"><h4 className="text-sm font-semibold mb-3">Geographic Location</h4></div>
                   <FormField control={control} name="region" render={({ field }) => (<FormItem><FormLabel>Region</FormLabel><FormControl><Input placeholder="e.g. Ashanti" {...field} /></FormControl><FormMessage /></FormItem>)} />
                   <FormField control={control} name="district" render={({ field }) => (<FormItem><FormLabel>District</FormLabel><FormControl><Input placeholder="e.g. Atwima Kwanwoma" {...field} /></FormControl><FormMessage /></FormItem>)} />
-                  <FormField control={control} name="community" render={({ field }) => (<FormItem><FormLabel>Community</FormLabel><FormControl><Input placeholder="e.g. Foase" {...field} /></FormControl><FormMessage /></FormItem>)} />
-                  <FormField control={control} name="society" render={({ field }) => (<FormItem><FormLabel>Society</FormLabel><FormControl><Input placeholder="Society Name" {...field} /></FormControl><FormMessage /></FormItem>)} />
+                  <FormField control={control} name="society" render={({ field }) => (<FormItem className="col-span-2"><FormLabel>Society / Community</FormLabel><FormControl><Input placeholder="e.g. Foase" {...field} /></FormControl><FormMessage /></FormItem>)} />
 
                   <FormField control={control} name="contact" render={({ field }) => (<FormItem><FormLabel>Personal Phone</FormLabel><FormControl><Input placeholder="024 123 4567" {...field} /></FormControl><FormMessage /></FormItem>)} />
                   <FormField control={control} name="groupPosition" render={({ field }) => (<FormItem><FormLabel>Position in Group</FormLabel><FormControl><Input placeholder="e.g. Member, Secretary" {...field} /></FormControl><FormMessage /></FormItem>)} />
+
+                  <FormField control={control} name="groupId" render={({ field }) => (
+                    <FormItem className="col-span-2"><FormLabel>Farmer Group</FormLabel>
+                      <Select onValueChange={field.onChange} value={field.value || "none"}>
+                        <FormControl><SelectTrigger><SelectValue placeholder="Select a Group" /></SelectTrigger></FormControl>
+                        <SelectContent>
+                          <SelectItem value="none">None (Independent)</SelectItem>
+                          {groups.map(g => (
+                            <SelectItem key={g.id} value={g.id}>{g.name} ({g.seasonYear})</SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select><FormMessage /></FormItem>
+                  )} />
 
                   {/* Next of Kin */}
                   <div className="col-span-2 border-t pt-3 mt-2"><h4 className="text-sm font-semibold mb-3">Next of Kin Details</h4></div>

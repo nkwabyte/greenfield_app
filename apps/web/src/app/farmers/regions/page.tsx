@@ -14,6 +14,13 @@ export default function RegionsHubPage() {
     const regionCounts = useRegionCounts();
     const [searchQuery, setSearchQuery] = useState('');
 
+    // Force rebuild cache on mount to overwrite unnormalized cached region strings 
+    React.useEffect(() => {
+        import('@/lib/db/services/farmers').then(({ updateFarmersCache }) => {
+            updateFarmersCache().catch(console.error);
+        });
+    }, []);
+
     const filteredRegions = GHANA_REGIONS.filter(region =>
         region.toLowerCase().includes(searchQuery.toLowerCase())
     );
@@ -48,18 +55,19 @@ export default function RegionsHubPage() {
             <div className="p-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
                     {filteredRegions.map((region) => {
-                        const count = regionCounts?.[region];
+                        const isLoading = regionCounts === undefined;
+                        const count = regionCounts?.[region] || 0;
                         return (
                             <Link
                                 key={region}
-                                href={`/farmers/all?region=${encodeURIComponent(region)}`}
+                                href={`/farmers/regions/${encodeURIComponent(region)}`}
                                 className="group block rounded-xl border bg-card p-5 shadow-sm hover:shadow-md hover:border-blue-500/50 transition-all duration-200"
                             >
                                 <div className="flex items-start justify-between mb-4">
                                     <div className="p-2.5 rounded-lg bg-blue-500/10 text-blue-500 group-hover:bg-blue-500 group-hover:text-white transition-colors">
                                         <MapPin className="h-5 w-5" />
                                     </div>
-                                    {count !== undefined && count > 0 && (
+                                    {!isLoading && count > 0 && (
                                         <span className="inline-flex items-center rounded-full bg-emerald-100 px-2.5 py-0.5 text-xs font-semibold text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400">
                                             Active
                                         </span>
@@ -73,7 +81,7 @@ export default function RegionsHubPage() {
                                 <div className="flex items-center text-sm text-muted-foreground gap-1.5 mt-3">
                                     <Users className="h-4 w-4" />
                                     <span>
-                                        {count === undefined ? 'Loading...' : `${count.toLocaleString()} ${count === 1 ? 'Farmer' : 'Farmers'}`}
+                                        {isLoading ? 'Loading...' : `${count.toLocaleString()} ${count === 1 ? 'Farmer' : 'Farmers'}`}
                                     </span>
                                 </div>
                             </Link>
@@ -82,19 +90,20 @@ export default function RegionsHubPage() {
 
                     {/* Unknown/Unspecified Region Card */}
                     {showUnknown && (() => {
-                        const unknownCount = regionCounts?.['Unknown'];
+                        const isLoading = regionCounts === undefined;
+                        const unknownCount = regionCounts?.['Unknown'] || 0;
                         return (
                             <Link
-                                href={`/farmers/all?region=N%2FA`}
+                                href={`/farmers/regions/N%2FA`}
                                 className="group block rounded-xl border bg-muted/30 p-5 shadow-sm hover:shadow-md hover:border-slate-500/50 transition-all duration-200"
                             >
                                 <div className="flex items-start justify-between mb-4">
                                     <div className="p-2.5 rounded-lg bg-slate-500/10 text-slate-500 group-hover:bg-slate-500 group-hover:text-white transition-colors">
                                         <HelpCircle className="h-5 w-5" />
                                     </div>
-                                    {unknownCount !== undefined && unknownCount > 0 && (
+                                    {!isLoading && unknownCount > 0 && (
                                         <span className="inline-flex items-center rounded-full bg-slate-200 px-2.5 py-0.5 text-xs font-semibold text-slate-700 dark:bg-slate-800 dark:text-slate-300">
-                                            {unknownCount > 0 ? 'Action Needed' : ''}
+                                            Action Needed
                                         </span>
                                     )}
                                 </div>
@@ -106,7 +115,7 @@ export default function RegionsHubPage() {
                                 <div className="flex items-center text-sm text-muted-foreground gap-1.5 mt-3">
                                     <Users className="h-4 w-4" />
                                     <span>
-                                        {unknownCount === undefined ? 'Loading...' : `${unknownCount.toLocaleString()} ${unknownCount === 1 ? 'Farmer' : 'Farmers'}`}
+                                        {isLoading ? 'Loading...' : `${unknownCount.toLocaleString()} ${unknownCount === 1 ? 'Farmer' : 'Farmers'}`}
                                     </span>
                                 </div>
                             </Link>

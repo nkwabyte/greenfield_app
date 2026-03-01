@@ -50,7 +50,6 @@ export default function BulkFixesPage() {
             filtered = filtered.filter(f =>
                 f.name.toLowerCase().includes(lowSearch) ||
                 (f.society && f.society.toLowerCase().includes(lowSearch)) ||
-                (f.community && f.community.toLowerCase().includes(lowSearch)) ||
                 (f.region && f.region.toLowerCase().includes(lowSearch)) ||
                 (f.district && f.district.toLowerCase().includes(lowSearch))
             );
@@ -110,7 +109,6 @@ export default function BulkFixesPage() {
         region: string;
         district: string;
         society: string;
-        community: string;
     }>>({});
 
     // Checkbox selection
@@ -120,7 +118,6 @@ export default function BulkFixesPage() {
     const [massRegion, setMassRegion] = React.useState('none');
     const [massDistrict, setMassDistrict] = React.useState('none');
     const [massSociety, setMassSociety] = React.useState('');
-    const [massCommunity, setMassCommunity] = React.useState('');
 
 
     const handleToggleAll = (checked: boolean) => {
@@ -151,7 +148,6 @@ export default function BulkFixesPage() {
                 region: farmer.region,
                 district: farmer.district,
                 society: farmer.society || '',
-                community: farmer.community || '',
             };
 
             if (massRegion !== 'none') currentEdit.region = massRegion;
@@ -164,7 +160,6 @@ export default function BulkFixesPage() {
             }
 
             if (massSociety.trim() !== '') currentEdit.society = massSociety;
-            if (massCommunity.trim() !== '') currentEdit.community = massCommunity;
 
             newEdits[id] = currentEdit;
         });
@@ -175,7 +170,6 @@ export default function BulkFixesPage() {
         setMassRegion('none');
         setMassDistrict('none');
         setMassSociety('');
-        setMassCommunity('');
 
         toast({
             title: 'Edits Staged',
@@ -183,7 +177,7 @@ export default function BulkFixesPage() {
         });
     };
 
-    const handleInlineEdit = (id: string, field: 'name' | 'region' | 'district' | 'society' | 'community', value: string) => {
+    const handleInlineEdit = (id: string, field: 'name' | 'region' | 'district' | 'society', value: string) => {
         const farmer = currentPageData.find(f => f.id === id);
         if (!farmer) return;
 
@@ -192,7 +186,6 @@ export default function BulkFixesPage() {
             region: farmer.region,
             district: farmer.district,
             society: farmer.society || '',
-            community: farmer.community || '',
         };
 
         const updated = { ...currentEdit, [field]: value };
@@ -322,9 +315,6 @@ export default function BulkFixesPage() {
                 <div className="flex-1 min-w-[150px]">
                     <Input placeholder="Set Society..." value={massSociety} onChange={e => setMassSociety(e.target.value)} className="bg-background" />
                 </div>
-                <div className="flex-1 min-w-[150px]">
-                    <Input placeholder="Set Community..." value={massCommunity} onChange={e => setMassCommunity(e.target.value)} className="bg-background" />
-                </div>
                 <Button variant="secondary" onClick={handleApplyMassEdits} disabled={selectedIds.size === 0} className="font-semibold text-primary hover:text-primary">
                     Apply to {selectedIds.size} Rows
                 </Button>
@@ -370,9 +360,8 @@ export default function BulkFixesPage() {
             </div>
 
 
-            {/* Table */}
             <div className="rounded-md border overflow-hidden overflow-x-auto bg-card">
-                <div className="grid grid-cols-[3rem_1.5fr_1.5fr_1.5fr_1fr_1fr] bg-muted/60 text-xs font-semibold text-muted-foreground border-b min-w-[900px]">
+                <div className="grid grid-cols-[3rem_1.5fr_1.5fr_1.5fr_1.5fr] bg-muted/60 text-xs font-semibold text-muted-foreground border-b min-w-[900px]">
                     <div className="py-2.5 px-3 flex items-center justify-center">
                         <Checkbox
                             checked={currentPageData.length > 0 && selectedIds.size === currentPageData.length}
@@ -383,7 +372,6 @@ export default function BulkFixesPage() {
                     <div className="py-2.5 px-3">Region</div>
                     <div className="py-2.5 px-3">District</div>
                     <div className="py-2.5 px-3">Society</div>
-                    <div className="py-2.5 px-3">Community</div>
                 </div>
 
                 <div className="min-w-[900px]">
@@ -400,7 +388,6 @@ export default function BulkFixesPage() {
                             const activeRegion = editState ? editState.region : (row.region || '');
                             const activeDistrict = editState ? editState.district : (row.district || '');
                             const activeSociety = editState ? editState.society : (row.society || '');
-                            const activeCommunity = editState ? editState.community : (row.community || '');
 
                             // Dynamic districts for inline dropdown
                             const curDistrictOptions = activeRegion ? (GHANA_REGIONS_AND_DISTRICTS[activeRegion] ?? []).map((d: string) => ({ value: d, label: d })) : [];
@@ -408,7 +395,7 @@ export default function BulkFixesPage() {
                             return (
                                 <div
                                     key={row.id}
-                                    className={`grid grid-cols-[3rem_1.5fr_1.5fr_1.5fr_1fr_1fr] items-center border-b last:border-0 hover:bg-muted/30 transition-colors ${idx % 2 !== 0 ? 'bg-muted/10' : ''} ${isEdited ? 'bg-primary/5' : ''}`}
+                                    className={`grid grid-cols-[3rem_1.5fr_1.5fr_1.5fr_1.5fr] items-center border-b last:border-0 hover:bg-muted/30 transition-colors ${idx % 2 !== 0 ? 'bg-muted/10' : ''} ${isEdited ? 'bg-primary/5' : ''}`}
                                 >
                                     <div className="py-1 px-3 flex items-center justify-center relative">
                                         {isEdited && <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary"></div>}
@@ -454,18 +441,10 @@ export default function BulkFixesPage() {
                                         )}
                                     </div>
 
-                                    <div className="py-1 px-2">
+                                    <div className="py-1 px-2 mb-2 md:mb-0">
                                         <Input
                                             value={activeSociety}
                                             onChange={e => handleInlineEdit(row.id, 'society', e.target.value)}
-                                            className="h-8 px-2 text-xs border-transparent hover:border-input bg-transparent w-full"
-                                        />
-                                    </div>
-
-                                    <div className="py-1 px-2">
-                                        <Input
-                                            value={activeCommunity}
-                                            onChange={e => handleInlineEdit(row.id, 'community', e.target.value)}
                                             className="h-8 px-2 text-xs border-transparent hover:border-input bg-transparent w-full"
                                         />
                                     </div>

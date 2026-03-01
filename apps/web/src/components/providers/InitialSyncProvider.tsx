@@ -1,7 +1,6 @@
 /**
  * Initial Sync Provider - Performs one-time background sync from Supabase to IndexedDB
- * This runs in the background without blocking the UI
- * Only syncs when a user is authenticated to avoid permission errors
+ * Exposes pullFromCloud and pushToCloud via SyncContext for manual triggering.
  */
 
 'use client';
@@ -20,24 +19,27 @@ import {
 } from '@/lib/db';
 import { syncFarmerGroupsFromSupabase } from '@/lib/db/services/farmer-groups';
 import { syncFarmerRequestsFromSupabase } from '@/lib/db/services/farmer-requests';
-import { db } from '@/lib/db/schema';
 import { updateFarmersCache } from '@/lib/db/services/farmers';
 import { connectivityService } from '@/lib/db/connectivity';
+import { syncService } from '@/lib/db/sync';
 import { SyncContext } from '@/lib/context/SyncContext';
 
 export function InitialSyncProvider({ children }: { children: React.ReactNode }) {
     const dispatch = useDispatch();
     const isAuthenticated = useSelector((state: RootState) => state.auth.isAuthenticated);
-    const [isSyncing, setIsSyncing] = useState(false);
-    const [lastSyncAt, setLastSyncAt] = useState<string | null>(
+
+    const [isPulling, setIsPulling] = useState(false);
+    const [isPushing, setIsPushing] = useState(false);
+    const [lastPullAt, setLastPullAt] = useState<string | null>(
         typeof window !== 'undefined' ? localStorage.getItem('lastInitialSync') : null
     );
-    // Use a ref so forceSync always sees the latest isSyncing without stale closure
-    const isSyncingRef = useRef(false);
 
-    const performInitialSync = useCallback(async (force: boolean = false) => {
-        if (isSyncingRef.current) return;
-        if (!isAuthenticated) return;
+    const isPullingRef = useRef(false);
+    const isPushingRef = useRef(false);
+
+    // ── Pull: Supabase → local IndexedDB ────────────────────────────────────
+    const performPull = useCallback(async (force: boolean = false) => {
+        if (isPullingRef.current || !isAuthenticated) return;
 
         try {
             await requestPersistentStorage();
@@ -47,8 +49,8 @@ export function InitialSyncProvider({ children }: { children: React.ReactNode })
             const THIRTY_MINUTES = 30 * 60 * 1000;
 
             if (force || !lastSync || now - parseInt(lastSync) > THIRTY_MINUTES) {
-                isSyncingRef.current = true;
-                setIsSyncing(true);
+                isPullingRef.current = true;
+                setIsPulling(true);
 
                 const syncEntity = async (
                     entity: 'farmers' | 'employees' | 'suppliers' | 'products',
@@ -70,44 +72,63 @@ export function InitialSyncProvider({ children }: { children: React.ReactNode })
                     syncEntity('suppliers', syncSuppliersFromSupabase),
                     syncEntity('products', syncProductsFromSupabase),
                     syncTransactionsFromSupabase().catch(console.error),
+                    syncFarmerGroupsFromSupabase().catch(console.error),
+                    syncFarmerRequestsFromSupabase().catch(console.error),
                 ]);
 
                 updateFarmersCache().catch(console.error);
 
                 const nowIso = new Date(now).toISOString();
                 localStorage.setItem('lastInitialSync', now.toString());
-                setLastSyncAt(nowIso);
+                setLastPullAt(nowIso);
             } else {
+                // Data is fresh — just mark entities as done
                 const entities = ['farmers', 'employees', 'suppliers', 'products'] as const;
                 entities.forEach(entity =>
                     dispatch(setEntitySyncStatus({ entity, status: 'done' }))
                 );
             }
         } catch (error) {
-            console.error('❌ Failed to initialize sync:', error);
+            console.error('❌ Pull sync failed:', error);
         } finally {
-            isSyncingRef.current = false;
-            setIsSyncing(false);
+            isPullingRef.current = false;
+            setIsPulling(false);
         }
     }, [isAuthenticated, dispatch]);
 
-    /** Public API: force a fresh full resync immediately */
-    const forceSync = useCallback(async () => {
-        await performInitialSync(true);
-    }, [performInitialSync]);
+    /** Public API — force pull from Supabase immediately */
+    const pullFromCloud = useCallback(async () => {
+        await performPull(true);
+    }, [performPull]);
 
+    // ── Push: local sync-queue → Supabase ───────────────────────────────────
+    const pushToCloud = useCallback(async () => {
+        if (isPushingRef.current || !isAuthenticated) return;
+        isPushingRef.current = true;
+        setIsPushing(true);
+        try {
+            await syncService.syncAll();
+        } catch (error) {
+            console.error('❌ Push sync failed:', error);
+        } finally {
+            isPushingRef.current = false;
+            setIsPushing(false);
+        }
+    }, [isAuthenticated]);
+
+    // ── Auto-sync on mount / reconnect ──────────────────────────────────────
     useEffect(() => {
         if (!isAuthenticated) return;
 
         let isSubscribed = true;
         let unsubscribeConnectivity: (() => void) | undefined;
 
-        performInitialSync(false).then(() => {
+        performPull(false).then(() => {
             if (isSubscribed) {
                 unsubscribeConnectivity = connectivityService.subscribe((isOnline) => {
                     if (isOnline && isSubscribed) {
                         console.log('🌐 Connection restored, triggering adaptive delta sync...');
-                        performInitialSync(true);
+                        performPull(true);
                     }
                 });
             }
@@ -117,10 +138,10 @@ export function InitialSyncProvider({ children }: { children: React.ReactNode })
             isSubscribed = false;
             if (unsubscribeConnectivity) unsubscribeConnectivity();
         };
-    }, [isAuthenticated, performInitialSync]);
+    }, [isAuthenticated, performPull]);
 
     return (
-        <SyncContext.Provider value={{ forceSync, isSyncing, lastSyncAt }}>
+        <SyncContext.Provider value={{ pullFromCloud, pushToCloud, isPulling, isPushing, lastPullAt }}>
             {children}
         </SyncContext.Provider>
     );

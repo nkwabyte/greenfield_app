@@ -3,14 +3,18 @@
 import * as React from 'react';
 import { useLiveQuery } from '@/hooks/useLiveQuery';
 import { db } from '@/lib/db/schema';
+import { useRouter } from 'next/navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { DataTable } from '@/components/data-table';
 import { ColumnDef } from '@tanstack/react-table';
-import { FarmerRequest } from '@/lib/types';
-import { PackageOpen, Calendar, CircleDollarSign, Plus, Eye } from 'lucide-react';
+import { FarmerRequest, Farmer } from '@/lib/types';
+import { PackageOpen, Calendar, Plus, Eye, Trash2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { RequestDetailsDialog } from './request-details-dialog';
+import { ConfirmDialog } from '@/components/ui/confirm-dialog';
+import { deleteFarmerRequest } from '@/lib/db/services/farmer-requests';
+import { useToast } from '@/hooks/use-toast';
 
 interface FarmerRequestsListProps {
     farmerId: string;
@@ -24,27 +28,34 @@ export function FarmerRequestsList({ farmerId, farmerGroupId, onRequireGroup }: 
         [farmerId]
     );
 
+    const farmer = useLiveQuery(
+        () => db.farmers.get(farmerId),
+        [farmerId]
+    ) as Farmer | undefined;
+
     const [selectedRequest, setSelectedRequest] = React.useState<FarmerRequest | null>(null);
-
-    const financials = {
-        totalAmount: 0,
-        depositPaid: 0,
-        outstandingBalance: 0
-    };
-
-    if (requests && requests.length > 0) {
-        financials.totalAmount = requests.reduce((acc, req) => acc + (req.grandTotal || 0), 0);
-        financials.depositPaid = requests.reduce((acc, req) => acc + (req.payments?.reduce((sum, p) => sum + p.amount, 0) || 0), 0);
-        financials.outstandingBalance = financials.totalAmount - financials.depositPaid;
-    }
+    const [requestToDelete, setRequestToDelete] = React.useState<FarmerRequest | null>(null);
+    const { toast } = useToast();
+    const router = useRouter();
 
     const handleAddRequestClick = () => {
         if (!farmerGroupId) {
             onRequireGroup?.();
             return;
         }
-        // Placeholder for future add request functionality
-        alert("Add request form coming soon!");
+        router.push(`/farmers/groups/${farmerGroupId}/distribute?preselect=${farmerId}`);
+    };
+
+    const handleDeleteRequest = async () => {
+        if (!requestToDelete) return;
+        try {
+            await deleteFarmerRequest(requestToDelete.id);
+            toast({ title: 'Request deleted successfully' });
+        } catch (error: any) {
+            toast({ title: 'Error deleting request', description: error.message, variant: 'destructive' });
+        } finally {
+            setRequestToDelete(null);
+        }
     };
 
     const columns: ColumnDef<FarmerRequest>[] = [
@@ -79,7 +90,12 @@ export function FarmerRequestsList({ farmerId, farmerGroupId, onRequireGroup }: 
         {
             accessorKey: 'grandTotal',
             header: 'Total Cost',
-            cell: ({ row }) => <div className="font-bold">GH₵{(row.original.grandTotal || 0).toFixed(2)}</div>,
+            cell: ({ row }) => {
+                const total = row.original.grandTotal > 0
+                    ? row.original.grandTotal
+                    : row.original.items.reduce((sum, item) => sum + item.total, 0);
+                return <div className="font-bold">GH₵{total.toFixed(2)}</div>;
+            },
         },
         {
             accessorKey: 'status',
@@ -89,7 +105,7 @@ export function FarmerRequestsList({ farmerId, farmerGroupId, onRequireGroup }: 
                 return (
                     <Badge variant={
                         status === 'Approved' ? 'default' :
-                            status === 'Delivered' ? 'default' : // Should probably be success but default is fine
+                            status === 'Delivered' ? 'default' :
                                 status === 'Rejected' ? 'destructive' : 'secondary'
                     }>
                         {status}
@@ -100,10 +116,21 @@ export function FarmerRequestsList({ farmerId, farmerGroupId, onRequireGroup }: 
         {
             id: 'actions',
             cell: ({ row }) => (
-                <Button variant="ghost" size="sm" onClick={() => setSelectedRequest(row.original)}>
-                    <Eye className="w-4 h-4 mr-2" />
-                    View / Pay
-                </Button>
+                <div className="flex items-center gap-2 justify-end">
+                    <Button variant="ghost" size="sm" onClick={() => setSelectedRequest(row.original)}>
+                        <Eye className="w-4 h-4 mr-2" />
+                        View / Pay
+                    </Button>
+                    <Button
+                        variant="ghost"
+                        size="icon"
+                        className="text-destructive hover:bg-destructive/10 h-8 w-8"
+                        onClick={() => setRequestToDelete(row.original)}
+                        title="Delete Request"
+                    >
+                        <Trash2 className="w-4 h-4" />
+                    </Button>
+                </div>
             ),
         }
     ];
@@ -111,44 +138,13 @@ export function FarmerRequestsList({ farmerId, farmerGroupId, onRequireGroup }: 
     if (!requests) {
         return (
             <div className="animate-pulse space-y-4">
-                <div className="h-24 bg-muted rounded-xl"></div>
-                <div className="h-64 bg-muted rounded-xl"></div>
+                <div className="h-64 bg-muted rounded-xl" />
             </div>
         );
     }
 
     return (
         <div className="space-y-6">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <Card>
-                    <CardHeader className="py-4 flex flex-row items-center justify-between pb-2">
-                        <CardTitle className="text-sm font-medium text-muted-foreground">Total Request Value</CardTitle>
-                        <CircleDollarSign className="h-4 w-4 text-muted-foreground" />
-                    </CardHeader>
-                    <CardContent>
-                        <div className="text-2xl font-bold">GH₵{financials.totalAmount.toFixed(2)}</div>
-                    </CardContent>
-                </Card>
-                <Card>
-                    <CardHeader className="py-4 flex flex-row items-center justify-between pb-2">
-                        <CardTitle className="text-sm font-medium text-muted-foreground">Total Paid</CardTitle>
-                        <CircleDollarSign className="h-4 w-4 text-green-500" />
-                    </CardHeader>
-                    <CardContent>
-                        <div className="text-2xl font-bold text-green-600">GH₵{financials.depositPaid.toFixed(2)}</div>
-                    </CardContent>
-                </Card>
-                <Card>
-                    <CardHeader className="py-4 flex flex-row items-center justify-between pb-2">
-                        <CardTitle className="text-sm font-medium text-muted-foreground">Outstanding Balance</CardTitle>
-                        <CircleDollarSign className="h-4 w-4 text-destructive" />
-                    </CardHeader>
-                    <CardContent>
-                        <div className="text-2xl font-bold text-destructive">GH₵{financials.outstandingBalance.toFixed(2)}</div>
-                    </CardContent>
-                </Card>
-            </div>
-
             <Card>
                 <CardHeader className="flex flex-row items-center justify-between pb-2">
                     <CardTitle className="flex items-center gap-2">
@@ -174,8 +170,16 @@ export function FarmerRequestsList({ farmerId, farmerGroupId, onRequireGroup }: 
                 open={!!selectedRequest}
                 onOpenChange={(open) => !open && setSelectedRequest(null)}
                 request={selectedRequest}
+                farmer={farmer}
+            />
+
+            <ConfirmDialog
+                open={!!requestToDelete}
+                onOpenChange={(open) => !open && setRequestToDelete(null)}
+                title="Delete Request"
+                description={`Are you sure you want to delete this product request from ${requestToDelete?.seasonYear}? This action cannot be undone and will remove all associated payment records.`}
+                onConfirm={handleDeleteRequest}
             />
         </div>
     );
 }
-

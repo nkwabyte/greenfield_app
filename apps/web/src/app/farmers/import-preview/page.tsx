@@ -260,8 +260,8 @@ export default function ImportPreviewPage() {
             {/* ── Editable table ── */}
             <div className="rounded-md border overflow-hidden overflow-x-auto">
                 {/* Header */}
-                <div className="grid grid-cols-[2fr_1fr_0.5fr_1.4fr_1.4fr_1fr_1fr_0.7fr_2.5rem] bg-muted/60 text-xs font-semibold text-muted-foreground border-b min-w-[900px]">
-                    {['Name', 'Gender', 'Age', 'Region', 'District', 'Society', 'Community', 'Acres', ''].map((h, i) => (
+                <div className="grid grid-cols-[2fr_1fr_0.5fr_1.4fr_1.4fr_1.5fr_0.7fr_2.5rem] bg-muted/60 text-xs font-semibold text-muted-foreground border-b min-w-[900px]">
+                    {['Name', 'Gender', 'Age', 'Region', 'District', 'Society', 'Acres', ''].map((h, i) => (
                         <div key={i} className="py-2.5 px-3">{h}</div>
                     ))}
                 </div>
@@ -279,7 +279,7 @@ export default function ImportPreviewPage() {
                         return (
                             <div
                                 key={row._id}
-                                className={`grid grid-cols-[2fr_1fr_0.5fr_1.4fr_1.4fr_1fr_1fr_0.7fr_2.5rem] items-center border-b last:border-0 hover:bg-muted/30 transition-colors ${idx % 2 !== 0 ? 'bg-muted/10' : ''}`}
+                                className={`grid grid-cols-[2fr_1fr_0.5fr_1.4fr_1.4fr_1.5fr_0.7fr_2.5rem] items-center border-b last:border-0 hover:bg-muted/30 transition-colors ${idx % 2 !== 0 ? 'bg-muted/10' : ''}`}
                             >
                                 <div className="py-1 px-2">
                                     <EditableText value={row.name} onChange={v => updateRow(row, { name: v })} placeholder="Full name" />
@@ -307,9 +307,6 @@ export default function ImportPreviewPage() {
                                 </div>
                                 <div className="py-1 px-2">
                                     <EditableText value={row.society} onChange={v => updateRow(row, { society: v })} placeholder="Society" />
-                                </div>
-                                <div className="py-1 px-2">
-                                    <EditableText value={row.community} onChange={v => updateRow(row, { community: v })} placeholder="Community" />
                                 </div>
                                 <div className="py-1 px-2">
                                     <EditableText value={String(row.farmSize ?? '')} onChange={v => updateRow(row, { farmSize: parseFloat(v) || 0 })} placeholder="0" />

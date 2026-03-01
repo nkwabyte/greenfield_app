@@ -35,14 +35,24 @@ import { UsersRound } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { GHANA_REGION_NAMES, getDistrictsForRegion } from '@/lib/data/ghana-regions-districts';
 
+// ─── Season Year Options ──────────────────────────────────────────────────────
+const SEASON_START_YEAR = 2020;
+function getSeasonYearOptions(): string[] {
+    const currentYear = new Date().getFullYear();
+    const years: string[] = [];
+    for (let y = currentYear; y >= SEASON_START_YEAR; y--) {
+        years.push(y.toString());
+    }
+    return years;
+}
+
 // ─── Schema ───────────────────────────────────────────────────────────────────
 const createGroupSchema = z.object({
     name: z.string().min(1, 'Group name is required.'),
     region: z.string().min(1, 'Region is required.'),
     district: z.string().min(1, 'District is required.'),
-    community: z.string().optional(),
     society: z.string().optional(),
-    seasonYear: z.string().optional(),
+    seasonYear: z.string().min(1, 'Season year is required.'),
     description: z.string().optional(),
 });
 
@@ -64,7 +74,6 @@ export function CreateGroupDialog({ open, onOpenChange }: CreateGroupDialogProps
             name: '',
             region: '',
             district: '',
-            community: '',
             society: '',
             seasonYear: new Date().getFullYear().toString(),
             description: '',
@@ -97,7 +106,6 @@ export function CreateGroupDialog({ open, onOpenChange }: CreateGroupDialogProps
                     name: values.name,
                     region: values.region,
                     district: values.district,
-                    community: values.community || undefined,
                     society: values.society || undefined,
                     seasonYear: values.seasonYear || undefined,
                     description: values.description || undefined,
@@ -202,35 +210,20 @@ export function CreateGroupDialog({ open, onOpenChange }: CreateGroupDialogProps
                             )}
                         />
 
-                        {/* Community + Society — free text */}
-                        <div className="grid grid-cols-2 gap-4">
-                            <FormField
-                                control={form.control}
-                                name="community"
-                                render={({ field }) => (
-                                    <FormItem>
-                                        <FormLabel>Community</FormLabel>
-                                        <FormControl>
-                                            <Input placeholder="e.g. Kenyasi" {...field} />
-                                        </FormControl>
-                                        <FormMessage />
-                                    </FormItem>
-                                )}
-                            />
-                            <FormField
-                                control={form.control}
-                                name="society"
-                                render={({ field }) => (
-                                    <FormItem>
-                                        <FormLabel>Society</FormLabel>
-                                        <FormControl>
-                                            <Input placeholder="e.g. Cocoa Society A" {...field} />
-                                        </FormControl>
-                                        <FormMessage />
-                                    </FormItem>
-                                )}
-                            />
-                        </div>
+                        {/* Society — free text */}
+                        <FormField
+                            control={form.control}
+                            name="society"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>Society / Community</FormLabel>
+                                    <FormControl>
+                                        <Input placeholder="e.g. Cocoa Society A" {...field} />
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
 
                         {/* Season Year */}
                         <FormField
@@ -238,10 +231,19 @@ export function CreateGroupDialog({ open, onOpenChange }: CreateGroupDialogProps
                             name="seasonYear"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Season Year</FormLabel>
-                                    <FormControl>
-                                        <Input placeholder="e.g. 2025" {...field} />
-                                    </FormControl>
+                                    <FormLabel>Season Year <span className="text-destructive">*</span></FormLabel>
+                                    <Select onValueChange={field.onChange} value={field.value}>
+                                        <FormControl>
+                                            <SelectTrigger>
+                                                <SelectValue placeholder="Select season year" />
+                                            </SelectTrigger>
+                                        </FormControl>
+                                        <SelectContent>
+                                            {getSeasonYearOptions().map((year) => (
+                                                <SelectItem key={year} value={year}>{year}</SelectItem>
+                                            ))}
+                                        </SelectContent>
+                                    </Select>
                                     <FormMessage />
                                 </FormItem>
                             )}

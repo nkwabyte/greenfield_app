@@ -50,7 +50,6 @@ export type Farmer = {
   region?: string;
   district?: string;
   society?: string;
-  community?: string;
   contact?: string;
 
   // Next of Kin
@@ -80,6 +79,7 @@ export type Farmer = {
   createdAt: string; // ISO date string
   updatedAt: string; // ISO date string
   deleted?: boolean; // Soft-delete flag for delta sync
+  isArchived?: boolean; // True if the farmer should be hidden from main views
   groupId?: string; // Reference to FarmerGroup
 };
 
@@ -148,7 +148,6 @@ export interface FarmerGroup {
   description?: string;
   region: string;
   district: string;
-  community?: string;
   society?: string;
   leaderId?: string;
   seasonYear?: string;       // Annual segregation (e.g., "2024", "2025")
@@ -156,6 +155,7 @@ export interface FarmerGroup {
   createdAt: string;
   updatedAt: string;
   deleted?: boolean;
+  isArchived?: boolean; // True if the group should be hidden from main views
 }
 
 export interface RequestItem {

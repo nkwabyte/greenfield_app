@@ -17,9 +17,8 @@ export const PrintableInvoice = React.forwardRef<HTMLDivElement, PrintableInvoic
             <div ref={ref} className="hidden print:block p-8 bg-white text-black min-h-screen font-sans">
                 {/* Header */}
                 <div className="flex justify-between items-start border-b pb-6 mb-6">
-                    <div>
-                        <h1 className="text-3xl font-bold text-gray-900 mb-1">GREENFIELD</h1>
-                        <p className="text-sm text-gray-500">Agro Inputs Distribution</p>
+                    <div className="flex items-center gap-3">
+                        <img src="/logo.png" alt="Greenfield Logo" className="h-32 w-auto object-contain" />
                     </div>
                     <div className="text-right">
                         <h2 className="text-2xl font-bold text-gray-700 mb-2">INVOICE</h2>

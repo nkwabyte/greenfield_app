@@ -3,18 +3,24 @@
 import { createContext, useContext } from 'react';
 
 export type SyncContextValue = {
-    /** Trigger a full resync from Supabase → local IndexedDB */
-    forceSync: () => Promise<void>;
-    /** Whether a sync is currently in progress */
-    isSyncing: boolean;
-    /** ISO string of the last successful sync time, or null */
-    lastSyncAt: string | null;
+    /** Pull: Supabase → local IndexedDB */
+    pullFromCloud: () => Promise<void>;
+    /** Push: local sync-queue → Supabase */
+    pushToCloud: () => Promise<void>;
+    /** Whether a pull is currently in progress */
+    isPulling: boolean;
+    /** Whether a push is currently in progress */
+    isPushing: boolean;
+    /** ISO string of the last successful pull, or null */
+    lastPullAt: string | null;
 };
 
 export const SyncContext = createContext<SyncContextValue>({
-    forceSync: async () => { },
-    isSyncing: false,
-    lastSyncAt: null,
+    pullFromCloud: async () => { },
+    pushToCloud: async () => { },
+    isPulling: false,
+    isPushing: false,
+    lastPullAt: null,
 });
 
 export function useSyncContext() {

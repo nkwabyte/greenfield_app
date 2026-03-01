@@ -37,7 +37,8 @@ import {
   Briefcase,
   Landmark,
   Truck,
-  Package
+  Package,
+  WandSparkles
 } from 'lucide-react'; import { useSelector } from 'react-redux';
 import { RootState } from '@/lib/store/store';
 import { ThemeToggle } from '@/components/theme-toggle';
@@ -49,6 +50,7 @@ const allNavItems = [
   { href: '/suppliers', icon: Truck, label: 'Suppliers', roles: ['Admin', 'Employee'] },
   { href: '/products', icon: Package, label: 'Products', roles: ['Admin', 'Employee'] },
   { href: '/finances', icon: Landmark, label: 'Finances', roles: ['Admin', 'Employee'] },
+  { href: '/ai-insights', icon: WandSparkles, label: 'AI Insight', roles: ['Admin', 'Employee'] },
 ];
 
 export function AppShell({ children }: { children: React.ReactNode }) {

@@ -1,57 +1,17 @@
 'use client';
 
 import * as React from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Info, DownloadCloud } from 'lucide-react';
-import { useToast } from '@/hooks/use-toast';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Info } from 'lucide-react';
 
 export function AboutCard() {
     const [version, setVersion] = React.useState<string | null>(null);
-    const [isChecking, setIsChecking] = React.useState(false);
-    const { toast } = useToast();
 
     React.useEffect(() => {
         if (typeof window !== 'undefined' && window.electron?.getAppVersion) {
             window.electron.getAppVersion().then(setVersion).catch(console.error);
         }
     }, []);
-
-    const handleCheckUpdate = async () => {
-        if (typeof window === 'undefined' || !window.electron?.checkForUpdates) {
-            toast({
-                title: "Not Available",
-                description: "Auto-update is only available in the desktop application.",
-                variant: 'destructive'
-            });
-            return;
-        }
-
-        try {
-            setIsChecking(true);
-            const result = await window.electron.checkForUpdates();
-            if (result?.success) {
-                toast({
-                    title: "Checking for updates",
-                    description: "Please wait while we check for the latest version..."
-                });
-            } else {
-                toast({
-                    title: "Update check failed",
-                    description: result?.error ?? "Failed to start update check.",
-                    variant: 'destructive'
-                });
-            }
-        } catch (error) {
-            toast({
-                title: "Error",
-                description: "An error occurred while checking for updates.",
-                variant: 'destructive'
-            });
-        } finally {
-            setIsChecking(false);
-        }
-    };
 
     return (
         <Card>
@@ -74,17 +34,6 @@ export function AboutCard() {
                     <span className="text-lg">{typeof window !== 'undefined' && window.electron ? `Desktop (${window.electron.platform})` : 'Web Browser'}</span>
                 </div>
             </CardContent>
-            {typeof window !== 'undefined' && window.electron && (
-                <CardFooter className="bg-muted/50 px-6 py-4 flex justify-between items-center border-t">
-                    <p className="text-sm text-muted-foreground">
-                        Keep your application up to date for the latest features and security improvements.
-                    </p>
-                    <Button onClick={handleCheckUpdate} disabled={isChecking}>
-                        <DownloadCloud className="mr-2 h-4 w-4" />
-                        {isChecking ? 'Checking...' : 'Check for Updates'}
-                    </Button>
-                </CardFooter>
-            )}
         </Card>
     );
 }

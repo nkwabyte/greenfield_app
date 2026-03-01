@@ -24,7 +24,7 @@ import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import {
   Bot, Send, BarChart2, Lightbulb, UserCheck, Package, DollarSign,
-  PanelLeftClose, PanelLeftOpen, Plus, Trash2, MessageSquare, Download,
+  PanelLeftClose, PanelLeftOpen, Plus, Trash2, MessageSquare, Download, Users
 } from 'lucide-react';
 import type { Farmer, Employee, Product, Supplier, Transaction } from '@/lib/types';
 import { runChatWithContext } from '@/lib/ai-actions';
@@ -156,7 +156,7 @@ Do not use emojis. Every recommendation must reference a specific number from th
       description: 'Composite profile of the typical farmer based on CRM data',
       prompt: `Using the CRM data provided, produce a detailed composite farmer profile report in Markdown:
 
-1. Profile Summary Table — columns: Attribute | Detail, covering: typical age range, dominant gender, most common region, average farm size, top crops grown, most common community type
+1. Profile Summary Table — columns: Attribute | Detail, covering: typical age range, dominant gender, most common region, average farm size, top crops grown, most common society type
 2. Behavioural Profile — subsections for: Goals, Challenges, Motivations, Preferred Communication
 3. Demographic Breakdown — a Markdown table showing distribution by region, gender, and farm size band
 4. Typical Farmer Description — a 3 to 4 sentence narrative describing a representative farmer based on the data
@@ -201,8 +201,59 @@ Do not use emojis. Use plain Markdown tables and block-character charts only.`,
 
 Do not use emojis. Use GHS as the currency. All figures must come from the data context.`,
     },
+    {
+      icon: Users,
+      iconColor: 'group-hover:text-white text-pink-500',
+      title: 'Demographics & Inclusion',
+      description: 'Women\'s participation metrics and overall demographic breakdowns',
+      prompt: `Analyse the demographic data from the CRM context, focusing heavily on inclusion, and produce a report in Markdown:
+
+1. Overall Gender Split — total male vs female farmers with percentages
+2. Women's Participation by Region — a table showing regions ranked by number of female farmers
+3. Women in Leadership — if group position data is available, summarize how many women hold leadership roles (e.g. Secretary, Treasurer)
+4. Age Demographics — a block-character bar chart showing age bands (18-30, 31-45, 46-60, 60+)
+5. Inclusion Recommendations — 3 to 5 specific, measurable actions to increase female and youth participation over the next quarter
+
+Do not use emojis. Ensure all tables are properly formatted in plain Markdown.`,
+    },
+    {
+      icon: Package,
+      iconColor: 'group-hover:text-white text-indigo-500',
+      title: 'Inputs & Loans Analysis',
+      description: 'Breakdown of inputs requested, loan values, deposit payments, and outstanding balances',
+      prompt: `Analyse the farmer requests, input distributions, and financial data from the CRM context. Produce a comprehensive report in Markdown:
+
+1. Input Requests Overview — total farmers requesting inputs, total items requested, most popular items
+2. Loan Value Breakdown — a table showing total loan value, deposit payments made, and outstanding balance per region
+3. High-Risk Accounts — list any regions or specific groups with the highest outstanding balances
+4. Collection Rate — percentage of total loan value that has been collected via deposits
+5. Deposit Payment Trends — describe the trend of payments (e.g. mostly upfront vs ongoing)
+6. Strategic Recommendations — 3 actions to improve loan recovery and streamline future input distribution
+
+Do not use emojis. Use GHS as the currency. Use plain Markdown tables only.`,
+    },
+    {
+      icon: Users,
+      iconColor: 'group-hover:text-white text-cyan-500',
+      title: 'Male Farmers by Group, District & Region',
+      description: 'Count and distribution of male farmers broken down by group, district, and region',
+      prompt: `Using the CRM farmer data, produce a detailed breakdown of male farmers by organisational and geographical unit. Format the report in Markdown:
+
+1. Overall Male Farmer Count — total male farmers and their percentage of the overall farmer population
+2. Male Farmers by Region — a Markdown table sorted descending by count: Region | Male Farmers | % of Region Total | % of All Males
+3. Male Farmers by District — a Markdown table (top 20 districts) sorted descending: District | Region | Male Farmers | % of District Total
+4. Male Farmers by Group/Society — a Markdown table (top 20 groups) sorted descending: Group | District | Region | Male Farmers | % of Group Total
+5. Gender Balance Heat-Map — for each region, show a text bar representing male vs female split (e.g. [■■■■■■■░░░] 70% M / 30% F)
+6. Districts with Highest Male Concentration — top 10 districts where males exceed 70% of farmers, with exact percentage
+7. Groups with Highest Male Concentration — top 10 groups by male percentage with exact counts
+8. Inclusion Observations — 2 to 3 sentences noting where male dominance is most pronounced and what that implies for outreach
+9. Recommendations — 3 specific, data-grounded actions to improve gender balance in the highest male-concentrated areas
+
+Do not use emojis. All figures must come from the data context. Use plain Markdown tables only.`,
+    },
   ];
 }
+
 
 // ─── Component ────────────────────────────────────────────────────────────────
 

@@ -6,7 +6,7 @@ import { PageHeader } from '@/components/page-header';
 import { Button } from '@/components/ui/button';
 import { KpiCard } from '@/components/dashboard/kpi-card';
 import type { Kpi, Farmer } from '@/lib/types';
-import { Users, MapPin, BarChart2, Bot, Calendar as CalendarIcon, Download } from 'lucide-react';
+import { Users, MapPin, BarChart2, Bot, Calendar as CalendarIcon, Download, Package, DollarSign } from 'lucide-react';
 // Removed duplicate import
 import dynamic from 'next/dynamic';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -41,7 +41,7 @@ import {
 } from "@/components/ui/select"
 
 // NEW: Import filtered hooks
-import { useRegionCounts, useFarmSizeStats, useAgeStats, useRegionGenderStats } from '@/hooks/useData';
+import { useRegionCounts, useFarmSizeStats, useAgeStats, useRegionGenderStats, useAllTimeRequestFinancials, useFarmerRequestsCount } from '@/hooks/useData';
 import { db } from '@/lib/db/schema';
 import { useLiveQuery } from '@/hooks/useLiveQuery';
 import Link from 'next/link';
@@ -73,6 +73,9 @@ export default function DashboardPage() {
     end.setHours(23, 59, 59, 999);
     return db.farmers.where('createdAt').between(dateRange.from.toISOString(), end.toISOString(), true, true).count();
   }, [dateRange?.from, dateRange?.to]);
+
+  const allTimeFinancials = useAllTimeRequestFinancials();
+  const farmerRequestsCount = useFarmerRequestsCount();
 
   // Derived unique regions for dropdown
   const uniqueRegions = React.useMemo(() => {
@@ -116,8 +119,49 @@ export default function DashboardPage() {
         value: genderRatio,
         icon: BarChart2
       },
+      {
+        label: 'Regions Covered',
+        value: uniqueRegions.length.toString(),
+        icon: MapPin,
+      },
+      {
+        label: 'Total Inputs Requested',
+        value: (farmerRequestsCount || 0).toLocaleString(),
+        icon: Package,
+      },
+      {
+        label: 'Total Loan Value',
+        value: `¢${(allTimeFinancials?.totalOwed || 0).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`,
+        icon: DollarSign,
+      },
+      {
+        label: 'Total Deposit Paid',
+        value: `¢${(allTimeFinancials?.totalPaid || 0).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`,
+        icon: DollarSign,
+        change: 'Collected',
+        changeType: 'positive'
+      },
+      {
+        label: 'Outstanding Balance',
+        value: `¢${(allTimeFinancials?.outstanding || 0).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`,
+        icon: DollarSign,
+        change: 'Pending',
+        changeType: 'negative'
+      },
+      {
+        label: 'Female Farmers',
+        value: femaleFarmers.toLocaleString(),
+        icon: Users,
+        change: selectedRegion === 'all' ? 'Across all regions' : `In ${selectedRegion}`
+      },
+      {
+        label: 'Male Farmers',
+        value: maleFarmers.toLocaleString(),
+        icon: Users,
+        change: selectedRegion === 'all' ? 'Across all regions' : `In ${selectedRegion}`
+      }
     ];
-  }, [newFarmersCount, activeFarmersCount, regionGenderStats, selectedRegion]);
+  }, [newFarmersCount, activeFarmersCount, regionGenderStats, selectedRegion, uniqueRegions.length, farmerRequestsCount, allTimeFinancials]);
 
   const handleExport = async () => {
     // Run full query on demand to save memory

@@ -32,6 +32,7 @@ import {
     getFarmersByFarmSize,
     getFarmersByAge,
     getFarmersByRegionAndGender,
+    getArchivedFarmers,
 } from '@/lib/db/services/farmers';
 import {
     getAllEmployees,
@@ -76,13 +77,15 @@ import {
     getAllFarmerGroups,
     getFarmerGroup,
     getFarmerGroupsByYear,
-    getFarmerGroupOptions
+    getFarmerGroupOptions,
+    getArchivedFarmerGroups
 } from '@/lib/db/services/farmer-groups';
 import {
     getAllFarmerRequests,
     getFarmerRequest,
     getFarmerRequestsByFarmer,
     getFarmerRequestsByGroup,
+    getFarmerRequestsCount,
 } from '@/lib/db/services/farmer-requests';
 
 import type { Farmer, Employee, Product, Supplier, Transaction, FarmerGroup, FarmerRequest } from '@/lib/types';
@@ -154,13 +157,21 @@ export function useFarmersByGender() {
  */
 export function useRegionCounts() {
     return useLiveQuery(async () => {
-        const stats = await getFarmersByRegion();
-        const counts = { ...stats };
+        const statsDoc = await db.statistics.get('farmer_counts');
 
-        delete counts['N/A'];
-        delete counts[''];
+        // If cache exists, use it instantly
+        if (statsDoc && statsDoc.byRegion) {
+            const counts = { ...statsDoc.byRegion };
+            delete counts['N/A'];
+            delete counts[''];
+            return counts;
+        }
 
-        return counts;
+        // Cache missing or empty: Fire off cache rebuild in the background so future loads are instant
+        const { updateFarmersCache } = await import('@/lib/db/services/farmers');
+        updateFarmersCache().catch(console.error);
+
+        return {};
     }, []);
 }
 
@@ -208,7 +219,6 @@ export function useFarmersPaginatedAndFiltered(
         region?: string;
         district?: string;
         society?: string;
-        community?: string;
         status?: 'Active' | 'Inactive';
         minFarmSize?: number;
         maxFarmSize?: number;
@@ -228,7 +238,6 @@ export function useFarmersPaginatedAndFiltered(
             filters.region,
             filters.district,
             filters.society,
-            filters.community,
             filters.status,
             filters.minFarmSize,
             filters.maxFarmSize,
@@ -250,12 +259,17 @@ export function useUniqueDistricts(region?: string) {
     return useLiveQuery(() => getUniqueDistricts(region), [region]);
 }
 
+export function useArchivedFarmers() {
+    return useLiveQuery(() => getArchivedFarmers(), []);
+}
+
 export function useUniqueSocieties(district?: string) {
     return useLiveQuery(() => getUniqueSocieties(district), [district]);
 }
 
+/** Alias for useUniqueSocieties — community is now merged into society. */
 export function useUniqueCommunities(society?: string) {
-    return useLiveQuery(() => getUniqueCommunities(society), [society]);
+    return useLiveQuery(() => getUniqueSocieties(society), [society]);
 }
 
 export function useFarmerSyncStats() {
@@ -268,11 +282,11 @@ export function useFarmer(id: string) {
 
 export function useRelatedFarmers(farmer: Farmer | undefined | null) {
     return useLiveQuery(async () => {
-        if (!farmer || !farmer.community) return [];
-        // Match by community
-        const allInCommunity = await db.farmers.where('community').equals(farmer.community).toArray();
-        return allInCommunity.filter((f: Farmer) => f.id !== farmer.id);
-    }, [farmer?.id, farmer?.community]);
+        if (!farmer || !farmer.society) return [];
+        // Match by society (community is merged into society)
+        const allInSociety = await db.farmers.where('society').equals(farmer.society).toArray();
+        return allInSociety.filter((f: Farmer) => f.id !== farmer.id);
+    }, [farmer?.id, farmer?.society]);
 }
 
 // ============================================================================
@@ -561,5 +575,164 @@ export function useFinancialSummary() {
         expenses: expenses ?? 0,
         balance: (income ?? 0) - (expenses ?? 0),
     };
+}
+
+// ============================================================================
+// FARMER NAME MAP HOOK
+// ============================================================================
+
+export function useFarmerNameMap() {
+    return useLiveQuery(async () => {
+        const farmers = await db.farmers.toArray();
+        const map = new Map<string, string>();
+        for (const f of farmers) {
+            map.set(f.id, f.name);
+        }
+        return map;
+    }, []);
+}
+
+// ============================================================================
+// GROUP FINANCIAL SUMMARY HOOKS
+// ============================================================================
+
+export interface GroupFinancialRow {
+    groupId: string;
+    groupName: string;
+    region: string;
+    district: string;
+    totalRequests: number;
+    totalOwed: number;
+    totalPaid: number;
+    outstanding: number;
+    percentCollected: number;
+}
+
+export interface GroupFinancialSummary {
+    groups: GroupFinancialRow[];
+    totals: {
+        totalOwed: number;
+        totalPaid: number;
+        outstanding: number;
+        totalRequests: number;
+        activeGroups: number;
+        percentCollected: number;
+    };
+    monthlyPayments: { month: string; amount: number }[];
+}
+
+export function useGroupFinancialSummary(seasonYear: string) {
+    return useLiveQuery(async () => {
+        const allRequests = await db.farmerRequests.where('seasonYear').equals(seasonYear).toArray();
+        const allGroups = await db.farmerGroups.toArray();
+
+        const groupMap = new Map(allGroups.map(g => [g.id, g]));
+        const groupFinances = new Map<string, { totalOwed: number; totalPaid: number; totalRequests: number }>();
+        const monthlyPaymentsMap = new Map<string, number>();
+
+        for (const req of allRequests) {
+            if (!req.groupId) continue;
+
+            const entry = groupFinances.get(req.groupId) || { totalOwed: 0, totalPaid: 0, totalRequests: 0 };
+            entry.totalOwed += req.grandTotal || 0;
+            entry.totalRequests += 1;
+
+            if (req.payments && req.payments.length > 0) {
+                for (const payment of req.payments) {
+                    entry.totalPaid += payment.amount || 0;
+                    const month = payment.monthOfPayment || 'Unknown';
+                    monthlyPaymentsMap.set(month, (monthlyPaymentsMap.get(month) || 0) + (payment.amount || 0));
+                }
+            }
+
+            groupFinances.set(req.groupId, entry);
+        }
+
+        const groups: GroupFinancialRow[] = [];
+        for (const [groupId, finances] of groupFinances) {
+            const group = groupMap.get(groupId);
+            const outstanding = finances.totalOwed - finances.totalPaid;
+            groups.push({
+                groupId,
+                groupName: group?.name || 'Unknown Group',
+                region: group?.region || '',
+                district: group?.district || '',
+                totalRequests: finances.totalRequests,
+                totalOwed: finances.totalOwed,
+                totalPaid: finances.totalPaid,
+                outstanding,
+                percentCollected: finances.totalOwed > 0 ? (finances.totalPaid / finances.totalOwed) * 100 : 0,
+            });
+        }
+
+        // Also include groups with seasonYear match but no requests yet
+        const groupsForYear = allGroups.filter(g => g.seasonYear === seasonYear);
+        for (const g of groupsForYear) {
+            if (!groupFinances.has(g.id)) {
+                groups.push({
+                    groupId: g.id,
+                    groupName: g.name,
+                    region: g.region || '',
+                    district: g.district || '',
+                    totalRequests: 0,
+                    totalOwed: 0,
+                    totalPaid: 0,
+                    outstanding: 0,
+                    percentCollected: 0,
+                });
+            }
+        }
+
+        const totalOwed = groups.reduce((sum, g) => sum + g.totalOwed, 0);
+        const totalPaid = groups.reduce((sum, g) => sum + g.totalPaid, 0);
+        const totals = {
+            totalOwed,
+            totalPaid,
+            outstanding: groups.reduce((sum, g) => sum + g.outstanding, 0),
+            totalRequests: groups.reduce((sum, g) => sum + g.totalRequests, 0),
+            activeGroups: groups.length,
+            percentCollected: totalOwed > 0 ? (totalPaid / totalOwed) * 100 : 0,
+        };
+
+        const monthOrder = ['January', 'February', 'March', 'April', 'May', 'June',
+            'July', 'August', 'September', 'October', 'November', 'December'];
+        const monthlyPayments = Array.from(monthlyPaymentsMap.entries())
+            .map(([month, amount]) => ({ month, amount }))
+            .sort((a, b) => monthOrder.indexOf(a.month) - monthOrder.indexOf(b.month));
+
+        return { groups, totals, monthlyPayments } as GroupFinancialSummary;
+    }, [seasonYear]);
+}
+
+export function useAllTimeRequestFinancials() {
+    return useLiveQuery(async () => {
+        const allRequests = await db.farmerRequests.toArray();
+
+        let totalOwed = 0;
+        let totalPaid = 0;
+
+        for (const req of allRequests) {
+            totalOwed += req.grandTotal || 0;
+            if (req.payments) {
+                for (const p of req.payments) {
+                    totalPaid += p.amount || 0;
+                }
+            }
+        }
+
+        return {
+            totalOwed,
+            totalPaid,
+            outstanding: totalOwed - totalPaid,
+        };
+    }, []);
+}
+
+export function useFarmerRequestsCount() {
+    return useLiveQuery(() => getFarmerRequestsCount(), []);
+}
+
+export function useArchivedFarmerGroups() {
+    return useLiveQuery(() => getArchivedFarmerGroups(), []);
 }
 

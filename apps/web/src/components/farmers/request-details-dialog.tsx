@@ -51,8 +51,11 @@ export function RequestDetailsDialog({ open, onOpenChange, request, farmer }: Re
 
     if (!request) return null;
 
+    const actualTotal = request.items.reduce((sum, item) => sum + item.total, 0);
+    const safeGrandTotal = request.grandTotal > 0 ? request.grandTotal : actualTotal;
+
     const totalPaid = request.payments?.reduce((sum, p) => sum + p.amount, 0) || 0;
-    const balance = Math.max(0, request.grandTotal - totalPaid);
+    const balance = Math.max(0, safeGrandTotal - totalPaid);
 
     const handleUpdatePlan = async () => {
         if (!selectedPlan || selectedPlan === request.paymentPlan) return;
@@ -87,7 +90,7 @@ export function RequestDetailsDialog({ open, onOpenChange, request, farmer }: Re
 
             // Auto update status if fully paid
             let newStatus = request.status;
-            if (request.grandTotal - (totalPaid + newPayment.amount) <= 0) {
+            if (safeGrandTotal - (totalPaid + newPayment.amount) <= 0) {
                 newStatus = 'Approved'; // Or whatever denotes completion
             }
 
@@ -109,14 +112,19 @@ export function RequestDetailsDialog({ open, onOpenChange, request, farmer }: Re
 
     const handlePrintInvoice = () => {
         if (invoiceRef.current) {
-            // This is a simplified print trigger for browser. For robust styling support, libraries like react-to-print are often used.
-            // Since we're sticking to native APIs and avoiding new heavy dependencies:
             const printContent = invoiceRef.current.innerHTML;
             const originalContent = document.body.innerHTML;
+            const originalTitle = document.title;
+
+            // Set document title so browser print filename defaults to this
+            const farmerId = request.farmerId || '';
+            const shortId = farmerId.replace(/-/g, '').slice(0, 8);
+            document.title = `greenfield-product-invoice-${shortId}`;
 
             document.body.innerHTML = printContent;
             window.print();
             document.body.innerHTML = originalContent;
+            document.title = originalTitle;
             window.location.reload(); // Quick restore of React event listeners after destructive dom replacement
         }
     };
@@ -139,11 +147,11 @@ export function RequestDetailsDialog({ open, onOpenChange, request, farmer }: Re
     return (
         <Dialog open={open} onOpenChange={onOpenChange}>
             <DialogContent className="sm:max-w-[700px] max-h-[90vh] overflow-y-auto">
-                <DialogHeader className="flex flex-row justify-between items-start">
+                <DialogHeader className="flex flex-row justify-between items-start pr-10">
                     <div>
                         <DialogTitle className="text-2xl font-bold">Request Details</DialogTitle>
                         <DialogDescription>
-                            {format(new Date(request.requestDate || request.createdAt), 'dd MMMM yyyy')} • GH₵{request.grandTotal.toFixed(2)}
+                            {format(new Date(request.requestDate || request.createdAt), 'dd MMMM yyyy')} • GH₵{safeGrandTotal.toFixed(2)}
                         </DialogDescription>
                     </div>
                     <Button variant="outline" size="sm" onClick={handlePrintInvoice}>
@@ -165,7 +173,7 @@ export function RequestDetailsDialog({ open, onOpenChange, request, farmer }: Re
                             ))}
                             <div className="pt-2 mt-2 border-t border-border flex justify-between font-bold">
                                 <span>Grand Total</span>
-                                <span>GH₵{request.grandTotal.toFixed(2)}</span>
+                                <span>GH₵{safeGrandTotal.toFixed(2)}</span>
                             </div>
                         </div>
                     </div>
@@ -269,8 +277,8 @@ export function RequestDetailsDialog({ open, onOpenChange, request, farmer }: Re
 
                 {/* Hidden printable components */}
                 <div className="hidden">
-                    <PrintableInvoice ref={invoiceRef} request={request} farmer={farmer} />
-                    {printingPayment && <PrintableReceipt ref={receiptRef} request={request} payment={printingPayment} farmer={farmer} />}
+                    <PrintableInvoice ref={invoiceRef} request={{ ...request, grandTotal: safeGrandTotal }} farmer={farmer} />
+                    {printingPayment && <PrintableReceipt ref={receiptRef} request={{ ...request, grandTotal: safeGrandTotal }} payment={printingPayment} farmer={farmer} />}
                 </div>
             </DialogContent>
         </Dialog>
