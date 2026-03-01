@@ -232,8 +232,28 @@ Do not use emojis. Ensure all tables are properly formatted in plain Markdown.`,
 
 Do not use emojis. Use GHS as the currency. Use plain Markdown tables only.`,
     },
+    {
+      icon: Users,
+      iconColor: 'group-hover:text-white text-cyan-500',
+      title: 'Male Farmers by Group, District & Region',
+      description: 'Count and distribution of male farmers broken down by group, district, and region',
+      prompt: `Using the CRM farmer data, produce a detailed breakdown of male farmers by organisational and geographical unit. Format the report in Markdown:
+
+1. Overall Male Farmer Count — total male farmers and their percentage of the overall farmer population
+2. Male Farmers by Region — a Markdown table sorted descending by count: Region | Male Farmers | % of Region Total | % of All Males
+3. Male Farmers by District — a Markdown table (top 20 districts) sorted descending: District | Region | Male Farmers | % of District Total
+4. Male Farmers by Group/Society — a Markdown table (top 20 groups) sorted descending: Group | District | Region | Male Farmers | % of Group Total
+5. Gender Balance Heat-Map — for each region, show a text bar representing male vs female split (e.g. [■■■■■■■░░░] 70% M / 30% F)
+6. Districts with Highest Male Concentration — top 10 districts where males exceed 70% of farmers, with exact percentage
+7. Groups with Highest Male Concentration — top 10 groups by male percentage with exact counts
+8. Inclusion Observations — 2 to 3 sentences noting where male dominance is most pronounced and what that implies for outreach
+9. Recommendations — 3 specific, data-grounded actions to improve gender balance in the highest male-concentrated areas
+
+Do not use emojis. All figures must come from the data context. Use plain Markdown tables only.`,
+    },
   ];
 }
+
 
 // ─── Component ────────────────────────────────────────────────────────────────
 

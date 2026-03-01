@@ -153,6 +153,12 @@ export default function DashboardPage() {
         value: femaleFarmers.toLocaleString(),
         icon: Users,
         change: selectedRegion === 'all' ? 'Across all regions' : `In ${selectedRegion}`
+      },
+      {
+        label: 'Male Farmers',
+        value: maleFarmers.toLocaleString(),
+        icon: Users,
+        change: selectedRegion === 'all' ? 'Across all regions' : `In ${selectedRegion}`
       }
     ];
   }, [newFarmersCount, activeFarmersCount, regionGenderStats, selectedRegion, uniqueRegions.length, farmerRequestsCount, allTimeFinancials]);
