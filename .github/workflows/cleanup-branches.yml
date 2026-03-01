@@ -1,0 +1,43 @@
+name: Cleanup Merged Branches
+
+on:
+  push:
+    branches:
+      - dev
+      - master
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete merged branches (except master and dev)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          REPO="${{ github.repository }}"
+          PROTECTED="master dev"
+
+          # Get all branches
+          branches=$(gh api repos/$REPO/branches --paginate --jq '.[].name')
+
+          for branch in $branches; do
+            # Skip protected branches
+            if echo "$PROTECTED" | grep -qw "$branch"; then
+              echo "Skipping protected branch: $branch"
+              continue
+            fi
+
+            # Check if branch is fully merged into master (no commits ahead of master)
+            ahead_by=$(gh api "repos/$REPO/compare/master...$branch" --jq '.ahead_by' 2>/dev/null || echo "-1")
+
+            if [ "$ahead_by" = "0" ]; then
+              echo "Deleting merged branch: $branch"
+              gh api -X DELETE "repos/$REPO/git/refs/heads/$branch" && echo "Deleted: $branch" || echo "Failed to delete: $branch"
+            else
+              echo "Skipping branch (not fully merged or error): $branch (ahead_by: $ahead_by)"
+            fi
+          done
