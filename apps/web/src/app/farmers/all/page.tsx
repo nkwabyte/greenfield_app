@@ -21,7 +21,7 @@ const BulkEditFarmerDialog = dynamic(() => import('@/components/farmers/bulk-edi
 import { type BulkEditField } from '@/components/farmers/bulk-edit-dialog';
 
 // NEW: Import Dexie hooks and services instead of Redux
-import { useFarmersPaginatedAndFiltered } from '@/hooks/useData';
+import { useFarmersPaginatedAndFiltered, useFarmerGroups } from '@/hooks/useData';
 import { FarmerFilters, type FarmerFiltersState } from '@/components/farmers/farmer-filters';
 import { ConfirmDialog } from '@/components/ui/confirm-dialog';
 
@@ -29,6 +29,7 @@ import {
   addFarmer as addFarmerService,
   updateFarmer as updateFarmerService,
   deleteFarmer as deleteFarmerService,
+  archiveFarmer as archiveFarmerService,
   updateFarmersBatch
 } from '@/lib/db/services/farmers';
 import { v4 as uuidv4 } from 'uuid';
@@ -61,7 +62,6 @@ function FarmersContent() {
     region: initialRegion,
     district: 'all',
     society: 'all',
-    community: 'all',
     status: 'all',
     minFarmSize: '',
     maxFarmSize: '',
@@ -80,7 +80,6 @@ function FarmersContent() {
       region: filters.region === 'all' ? undefined : filters.region,
       district: filters.district === 'all' ? undefined : filters.district,
       society: filters.society === 'all' ? undefined : filters.society,
-      community: filters.community === 'all' ? undefined : filters.community,
       status: filters.status === 'all' ? undefined : filters.status as 'Active' | 'Inactive',
       minFarmSize: filters.minFarmSize ? Number(filters.minFarmSize) : undefined,
       maxFarmSize: filters.maxFarmSize ? Number(filters.maxFarmSize) : undefined,
@@ -162,10 +161,32 @@ function FarmersContent() {
     }
   };
 
+  const handleArchiveFarmer = async (farmerId: string) => {
+    try {
+      await archiveFarmerService(farmerId);
+      toast({ title: 'Farmer Archived', description: 'Farmer has been moved to the archive.' });
+    } catch (error) {
+      toast({ title: 'Archive Failed', description: 'Could not archive the farmer.', variant: 'destructive' });
+    }
+  };
+
+  const groups = useFarmerGroups();
+  const societyToGroupName = React.useMemo(() => {
+    const map: Record<string, string> = {};
+    if (groups) {
+      for (const g of groups) {
+        if (g.society) map[g.society] = g.name;
+      }
+    }
+    return map;
+  }, [groups]);
+
   const columns = React.useMemo(() => getColumns({
     onEdit: handleOpenEditDialog,
     onDelete: handleDeleteFarmer,
-  }), []);
+    onArchive: handleArchiveFarmer,
+    societyToGroupName,
+  }), [societyToGroupName]);
 
   const handleExport = async () => {
     // Dynamic import for export functionality if needed, or keeping it as is since it uses the current 'data' which is paginated.
@@ -185,7 +206,7 @@ function FarmersContent() {
       return;
     }
 
-    const csvHeader = "ID,Farmer Name,Gender,Region,District,Community,Contact,Age,EducationLevel,FarmSize,CropsGrown,Status,JoinDate,CreatedAt,UpdatedAt\n";
+    const csvHeader = "ID,Farmer Name,Gender,Region,District,Society,Contact,Age,EducationLevel,FarmSize,CropsGrown,Status,JoinDate,CreatedAt,UpdatedAt\n";
     const csvRows = allFarmers.map(f =>
       [
         `"${f.id}"`,
@@ -193,7 +214,7 @@ function FarmersContent() {
         `"${f.gender || ''}"`,
         `"${f.region || ''}"`,
         `"${f.district || ''}"`,
-        `"${f.community || ''}"`,
+        `"${f.society || ''}"`,
         `"${f.contact || ''}"`,
         `"${f.age || ''}"`,
         `"${f.educationLevel || ''}"`,

@@ -72,8 +72,7 @@ export function AddMemberToGroupDialog({ open, onOpenChange, group }: AddMemberT
         if (!search) return availableFarmers;
         return availableFarmers.filter(f =>
             f.name.toLowerCase().includes(search.toLowerCase()) ||
-            (f.contact && f.contact.includes(search)) ||
-            (f.community && f.community.toLowerCase().includes(search.toLowerCase()))
+            (f.contact && f.contact.includes(search))
         );
     }, [availableFarmers, search]);
 
@@ -131,7 +130,7 @@ export function AddMemberToGroupDialog({ open, onOpenChange, group }: AddMemberT
                             </div>
 
                             <Input
-                                placeholder="Search by name, contact, or community..."
+                                placeholder="Search by name or contact..."
                                 value={search}
                                 onChange={(e) => setSearch(e.target.value)}
                             />
@@ -160,7 +159,7 @@ export function AddMemberToGroupDialog({ open, onOpenChange, group }: AddMemberT
                                                 <div className="space-y-1 leading-none pointer-events-none">
                                                     <p className="text-sm font-medium leading-none">{farmer.name}</p>
                                                     <p className="text-xs text-muted-foreground">
-                                                        {farmer.community ? farmer.community : (farmer.contact || 'No Contact')}
+                                                        {farmer.society ? farmer.society : (farmer.contact || 'No Contact')}
                                                     </p>
                                                 </div>
                                             </div>

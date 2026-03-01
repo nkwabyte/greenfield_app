@@ -20,6 +20,7 @@ import {
 import { RefreshCw, Pause, Play, CheckCircle2, AlertTriangle, Loader2 } from 'lucide-react';
 import { syncService } from '@/lib/db/sync';
 import { useState } from 'react';
+import { SyncQueueDialog } from './sync-queue-dialog';
 
 const ENTITY_LABELS: Record<string, string> = {
     farmers: 'Farmers',
@@ -33,6 +34,7 @@ export function SyncStatusBadge() {
         (state: RootState) => state.data.sync
     );
     const [isManualSyncing, setIsManualSyncing] = useState(false);
+    const [isQueueDialogOpen, setIsQueueDialogOpen] = useState(false);
 
     // Track DLQ (Dead-Letter Queue) count for failed outbound syncs
     const errorCount = useLiveQuery(() => db.syncQueue.where('status').equals('failed').count(), []) || 0;
@@ -143,22 +145,25 @@ export function SyncStatusBadge() {
 
                 {/* ── DLQ (Dead-Letter) error count ── */}
                 {errorCount > 0 && (
-                    <span
-                        className="inline-flex items-center rounded-full bg-red-100 text-red-800 dark:bg-red-500/20 dark:text-red-400 px-2.5 py-0.5 text-xs font-medium cursor-help"
-                        title="Some changes failed to sync and require manual attention."
+                    <button
+                        onClick={() => setIsQueueDialogOpen(true)}
+                        className="inline-flex items-center rounded-full bg-red-100 text-red-800 dark:bg-red-500/20 dark:text-red-400 px-2.5 py-0.5 text-xs font-medium cursor-pointer hover:bg-red-200 dark:hover:bg-red-500/30 transition-colors"
+                        title="Some changes failed to sync. Click to view and manage."
                     >
                         <AlertTriangle className="mr-1 h-3 w-3" />
                         <span className="hidden sm:inline">{errorCount.toLocaleString()} failed</span>
                         <span className="sm:hidden">{errorCount}</span>
-                    </span>
+                    </button>
                 )}
 
                 {/* ── Outbound queue pending count ── */}
                 {pendingCount > 0 && (
-                    <span className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${isPaused
-                        ? 'bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-300'
-                        : 'bg-yellow-100 text-yellow-800 dark:bg-amber-500/15 dark:text-amber-400'
-                        }`}>
+                    <button
+                        onClick={() => setIsQueueDialogOpen(true)}
+                        className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium cursor-pointer transition-colors ${isPaused
+                            ? 'bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
+                            : 'bg-yellow-100 text-yellow-800 dark:bg-amber-500/15 dark:text-amber-400 hover:bg-yellow-200 dark:hover:bg-amber-500/25'
+                            }`}>
                         {isPaused ? (
                             <Pause className="mr-1 h-3 w-3" />
                         ) : isSyncing && (
@@ -166,7 +171,7 @@ export function SyncStatusBadge() {
                         )}
                         <span className="hidden sm:inline">{isPaused ? 'Paused' : `${pendingCount.toLocaleString()} pending`}</span>
                         <span className="sm:hidden">{pendingCount}</span>
-                    </span>
+                    </button>
                 )}
 
                 {/* ── Manual sync controls (only when there are pending items) ── */}
@@ -196,6 +201,11 @@ export function SyncStatusBadge() {
                     </div>
                 )}
             </div>
+
+            <SyncQueueDialog
+                open={isQueueDialogOpen}
+                onOpenChange={setIsQueueDialogOpen}
+            />
         </TooltipProvider>
     );
 }

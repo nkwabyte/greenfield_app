@@ -66,9 +66,9 @@ export async function addSupabaseFarmersBatch(farmers: Farmer[]) {
             region: rest.region,
             district: rest.district,
             society: rest.society,
-            community: rest.community,
             contact: rest.contact,
             age: rest.age,
+            group_id: rest.groupId,
             education_level: rest.educationLevel,
             farm_size: rest.farmSize,
             crops_grown: rest.cropsGrown || [],
@@ -101,9 +101,10 @@ export async function purgeSupabaseFarmers() {
 // ── Helpers ────────────────────────────────────────────────────────────────
 
 function prepareFarmerData(farmerData: FarmerFormValues) {
-    const { joinDate, cropsGrown, educationLevel, farmSize, ...rest } = farmerData as any;
+    const { joinDate, cropsGrown, educationLevel, farmSize, groupId, ...rest } = farmerData as any;
     const dataToSave: any = {
         ...rest,
+        group_id: groupId,
         crops_grown: cropsGrown || [],
         education_level: educationLevel,
         farm_size: farmSize,
@@ -124,13 +125,13 @@ function mapFarmerRow(row: any): Farmer {
         region: row.region,
         district: row.district,
         society: row.society,
-        community: row.community,
         contact: row.contact,
         age: row.age,
         educationLevel: row.education_level,
         farmSize: row.farm_size,
         cropsGrown: row.crops_grown || [],
         status: row.status,
+        groupId: row.group_id,
         joinDate: row.join_date ? new Date(row.join_date).toISOString() : undefined,
         createdAt: row.created_at ? new Date(row.created_at).toISOString() : '',
         updatedAt: row.updated_at ? new Date(row.updated_at).toISOString() : '',

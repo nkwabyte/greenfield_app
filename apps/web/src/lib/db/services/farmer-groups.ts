@@ -4,7 +4,7 @@ import type { FarmerGroup } from '@/lib/types';
 import { getSupabaseFarmerGroups } from '@/lib/supabase/services/farmer-groups';
 
 export async function getAllFarmerGroups(): Promise<FarmerGroup[]> {
-    return await db.farmerGroups.toArray();
+    return await db.farmerGroups.filter(g => !g.isArchived).toArray();
 }
 
 export async function getFarmerGroup(id: string): Promise<FarmerGroup | undefined> {
@@ -13,7 +13,7 @@ export async function getFarmerGroup(id: string): Promise<FarmerGroup | undefine
 
 export async function getFarmerGroupOptions(): Promise<Pick<FarmerGroup, 'id' | 'name' | 'region' | 'district' | 'seasonYear'>[]> {
     return await db.farmerGroups
-        .filter(g => !g.deleted)
+        .filter(g => !g.deleted && !g.isArchived)
         .toArray(groups => groups.map(g => ({
             id: g.id,
             name: g.name,
@@ -24,7 +24,7 @@ export async function getFarmerGroupOptions(): Promise<Pick<FarmerGroup, 'id' | 
 }
 
 export async function getFarmerGroupsByYear(seasonYear: string): Promise<FarmerGroup[]> {
-    return await db.farmerGroups.where('seasonYear').equals(seasonYear).toArray();
+    return await db.farmerGroups.where('seasonYear').equals(seasonYear).filter(g => !g.isArchived).toArray();
 }
 
 export async function addFarmerGroup(
@@ -69,6 +69,14 @@ export async function deleteFarmerGroup(id: string): Promise<void> {
     const existing = await db.farmerGroups.get(id);
     await db.farmerGroups.delete(id);
     await syncService.addToQueue('farmerGroup', 'delete', id, null);
+}
+
+export async function archiveFarmerGroup(id: string, isArchived: boolean = true): Promise<void> {
+    await updateFarmerGroup(id, { isArchived });
+}
+
+export async function getArchivedFarmerGroups(): Promise<FarmerGroup[]> {
+    return await db.farmerGroups.filter(g => !!g.isArchived).toArray();
 }
 
 export async function syncFarmerGroupsFromSupabase(): Promise<number> {

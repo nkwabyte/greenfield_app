@@ -233,7 +233,7 @@ export function AddEditGroupDialog({ open, onOpenChange, group, onSave }: AddEdi
                                                         <div className="space-y-1 leading-none pointer-events-none">
                                                             <p className="text-sm font-medium leading-none">{farmer.name}</p>
                                                             <p className="text-xs text-muted-foreground">
-                                                                {farmer.community ? farmer.community : (farmer.contact || 'No Contact')}
+                                                                {farmer.society ? farmer.society : (farmer.contact || 'No Contact')}
                                                             </p>
                                                         </div>
                                                     </div>

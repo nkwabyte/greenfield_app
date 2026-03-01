@@ -24,7 +24,6 @@ export type FarmerFiltersState = {
     region: string;
     district: string;
     society: string;
-    community: string;
     status: string;
     minFarmSize: string;
     maxFarmSize: string;
@@ -40,24 +39,19 @@ export type FarmerFiltersProps = {
 };
 
 export function FarmerFilters({ filters, onFilterChange }: FarmerFiltersProps) {
-    const { region, district, society, community, status, minFarmSize, maxFarmSize, gender, minAge, maxAge, dateRange } = filters;
+    const { region, district, society, status, minFarmSize, maxFarmSize, gender, minAge, maxAge, dateRange } = filters;
 
     const uniqueRegions = useUniqueRegions();
     const uniqueDistricts = useUniqueDistricts(region !== 'all' ? region : undefined);
     const uniqueSocieties = useUniqueSocieties(district !== 'all' ? district : undefined);
-    const uniqueCommunities = useUniqueCommunities(society !== 'all' ? society : undefined);
 
     const handleFilterChange = (key: string, value: any) => {
         const newFilters = { ...filters, [key]: value };
         if (key === 'region') {
             newFilters.district = 'all';
             newFilters.society = 'all';
-            newFilters.community = 'all';
         } else if (key === 'district') {
             newFilters.society = 'all';
-            newFilters.community = 'all';
-        } else if (key === 'society') {
-            newFilters.community = 'all';
         }
         onFilterChange(newFilters);
     };
@@ -67,7 +61,6 @@ export function FarmerFilters({ filters, onFilterChange }: FarmerFiltersProps) {
             region: 'all',
             district: 'all',
             society: 'all',
-            community: 'all',
             status: 'all',
             minFarmSize: '',
             maxFarmSize: '',
@@ -78,7 +71,7 @@ export function FarmerFilters({ filters, onFilterChange }: FarmerFiltersProps) {
         });
     };
 
-    const hasActiveFilters = region !== 'all' || district !== 'all' || society !== 'all' || community !== 'all' || status !== 'all' || minFarmSize || maxFarmSize || gender !== 'all' || minAge || maxAge || dateRange?.from;
+    const hasActiveFilters = region !== 'all' || district !== 'all' || society !== 'all' || status !== 'all' || minFarmSize || maxFarmSize || gender !== 'all' || minAge || maxAge || dateRange?.from;
 
     return (
         <div className="mb-4">
@@ -125,19 +118,6 @@ export function FarmerFilters({ filters, onFilterChange }: FarmerFiltersProps) {
                     </Select>
                 </div>
 
-                <div>
-                    <Select value={community} onValueChange={(val) => handleFilterChange('community', val)} disabled={society === 'all'}>
-                        <SelectTrigger>
-                            <SelectValue placeholder="All Communities" />
-                        </SelectTrigger>
-                        <SelectContent>
-                            <SelectItem value="all">All Communities</SelectItem>
-                            {uniqueCommunities?.map((c) => (
-                                <SelectItem key={c} value={c}>{c}</SelectItem>
-                            ))}
-                        </SelectContent>
-                    </Select>
-                </div>
 
                 <div>
                     <Select value={status} onValueChange={(val) => handleFilterChange('status', val)}>

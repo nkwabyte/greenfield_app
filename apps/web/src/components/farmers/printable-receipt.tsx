@@ -18,9 +18,8 @@ export const PrintableReceipt = React.forwardRef<HTMLDivElement, PrintableReceip
             <div ref={ref} className="hidden print:flex flex-col p-8 bg-white text-black min-h-screen font-sans border-2 border-gray-200">
                 {/* Header */}
                 <div className="flex justify-between items-center border-b-2 border-gray-300 pb-6 mb-8 mt-4">
-                    <div>
-                        <h1 className="text-4xl font-black text-gray-900 tracking-tighter mb-1">GREENFIELD</h1>
-                        <p className="text-md text-gray-500 font-medium">Payment Receipt</p>
+                    <div className="flex items-center gap-3">
+                        <img src="/logo.png" alt="Greenfield Logo" className="h-24 w-auto object-contain" />
                     </div>
                     <div className="text-right">
                         <p className="text-sm font-medium text-gray-500 uppercase tracking-widest mb-1">Receipt No</p>

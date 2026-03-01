@@ -90,7 +90,7 @@ export const mockFarmers: Farmer[] = [
     createdAt: '2021-02-12T00:00:00.000Z',
     updatedAt: '2021-02-12T00:00:00.000Z',
   },
-    {
+  {
     id: 'FARM009',
     name: 'Liam O\'Connell',
     region: 'North',
@@ -115,27 +115,27 @@ export const mockFarmers: Farmer[] = [
 ];
 
 export const mockEmployees: Employee[] = [
-  { id: 'EMP001', name: 'Alice Johnson', email: 'alice.j@greenfield.com', role: 'Manager', salary: 85000, startDate: '2021-03-12T00:00:00.000Z', status: 'Active', createdAt: '2021-03-12T00:00:00.000Z', updatedAt: '2023-04-01T00:00:00.000Z' },
-  { id: 'EMP002', name: 'Bob Williams', email: 'bob.w@greenfield.com', role: 'Field Agent', salary: 62000, startDate: '2022-07-21T00:00:00.000Z', status: 'Active', createdAt: '2022-07-21T00:00:00.000Z', updatedAt: '2023-05-15T00:00:00.000Z' },
-  { id: 'EMP003', name: 'Charlie Brown', email: 'charlie.b@greenfield.com', role: 'Accountant', salary: 70000, startDate: '2020-01-15T00:00:00.000Z', status: 'Active', createdAt: '2020-01-15T00:00:00.000Z', updatedAt: '2023-06-20T00:00:00.000Z' },
-  { id: 'EMP004', name: 'Diana Miller', email: 'diana.m@greenfield.com', role: 'Support', salary: 55000, startDate: '2023-02-01T00:00:00.000Z', status: 'On Leave', createdAt: '2023-02-01T00:00:00.000Z', updatedAt: '2023-08-10T00:00:00.000Z' },
-  { id: 'EMP005', name: 'Ethan Davis', email: 'ethan.d@greenfield.com', role: 'Field Agent', salary: 63000, startDate: '2022-08-10T00:00:00.000Z', status: 'Terminated', createdAt: '2022-08-10T00:00:00.000Z', updatedAt: '2023-09-01T00:00:00.000Z' }
+  { id: 'EMP001', name: 'Alice Johnson', email: 'alice.j@greenfield.com', role: 'Manager', salary: 85000, startDate: '2021-03-12T00:00:00.000Z', status: 'Active', isVerified: true, createdAt: '2021-03-12T00:00:00.000Z', updatedAt: '2023-04-01T00:00:00.000Z' },
+  { id: 'EMP002', name: 'Bob Williams', email: 'bob.w@greenfield.com', role: 'Field Agent', salary: 62000, startDate: '2022-07-21T00:00:00.000Z', status: 'Active', isVerified: true, createdAt: '2022-07-21T00:00:00.000Z', updatedAt: '2023-05-15T00:00:00.000Z' },
+  { id: 'EMP003', name: 'Charlie Brown', email: 'charlie.b@greenfield.com', role: 'Accountant', salary: 70000, startDate: '2020-01-15T00:00:00.000Z', status: 'Active', isVerified: true, createdAt: '2020-01-15T00:00:00.000Z', updatedAt: '2023-06-20T00:00:00.000Z' },
+  { id: 'EMP004', name: 'Diana Miller', email: 'diana.m@greenfield.com', role: 'Support', salary: 55000, startDate: '2023-02-01T00:00:00.000Z', status: 'On Leave', isVerified: true, createdAt: '2023-02-01T00:00:00.000Z', updatedAt: '2023-08-10T00:00:00.000Z' },
+  { id: 'EMP005', name: 'Ethan Davis', email: 'ethan.d@greenfield.com', role: 'Field Agent', salary: 63000, startDate: '2022-08-10T00:00:00.000Z', status: 'Terminated', isVerified: true, createdAt: '2022-08-10T00:00:00.000Z', updatedAt: '2023-09-01T00:00:00.000Z' }
 ];
 
 export const mockTransactions: Transaction[] = [
-    { id: 'TRN001', type: 'Expense', category: 'Salary', description: 'Monthly payroll - August', amount: 25000, date: '2023-08-31T00:00:00.000Z', employeeName: 'Charlie Brown', createdAt: '2023-08-31T00:00:00.000Z', updatedAt: '2023-08-31T00:00:00.000Z' },
-    { id: 'TRN002', type: 'Expense', category: 'Travel', description: 'Fuel for field visit - North Region', amount: 150, date: '2023-08-28T00:00:00.000Z', employeeName: 'Bob Williams', createdAt: '2023-08-28T00:00:00.000Z', updatedAt: '2023-08-28T00:00:00.000Z' },
-    { id: 'TRN011', type: 'Income', category: 'Sales', description: 'Crop sale to Northwind Traders', amount: 15000, date: '2023-08-27T00:00:00.000Z', employeeName: 'Alice Johnson', createdAt: '2023-08-27T00:00:00.000Z', updatedAt: '2023-08-27T00:00:00.000Z' },
-    { id: 'TRN003', type: 'Expense', category: 'Equipment', description: 'New soil testing kit', amount: 850, date: '2023-08-25T00:00:00.000Z', employeeName: 'Alice Johnson', createdAt: '2023-08-25T00:00:00.000Z', updatedAt: '2023-08-25T00:00:00.000Z' },
-    { id: 'TRN004', type: 'Expense', category: 'Utilities', description: 'Office electricity bill', amount: 320, date: '2023-08-20T00:00:00.000Z', employeeName: 'Charlie Brown', createdAt: '2023-08-20T00:00:00.000Z', updatedAt: '2023-08-20T00:00:00.000Z' },
-    { id: 'TRN005', type: 'Expense', category: 'Marketing', description: 'Local newspaper ad', amount: 500, date: '2023-08-15T00:00:00.000Z', employeeName: 'Alice Johnson', createdAt: '2023-08-15T00:00:00.000Z', updatedAt: '2023-08-15T00:00:00.000Z' },
-    { id: 'TRN012', type: 'Income', category: 'Sales', description: 'Produce sale to local market', amount: 7500, date: '2023-08-12T00:00:00.000Z', employeeName: 'Bob Williams', createdAt: '2023-08-12T00:00:00.000Z', updatedAt: '2023-08-12T00:00:00.000Z' },
-    { id: 'TRN006', type: 'Expense', category: 'Salary', description: 'Monthly payroll - July', amount: 24500, date: '2023-07-31T00:00:00.000Z', employeeName: 'Charlie Brown', createdAt: '2023-07-31T00:00:00.000Z', updatedAt: '2023-07-31T00:00:00.000Z' },
-    { id: 'TRN007', type: 'Expense', category: 'Travel', description: 'Hotel stay for South Region conference', amount: 450, date: '2023-07-22T00:00:00.000Z', employeeName: 'Alice Johnson', createdAt: '2023-07-22T00:00:00.000Z', updatedAt: '2023-07-22T00:00:00.000Z' },
-    { id: 'TRN008', type: 'Expense', category: 'Other', description: 'Office supplies', amount: 120, date: '2023-07-18T00:00:00.000Z', employeeName: 'Diana Miller', createdAt: '2023-07-18T00:00:00.000Z', updatedAt: '2023-07-18T00:00:00.000Z' },
-    { id: 'TRN013', type: 'Income', category: 'Sales', description: 'Livestock sale', amount: 22000, date: '2023-07-15T00:00:00.000Z', employeeName: 'Alice Johnson', createdAt: '2023-07-15T00:00:00.000Z', updatedAt: '2023-07-15T00:00:00.000Z' },
-    { id: 'TRN009', type: 'Expense', category: 'Equipment', description: 'Drone repair', amount: 600, date: '2023-07-11T00:00:00.000Z', employeeName: 'Bob Williams', createdAt: '2023-07-11T00:00:00.000Z', updatedAt: '2023-07-11T00:00:00.000Z' },
-    { id: 'TRN010', type: 'Expense', category: 'Salary', description: 'Monthly payroll - June', amount: 24500, date: '2023-06-30T00:00:00.000Z', employeeName: 'Charlie Brown', createdAt: '2023-06-30T00:00:00.000Z', updatedAt: '2023-06-30T00:00:00.000Z' },
+  { id: 'TRN001', type: 'Expense', category: 'Salary', description: 'Monthly payroll - August', amount: 25000, date: '2023-08-31T00:00:00.000Z', employeeName: 'Charlie Brown', createdAt: '2023-08-31T00:00:00.000Z', updatedAt: '2023-08-31T00:00:00.000Z' },
+  { id: 'TRN002', type: 'Expense', category: 'Travel', description: 'Fuel for field visit - North Region', amount: 150, date: '2023-08-28T00:00:00.000Z', employeeName: 'Bob Williams', createdAt: '2023-08-28T00:00:00.000Z', updatedAt: '2023-08-28T00:00:00.000Z' },
+  { id: 'TRN011', type: 'Income', category: 'Sales', description: 'Crop sale to Northwind Traders', amount: 15000, date: '2023-08-27T00:00:00.000Z', employeeName: 'Alice Johnson', createdAt: '2023-08-27T00:00:00.000Z', updatedAt: '2023-08-27T00:00:00.000Z' },
+  { id: 'TRN003', type: 'Expense', category: 'Equipment', description: 'New soil testing kit', amount: 850, date: '2023-08-25T00:00:00.000Z', employeeName: 'Alice Johnson', createdAt: '2023-08-25T00:00:00.000Z', updatedAt: '2023-08-25T00:00:00.000Z' },
+  { id: 'TRN004', type: 'Expense', category: 'Utilities', description: 'Office electricity bill', amount: 320, date: '2023-08-20T00:00:00.000Z', employeeName: 'Charlie Brown', createdAt: '2023-08-20T00:00:00.000Z', updatedAt: '2023-08-20T00:00:00.000Z' },
+  { id: 'TRN005', type: 'Expense', category: 'Marketing', description: 'Local newspaper ad', amount: 500, date: '2023-08-15T00:00:00.000Z', employeeName: 'Alice Johnson', createdAt: '2023-08-15T00:00:00.000Z', updatedAt: '2023-08-15T00:00:00.000Z' },
+  { id: 'TRN012', type: 'Income', category: 'Sales', description: 'Produce sale to local market', amount: 7500, date: '2023-08-12T00:00:00.000Z', employeeName: 'Bob Williams', createdAt: '2023-08-12T00:00:00.000Z', updatedAt: '2023-08-12T00:00:00.000Z' },
+  { id: 'TRN006', type: 'Expense', category: 'Salary', description: 'Monthly payroll - July', amount: 24500, date: '2023-07-31T00:00:00.000Z', employeeName: 'Charlie Brown', createdAt: '2023-07-31T00:00:00.000Z', updatedAt: '2023-07-31T00:00:00.000Z' },
+  { id: 'TRN007', type: 'Expense', category: 'Travel', description: 'Hotel stay for South Region conference', amount: 450, date: '2023-07-22T00:00:00.000Z', employeeName: 'Alice Johnson', createdAt: '2023-07-22T00:00:00.000Z', updatedAt: '2023-07-22T00:00:00.000Z' },
+  { id: 'TRN008', type: 'Expense', category: 'Other', description: 'Office supplies', amount: 120, date: '2023-07-18T00:00:00.000Z', employeeName: 'Diana Miller', createdAt: '2023-07-18T00:00:00.000Z', updatedAt: '2023-07-18T00:00:00.000Z' },
+  { id: 'TRN013', type: 'Income', category: 'Sales', description: 'Livestock sale', amount: 22000, date: '2023-07-15T00:00:00.000Z', employeeName: 'Alice Johnson', createdAt: '2023-07-15T00:00:00.000Z', updatedAt: '2023-07-15T00:00:00.000Z' },
+  { id: 'TRN009', type: 'Expense', category: 'Equipment', description: 'Drone repair', amount: 600, date: '2023-07-11T00:00:00.000Z', employeeName: 'Bob Williams', createdAt: '2023-07-11T00:00:00.000Z', updatedAt: '2023-07-11T00:00:00.000Z' },
+  { id: 'TRN010', type: 'Expense', category: 'Salary', description: 'Monthly payroll - June', amount: 24500, date: '2023-06-30T00:00:00.000Z', employeeName: 'Charlie Brown', createdAt: '2023-06-30T00:00:00.000Z', updatedAt: '2023-06-30T00:00:00.000Z' },
 ];
 
 export const mockSuppliers: Supplier[] = [

@@ -31,7 +31,6 @@ export interface StagingFarmer {
     region: string;
     district: string;
     society: string;
-    community: string;
     farmSize: number;
     contact: string;
     educationLevel: string;
@@ -53,7 +52,6 @@ export interface StagingError {
     rawGender: string;
     rawDistrict: string;
     rawSociety: string;
-    rawCommunity: string;
     rawFarmSize: string;
 }
 
@@ -138,7 +136,7 @@ export class GreenfieldDB extends Dexie {
             products: 'id, name, category, supplierId, deleted, updatedAt, createdAt',
             suppliers: 'id, name, email, deleted, updatedAt, createdAt',
             transactions: 'id, type, category, date, deleted, updatedAt, createdAt',
-            farmerGroups: 'id, name, region, district, community, leaderId, seasonYear, *farmerIds, deleted, updatedAt, createdAt',
+            farmerGroups: 'id, name, region, district, society, leaderId, seasonYear, *farmerIds, deleted, updatedAt, createdAt',
             farmerRequests: 'id, farmerId, groupId, seasonYear, status, requestDate, deleted, updatedAt, createdAt',
             statistics: 'id',
             syncQueue: '++id, entityType, entityId, synced, status, timestamp',
@@ -162,6 +160,34 @@ export class GreenfieldDB extends Dexie {
         // Version 10: Add error table for rows that need manual region/name fix
         this.version(10).stores({
             importErrors: '++_id, sheet',
+        });
+
+        // Version 11: Merge community into society (society takes preference).
+        // Also removes community index from farmers and farmerGroups.
+        this.version(11).stores({
+            farmers: 'id, name, region, district, society, groupId, status, deleted, updatedAt, createdAt, [region+district], [region+district+society], [region+status]',
+            farmerGroups: 'id, name, region, district, society, leaderId, seasonYear, *farmerIds, deleted, updatedAt, createdAt',
+        }).upgrade(async tx => {
+            // For every farmer where society is blank, copy community → society
+            await tx.table('farmers').toCollection().modify((farmer: any) => {
+                if ((!farmer.society || farmer.society.trim() === '') && farmer.community) {
+                    farmer.society = farmer.community;
+                }
+                delete farmer.community; // remove the field from the record
+            });
+            // Same for farmerGroups
+            await tx.table('farmerGroups').toCollection().modify((group: any) => {
+                if ((!group.society || group.society.trim() === '') && group.community) {
+                    group.society = group.community;
+                }
+                delete group.community;
+            });
+        });
+
+        // Version 12: Add isArchived flag for hiding farmers and groups without deleting them
+        this.version(12).stores({
+            farmers: 'id, name, region, district, society, groupId, status, deleted, isArchived, updatedAt, createdAt, [region+district], [region+district+society], [region+status]',
+            farmerGroups: 'id, name, region, district, society, leaderId, seasonYear, *farmerIds, deleted, isArchived, updatedAt, createdAt',
         });
     }
 }

@@ -7,6 +7,10 @@ export async function getAllFarmerRequests(): Promise<FarmerRequest[]> {
     return await db.farmerRequests.toArray();
 }
 
+export async function getFarmerRequestsCount(): Promise<number> {
+    return await db.farmerRequests.count();
+}
+
 export async function getFarmerRequest(id: string): Promise<FarmerRequest | undefined> {
     return await db.farmerRequests.get(id);
 }

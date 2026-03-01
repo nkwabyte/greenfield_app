@@ -76,6 +76,8 @@ function toSnakeCase(data: any): any {
         groupId: 'group_id',
         grandTotal: 'grand_total',
         requestDate: 'request_date',
+        paymentPlan: 'payment_plan',
+        otherPaymentPlan: 'other_payment_plan',
         productId: 'product_id',
         productName: 'product_name',
         dynamicPrice: 'dynamic_price',

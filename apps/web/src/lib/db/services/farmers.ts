@@ -8,12 +8,13 @@ import { syncService } from '../sync';
 import type { Farmer } from '@/lib/types';
 import type { FarmerFormValues } from '@/components/farmers/add-edit-farmer-dialog';
 import { getSupabaseFarmers, getSupabaseFarmersPaginated } from '@/lib/supabase/services/farmers';
+import { normalizeRegion } from '@/lib/utils/region-normalizer';
 
 /**
  * Get all farmers from local database
  */
 export async function getAllFarmers(): Promise<Farmer[]> {
-    return await db.farmers.toArray();
+    return await db.farmers.filter(f => !f.isArchived).toArray();
 }
 
 /**
@@ -26,14 +27,14 @@ export async function getFarmer(id: string): Promise<Farmer | undefined> {
 /**
  * Get simple farmer options for dropdowns (Memory Optimized)
  */
-export async function getFarmerOptions(): Promise<Pick<Farmer, 'id' | 'name' | 'contact' | 'community'>[]> {
+export async function getFarmerOptions(): Promise<Pick<Farmer, 'id' | 'name' | 'contact' | 'society'>[]> {
     return await db.farmers
-        .filter(f => !f.deleted)
+        .filter(f => !f.deleted && !f.isArchived)
         .toArray(farmers => farmers.map(f => ({
             id: f.id,
             name: f.name,
             contact: f.contact,
-            community: f.community
+            society: f.society
         })));
 }
 
@@ -41,8 +42,9 @@ export async function getFarmerOptions(): Promise<Pick<Farmer, 'id' | 'name' | '
  * Get farmers with pagination
  */
 export async function getPaginatedFarmers(page: number, pageSize: number): Promise<{ data: Farmer[], total: number }> {
-    const total = await db.farmers.count();
-    const data = await db.farmers
+    const collection = db.farmers.filter(f => !f.isArchived);
+    const total = await collection.count();
+    const data = await collection
         .offset((page - 1) * pageSize)
         .limit(pageSize)
         .toArray();
@@ -73,7 +75,7 @@ export async function getFarmersFiltered(filters: {
         collection = collection.and(f => f.status === filters.status);
     }
 
-    return await collection.toArray();
+    return await collection.filter(f => !f.isArchived).toArray();
 }
 
 /**
@@ -86,7 +88,6 @@ export async function getFarmersPaginatedAndFiltered(
         region?: string;
         district?: string;
         society?: string;
-        community?: string;
         status?: 'Active' | 'Inactive';
         minFarmSize?: number;
         maxFarmSize?: number; // Optional range support
@@ -121,14 +122,16 @@ export async function getFarmersPaginatedAndFiltered(
 
     // 2. In-Memory Filtering for remaining fields
     collection = collection.filter((f: Farmer) => {
-        if (f.deleted) return false;
+        if (f.deleted || f.isArchived) return false;
 
         let match = true;
 
-        if (filters.region && filters.region !== 'all' && f.region !== filters.region) match = false;
+        if (filters.region && filters.region !== 'all') {
+            const normFilter = normalizeRegion(filters.region);
+            if (f.region && normalizeRegion(f.region) !== normFilter) match = false;
+        }
         if (filters.district && f.district !== filters.district) match = false;
         if (filters.society && f.society !== filters.society) match = false;
-        if (filters.community && f.community !== filters.community) match = false;
         if (filters.status && f.status !== filters.status) match = false;
 
         // Gender Filter
@@ -168,9 +171,20 @@ export async function getFarmersPaginatedAndFiltered(
  * Get unique regions for filter dropdown
  */
 export async function getUniqueRegions(): Promise<string[]> {
-    const regions = await db.farmers.orderBy('region').uniqueKeys() as string[];
-    // Filter out empty strings but keep N/A if it exists, and ensure N/A is last
-    const validRegions = regions.filter(r => r && r.trim().length > 0);
+    const farmers = await db.farmers.filter(f => !f.isArchived).toArray();
+
+    // Normalize regions when building the set
+    const regionsSet = new Set<string>();
+    farmers.forEach(f => {
+        if (f.region && f.region.trim().length > 0) {
+            const norm = normalizeRegion(f.region);
+            if (norm !== 'N/A') {
+                regionsSet.add(norm);
+            }
+        }
+    });
+
+    const validRegions = Array.from(regionsSet);
 
     return validRegions.sort((a, b) => {
         if (a === 'N/A') return 1;
@@ -184,11 +198,12 @@ export async function getUniqueRegions(): Promise<string[]> {
  */
 export async function getUniqueDistricts(region?: string): Promise<string[]> {
     if (region && region !== 'all') {
-        const farmers = await db.farmers.where('region').equals(region).toArray();
+        const farmers = await db.farmers.where('region').equals(region).filter(f => !f.isArchived).toArray();
         const districts = new Set(farmers.map(f => f.district).filter(d => d && d.trim().length > 0));
         return Array.from(districts) as string[];
     }
-    const districts = await db.farmers.orderBy('district').uniqueKeys() as string[];
+    const farmers = await db.farmers.filter(f => !f.isArchived).toArray();
+    const districts = Array.from(new Set(farmers.map(f => f.district).filter(Boolean))) as string[];
     return districts.filter(d => d && d.trim().length > 0);
 }
 
@@ -197,9 +212,8 @@ export async function getUniqueDistricts(region?: string): Promise<string[]> {
  */
 export async function getUniqueSocieties(district?: string): Promise<string[]> {
     if (district) {
-        // Can't use uniqueKeys with filter, but we can use cursors instead of .toArray()
         const societies = new Set<string>();
-        await db.farmers.where('district').equals(district).each(f => {
+        await db.farmers.where('district').equals(district).filter(f => !f.isArchived).each(f => {
             if (f.society && f.society.trim().length > 0) {
                 societies.add(f.society);
             }
@@ -211,20 +225,10 @@ export async function getUniqueSocieties(district?: string): Promise<string[]> {
 }
 
 /**
- * Get unique communities (Memory-Optimized)
+ * Get unique communities — now an alias for getUniqueSocieties since they are merged.
  */
 export async function getUniqueCommunities(society?: string): Promise<string[]> {
-    if (society) {
-        const communities = new Set<string>();
-        await db.farmers.where('society').equals(society).each(f => {
-            if (f.community && f.community.trim().length > 0) {
-                communities.add(f.community);
-            }
-        });
-        return Array.from(communities).sort();
-    }
-    const communities = await db.farmers.orderBy('community').uniqueKeys() as string[];
-    return communities.filter(c => c && c.trim().length > 0).sort();
+    return getUniqueSocieties(society);
 }
 
 /**
@@ -267,7 +271,6 @@ export async function addFarmer(
         region: farmerData.region,
         district: farmerData.district,
         society: farmerData.society,
-        community: farmerData.community,
         contact: farmerData.contact,
         age: farmerData.age,
         educationLevel: farmerData.educationLevel,
@@ -294,7 +297,7 @@ export async function addFarmer(
  */
 export async function updateFarmer(
     id: string,
-    farmerData: Partial<FarmerFormValues>
+    farmerData: Partial<FarmerFormValues> & { isArchived?: boolean }
 ): Promise<void> {
     const now = new Date().toISOString();
 
@@ -326,6 +329,20 @@ export async function updateFarmer(
 
     // 3. Update cache
     await updateFarmersCache();
+}
+
+/**
+ * Archive or Restore a farmer
+ */
+export async function archiveFarmer(id: string, isArchived: boolean = true): Promise<void> {
+    await updateFarmer(id, { isArchived });
+}
+
+/**
+ * Get all archived farmers
+ */
+export async function getArchivedFarmers(): Promise<Farmer[]> {
+    return await db.farmers.filter(f => !!f.isArchived).toArray();
 }
 
 /**
@@ -456,7 +473,7 @@ export async function syncFarmersFromSupabase(): Promise<number> {
  * Get farmers count
  */
 export async function getFarmersCount(): Promise<number> {
-    return await db.farmers.count();
+    return await db.farmers.filter(f => !f.isArchived).count();
 }
 
 /**
@@ -480,16 +497,18 @@ export async function updateFarmersCache(): Promise<void> {
     const byRegionAndGender: Record<string, Record<string, number>> = {};
 
     farmers.forEach(farmer => {
-        if (!farmer.deleted) {
+        if (!farmer.deleted && !farmer.isArchived) {
             // Only aggregate if region is known
             if (farmer.region && farmer.region !== 'Unknown' && farmer.region.trim() !== '') {
-                byRegion[farmer.region] = (byRegion[farmer.region] || 0) + 1;
+                const normRegion = normalizeRegion(farmer.region);
+                if (normRegion !== 'N/A') {
+                    byRegion[normRegion] = (byRegion[normRegion] || 0) + 1;
 
-                const r = farmer.region;
-                if (farmer.gender) {
-                    const g = farmer.gender;
-                    if (!byRegionAndGender[r]) byRegionAndGender[r] = {};
-                    byRegionAndGender[r][g] = (byRegionAndGender[r][g] || 0) + 1;
+                    if (farmer.gender) {
+                        const g = farmer.gender;
+                        if (!byRegionAndGender[normRegion]) byRegionAndGender[normRegion] = {};
+                        byRegionAndGender[normRegion][g] = (byRegionAndGender[normRegion][g] || 0) + 1;
+                    }
                 }
             }
 

@@ -26,7 +26,7 @@ export async function getSupabaseFarmerRequests(lastSyncTime?: number): Promise<
 
 export async function addSupabaseFarmerRequest(requestId: string, requestData: Partial<FarmerRequest>): Promise<void> {
     try {
-        const { farmerId, groupId, seasonYear, grandTotal, requestDate, ...rest } = requestData as any;
+        const { farmerId, groupId, seasonYear, grandTotal, requestDate, paymentPlan, otherPaymentPlan, payments, ...rest } = requestData as any;
         const { error } = await supabase.from('farmer_requests').insert({
             id: requestId,
             farmer_id: farmerId,
@@ -35,6 +35,9 @@ export async function addSupabaseFarmerRequest(requestId: string, requestData: P
             items: rest.items || [],
             grand_total: grandTotal || 0,
             status: rest.status || 'Pending',
+            payment_plan: paymentPlan || null,
+            other_payment_plan: otherPaymentPlan || null,
+            payments: payments || [],
             request_date: requestDate ? new Date(requestDate).toISOString() : new Date().toISOString(),
             created_at: rest.createdAt || new Date().toISOString(),
             updated_at: rest.updatedAt || new Date().toISOString(),
@@ -58,6 +61,9 @@ export async function updateSupabaseFarmerRequest(requestId: string, updates: Pa
         if ((updates as any).requestDate !== undefined) mappedUpdates.request_date = (updates as any).requestDate;
         if (updates.updatedAt !== undefined) mappedUpdates.updated_at = updates.updatedAt;
         if (updates.deleted !== undefined) mappedUpdates.deleted = updates.deleted;
+        if (updates.paymentPlan !== undefined) mappedUpdates.payment_plan = updates.paymentPlan;
+        if (updates.otherPaymentPlan !== undefined) mappedUpdates.other_payment_plan = updates.otherPaymentPlan;
+        if (updates.payments !== undefined) mappedUpdates.payments = updates.payments;
 
         const { error } = await supabase.from('farmer_requests').upsert({
             id: requestId,
@@ -88,7 +94,7 @@ export async function syncFarmerRequestsBatch(operations: { id: string, type: 'c
             if (op.type === 'delete') {
                 await supabase.from('farmer_requests').update({ deleted: true }).eq('id', op.id);
             } else if (op.type === 'create' && op.data) {
-                const { farmerId, groupId, seasonYear, grandTotal, requestDate, ...rest } = op.data;
+                const { farmerId, groupId, seasonYear, grandTotal, requestDate, paymentPlan, otherPaymentPlan, payments, ...rest } = op.data;
                 await supabase.from('farmer_requests').insert({
                     id: op.id,
                     farmer_id: farmerId,
@@ -97,6 +103,9 @@ export async function syncFarmerRequestsBatch(operations: { id: string, type: 'c
                     items: rest.items || [],
                     grand_total: grandTotal || 0,
                     status: rest.status || 'Pending',
+                    payment_plan: paymentPlan || null,
+                    other_payment_plan: otherPaymentPlan || null,
+                    payments: payments || [],
                     request_date: requestDate ? new Date(requestDate).toISOString() : new Date().toISOString(),
                 });
             } else if (op.type === 'update' && op.data) {
@@ -107,6 +116,9 @@ export async function syncFarmerRequestsBatch(operations: { id: string, type: 'c
                 if (mappedData.grandTotal !== undefined) { mappedData.grand_total = mappedData.grandTotal; delete mappedData.grandTotal; }
                 if (mappedData.requestDate !== undefined) { mappedData.request_date = mappedData.requestDate; delete mappedData.requestDate; }
                 if (mappedData.deleted !== undefined) { mappedData.deleted = mappedData.deleted; }
+                if (mappedData.paymentPlan !== undefined) { mappedData.payment_plan = mappedData.paymentPlan; delete mappedData.paymentPlan; }
+                if (mappedData.otherPaymentPlan !== undefined) { mappedData.other_payment_plan = mappedData.otherPaymentPlan; delete mappedData.otherPaymentPlan; }
+                if (mappedData.payments !== undefined) { mappedData.payments = mappedData.payments; }
                 await supabase.from('farmer_requests').update(mappedData).eq('id', op.id);
             }
         }
@@ -126,6 +138,9 @@ function mapFarmerRequestRow(row: any): FarmerRequest {
         items: row.items || [],
         grandTotal: row.grand_total,
         status: row.status,
+        paymentPlan: row.payment_plan,
+        otherPaymentPlan: row.other_payment_plan,
+        payments: row.payments || [],
         requestDate: row.request_date ? new Date(row.request_date).toISOString() : '',
         createdAt: row.created_at ? new Date(row.created_at).toISOString() : '',
         updatedAt: row.updated_at ? new Date(row.updated_at).toISOString() : '',

@@ -10,14 +10,29 @@ import {
   TrendingUp,
   TrendingDown,
   PlusCircle,
+  UsersRound,
+  AlertCircle,
 } from 'lucide-react';
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 
 const ExpensesByCategoryChart = dynamic(() => import('@/components/finances/expenses-by-category-chart').then(mod => mod.ExpensesByCategoryChart), {
   ssr: false,
   loading: () => <Skeleton className="h-80 w-full" />
 });
 const FinancialsOverTimeChart = dynamic(() => import('@/components/finances/financials-over-time-chart').then(mod => mod.FinancialsOverTimeChart), {
+  ssr: false,
+  loading: () => <Skeleton className="h-80 w-full" />
+});
+const GroupPaymentsChart = dynamic(() => import('@/components/finances/group-payments-chart').then(mod => mod.GroupPaymentsChart), {
+  ssr: false,
+  loading: () => <Skeleton className="h-80 w-full" />
+});
+const OutstandingDistributionChart = dynamic(() => import('@/components/finances/outstanding-distribution-chart').then(mod => mod.OutstandingDistributionChart), {
+  ssr: false,
+  loading: () => <Skeleton className="h-80 w-full" />
+});
+const MonthlyCollectionChart = dynamic(() => import('@/components/finances/monthly-collection-chart').then(mod => mod.MonthlyCollectionChart), {
   ssr: false,
   loading: () => <Skeleton className="h-80 w-full" />
 });
@@ -30,7 +45,7 @@ import {
 } from '@/components/finances/add-edit-transaction-dialog';
 import { useToast } from '@/hooks/use-toast';
 import { Skeleton } from '@/components/ui/skeleton';
-import { useEmployeeOptions, useTransactionsPaginated } from '@/hooks/useData';
+import { useEmployeeOptions, useTransactionsPaginated, useAllTimeRequestFinancials, useGroupFinancialSummary } from '@/hooks/useData';
 import { ConfirmDialog } from '@/components/ui/confirm-dialog';
 import { useRequireRole } from '@/hooks/use-role-guard';
 
@@ -60,6 +75,13 @@ export default function FinancesPage() {
 
   // NEW: Use Dexie hook instead of Redux
   const employees = useEmployeeOptions();
+
+  // Farmer request revenue aggregation
+  const requestFinancials = useAllTimeRequestFinancials();
+
+  // Group Financials for specific year for the new charts
+  const currentYear = new Date().getFullYear().toString();
+  const summary = useGroupFinancialSummary(currentYear);
 
   const [isAddEditDialogOpen, setIsAddEditDialogOpen] = React.useState(false);
   const [editingTransaction, setEditingTransaction] = React.useState<Transaction | null>(null);
@@ -149,10 +171,18 @@ export default function FinancesPage() {
   return (
     <AppShell>
       <PageHeader title="Financial Overview" description="Track company income and expenses.">
-        <Button onClick={handleOpenAddDialog}>
-          <PlusCircle className="mr-2" />
-          Add Transaction
-        </Button>
+        <div className="flex gap-3 items-center">
+          <Link href="/finances/groups">
+            <Button variant="outline">
+              <UsersRound className="mr-2 h-4 w-4" />
+              Group Financials
+            </Button>
+          </Link>
+          <Button onClick={handleOpenAddDialog}>
+            <PlusCircle className="mr-2 h-4 w-4" />
+            Add Transaction
+          </Button>
+        </div>
       </PageHeader>
 
       <div className="grid gap-6">
@@ -168,6 +198,34 @@ export default function FinancesPage() {
           )}
         </div>
 
+        {/* Farmer Request Revenue / Outstanding */}
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <KpiCard
+            label="Farmer Request Revenue"
+            value={currencyFormatter.format(requestFinancials?.totalOwed ?? 0)}
+            icon={UsersRound}
+            change={`${currencyFormatter.format(requestFinancials?.totalPaid ?? 0)} collected`}
+          />
+          <KpiCard
+            label="Outstanding Receivables"
+            value={currencyFormatter.format(requestFinancials?.outstanding ?? 0)}
+            icon={AlertCircle}
+          />
+          <Link
+            href="/finances/groups"
+            className="group block p-6 bg-card rounded-xl border shadow-sm hover:border-primary/50 hover:shadow-md transition-all"
+          >
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Group Financials</span>
+              <UsersRound className="h-5 w-5 text-muted-foreground/50" />
+            </div>
+            <p className="text-lg font-bold text-slate-900 dark:text-white">View Breakdown →</p>
+            <p className="text-xs text-muted-foreground mt-1">
+              Detailed revenue, payments &amp; charts by farmer group and season year.
+            </p>
+          </Link>
+        </div>
+
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-5">
           <div className="lg:col-span-3">
             {isLoading ? <Skeleton className="h-80" /> : <FinancialsOverTimeChart transactions={transactions} />}
@@ -176,6 +234,18 @@ export default function FinancesPage() {
             {isLoading ? <Skeleton className="h-80" /> : <ExpensesByCategoryChart transactions={transactions} />}
           </div>
         </div>
+
+        {summary && summary.groups.length > 0 && (
+          <>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <GroupPaymentsChart groups={summary.groups} />
+              <OutstandingDistributionChart groups={summary.groups} />
+            </div>
+            <div>
+              <MonthlyCollectionChart monthlyPayments={summary.monthlyPayments} />
+            </div>
+          </>
+        )}
 
         <DataTable
           columns={columns}
