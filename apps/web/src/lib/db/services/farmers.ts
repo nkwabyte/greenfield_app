@@ -102,21 +102,17 @@ export async function getFarmersPaginatedAndFiltered(
     let collection: any = db.farmers.toCollection();
 
     // 1. Index Selection (Prioritize highly restrictive search)
+    // NOTE: region values stored in DB are raw/non-normalized, so we cannot use compound
+    // indexes that include region — they would do an exact-match against the raw stored value
+    // which won't match the normalized filter value. Instead we use single-field indexes and
+    // rely on in-memory filtering for region normalization.
     if (filters.search) {
         collection = db.farmers.where('name').startsWithIgnoreCase(filters.search);
-    } else if (filters.region && filters.region !== 'all') {
-        if (filters.district && filters.society) {
-            collection = db.farmers.where('[region+district+society]').equals([filters.region, filters.district, filters.society]);
-        } else if (filters.district) {
-            collection = db.farmers.where('[region+district]').equals([filters.region, filters.district]);
-        } else if (filters.status) {
-            collection = db.farmers.where('[region+status]').equals([filters.region, filters.status]);
-        } else {
-            collection = db.farmers.where('region').equals(filters.region);
-        }
+    } else if (filters.society && filters.society !== 'all') {
+        collection = db.farmers.where('society').equals(filters.society);
+    } else if (filters.district && filters.district !== 'all') {
+        collection = db.farmers.where('district').equals(filters.district);
     } else if (filters.status) {
-        // If no region but status is present, use status index if available, or just filter
-        // We don't have a simple [status] index in version 2, but 'status' is indexed in version 1
         collection = db.farmers.where('status').equals(filters.status);
     }
 
@@ -198,7 +194,8 @@ export async function getUniqueRegions(): Promise<string[]> {
  */
 export async function getUniqueDistricts(region?: string): Promise<string[]> {
     if (region && region !== 'all') {
-        const farmers = await db.farmers.where('region').equals(region).filter(f => !f.isArchived).toArray();
+        const normFilter = normalizeRegion(region);
+        const farmers = await db.farmers.filter(f => !f.isArchived && !!f.region && normalizeRegion(f.region) === normFilter).toArray();
         const districts = new Set(farmers.map(f => f.district).filter(d => d && d.trim().length > 0));
         return Array.from(districts) as string[];
     }
