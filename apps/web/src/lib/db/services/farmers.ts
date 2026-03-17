@@ -97,6 +97,7 @@ export async function getFarmersPaginatedAndFiltered(
         startDate?: Date;
         endDate?: Date;
         search?: string;
+        allowedDistricts?: string[]; // Field Agent district restriction
     }
 ): Promise<{ data: Farmer[], total: number }> {
     let collection: any = db.farmers.toCollection();
@@ -121,6 +122,11 @@ export async function getFarmersPaginatedAndFiltered(
         if (f.deleted || f.isArchived) return false;
 
         let match = true;
+
+        // Field Agent district restriction: farmer must be in one of the allowed districts
+        if (filters.allowedDistricts && filters.allowedDistricts.length > 0) {
+            if (!f.district || !filters.allowedDistricts.includes(f.district)) return false;
+        }
 
         if (filters.region && filters.region !== 'all') {
             const normFilter = normalizeRegion(filters.region);

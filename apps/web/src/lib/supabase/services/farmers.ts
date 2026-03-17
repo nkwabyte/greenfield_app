@@ -65,6 +65,7 @@ export async function addSupabaseFarmersBatch(farmers: Farmer[]) {
             gender: rest.gender,
             region: rest.region,
             district: rest.district,
+            cocoa_district: rest.cocoaDistrict || null,
             society: rest.society,
             contact: rest.contact,
             age: rest.age,
@@ -101,13 +102,14 @@ export async function purgeSupabaseFarmers() {
 // ── Helpers ────────────────────────────────────────────────────────────────
 
 function prepareFarmerData(farmerData: FarmerFormValues) {
-    const { joinDate, cropsGrown, educationLevel, farmSize, groupId, ...rest } = farmerData as any;
+    const { joinDate, cropsGrown, educationLevel, farmSize, groupId, cocoaDistrict, ...rest } = farmerData as any;
     const dataToSave: any = {
         ...rest,
         group_id: groupId,
         crops_grown: cropsGrown || [],
         education_level: educationLevel,
         farm_size: farmSize,
+        cocoa_district: cocoaDistrict || null,
         join_date: joinDate ? new Date(joinDate).toISOString() : null,
     };
 
@@ -124,6 +126,7 @@ function mapFarmerRow(row: any): Farmer {
         gender: row.gender,
         region: row.region,
         district: row.district,
+        cocoaDistrict: row.cocoa_district,
         society: row.society,
         contact: row.contact,
         age: row.age,

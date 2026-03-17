@@ -55,7 +55,7 @@ const currencyFormatter = new Intl.NumberFormat('en-GH', {
 });
 
 export default function FinancesPage() {
-  const { allowed } = useRequireRole(['Admin', 'Employee']);
+  const { allowed } = useRequireRole(['Admin', 'Employee'], { excludeJobTitles: ['Field Agent'] });
   const { toast } = useToast();
 
   if (!allowed) return null;

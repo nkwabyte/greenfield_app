@@ -44,13 +44,13 @@ import { RootState } from '@/lib/store/store';
 import { ThemeToggle } from '@/components/theme-toggle';
 
 const allNavItems = [
-  { href: '/dashboard', icon: LayoutGrid, label: 'Dashboard', roles: ['Admin', 'Employee'] },
-  { href: '/farmers', icon: Users, label: 'Farmers', roles: ['Admin', 'Employee'] },
-  { href: '/employees', icon: Briefcase, label: 'Employees', roles: ['Admin'] },
-  { href: '/suppliers', icon: Truck, label: 'Suppliers', roles: ['Admin', 'Employee'] },
-  { href: '/products', icon: Package, label: 'Products', roles: ['Admin', 'Employee'] },
-  { href: '/finances', icon: Landmark, label: 'Finances', roles: ['Admin', 'Employee'] },
-  { href: '/ai-insights', icon: WandSparkles, label: 'AI Insight', roles: ['Admin', 'Employee'] },
+  { href: '/dashboard', icon: LayoutGrid, label: 'Dashboard', roles: ['Admin', 'Employee'], excludeJobTitles: [] },
+  { href: '/farmers', icon: Users, label: 'Farmers', roles: ['Admin', 'Employee'], excludeJobTitles: [] },
+  { href: '/employees', icon: Briefcase, label: 'Employees', roles: ['Admin'], excludeJobTitles: [] },
+  { href: '/suppliers', icon: Truck, label: 'Suppliers', roles: ['Admin', 'Employee'], excludeJobTitles: ['Field Agent'] },
+  { href: '/products', icon: Package, label: 'Products', roles: ['Admin', 'Employee'], excludeJobTitles: [] },
+  { href: '/finances', icon: Landmark, label: 'Finances', roles: ['Admin', 'Employee'], excludeJobTitles: ['Field Agent'] },
+  { href: '/ai-insights', icon: WandSparkles, label: 'AI Insight', roles: ['Admin', 'Employee'], excludeJobTitles: [] },
 ];
 
 export function AppShell({ children }: { children: React.ReactNode }) {
@@ -76,8 +76,12 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
   const navItems = React.useMemo(() => {
     if (!user?.role) return [];
-    return allNavItems.filter(item => item.roles.includes(user.role));
-  }, [user?.role]);
+    return allNavItems.filter(item => {
+      if (!item.roles.includes(user.role)) return false;
+      if (user.jobTitle && item.excludeJobTitles.includes(user.jobTitle)) return false;
+      return true;
+    });
+  }, [user?.role, user?.jobTitle]);
 
   if (!isMounted || isLoading || !isAuthenticated || !user) {
     return (

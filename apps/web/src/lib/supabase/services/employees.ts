@@ -51,21 +51,29 @@ export async function getSupabaseEmployeesPaginated(
 }
 
 export async function addSupabaseEmployee(employeeData: EmployeeFormValues, id: string) {
-    const { startDate, ...rest } = employeeData;
+    const { startDate, assignedDistricts: rawDistricts, ...rest } = employeeData as any;
+    const assigned_districts = Array.isArray(rawDistricts)
+        ? rawDistricts
+        : (rawDistricts ?? '').split(',').map((d: string) => d.trim()).filter(Boolean);
     const { error } = await supabase.from('employees').insert({
         id,
         ...rest,
         start_date: new Date(startDate).toISOString(),
-        is_verified: true, // Admin-created employees are automatically verified
+        assigned_districts,
+        is_verified: true,
     });
     if (error) throw error;
 }
 
 export async function updateSupabaseEmployee(id: string, employeeData: EmployeeFormValues) {
-    const { startDate, ...rest } = employeeData;
+    const { startDate, assignedDistricts: rawDistricts, ...rest } = employeeData as any;
+    const assigned_districts = Array.isArray(rawDistricts)
+        ? rawDistricts
+        : (rawDistricts ?? '').split(',').map((d: string) => d.trim()).filter(Boolean);
     const { error } = await supabase.from('employees').update({
         ...rest,
         start_date: new Date(startDate).toISOString(),
+        assigned_districts,
     }).eq('id', id);
     if (error) throw error;
 }
@@ -89,6 +97,7 @@ function mapEmployeeRow(row: any): Employee {
         startDate: row.start_date ? new Date(row.start_date).toISOString() : '',
         status: row.status,
         isVerified: row.is_verified ?? true,
+        assignedDistricts: row.assigned_districts ?? [],
         createdAt: row.created_at ? new Date(row.created_at).toISOString() : '',
         updatedAt: row.updated_at ? new Date(row.updated_at).toISOString() : '',
         deleted: row.deleted,

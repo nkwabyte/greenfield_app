@@ -8,6 +8,8 @@
 
 'use client';
 
+import { useSelector } from 'react-redux';
+import type { RootState } from '@/lib/store/store';
 import { useLiveQuery } from '@/hooks/useLiveQuery';
 import { db } from '@/lib/db/schema';
 import { GHANA_REGIONS, type GhanaRegion } from '@/lib/utils/region-normalizer';
@@ -228,6 +230,7 @@ export function useFarmersPaginatedAndFiltered(
         startDate?: Date;
         endDate?: Date;
         search?: string;
+        allowedDistricts?: string[];
     }
 ) {
     return useLiveQuery(
@@ -246,7 +249,8 @@ export function useFarmersPaginatedAndFiltered(
             filters.maxAge,
             filters.startDate,
             filters.endDate,
-            filters.search
+            filters.search,
+            filters.allowedDistricts?.join(',')  // stable dep key
         ]
     );
 }
@@ -734,5 +738,24 @@ export function useFarmerRequestsCount() {
 
 export function useArchivedFarmerGroups() {
     return useLiveQuery(() => getArchivedFarmerGroups(), []);
+}
+
+/**
+ * Returns the assigned districts for the currently logged-in Field Agent.
+ * Returns an empty array for Admin users or non-Field-Agent employees,
+ * meaning no district restriction is applied.
+ * Returns the district list from their employee record when they are a Field Agent.
+ */
+export function useFieldAgentDistricts(): string[] {
+    const user = useSelector((state: RootState) => state.auth.user);
+    const isFieldAgent = user?.jobTitle === 'Field Agent';
+
+    const districts = useLiveQuery(async () => {
+        if (!isFieldAgent || !user?.uid) return [];
+        const employee = await db.employees.get(user.uid);
+        return employee?.assignedDistricts ?? [];
+    }, [user?.uid, isFieldAgent]);
+
+    return districts ?? [];
 }
 

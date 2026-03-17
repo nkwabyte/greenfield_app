@@ -12,10 +12,14 @@ import { useToast } from '@/hooks/use-toast';
 import { AddEditSupplierDialog, type SupplierFormValues } from '@/components/suppliers/add-edit-supplier-dialog';
 import { useSuppliersPaginated } from '@/hooks/useData';
 import { ConfirmDialog } from '@/components/ui/confirm-dialog';
+import { useRequireRole } from '@/hooks/use-role-guard';
 
 export default function SuppliersPage() {
+  const { allowed } = useRequireRole(['Admin', 'Employee'], { excludeJobTitles: ['Field Agent'] });
   const router = useRouter();
   const { toast } = useToast();
+
+  if (!allowed) return null;
 
   // Pagination State
   const [pagination, setPagination] = React.useState({
