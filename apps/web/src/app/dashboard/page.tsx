@@ -13,19 +13,19 @@ import { Skeleton } from '@/components/ui/skeleton';
 
 const FarmersByRegionChart = dynamic(() => import('@/components/dashboard/farmers-by-region-chart').then(mod => mod.FarmersByRegionChart), {
   ssr: false,
-  loading: () => <Skeleton className="h-[300px] w-full" />
+  loading: () => <Skeleton className="h-75 w-full" />
 });
 const FarmersAgeChart = dynamic(() => import('@/components/dashboard/farmers-age-chart').then(mod => mod.FarmersAgeChart), {
   ssr: false,
-  loading: () => <Skeleton className="h-[300px] w-full" />
+  loading: () => <Skeleton className="h-75 w-full" />
 });
 const FarmersByGenderChart = dynamic(() => import('@/components/dashboard/farmers-by-gender-chart').then(mod => mod.FarmersByGenderChart), {
   ssr: false,
-  loading: () => <Skeleton className="h-[300px] w-full" />
+  loading: () => <Skeleton className="h-75 w-full" />
 });
 const FarmSizeChart = dynamic(() => import('@/components/dashboard/farm-size-chart').then(mod => mod.FarmSizeChart), {
   ssr: false,
-  loading: () => <Skeleton className="h-[300px] w-full" />
+  loading: () => <Skeleton className="h-75 w-full" />
 });
 import { RecentFarmersTable } from '@/components/dashboard/recent-farmers-table';
 // Removed AiAssistant import
@@ -226,7 +226,7 @@ export default function DashboardPage() {
       >
         <div className="flex flex-wrap items-center gap-2">
           <Select value={selectedRegion} onValueChange={setSelectedRegion}>
-            <SelectTrigger className="w-full sm:w-[160px]">
+            <SelectTrigger className="w-full sm:w-40">
               <SelectValue placeholder="All Regions" />
             </SelectTrigger>
             <SelectContent>

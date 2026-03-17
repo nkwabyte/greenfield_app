@@ -67,7 +67,7 @@ export default function FarmersHubPage() {
                         {/* Featured: All Farmers — spans full row on small, col1 on md */}
                         <Link
                             href="/farmers/all"
-                            className="group relative overflow-hidden rounded-xl border bg-linear-to-br from-primary/5 to-primary/10 border-primary/20 p-6 shadow-sm hover:shadow-md hover:border-primary/50 transition-all duration-200 md:col-span-1 flex flex-col justify-between min-h-[160px]"
+                            className="group relative overflow-hidden rounded-xl border bg-linear-to-br from-primary/5 to-primary/10 border-primary/20 p-6 shadow-sm hover:shadow-md hover:border-primary/50 transition-all duration-200 md:col-span-1 flex flex-col justify-between min-h-40"
                         >
                             <div className="flex items-start justify-between">
                                 <div className="p-3 rounded-xl bg-primary/10 w-12 h-12 flex items-center justify-center">
@@ -84,7 +84,7 @@ export default function FarmersHubPage() {
                         {/* Farmer Groups */}
                         <Link
                             href="/farmers/groups"
-                            className="group relative overflow-hidden rounded-xl border bg-linear-to-br from-orange-500/5 to-orange-500/10 border-orange-500/20 p-6 shadow-sm hover:shadow-md hover:border-orange-500/50 transition-all duration-200 flex flex-col justify-between min-h-[160px]"
+                            className="group relative overflow-hidden rounded-xl border bg-linear-to-br from-orange-500/5 to-orange-500/10 border-orange-500/20 p-6 shadow-sm hover:shadow-md hover:border-orange-500/50 transition-all duration-200 flex flex-col justify-between min-h-40"
                         >
                             <div className="flex items-start justify-between">
                                 <div className="p-3 rounded-xl bg-orange-500/10 w-12 h-12 flex items-center justify-center">
@@ -101,7 +101,7 @@ export default function FarmersHubPage() {
                         {/* Regions */}
                         <Link
                             href="/farmers/regions"
-                            className="group relative overflow-hidden rounded-xl border bg-linear-to-br from-blue-500/5 to-blue-500/10 border-blue-500/20 p-6 shadow-sm hover:shadow-md hover:border-blue-500/50 transition-all duration-200 flex flex-col justify-between min-h-[160px]"
+                            className="group relative overflow-hidden rounded-xl border bg-linear-to-br from-blue-500/5 to-blue-500/10 border-blue-500/20 p-6 shadow-sm hover:shadow-md hover:border-blue-500/50 transition-all duration-200 flex flex-col justify-between min-h-40"
                         >
                             <div className="flex items-start justify-between">
                                 <div className="p-3 rounded-xl bg-blue-500/10 w-12 h-12 flex items-center justify-center">
