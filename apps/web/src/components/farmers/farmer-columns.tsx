@@ -100,26 +100,16 @@ export const getColumns = ({
       },
     },
     {
-      accessorKey: 'cropsGrown',
-      header: 'Crops',
+      accessorKey: 'cocoaDistrict',
+      header: 'Cocoa District',
       cell: ({ row }) => {
-        const crops = row.getValue('cropsGrown') as string[] | string | undefined;
-
-        // Handle different data formats
-        let count = 0;
-        if (Array.isArray(crops)) {
-          count = crops.length;
-        } else if (typeof crops === 'string' && crops.trim()) {
-          // Handle comma-separated string
-          count = crops.split(',').filter(c => c.trim()).length;
-        }
-
-        return (
-          <Badge variant={count === 0 ? "secondary" : "outline"} className="font-medium">
-            {count} {count === 1 ? 'crop' : 'crops'}
-          </Badge>
+        const cocoaDistrict = row.getValue('cocoaDistrict') as string | undefined;
+        return cocoaDistrict ? (
+          <span className="font-medium">{cocoaDistrict}</span>
+        ) : (
+          <span className="text-muted-foreground text-sm">—</span>
         );
-      }
+      },
     },
     {
       accessorKey: 'status',
