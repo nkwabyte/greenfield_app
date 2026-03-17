@@ -59,6 +59,8 @@ export async function POST(request: NextRequest) {
         // ── 2. Upsert into public.users (profile row) ────────────────────────
         // The Postgres trigger may already do this, but we upsert to guarantee
         // the name/role/status are correct even if the trigger fires first.
+        // job_title stores the employee's specific role (Manager, Field Agent, etc.)
+        // so the app can enforce fine-grained access control.
         const { error: usersError } = await supabaseAdmin
             .from('users')
             .upsert({
@@ -67,6 +69,7 @@ export async function POST(request: NextRequest) {
                 email,
                 role: 'Employee',
                 status: 'Active',
+                job_title: role, // e.g. 'Field Agent', 'Manager', 'Accountant', 'Support'
             }, { onConflict: 'id' });
 
         if (usersError) {

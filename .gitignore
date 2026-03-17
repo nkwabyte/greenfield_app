@@ -9,6 +9,8 @@ node_modules/
 !.yarn/versions
 .pnpm-store
 
+.mcp.json
+
 # changes
 
 # Logs

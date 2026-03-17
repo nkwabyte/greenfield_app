@@ -42,6 +42,21 @@ class ConnectivityService {
                     }
                 }).catch(() => { /* keep current offline state */ });
             }
+
+            // In Electron, the main process runs a more reliable connectivity probe
+            // (using Electron's net module) and pushes change events via IPC.
+            // Subscribe here so the sync service reacts instantly without waiting
+            // for the next browser online/offline event or periodic check.
+            const electronAPI = (window as any).electron;
+            if (electronAPI?.onConnectivityChanged) {
+                electronAPI.onConnectivityChanged((isOnline: boolean) => {
+                    if (isOnline && !this.state.isOnline) {
+                        this.handleOnline();
+                    } else if (!isOnline && this.state.isOnline) {
+                        this.handleOffline();
+                    }
+                });
+            }
         }
     }
 

@@ -19,6 +19,7 @@ import {
 import {
   Form,
   FormControl,
+  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -51,6 +52,7 @@ const employeeSchema = z.object({
     z.number().positive({ message: 'Salary must be a positive number.' }).optional()
   ).optional(),
   status: z.enum(['Active', 'On Leave', 'Terminated']),
+  assignedDistricts: z.string().optional(), // Comma-separated districts for Field Agents
 });
 
 export type EmployeeFormValues = z.infer<typeof employeeSchema>;
@@ -75,6 +77,7 @@ export function AddEditEmployeeDialog({ open, onOpenChange, employee, onSave }: 
       startDate: new Date(),
       salary: undefined,
       status: 'Active',
+      assignedDistricts: '',
     },
   });
 
@@ -83,6 +86,7 @@ export function AddEditEmployeeDialog({ open, onOpenChange, employee, onSave }: 
       form.reset({
         ...employee,
         startDate: new Date(employee.startDate),
+        assignedDistricts: (employee.assignedDistricts ?? []).join(', '),
       });
     } else {
       form.reset({
@@ -92,9 +96,12 @@ export function AddEditEmployeeDialog({ open, onOpenChange, employee, onSave }: 
         startDate: new Date(),
         salary: undefined,
         status: 'Active',
+        assignedDistricts: '',
       });
     }
   }, [employee, form, open]);
+
+  const selectedRole = form.watch('role');
 
   const handleSubmit = (data: EmployeeFormValues) => {
     onSave(data);
@@ -241,6 +248,24 @@ export function AddEditEmployeeDialog({ open, onOpenChange, employee, onSave }: 
                 </FormItem>
               )}
             />
+            {selectedRole === 'Field Agent' && (
+              <FormField
+                control={form.control}
+                name="assignedDistricts"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Assigned Districts</FormLabel>
+                    <FormControl>
+                      <Input placeholder="e.g. Atwima Kwanwoma, Amansie West" {...field} />
+                    </FormControl>
+                    <FormDescription>
+                      Comma-separated list of districts this field agent can access.
+                    </FormDescription>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            )}
             <DialogFooter className="pt-4">
               <DialogClose asChild>
                 <Button type="button" variant="outline">Cancel</Button>

@@ -112,6 +112,16 @@ export async function getEmployeesPaginatedAndFiltered(
 }
 
 /**
+ * Parses the assignedDistricts field from the form (comma-separated string or array)
+ * into a clean string array.
+ */
+function parseAssignedDistricts(value?: string | string[]): string[] {
+    if (!value) return [];
+    if (Array.isArray(value)) return value.map(d => d.trim()).filter(Boolean);
+    return value.split(',').map(d => d.trim()).filter(Boolean);
+}
+
+/**
  * Add a new employee (offline-first)
  */
 export async function addEmployee(
@@ -138,6 +148,8 @@ export async function addEmployee(
         if (!authUid) authUid = crypto.randomUUID();
     }
 
+    const assignedDistricts = parseAssignedDistricts((employeeData as any).assignedDistricts);
+
     const employee: Employee = {
         id: authUid!,
         name: employeeData.name,
@@ -149,6 +161,7 @@ export async function addEmployee(
             : employeeData.startDate.toISOString(),
         status: employeeData.status,
         isVerified: true, // Admin-created employees are automatically verified
+        assignedDistricts,
         createdAt: now,
         updatedAt: now,
     };
@@ -178,7 +191,10 @@ export async function updateEmployee(
     }
 
     // Merge updates with proper type conversion
-    const { startDate: newStartDate, ...safeUpdates } = employeeData;
+    const { startDate: newStartDate, assignedDistricts: rawDistricts, ...safeUpdates } = employeeData as any;
+    const assignedDistricts = rawDistricts !== undefined
+        ? parseAssignedDistricts(rawDistricts)
+        : existingEmployee.assignedDistricts;
 
     const updatedEmployee: Employee = {
         ...existingEmployee,
@@ -186,6 +202,7 @@ export async function updateEmployee(
         startDate: newStartDate
             ? (typeof newStartDate === 'string' ? newStartDate : newStartDate.toISOString())
             : existingEmployee.startDate,
+        assignedDistricts,
         updatedAt: now,
     };
 

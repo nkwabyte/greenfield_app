@@ -64,6 +64,7 @@ const farmerSchema = z.object({
   // Base Location Fields
   region: z.string().optional(),
   district: z.string().optional(),
+  cocoaDistrict: z.string().optional(),
   society: z.string().optional(),
   contact: z.string().optional(),
 
@@ -130,6 +131,7 @@ export function AddEditFarmerDialog({ open, onOpenChange, farmer, onSave }: AddE
       lengthOfStay: '',
       region: '',
       district: '',
+      cocoaDistrict: '',
       society: '',
       contact: '',
       nextOfKin: '',
@@ -180,6 +182,7 @@ export function AddEditFarmerDialog({ open, onOpenChange, farmer, onSave }: AddE
         lengthOfStay: '',
         region: '',
         district: '',
+        cocoaDistrict: '',
         society: '',
         contact: '',
         nextOfKin: '',
@@ -353,6 +356,7 @@ export function AddEditFarmerDialog({ open, onOpenChange, farmer, onSave }: AddE
                   <div className="col-span-2 border-t pt-3 mt-2"><h4 className="text-sm font-semibold mb-3">Geographic Location</h4></div>
                   <FormField control={control} name="region" render={({ field }) => (<FormItem><FormLabel>Region</FormLabel><FormControl><Input placeholder="e.g. Ashanti" {...field} /></FormControl><FormMessage /></FormItem>)} />
                   <FormField control={control} name="district" render={({ field }) => (<FormItem><FormLabel>District</FormLabel><FormControl><Input placeholder="e.g. Atwima Kwanwoma" {...field} /></FormControl><FormMessage /></FormItem>)} />
+                  <FormField control={control} name="cocoaDistrict" render={({ field }) => (<FormItem className="col-span-2"><FormLabel>Cocoa District</FormLabel><FormControl><Input placeholder="e.g. Sefwi Wiawso Cocoa District" {...field} /></FormControl><FormMessage /></FormItem>)} />
                   <FormField control={control} name="society" render={({ field }) => (<FormItem className="col-span-2"><FormLabel>Society / Community</FormLabel><FormControl><Input placeholder="e.g. Foase" {...field} /></FormControl><FormMessage /></FormItem>)} />
 
                   <FormField control={control} name="contact" render={({ field }) => (<FormItem><FormLabel>Personal Phone</FormLabel><FormControl><Input placeholder="024 123 4567" {...field} /></FormControl><FormMessage /></FormItem>)} />

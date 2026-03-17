@@ -12,6 +12,9 @@
         "dev:watch": "tsc --watch",
         "build": "tsc && electron-builder",
         "build:all": "tsc && electron-builder -mw",
+        "build:web:electron": "cd ../web && ELECTRON_BUILD=1 next build",
+        "build:electron": "yarn build:web:electron && tsc && electron-builder",
+        "build:electron:all": "yarn build:web:electron && tsc && electron-builder -mw",
         "start": "electron ."
     },
     "dependencies": {
@@ -37,7 +40,12 @@
         },
         "files": [
             "dist/**/*",
-            "package.json"
+            "package.json",
+            {
+                "from": "../web/out",
+                "to": "web/out",
+                "filter": ["**/*"]
+            }
         ],
         "mac": {
             "category": "public.app-category.business",

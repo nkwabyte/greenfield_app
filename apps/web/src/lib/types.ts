@@ -49,6 +49,7 @@ export type Farmer = {
   // Base Location Fields
   region?: string;
   district?: string;
+  cocoaDistrict?: string; // Free-text cocoa district (separate from political district)
   society?: string;
   contact?: string;
 
@@ -92,6 +93,7 @@ export type Employee = {
   startDate: string; // ISO date string
   status: 'Active' | 'On Leave' | 'Terminated';
   isVerified: boolean; // true when added by admin; false for self-registered pending approval
+  assignedDistricts?: string[]; // Districts a Field Agent is restricted to
   createdAt: string; // ISO date string
   updatedAt: string; // ISO date string
   deleted?: boolean; // Soft-delete flag for delta sync

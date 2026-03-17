@@ -21,7 +21,7 @@ const BulkEditFarmerDialog = dynamic(() => import('@/components/farmers/bulk-edi
 import { type BulkEditField } from '@/components/farmers/bulk-edit-dialog';
 
 // NEW: Import Dexie hooks and services instead of Redux
-import { useFarmersPaginatedAndFiltered, useFarmerGroups } from '@/hooks/useData';
+import { useFarmersPaginatedAndFiltered, useFarmerGroups, useFieldAgentDistricts } from '@/hooks/useData';
 import { FarmerFilters, type FarmerFiltersState } from '@/components/farmers/farmer-filters';
 import { ConfirmDialog } from '@/components/ui/confirm-dialog';
 
@@ -40,6 +40,7 @@ function FarmersContent() {
   const searchParams = useSearchParams();
   const { toast } = useToast();
   const { user } = useSelector((state: RootState) => state.auth);
+  const allowedDistricts = useFieldAgentDistricts();
 
   // Pagination & Filter State
   const [pagination, setPagination] = React.useState({
@@ -88,6 +89,7 @@ function FarmersContent() {
       maxAge: filters.maxAge ? Number(filters.maxAge) : undefined,
       startDate: filters.dateRange?.from,
       endDate: filters.dateRange?.to,
+      allowedDistricts: allowedDistricts.length > 0 ? allowedDistricts : undefined,
     }
   ) || { data: [], total: 0 };
 

@@ -189,6 +189,12 @@ export class GreenfieldDB extends Dexie {
             farmers: 'id, name, region, district, society, groupId, status, deleted, isArchived, updatedAt, createdAt, [region+district], [region+district+society], [region+status]',
             farmerGroups: 'id, name, region, district, society, leaderId, seasonYear, *farmerIds, deleted, isArchived, updatedAt, createdAt',
         });
+
+        // Version 13: Add cocoaDistrict to farmers; add assignedDistricts index to employees
+        this.version(13).stores({
+            farmers: 'id, name, region, district, cocoaDistrict, society, groupId, status, deleted, isArchived, updatedAt, createdAt, [region+district], [region+district+society], [region+status]',
+            employees: 'id, name, email, role, status, deleted, updatedAt, createdAt',
+        });
     }
 }
 
