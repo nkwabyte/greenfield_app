@@ -140,6 +140,13 @@ export default function FarmerDetailsPage({ params }: { params: Promise<{ id: st
                                         <div className="font-medium">{farmer.educationLevel || 'None'}</div>
                                     </div>
                                     <div className="space-y-1">
+                                        <span className="text-sm font-medium text-muted-foreground">Cocoa District</span>
+                                        <div className="font-medium flex items-center">
+                                            <MapPin className="mr-2 h-4 w-4 text-muted-foreground" />
+                                            {farmer.cocoaDistrict || 'N/A'}
+                                        </div>
+                                    </div>
+                                    <div className="space-y-1">
                                         <span className="text-sm font-medium text-muted-foreground">Join Date</span>
                                         <div className="font-medium flex items-center">
                                             <Calendar className="mr-2 h-4 w-4 text-muted-foreground" />
