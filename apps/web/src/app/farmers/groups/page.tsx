@@ -5,9 +5,12 @@ import { PageHeader } from '@/components/page-header';
 import { UsersRound, ArrowLeft, Search, MapPin, Tent, CalendarDays, Archive, Filter, ArrowDownUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import { useLiveQuery } from '@/hooks/useLiveQuery';
 import { db } from '@/lib/db/schema';
+import { useSelector } from 'react-redux';
+import type { RootState } from '@/lib/store/store';
+import { useFieldAgentDistricts } from '@/hooks/useData';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { BulkUploadGroups } from '@/components/farmers/bulk-upload-groups';
@@ -26,6 +29,10 @@ function getSeasonYearOptions(): string[] {
 }
 
 export default function FarmerGroupsPage() {
+    const user = useSelector((state: RootState) => state.auth.user);
+    const isFieldAgent = user?.jobTitle === 'Field Agent';
+    const allowedDistricts = useFieldAgentDistricts();
+
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedYear, setSelectedYear] = useState(new Date().getFullYear().toString());
     const [filterStatus, setFilterStatus] = useState('all');
@@ -33,11 +40,15 @@ export default function FarmerGroupsPage() {
     const [isCreateOpen, setIsCreateOpen] = useState(false);
     const [isSyncing, setIsSyncing] = useState(false);
     const [isArchiving, setIsArchiving] = useState(false);
+    const hasSyncedRef = useRef(false);
 
     const seasonYearOptions = useMemo(() => getSeasonYearOptions(), []);
 
     const groupsWithCounts = useLiveQuery(async () => {
-        const groups = await db.farmerGroups.filter(g => !g.isArchived).toArray();
+        const allGroups = await db.farmerGroups.filter(g => !g.isArchived).toArray();
+        const groups = isFieldAgent && allowedDistricts.length > 0
+            ? allGroups.filter(g => g.district && allowedDistricts.includes(g.district))
+            : allGroups;
         const results = await Promise.all(
             groups.map(async (group) => {
                 const memberCount = await db.farmers.where('groupId').equals(group.id).count();
@@ -45,24 +56,18 @@ export default function FarmerGroupsPage() {
             })
         );
         return results;
-    }, []);
+    }, [isFieldAgent, allowedDistricts.join(',')]);
 
-    // Trigger initial sync if no groups are found
+    // Trigger a one-time sync if no groups are found on first load
     useEffect(() => {
-        const checkAndSync = async () => {
-            if (groupsWithCounts !== undefined && groupsWithCounts.length === 0 && !isSyncing) {
-                setIsSyncing(true);
-                try {
-                    await syncFarmerGroupsFromSupabase();
-                } catch (error) {
-                    console.error('Failed to sync farmer groups:', error);
-                } finally {
-                    setIsSyncing(false);
-                }
-            }
-        };
-        checkAndSync();
-    }, [groupsWithCounts, isSyncing]);
+        if (groupsWithCounts !== undefined && groupsWithCounts.length === 0 && !hasSyncedRef.current) {
+            hasSyncedRef.current = true;
+            setIsSyncing(true);
+            syncFarmerGroupsFromSupabase()
+                .catch(error => console.error('Failed to sync farmer groups:', error))
+                .finally(() => setIsSyncing(false));
+        }
+    }, [groupsWithCounts]);
 
     const handleArchiveEmptyGroups = async () => {
         if (!groupsWithCounts) return;

@@ -55,10 +55,8 @@ const currencyFormatter = new Intl.NumberFormat('en-GH', {
 });
 
 export default function FinancesPage() {
-  const { allowed } = useRequireRole(['Admin', 'Employee'], { excludeJobTitles: ['Field Agent'] });
+  const { allowed } = useRequireRole(['Admin']);
   const { toast } = useToast();
-
-  if (!allowed) return null;
 
   // Pagination State
   const [pagination, setPagination] = React.useState({
@@ -66,20 +64,15 @@ export default function FinancesPage() {
     pageSize: 100,
   });
 
-  // Dexie Hook
+  // Dexie Hooks — must all be called before any early return
   const result = useTransactionsPaginated(pagination.pageIndex + 1, pagination.pageSize);
   const transactions = result?.data ?? [];
   const totalCount = result?.total ?? 0;
   const totalPages = Math.ceil(totalCount / pagination.pageSize);
   const isLoading = !result;
 
-  // NEW: Use Dexie hook instead of Redux
   const employees = useEmployeeOptions();
-
-  // Farmer request revenue aggregation
   const requestFinancials = useAllTimeRequestFinancials();
-
-  // Group Financials for specific year for the new charts
   const currentYear = new Date().getFullYear().toString();
   const summary = useGroupFinancialSummary(currentYear);
 
@@ -167,6 +160,8 @@ export default function FinancesPage() {
       }),
     []
   );
+
+  if (!allowed) return null;
 
   return (
     <AppShell>

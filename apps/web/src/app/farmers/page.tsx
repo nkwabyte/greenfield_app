@@ -4,15 +4,30 @@ import { AppShell } from '@/components/app-shell';
 import { PageHeader } from '@/components/page-header';
 import Link from 'next/link';
 import { Users, Map, UsersRound, MapPin, Wrench, Archive, ChevronRight } from 'lucide-react';
-import { useFarmersCount, useUniqueRegions, useFarmerGroups } from '@/hooks/useData';
+import { useFarmersCount, useUniqueRegions, useFarmerGroups, useFieldAgentDistricts, useFarmersByDistricts, useFarmerGroupsByDistricts } from '@/hooks/useData';
+import { useSelector } from 'react-redux';
+import type { RootState } from '@/lib/store/store';
 import { Card, CardContent } from '@/components/ui/card';
 
 export default function FarmersHubPage() {
-    const totalFarmers = useFarmersCount() ?? 0;
+    const user = useSelector((state: RootState) => state.auth.user);
+    const isFieldAgent = user?.jobTitle === 'Field Agent';
+    const allowedDistricts = useFieldAgentDistricts();
+
+    // District-scoped data for field agents
+    const districtFarmers = useFarmersByDistricts(isFieldAgent ? allowedDistricts : null);
+    const districtGroups = useFarmerGroupsByDistricts(isFieldAgent ? allowedDistricts : null);
+
+    // Admin-wide counts (always called — Rules of Hooks)
+    const adminFarmersCount = useFarmersCount() ?? 0;
+    const adminGroups = useFarmerGroups();
     const uniqueRegions = useUniqueRegions();
-    const totalRegions = uniqueRegions ? uniqueRegions.length : 0;
-    const groups = useFarmerGroups();
-    const totalGroups = groups ? groups.length : 0;
+
+    const totalFarmers = isFieldAgent ? (districtFarmers?.length ?? 0) : adminFarmersCount;
+    const totalGroups = isFieldAgent ? (districtGroups?.length ?? 0) : (adminGroups?.length ?? 0);
+    const totalRegions = isFieldAgent
+        ? new Set((districtFarmers ?? []).map(f => f.region).filter(Boolean)).size
+        : (uniqueRegions ? uniqueRegions.length : 0);
 
     return (
         <AppShell>

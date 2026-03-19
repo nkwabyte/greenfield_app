@@ -22,9 +22,7 @@ export default function EmployeesPage() {
   const router = useRouter();
   const { toast } = useToast();
 
-  if (!allowed) return null;
-
-  // Pagination State
+  // Pagination State — must be before any early return
   const [pagination, setPagination] = React.useState({
     pageIndex: 0,
     pageSize: 100,
@@ -157,6 +155,8 @@ export default function EmployeesPage() {
     onDelete: handleDeleteEmployee,
     onViewDetails: (employee) => router.push(`/employees/${employee.id}`),
   }), []);
+
+  if (!allowed) return null;
 
   return (
     <AppShell>

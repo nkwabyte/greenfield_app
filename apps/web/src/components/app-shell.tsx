@@ -47,10 +47,10 @@ const allNavItems = [
   { href: '/dashboard', icon: LayoutGrid, label: 'Dashboard', roles: ['Admin', 'Employee'], excludeJobTitles: [] },
   { href: '/farmers', icon: Users, label: 'Farmers', roles: ['Admin', 'Employee'], excludeJobTitles: [] },
   { href: '/employees', icon: Briefcase, label: 'Employees', roles: ['Admin'], excludeJobTitles: [] },
-  { href: '/suppliers', icon: Truck, label: 'Suppliers', roles: ['Admin', 'Employee'], excludeJobTitles: ['Field Agent'] },
+  { href: '/suppliers', icon: Truck, label: 'Suppliers', roles: ['Admin'], excludeJobTitles: [] },
   { href: '/products', icon: Package, label: 'Products', roles: ['Admin', 'Employee'], excludeJobTitles: [] },
-  { href: '/finances', icon: Landmark, label: 'Finances', roles: ['Admin', 'Employee'], excludeJobTitles: ['Field Agent'] },
-  { href: '/ai-insights', icon: WandSparkles, label: 'AI Insight', roles: ['Admin', 'Employee'], excludeJobTitles: [] },
+  { href: '/finances', icon: Landmark, label: 'Finances', roles: ['Admin'], excludeJobTitles: [] },
+  { href: '/ai-insights', icon: WandSparkles, label: 'AI Insight', roles: ['Admin'], excludeJobTitles: [] },
 ];
 
 export function AppShell({ children }: { children: React.ReactNode }) {
