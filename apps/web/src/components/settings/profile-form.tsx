@@ -40,6 +40,7 @@ export function ProfileForm() {
     const dispatch = useDispatch();
     const { toast } = useToast();
     const user = useSelector((state: RootState) => state.auth.user);
+    const isAdmin = user?.role === 'Admin';
     const [showApiKey, setShowApiKey] = React.useState(false);
     const [avatarUploading, setAvatarUploading] = React.useState(false);
     const avatarInputRef = React.useRef<HTMLInputElement>(null);
@@ -278,9 +279,9 @@ export function ProfileForm() {
                                 />
                             </div>
 
-                            <Separator />
+                            {isAdmin && <Separator />}
 
-                            <FormField
+                            {isAdmin && <FormField
                                 control={form.control as any}
                                 name="geminiApiKey"
                                 render={({ field }) => (
@@ -314,9 +315,9 @@ export function ProfileForm() {
                                         <FormMessage />
                                     </FormItem>
                                 )}
-                            />
+                            />}
 
-                            <FormField
+                            {isAdmin && <FormField
                                 control={form.control as any}
                                 name="preferredModel"
                                 render={({ field }) => (
@@ -344,7 +345,7 @@ export function ProfileForm() {
                                         <FormMessage />
                                     </FormItem>
                                 )}
-                            />
+                            />}
 
                             <Button type="submit" disabled={form.formState.isSubmitting}>
                                 {form.formState.isSubmitting ? 'Saving…' : 'Save Changes'}

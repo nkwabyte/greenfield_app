@@ -40,13 +40,18 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 
-// NEW: Import filtered hooks
-import { useRegionCounts, useFarmSizeStats, useAgeStats, useRegionGenderStats, useAllTimeRequestFinancials, useFarmerRequestsCount } from '@/hooks/useData';
+import { useRegionCounts, useFarmSizeStats, useAgeStats, useRegionGenderStats, useAllTimeRequestFinancials, useFarmerRequestsCount, useFieldAgentDistricts, useFarmersByDistricts } from '@/hooks/useData';
 import { db } from '@/lib/db/schema';
 import { useLiveQuery } from '@/hooks/useLiveQuery';
+import { useSelector } from 'react-redux';
+import type { RootState } from '@/lib/store/store';
 import Link from 'next/link';
 
 export default function DashboardPage() {
+  const user = useSelector((state: RootState) => state.auth.user);
+  const isAdmin = user?.role === 'Admin';
+  const isFieldAgent = user?.jobTitle === 'Field Agent';
+
   // Default range: Last 30 days
   const [dateRange, setDateRange] = React.useState<DateRange | undefined>({
     from: subDays(new Date(), 30),
@@ -55,24 +60,94 @@ export default function DashboardPage() {
 
   const [selectedRegion, setSelectedRegion] = React.useState<string>("all");
 
-  const regionCounts = useRegionCounts();
-  const farmSizeStats = useFarmSizeStats();
-  const ageStats = useAgeStats();
-  const regionGenderStats = useRegionGenderStats();
+  // District restriction for field agents
+  const allowedDistricts = useFieldAgentDistricts();
+  // Fetch live farmers for field agents; null = skip (admin uses cache)
+  const districtFarmers = useFarmersByDistricts(isFieldAgent ? allowedDistricts : null);
 
-  const recentFarmers = useLiveQuery(() =>
-    db.farmers.orderBy('createdAt').reverse().limit(10).toArray()
-    , []);
+  // Cached stats hooks (always called — used for admins)
+  const cachedRegionCounts = useRegionCounts();
+  const cachedFarmSizeStats = useFarmSizeStats();
+  const cachedAgeStats = useAgeStats();
+  const cachedRegionGenderStats = useRegionGenderStats();
 
-  // For KPIs
-  const totalFarmers = useLiveQuery(() => db.farmers.count());
-  const activeFarmersCount = useLiveQuery(() => db.farmers.where('status').equals('Active').count());
-  const newFarmersCount = useLiveQuery(() => {
-    if (!dateRange?.from || !dateRange?.to) return db.farmers.count();
+  // Admin count hooks (always called)
+  const adminTotalFarmers = useLiveQuery(() => db.farmers.filter(f => !f.isArchived).count());
+  const adminActiveFarmers = useLiveQuery(() => db.farmers.where('status').equals('Active').count());
+  const adminNewFarmers = useLiveQuery(() => {
+    if (!dateRange?.from || !dateRange?.to) return db.farmers.filter(f => !f.isArchived).count();
     const end = new Date(dateRange.to);
     end.setHours(23, 59, 59, 999);
     return db.farmers.where('createdAt').between(dateRange.from.toISOString(), end.toISOString(), true, true).count();
   }, [dateRange?.from, dateRange?.to]);
+  const adminRecentFarmers = useLiveQuery(() =>
+    db.farmers.orderBy('createdAt').reverse().limit(10).toArray(), []);
+
+  // Compute stats from district farmers for field agents
+  const fieldAgentStats = React.useMemo(() => {
+    if (!isFieldAgent || !districtFarmers) return null;
+    const byRegion: Record<string, number> = {};
+    const byGender: Record<string, number> = {};
+    const byRegionGender: Record<string, Record<string, number>> = {};
+    const byFarmSize: Record<string, number> = {
+      'Small (< 2 acres)': 0, 'Medium (2-5 acres)': 0,
+      'Large (5-10 acres)': 0, 'Estates (> 10 acres)': 0,
+    };
+    const byAge: Record<string, number> = {
+      '18-25': 0, '26-35': 0, '36-45': 0, '46-60': 0, '60+': 0,
+    };
+
+    for (const f of districtFarmers) {
+      const r = f.region || 'Unknown';
+      byRegion[r] = (byRegion[r] || 0) + 1;
+
+      const g = f.gender || 'Unknown';
+      byGender[g] = (byGender[g] || 0) + 1;
+      if (!byRegionGender[r]) byRegionGender[r] = {};
+      byRegionGender[r][g] = (byRegionGender[r][g] || 0) + 1;
+
+      const size = f.farmSize;
+      if (size !== undefined) {
+        if (size < 2) byFarmSize['Small (< 2 acres)']++;
+        else if (size < 5) byFarmSize['Medium (2-5 acres)']++;
+        else if (size < 10) byFarmSize['Large (5-10 acres)']++;
+        else byFarmSize['Estates (> 10 acres)']++;
+      }
+      const age = f.age;
+      if (age !== undefined) {
+        if (age >= 18 && age <= 25) byAge['18-25']++;
+        else if (age <= 35) byAge['26-35']++;
+        else if (age <= 45) byAge['36-45']++;
+        else if (age <= 60) byAge['46-60']++;
+        else byAge['60+']++;
+      }
+    }
+
+    const from = dateRange?.from;
+    const to = dateRange?.to;
+    const endOfDay = to ? new Date(new Date(to).setHours(23, 59, 59, 999)) : undefined;
+    const newCount = from && endOfDay
+      ? districtFarmers.filter(f => f.createdAt >= from.toISOString() && f.createdAt <= endOfDay.toISOString()).length
+      : districtFarmers.length;
+
+    return {
+      total: districtFarmers.length,
+      active: districtFarmers.filter(f => f.status === 'Active').length,
+      newCount,
+      recentFarmers: [...districtFarmers].sort((a, b) => b.createdAt.localeCompare(a.createdAt)).slice(0, 10),
+      byRegion, byGender, byRegionGender, byFarmSize, byAge,
+    };
+  }, [isFieldAgent, districtFarmers, dateRange?.from, dateRange?.to]);
+
+  // Resolved values — field agent computed or admin cached
+  const regionCounts = isFieldAgent ? (fieldAgentStats?.byRegion ?? {}) : (cachedRegionCounts ?? {});
+  const farmSizeStats = isFieldAgent ? (fieldAgentStats?.byFarmSize ?? {}) : (cachedFarmSizeStats ?? {});
+  const ageStats = isFieldAgent ? (fieldAgentStats?.byAge ?? {}) : (cachedAgeStats ?? {});
+  const regionGenderStats = isFieldAgent ? (fieldAgentStats?.byRegionGender ?? {}) : (cachedRegionGenderStats ?? {});
+  const totalFarmers = isFieldAgent ? (fieldAgentStats?.total ?? 0) : (adminTotalFarmers ?? 0);
+  const activeFarmersCount = isFieldAgent ? (fieldAgentStats?.active ?? 0) : (adminActiveFarmers ?? 0);
+  const newFarmersCount = isFieldAgent ? (fieldAgentStats?.newCount ?? 0) : (adminNewFarmers ?? 0);
+  const recentFarmers = isFieldAgent ? (fieldAgentStats?.recentFarmers ?? []) : (adminRecentFarmers ?? []);
 
   const allTimeFinancials = useAllTimeRequestFinancials();
   const farmerRequestsCount = useFarmerRequestsCount();
@@ -197,7 +272,8 @@ export default function DashboardPage() {
   };
 
   // Show loading state while data loads
-  if (totalFarmers === undefined) {
+  const isDataLoading = isFieldAgent ? districtFarmers === undefined : adminTotalFarmers === undefined;
+  if (isDataLoading) {
     return (
       <AppShell>
         <PageHeader
@@ -244,13 +320,15 @@ export default function DashboardPage() {
               <Download className="mr-2 h-4 w-4" />
               <span className="hidden xs:inline">Export</span>
             </Button>
-            <Link href="/ai-insights" className="flex-1 sm:flex-none">
-              <Button className="w-full bg-[#2e7d32] hover:bg-[#1b5e20] text-white">
-                <Bot className="mr-2 h-4 w-4 text-white" />
-                <span className="hidden xs:inline">AI Insights</span>
-                <span className="xs:hidden">Insights</span>
-              </Button>
-            </Link>
+            {isAdmin && (
+              <Link href="/ai-insights" className="flex-1 sm:flex-none">
+                <Button className="w-full bg-[#2e7d32] hover:bg-[#1b5e20] text-white">
+                  <Bot className="mr-2 h-4 w-4 text-white" />
+                  <span className="hidden xs:inline">AI Insights</span>
+                  <span className="xs:hidden">Insights</span>
+                </Button>
+              </Link>
+            )}
           </div>
         </div>
       </PageHeader>

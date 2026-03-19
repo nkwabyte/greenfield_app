@@ -24,13 +24,14 @@ export default function EmployeeDetailsPage({ params }: { params: Promise<{ id: 
     const { toast } = useToast();
     const { id } = React.use(params);
 
-    if (!allowed) return null;
+    // All hooks must be called before any early return
     const employee = useEmployee(id);
     const [isEditOpen, setIsEditOpen] = React.useState(false);
     const [isDeleteOpen, setIsDeleteOpen] = React.useState(false);
-
     const user = useSelector((state: RootState) => state.auth.user);
     const isAdmin = user?.role === 'Admin';
+
+    if (!allowed) return null;
 
     if (employee === undefined) {
         return (

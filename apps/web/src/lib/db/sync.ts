@@ -74,6 +74,7 @@ function toSnakeCase(data: any): any {
         farmerIds: 'farmer_ids',
         farmerId: 'farmer_id',
         groupId: 'group_id',
+        assignedDistricts: 'assigned_districts',
         grandTotal: 'grand_total',
         requestDate: 'request_date',
         paymentPlan: 'payment_plan',

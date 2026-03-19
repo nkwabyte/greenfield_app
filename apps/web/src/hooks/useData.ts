@@ -759,3 +759,36 @@ export function useFieldAgentDistricts(): string[] {
     return districts ?? [];
 }
 
+/**
+ * Live farmers array filtered by districts.
+ * Pass null to skip (Admin users use cached stats instead).
+ */
+export function useFarmersByDistricts(districts: string[] | null) {
+    return useLiveQuery(
+        async () => {
+            if (districts === null) return null;
+            if (districts.length === 0) return db.farmers.filter(f => !f.isArchived && !f.deleted).toArray();
+            return db.farmers
+                .filter(f => !f.isArchived && !f.deleted && !!(f.district && districts.includes(f.district)))
+                .toArray();
+        },
+        [districts === null ? 'null' : districts.join(',')]
+    );
+}
+
+/**
+ * Groups filtered by assigned districts (field agents) or all groups (admin).
+ */
+export function useFarmerGroupsByDistricts(districts: string[] | null) {
+    return useLiveQuery(
+        async () => {
+            if (districts === null || districts.length === 0)
+                return db.farmerGroups.filter(g => !g.isArchived && !g.deleted).toArray();
+            return db.farmerGroups
+                .filter(g => !g.isArchived && !g.deleted && !!(g.district && districts.includes(g.district)))
+                .toArray();
+        },
+        [districts === null ? 'null' : districts.join(',')]
+    );
+}
+

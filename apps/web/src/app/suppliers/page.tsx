@@ -15,13 +15,11 @@ import { ConfirmDialog } from '@/components/ui/confirm-dialog';
 import { useRequireRole } from '@/hooks/use-role-guard';
 
 export default function SuppliersPage() {
-  const { allowed } = useRequireRole(['Admin', 'Employee'], { excludeJobTitles: ['Field Agent'] });
+  const { allowed } = useRequireRole(['Admin']);
   const router = useRouter();
   const { toast } = useToast();
 
-  if (!allowed) return null;
-
-  // Pagination State
+  // Pagination State — must be before any early return
   const [pagination, setPagination] = React.useState({
     pageIndex: 0,
     pageSize: 100,
@@ -89,6 +87,8 @@ export default function SuppliersPage() {
     onEdit: handleOpenEditDialog,
     onDelete: handleDeleteSupplier,
   }), []);
+
+  if (!allowed) return null;
 
   return (
     <AppShell>
