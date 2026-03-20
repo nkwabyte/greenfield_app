@@ -42,10 +42,10 @@ async function resolveUserProfile(sbUser: any) {
     uid: sbUser.id,
     email: sbUser.email!,
     name: (meta.name as string) ?? sbUser.email?.split('@')[0] ?? 'User',
-    role: ((meta.role as string) ?? 'Employee') as 'Admin' | 'Employee',
+    role: ((meta.role as string) ?? 'Field Agent') as 'Admin' | 'Field Agent',
     status: ((meta.status as string) ?? 'Active') as 'Active' | 'Pending' | 'Disabled',
     geminiApiKey: undefined as string | undefined,
-    preferredModel: undefined as string | undefined,
+    preferredModel: 'models/gemini-2.5-flash',
   };
 
   // Background upsert so the row exists on next login
@@ -55,6 +55,7 @@ async function resolveUserProfile(sbUser: any) {
     name: fallback.name,
     role: fallback.role,
     status: fallback.status,
+    preferred_model: 'models/gemini-2.5-flash',
   }, { onConflict: 'id' }).then(({ error }) => {
     if (error) console.warn('Background profile upsert failed:', error.message);
   });

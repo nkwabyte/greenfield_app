@@ -14,6 +14,8 @@ import { KpiCard } from '@/components/dashboard/kpi-card';
 import { Skeleton } from '@/components/ui/skeleton';
 import type { Kpi } from '@/lib/types';
 import { useProductsPaginatedAndFiltered, useSupplierOptions } from '@/hooks/useData';
+import { useSelector } from 'react-redux';
+import type { RootState } from '@/lib/store/store';
 import { ProductFilters, type ProductFiltersState } from '@/components/products/product-filters';
 import { ConfirmDialog } from '@/components/ui/confirm-dialog';
 
@@ -25,6 +27,8 @@ const currencyFormatter = new Intl.NumberFormat('en-GH', {
 export default function ProductsPage() {
   const router = useRouter();
   const { toast } = useToast();
+  const user = useSelector((state: RootState) => state.auth.user);
+  const canEdit = user?.role !== 'Field Agent';
 
   // Pagination State
   const [pagination, setPagination] = React.useState({
@@ -133,7 +137,8 @@ export default function ProductsPage() {
     onEdit: handleOpenEditDialog,
     onDelete: handleDeleteProduct,
     suppliers: suppliers || [],
-  }), [suppliers]);
+    canEdit,
+  }), [suppliers, canEdit]);
 
   return (
     <AppShell>
@@ -141,10 +146,12 @@ export default function ProductsPage() {
         title="Product & Inventory Management"
         description="Monitor stock levels, manage products, and view supplier information."
       >
-        <Button onClick={handleOpenAddDialog}>
-          <PlusCircle className="mr-2" />
-          Add Product
-        </Button>
+        {canEdit && (
+          <Button onClick={handleOpenAddDialog}>
+            <PlusCircle className="mr-2" />
+            Add Product
+          </Button>
+        )}
       </PageHeader>
 
       <div className="grid gap-6">
