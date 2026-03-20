@@ -648,7 +648,7 @@ export function AiAssistant({
             <h2 className="text-base font-semibold">AI Assistant</h2>
           </div>
           <Select value={selectedModel} onValueChange={setSelectedModel}>
-            <SelectTrigger className="w-[200px] h-8 text-xs">
+            <SelectTrigger className="w-50 h-8 text-xs">
               <SelectValue placeholder="Select Model" />
             </SelectTrigger>
             <SelectContent>
@@ -676,7 +676,7 @@ export function AiAssistant({
         <ScrollArea className="flex-1 px-4 py-4" ref={scrollAreaRef}>
           {isEmpty ? (
             /* Empty state — welcome + prompt cards */
-            <div className="flex flex-col items-center justify-center h-full min-h-[300px] gap-6 py-8">
+            <div className="flex flex-col items-center justify-center h-full min-h-75 gap-6 py-8">
               <div className="text-center space-y-1">
                 <Bot className="h-12 w-12 mx-auto text-primary/30" />
                 <p className="text-lg font-semibold text-foreground">What would you like to explore?</p>
