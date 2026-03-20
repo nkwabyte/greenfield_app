@@ -10,13 +10,18 @@ import {
     useSuppliers,
     useTransactions,
 } from '@/hooks/useData';
+import { useRequireRole } from '@/hooks/use-role-guard';
 
 export default function AiInsightsPage() {
+    const { allowed } = useRequireRole(['Admin', 'Employee'], { excludeJobTitles: ['Field Agent'] });
+
     const farmers = useFarmers() ?? [];
     const employees = useEmployees() ?? [];
     const products = useProducts() ?? [];
     const suppliers = useSuppliers() ?? [];
     const transactions = useTransactions() ?? [];
+
+    if (!allowed) return null;
 
     return (
         <AppShell>

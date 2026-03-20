@@ -7,6 +7,7 @@ import { GroupPaymentsChart } from '@/components/finances/group-payments-chart';
 import { OutstandingDistributionChart } from '@/components/finances/outstanding-distribution-chart';
 import { MonthlyCollectionChart } from '@/components/finances/monthly-collection-chart';
 import { useGroupFinancialSummary, type GroupFinancialRow } from '@/hooks/useData';
+import { useRequireRole } from '@/hooks/use-role-guard';
 import {
     Select,
     SelectContent,
@@ -46,6 +47,7 @@ const currencyFormatter = new Intl.NumberFormat('en-GH', {
 });
 
 export default function FinanceGroupsPage() {
+    const { allowed } = useRequireRole(['Admin'], { allowJobTitles: ['Administrative Member'] });
     const currentYear = new Date().getFullYear().toString();
     const [selectedYear, setSelectedYear] = useState(currentYear);
     const router = useRouter();
@@ -53,6 +55,8 @@ export default function FinanceGroupsPage() {
     const summary = useGroupFinancialSummary(selectedYear);
 
     const yearOptions = useMemo(() => getSeasonYearOptions(), []);
+
+    if (!allowed) return null;
 
     if (summary === undefined) {
         return (

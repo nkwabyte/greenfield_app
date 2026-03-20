@@ -1,3 +1,11 @@
+export type JobTitle =
+  | 'General Manager'
+  | 'Operational Manager'
+  | 'Project Coordinator'
+  | 'Finance Manager'
+  | 'Administrative Member'
+  | 'Field Agent';
+
 export type User = {
   uid: string;
   name: string;
@@ -5,7 +13,7 @@ export type User = {
   role: 'Admin' | 'Employee';
   status: 'Active' | 'Pending' | 'Disabled';
   phone?: string;
-  jobTitle?: string;
+  jobTitle?: JobTitle;
   avatarUrl?: string;
   geminiApiKey?: string;
   preferredModel?: string;
