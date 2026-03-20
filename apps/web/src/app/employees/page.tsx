@@ -18,7 +18,7 @@ import { ConfirmDialog } from '@/components/ui/confirm-dialog';
 import { useRequireRole } from '@/hooks/use-role-guard';
 
 export default function EmployeesPage() {
-  const { allowed } = useRequireRole(['Admin']);
+  const { allowed } = useRequireRole(['Admin'], { allowJobTitles: ['Administrative Member'] });
   const router = useRouter();
   const { toast } = useToast();
 

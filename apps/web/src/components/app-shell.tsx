@@ -44,13 +44,13 @@ import { RootState } from '@/lib/store/store';
 import { ThemeToggle } from '@/components/theme-toggle';
 
 const allNavItems = [
-  { href: '/dashboard', icon: LayoutGrid, label: 'Dashboard', roles: ['Admin', 'Employee'], excludeJobTitles: [] },
-  { href: '/farmers', icon: Users, label: 'Farmers', roles: ['Admin', 'Employee'], excludeJobTitles: [] },
-  { href: '/employees', icon: Briefcase, label: 'Employees', roles: ['Admin'], excludeJobTitles: [] },
-  { href: '/suppliers', icon: Truck, label: 'Suppliers', roles: ['Admin'], excludeJobTitles: [] },
-  { href: '/products', icon: Package, label: 'Products', roles: ['Admin', 'Employee'], excludeJobTitles: [] },
-  { href: '/finances', icon: Landmark, label: 'Finances', roles: ['Admin'], excludeJobTitles: [] },
-  { href: '/ai-insights', icon: WandSparkles, label: 'AI Insight', roles: ['Admin'], excludeJobTitles: [] },
+  { href: '/dashboard',   icon: LayoutGrid,   label: 'Dashboard',  roles: ['Admin', 'Employee'], excludeJobTitles: [] as string[],             allowJobTitles: undefined as string[] | undefined },
+  { href: '/farmers',     icon: Users,         label: 'Farmers',    roles: ['Admin', 'Employee'], excludeJobTitles: [] as string[],             allowJobTitles: undefined as string[] | undefined },
+  { href: '/employees',   icon: Briefcase,     label: 'Employees',  roles: ['Admin'],             excludeJobTitles: [] as string[],             allowJobTitles: ['Administrative Member'] },
+  { href: '/suppliers',   icon: Truck,         label: 'Suppliers',  roles: ['Admin', 'Employee'], excludeJobTitles: ['Field Agent'] as string[], allowJobTitles: undefined as string[] | undefined },
+  { href: '/products',    icon: Package,       label: 'Products',   roles: ['Admin', 'Employee'], excludeJobTitles: [] as string[],             allowJobTitles: undefined as string[] | undefined },
+  { href: '/finances',    icon: Landmark,      label: 'Finances',   roles: ['Admin'],             excludeJobTitles: [] as string[],             allowJobTitles: ['Administrative Member'] },
+  { href: '/ai-insights', icon: WandSparkles,  label: 'AI Insight', roles: ['Admin', 'Employee'], excludeJobTitles: ['Field Agent'] as string[], allowJobTitles: undefined as string[] | undefined },
 ];
 
 export function AppShell({ children }: { children: React.ReactNode }) {
@@ -77,6 +77,8 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   const navItems = React.useMemo(() => {
     if (!user?.role) return [];
     return allNavItems.filter(item => {
+      // allowJobTitles grants access regardless of role
+      if (item.allowJobTitles && user.jobTitle && item.allowJobTitles.includes(user.jobTitle)) return true;
       if (!item.roles.includes(user.role)) return false;
       if (user.jobTitle && item.excludeJobTitles.includes(user.jobTitle)) return false;
       return true;

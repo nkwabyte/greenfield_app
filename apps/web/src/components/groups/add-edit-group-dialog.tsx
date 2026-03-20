@@ -42,6 +42,7 @@ import { useVirtualizer } from '@tanstack/react-virtual';
 const groupSchema = z.object({
     name: z.string().min(1, { message: 'Group name is required.' }),
     description: z.string().optional(),
+    cocoaDistrict: z.string().optional(),
     seasonYear: z.string().min(4, { message: 'Season year is required.' }),
     farmerIds: z.array(z.string()),
 });
@@ -64,6 +65,7 @@ export function AddEditGroupDialog({ open, onOpenChange, group, onSave }: AddEdi
         defaultValues: {
             name: '',
             description: '',
+            cocoaDistrict: '',
             seasonYear: new Date().getFullYear().toString(),
             farmerIds: [],
         },
@@ -74,6 +76,7 @@ export function AddEditGroupDialog({ open, onOpenChange, group, onSave }: AddEdi
             form.reset({
                 name: group.name,
                 description: group.description || '',
+                cocoaDistrict: group.cocoaDistrict || '',
                 seasonYear: group.seasonYear,
                 farmerIds: group.farmerIds || [],
             });
@@ -81,6 +84,7 @@ export function AddEditGroupDialog({ open, onOpenChange, group, onSave }: AddEdi
             form.reset({
                 name: '',
                 description: '',
+                cocoaDistrict: '',
                 seasonYear: new Date().getFullYear().toString(),
                 farmerIds: [],
             });
@@ -181,6 +185,20 @@ export function AddEditGroupDialog({ open, onOpenChange, group, onSave }: AddEdi
                                     <FormLabel>Description (Optional)</FormLabel>
                                     <FormControl>
                                         <Textarea placeholder="Brief notes about this group..." {...field} />
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+
+                        <FormField
+                            control={form.control}
+                            name="cocoaDistrict"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>Cocoa District (Optional)</FormLabel>
+                                    <FormControl>
+                                        <Input placeholder="e.g. Ahafo Ano North" {...field} />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>

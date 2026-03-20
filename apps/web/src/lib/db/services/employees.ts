@@ -50,7 +50,7 @@ export async function getPaginatedEmployees(page: number, pageSize: number): Pro
  * Get employees with filters
  */
 export async function getEmployeesFiltered(filters: {
-    role?: 'Manager' | 'Field Agent' | 'Accountant' | 'Support';
+    role?: 'General Manager' | 'Operational Manager' | 'Project Coordinator' | 'Finance Manager' | 'Administrative Member' | 'Field Agent';
     status?: 'Active' | 'On Leave' | 'Terminated';
 }): Promise<Employee[]> {
     let collection = db.employees.toCollection();
@@ -72,7 +72,7 @@ export async function getEmployeesPaginatedAndFiltered(
     page: number,
     pageSize: number,
     filters: {
-        role?: 'Manager' | 'Field Agent' | 'Accountant' | 'Support';
+        role?: 'General Manager' | 'Operational Manager' | 'Project Coordinator' | 'Finance Manager' | 'Administrative Member' | 'Field Agent';
         status?: 'Active' | 'On Leave' | 'Terminated';
         search?: string;
     }

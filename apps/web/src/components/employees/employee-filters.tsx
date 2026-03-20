@@ -42,7 +42,7 @@ export function EmployeeFilters({ filters, onFilterChange }: EmployeeFiltersProp
 
     return (
         <div className="flex flex-wrap items-center gap-2 mb-4">
-            <div className="flex-1 min-w-[200px]">
+            <div className="flex-1 min-w-50">
                 <Input
                     placeholder="Search name or email..."
                     value={search}
@@ -51,20 +51,22 @@ export function EmployeeFilters({ filters, onFilterChange }: EmployeeFiltersProp
             </div>
 
             <Select value={role} onValueChange={(val) => handleFilterChange('role', val)}>
-                <SelectTrigger className="w-[150px]">
+                <SelectTrigger className="w-37.5">
                     <SelectValue placeholder="All Roles" />
                 </SelectTrigger>
                 <SelectContent>
                     <SelectItem value="all">All Roles</SelectItem>
-                    <SelectItem value="Manager">Manager</SelectItem>
+                    <SelectItem value="General Manager">General Manager</SelectItem>
+                    <SelectItem value="Operational Manager">Operational Manager</SelectItem>
+                    <SelectItem value="Project Coordinator">Project Coordinator</SelectItem>
+                    <SelectItem value="Finance Manager">Finance Manager</SelectItem>
+                    <SelectItem value="Administrative Member">Administrative Member</SelectItem>
                     <SelectItem value="Field Agent">Field Agent</SelectItem>
-                    <SelectItem value="Accountant">Accountant</SelectItem>
-                    <SelectItem value="Support">Support</SelectItem>
                 </SelectContent>
             </Select>
 
             <Select value={status} onValueChange={(val) => handleFilterChange('status', val)}>
-                <SelectTrigger className="w-[150px]">
+                <SelectTrigger className="w-37.5">
                     <SelectValue placeholder="All Status" />
                 </SelectTrigger>
                 <SelectContent>

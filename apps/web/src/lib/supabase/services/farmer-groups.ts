@@ -29,13 +29,14 @@ export async function getSupabaseFarmerGroups(lastSyncTime?: number): Promise<Fa
  */
 export async function addSupabaseFarmerGroup(groupId: string, groupData: Partial<FarmerGroup>): Promise<void> {
     try {
-        const { name, description, region, district, society, leaderId, seasonYear } = groupData as any;
+        const { name, description, region, district, cocoaDistrict, society, leaderId, seasonYear } = groupData as any;
         const { error } = await supabase.from('farmer_groups').insert({
             id: groupId,
             name,
             description,
             region,
             district,
+            cocoa_district: cocoaDistrict || null,
             society,
             leader_id: leaderId,
             season_year: seasonYear,
@@ -63,6 +64,7 @@ export async function updateSupabaseFarmerGroup(groupId: string, updates: Partia
         if (updates.leaderId !== undefined) mappedUpdates.leader_id = updates.leaderId;
         if (updates.seasonYear !== undefined) mappedUpdates.season_year = updates.seasonYear;
         if (updates.updatedAt !== undefined) mappedUpdates.updated_at = updates.updatedAt;
+        if (updates.cocoaDistrict !== undefined) mappedUpdates.cocoa_district = updates.cocoaDistrict;
         if (updates.isArchived !== undefined) mappedUpdates.isArchived = updates.isArchived;
 
         const { error } = await supabase.from('farmer_groups').upsert({
@@ -100,12 +102,13 @@ export async function syncFarmerGroupsBatch(operations: { id: string, type: 'cre
             if (op.type === 'delete') {
                 await supabase.from('farmer_groups').update({ deleted: true }).eq('id', op.id);
             } else if (op.type === 'create' && op.data) {
-                const { seasonYear, leaderId, farmerIds, ...rest } = op.data;
+                const { seasonYear, leaderId, farmerIds, cocoaDistrict, ...rest } = op.data;
                 await supabase.from('farmer_groups').insert({
                     id: op.id,
                     ...rest,
                     season_year: seasonYear,
-                    leader_id: leaderId
+                    leader_id: leaderId,
+                    cocoa_district: cocoaDistrict || null,
                 });
             } else if (op.type === 'update' && op.data) {
                 const mappedData: any = { ...op.data };
@@ -116,6 +119,10 @@ export async function syncFarmerGroupsBatch(operations: { id: string, type: 'cre
                 if (mappedData.leaderId !== undefined) {
                     mappedData.leader_id = mappedData.leaderId;
                     delete mappedData.leaderId;
+                }
+                if (mappedData.cocoaDistrict !== undefined) {
+                    mappedData.cocoa_district = mappedData.cocoaDistrict;
+                    delete mappedData.cocoaDistrict;
                 }
                 delete mappedData.farmerIds; // Not tracked as an array in DB
                 await supabase.from('farmer_groups').update(mappedData).eq('id', op.id);
@@ -135,6 +142,7 @@ function mapFarmerGroupRow(row: any): FarmerGroup {
         description: row.description,
         region: row.region || '',
         district: row.district || '',
+        cocoaDistrict: row.cocoa_district || undefined,
         society: row.society || row.community || '',
         leaderId: row.leader_id,
         seasonYear: row.season_year,

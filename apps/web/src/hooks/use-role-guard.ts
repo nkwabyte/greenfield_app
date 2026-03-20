@@ -6,36 +6,42 @@ import { useSelector } from 'react-redux';
 import type { RootState } from '@/lib/store/store';
 
 /**
- * Protects a page by role (and optionally by job title exclusions).
- * If the authenticated user's role is NOT in allowedRoles, or their jobTitle
- * is in excludeJobTitles, they are redirected to /dashboard.
+ * Protects a page by role (and optionally by job title rules).
+ *
+ * Options:
+ *   excludeJobTitles — block these job titles even if their role is allowed.
+ *   allowJobTitles   — grant access to users with these job titles regardless
+ *                      of whether their role is in allowedRoles. Useful for
+ *                      "Admin OR Administrative Member" patterns.
  *
  * Usage:
  *   const { allowed } = useRequireRole(['Admin', 'Employee']);
  *   const { allowed } = useRequireRole(['Admin', 'Employee'], { excludeJobTitles: ['Field Agent'] });
+ *   const { allowed } = useRequireRole(['Admin'], { allowJobTitles: ['Administrative Member'] });
  *   if (!allowed) return null; // redirect is in-flight
  */
 export function useRequireRole(
     allowedRoles: string[],
-    options?: { excludeJobTitles?: string[] }
+    options?: { excludeJobTitles?: string[]; allowJobTitles?: string[] }
 ): { allowed: boolean } {
     const router = useRouter();
     const user = useSelector((state: RootState) => state.auth.user);
     const isLoading = useSelector((state: RootState) => state.auth.isLoading);
 
-    const roleAllowed = !isLoading && !!user && allowedRoles.includes(user.role);
-    const jobTitleBlocked = roleAllowed && !!user?.jobTitle && (options?.excludeJobTitles ?? []).includes(user.jobTitle);
-    const allowed = roleAllowed && !jobTitleBlocked;
+    function isAllowed(u: typeof user): boolean {
+        if (!u) return false;
+        // Grant access via allowJobTitles regardless of role
+        if (options?.allowJobTitles && u.jobTitle && options.allowJobTitles.includes(u.jobTitle)) return true;
+        if (!allowedRoles.includes(u.role)) return false;
+        if (u.jobTitle && (options?.excludeJobTitles ?? []).includes(u.jobTitle)) return false;
+        return true;
+    }
+
+    const allowed = !isLoading && isAllowed(user);
 
     useEffect(() => {
         if (isLoading) return;
-
-        if (!user || !allowedRoles.includes(user.role)) {
-            router.replace('/dashboard');
-            return;
-        }
-
-        if (user.jobTitle && (options?.excludeJobTitles ?? []).includes(user.jobTitle)) {
+        if (!isAllowed(user)) {
             router.replace('/dashboard');
         }
     }, [isLoading, user, router]);
