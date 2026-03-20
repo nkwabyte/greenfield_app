@@ -16,7 +16,7 @@ import { formatDistanceToNow } from 'date-fns';
 import { Checkbox } from '@/components/ui/checkbox';
 import { useRouter } from 'next/navigation';
 
-export const getColumns = ({ onEdit, onDelete }: { onEdit: (supplier: Supplier) => void, onDelete: (id: string) => void }): ColumnDef<Supplier>[] => [
+export const getColumns = ({ onEdit, onDelete, canEdit = true }: { onEdit: (supplier: Supplier) => void, onDelete: (id: string) => void, canEdit?: boolean }): ColumnDef<Supplier>[] => [
   {
     id: 'select',
     header: ({ table }) => (
@@ -99,10 +99,14 @@ export const getColumns = ({ onEdit, onDelete }: { onEdit: (supplier: Supplier) 
               <ExternalLink className="mr-2 h-4 w-4" />
               View Details
             </DropdownMenuItem>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem onClick={() => onEdit(supplier)}>Edit Supplier</DropdownMenuItem>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem className="text-destructive focus:bg-destructive/10 focus:text-destructive" onClick={() => onDelete(supplier.id)}>Delete Supplier</DropdownMenuItem>
+            {canEdit && (
+              <>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem onClick={() => onEdit(supplier)}>Edit Supplier</DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem className="text-destructive focus:bg-destructive/10 focus:text-destructive" onClick={() => onDelete(supplier.id)}>Delete Supplier</DropdownMenuItem>
+              </>
+            )}
           </DropdownMenuContent>
         </DropdownMenu>
       );

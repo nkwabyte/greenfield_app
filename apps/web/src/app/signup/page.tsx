@@ -45,7 +45,7 @@ export default function SignUpPage() {
         }
 
         // Admin Code Logic
-        let role = 'Employee';
+        let role = 'Field Agent';
         let status = 'Pending';
 
         if (adminCode.trim() !== '') {

@@ -28,7 +28,7 @@ const getStockStatus = (quantity: number): { label: string, variant: 'default' |
   return { label: 'In Stock', variant: 'default' };
 };
 
-export const getColumns = ({ onEdit, onDelete, suppliers }: { onEdit: (product: Product) => void, onDelete: (id: string) => void, suppliers: Pick<Supplier, 'id' | 'name'>[] }): ColumnDef<Product>[] => [
+export const getColumns = ({ onEdit, onDelete, suppliers, canEdit = true }: { onEdit: (product: Product) => void, onDelete: (id: string) => void, suppliers: Pick<Supplier, 'id' | 'name'>[], canEdit?: boolean }): ColumnDef<Product>[] => [
   {
     id: 'select',
     header: ({ table }) => (
@@ -140,10 +140,14 @@ export const getColumns = ({ onEdit, onDelete, suppliers }: { onEdit: (product: 
               <ExternalLink className="mr-2 h-4 w-4" />
               View Details
             </DropdownMenuItem>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem onClick={() => onEdit(product)}>Edit Product</DropdownMenuItem>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem className="text-destructive focus:bg-destructive/10 focus:text-destructive" onClick={() => onDelete(product.id)}>Delete Product</DropdownMenuItem>
+            {canEdit && (
+              <>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem onClick={() => onEdit(product)}>Edit Product</DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem className="text-destructive focus:bg-destructive/10 focus:text-destructive" onClick={() => onDelete(product.id)}>Delete Product</DropdownMenuItem>
+              </>
+            )}
           </DropdownMenuContent>
         </DropdownMenu>
       );

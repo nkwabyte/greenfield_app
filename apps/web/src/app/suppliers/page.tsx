@@ -12,11 +12,13 @@ import { useToast } from '@/hooks/use-toast';
 import { AddEditSupplierDialog, type SupplierFormValues } from '@/components/suppliers/add-edit-supplier-dialog';
 import { useSuppliersPaginated } from '@/hooks/useData';
 import { ConfirmDialog } from '@/components/ui/confirm-dialog';
-import { useRequireRole } from '@/hooks/use-role-guard';
+import { useSelector } from 'react-redux';
+import type { RootState } from '@/lib/store/store';
 
 export default function SuppliersPage() {
-  const { allowed } = useRequireRole(['Admin']);
   const router = useRouter();
+  const user = useSelector((state: RootState) => state.auth.user);
+  const canEdit = user?.role !== 'Field Agent';
   const { toast } = useToast();
 
   // Pagination State — must be before any early return
@@ -86,9 +88,8 @@ export default function SuppliersPage() {
   const columns = React.useMemo(() => getColumns({
     onEdit: handleOpenEditDialog,
     onDelete: handleDeleteSupplier,
-  }), []);
-
-  if (!allowed) return null;
+    canEdit,
+  }), [canEdit]);
 
   return (
     <AppShell>
@@ -96,10 +97,12 @@ export default function SuppliersPage() {
         title="Supplier Management"
         description="View, add, edit, and manage all supplier records."
       >
-        <Button onClick={handleOpenAddDialog}>
-          <PlusCircle className="mr-2" />
-          Add Supplier
-        </Button>
+        {canEdit && (
+          <Button onClick={handleOpenAddDialog}>
+            <PlusCircle className="mr-2" />
+            Add Supplier
+          </Button>
+        )}
       </PageHeader>
 
       <div className="grid gap-6">

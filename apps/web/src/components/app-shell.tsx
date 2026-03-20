@@ -43,14 +43,17 @@ import {
 import { RootState } from '@/lib/store/store';
 import { ThemeToggle } from '@/components/theme-toggle';
 
+const ALL_ROLES = ['Admin', 'General Manager', 'Operational Manager', 'Project Coordinator', 'Finance Manager', 'Administrative Member', 'Field Agent'];
+const MANAGEMENT_ROLES = ['Admin', 'General Manager', 'Operational Manager', 'Project Coordinator', 'Finance Manager', 'Administrative Member'];
+
 const allNavItems = [
-  { href: '/dashboard',   icon: LayoutGrid,   label: 'Dashboard',  roles: ['Admin', 'Employee'], excludeJobTitles: [] as string[],             allowJobTitles: undefined as string[] | undefined },
-  { href: '/farmers',     icon: Users,         label: 'Farmers',    roles: ['Admin', 'Employee'], excludeJobTitles: [] as string[],             allowJobTitles: undefined as string[] | undefined },
-  { href: '/employees',   icon: Briefcase,     label: 'Employees',  roles: ['Admin'],             excludeJobTitles: [] as string[],             allowJobTitles: ['Administrative Member'] },
-  { href: '/suppliers',   icon: Truck,         label: 'Suppliers',  roles: ['Admin', 'Employee'], excludeJobTitles: ['Field Agent'] as string[], allowJobTitles: undefined as string[] | undefined },
-  { href: '/products',    icon: Package,       label: 'Products',   roles: ['Admin', 'Employee'], excludeJobTitles: [] as string[],             allowJobTitles: undefined as string[] | undefined },
-  { href: '/finances',    icon: Landmark,      label: 'Finances',   roles: ['Admin'],             excludeJobTitles: [] as string[],             allowJobTitles: ['Administrative Member'] },
-  { href: '/ai-insights', icon: WandSparkles,  label: 'AI Insight', roles: ['Admin', 'Employee'], excludeJobTitles: ['Field Agent'] as string[], allowJobTitles: undefined as string[] | undefined },
+  { href: '/dashboard',   icon: LayoutGrid,   label: 'Dashboard',  roles: ALL_ROLES },
+  { href: '/farmers',     icon: Users,         label: 'Farmers',    roles: ALL_ROLES },
+  { href: '/employees',   icon: Briefcase,     label: 'Employees',  roles: ['Admin', 'Administrative Member'] },
+  { href: '/suppliers',   icon: Truck,         label: 'Suppliers',  roles: ALL_ROLES },
+  { href: '/products',    icon: Package,       label: 'Products',   roles: ALL_ROLES },
+  { href: '/finances',    icon: Landmark,      label: 'Finances',   roles: ['Admin', 'Finance Manager', 'Administrative Member'] },
+  { href: '/ai-insights', icon: WandSparkles,  label: 'AI Insight', roles: MANAGEMENT_ROLES },
 ];
 
 export function AppShell({ children }: { children: React.ReactNode }) {
@@ -76,14 +79,8 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
   const navItems = React.useMemo(() => {
     if (!user?.role) return [];
-    return allNavItems.filter(item => {
-      // allowJobTitles grants access regardless of role
-      if (item.allowJobTitles && user.jobTitle && item.allowJobTitles.includes(user.jobTitle)) return true;
-      if (!item.roles.includes(user.role)) return false;
-      if (user.jobTitle && item.excludeJobTitles.includes(user.jobTitle)) return false;
-      return true;
-    });
-  }, [user?.role, user?.jobTitle]);
+    return allNavItems.filter(item => item.roles.includes(user.role));
+  }, [user?.role]);
 
   if (!isMounted || isLoading || !isAuthenticated || !user) {
     return (
