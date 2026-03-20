@@ -51,6 +51,7 @@ const createGroupSchema = z.object({
     name: z.string().min(1, 'Group name is required.'),
     region: z.string().min(1, 'Region is required.'),
     district: z.string().min(1, 'District is required.'),
+    cocoaDistrict: z.string().optional(),
     society: z.string().optional(),
     seasonYear: z.string().min(1, 'Season year is required.'),
     description: z.string().optional(),
@@ -74,6 +75,7 @@ export function CreateGroupDialog({ open, onOpenChange }: CreateGroupDialogProps
             name: '',
             region: '',
             district: '',
+            cocoaDistrict: '',
             society: '',
             seasonYear: new Date().getFullYear().toString(),
             description: '',
@@ -106,6 +108,7 @@ export function CreateGroupDialog({ open, onOpenChange }: CreateGroupDialogProps
                     name: values.name,
                     region: values.region,
                     district: values.district,
+                    cocoaDistrict: values.cocoaDistrict || undefined,
                     society: values.society || undefined,
                     seasonYear: values.seasonYear || undefined,
                     description: values.description || undefined,
@@ -125,7 +128,7 @@ export function CreateGroupDialog({ open, onOpenChange }: CreateGroupDialogProps
 
     return (
         <Dialog open={open} onOpenChange={onOpenChange}>
-            <DialogContent className="sm:max-w-[480px] max-h-[90vh] overflow-y-auto">
+            <DialogContent className="sm:max-w-120 max-h-[90vh] overflow-y-auto">
                 <DialogHeader>
                     <div className="flex items-center gap-3">
                         <div className="rounded-full bg-orange-100 dark:bg-orange-500/10 p-2">
@@ -205,6 +208,21 @@ export function CreateGroupDialog({ open, onOpenChange }: CreateGroupDialogProps
                                             ))}
                                         </SelectContent>
                                     </Select>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+
+                        {/* Cocoa District — free text */}
+                        <FormField
+                            control={form.control}
+                            name="cocoaDistrict"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>Cocoa District</FormLabel>
+                                    <FormControl>
+                                        <Input placeholder="e.g. Ahafo Ano North" {...field} />
+                                    </FormControl>
                                     <FormMessage />
                                 </FormItem>
                             )}

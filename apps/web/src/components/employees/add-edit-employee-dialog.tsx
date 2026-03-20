@@ -46,7 +46,7 @@ import { GHANA_REGIONS_AND_DISTRICTS } from '@/lib/data/ghana-regions-districts'
 const employeeSchema = z.object({
   name: z.string().min(1, { message: 'Employee name is required.' }),
   email: z.string().email({ message: 'Invalid email address.' }),
-  role: z.enum(['Manager', 'Field Agent', 'Accountant', 'Support']),
+  role: z.enum(['General Manager', 'Operational Manager', 'Project Coordinator', 'Finance Manager', 'Administrative Member', 'Field Agent']),
   startDate: z.date(),
   salary: z.preprocess(
     (a) => (a === '' ? undefined : Number(a)),
@@ -188,10 +188,12 @@ export function AddEditEmployeeDialog({ open, onOpenChange, employee, onSave }: 
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
-                        <SelectItem value="Manager">Manager</SelectItem>
+                        <SelectItem value="General Manager">General Manager</SelectItem>
+                        <SelectItem value="Operational Manager">Operational Manager</SelectItem>
+                        <SelectItem value="Project Coordinator">Project Coordinator</SelectItem>
+                        <SelectItem value="Finance Manager">Finance Manager</SelectItem>
+                        <SelectItem value="Administrative Member">Administrative Member</SelectItem>
                         <SelectItem value="Field Agent">Field Agent</SelectItem>
-                        <SelectItem value="Accountant">Accountant</SelectItem>
-                        <SelectItem value="Support">Support</SelectItem>
                       </SelectContent>
                     </Select>
                     <FormMessage />

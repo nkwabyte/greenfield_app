@@ -349,7 +349,7 @@ export function useEmployeesPaginated(page: number = 1, pageSize: number = 50) {
 }
 
 export function useEmployeesFiltered(filters: {
-    role?: 'Manager' | 'Field Agent' | 'Accountant' | 'Support';
+    role?: 'General Manager' | 'Operational Manager' | 'Project Coordinator' | 'Finance Manager' | 'Administrative Member' | 'Field Agent';
     status?: 'Active' | 'On Leave' | 'Terminated';
 }) {
     return useLiveQuery(
@@ -362,7 +362,7 @@ export function useEmployeesPaginatedAndFiltered(
     page: number,
     pageSize: number,
     filters: {
-        role?: 'Manager' | 'Field Agent' | 'Accountant' | 'Support';
+        role?: 'General Manager' | 'Operational Manager' | 'Project Coordinator' | 'Finance Manager' | 'Administrative Member' | 'Field Agent';
         status?: 'Active' | 'On Leave' | 'Terminated';
         search?: string;
     }

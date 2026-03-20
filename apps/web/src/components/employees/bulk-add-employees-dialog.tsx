@@ -90,7 +90,7 @@ export function BulkAddEmployeesDialog({
     onComplete,
 }: BulkAddEmployeesDialogProps) {
     const [emailInput, setEmailInput] = React.useState('');
-    const [defaultRole, setDefaultRole] = React.useState<'Manager' | 'Field Agent' | 'Accountant' | 'Support'>('Field Agent');
+    const [defaultRole, setDefaultRole] = React.useState<'General Manager' | 'Operational Manager' | 'Project Coordinator' | 'Finance Manager' | 'Administrative Member' | 'Field Agent'>('Field Agent');
     const [phase, setPhase] = React.useState<'input' | 'processing' | 'done'>('input');
     const [results, setResults] = React.useState<CreationResult[]>([]);
     const [currentIndex, setCurrentIndex] = React.useState(0);
@@ -227,10 +227,12 @@ export function BulkAddEmployeesDialog({
                                     <SelectValue />
                                 </SelectTrigger>
                                 <SelectContent>
+                                    <SelectItem value="General Manager">General Manager</SelectItem>
+                                    <SelectItem value="Operational Manager">Operational Manager</SelectItem>
+                                    <SelectItem value="Project Coordinator">Project Coordinator</SelectItem>
+                                    <SelectItem value="Finance Manager">Finance Manager</SelectItem>
+                                    <SelectItem value="Administrative Member">Administrative Member</SelectItem>
                                     <SelectItem value="Field Agent">Field Agent</SelectItem>
-                                    <SelectItem value="Manager">Manager</SelectItem>
-                                    <SelectItem value="Accountant">Accountant</SelectItem>
-                                    <SelectItem value="Support">Support</SelectItem>
                                 </SelectContent>
                             </Select>
                         </div>
@@ -272,7 +274,7 @@ export function BulkAddEmployeesDialog({
                                         }
                                         <span className="flex-1 truncate font-mono text-xs">{r.email}</span>
                                         {r.status === 'error' && (
-                                            <span className="text-destructive text-xs truncate max-w-[200px]">{r.error}</span>
+                                            <span className="text-destructive text-xs truncate max-w-50">{r.error}</span>
                                         )}
                                     </div>
                                 ))}
@@ -310,8 +312,8 @@ export function BulkAddEmployeesDialog({
                                 <tbody className="divide-y">
                                     {results.map((r, i) => (
                                         <tr key={i} className={r.status === 'error' ? 'bg-destructive/5' : ''}>
-                                            <td className="px-3 py-2 font-medium truncate max-w-[120px]">{r.name}</td>
-                                            <td className="px-3 py-2 font-mono truncate max-w-[160px]">{r.email}</td>
+                                            <td className="px-3 py-2 font-medium truncate max-w-30">{r.name}</td>
+                                            <td className="px-3 py-2 font-mono truncate max-w-40">{r.email}</td>
                                             <td className="px-3 py-2 font-mono text-emerald-600 dark:text-emerald-400">
                                                 {r.status === 'success' ? r.password : '—'}
                                             </td>

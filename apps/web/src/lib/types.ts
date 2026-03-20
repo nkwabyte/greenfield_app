@@ -88,7 +88,7 @@ export type Employee = {
   id: string;
   name: string;
   email: string;
-  role: 'Manager' | 'Field Agent' | 'Accountant' | 'Support';
+  role: 'General Manager' | 'Operational Manager' | 'Project Coordinator' | 'Finance Manager' | 'Administrative Member' | 'Field Agent';
   salary?: number;
   startDate: string; // ISO date string
   status: 'Active' | 'On Leave' | 'Terminated';
@@ -150,6 +150,7 @@ export interface FarmerGroup {
   description?: string;
   region: string;
   district: string;
+  cocoaDistrict?: string;   // Cocoa district (separate from political district)
   society?: string;
   leaderId?: string;
   seasonYear?: string;       // Annual segregation (e.g., "2024", "2025")
