@@ -16,6 +16,8 @@ if (typeof window !== 'undefined') {
     // Initialize cache
     supabase.auth.getSession().then(({ data: { session } }) => {
         _cachedUserId = session?.user?.id ?? null;
+    }).catch(() => {
+        // Network failure during session restore — stay unauthenticated
     });
 }
 

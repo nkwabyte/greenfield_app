@@ -103,6 +103,9 @@ class SyncService {
      * Add an item to the sync queue.
      * For `update` operations, deduplicates by replacing any existing pending update
      * for the same entity — so only the latest state is synced instead of every intermediate edit.
+     *
+     * ⚠️  Prefer `writeAndEnqueue` / `batchWriteAndEnqueue` for all mutations.
+     * This method is kept for callers (e.g. admin purge) that perform non-entity writes.
      */
     async addToQueue(
         entityType: EntityType,
@@ -144,6 +147,110 @@ class SyncService {
         });
 
         // Try to sync immediately if online and not paused
+        if (connectivityService.isOnline() && !this.isPaused) {
+            this.syncAll().catch(console.error);
+        }
+    }
+
+    /**
+     * **Atomic single-record write + enqueue.**
+     *
+     * Wraps the local Dexie write *and* the sync-queue insert inside a single
+     * IndexedDB transaction so both operations either commit together or both
+     * roll back.  This is the ACID-safe replacement for the old pattern:
+     *
+     *   await db.[table].add/put/delete(entity);   // ← could succeed
+     *   await syncService.addToQueue(...);          // ← could fail → orphan record
+     *
+     * `writeOp` receives no arguments — it should close over the Dexie table
+     * and entity data directly.  Dexie automatically enlists all operations
+     * on the declared tables into the current transaction context.
+     *
+     * For `update` operations the same deduplication as `addToQueue` applies:
+     * an existing pending update for the same entity is replaced in-place.
+     */
+    async writeAndEnqueue<T>(
+        table: import('dexie').Table<T, any>,
+        writeOp: () => Promise<void>,
+        entityType: EntityType,
+        operation: SyncOperation,
+        entityId: string,
+        data: any
+    ): Promise<void> {
+        await db.transaction('rw', [table, db.syncQueue], async () => {
+            // 1. Local write
+            await writeOp();
+
+            // 2. Sync-queue insert (with update deduplication)
+            if (operation === 'update') {
+                const existing = await db.syncQueue
+                    .where('entityId').equals(entityId)
+                    .filter(item => item.operation === 'update' && item.synced === 0)
+                    .first();
+
+                if (existing?.id != null) {
+                    await db.syncQueue.update(existing.id, {
+                        data,
+                        timestamp: Date.now(),
+                        status: 'pending',
+                    });
+                    return;
+                }
+            }
+
+            await db.syncQueue.add({
+                entityType,
+                operation,
+                entityId,
+                data,
+                timestamp: Date.now(),
+                synced: 0,
+                retryCount: 0,
+                status: 'pending',
+            });
+        });
+
+        // 3. After the transaction commits, attempt an immediate push if online
+        if (connectivityService.isOnline() && !this.isPaused) {
+            this.syncAll().catch(console.error);
+        }
+    }
+
+    /**
+     * **Atomic batch write + enqueue.**
+     *
+     * Same atomicity guarantee as `writeAndEnqueue` but for operations that
+     * write multiple records at once (e.g. `bulkAdd` / `bulkPut`).
+     * All sync-queue entries for the batch are inserted inside the same
+     * transaction as the bulk write so partial failures are impossible.
+     */
+    async batchWriteAndEnqueue<T>(
+        table: import('dexie').Table<T, any>,
+        writeOp: () => Promise<void>,
+        queueItems: Array<{
+            entityType: EntityType;
+            operation: SyncOperation;
+            entityId: string;
+            data: any;
+        }>
+    ): Promise<void> {
+        const now = Date.now();
+        await db.transaction('rw', [table, db.syncQueue], async () => {
+            await writeOp();
+            for (const item of queueItems) {
+                await db.syncQueue.add({
+                    entityType: item.entityType,
+                    operation: item.operation,
+                    entityId: item.entityId,
+                    data: item.data,
+                    timestamp: now,
+                    synced: 0,
+                    retryCount: 0,
+                    status: 'pending',
+                });
+            }
+        });
+
         if (connectivityService.isOnline() && !this.isPaused) {
             this.syncAll().catch(console.error);
         }

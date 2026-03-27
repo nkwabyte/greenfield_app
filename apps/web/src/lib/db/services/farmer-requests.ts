@@ -36,8 +36,11 @@ export async function addFarmerRequest(
         updatedAt: now,
     };
 
-    await db.farmerRequests.add(newRequest);
-    await syncService.addToQueue('farmerRequest', 'create', id, newRequest);
+    await syncService.writeAndEnqueue(
+        db.farmerRequests,
+        () => db.farmerRequests.add(newRequest),
+        'farmerRequest', 'create', id, newRequest
+    );
 }
 
 export async function updateFarmerRequest(
@@ -57,13 +60,19 @@ export async function updateFarmerRequest(
         updatedAt: now,
     };
 
-    await db.farmerRequests.put(updatedReq);
-    await syncService.addToQueue('farmerRequest', 'update', id, updates);
+    await syncService.writeAndEnqueue(
+        db.farmerRequests,
+        () => db.farmerRequests.put(updatedReq),
+        'farmerRequest', 'update', id, updates
+    );
 }
 
 export async function deleteFarmerRequest(id: string): Promise<void> {
-    await db.farmerRequests.delete(id);
-    await syncService.addToQueue('farmerRequest', 'delete', id, null);
+    await syncService.writeAndEnqueue(
+        db.farmerRequests,
+        () => db.farmerRequests.delete(id),
+        'farmerRequest', 'delete', id, null
+    );
 }
 
 export async function syncFarmerRequestsFromSupabase(): Promise<number> {

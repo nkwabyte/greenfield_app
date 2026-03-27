@@ -89,11 +89,11 @@ export async function addProduct(
         updatedAt: now,
     };
 
-    // 1. Save to local database immediately
-    await db.products.add(product);
-
-    // 2. Add to sync queue
-    await syncService.addToQueue('product', 'create', id, productData);
+    await syncService.writeAndEnqueue(
+        db.products,
+        () => db.products.add(product),
+        'product', 'create', id, productData
+    );
 }
 
 /**
@@ -120,11 +120,11 @@ export async function updateProduct(
         updatedAt: now,
     };
 
-    // 1. Update local database
-    await db.products.put(updatedProduct);
-
-    // 2. Add to sync queue
-    await syncService.addToQueue('product', 'update', id, productData);
+    await syncService.writeAndEnqueue(
+        db.products,
+        () => db.products.put(updatedProduct),
+        'product', 'update', id, productData
+    );
 }
 
 /**
@@ -133,11 +133,11 @@ export async function updateProduct(
 export async function deleteProduct(id: string): Promise<void> {
     const existing = await db.products.get(id);
 
-    // 1. Delete from local database
-    await db.products.delete(id);
-
-    // 2. Add to sync queue
-    await syncService.addToQueue('product', 'delete', id, null);
+    await syncService.writeAndEnqueue(
+        db.products,
+        () => db.products.delete(id),
+        'product', 'delete', id, null
+    );
 }
 
 /**

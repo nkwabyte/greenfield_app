@@ -78,11 +78,11 @@ export async function addSupplier(
         updatedAt: now,
     };
 
-    // 1. Save to local database immediately
-    await db.suppliers.add(supplier);
-
-    // 2. Add to sync queue
-    await syncService.addToQueue('supplier', 'create', id, supplierData);
+    await syncService.writeAndEnqueue(
+        db.suppliers,
+        () => db.suppliers.add(supplier),
+        'supplier', 'create', id, supplierData
+    );
 }
 
 /**
@@ -109,11 +109,11 @@ export async function updateSupplier(
         updatedAt: now,
     };
 
-    // 1. Update local database
-    await db.suppliers.put(updatedSupplier);
-
-    // 2. Add to sync queue
-    await syncService.addToQueue('supplier', 'update', id, supplierData);
+    await syncService.writeAndEnqueue(
+        db.suppliers,
+        () => db.suppliers.put(updatedSupplier),
+        'supplier', 'update', id, supplierData
+    );
 }
 
 /**
@@ -122,11 +122,11 @@ export async function updateSupplier(
 export async function deleteSupplier(id: string): Promise<void> {
     const existing = await db.suppliers.get(id);
 
-    // 1. Delete from local database
-    await db.suppliers.delete(id);
-
-    // 2. Add to sync queue
-    await syncService.addToQueue('supplier', 'delete', id, null);
+    await syncService.writeAndEnqueue(
+        db.suppliers,
+        () => db.suppliers.delete(id),
+        'supplier', 'delete', id, null
+    );
 }
 
 /**

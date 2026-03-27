@@ -166,11 +166,12 @@ export async function addEmployee(
         updatedAt: now,
     };
 
-    // 1. Save to local database immediately
-    await db.employees.add(employee);
-
-    // 2. Add to sync queue
-    await syncService.addToQueue('employee', 'create', authUid!, { ...employeeData, password });
+    // Atomic: local write + sync-queue insert commit together or not at all.
+    await syncService.writeAndEnqueue(
+        db.employees,
+        () => db.employees.add(employee),
+        'employee', 'create', authUid!, { ...employeeData, password }
+    );
 
     return password;
 }
@@ -206,11 +207,11 @@ export async function updateEmployee(
         updatedAt: now,
     };
 
-    // 1. Update local database
-    await db.employees.put(updatedEmployee);
-
-    // 2. Add to sync queue
-    await syncService.addToQueue('employee', 'update', id, employeeData);
+    await syncService.writeAndEnqueue(
+        db.employees,
+        () => db.employees.put(updatedEmployee),
+        'employee', 'update', id, employeeData
+    );
 }
 
 /**
@@ -219,11 +220,11 @@ export async function updateEmployee(
 export async function deleteEmployee(id: string): Promise<void> {
     const existing = await db.employees.get(id);
 
-    // 1. Delete from local database
-    await db.employees.delete(id);
-
-    // 2. Add to sync queue
-    await syncService.addToQueue('employee', 'delete', id, null);
+    await syncService.writeAndEnqueue(
+        db.employees,
+        () => db.employees.delete(id),
+        'employee', 'delete', id, null
+    );
 }
 
 /**
