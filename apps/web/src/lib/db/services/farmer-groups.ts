@@ -40,8 +40,11 @@ export async function addFarmerGroup(
         updatedAt: now,
     };
 
-    await db.farmerGroups.add(group);
-    await syncService.addToQueue('farmerGroup', 'create', id, group);
+    await syncService.writeAndEnqueue(
+        db.farmerGroups,
+        () => db.farmerGroups.add(group),
+        'farmerGroup', 'create', id, group
+    );
 }
 
 export async function updateFarmerGroup(
@@ -61,14 +64,20 @@ export async function updateFarmerGroup(
         updatedAt: now,
     };
 
-    await db.farmerGroups.put(updatedGroup);
-    await syncService.addToQueue('farmerGroup', 'update', id, updates);
+    await syncService.writeAndEnqueue(
+        db.farmerGroups,
+        () => db.farmerGroups.put(updatedGroup),
+        'farmerGroup', 'update', id, updates
+    );
 }
 
 export async function deleteFarmerGroup(id: string): Promise<void> {
     const existing = await db.farmerGroups.get(id);
-    await db.farmerGroups.delete(id);
-    await syncService.addToQueue('farmerGroup', 'delete', id, null);
+    await syncService.writeAndEnqueue(
+        db.farmerGroups,
+        () => db.farmerGroups.delete(id),
+        'farmerGroup', 'delete', id, null
+    );
 }
 
 export async function archiveFarmerGroup(id: string, isArchived: boolean = true): Promise<void> {

@@ -285,13 +285,13 @@ export async function addFarmer(
         updatedAt: now,
     };
 
-    // 1. Save to local database immediately
-    await db.farmers.add(farmer);
+    // Atomic: local write + sync-queue insert commit together or not at all.
+    await syncService.writeAndEnqueue(
+        db.farmers,
+        () => db.farmers.add(farmer),
+        'farmer', 'create', id, farmerData
+    );
 
-    // 2. Add to sync queue
-    await syncService.addToQueue('farmer', 'create', id, farmerData);
-
-    // 3. Update cache
     await updateFarmersCache();
 }
 
@@ -324,13 +324,12 @@ export async function updateFarmer(
         updatedAt: now,
     };
 
-    // 1. Update local database
-    await db.farmers.put(updatedFarmer);
+    await syncService.writeAndEnqueue(
+        db.farmers,
+        () => db.farmers.put(updatedFarmer),
+        'farmer', 'update', id, farmerData
+    );
 
-    // 2. Add to sync queue
-    await syncService.addToQueue('farmer', 'update', id, farmerData);
-
-    // 3. Update cache
     await updateFarmersCache();
 }
 
@@ -355,13 +354,12 @@ export async function deleteFarmer(id: string): Promise<void> {
     // Capture name before deletion
     const existing = await db.farmers.get(id);
 
-    // 1. Delete from local database
-    await db.farmers.delete(id);
+    await syncService.writeAndEnqueue(
+        db.farmers,
+        () => db.farmers.delete(id),
+        'farmer', 'delete', id, null
+    );
 
-    // 2. Add to sync queue
-    await syncService.addToQueue('farmer', 'delete', id, null);
-
-    // 3. Update cache
     await updateFarmersCache();
 }
 
@@ -369,15 +367,17 @@ export async function deleteFarmer(id: string): Promise<void> {
  * Add multiple farmers in batch (for bulk upload)
  */
 export async function addFarmersBatch(farmers: Farmer[]): Promise<void> {
-    // 1. Add all to local database
-    await db.farmers.bulkAdd(farmers);
+    await syncService.batchWriteAndEnqueue(
+        db.farmers,
+        () => db.farmers.bulkAdd(farmers),
+        farmers.map(farmer => ({
+            entityType: 'farmer' as const,
+            operation: 'create' as const,
+            entityId: farmer.id,
+            data: farmer,
+        }))
+    );
 
-    // 2. Add each to sync queue
-    for (const farmer of farmers) {
-        await syncService.addToQueue('farmer', 'create', farmer.id, farmer);
-    }
-
-    // 3. Update cache
     await updateFarmersCache();
 }
 
@@ -397,14 +397,17 @@ export async function updateFarmersBatch(ids: string[], updates: Partial<Farmer>
         updatedAt: now,
     }));
 
-    // 1. Update local database
-    await db.farmers.bulkPut(updatedFarmers);
+    await syncService.batchWriteAndEnqueue(
+        db.farmers,
+        () => db.farmers.bulkPut(updatedFarmers),
+        updatedFarmers.map(farmer => ({
+            entityType: 'farmer' as const,
+            operation: 'update' as const,
+            entityId: farmer.id,
+            data: updates,
+        }))
+    );
 
-    for (const farmer of updatedFarmers) {
-        await syncService.addToQueue('farmer', 'update', farmer.id, updates);
-    }
-
-    // 3. Update cache
     await updateFarmersCache();
 }
 
@@ -592,14 +595,20 @@ export async function getFarmersByRegionAndGender(): Promise<Record<string, Reco
  * CAUTION: This action is destructive and irreversible.
  */
 export async function deleteAllFarmers(): Promise<void> {
-    // 1. Clear local database
-    await db.farmers.clear();
-
-    // 2. Clear sync queue of any pending farmer actions
-    await db.syncQueue.where('entityType').equals('farmer').delete();
-
-    // 3. Queue a purge operation for Supabase
-    await syncService.addToQueue('farmer', 'purge', 'ALL', null);
-
-    // console.log('⚠️ All farmer data purged locally and queued for remote purge.');
+    // Atomic: clear local data, cancel any pending farmer queue items, and
+    // enqueue the remote purge — all in one IndexedDB transaction.
+    await db.transaction('rw', [db.farmers, db.syncQueue], async () => {
+        await db.farmers.clear();
+        await db.syncQueue.where('entityType').equals('farmer').delete();
+        await db.syncQueue.add({
+            entityType: 'farmer',
+            operation: 'purge',
+            entityId: 'ALL',
+            data: null,
+            timestamp: Date.now(),
+            synced: 0,
+            retryCount: 0,
+            status: 'pending',
+        });
+    });
 }

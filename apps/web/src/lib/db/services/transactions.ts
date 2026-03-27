@@ -105,11 +105,11 @@ export async function addTransaction(
         updatedAt: now,
     };
 
-    // 1. Save to local database immediately
-    await db.transactions.add(transaction);
-
-    // 2. Add to sync queue
-    await syncService.addToQueue('transaction', 'create', id, transactionData);
+    await syncService.writeAndEnqueue(
+        db.transactions,
+        () => db.transactions.add(transaction),
+        'transaction', 'create', id, transactionData
+    );
 }
 
 /**
@@ -139,11 +139,11 @@ export async function updateTransaction(
         updatedAt: now,
     };
 
-    // 1. Update local database
-    await db.transactions.put(updatedTransaction);
-
-    // 2. Add to sync queue
-    await syncService.addToQueue('transaction', 'update', id, transactionData);
+    await syncService.writeAndEnqueue(
+        db.transactions,
+        () => db.transactions.put(updatedTransaction),
+        'transaction', 'update', id, transactionData
+    );
 }
 
 /**
@@ -152,11 +152,11 @@ export async function updateTransaction(
 export async function deleteTransaction(id: string): Promise<void> {
     const existing = await db.transactions.get(id);
 
-    // 1. Delete from local database
-    await db.transactions.delete(id);
-
-    // 2. Add to sync queue
-    await syncService.addToQueue('transaction', 'delete', id, null);
+    await syncService.writeAndEnqueue(
+        db.transactions,
+        () => db.transactions.delete(id),
+        'transaction', 'delete', id, null
+    );
 }
 
 /**
