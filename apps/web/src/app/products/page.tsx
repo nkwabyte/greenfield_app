@@ -18,6 +18,7 @@ import { useSelector } from 'react-redux';
 import type { RootState } from '@/lib/store/store';
 import { ProductFilters, type ProductFiltersState } from '@/components/products/product-filters';
 import { ConfirmDialog } from '@/components/ui/confirm-dialog';
+import { useRequireRole } from '@/hooks/use-role-guard';
 
 const currencyFormatter = new Intl.NumberFormat('en-GH', {
   style: 'currency',
@@ -26,8 +27,10 @@ const currencyFormatter = new Intl.NumberFormat('en-GH', {
 
 export default function ProductsPage() {
   const router = useRouter();
+  const { allowed } = useRequireRole(['Admin', 'General Manager', 'Operational Manager', 'Project Coordinator', 'Finance Manager', 'Administrative Member']);
   const { toast } = useToast();
   const user = useSelector((state: RootState) => state.auth.user);
+  if (!allowed) return null;
   const canEdit = user?.role !== 'Field Agent';
 
   // Pagination State

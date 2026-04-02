@@ -50,8 +50,8 @@ const allNavItems = [
   { href: '/dashboard',   icon: LayoutGrid,   label: 'Dashboard',  roles: ALL_ROLES },
   { href: '/farmers',     icon: Users,         label: 'Farmers',    roles: ALL_ROLES },
   { href: '/employees',   icon: Briefcase,     label: 'Employees',  roles: ['Admin', 'Administrative Member'] },
-  { href: '/suppliers',   icon: Truck,         label: 'Suppliers',  roles: ALL_ROLES },
-  { href: '/products',    icon: Package,       label: 'Products',   roles: ALL_ROLES },
+  { href: '/suppliers',   icon: Truck,         label: 'Suppliers',  roles: MANAGEMENT_ROLES },
+  { href: '/products',    icon: Package,       label: 'Products',   roles: MANAGEMENT_ROLES },
   { href: '/finances',    icon: Landmark,      label: 'Finances',   roles: ['Admin', 'Finance Manager', 'Administrative Member'] },
   { href: '/ai-insights', icon: WandSparkles,  label: 'AI Insight', roles: MANAGEMENT_ROLES },
 ];
@@ -78,9 +78,10 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   }, [isAuthenticated, isLoading, router, isMounted]);
 
   const navItems = React.useMemo(() => {
-    if (!user?.role) return [];
-    return allNavItems.filter(item => item.roles.includes(user.role));
-  }, [user?.role]);
+    if (!user) return [];
+    if (user.role === 'Admin') return allNavItems.filter(item => item.roles.includes('Admin'));
+    return allNavItems.filter(item => user.jobTitle ? item.roles.includes(user.jobTitle) : false);
+  }, [user?.role, user?.jobTitle]);
 
   if (!isMounted || isLoading || !isAuthenticated || !user) {
     return (
