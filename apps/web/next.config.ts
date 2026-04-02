@@ -46,6 +46,16 @@ const nextConfig: NextConfig = {
         async_hooks: false,
       };
     }
+    // In a Yarn v1 monorepo packages are hoisted to the root node_modules.
+    // Ensure webpack can resolve them from the workspace root as well.
+    const path = require('path');
+    const rootNodeModules = path.resolve(__dirname, '../../node_modules');
+    if (!config.resolve.modules) {
+      config.resolve.modules = ['node_modules'];
+    }
+    if (!config.resolve.modules.includes(rootNodeModules)) {
+      config.resolve.modules.push(rootNodeModules);
+    }
     return config;
   },
 };
