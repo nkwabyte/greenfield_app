@@ -369,7 +369,7 @@ function FarmersContent() {
           rowSelection={rowSelection}
           onRowSelectionChange={setRowSelection as any}
           getRowId={(row) => row.id}
-          onRowClick={(farmer) => router.push(`/farmers/${farmer.id}`)}
+          onRowClick={(farmer) => router.push(`/farmers/details?id=${farmer.id}`)}
         />
       </div>
       <div className="flex items-center gap-2 mb-4 px-1">

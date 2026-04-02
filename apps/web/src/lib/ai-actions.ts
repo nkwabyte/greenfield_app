@@ -1,4 +1,4 @@
-'use server';
+
 
 import { summarizeKPIInsights } from '@/ai/flows/summarize-kpi-insights';
 import { suggestBusinessDecisions } from '@/ai/flows/suggest-business-decisions';

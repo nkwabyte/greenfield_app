@@ -1,4 +1,4 @@
-'use server';
+
 
 /**
  * @fileOverview This file defines a Genkit flow to generate a representative farmer persona based on existing CRM data.
@@ -8,7 +8,7 @@
  * - GenerateFarmerPersonaOutput - The return type for the generateFarmerPersona function.
  */
 
-'use server';
+
 
 /**
  * @fileOverview This file defines a function to generate a representative farmer persona based on existing CRM data using Google Generative AI.

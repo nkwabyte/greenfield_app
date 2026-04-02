@@ -7,7 +7,7 @@ import { ArrowLeft, Users, Building2, UsersRound, Leaf, UserCheck } from 'lucide
 import Link from 'next/link';
 import { useLiveQuery } from '@/hooks/useLiveQuery';
 import { db } from '@/lib/db/schema';
-import { useParams } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 import { Badge } from '@/components/ui/badge';
 
 // ─── helpers ────────────────────────────────────────────────────────────────
@@ -71,8 +71,16 @@ function BreakdownTable({ title, rows }: { title: string; rows: { label: string;
 import { normalizeRegion } from '@/lib/utils/region-normalizer';
 
 export default function RegionDetailPage() {
-    const params = useParams();
-    const regionParam = decodeURIComponent((params.region as string) || '');
+    return (
+        <React.Suspense fallback={<div>Loading...</div>}>
+            <RegionDetailContent />
+        </React.Suspense>
+    );
+}
+
+function RegionDetailContent() {
+    const searchParams = useSearchParams();
+    const regionParam = decodeURIComponent((searchParams.get('region')) || '');
 
     const regionData = useLiveQuery(async () => {
         // Build base query

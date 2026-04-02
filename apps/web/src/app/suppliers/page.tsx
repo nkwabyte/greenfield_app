@@ -14,10 +14,13 @@ import { useSuppliersPaginated } from '@/hooks/useData';
 import { ConfirmDialog } from '@/components/ui/confirm-dialog';
 import { useSelector } from 'react-redux';
 import type { RootState } from '@/lib/store/store';
+import { useRequireRole } from '@/hooks/use-role-guard';
 
 export default function SuppliersPage() {
   const router = useRouter();
+  const { allowed } = useRequireRole(['Admin', 'Employee'], { excludeJobTitles: ['Field Agent'] });
   const user = useSelector((state: RootState) => state.auth.user);
+  if (!allowed) return null;
   const canEdit = user?.role !== 'Field Agent';
   const { toast } = useToast();
 
@@ -116,7 +119,7 @@ export default function SuppliersPage() {
           pageCount={totalPages}
           pagination={pagination}
           onPaginationChange={setPagination}
-          onRowClick={(row) => router.push(`/suppliers/${row.id}`)}
+          onRowClick={(row) => router.push(`/suppliers/details?id=${row.id}`)}
         />
       </div>
 

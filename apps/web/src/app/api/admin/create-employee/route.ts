@@ -43,7 +43,7 @@ export async function POST(request: NextRequest) {
             email_confirm: true,   // employee doesn't need to confirm
             user_metadata: {
                 name: name || email.split('@')[0],   // set display name in auth metadata
-                role: 'Employee',
+                role: role,   // job title (e.g. 'Field Agent') — must match users_role_check constraint
                 status: 'Active',
             },
         });

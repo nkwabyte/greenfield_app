@@ -1,4 +1,4 @@
-'use server';
+
 
 /**
  * @fileOverview A flow that summarizes key performance indicators (KPIs) from the dashboard and provides insights into trends, such as regional performance or gender ratios, to inform business decisions quickly.
@@ -8,7 +8,7 @@
  * - SummarizeKPIInsightsOutput - The return type for the summarizeKPIInsights function.
  */
 
-'use server';
+
 
 /**
  * @fileOverview A function that summarizes key performance indicators (KPIs) and provides insights using Google Generative AI.

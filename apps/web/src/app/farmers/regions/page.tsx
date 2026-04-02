@@ -60,7 +60,7 @@ export default function RegionsHubPage() {
                         return (
                             <Link
                                 key={region}
-                                href={`/farmers/regions/${encodeURIComponent(region)}`}
+                                href={`/farmers/regions/details?region=${encodeURIComponent(region)}`}
                                 className="group block rounded-xl border bg-card p-5 shadow-sm hover:shadow-md hover:border-blue-500/50 transition-all duration-200"
                             >
                                 <div className="flex items-start justify-between mb-4">
@@ -94,7 +94,7 @@ export default function RegionsHubPage() {
                         const unknownCount = regionCounts?.['Unknown'] || 0;
                         return (
                             <Link
-                                href={`/farmers/regions/N%2FA`}
+                                href={`/farmers/regions/details?region=N%2FA`}
                                 className="group block rounded-xl border bg-muted/30 p-5 shadow-sm hover:shadow-md hover:border-slate-500/50 transition-all duration-200"
                             >
                                 <div className="flex items-start justify-between mb-4">

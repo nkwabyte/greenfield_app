@@ -153,7 +153,7 @@ export default function EmployeesPage() {
   const columns = React.useMemo(() => getColumns({
     onEdit: handleOpenEditDialog,
     onDelete: handleDeleteEmployee,
-    onViewDetails: (employee) => router.push(`/employees/${employee.id}`),
+    onViewDetails: (employee) => router.push(`/employees/details?id=${employee.id}`),
   }), []);
 
   if (!allowed) return null;
@@ -184,7 +184,7 @@ export default function EmployeesPage() {
           pageCount={totalPages}
           pagination={pagination}
           onPaginationChange={setPagination}
-          onRowClick={(row) => router.push(`/employees/${row.id}`)}
+          onRowClick={(row) => router.push(`/employees/details?id=${row.id}`)}
         />
       </div>
 

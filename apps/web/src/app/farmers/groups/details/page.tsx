@@ -1,4 +1,5 @@
 'use client';
+import * as React from 'react';
 
 import { AppShell } from '@/components/app-shell';
 import { PageHeader } from '@/components/page-header';
@@ -7,7 +8,7 @@ import Link from 'next/link';
 import { useLiveQuery } from '@/hooks/useLiveQuery';
 import { db } from '@/lib/db/schema';
 import { Button } from '@/components/ui/button';
-import { useParams, useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { ColumnDef } from '@tanstack/react-table';
 import { Farmer } from '@/lib/types';
 import { EditGroupDialog } from '@/components/farmers/edit-group-dialog';
@@ -31,9 +32,17 @@ const currencyFormatter = new Intl.NumberFormat('en-GH', {
 });
 
 export default function FarmerGroupDetailsPage() {
-    const params = useParams();
+    return (
+        <React.Suspense fallback={<div>Loading...</div>}>
+            <FarmerGroupDetailsContent />
+        </React.Suspense>
+    );
+}
+
+function FarmerGroupDetailsContent() {
+    const searchParams = useSearchParams();
     const router = useRouter();
-    const id = params.id as string;
+    const id = searchParams.get('id') || '';
     const { toast } = useToast();
 
     const [isEditGroupOpen, setIsEditGroupOpen] = useState(false);
@@ -164,7 +173,7 @@ export default function FarmerGroupDetailsPage() {
                         </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end">
-                        <DropdownMenuItem onClick={() => router.push(`/farmers/${row.original.id}`)}>
+                        <DropdownMenuItem onClick={() => router.push(`/farmers/details?id=${row.original.id}`)}>
                             View Details
                         </DropdownMenuItem>
                         <DropdownMenuItem onClick={() => handleAddRequest(row.original.id)}>
@@ -217,7 +226,7 @@ export default function FarmerGroupDetailsPage() {
                         <Trash2 className="h-4 w-4" />
                         Delete Group
                     </Button>
-                    <Link href={`/farmers/groups/${id}/distribute`}>
+                    <Link href={`/farmers/groups/distribute?id=${id}`}>
                         <Button className="gap-2 w-full sm:w-auto">
                             <Plus className="h-4 w-4" />
                             Distribute Products
@@ -287,7 +296,7 @@ export default function FarmerGroupDetailsPage() {
                         data={members || []}
                         filterColumnId="name"
                         filterPlaceholder="Search members..."
-                        onRowClick={(row) => router.push(`/farmers/${row.id}`)}
+                        onRowClick={(row) => router.push(`/farmers/details?id=${row.id}`)}
                     />
                 </div>
             </div>
