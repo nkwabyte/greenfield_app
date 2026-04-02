@@ -169,7 +169,7 @@ export default function FinanceGroupsPage() {
                                 <TableRow
                                     key={g.groupId}
                                     className="cursor-pointer hover:bg-muted/50"
-                                    onClick={() => router.push(`/farmers/groups/${g.groupId}`)}
+                                    onClick={() => router.push(`/farmers/groups/details?id=${g.groupId}`)}
                                 >
                                     <TableCell className="font-medium">{g.groupName}</TableCell>
                                     <TableCell className="text-sm text-muted-foreground">{g.region}</TableCell>

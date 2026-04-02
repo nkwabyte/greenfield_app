@@ -43,7 +43,7 @@ export function FarmerRequestsList({ farmerId, farmerGroupId, onRequireGroup }: 
             onRequireGroup?.();
             return;
         }
-        router.push(`/farmers/groups/${farmerGroupId}/distribute?preselect=${farmerId}`);
+        router.push(`/farmers/groups/distribute?id=${farmerGroupId}&preselect=${farmerId}`);
     };
 
     const handleDeleteRequest = async () => {

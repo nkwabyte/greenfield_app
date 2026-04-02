@@ -1,4 +1,4 @@
-'use server';
+
 
 /**
  * @fileOverview This file defines a Genkit flow for suggesting business decisions based on data analysis.
@@ -8,7 +8,7 @@
  * - SuggestBusinessDecisionsOutput - The return type for the suggestBusinessDecisions function.
  */
 
-'use server';
+
 
 /**
  * @fileOverview This file defines a function for suggesting business decisions based on data analysis using Google Generative AI.

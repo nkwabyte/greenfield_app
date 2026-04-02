@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { useProduct, useSupplier } from '@/hooks/useData';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -26,11 +26,20 @@ function getStockStatus(quantity: number): { label: string; variant: 'default' |
     return { label: 'In Stock', variant: 'default' };
 }
 
-export default function ProductDetailsPage({ params }: { params: Promise<{ id: string }> }) {
+export default function ProductDetailsPage() {
+    return (
+        <React.Suspense fallback={<div>Loading...</div>}>
+            <ProductDetailsContent />
+        </React.Suspense>
+    );
+}
+
+function ProductDetailsContent() {
     const router = useRouter();
     const { toast } = useToast();
-    const { id } = React.use(params);
-    const product = useProduct(id);
+    const searchParams = useSearchParams();
+    const id = searchParams.get('id');
+    const product = useProduct(id || '');
     const suppliers = useSuppliers();
     const supplier = useSupplier(product?.supplierId ?? '');
     const [isEditOpen, setIsEditOpen] = React.useState(false);
@@ -225,7 +234,7 @@ export default function ProductDetailsPage({ params }: { params: Promise<{ id: s
                                             {supplier.phone}
                                         </a>
                                     </div>
-                                    <Link href={`/suppliers/${supplier.id}`}>
+                                    <Link href={`/suppliers/details?id=${supplier.id}`}>
                                         <Button variant="outline" size="sm" className="w-full mt-2">
                                             <ExternalLink className="mr-2 h-4 w-4" />
                                             View Supplier

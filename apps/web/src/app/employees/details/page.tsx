@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { useEmployee } from '@/hooks/useData';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -18,14 +18,22 @@ import { formatDistanceToNow } from 'date-fns';
 import { ConfirmDialog } from '@/components/ui/confirm-dialog';
 import { useRequireRole } from '@/hooks/use-role-guard';
 
-export default function EmployeeDetailsPage({ params }: { params: Promise<{ id: string }> }) {
+export default function EmployeeDetailsPage() {
+    return (
+        <React.Suspense fallback={<div>Loading...</div>}>
+            <EmployeeDetailsContent />
+        </React.Suspense>
+    );
+}
+
+function EmployeeDetailsContent() {
     const { allowed } = useRequireRole(['Admin']);
     const router = useRouter();
     const { toast } = useToast();
-    const { id } = React.use(params);
-
+    const searchParams = useSearchParams();
+    const id = searchParams.get('id');
     // All hooks must be called before any early return
-    const employee = useEmployee(id);
+    const employee = useEmployee(id || '');
     const [isEditOpen, setIsEditOpen] = React.useState(false);
     const [isDeleteOpen, setIsDeleteOpen] = React.useState(false);
     const user = useSelector((state: RootState) => state.auth.user);

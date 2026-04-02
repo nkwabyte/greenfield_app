@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { useSupplier } from '@/hooks/useData';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -17,12 +17,21 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { useProductsBySupplier, useSuppliers } from '@/hooks/useData';
 import { AddEditProductDialog, type ProductFormValues } from '@/components/products/add-edit-product-dialog';
 
-export default function SupplierDetailsPage({ params }: { params: Promise<{ id: string }> }) {
+export default function SupplierDetailsPage() {
+    return (
+        <React.Suspense fallback={<div>Loading...</div>}>
+            <SupplierDetailsContent />
+        </React.Suspense>
+    );
+}
+
+function SupplierDetailsContent() {
     const router = useRouter();
     const { toast } = useToast();
-    const { id } = React.use(params);
-    const supplier = useSupplier(id);
-    const products = useProductsBySupplier(id);
+    const searchParams = useSearchParams();
+    const id = searchParams.get('id');
+    const supplier = useSupplier(id || '');
+    const products = useProductsBySupplier(id || '');
     const suppliers = useSuppliers();
     const [isEditOpen, setIsEditOpen] = React.useState(false);
     const [isAddProductOpen, setIsAddProductOpen] = React.useState(false);

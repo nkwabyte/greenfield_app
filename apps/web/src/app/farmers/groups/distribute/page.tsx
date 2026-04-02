@@ -33,7 +33,7 @@ import { Calendar as CalendarIcon, PlusCircle, Trash2, ArrowLeft, Search } from 
 import { cn } from '@/lib/utils';
 import { format } from 'date-fns';
 import { useToast } from '@/hooks/use-toast';
-import { useParams, useRouter, useSearchParams } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { useLiveQuery } from '@/hooks/useLiveQuery';
 import { db } from '@/lib/db/schema';
 import { useProductOptions } from '@/hooks/useData';
@@ -83,10 +83,17 @@ const distributeSchema = z.object({
 export type DistributeFormValues = z.infer<typeof distributeSchema>;
 
 export default function DistributeProductsPage() {
-    const params = useParams();
+    return (
+        <React.Suspense fallback={<div>Loading...</div>}>
+            <DistributeProductsContent />
+        </React.Suspense>
+    );
+}
+
+function DistributeProductsContent() {
     const router = useRouter();
     const searchParams = useSearchParams();
-    const id = params.id as string;
+    const id = searchParams.get('id') || '';
     const preselectId = searchParams.get('preselect');
 
     const { toast } = useToast();
@@ -221,7 +228,7 @@ export default function DistributeProductsPage() {
                 title: 'Products Distributed',
                 description: `Successfully distributed products to ${targetFarmers.length} members.`,
             });
-            router.push(`/farmers/groups/${id}`);
+            router.push(`/farmers/groups/details?id=${id}`);
         } catch (error: any) {
             toast({
                 title: 'Distribution Failed',
@@ -275,7 +282,7 @@ export default function DistributeProductsPage() {
     return (
         <AppShell>
             <div className="mb-4">
-                <Link href={`/farmers/groups/${id}`} className="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+                <Link href={`/farmers/groups/details?id=${id}`} className="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
                     <ArrowLeft className="mr-2 h-4 w-4" />
                     Back to Group Details
                 </Link>
@@ -665,7 +672,7 @@ export default function DistributeProductsPage() {
                             </div>
 
                             <div className="flex justify-end gap-3 mt-8">
-                                <Button type="button" variant="outline" onClick={() => router.push(`/farmers/groups/${id}`)}>
+                                <Button type="button" variant="outline" onClick={() => router.push(`/farmers/groups/details?id=${id}`)}>
                                     Cancel
                                 </Button>
                                 <Button

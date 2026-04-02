@@ -116,7 +116,7 @@ export default function SuppliersPage() {
           pageCount={totalPages}
           pagination={pagination}
           onPaginationChange={setPagination}
-          onRowClick={(row) => router.push(`/suppliers/${row.id}`)}
+          onRowClick={(row) => router.push(`/suppliers/details?id=${row.id}`)}
         />
       </div>
 

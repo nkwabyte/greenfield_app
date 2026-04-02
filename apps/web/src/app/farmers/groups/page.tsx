@@ -244,7 +244,7 @@ export default function FarmerGroupsPage() {
                             {filteredGroups.map((group) => (
                                 <Link
                                     key={group.id}
-                                    href={`/farmers/groups/${group.id}`}
+                                    href={`/farmers/groups/details?id=${group.id}`}
                                     className="group block rounded-xl border bg-card p-5 shadow-sm hover:shadow-md hover:border-orange-500/50 transition-all duration-200"
                                 >
                                     <div className="flex items-center justify-between mb-4">

@@ -1,4 +1,4 @@
-'use server';
+
 
 import { createModel, aiModel } from '@/lib/gemini';
 import { z } from 'zod';

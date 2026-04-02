@@ -1,6 +1,25 @@
-import { app, BrowserWindow, nativeImage, globalShortcut, dialog, ipcMain, net } from 'electron';
+import { app, BrowserWindow, nativeImage, globalShortcut, dialog, ipcMain, net, protocol } from 'electron';
 import * as path from 'path';
 import { autoUpdater } from 'electron-updater';
+
+// Register 'app://' as a privileged scheme BEFORE the app is ready.
+// Next.js static export uses absolute asset paths like /_next/static/…  When
+// the app is loaded via file://, Chromium resolves those absolute paths
+// against the filesystem root (file:///_next/…) instead of the web/out
+// directory, causing ERR_FILE_NOT_FOUND for every CSS/JS chunk.
+// A custom 'app://' scheme lets the protocol handler redirect all requests —
+// including absolute-path ones — to the correct file inside web/out.
+protocol.registerSchemesAsPrivileged([
+    {
+        scheme: 'app',
+        privileges: {
+            secure: true,
+            standard: true,
+            supportFetchAPI: true,
+            stream: true,
+        },
+    },
+]);
 
 // Set the application name
 app.name = 'GreenField CRM';
@@ -90,10 +109,10 @@ async function createWindow() {
     // Supabase data sync is handled by the app's own ConnectivityService and
     // SyncQueue, which trigger automatically when a connection is (re-)established.
     const isDev = !app.isPackaged;
-    const localIndexPath = path.join(app.getAppPath(), 'web', 'out', 'index.html');
-    const localUrl = `file://${localIndexPath}`;
 
-    const url = isDev ? 'http://localhost:9002' : localUrl;
+    // In production, load via the custom 'app://' protocol so that all
+    // absolute /_next/ asset paths resolve correctly within web/out.
+    const url = isDev ? 'http://localhost:9002' : 'app://./index.html';
 
     console.log(`[Main] Environment: ${isDev ? 'Development' : 'Production'} (isPackaged: ${app.isPackaged})`);
     console.log(`[Main] Loading URL: ${url}`);
@@ -143,6 +162,19 @@ async function createWindow() {
 }
 
 app.whenReady().then(() => {
+    // Serve the bundled Next.js static export via 'app://'.
+    // The handler strips the leading '/' from the URL pathname and maps it to
+    // the corresponding file inside the packaged web/out directory.
+    // This ensures absolute paths like /_next/static/chunks/foo.js resolve to
+    // web/out/_next/static/chunks/foo.js rather than the filesystem root.
+    const webOutDir = path.join(app.getAppPath(), 'web', 'out');
+    protocol.handle('app', (request) => {
+        const { pathname } = new URL(request.url);
+        const relativePath = decodeURIComponent(pathname).replace(/^\//, '');
+        const filePath = path.join(webOutDir, relativePath || 'index.html');
+        return net.fetch(`file://${filePath}`);
+    });
+
     createWindow();
 
     // IPC Handlers for Settings page

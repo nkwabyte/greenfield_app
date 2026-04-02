@@ -177,7 +177,7 @@ export default function ProductsPage() {
           pageCount={totalPages}
           pagination={pagination}
           onPaginationChange={setPagination}
-          onRowClick={(row) => router.push(`/products/${row.id}`)}
+          onRowClick={(row) => router.push(`/products/details?id=${row.id}`)}
         />
       </div>
 

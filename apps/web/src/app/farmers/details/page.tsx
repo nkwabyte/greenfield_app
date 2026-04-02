@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { useFarmer } from '@/hooks/useData';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -18,11 +18,20 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { FarmerRequestsList } from '@/components/farmers/farmer-requests-list';
 import { FarmerPaymentsTab } from '@/components/farmers/farmer-payments-tab';
 
-export default function FarmerDetailsPage({ params }: { params: Promise<{ id: string }> }) {
+export default function FarmerDetailsPage() {
+    return (
+        <React.Suspense fallback={<div>Loading...</div>}>
+            <FarmerDetailsContent />
+        </React.Suspense>
+    );
+}
+
+function FarmerDetailsContent() {
     const router = useRouter();
     const { toast } = useToast();
-    const { id } = React.use(params);
-    const farmer = useFarmer(id);
+    const searchParams = useSearchParams();
+    const id = searchParams.get('id');
+    const farmer = useFarmer(id || '');
     const [isEditOpen, setIsEditOpen] = React.useState(false);
     const [isGroupDialogOpen, setIsGroupDialogOpen] = React.useState(false);
 

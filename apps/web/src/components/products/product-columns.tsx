@@ -136,7 +136,7 @@ export const getColumns = ({ onEdit, onDelete, suppliers, canEdit = true }: { on
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
             <DropdownMenuLabel>Actions</DropdownMenuLabel>
-            <DropdownMenuItem onClick={() => router.push(`/products/${product.id}`)}>
+            <DropdownMenuItem onClick={() => router.push(`/products/details?id=${product.id}`)}>
               <ExternalLink className="mr-2 h-4 w-4" />
               View Details
             </DropdownMenuItem>

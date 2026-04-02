@@ -116,7 +116,7 @@ export function RelatedFarmers({ farmer }: { farmer: Farmer }) {
                     pagination={pagination}
                     onPaginationChange={setPagination}
                     getRowId={(row) => row.id}
-                    onRowClick={(row) => router.push(`/farmers/${row.id}`)}
+                    onRowClick={(row) => router.push(`/farmers/details?id=${row.id}`)}
                 />
             </CardContent>
         </Card>
