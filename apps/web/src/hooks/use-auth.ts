@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import { AuthApiError } from '@supabase/supabase-js';
 import { supabase } from '@/lib/supabase/client';
 import { setUser, setSupabaseUser, setLoading, SerializableAuthUser } from '@/lib/store/slices/authSlice';
 
@@ -143,8 +144,21 @@ export const useAuth = () => {
           initialSessionHandled = true;
         }
       } catch (error) {
-        console.error('Error in useAuth init:', error);
-        dispatch(setUser(null));
+        // If the stored refresh token is stale or missing, Supabase throws AuthApiError
+        // on getSession(). Calling signOut() clears the bad token from storage so the
+        // user is taken to the login screen rather than being stuck in a broken loop.
+        if (
+          error instanceof AuthApiError &&
+          (error.message.toLowerCase().includes('refresh token') ||
+           error.message.toLowerCase().includes('invalid token'))
+        ) {
+          await supabase.auth.signOut().catch(() => {});
+          dispatch(setSupabaseUser(null));
+          dispatch(setUser(null));
+        } else {
+          console.error('Error in useAuth init:', error);
+          dispatch(setUser(null));
+        }
       } finally {
         dispatch(setLoading(false));
       }

@@ -169,9 +169,18 @@ export function useRegionCounts() {
             return counts;
         }
 
-        // Cache missing or empty: Fire off cache rebuild in the background so future loads are instant
-        const { updateFarmersCache } = await import('@/lib/db/services/farmers');
-        updateFarmersCache().catch(console.error);
+        // Cache missing or empty — trigger a rebuild, but OUTSIDE the liveQuery read-only
+        // transaction. Calling a write directly here throws "Readwrite transaction in liveQuery
+        // context" because Dexie wraps the entire querier in a readonly tx.
+        // setTimeout schedules the write as a separate macrotask with no shared tx context.
+        setTimeout(async () => {
+            try {
+                const { updateFarmersCache } = await import('@/lib/db/services/farmers');
+                await updateFarmersCache();
+            } catch (e) {
+                console.error('[useRegionCounts] cache rebuild failed:', e);
+            }
+        }, 0);
 
         return {};
     }, []);
