@@ -78,10 +78,9 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   }, [isAuthenticated, isLoading, router, isMounted]);
 
   const navItems = React.useMemo(() => {
-    if (!user) return [];
-    if (user.role === 'Admin') return allNavItems.filter(item => item.roles.includes('Admin'));
-    return allNavItems.filter(item => user.jobTitle ? item.roles.includes(user.jobTitle) : false);
-  }, [user?.role, user?.jobTitle]);
+    if (!user?.role) return [];
+    return allNavItems.filter(item => item.roles.includes(user.role));
+  }, [user?.role]);
 
   if (!isMounted || isLoading || !isAuthenticated || !user) {
     return (

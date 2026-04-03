@@ -8,15 +8,21 @@ import { useFarmersCount, useUniqueRegions, useFarmerGroups, useFieldAgentDistri
 import { useSelector } from 'react-redux';
 import type { RootState } from '@/lib/store/store';
 import { Card, CardContent } from '@/components/ui/card';
+import { NoDistrictAssigned } from '@/components/common/no-district-assigned';
 
 export default function FarmersHubPage() {
     const user = useSelector((state: RootState) => state.auth.user);
-    const isFieldAgent = user?.jobTitle === 'Field Agent';
+    const isFieldAgent = user?.role === 'Field Agent';
+    // undefined = still loading; [] = no districts; [...] = allowed districts
     const allowedDistricts = useFieldAgentDistricts();
 
     // District-scoped data for field agents
-    const districtFarmers = useFarmersByDistricts(isFieldAgent ? allowedDistricts : null);
-    const districtGroups = useFarmerGroupsByDistricts(isFieldAgent ? allowedDistricts : null);
+    const districtFarmers = useFarmersByDistricts(
+        isFieldAgent ? (allowedDistricts ?? null) : null
+    );
+    const districtGroups = useFarmerGroupsByDistricts(
+        isFieldAgent ? (allowedDistricts ?? null) : null
+    );
 
     // Admin-wide counts (always called — Rules of Hooks)
     const adminFarmersCount = useFarmersCount() ?? 0;
@@ -28,6 +34,19 @@ export default function FarmersHubPage() {
     const totalRegions = isFieldAgent
         ? new Set((districtFarmers ?? []).map(f => f.region).filter(Boolean)).size
         : (uniqueRegions ? uniqueRegions.length : 0);
+
+    // Gate: field agent with no districts assigned yet
+    if (isFieldAgent && allowedDistricts !== undefined && allowedDistricts.length === 0) {
+        return (
+            <AppShell>
+                <PageHeader
+                    title="Farmer Management Hub"
+                    description="Navigate to different views to manage farmers, groups, and regional operations."
+                />
+                <NoDistrictAssigned />
+            </AppShell>
+        );
+    }
 
     return (
         <AppShell>

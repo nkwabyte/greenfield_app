@@ -36,7 +36,7 @@ import {
     DialogClose,
 } from '@/components/ui/dialog';
 import { v4 as uuidv4 } from 'uuid';
-import { PlusCircle, Search, ChevronDown, ChevronRight, Receipt } from 'lucide-react';
+import { Search, ChevronDown, ChevronRight, Receipt, Lock } from 'lucide-react';
 import type { FarmerRequest, PaymentRecord } from '@/lib/types';
 
 const currencyFormatter = new Intl.NumberFormat('en-GH', {
@@ -170,7 +170,15 @@ export function GroupRequestsTable({ groupId }: GroupRequestsTableProps) {
     };
 
     // ─── Inline edit handlers ──────────────────────────────────────────
+    // Helper: returns true if a request has had any payment recorded.
+    const hasPayments = (req: FarmerRequest) =>
+        (req.payments?.length ?? 0) > 0;
+
     const handleUpdateQuantity = async (row: FlattenedRow, newQuantity: number) => {
+        if (hasPayments(row.request)) {
+            toast({ title: 'Locked', description: 'Cannot edit a request that already has payments recorded.', variant: 'destructive' });
+            return;
+        }
         try {
             const req = row.request;
             const updatedItems = [...req.items];
@@ -189,6 +197,10 @@ export function GroupRequestsTable({ groupId }: GroupRequestsTableProps) {
     };
 
     const handleUpdatePrice = async (row: FlattenedRow, newPrice: number) => {
+        if (hasPayments(row.request)) {
+            toast({ title: 'Locked', description: 'Cannot edit a request that already has payments recorded.', variant: 'destructive' });
+            return;
+        }
         try {
             const req = row.request;
             const updatedItems = [...req.items];
@@ -292,7 +304,14 @@ export function GroupRequestsTable({ groupId }: GroupRequestsTableProps) {
                                                 </Button>
                                             )}
                                         </TableCell>
-                                        <TableCell className="font-medium">{first.farmerName}</TableCell>
+                                        <TableCell className="font-medium">
+                                            <span className="flex items-center gap-1.5">
+                                                {first.farmerName}
+                                                {first.totalPaid > 0 && (
+                                                    <Lock className="h-3 w-3 text-muted-foreground shrink-0" title="Locked: payment has been recorded" />
+                                                )}
+                                            </span>
+                                        </TableCell>
                                         <TableCell>
                                             {first.productName}
                                             {hasMultipleItems && !isExpanded && (
@@ -307,6 +326,7 @@ export function GroupRequestsTable({ groupId }: GroupRequestsTableProps) {
                                                 onSave={(v) => handleUpdateQuantity(first, v)}
                                                 min={1}
                                                 step={1}
+                                                disabled={first.totalPaid > 0}
                                             />
                                         </TableCell>
                                         <TableCell className="text-right">
@@ -316,6 +336,7 @@ export function GroupRequestsTable({ groupId }: GroupRequestsTableProps) {
                                                 min={0}
                                                 step={0.01}
                                                 formatDisplay={(v) => currencyFormatter.format(v)}
+                                                disabled={first.totalPaid > 0}
                                             />
                                         </TableCell>
                                         <TableCell className="text-right text-sm">
@@ -359,6 +380,7 @@ export function GroupRequestsTable({ groupId }: GroupRequestsTableProps) {
                                                         onSave={(v) => handleUpdateQuantity(row, v)}
                                                         min={1}
                                                         step={1}
+                                                        disabled={row.totalPaid > 0}
                                                     />
                                                 </TableCell>
                                                 <TableCell className="text-right">
@@ -368,6 +390,7 @@ export function GroupRequestsTable({ groupId }: GroupRequestsTableProps) {
                                                         min={0}
                                                         step={0.01}
                                                         formatDisplay={(v) => currencyFormatter.format(v)}
+                                                        disabled={row.totalPaid > 0}
                                                     />
                                                 </TableCell>
                                                 <TableCell className="text-right text-sm">

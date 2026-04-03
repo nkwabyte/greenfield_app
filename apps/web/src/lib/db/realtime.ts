@@ -6,6 +6,8 @@ import { syncProductsFromSupabase } from './services/products';
 import { syncTransactionsFromSupabase } from './services/transactions';
 import { syncFarmerGroupsFromSupabase } from './services/farmer-groups';
 import { syncFarmerRequestsFromSupabase } from './services/farmer-requests';
+import { store } from '@/lib/store/store';
+import { setUser } from '@/lib/store/slices/authSlice';
 
 let realtimeChannel: any = null;
 
@@ -43,10 +45,35 @@ export function startRealtimeSync() {
                         case 'farmer_requests':
                             await syncFarmerRequestsFromSupabase();
                             break;
-                        case 'users':
-                            // Users are synced on app load/auth hook. 
-                            // Could add a hook here for forced sign-out if disabled.
+                        case 'users': {
+                            // If the current user's own profile row changed (e.g. role
+                            // promotion or account disabled), re-fetch it and push the
+                            // update into Redux immediately — no hard refresh needed.
+                            const currentUid = store.getState().auth.user?.uid;
+                            const changedUid = (payload.new as any)?.id ?? (payload.old as any)?.id;
+                            if (!currentUid || changedUid !== currentUid) break;
+
+                            const { data: profile } = await supabase
+                                .from('users')
+                                .select('role, status, name, phone, job_title, avatar_url, gemini_api_key, preferred_model')
+                                .eq('id', currentUid)
+                                .single();
+
+                            if (profile) {
+                                store.dispatch(setUser({
+                                    ...store.getState().auth.user!,
+                                    role: profile.role,
+                                    status: profile.status,
+                                    name: profile.name,
+                                    phone: profile.phone ?? undefined,
+                                    jobTitle: profile.job_title ?? undefined,
+                                    avatarUrl: profile.avatar_url ?? undefined,
+                                    geminiApiKey: profile.gemini_api_key ?? undefined,
+                                    preferredModel: profile.preferred_model ?? undefined,
+                                }));
+                            }
                             break;
+                        }
                         default:
                             break;
                     }

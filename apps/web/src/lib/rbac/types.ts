@@ -1,4 +1,6 @@
-export type Role = 'Admin' | 'Employee';
+import type { JobTitle } from '@/lib/types';
+
+export type Role = 'Admin' | JobTitle;
 
 export type Resource =
     | 'farmer'

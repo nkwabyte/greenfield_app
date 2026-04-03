@@ -9,7 +9,7 @@ import { Badge } from '@/components/ui/badge';
 import { DataTable } from '@/components/data-table';
 import { ColumnDef } from '@tanstack/react-table';
 import { FarmerRequest, Farmer } from '@/lib/types';
-import { PackageOpen, Calendar, Plus, Eye, Trash2 } from 'lucide-react';
+import { PackageOpen, Calendar, Plus, Eye, Trash2, Lock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { RequestDetailsDialog } from './request-details-dialog';
 import { ConfirmDialog } from '@/components/ui/confirm-dialog';
@@ -48,6 +48,12 @@ export function FarmerRequestsList({ farmerId, farmerGroupId, onRequireGroup }: 
 
     const handleDeleteRequest = async () => {
         if (!requestToDelete) return;
+        const totalPaid = requestToDelete.payments?.reduce((s, p) => s + p.amount, 0) ?? 0;
+        if (totalPaid > 0) {
+            toast({ title: 'Cannot delete', description: 'This request has payments recorded and cannot be deleted.', variant: 'destructive' });
+            setRequestToDelete(null);
+            return;
+        }
         try {
             await deleteFarmerRequest(requestToDelete.id);
             toast({ title: 'Request deleted successfully' });
@@ -115,23 +121,40 @@ export function FarmerRequestsList({ farmerId, farmerGroupId, onRequireGroup }: 
         },
         {
             id: 'actions',
-            cell: ({ row }) => (
-                <div className="flex items-center gap-2 justify-end">
-                    <Button variant="ghost" size="sm" onClick={() => setSelectedRequest(row.original)}>
-                        <Eye className="w-4 h-4 mr-2" />
-                        View / Pay
-                    </Button>
-                    <Button
-                        variant="ghost"
-                        size="icon"
-                        className="text-destructive hover:bg-destructive/10 h-8 w-8"
-                        onClick={() => setRequestToDelete(row.original)}
-                        title="Delete Request"
-                    >
-                        <Trash2 className="w-4 h-4" />
-                    </Button>
-                </div>
-            ),
+            cell: ({ row }) => {
+                const req = row.original;
+                const totalPaid = req.payments?.reduce((s, p) => s + p.amount, 0) ?? 0;
+                const isLocked = totalPaid > 0;
+                return (
+                    <div className="flex items-center gap-2 justify-end">
+                        <Button variant="ghost" size="sm" onClick={() => setSelectedRequest(req)}>
+                            <Eye className="w-4 h-4 mr-2" />
+                            View / Pay
+                        </Button>
+                        {isLocked ? (
+                            <Button
+                                variant="ghost"
+                                size="icon"
+                                className="text-muted-foreground h-8 w-8 cursor-default"
+                                disabled
+                                title="Locked: payment has been recorded on this request"
+                            >
+                                <Lock className="w-4 h-4" />
+                            </Button>
+                        ) : (
+                            <Button
+                                variant="ghost"
+                                size="icon"
+                                className="text-destructive hover:bg-destructive/10 h-8 w-8"
+                                onClick={() => setRequestToDelete(req)}
+                                title="Delete Request"
+                            >
+                                <Trash2 className="w-4 h-4" />
+                            </Button>
+                        )}
+                    </div>
+                );
+            },
         }
     ];
 

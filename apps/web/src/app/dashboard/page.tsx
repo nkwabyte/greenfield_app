@@ -41,6 +41,7 @@ import {
 } from "@/components/ui/select"
 
 import { useRegionCounts, useFarmSizeStats, useAgeStats, useRegionGenderStats, useAllTimeRequestFinancials, useFarmerRequestsCount, useFieldAgentDistricts, useFarmersByDistricts } from '@/hooks/useData';
+import { NoDistrictAssigned } from '@/components/common/no-district-assigned';
 import { db } from '@/lib/db/schema';
 import { useLiveQuery } from '@/hooks/useLiveQuery';
 import { useSelector } from 'react-redux';
@@ -50,7 +51,7 @@ import Link from 'next/link';
 export default function DashboardPage() {
   const user = useSelector((state: RootState) => state.auth.user);
   const isAdmin = user?.role === 'Admin';
-  const isFieldAgent = user?.jobTitle === 'Field Agent';
+  const isFieldAgent = user?.role === 'Field Agent';
 
   // Default range: Last 30 days
   const [dateRange, setDateRange] = React.useState<DateRange | undefined>({
@@ -60,10 +61,14 @@ export default function DashboardPage() {
 
   const [selectedRegion, setSelectedRegion] = React.useState<string>("all");
 
-  // District restriction for field agents
+  // District restriction for field agents.
+  // undefined = still loading from IndexedDB; [] = no districts assigned; [...] = has districts.
   const allowedDistricts = useFieldAgentDistricts();
-  // Fetch live farmers for field agents; null = skip (admin uses cache)
-  const districtFarmers = useFarmersByDistricts(isFieldAgent ? allowedDistricts : null);
+  // Fetch live farmers for field agents; null = skip (admin uses cache).
+  // When allowedDistricts is undefined (loading), pass null so we wait for the spinner.
+  const districtFarmers = useFarmersByDistricts(
+    isFieldAgent ? (allowedDistricts ?? null) : null
+  );
 
   // Cached stats hooks (always called — used for admins)
   const cachedRegionCounts = useRegionCounts();
@@ -85,7 +90,7 @@ export default function DashboardPage() {
 
   // Compute stats from district farmers for field agents
   const fieldAgentStats = React.useMemo(() => {
-    if (!isFieldAgent || !districtFarmers) return null;
+    if (!isFieldAgent || !districtFarmers || districtFarmers.length === 0) return null;
     const byRegion: Record<string, number> = {};
     const byGender: Record<string, number> = {};
     const byRegionGender: Record<string, Record<string, number>> = {};
@@ -273,6 +278,17 @@ export default function DashboardPage() {
 
   // Show loading state while data loads
   const isDataLoading = isFieldAgent ? districtFarmers === undefined : adminTotalFarmers === undefined;
+
+  // Field agent with no districts: show the gate (only after loading resolves).
+  if (isFieldAgent && allowedDistricts !== undefined && allowedDistricts.length === 0) {
+    return (
+      <AppShell>
+        <PageHeader title="Dashboard" description="An overview of your agricultural network." />
+        <NoDistrictAssigned />
+      </AppShell>
+    );
+  }
+
   if (isDataLoading) {
     return (
       <AppShell>

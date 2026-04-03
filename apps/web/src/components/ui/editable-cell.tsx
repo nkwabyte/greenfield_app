@@ -20,6 +20,7 @@ interface EditableNumberCellProps {
     step?: number;
     prefix?: string;
     formatDisplay?: (value: number) => string;
+    disabled?: boolean;
 }
 
 export function EditableNumberCell({
@@ -30,6 +31,7 @@ export function EditableNumberCell({
     step = 1,
     prefix = '',
     formatDisplay,
+    disabled = false,
 }: EditableNumberCellProps) {
     const [isEditing, setIsEditing] = React.useState(false);
     const [editValue, setEditValue] = React.useState(value.toString());
@@ -83,14 +85,19 @@ export function EditableNumberCell({
         <button
             type="button"
             onClick={() => {
+                if (disabled) return;
                 setEditValue(value.toString());
                 setIsEditing(true);
             }}
+            disabled={disabled}
             className={cn(
-                'cursor-pointer rounded px-2 py-1 text-sm hover:bg-muted/50 transition-colors border border-transparent hover:border-border min-w-15 text-left',
+                'rounded px-2 py-1 text-sm border border-transparent min-w-15 text-left',
+                disabled
+                    ? 'cursor-default text-muted-foreground'
+                    : 'cursor-pointer hover:bg-muted/50 transition-colors hover:border-border',
                 className
             )}
-            title="Click to edit"
+            title={disabled ? 'Locked: payment has been recorded' : 'Click to edit'}
         >
             {displayValue}
         </button>

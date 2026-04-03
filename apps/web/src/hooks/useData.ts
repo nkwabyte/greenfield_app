@@ -746,28 +746,35 @@ export function useArchivedFarmerGroups() {
  * meaning no district restriction is applied.
  * Returns the district list from their employee record when they are a Field Agent.
  */
-export function useFieldAgentDistricts(): string[] {
+/**
+ * Returns the assigned districts for the currently logged-in Field Agent.
+ * - `undefined`  — query still in-flight (first render before IndexedDB resolves)
+ * - `[]`         — confirmed: field agent has no assigned districts yet
+ * - `[...]`      — confirmed: field agent's allowed districts
+ * - For non-Field-Agent roles the query resolves immediately to `[]`.
+ */
+export function useFieldAgentDistricts(): string[] | undefined {
     const user = useSelector((state: RootState) => state.auth.user);
-    const isFieldAgent = user?.jobTitle === 'Field Agent';
+    const isFieldAgent = user?.role === 'Field Agent';
 
-    const districts = useLiveQuery(async () => {
-        if (!isFieldAgent || !user?.uid) return [];
+    return useLiveQuery(async () => {
+        if (!isFieldAgent || !user?.uid) return [] as string[];
         const employee = await db.employees.get(user.uid);
         return employee?.assignedDistricts ?? [];
     }, [user?.uid, isFieldAgent]);
-
-    return districts ?? [];
+    // undefined until the first DB query resolves
 }
 
 /**
  * Live farmers array filtered by districts.
- * Pass null to skip (Admin users use cached stats instead).
+ * Pass null to skip (Admin/manager users use cached stats instead).
+ * Pass [] to indicate a field agent with no assigned districts — returns [].
  */
 export function useFarmersByDistricts(districts: string[] | null) {
     return useLiveQuery(
         async () => {
             if (districts === null) return null;
-            if (districts.length === 0) return db.farmers.filter(f => !f.isArchived && !f.deleted).toArray();
+            if (districts.length === 0) return [] as import('@/lib/types').Farmer[];
             return db.farmers
                 .filter(f => !f.isArchived && !f.deleted && !!(f.district && districts.includes(f.district)))
                 .toArray();
@@ -777,13 +784,16 @@ export function useFarmersByDistricts(districts: string[] | null) {
 }
 
 /**
- * Groups filtered by assigned districts (field agents) or all groups (admin).
+ * Groups filtered by assigned districts (field agents) or all groups (null = admin/manager).
+ * Pass [] to indicate a field agent with no assigned districts — returns [].
  */
 export function useFarmerGroupsByDistricts(districts: string[] | null) {
     return useLiveQuery(
         async () => {
-            if (districts === null || districts.length === 0)
+            if (districts === null)
                 return db.farmerGroups.filter(g => !g.isArchived && !g.deleted).toArray();
+            if (districts.length === 0)
+                return [] as import('@/lib/types').FarmerGroup[];
             return db.farmerGroups
                 .filter(g => !g.isArchived && !g.deleted && !!(g.district && districts.includes(g.district)))
                 .toArray();

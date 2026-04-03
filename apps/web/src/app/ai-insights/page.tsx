@@ -13,7 +13,7 @@ import {
 import { useRequireRole } from '@/hooks/use-role-guard';
 
 export default function AiInsightsPage() {
-    const { allowed } = useRequireRole(['Admin', 'Employee'], { excludeJobTitles: ['Field Agent'] });
+    const { allowed } = useRequireRole(['Admin', 'General Manager', 'Operational Manager', 'Project Coordinator', 'Finance Manager', 'Administrative Member']);
 
     const farmers = useFarmers() ?? [];
     const employees = useEmployees() ?? [];

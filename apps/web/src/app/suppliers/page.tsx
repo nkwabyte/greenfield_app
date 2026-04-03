@@ -18,7 +18,7 @@ import { useRequireRole } from '@/hooks/use-role-guard';
 
 export default function SuppliersPage() {
   const router = useRouter();
-  const { allowed } = useRequireRole(['Admin', 'Employee'], { excludeJobTitles: ['Field Agent'] });
+  const { allowed } = useRequireRole(['Admin', 'General Manager', 'Operational Manager', 'Project Coordinator', 'Finance Manager', 'Administrative Member']);
   const user = useSelector((state: RootState) => state.auth.user);
   if (!allowed) return null;
   const canEdit = user?.role !== 'Field Agent';

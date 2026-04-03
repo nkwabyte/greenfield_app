@@ -67,9 +67,9 @@ export async function POST(request: NextRequest) {
                 id: uid,
                 name: displayName,
                 email,
-                role: 'Employee',
+                role: role,   // job title (e.g. 'Field Agent') — must match users_role_check
                 status: 'Active',
-                job_title: role, // e.g. 'Field Agent', 'Manager', 'Accountant', 'Support'
+                job_title: role,
             }, { onConflict: 'id' });
 
         if (usersError) {

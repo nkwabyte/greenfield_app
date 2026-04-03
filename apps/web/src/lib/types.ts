@@ -10,7 +10,7 @@ export type User = {
   uid: string;
   name: string;
   email: string;
-  role: 'Admin' | 'Employee';
+  role: 'Admin' | JobTitle;
   status: 'Active' | 'Pending' | 'Disabled';
   phone?: string;
   jobTitle?: JobTitle;
