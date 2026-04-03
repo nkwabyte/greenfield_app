@@ -415,9 +415,20 @@ export async function updateFarmersBatch(ids: string[], updates: Partial<Farmer>
  * Sync farmers from Supabase to local database
  * This is used for initial load or manual refresh
  */
-export async function syncFarmersFromSupabase(): Promise<number> {
+/**
+ * Syncs farmers from Supabase into IndexedDB.
+ * Pass `allowedDistricts` for field agents to restrict the pull to only their
+ * assigned districts — keeps the local DB lean and queries fast.
+ */
+export async function syncFarmersFromSupabase(allowedDistricts?: string[]): Promise<number> {
     try {
-        const lastSync = localStorage.getItem('lastSync_farmers');
+        // Use a district-scoped key so a field agent's lastSync doesn't collide
+        // with an admin's lastSync on the same device.
+        const syncKey = allowedDistricts && allowedDistricts.length > 0
+            ? `lastSync_farmers_${allowedDistricts.slice().sort().join('|')}`
+            : 'lastSync_farmers';
+
+        const lastSync = localStorage.getItem(syncKey);
         const lastSyncTime = lastSync ? parseInt(lastSync) : undefined;
 
         // ✅ Capture the exact time BEFORE the query to avoid race conditions:
@@ -431,7 +442,7 @@ export async function syncFarmersFromSupabase(): Promise<number> {
         let totalSynced = 0;
 
         while (hasMore) {
-            const result = await getSupabaseFarmersPaginated(lastSyncTime, offset, chunkSize);
+            const result = await getSupabaseFarmersPaginated(lastSyncTime, offset, chunkSize, allowedDistricts);
             const supabaseFarmers = result.farmers;
             hasMore = result.hasMore;
 
@@ -465,8 +476,8 @@ export async function syncFarmersFromSupabase(): Promise<number> {
             offset += chunkSize;
         }
 
-        // ✅ Save the start time (not completion time) to localStorage
-        localStorage.setItem('lastSync_farmers', syncStartTime.toString());
+        // ✅ Save the start time (not completion time) to the scoped localStorage key
+        localStorage.setItem(syncKey, syncStartTime.toString());
 
         return totalSynced;
     } catch (error) {
@@ -483,11 +494,17 @@ export async function getFarmersCount(): Promise<number> {
 }
 
 /**
- * Helper to update the aggregation cache
- * Should be called whenever a farmer is added, updated, or deleted natively 
+ * Helper to update the aggregation cache.
+ * Should be called whenever a farmer is added, updated, or deleted natively.
+ * Pass `allowedDistricts` for field agents to scope the cache to only their
+ * districts — the cache will then reflect only their slice of the data.
  */
-export async function updateFarmersCache(): Promise<void> {
-    const farmers = await db.farmers.toArray();
+export async function updateFarmersCache(allowedDistricts?: string[]): Promise<void> {
+    const allFarmers = await db.farmers.toArray();
+    // For field agents: only aggregate farmers in their assigned districts
+    const farmers = (allowedDistricts && allowedDistricts.length > 0)
+        ? allFarmers.filter(f => f.district && allowedDistricts.includes(f.district))
+        : allFarmers;
 
     const byRegion: Record<string, number> = {};
     const byGender: Record<string, number> = {};

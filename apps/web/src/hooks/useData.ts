@@ -741,6 +741,86 @@ export function useAllTimeRequestFinancials() {
     }, []);
 }
 
+/**
+ * Like useAllTimeRequestFinancials but scoped to farmers in specific districts.
+ * Pass null to get all-time totals (admin behaviour).
+ * Pass [] to get zeros (field agent with no districts).
+ * Pass [...districts] to filter by those districts.
+ */
+export function useDistrictScopedRequestFinancials(districts: string[] | null) {
+    return useLiveQuery(async () => {
+        if (districts !== null && districts.length === 0) {
+            return { totalOwed: 0, totalPaid: 0, outstanding: 0 };
+        }
+
+        let farmerIds: Set<string> | null = null;
+        if (districts !== null) {
+            const farmers = await db.farmers
+                .filter(f => !f.deleted && !!(f.district && districts.includes(f.district)))
+                .toArray();
+            farmerIds = new Set(farmers.map(f => f.id));
+        }
+
+        const allRequests = await db.farmerRequests.toArray();
+        let totalOwed = 0;
+        let totalPaid = 0;
+
+        for (const req of allRequests) {
+            if (req.deleted) continue;
+            if (farmerIds !== null && !farmerIds.has(req.farmerId)) continue;
+            totalOwed += req.grandTotal || 0;
+            if (req.payments) {
+                for (const p of req.payments) {
+                    totalPaid += p.amount || 0;
+                }
+            }
+        }
+
+        return { totalOwed, totalPaid, outstanding: totalOwed - totalPaid };
+    }, [districts === null ? 'null' : districts.join(',')]);
+}
+
+/**
+ * Like useFarmerRequestsCount but scoped to farmers in specific districts.
+ * Pass null for all requests (admin). Pass [] for zero (field agent with no districts).
+ */
+export function useDistrictScopedRequestCount(districts: string[] | null) {
+    return useLiveQuery(async () => {
+        if (districts !== null && districts.length === 0) return 0;
+
+        if (districts === null) return getFarmerRequestsCount();
+
+        const farmers = await db.farmers
+            .filter(f => !f.deleted && !!(f.district && districts.includes(f.district)))
+            .toArray();
+        const farmerIds = new Set(farmers.map(f => f.id));
+        return db.farmerRequests.filter(r => !r.deleted && farmerIds.has(r.farmerId)).count();
+    }, [districts === null ? 'null' : districts.join(',')]);
+}
+
+/**
+ * Region counts scoped to farmers in specific districts.
+ * Pass null for all regions (admin uses cache). Pass [] for empty (no districts).
+ * Returns a Record<regionName, farmerCount> for only regions that contain the allowed districts.
+ */
+export function useDistrictScopedRegionCounts(districts: string[] | null) {
+    return useLiveQuery(async () => {
+        if (districts !== null && districts.length === 0) return {} as Record<string, number>;
+        if (districts === null) return null; // caller should use the cached useRegionCounts instead
+
+        const farmers = await db.farmers
+            .filter(f => !f.isArchived && !f.deleted && !!(f.district && districts.includes(f.district)))
+            .toArray();
+
+        const counts: Record<string, number> = {};
+        for (const f of farmers) {
+            const region = f.region || 'Unknown';
+            counts[region] = (counts[region] || 0) + 1;
+        }
+        return counts;
+    }, [districts === null ? 'null' : districts.join(',')]);
+}
+
 export function useFarmerRequestsCount() {
     return useLiveQuery(() => getFarmerRequestsCount(), []);
 }

@@ -8,25 +8,78 @@ import { GHANA_REGIONS } from '@/lib/utils/region-normalizer';
 import { Users, MapPin, ArrowLeft, HelpCircle, Search } from 'lucide-react';
 import Link from 'next/link';
 import { Input } from '@/components/ui/input';
-import { useRegionCounts } from '@/hooks/useData';
+import { useRegionCounts, useFieldAgentDistricts, useDistrictScopedRegionCounts } from '@/hooks/useData';
+import { useSelector } from 'react-redux';
+import type { RootState } from '@/lib/store/store';
+import { GHANA_REGIONS_AND_DISTRICTS } from '@/lib/data/ghana-regions-districts';
+import { NoDistrictAssigned } from '@/components/common/no-district-assigned';
 
 export default function RegionsHubPage() {
-    const regionCounts = useRegionCounts();
+    const user = useSelector((state: RootState) => state.auth.user);
+    const isFieldAgent = user?.role === 'Field Agent';
+    const allowedDistricts = useFieldAgentDistricts();
+
+    // Admin uses cached counts; field agents compute from their district-scoped farmers.
+    const adminRegionCounts = useRegionCounts();
+    const fieldAgentRegionCounts = useDistrictScopedRegionCounts(
+        isFieldAgent ? (allowedDistricts ?? null) : null
+    );
+    const regionCounts = isFieldAgent ? fieldAgentRegionCounts : adminRegionCounts;
+
     const [searchQuery, setSearchQuery] = useState('');
 
-    // Force rebuild cache on mount to overwrite unnormalized cached region strings 
+    // Force rebuild cache on mount to overwrite unnormalized cached region strings
     React.useEffect(() => {
-        import('@/lib/db/services/farmers').then(({ updateFarmersCache }) => {
-            updateFarmersCache().catch(console.error);
-        });
-    }, []);
+        if (!isFieldAgent) {
+            import('@/lib/db/services/farmers').then(({ updateFarmersCache }) => {
+                updateFarmersCache().catch(console.error);
+            });
+        }
+    }, [isFieldAgent]);
 
-    const filteredRegions = GHANA_REGIONS.filter(region =>
+    // For field agents: only show regions that contain at least one of their assigned districts.
+    const visibleRegions = React.useMemo(() => {
+        if (!isFieldAgent || !allowedDistricts || allowedDistricts.length === 0) {
+            return GHANA_REGIONS;
+        }
+        // Build a set of regions that contain the agent's districts.
+        const agentRegions = new Set<string>();
+        for (const [region, districts] of Object.entries(GHANA_REGIONS_AND_DISTRICTS)) {
+            if ((districts as string[]).some(d => allowedDistricts.includes(d))) {
+                agentRegions.add(region);
+            }
+        }
+        // Use GHANA_REGIONS_AND_DISTRICTS keys (short form e.g. "Ashanti") NOT
+        // GHANA_REGIONS (which uses "Ashanti Region" format) — the set values
+        // come from GHANA_REGIONS_AND_DISTRICTS so they must match the same keys.
+        return Object.keys(GHANA_REGIONS_AND_DISTRICTS).filter(r => agentRegions.has(r));
+    }, [isFieldAgent, allowedDistricts]);
+
+    const filteredRegions = visibleRegions.filter(region =>
         region.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
-    const showUnknown = 'unknown / unspecified'.includes(searchQuery.toLowerCase()) ||
-        'n/a'.includes(searchQuery.toLowerCase());
+    // Only show "Unknown" card to admins (field agents have no stray entries in their districts)
+    const showUnknown = !isFieldAgent && (
+        'unknown / unspecified'.includes(searchQuery.toLowerCase()) ||
+        'n/a'.includes(searchQuery.toLowerCase())
+    );
+
+    // Gate: field agent with no districts
+    if (isFieldAgent && allowedDistricts !== undefined && allowedDistricts.length === 0) {
+        return (
+            <AppShell>
+                <div className="mb-4">
+                    <Link href="/farmers" className="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+                        <ArrowLeft className="mr-2 h-4 w-4" />
+                        Back to Farmer Hub
+                    </Link>
+                </div>
+                <PageHeader title="Regions" description="View your agricultural network by region." />
+                <NoDistrictAssigned />
+            </AppShell>
+        );
+    }
 
     return (
         <AppShell>

@@ -5,7 +5,6 @@ import { useLiveQuery } from '@/hooks/useLiveQuery';
 import { db } from '@/lib/db/schema';
 import { useRouter } from 'next/navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import { DataTable } from '@/components/data-table';
 import { ColumnDef } from '@tanstack/react-table';
 import { FarmerRequest, Farmer } from '@/lib/types';
@@ -13,8 +12,17 @@ import { PackageOpen, Calendar, Plus, Eye, Trash2, Lock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { RequestDetailsDialog } from './request-details-dialog';
 import { ConfirmDialog } from '@/components/ui/confirm-dialog';
-import { deleteFarmerRequest } from '@/lib/db/services/farmer-requests';
+import { addFarmerRequest, deleteFarmerRequest, updateFarmerRequest } from '@/lib/db/services/farmer-requests';
 import { useToast } from '@/hooks/use-toast';
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from '@/components/ui/select';
+import { AddEditRequestDialog, type RequestFormValues } from '@/components/requests/add-edit-request-dialog';
+import { v4 as uuidv4 } from 'uuid';
 
 interface FarmerRequestsListProps {
     farmerId: string;
@@ -35,15 +43,50 @@ export function FarmerRequestsList({ farmerId, farmerGroupId, onRequireGroup }: 
 
     const [selectedRequest, setSelectedRequest] = React.useState<FarmerRequest | null>(null);
     const [requestToDelete, setRequestToDelete] = React.useState<FarmerRequest | null>(null);
+    const [isAddRequestOpen, setIsAddRequestOpen] = React.useState(false);
     const { toast } = useToast();
     const router = useRouter();
 
     const handleAddRequestClick = () => {
         if (!farmerGroupId) {
-            onRequireGroup?.();
+            // Farmer has no group — open the direct request dialog instead of forcing group assignment
+            setIsAddRequestOpen(true);
             return;
         }
         router.push(`/farmers/groups/distribute?id=${farmerGroupId}&preselect=${farmerId}`);
+    };
+
+    const handleSaveDirectRequest = async (data: RequestFormValues) => {
+        try {
+            const id = uuidv4();
+            await addFarmerRequest({
+                farmerId,
+                groupId: data.groupId || undefined,
+                seasonYear: data.seasonYear,
+                items: data.items,
+                grandTotal: data.grandTotal,
+                status: data.status,
+                requestDate: data.requestDate.toISOString(),
+                paymentPlan: data.paymentPlan,
+                depositPaid: data.depositPaid,
+                otherPaymentPlan: data.otherPaymentPlan,
+                payments: [],
+            }, id);
+            toast({ title: 'Request added successfully' });
+            setIsAddRequestOpen(false);
+            router.push(`/farmers/details?id=${farmerId}&tab=payments`);
+        } catch (e: any) {
+            toast({ title: 'Error adding request', description: e.message, variant: 'destructive' });
+        }
+    };
+
+    const handleUpdateStatus = async (requestId: string, newStatus: FarmerRequest['status']) => {
+        try {
+            await updateFarmerRequest(requestId, { status: newStatus });
+            toast({ title: `Status updated to ${newStatus}` });
+        } catch (e: any) {
+            toast({ title: 'Error updating status', description: e.message, variant: 'destructive' });
+        }
     };
 
     const handleDeleteRequest = async () => {
@@ -106,18 +149,13 @@ export function FarmerRequestsList({ farmerId, farmerGroupId, onRequireGroup }: 
         {
             accessorKey: 'status',
             header: 'Status',
-            cell: ({ row }) => {
-                const status = row.original.status;
-                return (
-                    <Badge variant={
-                        status === 'Approved' ? 'default' :
-                            status === 'Delivered' ? 'default' :
-                                status === 'Rejected' ? 'destructive' : 'secondary'
-                    }>
-                        {status}
-                    </Badge>
-                );
-            }
+            cell: ({ row }) => (
+                <StatusCell
+                    requestId={row.original.id}
+                    currentStatus={row.original.status}
+                    onUpdate={handleUpdateStatus}
+                />
+            ),
         },
         {
             id: 'actions',
@@ -196,6 +234,15 @@ export function FarmerRequestsList({ farmerId, farmerGroupId, onRequireGroup }: 
                 farmer={farmer}
             />
 
+            {/* Direct add-request dialog for farmers who don't belong to a group */}
+            <AddEditRequestDialog
+                open={isAddRequestOpen}
+                onOpenChange={setIsAddRequestOpen}
+                request={null}
+                onSave={handleSaveDirectRequest}
+                prefillFarmerId={farmerId}
+            />
+
             <ConfirmDialog
                 open={!!requestToDelete}
                 onOpenChange={(open) => !open && setRequestToDelete(null)}
@@ -204,5 +251,52 @@ export function FarmerRequestsList({ farmerId, farmerGroupId, onRequireGroup }: 
                 onConfirm={handleDeleteRequest}
             />
         </div>
+    );
+}
+
+// ─── Status Cell ────────────────────────────────────────────────────────────────
+const STATUS_OPTIONS: FarmerRequest['status'][] = ['Pending', 'Approved', 'Rejected', 'Delivered'];
+
+const STATUS_COLORS: Record<string, string> = {
+    Delivered: 'text-green-600 dark:text-green-400',
+    Approved:  'text-blue-600  dark:text-blue-400',
+    Rejected:  'text-red-600   dark:text-red-400',
+    Pending:   'text-orange-500 dark:text-orange-400',
+};
+
+function StatusCell({
+    requestId,
+    currentStatus,
+    onUpdate,
+}: {
+    requestId: string;
+    currentStatus: string;
+    onUpdate: (id: string, status: FarmerRequest['status']) => Promise<void>;
+}) {
+    const [loading, setLoading] = React.useState(false);
+
+    const handleChange = async (val: string) => {
+        if (val === currentStatus) return;
+        setLoading(true);
+        try {
+            await onUpdate(requestId, val as FarmerRequest['status']);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    return (
+        <Select value={currentStatus} onValueChange={handleChange} disabled={loading}>
+            <SelectTrigger className={`h-7 w-28 text-xs border-dashed ${STATUS_COLORS[currentStatus] ?? ''}`}>
+                <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+                {STATUS_OPTIONS.map(s => (
+                    <SelectItem key={s} value={s} className={STATUS_COLORS[s]}>
+                        {s}
+                    </SelectItem>
+                ))}
+            </SelectContent>
+        </Select>
     );
 }

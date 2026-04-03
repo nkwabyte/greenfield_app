@@ -1,5 +1,6 @@
 'use client';
 
+import * as React from 'react';
 import { AppShell } from '@/components/app-shell';
 import { PageHeader } from '@/components/page-header';
 import Link from 'next/link';
@@ -8,6 +9,7 @@ import { useFarmersCount, useUniqueRegions, useFarmerGroups, useFieldAgentDistri
 import { useSelector } from 'react-redux';
 import type { RootState } from '@/lib/store/store';
 import { Card, CardContent } from '@/components/ui/card';
+import { GHANA_REGIONS_AND_DISTRICTS } from '@/lib/data/ghana-regions-districts';
 import { NoDistrictAssigned } from '@/components/common/no-district-assigned';
 
 export default function FarmersHubPage() {
@@ -31,8 +33,21 @@ export default function FarmersHubPage() {
 
     const totalFarmers = isFieldAgent ? (districtFarmers?.length ?? 0) : adminFarmersCount;
     const totalGroups = isFieldAgent ? (districtGroups?.length ?? 0) : (adminGroups?.length ?? 0);
+    // For field agents: count distinct regions that contain their assigned districts
+    // (not from farmer records — avoids showing 0 when no farmers are registered yet).
+    const agentRegionCount = React.useMemo(() => {
+        if (!allowedDistricts || allowedDistricts.length === 0) return 0;
+        const regions = new Set<string>();
+        for (const [region, districts] of Object.entries(GHANA_REGIONS_AND_DISTRICTS)) {
+            if ((districts as string[]).some(d => allowedDistricts.includes(d))) {
+                regions.add(region);
+            }
+        }
+        return regions.size;
+    }, [allowedDistricts]);
+
     const totalRegions = isFieldAgent
-        ? new Set((districtFarmers ?? []).map(f => f.region).filter(Boolean)).size
+        ? agentRegionCount
         : (uniqueRegions ? uniqueRegions.length : 0);
 
     // Gate: field agent with no districts assigned yet
