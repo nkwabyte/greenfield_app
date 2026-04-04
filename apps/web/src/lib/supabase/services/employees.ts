@@ -50,6 +50,21 @@ export async function getSupabaseEmployeesPaginated(
     };
 }
 
+/**
+ * Lightweight query — fetches only the assigned_districts for a single employee.
+ * Used at sync-start to scope the farmer pull to the field agent's districts
+ * without waiting for a full employees sync to complete.
+ */
+export async function fetchEmployeeAssignedDistricts(uid: string): Promise<string[]> {
+    const { data, error } = await supabase
+        .from('employees')
+        .select('assigned_districts')
+        .eq('id', uid)
+        .single();
+    if (error) return [];
+    return (data?.assigned_districts as string[]) ?? [];
+}
+
 export async function addSupabaseEmployee(employeeData: EmployeeFormValues, id: string) {
     const { startDate, assignedDistricts: rawDistricts, ...rest } = employeeData as any;
     const assigned_districts = Array.isArray(rawDistricts)

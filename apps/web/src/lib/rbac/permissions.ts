@@ -26,7 +26,7 @@ export function canCreate(user: User | null, resource: Resource): boolean {
         case 'supplier':
         case 'transaction':
             // Both Admins and Employees can create operational data
-            return hasRole(user, 'Admin') || hasRole(user, 'Employee');
+            return hasRole(user, 'Admin') || user.role !== 'Admin';
 
         default:
             return false;
@@ -41,7 +41,7 @@ export function canRead(user: User | null, resource: Resource): boolean {
 
     // All authenticated users with a valid role can read all resources
     // based on the current requirements.
-    return hasRole(user, 'Admin') || hasRole(user, 'Employee');
+    return !!user;
 }
 
 /**
@@ -54,9 +54,9 @@ export function canUpdate(user: User | null, resource: Resource, resourceId?: st
     switch (resource) {
         case 'employee':
             // Admin can update any employee.
-            // Employee can only update their own profile.
+            // Any other role can only update their own profile.
             if (hasRole(user, 'Admin')) return true;
-            if (hasRole(user, 'Employee') && resourceId && user.uid === resourceId) return true;
+            if (resourceId && user.uid === resourceId) return true;
             return false;
 
         case 'user':
@@ -68,7 +68,7 @@ export function canUpdate(user: User | null, resource: Resource, resourceId?: st
         case 'supplier':
         case 'transaction':
             // Both Admins and Employees can update operational data
-            return hasRole(user, 'Admin') || hasRole(user, 'Employee');
+            return !!user;
 
         default:
             return false;
@@ -92,7 +92,7 @@ export function canDelete(user: User | null, resource: Resource): boolean {
         case 'supplier':
         case 'transaction':
             // Both Admins and Employees can delete operational data
-            return hasRole(user, 'Admin') || hasRole(user, 'Employee');
+            return !!user;
 
         default:
             return false;

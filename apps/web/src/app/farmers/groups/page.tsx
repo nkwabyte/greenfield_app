@@ -11,6 +11,7 @@ import { db } from '@/lib/db/schema';
 import { useSelector } from 'react-redux';
 import type { RootState } from '@/lib/store/store';
 import { useFieldAgentDistricts } from '@/hooks/useData';
+import { NoDistrictAssigned } from '@/components/common/no-district-assigned';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { BulkUploadGroups } from '@/components/farmers/bulk-upload-groups';
@@ -30,7 +31,8 @@ function getSeasonYearOptions(): string[] {
 
 export default function FarmerGroupsPage() {
     const user = useSelector((state: RootState) => state.auth.user);
-    const isFieldAgent = user?.jobTitle === 'Field Agent';
+    const isFieldAgent = user?.role === 'Field Agent';
+    // undefined = still loading; [] = no districts; [...] = allowed districts
     const allowedDistricts = useFieldAgentDistricts();
 
     const [searchQuery, setSearchQuery] = useState('');
@@ -44,10 +46,14 @@ export default function FarmerGroupsPage() {
 
     const seasonYearOptions = useMemo(() => getSeasonYearOptions(), []);
 
+    const resolvedDistricts = allowedDistricts ?? [];
+
     const groupsWithCounts = useLiveQuery(async () => {
         const allGroups = await db.farmerGroups.filter(g => !g.isArchived).toArray();
-        const groups = isFieldAgent && allowedDistricts.length > 0
-            ? allGroups.filter(g => g.district && allowedDistricts.includes(g.district))
+        const groups = isFieldAgent && resolvedDistricts.length > 0
+            ? allGroups.filter(g => g.district && resolvedDistricts.includes(g.district))
+            : isFieldAgent && resolvedDistricts.length === 0
+            ? [] // field agent with no districts — no groups visible
             : allGroups;
         const results = await Promise.all(
             groups.map(async (group) => {
@@ -56,7 +62,7 @@ export default function FarmerGroupsPage() {
             })
         );
         return results;
-    }, [isFieldAgent, allowedDistricts.join(',')]);
+    }, [isFieldAgent, resolvedDistricts.join(',')]);
 
     // Trigger a one-time sync if no groups are found on first load
     useEffect(() => {
@@ -134,6 +140,22 @@ export default function FarmerGroupsPage() {
 
         return result;
     }, [groupsWithCounts, selectedYear, filterStatus, searchQuery, sortBy]);
+
+    // Gate: field agent with no districts assigned yet
+    if (isFieldAgent && allowedDistricts !== undefined && allowedDistricts.length === 0) {
+        return (
+            <AppShell>
+                <div className="mb-4">
+                    <Link href="/farmers" className="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+                        <ArrowLeft className="mr-2 h-4 w-4" />
+                        Back to Farmer Hub
+                    </Link>
+                </div>
+                <PageHeader title="Farmer Groups" description="Manage and coordinate your agricultural cooperatives and communities." />
+                <NoDistrictAssigned />
+            </AppShell>
+        );
+    }
 
     return (
         <>

@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import { AuthApiError } from '@supabase/supabase-js';
 import { supabase } from '@/lib/supabase/client';
 import { setUser, setSupabaseUser, setLoading, SerializableAuthUser } from '@/lib/store/slices/authSlice';
 
@@ -36,24 +37,39 @@ async function resolveUserProfile(sbUser: any) {
     };
   }
 
-  // Profile row missing (or timed out) — fall back to auth metadata
+  // Profile row missing (or Supabase timed out).
+  // Prefer the last-known role from localStorage over auth metadata — the DB
+  // is the source of truth, and writing a stale metadata role back via upsert
+  // would silently overwrite a role promotion that happened while offline.
   const meta = sbUser.user_metadata ?? {};
+  const persistedRole = (() => {
+    try {
+      const stored = localStorage.getItem('greenfield_user_session');
+      if (stored) {
+        const parsed = JSON.parse(stored);
+        if (parsed?.uid === sbUser.id && parsed?.role) return parsed.role;
+      }
+    } catch { /* ignore */ }
+    return null;
+  })();
+
   const fallback = {
     uid: sbUser.id,
     email: sbUser.email!,
     name: (meta.name as string) ?? sbUser.email?.split('@')[0] ?? 'User',
-    role: ((meta.role as string) ?? 'Field Agent') as 'Admin' | 'Field Agent',
+    role: (persistedRole ?? (meta.role as string) ?? 'Field Agent') as import('@/lib/types').User['role'],
     status: ((meta.status as string) ?? 'Active') as 'Active' | 'Pending' | 'Disabled',
     geminiApiKey: undefined as string | undefined,
     preferredModel: 'models/gemini-2.5-flash',
   };
 
-  // Background upsert so the row exists on next login
+  // Background upsert so the row exists for genuinely new users.
+  // Do NOT include `role` — the DB trigger sets it from auth metadata, and
+  // overwriting it here would silently revert any role promotion.
   supabase.from('users').upsert({
     id: sbUser.id,
     email: fallback.email,
     name: fallback.name,
-    role: fallback.role,
     status: fallback.status,
     preferred_model: 'models/gemini-2.5-flash',
   }, { onConflict: 'id' }).then(({ error }) => {
@@ -128,8 +144,21 @@ export const useAuth = () => {
           initialSessionHandled = true;
         }
       } catch (error) {
-        console.error('Error in useAuth init:', error);
-        dispatch(setUser(null));
+        // If the stored refresh token is stale or missing, Supabase throws AuthApiError
+        // on getSession(). Calling signOut() clears the bad token from storage so the
+        // user is taken to the login screen rather than being stuck in a broken loop.
+        if (
+          error instanceof AuthApiError &&
+          (error.message.toLowerCase().includes('refresh token') ||
+           error.message.toLowerCase().includes('invalid token'))
+        ) {
+          await supabase.auth.signOut().catch(() => {});
+          dispatch(setSupabaseUser(null));
+          dispatch(setUser(null));
+        } else {
+          console.error('Error in useAuth init:', error);
+          dispatch(setUser(null));
+        }
       } finally {
         dispatch(setLoading(false));
       }

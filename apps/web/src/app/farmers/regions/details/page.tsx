@@ -9,6 +9,9 @@ import { useLiveQuery } from '@/hooks/useLiveQuery';
 import { db } from '@/lib/db/schema';
 import { useSearchParams } from 'next/navigation';
 import { Badge } from '@/components/ui/badge';
+import { useSelector } from 'react-redux';
+import type { RootState } from '@/lib/store/store';
+import { useFieldAgentDistricts } from '@/hooks/useData';
 
 // ─── helpers ────────────────────────────────────────────────────────────────
 
@@ -82,11 +85,33 @@ function RegionDetailContent() {
     const searchParams = useSearchParams();
     const regionParam = decodeURIComponent((searchParams.get('region')) || '');
 
+    const user = useSelector((state: RootState) => state.auth.user);
+    const isFieldAgent = user?.role === 'Field Agent';
+    const allowedDistricts = useFieldAgentDistricts();
+
+    // Normalize regionParam so both short ("Central") and long ("Central Region")
+    // forms resolve to the same string that normalizeRegion() produces.
+    const normalizedRegionParam = regionParam === 'N/A' ? 'N/A' : normalizeRegion(regionParam);
+
     const regionData = useLiveQuery(async () => {
-        // Build base query
-        const query = regionParam === 'N/A'
-            ? db.farmers.filter(f => !f.isArchived && !f.deleted && (!f.region || normalizeRegion(f.region) === 'N/A'))
-            : db.farmers.filter(f => !f.isArchived && !f.deleted && normalizeRegion(f.region) === regionParam);
+        // Wait for field agent districts to finish loading
+        if (isFieldAgent && allowedDistricts === undefined) return undefined;
+
+        // Build base region filter
+        const matchesRegion = (f: { isArchived?: boolean; deleted?: boolean; region?: string; district?: string }) =>
+            !f.isArchived && !f.deleted && (
+                normalizedRegionParam === 'N/A'
+                    ? (!f.region || normalizeRegion(f.region) === 'N/A')
+                    : normalizeRegion(f.region) === normalizedRegionParam
+            );
+
+        // For field agents, additionally restrict to their assigned districts
+        const matchesDistrict = (f: { district?: string }) =>
+            !isFieldAgent || !allowedDistricts || allowedDistricts.length === 0
+                ? true
+                : !!(f.district && allowedDistricts.includes(f.district));
+
+        const query = db.farmers.filter(f => matchesRegion(f) && matchesDistrict(f));
 
         // Count total matching farmers first (clone query to prevent consumption)
         const total = await query.clone().count();
@@ -135,9 +160,9 @@ function RegionDetailContent() {
             statuses: toRows(statusMap),
             genders: toRows(genderMap),
         };
-    }, [regionParam]);
+    }, [normalizedRegionParam, isFieldAgent, allowedDistricts?.join(',') ?? '']);
 
-    const displayName = regionParam === 'N/A' ? 'Unknown / Unspecified' : regionParam;
+    const displayName = normalizedRegionParam === 'N/A' ? 'Unknown / Unspecified' : normalizedRegionParam;
 
     return (
         <AppShell>
@@ -204,7 +229,7 @@ function RegionDetailContent() {
                     {/* View all farmers CTA */}
                     <div className="flex">
                         <Link
-                            href={`/farmers/all?region=${encodeURIComponent(regionParam)}`}
+                            href={`/farmers/all?region=${encodeURIComponent(normalizedRegionParam)}`}
                             className="inline-flex items-center gap-2 rounded-lg border bg-card px-5 py-3 text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors shadow-sm"
                         >
                             <Users className="h-4 w-4" />

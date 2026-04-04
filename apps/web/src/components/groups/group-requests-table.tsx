@@ -8,7 +8,6 @@ import { useToast } from '@/hooks/use-toast';
 import { useFarmerNameMap } from '@/hooks/useData';
 import { EditableNumberCell } from '@/components/ui/editable-cell';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import {
     Select,
@@ -36,7 +35,7 @@ import {
     DialogClose,
 } from '@/components/ui/dialog';
 import { v4 as uuidv4 } from 'uuid';
-import { PlusCircle, Search, ChevronDown, ChevronRight, Receipt } from 'lucide-react';
+import { Search, ChevronDown, ChevronRight, Receipt, Lock } from 'lucide-react';
 import type { FarmerRequest, PaymentRecord } from '@/lib/types';
 
 const currencyFormatter = new Intl.NumberFormat('en-GH', {
@@ -170,7 +169,15 @@ export function GroupRequestsTable({ groupId }: GroupRequestsTableProps) {
     };
 
     // ─── Inline edit handlers ──────────────────────────────────────────
+    // Helper: returns true if a request has had any payment recorded.
+    const hasPayments = (req: FarmerRequest) =>
+        (req.payments?.length ?? 0) > 0;
+
     const handleUpdateQuantity = async (row: FlattenedRow, newQuantity: number) => {
+        if (hasPayments(row.request)) {
+            toast({ title: 'Locked', description: 'Cannot edit a request that already has payments recorded.', variant: 'destructive' });
+            return;
+        }
         try {
             const req = row.request;
             const updatedItems = [...req.items];
@@ -188,7 +195,20 @@ export function GroupRequestsTable({ groupId }: GroupRequestsTableProps) {
         }
     };
 
+    const handleUpdateStatus = async (requestId: string, newStatus: FarmerRequest['status']) => {
+        try {
+            await updateFarmerRequest(requestId, { status: newStatus });
+            toast({ title: `Status updated to ${newStatus}` });
+        } catch (e: any) {
+            toast({ title: 'Error updating status', description: e.message, variant: 'destructive' });
+        }
+    };
+
     const handleUpdatePrice = async (row: FlattenedRow, newPrice: number) => {
+        if (hasPayments(row.request)) {
+            toast({ title: 'Locked', description: 'Cannot edit a request that already has payments recorded.', variant: 'destructive' });
+            return;
+        }
         try {
             const req = row.request;
             const updatedItems = [...req.items];
@@ -292,7 +312,14 @@ export function GroupRequestsTable({ groupId }: GroupRequestsTableProps) {
                                                 </Button>
                                             )}
                                         </TableCell>
-                                        <TableCell className="font-medium">{first.farmerName}</TableCell>
+                                        <TableCell className="font-medium">
+                                            <span className="flex items-center gap-1.5">
+                                                {first.farmerName}
+                                                {first.totalPaid > 0 && (
+                                                    <Lock className="h-3 w-3 text-muted-foreground shrink-0" title="Locked: payment has been recorded" />
+                                                )}
+                                            </span>
+                                        </TableCell>
                                         <TableCell>
                                             {first.productName}
                                             {hasMultipleItems && !isExpanded && (
@@ -307,6 +334,7 @@ export function GroupRequestsTable({ groupId }: GroupRequestsTableProps) {
                                                 onSave={(v) => handleUpdateQuantity(first, v)}
                                                 min={1}
                                                 step={1}
+                                                disabled={first.totalPaid > 0}
                                             />
                                         </TableCell>
                                         <TableCell className="text-right">
@@ -316,6 +344,7 @@ export function GroupRequestsTable({ groupId }: GroupRequestsTableProps) {
                                                 min={0}
                                                 step={0.01}
                                                 formatDisplay={(v) => currencyFormatter.format(v)}
+                                                disabled={first.totalPaid > 0}
                                             />
                                         </TableCell>
                                         <TableCell className="text-right text-sm">
@@ -331,7 +360,11 @@ export function GroupRequestsTable({ groupId }: GroupRequestsTableProps) {
                                             {currencyFormatter.format(first.outstanding)}
                                         </TableCell>
                                         <TableCell>
-                                            <StatusBadge status={first.status} />
+                                            <StatusSelect
+                                                requestId={first.requestId}
+                                                currentStatus={first.status}
+                                                onUpdate={handleUpdateStatus}
+                                            />
                                         </TableCell>
                                         <TableCell>
                                             <Button
@@ -359,6 +392,7 @@ export function GroupRequestsTable({ groupId }: GroupRequestsTableProps) {
                                                         onSave={(v) => handleUpdateQuantity(row, v)}
                                                         min={1}
                                                         step={1}
+                                                        disabled={row.totalPaid > 0}
                                                     />
                                                 </TableCell>
                                                 <TableCell className="text-right">
@@ -368,6 +402,7 @@ export function GroupRequestsTable({ groupId }: GroupRequestsTableProps) {
                                                         min={0}
                                                         step={0.01}
                                                         formatDisplay={(v) => currencyFormatter.format(v)}
+                                                        disabled={row.totalPaid > 0}
                                                     />
                                                 </TableCell>
                                                 <TableCell className="text-right text-sm">
@@ -409,18 +444,51 @@ export function GroupRequestsTable({ groupId }: GroupRequestsTableProps) {
     );
 }
 
-// ─── Status Badge ──────────────────────────────────────────────────────────────
-function StatusBadge({ status }: { status: string }) {
-    const variant =
-        status === 'Delivered'
-            ? 'default'
-            : status === 'Approved'
-              ? 'secondary'
-              : status === 'Rejected'
-                ? 'destructive'
-                : 'outline';
+// ─── Status Select ─────────────────────────────────────────────────────────────
+const STATUS_OPTIONS: FarmerRequest['status'][] = ['Pending', 'Approved', 'Rejected', 'Delivered'];
 
-    return <Badge variant={variant} className="text-xs">{status}</Badge>;
+const STATUS_COLORS: Record<string, string> = {
+    Delivered: 'text-green-600 dark:text-green-400',
+    Approved:  'text-blue-600  dark:text-blue-400',
+    Rejected:  'text-red-600   dark:text-red-400',
+    Pending:   'text-orange-500 dark:text-orange-400',
+};
+
+function StatusSelect({
+    requestId,
+    currentStatus,
+    onUpdate,
+}: {
+    requestId: string;
+    currentStatus: string;
+    onUpdate: (id: string, status: FarmerRequest['status']) => Promise<void>;
+}) {
+    const [loading, setLoading] = React.useState(false);
+
+    const handleChange = async (val: string) => {
+        if (val === currentStatus) return;
+        setLoading(true);
+        try {
+            await onUpdate(requestId, val as FarmerRequest['status']);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    return (
+        <Select value={currentStatus} onValueChange={handleChange} disabled={loading}>
+            <SelectTrigger className={`h-7 w-28 text-xs border-dashed ${STATUS_COLORS[currentStatus] ?? ''}`}>
+                <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+                {STATUS_OPTIONS.map(s => (
+                    <SelectItem key={s} value={s} className={STATUS_COLORS[s]}>
+                        {s}
+                    </SelectItem>
+                ))}
+            </SelectContent>
+        </Select>
+    );
 }
 
 // ─── Add Payment Dialog ────────────────────────────────────────────────────────

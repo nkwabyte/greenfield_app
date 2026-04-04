@@ -55,7 +55,7 @@ const currencyFormatter = new Intl.NumberFormat('en-GH', {
 });
 
 export default function FinancesPage() {
-  const { allowed } = useRequireRole(['Admin'], { allowJobTitles: ['Administrative Member'] });
+  const { allowed } = useRequireRole(['Admin', 'Finance Manager', 'Administrative Member']);
   const { toast } = useToast();
 
   // Pagination State

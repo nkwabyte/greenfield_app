@@ -1,0 +1,89 @@
+{
+    "Western_North": [
+        "Sefwi Wiawso",
+        "Bibiani-Anhwiaso-Bekwai",
+        "Juaboso",
+        "Bia West",
+        "Bia East",
+        "Akontombra"
+    ],
+    "Western_South": [
+        "Wassa Amenfi West",
+        "Wassa Amenfi Central",
+        "Wassa Amenfi East",
+        "Prestea-Huni Valley",
+        "Tarkwa-Nsuaem",
+        "Nzema East",
+        "Ellembelle",
+        "Ahanta West",
+        "Mpohor"
+    ],
+    "Ashanti": [
+        "Atwima Mponua",
+        "Atwima Nwabiagya",
+        "Ahafo Ano South",
+        "Ahafo Ano North",
+        "Amansie West",
+        "Amansie Central",
+        "Amansie South",
+        "Bekwai",
+        "Bosomtwe",
+        "Ejisu",
+        "Offinso South"
+    ],
+    "Bono_Ahafo_Area": [
+        "Dormaa West",
+        "Dormaa East",
+        "Dormaa Central",
+        "Berekum West",
+        "Berekum East",
+        "Sunyani West",
+        "Sunyani Municipal",
+        "Tano North",
+        "Tano South",
+        "Asutifi North",
+        "Asutifi South",
+        "Asunafo North",
+        "Asunafo South",
+        "Wenchi",
+        "Techiman North",
+        "Techiman South"
+    ],
+    "Eastern": [
+        "Suhum",
+        "Nsawam-Adoagyiri",
+        "Fanteakwa North",
+        "Fanteakwa South",
+        "Akyemansa",
+        "Atiwa East",
+        "Atiwa West",
+        "Denkyembour",
+        "Kwaebibirem",
+        "Upper West Akim",
+        "Lower West Akim",
+        "Birim Central",
+        "Birim South"
+    ],
+    "Central": [
+        "Assin North",
+        "Assin South",
+        "Twifo Atti-Morkwa",
+        "Twifo Hemang Lower Denkyira",
+        "Upper Denkyira East",
+        "Upper Denkyira West",
+        "Ajumako-Enyan-Esiam",
+        "Agona East",
+        "Agona West",
+        "Abura-Asebu-Kwamankese",
+        "Mfantsiman"
+    ],
+    "Volta_Oti": [
+        "Hohoe",
+        "Jasikan",
+        "Kadjebi",
+        "Biakoye",
+        "Kpando",
+        "Ho West",
+        "Ho Municipal"
+    ]
+}

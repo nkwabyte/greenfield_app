@@ -31,6 +31,7 @@ function FarmerDetailsContent() {
     const { toast } = useToast();
     const searchParams = useSearchParams();
     const id = searchParams.get('id');
+    const tab = searchParams.get('tab') || 'overview';
     const farmer = useFarmer(id || '');
     const [isEditOpen, setIsEditOpen] = React.useState(false);
     const [isGroupDialogOpen, setIsGroupDialogOpen] = React.useState(false);
@@ -103,7 +104,7 @@ function FarmerDetailsContent() {
                     </div>
                 </div>
 
-                <Tabs defaultValue="overview" className="space-y-6">
+                <Tabs defaultValue={tab} className="space-y-6">
                     <TabsList>
                         <TabsTrigger value="overview">Overview</TabsTrigger>
                         <TabsTrigger value="requests">Product Requests</TabsTrigger>

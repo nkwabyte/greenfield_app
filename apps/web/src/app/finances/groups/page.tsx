@@ -47,7 +47,7 @@ const currencyFormatter = new Intl.NumberFormat('en-GH', {
 });
 
 export default function FinanceGroupsPage() {
-    const { allowed } = useRequireRole(['Admin'], { allowJobTitles: ['Administrative Member'] });
+    const { allowed } = useRequireRole(['Admin', 'Finance Manager', 'Administrative Member']);
     const currentYear = new Date().getFullYear().toString();
     const [selectedYear, setSelectedYear] = useState(currentYear);
     const router = useRouter();

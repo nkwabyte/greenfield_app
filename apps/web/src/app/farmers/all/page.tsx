@@ -22,6 +22,7 @@ import { type BulkEditField } from '@/components/farmers/bulk-edit-dialog';
 
 // NEW: Import Dexie hooks and services instead of Redux
 import { useFarmersPaginatedAndFiltered, useFarmerGroups, useFieldAgentDistricts } from '@/hooks/useData';
+import { NoDistrictAssigned } from '@/components/common/no-district-assigned';
 import { FarmerFilters, type FarmerFiltersState } from '@/components/farmers/farmer-filters';
 import { ConfirmDialog } from '@/components/ui/confirm-dialog';
 
@@ -40,6 +41,8 @@ function FarmersContent() {
   const searchParams = useSearchParams();
   const { toast } = useToast();
   const { user } = useSelector((state: RootState) => state.auth);
+  const isFieldAgent = user?.role === 'Field Agent';
+  // undefined = still loading; [] = no districts; [...] = allowed districts
   const allowedDistricts = useFieldAgentDistricts();
 
   // Pagination & Filter State
@@ -72,6 +75,9 @@ function FarmersContent() {
     dateRange: undefined,
   });
 
+  // Resolved districts — fall back to [] while loading (will be replaced next render)
+  const resolvedDistricts = allowedDistricts ?? [];
+
   // Fetch paginated data
   const { data, total } = useFarmersPaginatedAndFiltered(
     pagination.pageIndex + 1, // DB service is 1-indexed
@@ -89,7 +95,11 @@ function FarmersContent() {
       maxAge: filters.maxAge ? Number(filters.maxAge) : undefined,
       startDate: filters.dateRange?.from,
       endDate: filters.dateRange?.to,
-      allowedDistricts: allowedDistricts.length > 0 ? allowedDistricts : undefined,
+      // Pass the district list when assigned; omit for admins (undefined = no restriction).
+      // A field agent with no districts gets an impossible sentinel so zero rows return.
+      allowedDistricts: isFieldAgent
+        ? (resolvedDistricts.length > 0 ? resolvedDistricts : ['__none__'])
+        : undefined,
     }
   ) || { data: [], total: 0 };
 
@@ -323,6 +333,22 @@ function FarmersContent() {
   React.useEffect(() => {
     return () => { workerRef.current?.terminate(); };
   }, []);
+
+  // Gate: field agent with no districts assigned
+  if (isFieldAgent && allowedDistricts !== undefined && allowedDistricts.length === 0) {
+    return (
+      <AppShell>
+        <div className="mb-4">
+          <Link href="/farmers" className="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            Back to Farmer Hub
+          </Link>
+        </div>
+        <PageHeader title="Farmer Management" description="View, add, edit, and manage all farmer records." />
+        <NoDistrictAssigned />
+      </AppShell>
+    );
+  }
 
   return (
     <AppShell>

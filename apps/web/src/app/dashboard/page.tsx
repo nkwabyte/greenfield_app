@@ -40,17 +40,19 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 
-import { useRegionCounts, useFarmSizeStats, useAgeStats, useRegionGenderStats, useAllTimeRequestFinancials, useFarmerRequestsCount, useFieldAgentDistricts, useFarmersByDistricts } from '@/hooks/useData';
+import { useRegionCounts, useFarmSizeStats, useAgeStats, useRegionGenderStats, useAllTimeRequestFinancials, useFarmerRequestsCount, useFieldAgentDistricts, useFarmersByDistricts, useDistrictScopedRequestFinancials, useDistrictScopedRequestCount } from '@/hooks/useData';
+import { NoDistrictAssigned } from '@/components/common/no-district-assigned';
 import { db } from '@/lib/db/schema';
 import { useLiveQuery } from '@/hooks/useLiveQuery';
 import { useSelector } from 'react-redux';
 import type { RootState } from '@/lib/store/store';
 import Link from 'next/link';
+import { GHANA_REGIONS_AND_DISTRICTS } from '@/lib/data/ghana-regions-districts';
 
 export default function DashboardPage() {
   const user = useSelector((state: RootState) => state.auth.user);
   const isAdmin = user?.role === 'Admin';
-  const isFieldAgent = user?.jobTitle === 'Field Agent';
+  const isFieldAgent = user?.role === 'Field Agent';
 
   // Default range: Last 30 days
   const [dateRange, setDateRange] = React.useState<DateRange | undefined>({
@@ -60,10 +62,14 @@ export default function DashboardPage() {
 
   const [selectedRegion, setSelectedRegion] = React.useState<string>("all");
 
-  // District restriction for field agents
+  // District restriction for field agents.
+  // undefined = still loading from IndexedDB; [] = no districts assigned; [...] = has districts.
   const allowedDistricts = useFieldAgentDistricts();
-  // Fetch live farmers for field agents; null = skip (admin uses cache)
-  const districtFarmers = useFarmersByDistricts(isFieldAgent ? allowedDistricts : null);
+  // Fetch live farmers for field agents; null = skip (admin uses cache).
+  // When allowedDistricts is undefined (loading), pass null so we wait for the spinner.
+  const districtFarmers = useFarmersByDistricts(
+    isFieldAgent ? (allowedDistricts ?? null) : null
+  );
 
   // Cached stats hooks (always called — used for admins)
   const cachedRegionCounts = useRegionCounts();
@@ -85,7 +91,7 @@ export default function DashboardPage() {
 
   // Compute stats from district farmers for field agents
   const fieldAgentStats = React.useMemo(() => {
-    if (!isFieldAgent || !districtFarmers) return null;
+    if (!isFieldAgent || !districtFarmers || districtFarmers.length === 0) return null;
     const byRegion: Record<string, number> = {};
     const byGender: Record<string, number> = {};
     const byRegionGender: Record<string, Record<string, number>> = {};
@@ -149,14 +155,35 @@ export default function DashboardPage() {
   const newFarmersCount = isFieldAgent ? (fieldAgentStats?.newCount ?? 0) : (adminNewFarmers ?? 0);
   const recentFarmers = isFieldAgent ? (fieldAgentStats?.recentFarmers ?? []) : (adminRecentFarmers ?? []);
 
-  const allTimeFinancials = useAllTimeRequestFinancials();
-  const farmerRequestsCount = useFarmerRequestsCount();
+  // Financials — scoped to assigned districts for field agents, global for admins/managers.
+  // null = all data (admin); undefined-resolving-to-null = wait for districts to load.
+  const scopedDistricts = isFieldAgent ? (allowedDistricts ?? null) : null;
+  const scopedFinancials = useDistrictScopedRequestFinancials(isFieldAgent ? scopedDistricts : null);
+  const adminFinancials = useAllTimeRequestFinancials();
+  const allTimeFinancials = isFieldAgent ? scopedFinancials : adminFinancials;
 
-  // Derived unique regions for dropdown
+  const scopedRequestCount = useDistrictScopedRequestCount(isFieldAgent ? scopedDistricts : null);
+  const adminRequestCount = useFarmerRequestsCount();
+  const farmerRequestsCount = isFieldAgent ? scopedRequestCount : adminRequestCount;
+
+  // Derived unique regions for dropdown (uses actual farmer data)
   const uniqueRegions = React.useMemo(() => {
     if (!regionCounts) return [];
     return Object.keys(regionCounts).filter(r => r !== 'Unknown' && r !== 'N/A').sort();
   }, [regionCounts]);
+
+  // For field agents: count distinct regions from assigned districts, not from farmer records.
+  // This ensures "Regions Covered" shows 2 even if no farmers are registered in one of the regions yet.
+  const agentRegionCount = React.useMemo(() => {
+    if (!isFieldAgent || !allowedDistricts || allowedDistricts.length === 0) return null;
+    const regions = new Set<string>();
+    for (const [region, districts] of Object.entries(GHANA_REGIONS_AND_DISTRICTS)) {
+      if ((districts as string[]).some(d => allowedDistricts.includes(d))) {
+        regions.add(region);
+      }
+    }
+    return regions.size;
+  }, [isFieldAgent, allowedDistricts]);
 
   const kpis: Kpi[] = React.useMemo(() => {
     let maleFarmers = 0;
@@ -196,7 +223,7 @@ export default function DashboardPage() {
       },
       {
         label: 'Regions Covered',
-        value: uniqueRegions.length.toString(),
+        value: (agentRegionCount !== null ? agentRegionCount : uniqueRegions.length).toString(),
         icon: MapPin,
       },
       {
@@ -273,6 +300,17 @@ export default function DashboardPage() {
 
   // Show loading state while data loads
   const isDataLoading = isFieldAgent ? districtFarmers === undefined : adminTotalFarmers === undefined;
+
+  // Field agent with no districts: show the gate (only after loading resolves).
+  if (isFieldAgent && allowedDistricts !== undefined && allowedDistricts.length === 0) {
+    return (
+      <AppShell>
+        <PageHeader title="Dashboard" description="An overview of your agricultural network." />
+        <NoDistrictAssigned />
+      </AppShell>
+    );
+  }
+
   if (isDataLoading) {
     return (
       <AppShell>

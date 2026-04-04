@@ -40,6 +40,7 @@ import { format } from 'date-fns';
 import type { Farmer } from '@/lib/types';
 import { Textarea } from '../ui/textarea';
 import { useFarmerGroups } from '@/hooks/useData';
+import { GHANA_REGIONS_AND_DISTRICTS } from '@/lib/data/ghana-regions-districts';
 
 const farmerSchema = z.object({
   name: z.string().min(1, { message: 'Farmer main surname/nickname is required.' }),
@@ -156,9 +157,42 @@ export function AddEditFarmerDialog({ open, onOpenChange, farmer, onSave }: AddE
       setActiveTab('personal');
     }
     if (open && farmer) {
+      const s = (v: string | null | undefined) => v ?? '';
       form.reset({
-        ...farmer,
-        cropsGrown: farmer.cropsGrown,
+        name: s(farmer.name),
+        surname: s((farmer as any).surname),
+        otherNames: s((farmer as any).otherNames),
+        popularName: s((farmer as any).popularName),
+        gender: farmer.gender as any,
+        dateOfBirth: s((farmer as any).dateOfBirth),
+        age: farmer.age ?? undefined,
+        idType: (farmer as any).idType ?? undefined,
+        idNumber: s((farmer as any).idNumber),
+        maritalStatus: (farmer as any).maritalStatus ?? undefined,
+        physicalAddress: s((farmer as any).physicalAddress),
+        postalAddress: s((farmer as any).postalAddress),
+        houseStatus: (farmer as any).houseStatus ?? undefined,
+        directionToResidence: s((farmer as any).directionToResidence),
+        lengthOfStay: s((farmer as any).lengthOfStay),
+        region: s(farmer.region),
+        district: s(farmer.district),
+        cocoaDistrict: s(farmer.cocoaDistrict),
+        society: s(farmer.society),
+        contact: s(farmer.contact),
+        nextOfKin: s((farmer as any).nextOfKin),
+        nextOfKinContact: s((farmer as any).nextOfKinContact),
+        groupPosition: s((farmer as any).groupPosition),
+        educationLevel: farmer.educationLevel as any,
+        farmSize: farmer.farmSize ?? undefined,
+        farmLocation: s((farmer as any).farmLocation),
+        yearsInFarming: (farmer as any).yearsInFarming ?? undefined,
+        averageYield: (farmer as any).averageYield ?? undefined,
+        cropsGrown: farmer.cropsGrown ?? [],
+        otherCrops: s((farmer as any).otherCrops),
+        lbcSoldTo: s((farmer as any).lbcSoldTo),
+        farmOwnership: (farmer as any).farmOwnership ?? undefined,
+        otherBusiness: s((farmer as any).otherBusiness),
+        status: farmer.status as any,
         joinDate: farmer.joinDate ? new Date(farmer.joinDate) : undefined,
         groupId: farmer.groupId,
         createdAt: farmer.createdAt ? new Date(farmer.createdAt) : undefined,
@@ -212,6 +246,11 @@ export function AddEditFarmerDialog({ open, onOpenChange, farmer, onSave }: AddE
   };
 
   const control = form.control as any;
+  const watchedRegion = form.watch('region');
+  const districtOptions = React.useMemo(
+    () => (watchedRegion ? (GHANA_REGIONS_AND_DISTRICTS[watchedRegion] ?? []) : []),
+    [watchedRegion]
+  );
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -354,8 +393,35 @@ export function AddEditFarmerDialog({ open, onOpenChange, farmer, onSave }: AddE
 
                   {/* Base Location */}
                   <div className="col-span-2 border-t pt-3 mt-2"><h4 className="text-sm font-semibold mb-3">Geographic Location</h4></div>
-                  <FormField control={control} name="region" render={({ field }) => (<FormItem><FormLabel>Region</FormLabel><FormControl><Input placeholder="e.g. Ashanti" {...field} /></FormControl><FormMessage /></FormItem>)} />
-                  <FormField control={control} name="district" render={({ field }) => (<FormItem><FormLabel>District</FormLabel><FormControl><Input placeholder="e.g. Atwima Kwanwoma" {...field} /></FormControl><FormMessage /></FormItem>)} />
+                  <FormField control={control} name="region" render={({ field }) => (
+                    <FormItem><FormLabel>Region</FormLabel>
+                      <Select
+                        onValueChange={(val) => { field.onChange(val); form.setValue('district', ''); }}
+                        value={field.value || ''}
+                      >
+                        <FormControl><SelectTrigger><SelectValue placeholder="Select Region" /></SelectTrigger></FormControl>
+                        <SelectContent>
+                          {Object.keys(GHANA_REGIONS_AND_DISTRICTS).map(r => (
+                            <SelectItem key={r} value={r}>{r}</SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select><FormMessage /></FormItem>
+                  )} />
+                  <FormField control={control} name="district" render={({ field }) => (
+                    <FormItem><FormLabel>Political District</FormLabel>
+                      <Select
+                        onValueChange={field.onChange}
+                        value={field.value || ''}
+                        disabled={districtOptions.length === 0}
+                      >
+                        <FormControl><SelectTrigger><SelectValue placeholder={districtOptions.length === 0 ? 'Select a region first' : 'Select District'} /></SelectTrigger></FormControl>
+                        <SelectContent>
+                          {districtOptions.map(d => (
+                            <SelectItem key={d} value={d}>{d}</SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select><FormMessage /></FormItem>
+                  )} />
                   <FormField control={control} name="cocoaDistrict" render={({ field }) => (<FormItem className="col-span-2"><FormLabel>Cocoa District</FormLabel><FormControl><Input placeholder="e.g. Sefwi Wiawso Cocoa District" {...field} /></FormControl><FormMessage /></FormItem>)} />
                   <FormField control={control} name="society" render={({ field }) => (<FormItem className="col-span-2"><FormLabel>Society / Community</FormLabel><FormControl><Input placeholder="e.g. Foase" {...field} /></FormControl><FormMessage /></FormItem>)} />
 

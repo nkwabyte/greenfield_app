@@ -23,11 +23,14 @@ export async function getSupabaseFarmers(lastSyncTime?: number): Promise<Farmer[
 
 /**
  * Paginated delta sync for farmers.
+ * Pass `allowedDistricts` to restrict the pull to only those districts
+ * (used for field agents to avoid downloading the entire farmer database).
  */
 export async function getSupabaseFarmersPaginated(
     lastSyncTime?: number,
     offset = 0,
-    chunkSize = 500
+    chunkSize = 500,
+    allowedDistricts?: string[]
 ): Promise<{ farmers: Farmer[]; hasMore: boolean }> {
     let query = supabase
         .from('farmers')
@@ -38,6 +41,11 @@ export async function getSupabaseFarmersPaginated(
     if (lastSyncTime) {
         const isoDate = new Date(lastSyncTime).toISOString();
         query = query.gt('updated_at', isoDate);
+    }
+
+    // Field-agent scoping: only pull farmers from the agent's assigned districts.
+    if (allowedDistricts && allowedDistricts.length > 0) {
+        query = query.in('district', allowedDistricts);
     }
 
     const { data, error } = await query;

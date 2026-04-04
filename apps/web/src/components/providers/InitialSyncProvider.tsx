@@ -23,10 +23,13 @@ import { updateFarmersCache } from '@/lib/db/services/farmers';
 import { connectivityService } from '@/lib/db/connectivity';
 import { syncService } from '@/lib/db/sync';
 import { SyncContext } from '@/lib/context/SyncContext';
+import { db } from '@/lib/db/schema';
+import { fetchEmployeeAssignedDistricts } from '@/lib/supabase/services/employees';
 
 export function InitialSyncProvider({ children }: { children: React.ReactNode }) {
     const dispatch = useDispatch();
     const isAuthenticated = useSelector((state: RootState) => state.auth.isAuthenticated);
+    const user = useSelector((state: RootState) => state.auth.user);
 
     const [isPulling, setIsPulling] = useState(false);
     const [isPushing, setIsPushing] = useState(false);
@@ -52,6 +55,23 @@ export function InitialSyncProvider({ children }: { children: React.ReactNode })
                 isPullingRef.current = true;
                 setIsPulling(true);
 
+                // ── Resolve district scope for field agents ─────────────────
+                // Field agents should only sync farmers from their assigned districts
+                // to keep the local DB lean and all queries fast. We try the local DB
+                // first (from a prior sync); fall back to a single Supabase row fetch
+                // if the employee record isn't cached yet.
+                let agentDistricts: string[] | undefined;
+                if (user?.role === 'Field Agent' && user?.uid) {
+                    const localEmployee = await db.employees.get(user.uid).catch(() => null);
+                    if (localEmployee?.assignedDistricts?.length) {
+                        agentDistricts = localEmployee.assignedDistricts;
+                    } else {
+                        // Employee not yet in local DB — fetch just this row from Supabase
+                        const districts = await fetchEmployeeAssignedDistricts(user.uid);
+                        if (districts.length > 0) agentDistricts = districts;
+                    }
+                }
+
                 const syncEntity = async (
                     entity: 'farmers' | 'employees' | 'suppliers' | 'products',
                     syncFn: () => Promise<number>
@@ -67,7 +87,8 @@ export function InitialSyncProvider({ children }: { children: React.ReactNode })
                 };
 
                 await Promise.allSettled([
-                    syncEntity('farmers', syncFarmersFromSupabase),
+                    // Farmers are scoped to the agent's districts (undefined = all, for admins)
+                    syncEntity('farmers', () => syncFarmersFromSupabase(agentDistricts)),
                     syncEntity('employees', syncEmployeesFromSupabase),
                     syncEntity('suppliers', syncSuppliersFromSupabase),
                     syncEntity('products', syncProductsFromSupabase),
@@ -76,7 +97,8 @@ export function InitialSyncProvider({ children }: { children: React.ReactNode })
                     syncFarmerRequestsFromSupabase().catch(console.error),
                 ]);
 
-                updateFarmersCache().catch(console.error);
+                // Build stats cache scoped to agent's districts (or all for admins)
+                updateFarmersCache(agentDistricts).catch(console.error);
 
                 const nowIso = new Date(now).toISOString();
                 localStorage.setItem('lastInitialSync', now.toString());
@@ -94,7 +116,7 @@ export function InitialSyncProvider({ children }: { children: React.ReactNode })
             isPullingRef.current = false;
             setIsPulling(false);
         }
-    }, [isAuthenticated, dispatch]);
+    }, [isAuthenticated, dispatch, user?.uid, user?.role]);
 
     /** Public API — force pull from Supabase immediately */
     const pullFromCloud = useCallback(async () => {
