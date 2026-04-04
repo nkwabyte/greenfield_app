@@ -29,7 +29,16 @@ jobs:
       - name: Install Dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Compile TypeScript
+      - name: Build Web App for Electron
+        # Produces the static export at apps/web/out/ which electron-builder bundles.
+        # NEXT_PUBLIC_* vars are baked into the JS bundle at build time —
+        # add them as GitHub Actions secrets in your repo settings.
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+        run: yarn workspace @greenfield/web run build:electron
+
+      - name: Compile TypeScript (Electron main process)
         run: yarn workspace @greenfield/desktop run tsc
 
       - name: Build and Publish (macOS)

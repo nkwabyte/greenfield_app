@@ -12,9 +12,11 @@ if [ ! -d "node_modules" ]; then
     yarn install
 fi
 
-# Build web app first (desktop depends on it)
-echo "🔨 Building web application..."
-yarn workspace @greenfield/web build
+# Build web app first (desktop depends on it).
+# build:electron sets ELECTRON_BUILD=1, producing a static export at apps/web/out/
+# that electron-builder bundles into the final package.
+echo "🔨 Building web application (Electron static export)..."
+yarn workspace @greenfield/web run build:electron
 
 # Build desktop app
 echo "🔨 Building desktop application..."
