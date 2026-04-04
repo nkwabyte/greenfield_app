@@ -168,11 +168,26 @@ app.whenReady().then(() => {
     // This ensures absolute paths like /_next/static/chunks/foo.js resolve to
     // web/out/_next/static/chunks/foo.js rather than the filesystem root.
     const webOutDir = path.join(app.getAppPath(), 'web', 'out');
+    console.log(`[Main] webOutDir: ${webOutDir}`);
+
     protocol.handle('app', (request) => {
         const { pathname } = new URL(request.url);
-        const relativePath = decodeURIComponent(pathname).replace(/^\//, '');
-        const filePath = path.join(webOutDir, relativePath || 'index.html');
-        return net.fetch(`file://${filePath}`);
+        let relativePath = decodeURIComponent(pathname).replace(/^\//, '');
+
+        // With trailingSlash:true, Next.js emits /dashboard/ -> /dashboard/index.html.
+        // If the path ends with '/' (or is empty) resolve to index.html in that dir.
+        if (!relativePath || relativePath.endsWith('/')) {
+            relativePath = `${relativePath}index.html`;
+        }
+
+        const filePath = path.join(webOutDir, relativePath);
+
+        // On Windows, path.join uses backslashes which are invalid in file:// URLs.
+        // Convert to forward slashes and ensure the three-slash form for absolute paths.
+        const fileUrl = `file:///${filePath.replace(/\\/g, '/')}`;
+
+        console.log(`[Protocol] ${request.url}  →  ${fileUrl}`);
+        return net.fetch(fileUrl);
     });
 
     createWindow();
