@@ -8,6 +8,11 @@ on:
 permissions:
   contents: write
 
+env:
+  # Opt into Node.js 24 for GitHub Actions runners to silence the Node.js 20
+  # deprecation warning from actions/checkout and actions/setup-node.
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   build-and-release:
     runs-on: ${{ matrix.os }}
