@@ -38,7 +38,8 @@ import {
   Landmark,
   Truck,
   Package,
-  WandSparkles
+  WandSparkles,
+  Shield
 } from 'lucide-react'; import { useSelector } from 'react-redux';
 import { RootState } from '@/lib/store/store';
 import { ThemeToggle } from '@/components/theme-toggle';
@@ -49,7 +50,8 @@ const MANAGEMENT_ROLES = ['Admin', 'General Manager', 'Operational Manager', 'Pr
 const allNavItems = [
   { href: '/dashboard',   icon: LayoutGrid,   label: 'Dashboard',  roles: ALL_ROLES },
   { href: '/farmers',     icon: Users,         label: 'Farmers',    roles: ALL_ROLES },
-  { href: '/employees',   icon: Briefcase,     label: 'Employees',  roles: ['Admin', 'Administrative Member'] },
+  { href: '/employees',   icon: Briefcase,     label: 'Employees',  roles: ['Administrative Member'] },
+  { href: '/employees',   icon: Shield,        label: 'Management', roles: ['Admin'] },
   { href: '/suppliers',   icon: Truck,         label: 'Suppliers',  roles: MANAGEMENT_ROLES },
   { href: '/products',    icon: Package,       label: 'Products',   roles: MANAGEMENT_ROLES },
   { href: '/finances',    icon: Landmark,      label: 'Finances',   roles: ['Admin', 'Finance Manager', 'Administrative Member'] },

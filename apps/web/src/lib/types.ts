@@ -96,7 +96,7 @@ export type Employee = {
   id: string;
   name: string;
   email: string;
-  role: 'General Manager' | 'Operational Manager' | 'Project Coordinator' | 'Finance Manager' | 'Administrative Member' | 'Field Agent';
+  role: 'Admin' | JobTitle;
   salary?: number;
   startDate: string; // ISO date string
   status: 'Active' | 'On Leave' | 'Terminated';
