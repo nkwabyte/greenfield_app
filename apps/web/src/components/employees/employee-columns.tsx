@@ -24,7 +24,16 @@ const currencyFormatter = new Intl.NumberFormat('en-GH', {
   maximumFractionDigits: 0,
 });
 
-export const getColumns = ({ onEdit, onDelete, onViewDetails }: { onEdit: (employee: Employee) => void, onDelete: (id: string) => void, onViewDetails: (employee: Employee) => void }): ColumnDef<Employee>[] => [
+export interface ColumnParams {
+  onEdit: (employee: Employee) => void;
+  onDelete: (id: string) => void;
+  onViewDetails: (employee: Employee) => void;
+  isAdmin?: boolean;
+  onResetPassword?: (employee: Employee) => void;
+  onSetStatus?: (employee: Employee, suspend: boolean) => void;
+}
+
+export const getColumns = ({ onEdit, onDelete, onViewDetails, isAdmin, onResetPassword, onSetStatus }: ColumnParams): ColumnDef<Employee>[] => [
   {
     id: 'select',
     header: ({ table }) => (
@@ -134,6 +143,14 @@ export const getColumns = ({ onEdit, onDelete, onViewDetails }: { onEdit: (emplo
             <DropdownMenuLabel>Actions</DropdownMenuLabel>
             <DropdownMenuItem onClick={() => onViewDetails(employee)}>View Details</DropdownMenuItem>
             <DropdownMenuItem onClick={() => onEdit(employee)}>Edit Employee</DropdownMenuItem>
+            {isAdmin && onResetPassword && (
+              <DropdownMenuItem onClick={() => onResetPassword(employee)}>Reset Password</DropdownMenuItem>
+            )}
+            {isAdmin && onSetStatus && (
+              <DropdownMenuItem onClick={() => onSetStatus(employee, employee.status !== 'Terminated')}>
+                {employee.status === 'Terminated' ? 'Reactivate Login' : 'Suspend Login'}
+              </DropdownMenuItem>
+            )}
             <DropdownMenuSeparator />
             <DropdownMenuItem className="text-destructive focus:bg-destructive/10 focus:text-destructive" onClick={() => onDelete(employee.id)}>Delete Employee</DropdownMenuItem>
           </DropdownMenuContent>

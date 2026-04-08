@@ -17,6 +17,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { formatDistanceToNow } from 'date-fns';
 import { ConfirmDialog } from '@/components/ui/confirm-dialog';
 import { useRequireRole } from '@/hooks/use-role-guard';
+import { AdminActionsPanel } from '@/components/employees/admin-actions-panel';
 
 export default function EmployeeDetailsPage() {
     return (
@@ -81,6 +82,12 @@ function EmployeeDetailsContent() {
         } catch (error) {
             toast({ title: "Delete Failed", description: "An error occurred while deleting the employee.", variant: "destructive" });
         }
+    };
+
+    const handleUpdateComplete = () => {
+        // Since we are using dexie observable hooks (useEmployee),
+        // the UI should automatically update. But we can add
+        // any specific refresh logic here if needed.
     };
 
     const currencyFormatter = new Intl.NumberFormat('en-GH', {
@@ -169,26 +176,12 @@ function EmployeeDetailsContent() {
                             </CardContent>
                         </Card>
 
-                        {isAdmin && (
-                            <Card className="border-destructive/50 bg-destructive/5">
-                                <CardHeader>
-                                    <CardTitle className="text-destructive flex items-center text-lg">
-                                        <AlertTriangle className="mr-2 h-5 w-5" />
-                                        Danger Zone
-                                    </CardTitle>
-                                    <CardDescription>
-                                        Irreversible actions related to this employee.
-                                    </CardDescription>
-                                </CardHeader>
-                                <CardContent>
-                                    <p className="text-sm text-muted-foreground mb-4">
-                                        Deleting an employee will remove all their records from the system. This action cannot be undone.
-                                    </p>
-                                    <Button variant="destructive" onClick={() => setIsDeleteOpen(true)} className="w-full">
-                                        Delete Employee
-                                    </Button>
-                                </CardContent>
-                            </Card>
+                        {isAdmin && user?.name && (
+                            <AdminActionsPanel 
+                                employee={employee} 
+                                onUpdateComplete={handleUpdateComplete}
+                                adminName={user.name}
+                            />
                         )}
                     </div>
                 </div>

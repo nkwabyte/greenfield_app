@@ -16,11 +16,18 @@ import { EmployeeFilters, type EmployeeFiltersState } from '@/components/employe
 import { useEmployeesPaginatedAndFiltered } from '@/hooks/useData';
 import { ConfirmDialog } from '@/components/ui/confirm-dialog';
 import { useRequireRole } from '@/hooks/use-role-guard';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/lib/store/store';
+import { ResetPasswordDialog } from '@/components/employees/reset-password-dialog';
+import { resetEmployeePassword, setEmployeeStatus } from '@/lib/supabase/admin-auth';
+import { logActivity } from '@/lib/supabase/services/activity-log';
 
 export default function EmployeesPage() {
   const { allowed } = useRequireRole(['Admin', 'Administrative Member']);
   const router = useRouter();
   const { toast } = useToast();
+  const user = useSelector((state: RootState) => state.auth.user);
+  const isAdmin = user?.role === 'Admin';
 
   // Pagination State — must be before any early return
   const [pagination, setPagination] = React.useState({
@@ -92,6 +99,10 @@ export default function EmployeesPage() {
   const [employeeToDelete, setEmployeeToDelete] = React.useState<string | null>(null);
   const [isDeleteDialogOpen, setIsDeleteDialogOpen] = React.useState(false);
 
+  const [resetPwOpen, setResetPwOpen] = React.useState(false);
+  const [tempPassword, setTempPassword] = React.useState('');
+  const [resetEmployeeName, setResetEmployeeName] = React.useState('');
+
   const handleOpenAddDialog = () => {
     setEditingEmployee(null);
     setIsAddEditDialogOpen(true);
@@ -150,11 +161,49 @@ export default function EmployeesPage() {
     }
   };
 
+  const handleResetPassword = async (employee: typeof employees[0]) => {
+    try {
+      const newPassword = await resetEmployeePassword(employee.id);
+      setTempPassword(newPassword);
+      setResetEmployeeName(employee.name);
+      setResetPwOpen(true);
+      logActivity({
+        action: 'update',
+        entityType: 'employee',
+        entityId: employee.id,
+        entityName: employee.name,
+        metadata: { details: `Password was reset by ${user?.name}.` }
+      });
+    } catch (error: any) {
+      toast({ title: 'Reset Failed', description: error.message, variant: 'destructive' });
+    }
+  };
+
+  const handleSetStatus = async (employee: typeof employees[0], suspend: boolean) => {
+    try {
+      const newStatus = suspend ? 'Disabled' : 'Active';
+      await setEmployeeStatus(employee.id, newStatus);
+      toast({ title: 'Status Updated', description: `${employee.name} is now ${newStatus}.` });
+      logActivity({
+        action: 'update',
+        entityType: 'employee',
+        entityId: employee.id,
+        entityName: employee.name,
+        metadata: { details: `Status changed to ${newStatus} by ${user?.name}.` }
+      });
+    } catch (error: any) {
+      toast({ title: 'Action Failed', description: error.message, variant: 'destructive' });
+    }
+  };
+
   const columns = React.useMemo(() => getColumns({
     onEdit: handleOpenEditDialog,
     onDelete: handleDeleteEmployee,
     onViewDetails: (employee) => router.push(`/employees/details?id=${employee.id}`),
-  }), []);
+    isAdmin,
+    onResetPassword: handleResetPassword,
+    onSetStatus: handleSetStatus,
+  }), [isAdmin]);
 
   if (!allowed) return null;
 
@@ -207,6 +256,13 @@ export default function EmployeesPage() {
         title="Delete Employee"
         description="Are you sure you want to delete this employee? This action cannot be undone."
         onConfirm={confirmDeleteEmployee}
+      />
+
+      <ResetPasswordDialog 
+        open={resetPwOpen} 
+        onOpenChange={setResetPwOpen} 
+        password={tempPassword} 
+        employeeName={resetEmployeeName} 
       />
 
       <BulkAddEmployeesDialog

@@ -38,3 +38,45 @@ export async function createEmployeeAuth(
 
     return data.uid;
 }
+
+export async function updateEmployeeRole(uid: string, role: string): Promise<boolean> {
+    const response = await fetch(`${getApiBase()}/api/admin/update-role`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ uid, role }),
+    });
+
+    const data = await response.json();
+    if (!response.ok) {
+        throw new Error(data.error || 'Failed to update employee role.');
+    }
+    return true;
+}
+
+export async function resetEmployeePassword(uid: string): Promise<string> {
+    const response = await fetch(`${getApiBase()}/api/admin/reset-password`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ uid }),
+    });
+
+    const data = await response.json();
+    if (!response.ok) {
+        throw new Error(data.error || 'Failed to reset employee password.');
+    }
+    return data.password;
+}
+
+export async function setEmployeeStatus(uid: string, status: string): Promise<boolean> {
+    const response = await fetch(`${getApiBase()}/api/admin/set-status`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ uid, status }),
+    });
+
+    const data = await response.json();
+    if (!response.ok) {
+        throw new Error(data.error || 'Failed to set employee status.');
+    }
+    return true;
+}
