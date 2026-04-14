@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 
+export const dynamic = 'force-static';
+
 export async function POST(request: NextRequest) {
     try {
         const { uid, status, adminId } = await request.json();

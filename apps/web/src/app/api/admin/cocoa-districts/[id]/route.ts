@@ -1,6 +1,18 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 
+// Required for `output: 'export'` (Electron build). A placeholder param is
+// needed because Next.js rejects dynamic routes that return an empty array —
+// it treats zero paths the same as missing generateStaticParams entirely.
+// The route is never called from the static bundle; Electron communicates
+// with Supabase directly via the client SDK.
+export function generateStaticParams() {
+    return [{ id: '_stub' }];
+}
+
+// Prevent Next.js from attempting dynamic rendering during the static export.
+export const dynamic = 'force-static';
+
 export async function PUT(
     request: NextRequest,
     { params }: { params: { id: string } }

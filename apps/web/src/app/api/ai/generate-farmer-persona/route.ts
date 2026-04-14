@@ -3,6 +3,8 @@ import { generateFarmerPersona } from '@/ai/flows/generate-farmer-persona';
 
 import { rateLimit } from '@/lib/rate-limiter';
 
+export const dynamic = 'force-static';
+
 const limiter = rateLimit({
     interval: 60 * 1000, // 60 seconds
     uniqueTokenPerInterval: 500, // Max 500 users per second
