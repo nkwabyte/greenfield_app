@@ -1,8 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { summarizeKPIInsights } from '@/ai/flows/summarize-kpi-insights';
 
-
 import { rateLimit } from '@/lib/rate-limiter';
+
+export const dynamic = 'force-static';
 
 const limiter = rateLimit({
     interval: 60 * 1000,

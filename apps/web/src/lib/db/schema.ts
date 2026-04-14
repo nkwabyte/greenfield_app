@@ -4,7 +4,7 @@
  */
 
 import Dexie, { Table } from 'dexie';
-import type { Farmer, Employee, Product, Supplier, Transaction, FarmerGroup, FarmerRequest } from '@/lib/types';
+import type { Farmer, Employee, Product, Supplier, Transaction, FarmerGroup, FarmerRequest, CocoaDistrict } from '@/lib/types';
 import type { SyncQueueItem } from './types';
 
 export interface MediaItem {
@@ -62,8 +62,9 @@ export class GreenfieldDB extends Dexie {
     products!: Table<Product>;
     suppliers!: Table<Supplier>;
     transactions!: Table<Transaction>;
-    farmerGroups!: Table<FarmerGroup>;    // NEW: Phase 2 Table
-    farmerRequests!: Table<FarmerRequest>; // NEW: Phase 3 Table
+    farmerGroups!: Table<FarmerGroup>;    // Phase 2 Table
+    farmerRequests!: Table<FarmerRequest>; // Phase 3 Table
+    cocoaDistricts!: Table<CocoaDistrict>; // Admin-managed cocoa district list
     statistics!: Table<{ id: string; byRegion: Record<string, number>; byGender: Record<string, number>; byFarmSize: Record<string, number>; byAge: Record<string, number>; byRegionAndGender: Record<string, Record<string, number>> }>;
     mediaStore!: Table<MediaItem>;        // Offline image store
     importStaging!: Table<StagingFarmer>; // Temporary staging table for bulk import preview
@@ -194,6 +195,11 @@ export class GreenfieldDB extends Dexie {
         this.version(13).stores({
             farmers: 'id, name, region, district, cocoaDistrict, society, groupId, status, deleted, isArchived, updatedAt, createdAt, [region+district], [region+district+society], [region+status]',
             employees: 'id, name, email, role, status, deleted, updatedAt, createdAt',
+        });
+
+        // Version 14: Add admin-managed cocoa districts lookup table
+        this.version(14).stores({
+            cocoaDistricts: 'id, name, isActive, deleted, updatedAt, createdAt',
         });
     }
 }

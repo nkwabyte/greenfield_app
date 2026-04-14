@@ -1,9 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 
+export const dynamic = 'force-static';
+
 export async function POST(request: NextRequest) {
     try {
-        const { uid, role } = await request.json();
+        const { uid, role, adminId } = await request.json();
 
         if (!uid || !role) {
             return NextResponse.json(
@@ -60,6 +62,22 @@ export async function POST(request: NextRequest) {
 
         if (empError) {
             console.error('Failed to update public.employees:', empError.message);
+        }
+
+        // 4. Log to admin audit log
+        if (adminId) {
+            const { error: auditError } = await supabaseAdmin
+                .from('admin_audit_log')
+                .insert({
+                    admin_id: adminId,
+                    action: 'update_role',
+                    target_user_id: uid,
+                    changes: { new_role: role }
+                });
+
+            if (auditError) {
+                console.error('Failed to log audit:', auditError.message);
+            }
         }
 
         return NextResponse.json({ success: true });

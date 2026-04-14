@@ -39,8 +39,9 @@ import { cn } from '@/lib/utils';
 import { format } from 'date-fns';
 import type { Farmer } from '@/lib/types';
 import { Textarea } from '../ui/textarea';
-import { useFarmerGroups } from '@/hooks/useData';
+import { useFarmerGroups, useCocoaDistricts } from '@/hooks/useData';
 import { GHANA_REGIONS_AND_DISTRICTS } from '@/lib/data/ghana-regions-districts';
+import { CocoaDistrictCombobox } from './cocoa-district-combobox';
 
 const farmerSchema = z.object({
   name: z.string().min(1, { message: 'Farmer main surname/nickname is required.' }),
@@ -110,6 +111,7 @@ type AddEditFarmerDialogProps = {
 export function AddEditFarmerDialog({ open, onOpenChange, farmer, onSave }: AddEditFarmerDialogProps) {
   const [activeTab, setActiveTab] = React.useState('personal');
   const groups = useFarmerGroups() || [];
+  const cocoaDistricts = useCocoaDistricts() || [];
 
   const form = useForm<FarmerFormValues>({
     // @ts-ignore - Ignore type mismatch between react-hook-form and zodResolver versions
@@ -422,7 +424,20 @@ export function AddEditFarmerDialog({ open, onOpenChange, farmer, onSave }: AddE
                         </SelectContent>
                       </Select><FormMessage /></FormItem>
                   )} />
-                  <FormField control={control} name="cocoaDistrict" render={({ field }) => (<FormItem className="col-span-2"><FormLabel>Cocoa District</FormLabel><FormControl><Input placeholder="e.g. Sefwi Wiawso Cocoa District" {...field} /></FormControl><FormMessage /></FormItem>)} />
+                  <FormField control={control} name="cocoaDistrict" render={({ field }) => (
+                    <FormItem className="col-span-2">
+                      <FormLabel>Cocoa District</FormLabel>
+                      <FormControl>
+                        <CocoaDistrictCombobox
+                          value={field.value || ''}
+                          onChange={field.onChange}
+                          districts={cocoaDistricts}
+                          placeholder="Select or type cocoa district…"
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )} />
                   <FormField control={control} name="society" render={({ field }) => (<FormItem className="col-span-2"><FormLabel>Society / Community</FormLabel><FormControl><Input placeholder="e.g. Foase" {...field} /></FormControl><FormMessage /></FormItem>)} />
 
                   <FormField control={control} name="contact" render={({ field }) => (<FormItem><FormLabel>Personal Phone</FormLabel><FormControl><Input placeholder="024 123 4567" {...field} /></FormControl><FormMessage /></FormItem>)} />

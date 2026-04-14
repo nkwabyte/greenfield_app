@@ -12,6 +12,7 @@ node_modules/
 .mcp.json
 
 # changes
+employee_emails.txt
 
 # Logs
 logs

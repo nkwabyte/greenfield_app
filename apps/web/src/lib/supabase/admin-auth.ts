@@ -39,11 +39,11 @@ export async function createEmployeeAuth(
     return data.uid;
 }
 
-export async function updateEmployeeRole(uid: string, role: string): Promise<boolean> {
+export async function updateEmployeeRole(uid: string, role: string, adminId?: string): Promise<boolean> {
     const response = await fetch(`${getApiBase()}/api/admin/update-role`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ uid, role }),
+        body: JSON.stringify({ uid, role, adminId }),
     });
 
     const data = await response.json();
@@ -53,11 +53,11 @@ export async function updateEmployeeRole(uid: string, role: string): Promise<boo
     return true;
 }
 
-export async function resetEmployeePassword(uid: string): Promise<string> {
+export async function resetEmployeePassword(uid: string, adminId?: string): Promise<string> {
     const response = await fetch(`${getApiBase()}/api/admin/reset-password`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ uid }),
+        body: JSON.stringify({ uid, adminId }),
     });
 
     const data = await response.json();
@@ -67,11 +67,11 @@ export async function resetEmployeePassword(uid: string): Promise<string> {
     return data.password;
 }
 
-export async function setEmployeeStatus(uid: string, status: string): Promise<boolean> {
+export async function setEmployeeStatus(uid: string, status: string, adminId?: string): Promise<boolean> {
     const response = await fetch(`${getApiBase()}/api/admin/set-status`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ uid, status }),
+        body: JSON.stringify({ uid, status, adminId }),
     });
 
     const data = await response.json();

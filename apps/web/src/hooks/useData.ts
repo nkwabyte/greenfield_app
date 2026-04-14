@@ -89,6 +89,10 @@ import {
     getFarmerRequestsByGroup,
     getFarmerRequestsCount,
 } from '@/lib/db/services/farmer-requests';
+import {
+    getActiveCocoaDistricts,
+    getAllCocoaDistricts,
+} from '@/lib/db/services/cocoa-districts';
 
 import type { Farmer, Employee, Product, Supplier, Transaction, FarmerGroup, FarmerRequest } from '@/lib/types';
 
@@ -891,3 +895,22 @@ export function useFarmerGroupsByDistricts(districts: string[] | null) {
     );
 }
 
+// ============================================================================
+// COCOA DISTRICTS HOOKS
+// ============================================================================
+
+/**
+ * Returns only active (admin-approved) cocoa districts.
+ * Used by the farmer form combobox.
+ */
+export function useCocoaDistricts() {
+    return useLiveQuery(() => getActiveCocoaDistricts(), []);
+}
+
+/**
+ * Returns all non-deleted cocoa districts including pending ones.
+ * Used by the admin management page.
+ */
+export function useAllCocoaDistricts() {
+    return useLiveQuery(() => getAllCocoaDistricts(), []);
+}

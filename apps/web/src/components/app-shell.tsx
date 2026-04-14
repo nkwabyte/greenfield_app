@@ -39,7 +39,8 @@ import {
   Truck,
   Package,
   WandSparkles,
-  Shield
+  Shield,
+  BarChart3
 } from 'lucide-react'; import { useSelector } from 'react-redux';
 import { RootState } from '@/lib/store/store';
 import { ThemeToggle } from '@/components/theme-toggle';
@@ -52,6 +53,7 @@ const allNavItems = [
   { href: '/farmers',     icon: Users,         label: 'Farmers',    roles: ALL_ROLES },
   { href: '/employees',   icon: Briefcase,     label: 'Employees',  roles: ['Administrative Member'] },
   { href: '/employees',   icon: Shield,        label: 'Management', roles: ['Admin'] },
+  { href: '/admin/dashboard', icon: BarChart3, label: 'Admin', roles: ['Admin'] },
   { href: '/suppliers',   icon: Truck,         label: 'Suppliers',  roles: MANAGEMENT_ROLES },
   { href: '/products',    icon: Package,       label: 'Products',   roles: MANAGEMENT_ROLES },
   { href: '/finances',    icon: Landmark,      label: 'Finances',   roles: ['Admin', 'Finance Manager', 'Administrative Member'] },

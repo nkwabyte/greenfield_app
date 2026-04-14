@@ -19,6 +19,7 @@ import {
 } from '@/lib/db';
 import { syncFarmerGroupsFromSupabase } from '@/lib/db/services/farmer-groups';
 import { syncFarmerRequestsFromSupabase } from '@/lib/db/services/farmer-requests';
+import { syncCocoaDistrictsFromSupabase } from '@/lib/supabase/services/cocoa-districts';
 import { updateFarmersCache } from '@/lib/db/services/farmers';
 import { connectivityService } from '@/lib/db/connectivity';
 import { syncService } from '@/lib/db/sync';
@@ -95,6 +96,7 @@ export function InitialSyncProvider({ children }: { children: React.ReactNode })
                     syncTransactionsFromSupabase().catch(console.error),
                     syncFarmerGroupsFromSupabase().catch(console.error),
                     syncFarmerRequestsFromSupabase().catch(console.error),
+                    syncCocoaDistrictsFromSupabase().catch(console.error),
                 ]);
 
                 // Build stats cache scoped to agent's districts (or all for admins)
