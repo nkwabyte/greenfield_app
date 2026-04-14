@@ -177,10 +177,11 @@ function EmployeeDetailsContent() {
                         </Card>
 
                         {isAdmin && user?.name && (
-                            <AdminActionsPanel 
-                                employee={employee} 
+                            <AdminActionsPanel
+                                employee={employee}
                                 onUpdateComplete={handleUpdateComplete}
                                 adminName={user.name}
+                                adminId={user.id}
                             />
                         )}
                     </div>

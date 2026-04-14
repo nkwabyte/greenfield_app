@@ -213,3 +213,14 @@ export interface FarmerRequest {
   updatedAt: string;
   deleted?: boolean;
 }
+
+/** An admin-managed cocoa district entry. */
+export interface CocoaDistrict {
+  id: string;
+  name: string;             // Canonical district name
+  isActive: boolean;        // false = pending admin review
+  createdBy?: string;       // UID or name of who created it
+  createdAt: string;        // ISO date string
+  updatedAt: string;        // ISO date string
+  deleted?: boolean;        // Soft-delete flag
+}

@@ -4,7 +4,7 @@ import * as React from 'react';
 import { AppShell } from '@/components/app-shell';
 import { PageHeader } from '@/components/page-header';
 import Link from 'next/link';
-import { Users, Map, UsersRound, MapPin, Wrench, Archive, ChevronRight } from 'lucide-react';
+import { Users, Map, UsersRound, MapPin, Wrench, Archive, ChevronRight, LayoutList } from 'lucide-react';
 import { useFarmersCount, useUniqueRegions, useFarmerGroups, useFieldAgentDistricts, useFarmersByDistricts, useFarmerGroupsByDistricts } from '@/hooks/useData';
 import { useSelector } from 'react-redux';
 import type { RootState } from '@/lib/store/store';
@@ -214,6 +214,23 @@ export default function FarmersHubPage() {
                             </div>
                             <ChevronRight className="h-4 w-4 text-muted-foreground ml-auto shrink-0 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
                         </Link>
+
+                        {/* Cocoa Districts */}
+                        {!isFieldAgent && (
+                            <Link
+                                href="/farmers/cocoa-districts"
+                                className="group flex items-center gap-4 rounded-xl border bg-card p-5 shadow-sm hover:shadow-md hover:border-teal-500/50 transition-all duration-200"
+                            >
+                                <div className="p-3 rounded-xl bg-teal-500/10 w-11 h-11 shrink-0 flex items-center justify-center">
+                                    <LayoutList className="h-5 w-5 text-teal-600" />
+                                </div>
+                                <div className="min-w-0">
+                                    <h3 className="font-semibold group-hover:text-teal-600 transition-colors">Cocoa Districts</h3>
+                                    <p className="text-xs text-muted-foreground mt-0.5 leading-relaxed line-clamp-2">Manage the approved list of cocoa districts for farmer registration.</p>
+                                </div>
+                                <ChevronRight className="h-4 w-4 text-muted-foreground ml-auto shrink-0 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+                            </Link>
+                        )}
                     </div>
                 </section>
 

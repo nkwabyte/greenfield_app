@@ -49,6 +49,7 @@ function getTableName(entityType: EntityType): string {
         transaction: 'transactions',
         farmerGroup: 'farmer_groups',
         farmerRequest: 'farmer_requests',
+        cocoaDistrict: 'cocoa_districts',
     };
     return tableMap[entityType] || `${entityType}s`;
 }
@@ -84,6 +85,9 @@ function toSnakeCase(data: any): any {
         dynamicPrice: 'dynamic_price',
         geminiApiKey: 'gemini_api_key',
         preferredModel: 'preferred_model',
+        // CocoaDistrict fields
+        isActive: 'is_active',
+        createdBy: 'created_by',
     };
 
     const result: any = {};

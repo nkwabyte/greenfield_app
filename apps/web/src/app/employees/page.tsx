@@ -163,7 +163,7 @@ export default function EmployeesPage() {
 
   const handleResetPassword = async (employee: typeof employees[0]) => {
     try {
-      const newPassword = await resetEmployeePassword(employee.id);
+      const newPassword = await resetEmployeePassword(employee.id, user?.id);
       setTempPassword(newPassword);
       setResetEmployeeName(employee.name);
       setResetPwOpen(true);
@@ -182,7 +182,7 @@ export default function EmployeesPage() {
   const handleSetStatus = async (employee: typeof employees[0], suspend: boolean) => {
     try {
       const newStatus = suspend ? 'Disabled' : 'Active';
-      await setEmployeeStatus(employee.id, newStatus);
+      await setEmployeeStatus(employee.id, newStatus, user?.id);
       toast({ title: 'Status Updated', description: `${employee.name} is now ${newStatus}.` });
       logActivity({
         action: 'update',

@@ -6,6 +6,7 @@ import { syncProductsFromSupabase } from './services/products';
 import { syncTransactionsFromSupabase } from './services/transactions';
 import { syncFarmerGroupsFromSupabase } from './services/farmer-groups';
 import { syncFarmerRequestsFromSupabase } from './services/farmer-requests';
+import { syncCocoaDistrictsFromSupabase } from '@/lib/supabase/services/cocoa-districts';
 import { store } from '@/lib/store/store';
 import { setUser } from '@/lib/store/slices/authSlice';
 
@@ -44,6 +45,9 @@ export function startRealtimeSync() {
                             break;
                         case 'farmer_requests':
                             await syncFarmerRequestsFromSupabase();
+                            break;
+                        case 'cocoa_districts':
+                            await syncCocoaDistrictsFromSupabase();
                             break;
                         case 'users': {
                             // If the current user's own profile row changed (e.g. role

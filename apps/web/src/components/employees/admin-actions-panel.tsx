@@ -26,9 +26,10 @@ interface AdminActionsPanelProps {
     employee: Employee;
     onUpdateComplete: () => void;
     adminName: string;
+    adminId?: string;
 }
 
-export function AdminActionsPanel({ employee, onUpdateComplete, adminName }: AdminActionsPanelProps) {
+export function AdminActionsPanel({ employee, onUpdateComplete, adminName, adminId }: AdminActionsPanelProps) {
     const { toast } = useToast();
     const [isUpdatingOption, setIsUpdatingOption] = React.useState(false);
     
@@ -53,7 +54,7 @@ export function AdminActionsPanel({ employee, onUpdateComplete, adminName }: Adm
         if (selectedRole === employee.role) return;
         setIsUpdatingOption(true);
         try {
-            await updateEmployeeRole(employee.id, selectedRole);
+            await updateEmployeeRole(employee.id, selectedRole, adminId);
             logActivity({
                 action: 'update',
                 entityType: 'employee',
@@ -74,7 +75,7 @@ export function AdminActionsPanel({ employee, onUpdateComplete, adminName }: Adm
         setIsUpdatingOption(true);
         try {
             const newRole = isAdmin ? 'Field Agent' : 'Admin';
-            await updateEmployeeRole(employee.id, newRole);
+            await updateEmployeeRole(employee.id, newRole, adminId);
             setSelectedRole(newRole as Employee['role']);
             logActivity({
                 action: 'update',
@@ -96,7 +97,7 @@ export function AdminActionsPanel({ employee, onUpdateComplete, adminName }: Adm
     const handleResetPassword = async () => {
         setIsUpdatingOption(true);
         try {
-            const newPassword = await resetEmployeePassword(employee.id);
+            const newPassword = await resetEmployeePassword(employee.id, adminId);
             setTempPassword(newPassword);
             logActivity({
                 action: 'update',
@@ -117,7 +118,7 @@ export function AdminActionsPanel({ employee, onUpdateComplete, adminName }: Adm
     const handleToggleStatus = async () => {
         setIsUpdatingOption(true);
         try {
-            await setEmployeeStatus(employee.id, targetStatus);
+            await setEmployeeStatus(employee.id, targetStatus, adminId);
             logActivity({
                 action: 'update',
                 entityType: 'employee',
